@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416220560) do
+ActiveRecord::Schema.define(:version => 20130422233500) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20130416220560) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "guest",                  :default => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "postal_code"
+    t.string   "country"
+    t.boolean  "mla_updates"
+    t.boolean  "terms_and_conditions"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

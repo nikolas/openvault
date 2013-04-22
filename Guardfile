@@ -16,4 +16,9 @@ guard 'rspec' do
 
   # Capybara features specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/features/#{m[1]}_spec.rb" }
+
+  # Watch for factories in spec/models/factories/ and trigger model spec with the same name.
+  # E.g. changeing spec/models/factories/user.rb triggers `rspec spec/models/user_spec.rb'
+  # This assumes a 1-to-1 between factory and model spec. If that changes, then will need to change this line.
+  watch(%r{^spec/factories/(.+)\.rb$})          { |m| "spec/models/#{m[1]}_spec.rb" }
 end

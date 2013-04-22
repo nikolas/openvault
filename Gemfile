@@ -21,8 +21,18 @@ group :assets do
 end
 
 group :test do
+  # functional testing stuff
   gem 'rspec-rails'
-  
+
+  # test data stuff
+  gem 'factory_girl_rails'
+  gem 'faker'
+
+  # acceptance testing stuff
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'email_spec'
+
   # stuff to autorun test
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'

@@ -10,8 +10,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me,
+                  :first_name, :last_name, :postal_code, :country, :mla_updates, :terms_and_conditions
+
+  validates :terms_and_conditions, acceptance: {allow_nil: false, accept: true, on: :create}
 
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
