@@ -20,6 +20,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test do
+  gem 'rspec-rails'
+  
+  # stuff to autorun test
+  gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9'
+end
+
+group :development do
+    gem 'debugger'
+end
+
 gem 'jquery-rails'
 
 gem 'blacklight'
@@ -37,9 +49,6 @@ gem 'jettywrapper'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
 
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
