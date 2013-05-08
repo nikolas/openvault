@@ -15,6 +15,9 @@ module Openvault
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # A little tweak to load order to ensure we get the right version of GenericFile.
+    config.railties_order = [BawstunCommons::Engine, Sufia::Engine, :main_app, :all]
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 

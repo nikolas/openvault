@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422233500) do
+ActiveRecord::Schema.define(:version => 20130507194051) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -22,6 +22,34 @@ ActiveRecord::Schema.define(:version => 20130422233500) do
     t.string   "user_type"
   end
 
+  create_table "domain_terms", :force => true do |t|
+    t.string "model"
+    t.string "term"
+  end
+
+  add_index "domain_terms", ["model", "term"], :name => "terms_by_model_and_term"
+
+  create_table "domain_terms_local_authorities", :id => false, :force => true do |t|
+    t.integer "domain_term_id"
+    t.integer "local_authority_id"
+  end
+
+  add_index "domain_terms_local_authorities", ["domain_term_id", "local_authority_id"], :name => "dtla_by_ids2"
+  add_index "domain_terms_local_authorities", ["local_authority_id", "domain_term_id"], :name => "dtla_by_ids1"
+
+  create_table "local_authorities", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "local_authority_entries", :force => true do |t|
+    t.integer "local_authority_id"
+    t.string  "label"
+    t.string  "uri"
+  end
+
+  add_index "local_authority_entries", ["local_authority_id", "label"], :name => "entries_by_term_and_label"
+  add_index "local_authority_entries", ["local_authority_id", "uri"], :name => "entries_by_term_and_uri"
+
   create_table "searches", :force => true do |t|
     t.text     "query_params"
     t.integer  "user_id"
@@ -31,6 +59,14 @@ ActiveRecord::Schema.define(:version => 20130422233500) do
   end
 
   add_index "searches", ["user_id"], :name => "index_searches_on_user_id"
+
+  create_table "subject_local_authority_entries", :force => true do |t|
+    t.string "label"
+    t.string "lowerLabel"
+    t.string "url"
+  end
+
+  add_index "subject_local_authority_entries", ["lowerLabel"], :name => "entries_by_lower_label"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false

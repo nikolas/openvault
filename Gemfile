@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~>3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -45,7 +45,7 @@ end
 gem 'jquery-rails'
 
 gem 'blacklight'
-gem 'hydra-head', '6.0.0'
+gem 'hydra-head', '6.1.0'
 gem 'jettywrapper'
 
 # To use ActiveModel has_secure_password
@@ -64,3 +64,6 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
+
+# jcoyne made a gem of useful stuff from hydradam
+gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
