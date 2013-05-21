@@ -48,4 +48,6 @@ RSpec.configure do |config|
   config.after (:each) do
     DatabaseCleaner.clean
   end
+
+  config.fixture_path = File.expand_path("../fixtures", __FILE__)
 end

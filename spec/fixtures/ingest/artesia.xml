@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE TEAMS_ASSET_FILE PUBLIC "-//TEAMS//DTD asset and link file//EN" "Tasset.dtd" [
+
+<!ENTITY linkedAsset0000001 SYSTEM "teams:/query-uoi?uois:uoi_id:eq:e3616b02f7257101d85c4a0b8e5e7f119ca0556a" NDATA teams_query>
+<!ENTITY linkedAsset0000006 SYSTEM "teams:/query-uoi?uois:uoi_id:eq:f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1" NDATA teams_query>
+<!ENTITY linkedAsset0000005 SYSTEM "teams:/query-uoi?uois:uoi_id:eq:e5551726166cf29bf24f6b32a34edecaa1ee17c2" NDATA teams_query>
+<!ENTITY linkedAsset0000003 SYSTEM "teams:/query-uoi?uois:uoi_id:eq:60982844daf6dafc6e20ca9aadd1bc010b80c533" NDATA teams_query>
+<!ENTITY linkedAsset0000002 SYSTEM "teams:/query-uoi?uois:uoi_id:eq:57939d888c14d68ed4e603a17604f693c880e88b" NDATA teams_query>
+<!ENTITY linkedAsset0000004 SYSTEM "teams:/query-uoi?uois:uoi_id:eq:ac99f3707a11b13f224eba8494a6e52d1147b305" NDATA teams_query>
+]>
+
+<TEAMS_ASSET_FILE>
+  <!--Artesia Export - name="230393" id="0" createDate="" updateDate="" description="download from Export Assets page" notes="" startTime="Tue Feb 05 12:18:32 EST 2013" userId="1"-->
+  <ASSETS>
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2010-07-21 14:39:19.0" UOI_ID="e3616b02f7257101d85c4a0b8e5e7f119ca0556a" NAME="barcode321909.mov" IMPORT_USER_ID="268" IMPORT_ID="185731.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_RIGHTS RIGHTS_NOTE="Media not to be released to Open Vault" RIGHTS_CREDIT="WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="WGBH Educational Foundation" />
+          <WGBH_SUBJECT SUBJECT="Preteens" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Variety shows (Television programs)" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Zoom (Television program : WGBH (Television station : Boston, Mass.))" SUBJECT_TYPE="Corporate" />
+          <WGBH_SUBJECT SUBJECT="Children's television programs--United States" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Children" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Play" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Children's television programs" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Games" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Amusements" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_TYPE ITEM_TYPE="Viewing copy" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Description" DESCRIPTION="Re-live what it was like to be a ZOOMer in the 1970's, with this retrospective collection of games and music numbers from the Emmy award-winning Children's series." DESCRIPTION_COVERAGE_OUT="01:39:13;07" DESCRIPTION_COVERAGE="00:39:13;08" DESCRIPTION_COVERAGE_IN="01:00:00;00" />
+          <WGBH_FORMAT DIMENSIONS_HEIGHT="480" ASPECT_RATIO="4:3" BROADCAST_FORMAT="NTSC" DURATION="00:39:38;10" COLOR="Color" DIMENSIONS_WIDTH="720" ITEM_FORMAT="Betacam" MIME_TYPE="video/quicktime" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="Best of the 70's" />
+          <WGBH_TITLE TITLE_TYPE="Collection" TITLE="From the Vault" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="ZOOM, Series II" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) duration : 2378.312 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) frames per second : 29.97 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : dv5n Apple DVCPRO50 - NTSC " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 720 / 480 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="/Volumes/bigDisks/Final Cut Pro Documents/Capture Scratch/Zoom/barcode321909.mov" ANNOTATION_TYPE="Source" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) duration : 2378.312 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="321909" />
+          <WGBH_LANGUAGE LANGUAGE_USAGE="Dialogue" LANGUAGE="eng" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+          <WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+    <ASSET>
+      <METADATA>
+        <UOIS IMPORT_DT="2012-05-22 15:14:13.0" UOI_ID="f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1" NAME="zoom_barcode321909_series_thumbnail.jpg" IMPORT_USER_ID="21" IMPORT_ID="219270.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="225" />
+          <WGBH_LANGUAGE LANGUAGE="eng" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary5" DESCRIPTION="Weekly half-hour programs which showed what youngsters do and think. Seven ZOOMers hosted each program, cast changed over run of series. Premiered locally as &quot;Summer-Do&quot; in 1970, nationally in January 1972. ZOOMers played games, told jokes, riddles (called Fannee Doolees) and stories and did crafts projects...and invited ideas from their audience. The result was an avalanche of ZOOMmail - in the first season, over 200,000 letters. Ubbi Dubbi language was invented by ZOOM." />
+          <WGBH_FORMAT ASPECT_RATIO="4:3" COLOR="Color" />
+          <WGBH_TITLE TITLE_TYPE="Collection" TITLE="From the Vault" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="ZOOM" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2010-08-17 08:04:19.0" UOI_ID="e5551726166cf29bf24f6b32a34edecaa1ee17c2" NAME="barcode321909_clip1.mov" IMPORT_USER_ID="21" IMPORT_ID="189796.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_CREATOR CREATOR_ROLE="Executive Producer2" CREATOR_NAME="Sarson, Christopher" />
+          <WGBH_RIGHTS RIGHTS_CREDIT="(c) WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation" />
+          <WGBH_SUBJECT SUBJECT="Play" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Amusements" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Games" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Children's television programs" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Children" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Variety shows (Television programs)" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Zoom (Television program : WGBH (Television station : Boston, Mass.))" SUBJECT_TYPE="Corporate" />
+          <WGBH_SUBJECT SUBJECT="Children's television programs--United States" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Preteens" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_TYPE ITEM_CATEGORY="WGBH_Pledge_Aug2010" MEDIA_TYPE="Moving Image" ITEM_TYPE="Preservation Master" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Item2" DESCRIPTION="What should you do when you have a good idea? Send it to Zoom!" DESCRIPTION_COVERAGE_OUT="01:03:17;13" DESCRIPTION_COVERAGE="00:00:47;16" DESCRIPTION_COVERAGE_IN="01:02:29;25" />
+          <WGBH_FORMAT DIMENSIONS_HEIGHT="480" ASPECT_RATIO="4:3" DIGITAL_FORMAT="Quicktime" BROADCAST_FORMAT="NTSC" DURATION="00:39:13;08" COLOR="Color" DIMENSIONS_WIDTH="720" ITEM_FORMAT="Betacam" MIME_TYPE="video/quicktime" ENCODING_FORMAT="DVCPro50 NTSC" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="ZOOM, Series II" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="Best of the 70's" />
+          <WGBH_TITLE TITLE_TYPE="Clip" TITLE="Send In Your Zoom Ideas" />
+          <WGBH_TITLE TITLE_TYPE="Collection" TITLE="From the Vault" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) compression format : sowt 16-bit Little Endian " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) bits/channels : 16 / 2 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="/Volumes/MLA_Vietnam_5/Uncompressed_clips/barcode321909_clip1.mov" ANNOTATION_TYPE="Source" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) duration : 48.215 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) frames per second : 29.97 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : dv5n Apple DVCPRO50 - NTSC " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 720 / 480 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : dv5n Apple DVCPRO50 - NTSC " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 720 / 480 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) duration : 48.215 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="321909" />
+          <WGBH_LANGUAGE LANGUAGE_USAGE="Dialogue" LANGUAGE="eng" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+          <WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2010-10-25 10:50:54.0" UOI_ID="60982844daf6dafc6e20ca9aadd1bc010b80c533" NAME="Pledge_Zoom_Bernadette.mp4" IMPORT_USER_ID="268" IMPORT_ID="193450.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_CREATOR CREATOR_ROLE="Executive Producer2" CREATOR_NAME="Sarson, Christopher" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Performer2" CONTRIBUTOR_NAME="Yao, Bernadette" />
+          <WGBH_RIGHTS RIGHTS_CREDIT="(c) WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation" />
+          <WGBH_SUBJECT SUBJECT="Children" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Preteens" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Zoom (Television program : United States)" SUBJECT_TYPE="Corporate" />
+          <WGBH_SUBJECT SUBJECT="Children's television programs--United States" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Play" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Amusements" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Games" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Variety shows (Television programs)" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_TYPE ITEM_CATEGORY="WGBH_Pledge_Oct2010" MEDIA_TYPE="Moving Image" ITEM_TYPE="Viewing copy" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Item2" DESCRIPTION="Re-live your favorite ZOOM memories! In this short clip, ZOOM kid Bernadette shows viewers how to perform her complex arm-swinging routine." DESCRIPTION_COVERAGE_OUT="01:00:29;13" DESCRIPTION_COVERAGE="00:00:29;14" DESCRIPTION_COVERAGE_IN="01:00:00;00" />
+          <WGBH_FORMAT DIMENSIONS_HEIGHT="240" ASPECT_RATIO="4:3" BROADCAST_FORMAT="NTSC" DURATION="00:00:29;14" COLOR="Color" DIMENSIONS_WIDTH="320" ITEM_FORMAT="Betacam" MIME_TYPE="video/quicktime" />
+          <WGBH_TITLE TITLE_TYPE="Clip" TITLE="Here's How You Do It  " />
+          <WGBH_TITLE TITLE_TYPE="Collection" TITLE="From the Vault" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="ZOOM, Series II" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="Best of the 70's" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) duration : 29.496 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) frames per second : 29.97 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : avc1 H.264 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 320 / 240 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) duration : 29.496 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) compression format : mp4a MPEG-4 Audio " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) bits/channels : 16 / 2 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="/Volumes/bigDisks/Muraszko Projects/Watermarked Programs/Pledge_Zoom_Bernadette.mp4" ANNOTATION_TYPE="Source" />
+          <WGBH_ANNOTATION ANNOTATION="Watermarked Mp4 for web" ANNOTATION_TYPE="Versioning" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="321909" />
+          <WGBH_LANGUAGE LANGUAGE_USAGE="Dialogue" LANGUAGE="eng" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+          <WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+    <ASSET>
+      <METADATA>
+        <UOIS MASTER_OBJ_MIME_TYPE="image/jpeg" METADATA_STATE_USER_ID="21" UOI_ID="57939d888c14d68ed4e603a17604f693c880e88b" CONTENT_STATE_DT="2012-05-21 14:40:29.0" CONTENT_STATE="NORMAL" IMPORT_ID="219242.0" MASTER_OBJ_NAME_LOC="data/repository/original/vol0/449/zoom_barcode321909_thumbnail_c1cf1f2c0361ee0a7a5f0cd62726896763315843.jpg" IMPORT_DT="2012-05-21 14:40:24.0" METADATA_STATE_DT="2012-05-22 16:02:53.0" METADATA_STATE="NORMAL" BITMAP_COLOR_MAP="TCLR" VERSION="1" BITMAP_COLOR_DEPTH="24" IMPORT_USER_ID="21" IS_SGML_CHUNKED="N" IS_LATEST_VERSION="Y" IS_EDITABLE="Y" CONTENT_TYPE="BITMAP" BITMAP_HEIGHT="277" LOGICAL_UOI_ID="57939d888c14d68ed4e603a17604f693c880e88b" BITMAP_RESOLUTION="72" NAME="zoom_barcode321909_thumbnail.jpg" BITMAP_WIDTH="480">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="225" />
+          <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="321909" />
+          <MEDIUM_RES_VIEW OBJECT_NAME_LOCATION="data/repository/screen/vol0/225/zoom_barcode321909_thumbnail-S_440e9aa80611a6a0450c1d682c842732ca04f6b5.jpg" />
+          <WGBH_TYPE MEDIA_TYPE="Static Image" ITEM_TYPE="Digital file" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary1" DESCRIPTION="Thumbnail for ZOOM program and series records on Open Vault" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="ZOOM" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+    <ASSET>
+      <METADATA>
+        <UOIS IMPORT_DT="2012-05-04 14:12:20.0" UOI_ID="ac99f3707a11b13f224eba8494a6e52d1147b305" NAME="From_the_vault6.jpg" IMPORT_USER_ID="21" IMPORT_ID="218268.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary5" DESCRIPTION="&quot;From the Vault&quot; is an ongoing collaboration with WGBH Radio (89.7) and WGBH.org, bringing treasures from the archives to new audiences.This curated collection gives a sense of the range of the WGBH archives, highlighting rare or seldom-seen materials." />
+          <WGBH_TITLE TITLE_TYPE="Collection" TITLE="From the Vault" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+  </ASSETS>
+  <LINKS>
+    <LINK SOURCE="linkedAsset0000001" LINK_TYPE="PLACEDGR" DESTINATION="linkedAsset0000002" FOLLOW_LATEST="Y" SEQ_NUM="0" />
+    <LINK SOURCE="linkedAsset0000001" LINK_TYPE="PARENT" DESTINATION="linkedAsset0000003" FOLLOW_LATEST="N" SEQ_NUM="0" />
+    <LINK SOURCE="linkedAsset0000001" LINK_TYPE="CHILD" DESTINATION="linkedAsset0000004" FOLLOW_LATEST="N" SEQ_NUM="0" />
+    <LINK SOURCE="linkedAsset0000001" LINK_TYPE="PARENT" DESTINATION="linkedAsset0000005" FOLLOW_LATEST="N" SEQ_NUM="0" />
+    <LINK SOURCE="linkedAsset0000001" LINK_TYPE="CHILD" DESTINATION="linkedAsset0000006" FOLLOW_LATEST="Y" SEQ_NUM="1" />
+  </LINKS>
+</TEAMS_ASSET_FILE>
+
