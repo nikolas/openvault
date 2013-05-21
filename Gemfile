@@ -38,9 +38,7 @@ group :test do
   gem 'rb-fsevent', '~> 0.9'
 end
 
-group :development do
-    gem 'debugger'
-end
+gem 'debugger', :group => [:development, :test]
 
 gem 'jquery-rails'
 
