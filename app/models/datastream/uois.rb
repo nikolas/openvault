@@ -1,7 +1,8 @@
 class Datastream::Uois < ActiveFedora::OmDatastream
+
   set_terminology do |t|
 
-    t.root(path: "UOIS") {
+    t.root(:path => "UOIS") {
       t.version(:path => {:attribute => "VERSION"})
       t.import_dt(:path => {:attribute => "IMPORT_DT"})
       t.uoi_id(:path => {:attribute => "UOI_ID"})
@@ -23,6 +24,7 @@ class Datastream::Uois < ActiveFedora::OmDatastream
 
     t.wgbh_subject(:path => "WGBH_SUBJECT") {
       t.subject(:path => {:attribute => "SUBJECT"})
+      t.subject_type(:path => {:attribute => "SUBJECT_TYPE"})
     }
 
     t.wgbh_type(:path => 'WGBH_TYPE') {
@@ -30,22 +32,22 @@ class Datastream::Uois < ActiveFedora::OmDatastream
     }
 
     t.wgbh_description(:path => "WGBH_DESCRIPTION") {
-      t.description_type(:path => {:attribute => "DESCRIPTION_TYPE"})
-      t.description_coverage_in(:path => {:attribute => "DESCRIPTION_COVERAGE_IN"})
-      t.description_coverage(:path => {:attribute => "DESCRIPTION_COVERAGE"})
-      t.description_coverage_out(:path => {:attribute => "DESCRIPTION_COVERAGE_OUT"})
       t.description(:path => {:attribute => "DESCRIPTION"})
+      t.description_type(:path => {:attribute => "DESCRIPTION_TYPE"})
+      t.description_coverage(:path => {:attribute => "DESCRIPTION_COVERAGE"})
+      t.description_coverage_in(:path => {:attribute => "DESCRIPTION_COVERAGE_IN"})
+      t.description_coverage_out(:path => {:attribute => "DESCRIPTION_COVERAGE_OUT"})
     }
 
     t.wgbh_format(:path => "WGBH_FORMAT") {
-      t.dimensions_height(:path => {:attribute => "DIMENSIONS_HEIGHT"})
-      t.aspect_ratio(:path => {:attribute => "ASPECT_RATIO"})
-      t.broadcast_format(:path => {:attribute => "BROADCAST_FORMAT"})
-      t.duration(:path => {:attribute => "DURATION"})
-      t.color(:path => {:attribute => "COLOR"})
-      t.dimension_width(:path => {:attribute => "DIMENSIONS_WIDTH"})
       t.item_format(:path => {:attribute => "ITEM_FORMAT"})
       t.mime_type(:path => {:attribute => "MIME_TYPE"})
+      t.broadcast_format(:path => {:attribute => "BROADCAST_FORMAT"})
+      t.duration(:path => {:attribute => "DURATION"})
+      t.aspect_ratio(:path => {:attribute => "ASPECT_RATIO"})
+      t.dimensions_width(:path => {:attribute => "DIMENSIONS_WIDTH"})
+      t.dimensions_height(:path => {:attribute => "DIMENSIONS_HEIGHT"})
+      t.color(:path => {:attribute => "COLOR"})
     }
 
     t.wgbh_title(:path => "WGBH_TITLE") {
