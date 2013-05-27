@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe Datastream::Uois do
+describe Datastream::UOIS do
 
   # TODO: Consider replacing XML fixtures with an XML factory, if you can find one.
   context "when given valid UOIS" do
 
     # Give the datastream valid UOIS xml
     before(:all) {
-      @uois = Datastream::Uois.new
+      @uois = Datastream::UOIS.new
       @uois.ng_xml = Nokogiri::XML(File.read("#{fixture_path}/ingest/uois.xml"))
     }
 

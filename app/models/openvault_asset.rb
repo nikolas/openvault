@@ -2,6 +2,6 @@ require 'hydra-pbcore'
 
 class OpenvaultAsset < ActiveFedora::Base
   # belongs_to :artesia_ingest, :property => :is_part_of, :class_name => 'ArtesiaIngest'
-  has_metadata 'uois', :type => Datastream::Uois
+  has_metadata 'uois', :type => Datastream::UOIS
   # include Sufia::GenericFile
 end

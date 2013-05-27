@@ -1,6 +1,6 @@
 require 'artesia'
 
-class Datastream::Uois < ActiveFedora::OmDatastream
+class Datastream::UOIS < ActiveFedora::OmDatastream
 
   include Artesia::Datastreams::UOIS
 

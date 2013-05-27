@@ -9,10 +9,10 @@ describe OpenvaultAsset do
 
 
   it "saves a datastream for UOIS xml" do
-    xml = File.read("./spec/fixtures/ingest/uois.xml")
+    xml = valid_file.read
     asset.uois.ng_xml = Nokogiri::XML(xml)
     asset.save!
-    compare = Datastream::Uois.new
+    compare = Datastream::UOIS.new
     compare.ng_xml = Nokogiri::XML(xml)
     asset.uois.to_xml.should == compare.to_xml
   end
