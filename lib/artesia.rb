@@ -1,4 +1,5 @@
 module Artesia
+
   module Datastreams
 
     ##
@@ -93,6 +94,28 @@ module Artesia
           terminology.wgbh_holdings(:path => "WGBH_HOLDINGS") {
             terminology.holdings_department(:path => {:attribute => "HOLDINGS_DEPARTMENT"})
           }
+        end
+      end
+    end
+  end
+
+  class Ingester
+
+    class << self
+      def ingest!(teams_asset_file_xml)
+        artesia_ingest = ArtesiaIngest.create!
+        artesia_ingest.teams_asset_file.ng_xml = Nokogiri::XML(teams_asset_file_xml)
+
+        artesia_ingest.teams_asset_file.find_by_terms(:assets, :asset, :metadata, :uois).each do |ng_uois|
+
+          ov_asset = OpenvaultAsset.new
+          # ng_uois is a Nokogiri::XML::Element, but we want a Nokogiri::XML::Document, so re-parse it.
+          ov_asset.uois.ng_xml = Nokogiri::XML(ng_uois.to_xml)
+
+          # Add the OpenvaultAsset to the ArtesiaIngest.
+          # Note that because the ArtesiaIngest instance is already saved,
+          # the new OpenvaultAsset will be saved automatically when it is added.
+          artesia_ingest.openvault_assets << ov_asset
         end
       end
     end
