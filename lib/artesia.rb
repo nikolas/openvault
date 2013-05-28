@@ -102,7 +102,7 @@ module Artesia
   class Ingester
 
     class << self
-      def ingest!(teams_asset_file_xml)
+      def ingest!(teams_asset_file_xml, depositor_metadata)
         artesia_ingest = ArtesiaIngest.create!
         artesia_ingest.teams_asset_file.ng_xml = Nokogiri::XML(teams_asset_file_xml)
 
@@ -111,11 +111,12 @@ module Artesia
           ov_asset = OpenvaultAsset.new
           # ng_uois is a Nokogiri::XML::Element, but we want a Nokogiri::XML::Document, so re-parse it.
           ov_asset.uois.ng_xml = Nokogiri::XML(ng_uois.to_xml)
+          ov_asset.apply_depositor_metadata depositor_metadata
 
           # Add the OpenvaultAsset to the ArtesiaIngest.
           # Note that because the ArtesiaIngest instance is already saved,
-          # the new OpenvaultAsset will be saved automatically when it is added.
-          artesia_ingest.openvault_assets << ov_asset
+          # it will try to save the OpenvaultAsset when it is added to the 'openvault_assets' array.
+          raise "The OpenvaultAsset could not be related to the Ingest. This may be because the OpenvaultAsset could not be saved for some reason." unless (artesia_ingest.openvault_assets << ov_asset)
         end
       end
     end

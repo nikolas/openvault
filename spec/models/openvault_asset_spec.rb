@@ -9,6 +9,7 @@ describe OpenvaultAsset do
   it "saves a datastream for UOIS xml" do
     xml = valid_file.read
     asset.uois.ng_xml = Nokogiri::XML(xml)
+    asset.apply_depositor_metadata "openvault_testing@wgbh.org"
     asset.save!
     compare = Datastream::UOIS.new
     compare.ng_xml = Nokogiri::XML(xml)
