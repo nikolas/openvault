@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Openvault</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-<%= yield %>
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title><%= h(@page_title || application_name) %></title>
+    <link href="<%= opensearch_catalog_url(:format => 'xml') %>" title="<%= application_name%>" type="application/opensearchdescription+xml" rel="search"/>
+    
+    <%= stylesheet_link_tag    "screen", :media => 'all' %>
+    <%= stylesheet_link_tag    "print", :media => 'print' %>
+    <%= stylesheet_link_tag "jquery/ui-lightness/jquery-ui-1.8.1.custom.css", :media => 'all' %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "media" %>
 
-</body>
+    <%= render_head_content %>
+    <!--[if lt IE 9]><link rel="stylesheet" href="/stylesheets/compiled/ie.css" type="text/css" media="screen,projection" /><![endif]-->
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "ie", :media => 'all' %>
+    <![endif]-->
+  </head>
+  <% if params[:q].to_s.empty? and params[:f].to_s.empty? and params[:id].nil? %>
+    <body onload="$('input#q').focus();" class="<%= render_body_class %>">
+  <% else %>
+    <body class="<%= render_body_class %>">
+  <% end %>
+    <div class="container">
+      
+      <div id="hd">
+        <div >
+          <div class="first site_title_container">
+            <h1 class="site_title"><%= link_to application_name, root_path %></h1>
+            <div class="subtitle"><%= link_to organization_name, root_path %></div>
+          </div>
+          <div class="user_util_links">
+            <%= render :partial=>'/user_util_links' %>
+          </div>
+        </div>
+
+      </div>
+      
+      <div id="bd">
+        <div id="main">
+        <%= render :partial => 'catalog/search_form' %>
+          <div id="content">
+            <%= render :partial=>'/flash_msg' %>
+            <%= yield %>
+          </div>
+        </div>
+        
+        <div id="sidebar" class="sidebar"><%= sidebar_items.join('').html_safe %></div>
+        
+      </div>
+      
+      
+    </div>
+          <div class="footer-container">
+          <div id="ft">
+            <%= render :partial => 'layouts/footer.html.erb' %>
+            <div class="copyright">Copyright 2011 WGBH Educational Foundation. All rights reserved.</div>
+          </div>
+        </div>
+          <%#= render_google_analytics_code %>
+  </body>
+  
 </html>

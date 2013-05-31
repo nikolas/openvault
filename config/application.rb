@@ -61,9 +61,10 @@ module Openvault
     # Default SASS Configuration, check out https://github.com/rails/sass-rails for details
     config.assets.compress = !Rails.env.development?
 
-
-
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.application_name = "OpenVault"
+    config.organization_name = "WGBH Media Library and Archives"
   end
 end
