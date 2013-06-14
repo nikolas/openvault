@@ -1,0 +1,6 @@
+en:
+  blacklight:
+    application_name: 'Open Vault'
+    search:
+      form:
+        q: 'Searh Archive'

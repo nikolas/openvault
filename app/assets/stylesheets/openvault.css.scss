@@ -1,0 +1,43 @@
+body {
+  background-color: #4282B2;
+
+  padding: {
+    top: 0px;
+  }
+}
+
+
+#searchbar {
+  color: #ffffff;
+  background: {
+    color: #ff9e25;
+  }
+}
+
+
+#footer {
+  // all text in the footer should be white
+  * {
+    color: white;
+  }
+
+  font-size: 0.9em;
+
+  ul, li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  li {
+    margin-right:  0.3em;
+
+    &:after {
+       padding-left: 0.3em;
+       content: " | ";
+    }
+
+    &:last-of-type:after {
+       content: "";
+    }
+  }
+}

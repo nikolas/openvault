@@ -1,67 +1,136 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" class="no-js">
   <head>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+    <meta http-equiv="cleartype" content="on">
+    <![endif]-->
     <title><%= h(@page_title || application_name) %></title>
-    <link href="<%= opensearch_catalog_url(:format => 'xml') %>" title="<%= application_name%>" type="application/opensearchdescription+xml" rel="search"/>
-    
-    <%= stylesheet_link_tag    "screen", :media => 'all' %>
-    <%= stylesheet_link_tag    "print", :media => 'print' %>
-    <%= stylesheet_link_tag "jquery/ui-lightness/jquery-ui-1.8.1.custom.css", :media => 'all' %>
+    <link href="<%= opensearch_catalog_path(:format => 'xml', :only_path => false) %>" title="<%= application_name%>" type="application/opensearchdescription+xml" rel="search"/>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "media" %>
-
-    <%= render_head_content %>
-    <!--[if lt IE 9]><link rel="stylesheet" href="/stylesheets/compiled/ie.css" type="text/css" media="screen,projection" /><![endif]-->
+    <%= csrf_meta_tags %>
+    <%= raw(render_head_content) %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <%= javascript_include_tag "ie", :media => 'all' %>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <% if params[:q].to_s.empty? and params[:f].to_s.empty? and params[:id].nil? %>
-    <body onload="$('input#q').focus();" class="<%= render_body_class %>">
-  <% else %>
-    <body class="<%= render_body_class %>">
-  <% end %>
-    <div class="container">
-      
-      <div id="hd">
-        <div >
-          <div class="first site_title_container">
-            <h1 class="site_title"><%= link_to application_name, root_path %></h1>
-            <div class="subtitle"><%= link_to organization_name, root_path %></div>
-          </div>
-          <div class="user_util_links">
-            <%= render :partial=>'/user_util_links' %>
-          </div>
-        </div>
 
-      </div>
-      
-      <div id="bd">
-        <div id="main">
-        <%= render :partial => 'catalog/search_form' %>
-          <div id="content">
-            <%= render :partial=>'/flash_msg' %>
-            <%= yield %>
+  <% onload_text = "$('input#q').focus();" if params[:q].to_s.empty? and params[:f].to_s.empty? and params[:id].nil? %>
+  <body onload="<%= onload_text %>" class="<%= render_body_class %>">
+
+    <!-- This comes from Blacklight... what does it do?
+    <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+    -->
+    
+    <!-- Main container -->
+    <div class="container">
+      <!-- Main content row -->
+      <div class="row">
+        <!-- Main content column -->
+        <div class="span12 center">
+
+          <!-- Openvault Logo and login -->
+          <div class="row">
+            <div class="span4">
+              <h1><%= application_name %></h1>
+            </div>
+            <div class="span2 pull-right">
+              <h5>LOGIN LINKS</h5>
+            </div>
           </div>
+          <!-- Logo and login -->
+
+
+          <!-- MLA Logo and search bar -->
+          <div class="row">
+            <div class="span2">
+              <h4>MLA LOGO</h4>
+            </div>
+            <div class="span10">
+              <%= render :partial => 'search_form' %>
+            </div>
+          </div>
+          <!-- /MLA Logo and search bar -->
+
+
+          <!-- Mosaic -->
+          <div class="row">
+            <div class="span12">
+              <h1>Mosaic</h1>
+            </div>
+          </div>
+          <!-- /MLA Logo and search bar -->
+
+
+          <!-- Carousel and Blog roll -->
+          <div class="row">
+
+            <!-- Carousel -->
+            <div class="span5">
+              <h1>Carousel</h1>
+            </div>
+
+            <!-- Blog roll -->
+            <div class="span7">
+              <h1>Blog Roll</h1>
+            </div>
+          </div>
+          <!-- /MLA Logo and search bar -->
+
+
+          <!-- Top bar -->
+          <!-- This comes from Blacklight... what does it do?
+          <div id="search-found" class="row hidden-phone">
+            <%= topbar_items.join('').html_safe %>
+          </div>
+          -->
+          <!-- /Top bar -->
+          
+          <!-- This comes from Blacklight... what does it do?
+          <div class="row">
+            <div class="span12">
+              <div id="main-flashes">
+                <%= render :partial=>'/flash_msg' %>
+              </div>
+            </div>
+          </div>
+          -->
+          
+          <!--
+          Content for this comes from CatalogController (from within Blacklight, Sufia, et al.)
+          because catalog#index is the default route in config/routes.rb.
+          This is a Blacklight convention, but don't necessarily have to do it that way.
+          OV is a bit different though, in that the home page and search results pages are distinctly different,
+          whereas I *think* with Blacklight, they are the same.
+          It might be easier to go with the Blacklight grain rather than against it, but we should consider our options.
+          -->
+          <!--
+          <div class="row">
+            <%#= yield %>
+          </div>
+          -->
+          
+          <!-- Footer -->
+          <div class="row">
+            <div class="span12">
+              <%= render :partial => '/footer' %>
+            </div>
+          </div>
+          <!-- /Footer -->
+
         </div>
-        
-        <div id="sidebar" class="sidebar"><%= sidebar_items.join('').html_safe %></div>
-        
+        <!-- /Main content column -->
       </div>
-      
-      
+      <!-- /Main content row -->
     </div>
-          <div class="footer-container">
-          <div id="ft">
-            <%= render :partial => 'layouts/footer.html.erb' %>
-            <div class="copyright">Copyright 2011 WGBH Educational Foundation. All rights reserved.</div>
-          </div>
-        </div>
-          <%#= render_google_analytics_code %>
+    <!-- /Main container -->
   </body>
-  
 </html>
