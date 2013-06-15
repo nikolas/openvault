@@ -1,3 +1,6 @@
+// We use the application.css manifest to require this file, which then @imports scss.
+// This technique is required if you plan to share scss methods and variable between scss files.
+
 @import 'bootstrap';
 // @import 'bootstrap-responsive';
 @import 'blacklight/blacklight';

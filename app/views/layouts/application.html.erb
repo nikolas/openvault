@@ -31,7 +31,7 @@
     -->
     
     <!-- Main container -->
-    <div class="container">
+    <div id="main-container" class="container">
       <!-- Main content row -->
       <div class="row">
         <!-- Main content column -->
@@ -40,7 +40,7 @@
           <!-- Openvault Logo and login -->
           <div class="row">
             <div class="span4">
-              <h1><%= application_name %></h1>
+              <div id="ov-logo-home"><%= application_name %></div>
             </div>
             <div class="span2 pull-right">
               <h5>LOGIN LINKS</h5>
@@ -51,10 +51,10 @@
 
           <!-- MLA Logo and search bar -->
           <div class="row">
-            <div class="span2">
-              <h4>MLA LOGO</h4>
+            <div class="span3">
+              <div id="mla-logo">Media Library and Archives</div>
             </div>
-            <div class="span10">
+            <div class="span9">
               <%= render :partial => 'search_form' %>
             </div>
           </div>

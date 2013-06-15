@@ -1,3 +1,11 @@
+@mixin img-frame($img_path, $width, $height) {
+  // move text off the page.
+  text-indent: -119988px;
+  width: $width;
+  height: $height;
+  background-image: url($img_path);
+}
+
 body {
   background-color: #4282B2;
 
@@ -7,11 +15,25 @@ body {
 }
 
 
-#searchbar {
+#main-container {
+  margin-top: 20px;
+}
+
+#search-bar {
   color: #ffffff;
   background: {
     color: #ff9e25;
   }
+  padding: 20px;
+  height: 20px;
+}
+
+#ov-logo-home {
+  @include img-frame ("/assets/ov_logo.png", 396px, 63px);
+}
+
+#mla-logo {
+  @include img-frame ("/assets/wgbh_mla.png", 185px, 36px);
 }
 
 
