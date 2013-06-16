@@ -31,14 +31,25 @@
     -->
     
     <!-- Main container -->
+
     <div id="main-container" class="container">
       <!-- Main content row -->
       <div class="row">
         <!-- Main content column -->
         <div class="span12 center">
 
-          <!-- /MLA Logo and search bar -->
+          <!-- Openvault Logo and login -->
+          <div class="row">
+            <div class="span4">
+              <div id="ov-logo-home"><%= application_name %></div>
+            </div>
+            <div class="span2 pull-right">
+              <h5>LOGIN LINKS</h5>
+            </div>
+          </div>
+          <!-- Logo and login -->
 
+          <%= yield %>
 
           <!-- Top bar -->
           <!-- This comes from Blacklight... what does it do?
