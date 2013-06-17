@@ -1,14 +1,7 @@
-@mixin img-frame($img_path, $width, $height) {
-  // move text off the page.
-  text-indent: -119988px;
-  width: $width;
-  height: $height;
-  background-image: url($img_path);
-}
+@import "mosaic";
 
 body {
   background-color: #4282B2;
-
   padding: {
     top: 0px;
   }
@@ -29,11 +22,17 @@ body {
 }
 
 #ov-logo-home {
-  @include img-frame ("/assets/ov_logo.png", 396px, 63px);
+  text-indent: -3000px;
+  width: 396px;
+  height: 63px;
+  background-image: url(/assets/ov_logo.png);
 }
 
 #mla-logo {
-  @include img-frame ("/assets/wgbh_mla.png", 185px, 36px);
+  text-indent: -3000px;
+  background-image: url(/assets/wgbh_mla.png);
+  width: 185px;
+  height: 36px;
 }
 
 
