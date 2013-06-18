@@ -18,6 +18,21 @@ describe Artesia do
     it "raises an error if xml is invalid" do
       expect {Artesia::Ingester.ingest!(invalid_xml, depositor)}.to raise_error
     end
+
+    it "should not insert a record for the ingest if if xml is invalid" do
+      count_before_ingest = ActiveFedora::Base.count
+
+      begin
+        Artesia::Ingester.ingest!(invalid_xml, depositor)
+      rescue
+        # Get around the error that is raised with invalid_xml
+      end
+
+      # Count should be the same
+      ActiveFedora::Base.count.should == count_before_ingest
+    end
+
+
   end
 
     
