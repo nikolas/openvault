@@ -98,32 +98,4 @@ module Artesia
       end
     end
   end
-
-  class Ingester
-
-    class << self
-      def ingest!(teams_asset_file_xml, depositor_metadata)
-        artesia_ingest = ArtesiaIngest.new
-        artesia_ingest.teams_asset_file.ng_xml = Nokogiri::XML(teams_asset_file_xml) do |config|
-          # set STRICT option for Nokogiri XML parsing.
-          config.strict
-        end
-        artesia_ingest.save!
-
-        # symbols passed to find_by_terms are names of xml nodes. Kinda like xpath assets/asset/metadata/uois/.
-        artesia_ingest.teams_asset_file.find_by_terms(:assets, :asset, :metadata, :uois).each do |ng_uois|
-
-          ov_asset = OpenvaultAsset.new
-          # ng_uois is a Nokogiri::XML::Element, but we want a Nokogiri::XML::Document, so re-parse it.
-          ov_asset.uois.ng_xml = Nokogiri::XML(ng_uois.to_xml)
-          ov_asset.apply_depositor_metadata depositor_metadata
-
-          # Add the OpenvaultAsset to the ArtesiaIngest.
-          # Note that because the ArtesiaIngest instance is already saved,
-          # it will try to save the OpenvaultAsset when it is added to the 'openvault_assets' array.
-          artesia_ingest.openvault_assets << ov_asset
-        end
-      end
-    end
-  end
 end

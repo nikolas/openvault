@@ -4,6 +4,7 @@ class Datastream::TeamsAssetFile < ActiveFedora::OmDatastream
 
   include Artesia::Datastreams::UOIS
 
+  # Set the OM terminology.
   set_terminology do |t|
 
     t.root(:path => "TEAMS_ASSET_FILE")
@@ -18,6 +19,12 @@ class Datastream::TeamsAssetFile < ActiveFedora::OmDatastream
         t.content(:path => "CONTENT")
       }
     }
+  end
+
+  def set_xml(xml)
+    self.ng_xml = Nokogiri::XML(xml) do |config|
+      config.strict
+    end
   end
 
   class << self

@@ -2,17 +2,15 @@ require 'spec_helper'
 
 describe OpenvaultAsset do
 
-  let(:valid_file) { File.open("#{fixture_path}/ingest/uois.xml") }
+  let(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/uois.zoom_sample.xml") }
 
-  subject (:asset) { OpenvaultAsset.new }
+  subject (:ov_asset) { OpenvaultAsset.new }
 
   it "saves a datastream for UOIS xml" do
-    xml = valid_file.read
-    asset.uois.ng_xml = Nokogiri::XML(xml)
-    asset.apply_depositor_metadata "openvault_testing@wgbh.org"
-    asset.save!
-    compare = Datastream::UOIS.new
-    compare.ng_xml = Nokogiri::XML(xml)
-    asset.uois.to_xml.should == compare.to_xml
+    ov_asset.uois.set_xml valid_xml
+    ov_asset.apply_depositor_metadata "openvault_testing@wgbh.org"
+    ov_asset.save!
+    compare = ActiveFedora::Base.find ov_asset.pid, :cast => true
+    compare.uois.to_xml.should == ov_asset.uois.to_xml
   end
 end

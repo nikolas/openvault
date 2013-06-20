@@ -8,7 +8,7 @@ describe Datastream::UOIS do
     # Give the datastream valid UOIS xml
     before(:all) {
       @uois = Datastream::UOIS.new
-      @uois.ng_xml = Nokogiri::XML(File.read("#{fixture_path}/ingest/uois.xml"))
+      @uois.set_xml File.read("#{fixture_path}/artesia_ingest/uois.zoom_sample.xml")
     }
 
     it "has metadata for security policy" do

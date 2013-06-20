@@ -9,6 +9,12 @@ class Datastream::UOIS < ActiveFedora::OmDatastream
     add_uois_terminology t
   end
 
+  def set_xml(xml)
+    self.ng_xml = Nokogiri::XML(xml) do |config|
+      config.strict
+    end
+  end
+
   class << self
     def xml_template
       Nokogiri::XML.parse("<UOIS/>")
