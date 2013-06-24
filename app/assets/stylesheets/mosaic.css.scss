@@ -2,22 +2,22 @@
 // see http://compass-style.org/help/tutorials/spriting/
 
 // Make sprites for mosaic.
-@import "compass";
-@import "mosaic/*.png";
-@include all-mosaic-sprites;
+// @import "compass";
+// @import "mosaic/*.png";
+// @include all-mosaic-sprites;
 
-// A singel mosaic item 
-.mosaic-item {
-  text-indent: -3000px;
-  height: 42px;
-  width: 54px;
-  display: block;
-  float: left;
+// // A singel mosaic item 
+// .mosaic-item {
+//   text-indent: -3000px;
+//   height: 42px;
+//   width: 54px;
+//   display: block;
+//   float: left;
 
-  margin-bottom: 1px;
-  margin-right: 1px;
+//   margin-bottom: 1px;
+//   margin-right: 1px;
 
-  &:last-child {
-    margin-right: 0px;
-  }
-}
+//   &:last-child {
+//     margin-right: 0px;
+//   }
+// }
