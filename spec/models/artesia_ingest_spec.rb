@@ -4,8 +4,12 @@ describe ArtesiaIngest do
 
   subject(:artesia_ingest) { ArtesiaIngest.new }
 
-  # zoom_sample.xml is an export from Artesia, containing 6 interrelated assets.
+  # valid_xml is an export from Artesia.
   let!(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/teams_asset_file.zoom_sample.xml") }
+
+  # valid_xml contains 6 <UOIS> nodes, each of which generate an OpenvaultAsset
+  let(:ov_asset_count) { 6 }
+
   let(:invalid_xml) { 'this is not xml' }
   let(:depositor) { 'openvault_testing@wgbh.org' }
 
@@ -45,34 +49,59 @@ describe ArtesiaIngest do
     check.openvault_assets.should == [ov1, ov2]
   end
 
-  
 
-  describe '#save_all!' do
-    it 'saves 1 record for the ingest itself, and 1 record for each child asset' do
-      count_before_ingest = ActiveFedora::Base.count
-      artesia_ingest.teams_asset_file.set_xml valid_xml
-      artesia_ingest.depositor = depositor
-      artesia_ingest.save_all!
-      ActiveFedora::Base.count.should == (count_before_ingest + 7)
-    end
 
-    pending "raises an error if xml is invalid" do
-      expect { artesia_ingest.set_teams_asset_file invalid_xml }.to raise_error
-    end
 
-    pending "should not insert a record for the ingest if if xml is invalid" do
-      count_before_ingest = ActiveFedora::Base.count
+  describe '#apply_teams_asset_file' do
 
-      begin
-        artesia_ingest.set_teams_asset_file invalid_xml
-      rescue
-        # Get around the error that is raised with invalid_xml
+    context 'when given valid TEAMS_ASSET_FILE xml' do
+
+      it 'sets the xml of the Datastream::TeamsAssetFile at ArtesiaIngest#teams_asset_file' do
+        artesia_ingest.apply_teams_asset_file valid_xml
+        artesia_ingest.teams_asset_file.to_xml.should_not be_nil
       end
 
-      artesia_ingest.save_all!(depositor)
+      it "generates OpenvaultAsset models from xml in '#teams_asset_file' datastream" do
+        artesia_ingest.apply_teams_asset_file valid_xml
+        artesia_ingest.openvault_assets.count.should == 6
+      end
 
-      # Count should be the same
-      ActiveFedora::Base.count.should == count_before_ingest
+      it 'does not generate duplicate OpenvaultAsset models when called more than once' do
+        3.times { artesia_ingest.apply_teams_asset_file valid_xml }
+        artesia_ingest.openvault_assets.count.should == ov_asset_count
+      end
+
+      pending 'relates OpenvaultAssets in ArtesiaIngest#openvault_assets with xml data from ArtesiaIngest#teams_asset_file' do
+        artesia_ingest.apply_teams_asset_file valid_xml
+        # TODO: check for specific relationship predicates.
+        artesia_ingest.openvault_assets.each do |ov_asset|
+          ov_asset.relationships.count.should > 0
+        end
+      end
+
     end
+
   end
+
+  describe '#save_all!' do
+    it 'saves 1 record for the ingest itself, and 1 record for each OpenvaultAsset in #openvault_assets' do
+      count_before_ingest = ActiveFedora::Base.count
+      artesia_ingest.apply_teams_asset_file valid_xml
+      artesia_ingest.depositor = depositor
+      artesia_ingest.save_all!
+      ActiveFedora::Base.count.should == (count_before_ingest + ov_asset_count + 1)
+    end
+
+  end
+
+  context 'when given invalid xml' do
+    before(:each) do
+      artesia_ingest.apply_teams_asset_file invalid_xml
+    end
+
+    pending "raises an error if xml is invalid"
+    pending "should not insert a record for the ingest if if xml is invalid"
+  end
+
+  
 end

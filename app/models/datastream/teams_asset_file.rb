@@ -1,4 +1,4 @@
-require 'artesia'
+require 'artesia/datastreams/uois'
 
 class Datastream::TeamsAssetFile < ActiveFedora::OmDatastream
 

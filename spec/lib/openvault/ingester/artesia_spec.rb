@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'openvault'
+require 'openvault/ingester/artesia'
 
 describe Openvault::Ingester::Artesia do
 
