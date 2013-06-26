@@ -49,6 +49,16 @@ describe ArtesiaIngest do
     check.openvault_assets.should == [ov1, ov2]
   end
 
+  describe '#depositor=' do
+    it 'sets depositor for all OpenvaultAssets' do
+      artesia_ingest.apply_teams_asset_file valid_xml
+      artesia_ingest.depositor = 'foo'
+      artesia_ingest.openvault_assets.each do |ov_asset|
+        ov_asset.depositor.should == 'foo'
+      end
+    end
+  end
+
 
 
 
