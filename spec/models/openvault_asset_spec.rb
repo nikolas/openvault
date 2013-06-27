@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe OpenvaultAsset do
 
-  let(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/uois.zoom_sample.xml") }
+  let(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/zoom/uois_program.xml") }
   let(:depositor) { "openvault_testing@wgbh.org" }
 
   subject (:ov_asset) { OpenvaultAsset.new }

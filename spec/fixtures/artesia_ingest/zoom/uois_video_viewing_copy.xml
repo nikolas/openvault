@@ -1,0 +1,36 @@
+<UOIS VERSION="1" IMPORT_DT="2010-10-25 10:50:54.0" UOI_ID="60982844daf6dafc6e20ca9aadd1bc010b80c533" NAME="Pledge_Zoom_Bernadette.mp4" IMPORT_USER_ID="268" IMPORT_ID="193450.0">
+  <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+  <WGBH_CREATOR CREATOR_ROLE="Executive Producer2" CREATOR_NAME="Sarson, Christopher" />
+  <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Performer2" CONTRIBUTOR_NAME="Yao, Bernadette" />
+  <WGBH_RIGHTS RIGHTS_CREDIT="(c) WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation" />
+  <WGBH_SUBJECT SUBJECT="Children" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_SUBJECT SUBJECT="Preteens" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_SUBJECT SUBJECT="Zoom (Television program : United States)" SUBJECT_TYPE="Corporate" />
+  <WGBH_SUBJECT SUBJECT="Children's television programs--United States" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_SUBJECT SUBJECT="Play" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_SUBJECT SUBJECT="Amusements" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_SUBJECT SUBJECT="Games" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_SUBJECT SUBJECT="Variety shows (Television programs)" SUBJECT_TYPE="Subject Heading" />
+  <WGBH_TYPE ITEM_CATEGORY="WGBH_Pledge_Oct2010" MEDIA_TYPE="Moving Image" ITEM_TYPE="Viewing copy" />
+  <WGBH_DESCRIPTION DESCRIPTION_TYPE="Item2" DESCRIPTION="Re-live your favorite ZOOM memories! In this short clip, ZOOM kid Bernadette shows viewers how to perform her complex arm-swinging routine." DESCRIPTION_COVERAGE_OUT="01:00:29;13" DESCRIPTION_COVERAGE="00:00:29;14" DESCRIPTION_COVERAGE_IN="01:00:00;00" />
+  <WGBH_FORMAT DIMENSIONS_HEIGHT="240" ASPECT_RATIO="4:3" BROADCAST_FORMAT="NTSC" DURATION="00:00:29;14" COLOR="Color" DIMENSIONS_WIDTH="320" ITEM_FORMAT="Betacam" MIME_TYPE="video/quicktime" />
+  <WGBH_TITLE TITLE_TYPE="Clip" TITLE="Here's How You Do It  " />
+  <WGBH_TITLE TITLE_TYPE="Series" TITLE="ZOOM, Series II" />
+  <WGBH_TITLE TITLE_TYPE="Program" TITLE="Best of the 70's" />
+  <WGBH_ANNOTATION ANNOTATION="(Video Track 1) duration : 29.496 seconds " ANNOTATION_TYPE="Movie Quality" />
+  <WGBH_ANNOTATION ANNOTATION="(Video Track 1) frames per second : 29.97 " ANNOTATION_TYPE="Movie Quality" />
+  <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : avc1 H.264 " ANNOTATION_TYPE="Movie Quality" />
+  <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 320 / 240 / 24 " ANNOTATION_TYPE="Movie Quality" />
+  <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+  <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) duration : 29.496 seconds " ANNOTATION_TYPE="Audio Quality2" />
+  <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) compression format : mp4a MPEG-4 Audio " ANNOTATION_TYPE="Audio Quality2" />
+  <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) bits/channels : 16 / 2 " ANNOTATION_TYPE="Audio Quality2" />
+  <WGBH_ANNOTATION ANNOTATION="/Volumes/bigDisks/Muraszko Projects/Watermarked Programs/Pledge_Zoom_Bernadette.mp4" ANNOTATION_TYPE="Source" />
+  <WGBH_ANNOTATION ANNOTATION="Watermarked Mp4 for web" ANNOTATION_TYPE="Versioning" />
+  <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+  <WGBH_ANNOTATION ANNOTATION="(Video Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Movie Quality" />
+  <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="321909" />
+  <WGBH_LANGUAGE LANGUAGE_USAGE="Dialogue" LANGUAGE="eng" />
+  <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+<WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+</UOIS>
