@@ -2,16 +2,20 @@ require 'spec_helper'
 
 describe OpenvaultAsset do
 
-  let(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/zoom/uois_program.xml") }
+  subject(:ov_asset) { OpenvaultAsset.new }
+
   let(:depositor) { "openvault_testing@wgbh.org" }
 
-  subject (:ov_asset) { OpenvaultAsset.new }
+  before(:all) do
+    ng = Nokogiri::XML(File.read("#{fixture_path}/artesia_ingest/zoom/teams_asset_file.xml"))
+    @uois_xml = ng.xpath('//UOIS[@UOI_ID="e3616b02f7257101d85c4a0b8e5e7f119ca0556a"]').to_xml
+  end
 
   it "saves a datastream for UOIS xml" do
-    ov_asset.uois.set_xml valid_xml
+    ov_asset.uois.set_xml @uois_xml
     ov_asset.apply_depositor_metadata depositor
     ov_asset.save!
-    compare = ActiveFedora::Base.find ov_asset.pid, :cast => true
+    compare = OpenvaultAsset.find ov_asset.pid
     compare.uois.to_xml.should == ov_asset.uois.to_xml
   end
 
@@ -19,7 +23,7 @@ describe OpenvaultAsset do
     ov_asset.apply_depositor_metadata depositor
     artesia_ingest = ArtesiaIngest.create!
     artesia_ingest.openvault_assets << ov_asset
-    check = ActiveFedora::Base.find ov_asset.pid, :cast => true
+    check = OpenvaultAsset.find ov_asset.pid
     check.artesia_ingest.should == artesia_ingest
   end
 

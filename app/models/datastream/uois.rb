@@ -15,6 +15,34 @@ class Datastream::UOIS < ActiveFedora::OmDatastream
     end
   end
 
+  def is_series?
+    
+  end
+
+  def is_program?
+    
+  end
+
+  def is_collection?
+    
+  end
+
+  def is_video?
+    
+  end
+
+  def is_transcript?
+    
+  end
+
+  def is_image?
+    
+  end
+
+  def is_audio?
+    
+  end
+
   class << self
     def xml_template
       Nokogiri::XML.parse("<UOIS/>")
