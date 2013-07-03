@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624162430) do
+ActiveRecord::Schema.define(:version => 20130703145946) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20130624162430) do
   add_index "local_authority_entries", ["local_authority_id", "label"], :name => "entries_by_term_and_label"
   add_index "local_authority_entries", ["local_authority_id", "uri"], :name => "entries_by_term_and_uri"
 
-  create_table "mosaics", :force => true do |t|
+  create_table "mosaic_items", :force => true do |t|
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

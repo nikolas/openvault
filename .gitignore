@@ -16,3 +16,6 @@
 
 # Ignore jetty
 /jetty
+
+# Ignore images
+app/assets/images/
