@@ -66,5 +66,7 @@ module Openvault
 
     config.application_name = "OpenVault"
     config.organization_name = "WGBH Media Library and Archives"
+
+    config.mosaic_size = 90 
   end
 end
