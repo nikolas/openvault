@@ -26,6 +26,7 @@ module Artesia
           terminology.name(:path => {:attribute => "NAME"})
           terminology.import_user_id(:path => {:attribute => "IMPORT_USER_ID"})
           terminology.import_id(:path => {:attribute => "IMPORT_ID"})
+          terminology.master_obj_mime_type(:path => {:attribute => "MASTER_OBJ_MIME_TYPE"})
 
           terminology.security_policy_uois(:path => "SECURITY_POLICY_UOIS") {
             terminology.sec_policy_id(:path => {:attribute => "SEC_POLICY_ID"})
@@ -44,6 +45,7 @@ module Artesia
           }
 
           terminology.wgbh_type(:path => 'WGBH_TYPE') {
+            terminology.media_type(:path => {:attribute => 'MEDIA_TYPE'})
             terminology.item_type(:path => {:attribute => 'ITEM_TYPE'})
           }
 

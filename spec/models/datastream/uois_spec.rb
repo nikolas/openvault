@@ -2,9 +2,22 @@ require 'spec_helper'
 
 describe Datastream::UOIS do
 
+  let(:all_types) { [:program, :collection, :video, :transcript, :image, :video_clip] }
 
   before(:all) do
 
+    # This array specifies which <TEAMS_ASSET_FILE> xml fixtures to use.
+    #
+    # It is structured like so:
+    # fixtures = {
+    #   "path/to/fixture/teams_asset_file.xml" => {
+    #     :type_of_item => [array of UOI_IDs to test for :type_of_item]
+    #   }
+    # }
+    # 
+    # The <UOIS> xml for each :type_of_item is then passed to new Datastream::UOIS
+    # objets which are stored in the hash @uois, keyed by :type_of_item
+    # to be used in subsequent tests.
     fixtures = {
 
       # Zoom!
@@ -12,53 +25,92 @@ describe Datastream::UOIS do
         :series => ["f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1"],
         :program => ["e3616b02f7257101d85c4a0b8e5e7f119ca0556a"],
         :collection => ["ac99f3707a11b13f224eba8494a6e52d1147b305"],
-        :video => ["e5551726166cf29bf24f6b32a34edecaa1ee17c2"],
+        :video => ["e3616b02f7257101d85c4a0b8e5e7f119ca0556a"],
         :image => ["57939d888c14d68ed4e603a17604f693c880e88b"],
+        :video_clip => [
+          "60982844daf6dafc6e20ca9aadd1bc010b80c533",
+          "e5551726166cf29bf24f6b32a34edecaa1ee17c2"
+        ]
       },
 
       # Rock and Roll
       "#{fixture_path}/artesia_ingest/rock_and_roll/teams_asset_file.xml" => {
         :series => ["34a589fdcb189dec43a5bca693bbc607d544ffa1"],
-        :program => ["e3616b02f7257101d85c4a0b8e5e7f119ca0556a"],
+        :program => ["35454c33856948f9b70312078470976ae798ced4"],
         :video => ["44f91989a54c207176af576bd14629000812ba87"],
         :image => [
           "5fc2c6174b99b8724803fd74e93034fe31cd186f",
           "42a5a946dc77f51ba077ee2ac54279b0546e0259"
         ],
-        :transcript => ["9de1adedf24bf71802851c0ba923018f8916acce"]
+        :transcript => ["9de1adedf24bf71802851c0ba923018f8916acce"],
+        :video_clip => [
+          "02371942bd8cd65a95722996d07671a74953684f",
+          "36929d2275b379263aee29c8760a98e3af8e7097",
+          "ff2d1faa58fa0b0f915be25acdd58c96f06d20a2",
+          "dc3d848fb546b3a48c9461c8d5140d2959bddaba",
+          "c2342c6677644167cd1a723714065d5b1d3e1d4e",
+          "c1d50950185a7c773ea154875892c9b32a998718"
+        ]
       }
     }
 
-    # Put all the samples together, each inside a new Datastream::UOIS
+    # Create new Datastream::UOIS for eaach <UOIS> xml specified by for the uoi_ids in 'fixtures' hash,
+    # and collect them together by their type, i.e. :series, :program, :video, etc.
     @uois = {}
-    fixtures.each do |file, uoi_ids|
+    fixtures.each do |file, type__x__uoi_ids|
       ng = Nokogiri::XML(File.read(file))
-      uoi_ids.each do |type, uoi_id|
+      type__x__uoi_ids.each do |type, uoi_ids|
         @uois[type] ||= []
-        uois = Datastream::UOIS.new
-        uois.set_xml ng.xpath("//UOIS[@UOIS='#{uoi_id}']").to_xml
-        @uois[type] << uois
+        uoi_ids.each do |uoi_id|
+          uois = Datastream::UOIS.new
+          uois.set_xml ng.xpath("//UOIS[@UOI_ID='#{uoi_id}']").to_xml
+          @uois[type] << uois
+        end
       end
     end
   end
 
-  pending '#is_series?' do
+  describe '#is_series?' do
     it 'returns true if <UOIS> xml describes a series' do
       @uois[:series].each do |uois|
         uois.is_series?.should == true
       end
     end
+
+    # TODO: Add :audio to types
+    types = [:program, :collection, :video, :video_clip, :image, :transcript]
+    types.each do |type|
+      it "returns false if <UOIS> xml describes a #{type.to_s.sub('_', ' ')}" do
+        @uois[type].each do |uois|
+          uois.is_series?.should == false
+        end
+      end      
+    end
   end
 
-  pending '#is_program?' do
+  describe '#is_program?' do
     it 'returns true if <UOIS> xml describes a program' do
       @uois[:program].each do |uois|
         uois.is_program?.should == true
       end
     end
+
+    # TODO: Add :audio to types
+    # NOTE: :video is excluded from 'types' array because in some cases a video record also acts as the program record.
+    types = [:series, :collection, :video_clip, :image, :transcript]
+    types.each do |type|
+      it "returns false if <UOIS> xml describes a #{type.to_s.sub('_', ' ')}" do
+        @uois[type].each do |uois|
+          # uois.is_program?.should == false
+          if uois.is_program?
+            raise "#{uois.uoi_id} shouldn't be a program!!!"
+          end
+        end
+      end      
+    end
   end
 
-  pending '#is_video?' do
+  describe '#is_video?' do
     it 'returns true if <UOIS> xml describes a video' do
       @uois[:video].each do |uois|
         uois.is_video?.should == true
@@ -66,7 +118,7 @@ describe Datastream::UOIS do
     end
   end
 
-  pending '#is_collection?' do
+  describe '#is_collection?' do
     it 'returns true if <UOIS> xml describes a collection' do
       @uois[:collection].each do |uois|
         uois.is_collection?.should == true
@@ -74,7 +126,15 @@ describe Datastream::UOIS do
     end
   end
 
-  pending '#is_image?' do
+  describe '#is_video_clip?' do
+    it 'returns true if <UOIS> xml describes a clip that is part of a larger video' do
+      @uois[:video_clip].each do |uois|
+        uois.is_video_clip?.should == true
+      end
+    end
+  end
+
+  describe '#is_image?' do
     it 'returns true if <UOIS> xml describes a image' do
       @uois[:image].each do |uois|
         uois.is_image?.should == true
@@ -83,7 +143,7 @@ describe Datastream::UOIS do
   end
 
 
-  pending '#is_transcript?' do
+  describe '#is_transcript?' do
     it 'returns true if <UOIS> xml describes a transcript' do
       @uois[:transcript].each do |uois|
         uois.is_transcript?.should == true
@@ -92,8 +152,8 @@ describe Datastream::UOIS do
   end
 
 
-  pending '#is_audio?' do
-    it 'returns true if <UOIS> xml describes a audio' do
+  describe '#is_audio?' do
+    pending 'returns true if <UOIS> xml describes a audio' do
       @uois[:audio].each do |uois|
         uois.is_audio?.should == true
       end
