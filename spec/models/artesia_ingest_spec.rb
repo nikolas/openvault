@@ -5,7 +5,7 @@ describe ArtesiaIngest do
   subject(:artesia_ingest) { ArtesiaIngest.new }
 
   # valid_xml is an export from Artesia.
-  let!(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/zoom/teams_asset_file.xml") }
+  let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
 
   # valid_xml contains 6 <UOIS> nodes, each of which generate an OpenvaultAsset
   let(:ov_asset_count) { 6 }

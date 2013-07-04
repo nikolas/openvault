@@ -21,7 +21,7 @@ describe Datastream::UOIS do
     fixtures = {
 
       # Zoom!
-      "#{fixture_path}/artesia_ingest/zoom/teams_asset_file.xml" => {
+      "#{fixture_path}/teams_asset_files/zoom.xml" => {
         :series => ["f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1"],
         :program => ["e3616b02f7257101d85c4a0b8e5e7f119ca0556a"],
         :collection => ["ac99f3707a11b13f224eba8494a6e52d1147b305"],
@@ -34,7 +34,7 @@ describe Datastream::UOIS do
       },
 
       # Rock and Roll
-      "#{fixture_path}/artesia_ingest/rock_and_roll/teams_asset_file.xml" => {
+      "#{fixture_path}/teams_asset_files/rock_and_roll.xml" => {
         :series => ["34a589fdcb189dec43a5bca693bbc607d544ffa1"],
         :program => ["35454c33856948f9b70312078470976ae798ced4"],
         :video => ["44f91989a54c207176af576bd14629000812ba87"],

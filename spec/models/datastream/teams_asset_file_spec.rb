@@ -5,7 +5,7 @@ describe Datastream::TeamsAssetFile do
   subject(:teams_asset_file) { Datastream::TeamsAssetFile.new }
 
   describe '#set_xml' do
-    let!(:valid_xml) { File.read("#{fixture_path}/artesia_ingest/zoom/teams_asset_file.xml") }
+    let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
 
     it "accepts valid xml and applies it to the OM terminology" do
       teams_asset_file.set_xml valid_xml
