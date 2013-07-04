@@ -7,10 +7,36 @@ body {
   }
 }
 
-
 #main-container {
   margin-top: 20px;
+  width: 100%;
 }
+
+#outer-container{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.span12{
+	width: 100%;
+}
+
+.row-content{
+   max-width: 980px;
+}
+
+.mosaic-row{
+	background-color: #11629e;
+	background-image: -webkit-linear-gradient(top, #003366 0%, #025a97 80%);
+}
+
+.header{
+	background-image: url('/assets/OV_logo_shadow_home.png');
+	background-repeat: no-repeat;
+	background-color: #FFFFFF;
+	padding-top: 29px;
+}
+
 
 #search-bar {
   color: #ffffff;
