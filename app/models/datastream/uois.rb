@@ -9,14 +9,14 @@ class Datastream::UOIS < ActiveFedora::OmDatastream
     add_uois_terminology t
   end
 
-  def set_xml(xml)
-    self.ng_xml = Nokogiri::XML(xml) do |config|
+  def set_xml(xml, encoding='UTF-8')
+    self.ng_xml = Nokogiri::XML(xml, nil, encoding) do |config|
       config.strict
     end
   end
 
   # Returns true if XML describes a series record.
-  # It is a series record if and only if:
+  # It is a series record iff:
   #   - It has exactly one value for wgbh_title.title_type and that value is "Series"
   #   - Does NOT exclusively describe an image
   def is_series?
@@ -31,41 +31,49 @@ class Datastream::UOIS < ActiveFedora::OmDatastream
   #     - collection record
   #     - image record (although a program record may have an image within it, it is not an image record in and of itself)
   #     - transcript record
-  #     - audio record
-  #    
+  # NOTE: Sometimes a video or audio record will also serve as the program record.
   def is_program?
-    self.wgbh_title.title_type.include?("Program") && !(self.is_series? || self.is_collection? || self.is_transcript? || self.is_image? || self.is_audio? || self.is_video_clip?)
+    self.wgbh_title.title_type.include?("Program") && !(self.is_series? || self.is_collection? || self.is_transcript? || self.is_image?)
   end
 
   # Returns true if XML describes a collection record.
-  # It is a collection record if and only if:
-  #  * "Collection" is one of the values in wgbh_title.title_type
+  # It is a collection record iff:
+  #  - wgbh_title.title_type contains "Collection"
   def is_collection?
     self.wgbh_title.title_type.include?("Collection")
   end
 
+  # Returns true if XML describes a video.
+  # It is a video record iff:
+  #   - The wgbh_type.media_type contains "Moving Image" and nothing else.
   def is_video?
-    self.wgbh_type.media_type == ["Moving Image"]
+    (self.wgbh_type.media_type == ["Moving Image"])
   end
 
+  # Returns tue if XML describes a transcript
+  # It is a transcript record iff:
+  #   - wgbh_type.item_type contains at least one value that begins with "Transcript"
   def is_transcript?
-    self.wgbh_type.item_type.grep(/^Transcript/).count > 0
+    (self.wgbh_type.item_type.grep(/^Transcript/).count > 0)
   end
 
+  # Returns true if XML describes an image.
+  # It is an image record iff:
+  #   - wgbh_type.item_type contains "Static Image" and nothing else.
+  #   - OR the master_obj_mime_type (from root node) contains a value that begins with "image".
   def is_image?
-    self.wgbh_type.item_type == ['Static Image'] || self.master_obj_mime_type == ['image/jpeg']
+    (self.wgbh_type.item_type == ['Static Image']) || (self.master_obj_mime_type.grep(/^image/).count > 0)
   end
 
+  # Returns true if XML describes audio.
+  # It is an audio record iff:
+  #   - wgbh_type.media_type contains "Audio" and nothing else.
   def is_audio?
-    false
-  end
-
-  def is_video_clip?
-    # TODO: Are there other types that we need to check for here?
-    self.wgbh_title.title_type.include?("Clip") || (self.wgbh_title.title_type.grep(/Element2/).count > 0)
+    (self.wgbh_type.media_type == ["Audio"])
   end
 
   class << self
+    # Returns a default xml doc for the datastream.
     def xml_template
       Nokogiri::XML.parse("<UOIS/>")
     end  
