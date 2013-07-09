@@ -7,7 +7,7 @@
 		<div class="carousel-entry document">
 			<%= image_tag collection.image.url(:carousel), :class => 'collection_image' %>
 		  <h3 class="title"><%= link_to collection.name, collection %></h3>
-		  <p class="summary"><%= truncate(collection.summary, :length => 200) %></p>
+		  <p class="summary"><%= truncate(collection.summary, :length => 250) %></p>
 		</div>
 	<% end %>
 </div>

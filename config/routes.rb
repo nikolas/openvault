@@ -1,6 +1,8 @@
 Openvault::Application.routes.draw do
   
   resources :collections, :only => [:index, :show]
+  
+  match 'blog' => 'blog#index', :as => 'blog'
 
   root :to => "catalog#home"
 

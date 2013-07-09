@@ -61,9 +61,17 @@ body {
 		  line-height: 30px;
 		  padding-right: 9.25px;
 	  }
+		h3 {
+			padding: 0;
+			margin: 0;
+		}
+		a, h3 {
+			line-height: inherit;
+			font-size: inherit;
+		}
 	}
 
-	#collections {
+	#collections, #blog {
 	  @extend .panel;
 	}
 
@@ -148,6 +156,52 @@ body {
 	//    }
 	  }
 	}
+  #blog {
+		position: relative;
+		margin: 0 -18.5px 1.5em 18.5px;
+		display: inline;
+		float: left;
+		margin-right: 0;
+		width: 565.5px;
+		background-color: #fff;
+
+    .post {
+			display: inline;
+			float: left;
+			margin-right: 8px;
+			width: 528.5px;
+			padding-left: 18.5px;
+			padding-right: 18.5px;
+			margin-top: 0.648em;
+			margin-bottom: 0.648em;
+			border-bottom: 1px solid #ccc;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+
+    .byline {
+			display: inline;
+			float: left;
+			margin-right: 8px;
+			width: 103px;
+       .thumbnail img {
+         max-width: 100px;
+       }
+    }
+
+    .body {
+			display: inline;
+			float: left;
+			margin-right: 8px;
+			width: 399px;
+
+      p {
+        
+      }
+    }
+  }
 }
 
 
