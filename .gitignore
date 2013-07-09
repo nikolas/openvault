@@ -16,3 +16,6 @@
 
 # Ignore jetty
 /jetty
+
+#ignore uploads
+/public/uploads
