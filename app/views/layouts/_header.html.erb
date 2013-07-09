@@ -1,0 +1,24 @@
+<!-- Openvault Logo and login -->
+<div class="row">
+  <div class="span4">
+	<a href="<%= root_url %>">
+    	<div id="ov-logo-home">
+			<%= application_name %>
+		</div>
+	</a>
+  </div>
+  <div class="span2 pull-right">
+    <h5>LOGIN LINKS</h5>
+  </div>
+</div>
+<!-- Logo and login -->
+<!-- MLA Logo and search bar -->
+<div class="row">
+  <div class="span3">
+    <div id="mla-logo">Media Library and Archives</div>
+  </div>
+  <div class="span9">
+    <%= render :partial => 'catalog/partials/search_form' %>
+  </div>
+</div>
+<!-- /MLA Logo and search bar -->

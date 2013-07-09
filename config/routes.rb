@@ -1,13 +1,18 @@
 Openvault::Application.routes.draw do
+  
+  resources :collections, :only => [:index, :show]
+
   root :to => "catalog#home"
 
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
 
   devise_for :users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   mount Sufia::Engine => '/'
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

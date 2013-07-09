@@ -35,6 +35,121 @@ body {
   height: 36px;
 }
 
+#bd {
+	line-height: 1.5;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+	color: #333;
+	font-size: 75%;
+	font-size: 11px;
+	.panel {
+	  h2 {
+		  background-color: #11629e;
+		  color: white;
+		  text-transform: uppercase;
+		  width: auto;
+		  padding-top: 0.648em;
+		  padding-bottom: 0.648em;
+		  padding-left: 18.5px;
+		  margin-bottom: 0.648em;
+		  font-size: 11px;
+		  line-height: 1.5em;
+			margin-top:0px;
+	  }
+	  .see_all {
+		  float: right;
+		  color: white;
+		  line-height: 30px;
+		  padding-right: 9.25px;
+	  }
+	}
+
+	#collections {
+	  @extend .panel;
+	}
+
+	#collections {
+		position: relative;
+		display: inline;
+		float: left;
+		margin-right: 8px;
+		width: 399px;
+		background-color: #fff;
+		min-height: 383px;
+
+	  img {
+	    width: 100%;
+			margin-bottom: 0.648em;
+	    //@include margin-trailer(0.5);
+	  }
+
+	  .document {
+	     //@include column(10.5);
+	//     @include prepend(0.25);
+	//     @include append(0.25);
+	//     @include padding-trailer(0.5);
+			margin-right: 8px;
+			width: 380.5px;
+			padding-left: 9.25px;
+			padding-right: 9.25px;
+			padding-bottom: 0.648em;
+	    display: none;
+			h3 {
+				font-size: inherit;
+				margin: 0px;
+				line-height: inherit;
+				a {
+					font-size: inherit;
+				}
+			}
+	  }
+
+	  .document:first-of-type {
+	    display: block;
+	  }
+
+	  .pagination {
+	    float: right;
+	    text-align: inherit;
+	    margin-top: 7px;
+			padding-right: 18.5px;
+
+	    .page {
+	      text-indent: -9999px;
+	      display: inline-block;
+	      width: 11px;
+	      line-height: 12px;
+	      height: 9px;
+	      margin-right: 2px;
+	      background-color: #5f8eb1;
+
+	      &:hover, &.active {
+	        background-color: #33ccff;
+	      }
+	    }
+
+	    .play, .pause {
+	      display: inline-block;
+	      margin-right: 7px;  
+	      line-height: 12px;
+	    }
+
+	    //.play {
+	//        @include replace-text-with-dimensions('collection_play.png');
+	//        &:hover {
+	//          @include replace-text-with-dimensions('collection_play_over.png');
+	//        }
+	//    }
+	//
+	//    .pause {
+	//        @include replace-text-with-dimensions('collection_pause.png');
+	//        &:hover {
+	//          @include replace-text-with-dimensions('collection_pause_over.png');
+	//        }
+	//    }
+	  }
+	}
+}
+
 
 #footer {
   // all text in the footer should be white

@@ -64,5 +64,9 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
 
+gem 'carrierwave'
+gem 'activeadmin'
+gem "mini_magick"
+
 # jcoyne made a gem of useful stuff from hydradam
 gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'

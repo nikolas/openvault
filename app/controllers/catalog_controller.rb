@@ -174,7 +174,8 @@ class CatalogController < ApplicationController
     # if current_user or stale?(:last_modified => Time.new.beginning_of_week, :etag => pids)
     #   render :layout => 'home'
     # end
-    render :layout => 'home'
+    @collections = Collection.where(:display_in_carousel => true).order('order_number ASC')
+    
   end
 
 

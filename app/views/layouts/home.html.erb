@@ -38,16 +38,6 @@
         <!-- Main content column -->
         <div class="span12 center">
 
-          <!-- Openvault Logo and login -->
-          <div class="row">
-            <div class="span4">
-              <div id="ov-logo-home"><%= application_name %></div>
-            </div>
-            <div class="span2 pull-right">
-              <h5>LOGIN LINKS</h5>
-            </div>
-          </div>
-          <!-- Logo and login -->
 
           <%= yield %>
 
@@ -86,7 +76,7 @@
           <!-- Footer -->
           <div class="row">
             <div class="span12">
-              <%= render :partial => '/footer' %>
+              <%= render :partial => 'layouts/footer' %>
             </div>
           </div>
           <!-- /Footer -->

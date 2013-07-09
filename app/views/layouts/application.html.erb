@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -37,7 +37,11 @@
         <!-- Main content column -->
         <div class="span12 center">
 
-          <!-- /MLA Logo and search bar -->
+          <div class="row">
+            <div class="span12">
+              <%= render :partial => 'layouts/header' %>
+            </div>
+          </div>
 
 
           <!-- Top bar -->
@@ -66,16 +70,15 @@
           whereas I *think* with Blacklight, they are the same.
           It might be easier to go with the Blacklight grain rather than against it, but we should consider our options.
           -->
-          <!--
+		  
           <div class="row">
-            <%#= yield %>
+            <%= yield %>
           </div>
-          -->
           
           <!-- Footer -->
           <div class="row">
             <div class="span12">
-              <%= render :partial => '/footer' %>
+              <%= render :partial => 'layouts/footer' %>
             </div>
           </div>
           <!-- /Footer -->
