@@ -93,6 +93,13 @@ ActiveRecord::Schema.define(:version => 20130709163730) do
   add_index "local_authority_entries", ["local_authority_id", "label"], :name => "entries_by_term_and_label"
   add_index "local_authority_entries", ["local_authority_id", "uri"], :name => "entries_by_term_and_uri"
 
+  create_table "mosaic_items", :force => true do |t|
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "link_title"
+  end
+
   create_table "searches", :force => true do |t|
     t.text     "query_params"
     t.integer  "user_id"

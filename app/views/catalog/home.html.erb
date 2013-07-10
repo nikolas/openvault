@@ -1,15 +1,13 @@
 <!-- Mosaic -->
 <div class="row">
   <div class="span12">
-    <%= render :partial=>'catalog/partials/mosaic' %>
+    <%= render :partial=>'catalog/partials/mosaic', :mosaic_items => @mosaic_items %>
   </div>
 </div>
 <!-- /Mosaic -->
 
-
 <!-- Carousel and Blog roll -->
 <div class="row" id="bd">
-
   <!-- Carousel -->
   <div class="span5">
     <%= render :partial=>"catalog/partials/carousel" %>

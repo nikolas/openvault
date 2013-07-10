@@ -1,11 +1,9 @@
-<style>
-/* This is just placeholder style. Delete it after mosaic is developed out. */
-#mosaic {
-  border: solid #aaaaaa 1px;
-  background: #888888;
-}
-</style>
-
+<div class="row-content">
 <div id="mosaic">
-  <h1>Mosaic</h1>
+  <% @mosaic_items.each do |mosaic_item| %>
+    <a href="/<%= mosaic_item.slug %>" title="<%= mosaic_item.link_title%>">
+      <div class="mosaic-item mosaic-<%= mosaic_item.slug %>"></div>
+    </a>
+  <% end %>
+</div>
 </div>
