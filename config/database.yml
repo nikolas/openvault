@@ -1,28 +1,11 @@
 development:
   adapter: mysql2
-  encoding: utf8
-  database: open_vault
-  pool: 5
-  username: root
-  password: 
-  socket: /tmp/mysql.sock
+  database: ov_dev
+  username: ov_dev
+  password: ov_dev
 
-# mysql -uroot
-# CREATE USER 'open_vault'@'localhost' IDENTIFIED BY '0p3n_v@u1t';
-# CREATE DATABASE open_vault;
-# GRANT ALL PRIVILEGES ON *.* TO 'open_vault'@'localhost';
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   adapter: mysql2
-  database: db/test.mysql2
-  pool: 5
-  timeout: 5000
-
-production:
-  adapter: mysql2
-  database: db/production.mysql2
-  pool: 5
-  timeout: 5000
+  database: ov_test
+  username: ov_test
+  password: ov_test
