@@ -4,7 +4,7 @@
 		<h3>Open Vault Registration</h3>
 		<p>An Open Vault account is required to view select media and to add tags and annotations. Sign-up is quick and free.</p>
 		<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
-		  <%#= devise_error_messages! %>
+		  <%= devise_error_messages! %>
 
 			<%= f.input :email, :autofocus => true, :placeholder => 'Email', required: true %>
 
@@ -28,7 +28,7 @@
 			<div class="control-group no-margin">
 		    <div class="controls">
 					<label for="user_terms_and_conditions" class="checkbox">
-						<input id="user_terms_and_conditions" name="user[terms_and_conditions]" type="checkbox" value=""> I accept the Open Vault <a href="/blog/terms-and-conditions">Terms &amp; Conditions</a>
+						<input id="user_terms_and_conditions" name="user[terms_and_conditions]" type="checkbox" > I accept the Open Vault <a href="/blog/terms-and-conditions">Terms &amp; Conditions</a>
 			    </label>
 				</div>
 			</div>

@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :postal_code, :country, :mla_updates, :terms_and_conditions
 
   validates :terms_and_conditions, acceptance: {allow_nil: false, accept: true, on: :create}
+  #validates_presence_of :terms_and_conditions
+  #validate :check_terms
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"
   validates_presence_of :postal_code, :message => "can't be blank"
@@ -26,4 +28,5 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+  
 end
