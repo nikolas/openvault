@@ -7,8 +7,14 @@
 		</div>
 	</a>
   </div>
-  <div class="span2 pull-right">
-    <h5>LOGIN LINKS</h5>
+  <div class="span2 pull-right action_links">
+    <span class="sign_in">
+			<%= link_to "Log In", new_user_session_path %>
+		</span>
+		<span>&nbsp;|&nbsp;</span>
+    <span class="sign_up">
+			<%= link_to "Register", new_user_registration_path %>
+		</span>
   </div>
 </div>
 <!-- Logo and login -->
