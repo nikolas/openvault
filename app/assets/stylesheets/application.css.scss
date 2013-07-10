@@ -11,5 +11,6 @@
  * Require a single the file to @import all other scss files.
  * NOTE: Multiple SCSS files required by this manifest cannot share methods or variables.
  *  So we require a single scss file that then @imports several more into the same namespace.
- *= require scss_imports
+ *= require_self
  */
+@import 'scss_imports';
