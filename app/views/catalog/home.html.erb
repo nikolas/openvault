@@ -1,5 +1,5 @@
 <!-- Mosaic -->
-<div class="row">
+<div class="row" id="mosaic-container">
   <div class="span12">
     <%= render :partial=>'catalog/partials/mosaic', :mosaic_items => @mosaic_items %>
   </div>
@@ -9,12 +9,12 @@
 <!-- Carousel and Blog roll -->
 <div class="row" id="bd">
   <!-- Carousel -->
-  <div class="span5">
+  <div class="span6">
     <%= render :partial=>"catalog/partials/carousel" %>
   </div>
 
   <!-- Blog roll -->
-  <div class="span7">
+  <div class="span6">
     <%= render :partial=>"catalog/partials/blog_roll" %>
   </div>
 </div>

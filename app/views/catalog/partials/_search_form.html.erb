@@ -14,13 +14,36 @@
        <div class="input-append pull-left">
         <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
          <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q", :id => "q"%>
-        <button type="submit" class="btn btn-primary search-btn" id="search">
-          <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
-          <i class="icon-search icon-white"></i>
+        <button type="submit" class="search-btn" id="search">
+          <!-- <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span> -->
+          <i class="icon-search"></i>
         </button>
        </div>
   <% end %>
-
+	<div id="browse">
+		<label>Browse: </label>
+		<select id="category_browse">
+			<option>Categories</option>
+			<optgroup label="Categories">
+				<option value="1">Cat 1</option>
+				<option value="2">Cat 2</option>
+				<option value="3">Cat 3</option>
+			</optgroup>
+		</select>
+		<select id="collection_browse">
+			<option value="">Collections and Series</option>
+			<optgroup label="Collections">
+				<option value="1">Collection 1</option>
+				<option value="2">Collection 2</option>
+				<option value="3">Collection 3</option>
+			</optgroup>
+			<optgroup label="Series">
+				<option value="1">Series 1</option>
+				<option value="2">Series 2</option>
+				<option value="3">Series 3</option>
+			</optgroup>
+		</select>
+	</div>
   <!--
   <div id="search" class="search">
     <%= form_tag catalog_index_path, :method => :get do %>

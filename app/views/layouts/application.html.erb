@@ -32,17 +32,12 @@
     
     <!-- Main container -->
     <div id="main-container" class="container">
-      <!-- Main content row -->
-      <div class="row">
         <!-- Main content column -->
-        <div class="span12 center">
-
-          <div class="row">
-            <div class="span12">
-              <%= render :partial => 'layouts/header' %>
-            </div>
+        <div id="header" class="row">
+          <div class="span12">
+            <%= render :partial => 'layouts/header' %>
           </div>
-
+				</div>
 
           <!-- Top bar -->
           <!-- This comes from Blacklight... what does it do?
@@ -70,23 +65,22 @@
           whereas I *think* with Blacklight, they are the same.
           It might be easier to go with the Blacklight grain rather than against it, but we should consider our options.
           -->
-		  
-          <div class="row">
+				
+				<!-- Body Content -->
+			  <div class="row">
+          <div class="span12">
             <%= yield %>
           </div>
-          
-          <!-- Footer -->
-          <div class="row">
-            <div class="span12">
-              <%= render :partial => 'layouts/footer' %>
-            </div>
-          </div>
-          <!-- /Footer -->
-
         </div>
-        <!-- /Main content column -->
-      </div>
-      <!-- /Main content row -->
+				<!-- /Body Content -->
+				
+        <!-- Footer -->
+        <div class="row-fluid footer_container">
+          <div>
+            <%= render :partial => 'layouts/footer' %>
+          </div>
+        </div>
+        <!-- /Footer -->
     </div>
     <!-- /Main container -->
   </body>
