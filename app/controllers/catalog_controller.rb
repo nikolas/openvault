@@ -175,7 +175,7 @@ class CatalogController < ApplicationController
     #   render :layout => 'home'
     # end
     @collections = Collection.where(:display_in_carousel => true).order('order_number ASC')
-    @mosaic_items = MosaicItems.find(:all, :limit => Rails.application.config.mosaic_size)
+    @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
     
   end
 
