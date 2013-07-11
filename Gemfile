@@ -30,6 +30,7 @@ group :test do
 
   # acceptance testing stuff
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'email_spec'
 
@@ -66,6 +67,8 @@ gem "bootstrap-sass"
 gem 'carrierwave'
 gem 'activeadmin'
 gem "mini_magick"
+gem 'simple_form'
+gem 'country_select'
 
 # jcoyne made a gem of useful stuff from hydradam
 gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'

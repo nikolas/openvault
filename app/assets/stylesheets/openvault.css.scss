@@ -56,6 +56,11 @@ body {
 	padding-top: 29px;
 }
 
+.action_links {
+	a {
+		color: #fff;
+	}
+}
 
 #search-bar {
   color: #ffffff;
@@ -287,5 +292,34 @@ body {
 			margin-top: 10px;
 			text-align: center;
 		}
+	}
+}
+#signup_form_container, #signin_form_container {
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	-o-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	min-height: 450px;
+	background-color: #FFF;
+	padding-bottom: 2.591em;
+	padding-left: 37px;
+	padding-right: 18.5px;
+	border: 1px solid #CCC;
+	.field_with_errors {
+		input {
+			border: 2px solid #c00;
+		}
+		label {
+			color: #c00;
+			font-weight: bold;
+		}
+	}
+	#error_explanation {
+		h2 {
+			font-size: 20px;
+		}
+	}
+	.no-margin {
+		margin: 0;
 	}
 }

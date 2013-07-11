@@ -17,10 +17,9 @@
 # Ignore jetty
 /jetty
 
-<<<<<<< HEAD
 #ignore uploads
 /public/uploads
-=======
+
 # Ignore images
 app/assets/images/mosaic
->>>>>>> origin/mosaic
+
