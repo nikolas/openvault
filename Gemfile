@@ -30,6 +30,7 @@ group :test do
 
   # acceptance testing stuff
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'email_spec'
 

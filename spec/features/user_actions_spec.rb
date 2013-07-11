@@ -1,6 +1,7 @@
 require 'spec_helper'
 include Warden::Test::Helpers
 Warden.test_mode!
+
 feature 'Visitor signs up' do
   scenario 'with valid info in all fields' do
     submit_registration_form "valid_#{Random.new.rand(10..100)}@example.com", '123456789', 'John', 'Smith', '12345', 'United Kingdom', '1', '1'
@@ -81,8 +82,10 @@ feature 'Visitor signs up' do
     fill_in 'user_first_name', with: first_name unless first_name.nil?
     fill_in 'user_last_name', with: last_name unless last_name.nil?
     fill_in 'user_postal_code', with: postal_code unless postal_code.nil?
-    check 'user_terms_and_conditions' unless terms_and_conditions.nil?
-    find('#user_terms_and_conditions').set(true) unless terms_and_conditions.nil?
+    # find(:css, "#user_terms_and_conditions").set(true)
+    # check 'user_terms_and_conditions' unless terms_and_conditions.nil?
+    # find('#user_terms_and_conditions').set(true) unless terms_and_conditions.nil?
+    check('I accept the Open Vault Terms & Conditions') unless terms_and_conditions.nil?
     select country, from: 'user_country' unless country.nil?
     click_button 'Register'
   end
