@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -31,17 +31,14 @@
     -->
     
     <!-- Main container -->
-
     <div id="main-container" class="container">
-      <!-- Main content row -->
-      <div class="row">
         <!-- Main content column -->
-        <div class="span12">
+        <div id="header" class="row">
+          <div class="span12">
+            <%= render :partial => 'layouts/header' %>
+          </div>
+				</div>
 
-	  <div class="row mosaic-row">
-          <%= yield %>
-	  </div>
-	  
           <!-- Top bar -->
           <!-- This comes from Blacklight... what does it do?
           <div id="search-found" class="row hidden-phone">
@@ -68,26 +65,22 @@
           whereas I *think* with Blacklight, they are the same.
           It might be easier to go with the Blacklight grain rather than against it, but we should consider our options.
           -->
-          <!--
-          <div class="row">
-            <%#= yield %>
+				
+				<!-- Body Content -->
+			  <div class="row">
+          <div class="span12">
+            <%= yield %>
           </div>
-          -->
-          
-          <!-- Footer -->
-          <div class="row">
-	    <div class="row-content">
-            <div class="span12">
-              <%= render :partial => 'layouts/footer' %>
-            </div>
-</div>
-          </div>
-          <!-- /Footer -->
-
         </div>
-        <!-- /Main content column -->
-      </div>
-      <!-- /Main content row -->
+				<!-- /Body Content -->
+				
+        <!-- Footer -->
+        <div class="row-fluid footer_container">
+          <div>
+            <%= render :partial => 'layouts/footer' %>
+          </div>
+        </div>
+        <!-- /Footer -->
     </div>
     <!-- /Main container -->
   </body>
