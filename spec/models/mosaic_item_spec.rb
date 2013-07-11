@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MosaicItems do
+describe MosaicItem do
   
   it "stores a list of items to be used for the  Mosaic" do
     MosaicItem.create!( :slug => 'foo')
