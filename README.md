@@ -1,8 +1,5 @@
-openvault
-=========
+# Open Vault
 
-rebasing the old OpenVault site onto a shiny new hydra head
+### Rebasing the old Open Vault site onto a shiny new hydra head
 
-Starting Jetty:
-
-rake jetty:start
+[![Build Status](https://travis-ci.org/afred/openvault.png)](https://travis-ci.org/afred/openvault)
