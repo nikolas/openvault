@@ -1,2 +1,7 @@
-<h1>Collections#show</h1>
-<p>Find me in app/views/collections/show.html.erb</p>
+<%# @page_title = "#{document_show_html_title} - #{application_name}" %>
+<% extra_head_content << render_link_rel_alternates %>
+<% sidebar_items << render(:partial => 'from_this_collection') %>
+
+<h2><%= @collection.name %></h2>
+<%= image_tag @collection.image.url %>
+<p class="summary"><%= @collection.summary %></p>
