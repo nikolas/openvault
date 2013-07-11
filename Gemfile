@@ -22,7 +22,7 @@ end
 
 group :test do
   # functional testing stuff
-
+  gem 'rspec-rails'
 
   # test data stuff
   gem 'factory_girl_rails'
@@ -39,8 +39,10 @@ group :test do
   gem 'rb-fsevent', '~> 0.9'
 end
 
-gem 'debugger', :group => [:development, :test]
-gem 'rspec-rails', :group => [:development, :test]                                                                                                                                                     
+group :development do
+  gem 'debugger'  
+end
+
 gem 'jquery-rails'
 
 gem 'blacklight'
