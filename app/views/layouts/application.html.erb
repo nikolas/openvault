@@ -69,7 +69,8 @@
 				<!-- Body Content -->
 			  <div class="row">
 					<div class="span3" id="sidebar">
-						&nbsp;
+						<!-- Sidebar logic to go in here -->
+						<%= sidebar_items.join('').html_safe %>
 					</div>
           <div class="span9" id="content">
             <%= yield %>

@@ -1,18 +1,19 @@
 <p>The WGBH Media Library and Archives records are largely organized around the broadcast series and programs for which materials were created. Collections contain records organized around a particular topic, material type, or grant-funded project. Series aired on WGBH and/or PBS.</p>
+<h3>Collections</h3>
 <% @collections.each do |collection| %>
 	<div class="document blacklight-collection">
+		<div class="thumbnail">
+			<%= link_to image_tag(collection.image.url(:med)), collection %>
+		</div>
 		<div class="documentHeader">
 			<h3 class="index_title">
 				<%= link_to collection.name, collection %>
 			</h3>
 		</div>
-		<div class="thumbnail">
-			<%= link_to image_tag(collection.image.url(:med)), collection %>
-		</div>
 		<div class="defList_container">
 			<div class="blacklight-dc_description_t">
 			<div class="label" style="display:none;">Summary</div>
-			<div class="value">A series of debates with a moderator facilitating the discussion of national and international issues - using advocates who would introduce witnesses to support their point of view. Debates recorded at Boston's Faneuil Hall.</div>
+			<div class="value"><%= truncate(collection.summary, :length => 150) %></div>
 			</div>
 		</div>
 		<abbr class="unapi-id" title="advocates-advocates"></abbr>
