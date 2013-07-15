@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Collections" do
           ul do
             Collection.limit(5).map do |post|
-              li link_to(post.name, admin_post_path(post))
+              li link_to(post.name, admin_collection_path(post))
             end
           end
         end

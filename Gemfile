@@ -71,6 +71,8 @@ gem 'activeadmin'
 gem "mini_magick"
 gem 'simple_form'
 gem 'country_select'
+gem 'acts_as_list'
+gem 'activeadmin-sortable'
 
 # jcoyne made a gem of useful stuff from hydradam
 gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
