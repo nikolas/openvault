@@ -5,7 +5,7 @@
     <div class="post row-fluid">
       <div class="byline span3">
         <div class="thumbnail">
-          <%= image_tag post.thumbnail, :alt => '' if post.thumbnail %>
+          <%= image_tag post.attachments[0]["images"]["thumbnail"]["url"], :alt => '' if post.attachments[0]["images"]["thumbnail"]["url"] %>
         </div>
         <div class="author">By <%= post.author_name %></div>
         <div class="date"><%= l post.date.to_date, :format => :long %></div>
