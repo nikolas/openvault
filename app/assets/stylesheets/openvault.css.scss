@@ -253,6 +253,7 @@ p {
 		margin-right: 0;
 		width: 100%;
 		background-color: #fff;
+		margin-bottom: 20px;
     .post {
 			display: inline;
 			float: left;
@@ -264,6 +265,9 @@ p {
       &:last-of-type {
         border-bottom: none;
       }
+			.thumbnail {
+				border: none;
+			}
     }
 
     .byline {
