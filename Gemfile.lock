@@ -461,6 +461,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   coffee-rails (~> 3.2.1)
+  compass
   compass-rails
   country_select
   database_cleaner

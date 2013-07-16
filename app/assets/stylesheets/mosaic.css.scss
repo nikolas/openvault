@@ -3,8 +3,8 @@
 
 // Make sprites for mosaic.
 //@import "compass";
-//@import "mosaic/*.png";
-//@include all-mosaic-sprites;
+@import "mosaic/*.png";
+@include all-mosaic-sprites;
 
 // A singel mosaic item 
 .mosaic-item {
