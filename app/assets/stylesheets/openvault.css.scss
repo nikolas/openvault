@@ -334,6 +334,19 @@ p {
 			font-weight: bold;
 		}
 	}
+  .change_password_edit_link {
+    margin-left: 180px;
+    margin-bottom: 15px;
+    display: inherit;
+  }
+  #password_change_container {
+    display: none;
+  }
+  .form-horizontal {
+    .hidden {
+        margin-bottom: 0px;
+    }
+  }
 	#error_explanation {
 		h2 {
 			font-size: 20px;
