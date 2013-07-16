@@ -22,4 +22,4 @@
 
 # Ignore images
 app/assets/images/mosaic
-
+app/public/stylesheets/*
