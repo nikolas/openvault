@@ -106,7 +106,7 @@ describe Datastream::UOIS do
         uois_datastream = Datastream::UOIS.new
 
         # Use Nokogiri xpath to get the <UOIS> xml, and pass it to the Datastream::UOIS object.
-        uois_datastream.set_xml ng.xpath("//UOIS[@UOI_ID='#{uoi_id}']").to_xml, 'iso-8859-1'
+        uois_datastream.set_xml ng.xpath("//UOIS[@UOI_ID='#{uoi_id}']").to_xml
 
         # Append new Datastream::UOIS object to array of objects, keyed by type.
         uois_datastreams[type] ||= []
@@ -238,19 +238,4 @@ describe Datastream::UOIS do
       end # end fixture[:uois].each
     end # end context "for teams_asset_file=..." 
   end # end fixtures.each
-
-
-  describe '#set_xml' do
-    it 'accepts xml with iso-8859-1 encoding' do
-      uois = Datastream::UOIS.new
-      uois.set_xml '<foo>asdfads</foo>', 'iso-8859-1'
-      uois.to_xml.encoding.to_s.should == 'ISO-8859-1'
-    end
-
-    it 'defaults to utf-8 encoding' do
-      uois = Datastream::UOIS.new
-      uois.set_xml '<foo>®</foo>'
-      uois.to_xml.encoding.to_s.should == 'UTF-8'
-    end
-  end
 end

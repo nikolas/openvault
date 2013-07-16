@@ -7,7 +7,7 @@ describe Datastream::TeamsAssetFile do
   describe '#set_xml' do
     let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
 
-    it "accepts valid xml and applies it to the OM terminology" do
+    it "applies valid xml to the OM terminology" do
       teams_asset_file.set_xml valid_xml
       teams_asset_file.assets.count.should == 1
       teams_asset_file.assets.asset.count.should == 6
@@ -16,9 +16,4 @@ describe Datastream::TeamsAssetFile do
     end
 
   end
-
-  describe '#entity_declarations' do
-
-  end
-
 end

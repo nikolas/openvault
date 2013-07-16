@@ -1,18 +1,14 @@
+require 'artesia/datastreams'
 require 'artesia/datastreams/uois'
 
 class Datastream::UOIS < ActiveFedora::OmDatastream
 
+  include Openvault::Datastreams
   include Artesia::Datastreams::UOIS
 
   set_terminology do |t|
     t.root(:path => "UOIS")
     add_uois_terminology t
-  end
-
-  def set_xml(xml, encoding='UTF-8')
-    self.ng_xml = Nokogiri::XML(xml, nil, encoding) do |config|
-      config.strict
-    end
   end
 
   # Returns true if XML describes a series record.
@@ -76,7 +72,7 @@ class Datastream::UOIS < ActiveFedora::OmDatastream
     # Returns a default xml doc for the datastream.
     def xml_template
       Nokogiri::XML.parse("<UOIS/>")
-    end  
+    end
   end
   
 end

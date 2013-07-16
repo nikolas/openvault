@@ -1,7 +1,9 @@
+require 'artesia/datastreams'
 require 'artesia/datastreams/uois'
 
 class Datastream::TeamsAssetFile < ActiveFedora::OmDatastream
 
+  include Openvault::Datastreams
   include Artesia::Datastreams::UOIS
 
   # Set the OM terminology.
@@ -19,12 +21,6 @@ class Datastream::TeamsAssetFile < ActiveFedora::OmDatastream
         t.content(:path => "CONTENT")
       }
     }
-  end
-
-  def set_xml(xml)
-    self.ng_xml = Nokogiri::XML(xml) do |config|
-      config.strict
-    end
   end
 
   class << self
