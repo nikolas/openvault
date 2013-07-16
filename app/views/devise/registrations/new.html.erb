@@ -13,6 +13,8 @@
 		<%= f.input :first_name, :placeholder => 'First name' %>
 		
 		<%= f.input :last_name, :placeholder => 'Last name' %>
+    
+    <%= f.input :role, as: :hidden, :input_html => { :value => 'member'} %>
 		
 		<%= f.input :postal_code, :placeholder => 'Postal code' %>
 

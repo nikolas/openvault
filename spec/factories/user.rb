@@ -17,7 +17,8 @@ FactoryGirl.define do
     # see https://github.com/stympy/faker
     postal_code { Faker::Address::postcode }
     country 'Albania'
-
+    role 'member'
+    
     # the fake user agrees to terms and conditions, and wants to hear all about WGBH's Media Library and Archives
     terms_and_conditions true
     mla_updates true

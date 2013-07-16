@@ -23,6 +23,7 @@ describe User do
       unsaved_user_attributes.should be_a Hash
       User.where(:email => unsaved_user_attributes[:email]).count.should == 0
     end
+
   end
 
 end
