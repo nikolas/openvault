@@ -1,0 +1,21 @@
+<div id="blog">
+  <%= link_to 'See all >', blog_path, :class => 'see_all' %>
+  <h2>From the blog</h2>
+  <% Wordpress.get_recent_posts(:count => 3).each do |post| %>
+    <div class="post row-fluid">
+      <div class="byline span3">
+        <div class="thumbnail">
+          <%= image_tag post.attachments[0]["images"]["thumbnail"]["url"], :alt => '' if post.attachments[0]["images"]["thumbnail"]["url"] %>
+        </div>
+    	</div>
+    	<div class="body span8">
+    		<h3><%= link_to post.title.html_safe, post.url %></h3>
+    		<div><%= truncate(post.excerpt, :length => 120).html_safe %></div>
+				<br />
+        <div class="author">By <%= post.author_name %></div>
+        <div class="date"><%= l post.date.to_date, :format => :long %></div>
+  		</div>
+  	</div>
+	<% end rescue nil %>
+</div>
+<a href="http://www.wgbh.org/donatetowgbh?utm_source=openvault&amp;utm_medium=web&amp;utm_campaign=button"><img alt="Support WGBH" src="/assets/support_btn.jpg" style="float: right;"></a>

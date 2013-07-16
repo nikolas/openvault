@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require "sass-rails"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -14,6 +15,9 @@ module Openvault
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.sass.load_paths ||= []
+    config.sass.load_paths << "#{Rails.root}/app/assets/stylesheets"
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
 
     # A little tweak to load order to ensure we get the right version of GenericFile.
     config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
@@ -66,5 +70,7 @@ module Openvault
 
     config.application_name = "OpenVault"
     config.organization_name = "WGBH Media Library and Archives"
+
+    config.mosaic_size = 93 
   end
 end

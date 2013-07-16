@@ -5,20 +5,19 @@ gem 'rails', '~>3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'compass'
+  gem 'compass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails'
 end
 
 group :test do
@@ -31,6 +30,7 @@ group :test do
 
   # acceptance testing stuff
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'email_spec'
 
@@ -39,7 +39,9 @@ group :test do
   gem 'rb-fsevent', '~> 0.9'
 end
 
-gem 'debugger', :group => [:development, :test]
+group :development do
+  gem 'debugger'  
+end
 
 gem 'jquery-rails'
 
@@ -63,6 +65,14 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
+
+gem 'carrierwave'
+gem 'activeadmin'
+gem "mini_magick"
+gem 'simple_form'
+gem 'country_select'
+gem 'acts_as_list'
+gem 'activeadmin-sortable'
 
 # jcoyne made a gem of useful stuff from hydradam
 gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'

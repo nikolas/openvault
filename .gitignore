@@ -9,10 +9,17 @@
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
-
+.DS_store
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
 
 # Ignore jetty
 /jetty
+
+#ignore uploads
+/public/uploads
+
+# Ignore images
+app/assets/images/mosaic
+app/public/stylesheets/*

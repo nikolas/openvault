@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -31,25 +31,13 @@
     -->
     
     <!-- Main container -->
-
     <div id="main-container" class="container">
-      <!-- Main content row -->
-      <div class="row">
         <!-- Main content column -->
-        <div class="span12 center">
-
-          <!-- Openvault Logo and login -->
-          <div class="row">
-            <div class="span4">
-              <div id="ov-logo-home"><%= application_name %></div>
-            </div>
-            <div class="span2 pull-right">
-              <h5>LOGIN LINKS</h5>
-            </div>
+        <div id="header" class="row">
+          <div class="span12">
+            <%= render :partial => 'layouts/header' %>
           </div>
-          <!-- Logo and login -->
-
-          <%= yield %>
+				</div>
 
           <!-- Top bar -->
           <!-- This comes from Blacklight... what does it do?
@@ -77,24 +65,22 @@
           whereas I *think* with Blacklight, they are the same.
           It might be easier to go with the Blacklight grain rather than against it, but we should consider our options.
           -->
-          <!--
-          <div class="row">
-            <%#= yield %>
+				
+				<!-- Body Content -->
+			  <div class="row">
+          <div class="span12">
+            <%= yield %>
           </div>
-          -->
-          
-          <!-- Footer -->
-          <div class="row">
-            <div class="span12">
-              <%= render :partial => '/footer' %>
-            </div>
-          </div>
-          <!-- /Footer -->
-
         </div>
-        <!-- /Main content column -->
-      </div>
-      <!-- /Main content row -->
+				<!-- /Body Content -->
+				
+        <!-- Footer -->
+        <div class="row-fluid footer_container">
+          <div>
+            <%= render :partial => 'layouts/footer' %>
+          </div>
+        </div>
+        <!-- /Footer -->
     </div>
     <!-- /Main container -->
   </body>

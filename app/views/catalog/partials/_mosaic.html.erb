@@ -1,0 +1,9 @@
+<div class="row-content">
+<div id="mosaic">
+  <% @mosaic_items.each do |mosaic_item| %>
+    <a href="/catalog/<%= mosaic_item.slug %>" title="<%= mosaic_item.link_title%>">
+      <div class="mosaic-item mosaic-<%= mosaic_item.slug %>"></div>
+    </a>
+  <% end %>
+</div>
+</div>

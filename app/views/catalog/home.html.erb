@@ -1,37 +1,21 @@
-
-
-<!-- MLA Logo and search bar -->
-<div class="row">
-  <div class="span3">
-    <div id="mla-logo">Media Library and Archives</div>
-  </div>
-  <div class="span9">
-    <%= render :partial => 'search_form' %>
-  </div>
-</div>
-<!-- /MLA Logo and search bar -->
-
-
 <!-- Mosaic -->
-<div class="row">
+<div class="row" id="mosaic-container">
   <div class="span12">
-    <%= render :partial=>'/mosaic' %>
+    <%= render :partial=>'catalog/partials/mosaic', :mosaic_items => @mosaic_items %>
   </div>
 </div>
 <!-- /Mosaic -->
 
-
 <!-- Carousel and Blog roll -->
-<div class="row">
-
+<div class="row" id="bd">
   <!-- Carousel -->
-  <div class="span5">
-    <%= render :partial=>"/carousel" %>
+  <div class="span6">
+    <%= render :partial=>"catalog/partials/carousel" %>
   </div>
 
   <!-- Blog roll -->
-  <div class="span7">
-    <%= render :partial=>"/blog_roll" %>
+  <div class="span6">
+    <%= render :partial=>"catalog/partials/blog_roll" %>
   </div>
 </div>
 <!-- /Carousel and Blog roll -->

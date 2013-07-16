@@ -174,6 +174,8 @@ class CatalogController < ApplicationController
     # if current_user or stale?(:last_modified => Time.new.beginning_of_week, :etag => pids)
     #   render :layout => 'home'
     # end
+    @collections = Collection.where(:display_in_carousel => true).order('position ASC')
+    @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
     render :layout => 'home'
   end
 

@@ -14,6 +14,13 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :postal_code, :country, :mla_updates, :terms_and_conditions
 
   validates :terms_and_conditions, acceptance: {allow_nil: false, accept: true, on: :create}
+  #validates_presence_of :terms_and_conditions
+  #validate :check_terms
+  validates_presence_of :first_name, :message => "can't be blank"
+  validates_presence_of :last_name, :message => "can't be blank"
+  validates_presence_of :postal_code, :message => "can't be blank"
+  validates_presence_of :country, :message => "can't be blank"
+  validates_uniqueness_of :email, :message => "must be unique"
 
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
@@ -21,4 +28,5 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+  
 end
