@@ -6,7 +6,7 @@ project_type = :rails
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "public/stylesheets/compiled"
-sass_dir = "app/stylesheets"
+sass_dir = "app/assets/stylesheets"
 #environment = Compass::AppIntegration::Rails.env
 #extensions_path = "#{Compass::AppIntegration::Rails.root}/app/stylesheets/compass_extensions/"
 # To enable relative paths to assets via compass helper functions. Uncomment:
