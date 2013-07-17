@@ -6,7 +6,7 @@
 	<% @collections.each do |collection| %>
 		<div class="carousel-entry document">
 			<%= image_tag collection.image.url, :class => 'collection_image' %>
-		  <h3 class="title"><%= link_to collection.name, collection %></h3>
+		  <h3 class="title"><%= link_to collection.name, collection.url %></h3>
 		  <p class="summary"><%= truncate(collection.summary, :length => 400) %></p>
 		</div>
 	<% end %>

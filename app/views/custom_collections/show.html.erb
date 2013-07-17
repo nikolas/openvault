@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @custom_collection.name %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @custom_collection.summary %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @custom_collection.image %>
+</p>
+
+<p>
+  <b>Article:</b>
+  <%= @custom_collection.article %>
+</p>
+
+
+<%= link_to 'Edit', edit_custom_collection_path(@custom_collection) %> |
+<%= link_to 'Back', custom_collections_path %>

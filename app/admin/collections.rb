@@ -13,9 +13,9 @@ ActiveAdmin.register Collection do
   end
   
   controller do
-    def scoped_collection
-      Collection.where(display_in_carousel: true)
-    end
+    # def scoped_collection
+#       Collection.where(display_in_carousel: true)
+#     end
   end
   config.sort_order = "position_asc"
   

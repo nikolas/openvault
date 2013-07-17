@@ -457,6 +457,7 @@ DEPENDENCIES
   bawstun_commons!
   blacklight
   bootstrap-sass
+  cancan
   capybara
   capybara-webkit
   carrierwave

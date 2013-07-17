@@ -29,9 +29,9 @@
 <%= link_to "Back", :back %> -->
 
 <div id="signup_form_container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Edit your profile</h2>
 	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal', :method => :put}) do |f| %>
-	  <%= devise_error_messages! %>
+	  <%#= devise_error_messages! %>
 
 		<%= f.input :email, :autofocus => true, :placeholder => 'Email', required: true %>
     
@@ -88,7 +88,7 @@
 	
   <h3>Cancel my account</h3>
 
-  <p>Unhappy?</p>
+  <p>Unhappy with your OpenVault Account?</p>
   <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-inverse' %>
 
   <%= link_to "Back", :back %>

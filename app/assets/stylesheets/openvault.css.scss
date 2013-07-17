@@ -1,5 +1,3 @@
-
-
 body {
 	background-image: url(/assets/background.jpg);
 	background-color: #3076aa;
@@ -61,6 +59,10 @@ p {
 	background-image: url('/assets/OV_logo_shadow_home.png');
 	background-repeat: no-repeat;
 	padding-top: 29px;
+  .action_links {
+    text-align: right;
+    font-size: 1.2em;
+  }
 }
 
 .action_links {
@@ -104,14 +106,12 @@ p {
 		}
 	}
 }
-.blacklight-collections, .blacklight-catalog {
-	#ov-logo-home {
+#ov-logo-home {
 		text-indent: -3000px;
 		width: 246px;
 		height: 31px;
 		background-image: url(/assets/openvault.png);
 		background-repeat: no-repeat;
-	}
 }
 .blacklight-catalog-home {
 	#ov-logo-home {

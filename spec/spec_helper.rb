@@ -42,6 +42,7 @@ RSpec.configure do |config|
 
   config.include CommonSteps
   config.include UserSteps
+  config.include CustomCollectionSteps
   
   config.use_transactional_fixtures = false
 

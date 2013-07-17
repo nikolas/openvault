@@ -21,6 +21,18 @@ module Openvault
 
     # A little tweak to load order to ensure we get the right version of GenericFile.
     config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
+    
+    #change scaffold to build rspec tests
+    config.generators do |g| 
+      g.test_framework :rspec, 
+        :fixtures => true, 
+        :view_specs => false, 
+        :helper_specs => false, 
+        :routing_specs => false, 
+        :controller_specs => true, 
+        :request_specs => true 
+      g.fixture_replacement :factory_girl, :dir => "spec/factories" 
+    end
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)

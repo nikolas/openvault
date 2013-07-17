@@ -1,0 +1,29 @@
+<h1>Listing custom_collections</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Summary</th>
+    <th>Image</th>
+    <th>Article</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @custom_collections.each do |custom_collection| %>
+  <tr>
+    <td><%= custom_collection.name %></td>
+    <td><%= custom_collection.summary %></td>
+    <td><%= custom_collection.image %></td>
+    <td><%= custom_collection.article %></td>
+    <td><%= link_to 'Show', custom_collection %></td>
+    <td><%= link_to 'Edit', edit_custom_collection_path(custom_collection) %></td>
+    <td><%= link_to 'Destroy', custom_collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Custom collection', new_custom_collection_path %>

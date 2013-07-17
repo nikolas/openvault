@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :postal_code, :country, :mla_updates, 
                   :terms_and_conditions, :role
+                  
+  has_many :custom_collections
 
   validates :terms_and_conditions, acceptance: {allow_nil: false, accept: true, on: :create}
   validates_presence_of :first_name, :message => "can't be blank"
@@ -29,4 +31,17 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+  
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+  
+  def is_scholar?
+    self.role == 'scholar'
+  end
+  
+  def is_member?
+    self.role == 'member'
+  end
+  
 end
