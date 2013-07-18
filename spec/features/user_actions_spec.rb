@@ -67,3 +67,55 @@ feature 'Visitor signs up' do
   end
   
 end
+
+feature "Users wants to edit their profile" do
+  before :each do 
+    submit_registration_form({email: "valid_#{Random.new.rand(10..100)}@me.com", password: '123456789', first_name: 'John', last_name: 'Smith', postal_code: '12345', country: 'United Kingdom', mla_updates: '1', terms_and_conditions: '1'})
+  end
+  scenario "by changing their name" do
+    visit '/users/edit'
+    fill_in 'user_first_name', with: "Bobby"
+    fill_in 'user_last_name', with: "Smitherson"
+    fill_in 'user_current_password', with: '123456789'
+    click_button 'Update profile'
+    expect(page).to have_content("Welcome back Bobby Smitherson")
+  end
+  
+  scenario "by changing their email" do
+    visit '/users/edit'
+    fill_in 'user_email', with: "valid_valid_#{Random.new.rand(10..100)}@me.com"
+    fill_in 'user_current_password', with: '123456789'
+    click_button 'Update profile'
+    expect(page).to have_content("EXPLORE THE COLLECTIONS")
+  end
+  
+  scenario "by changing their location" do
+    visit '/users/edit'
+    fill_in 'user_postal_code', with: "32145-1234"
+    select 'France', from: 'user_country'
+    fill_in 'user_current_password', with: '123456789'
+    click_button 'Update profile'
+    expect(page).to have_content("EXPLORE THE COLLECTIONS")
+  end
+  
+  scenario "by changing their password" do
+    visit '/users/edit'
+    click_link 'Change Password'
+    fill_in 'user_password', with: '987654321'
+    fill_in 'user_password_confirmation', with: '987654321'
+    fill_in 'user_current_password', with: '123456789'
+    click_button 'Update profile'
+    expect(page).to have_content("EXPLORE THE COLLECTIONS")
+  end
+  
+  #bundling delete in this feature as it only one scenario
+  scenario "by deleting their profile entirely" do
+    visit '/users/edit'
+    click_button 'Cancel my account'
+    #confirm JS alert
+    page.driver.browser.accept_js_confirms
+    
+    expect(page).to have_content("Log In | Register")
+  end
+
+end

@@ -15,4 +15,11 @@ module CustomCollectionSteps
     fill_in 'custom_collection_summary', with: values[:summary] unless values[:summary].nil?
   end
   
+  def user_attach_file(values={})
+    values.symbolize_keys!
+    visit "/custom_collections/#{values[:id]}/edit"
+    attach_file "#{values[:button_name]}", "./spec/factories/files/#{values[:file_name]}"
+    click_button 'Update Custom collection'
+  end
+  
 end

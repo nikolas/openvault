@@ -5,9 +5,9 @@ class Ability
     if user
       can :manage, Collection
       
-      can [:show], CustomCollection
+      can [:show, :index], CustomCollection
       
-      can [:create, :new, :index], CustomCollection do |coll|
+      can [:create, :new], CustomCollection do |coll|
         user.is_scholar?
       end
       
@@ -17,7 +17,7 @@ class Ability
       
     else
       can :manage, Collection
-      can [:show], CustomCollection
+      can [:show, :index], CustomCollection
     end
   end
 end
