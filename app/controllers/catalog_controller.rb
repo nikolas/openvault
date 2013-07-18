@@ -2,8 +2,6 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController  
-
-  skip_authorization_check
   
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior

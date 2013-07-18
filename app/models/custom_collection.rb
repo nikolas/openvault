@@ -7,6 +7,7 @@ class CustomCollection < ActiveRecord::Base
   validate :user_id_scholar
   
   belongs_to :user
+  has_many :custom_collection_items
   
   mount_uploader :image, CustomCollectionImageUploader
   mount_uploader :article, CustomCollectionArticleUploader

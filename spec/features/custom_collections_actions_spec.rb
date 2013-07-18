@@ -35,6 +35,7 @@ end
 feature 'Scholar attaches files to a collection' do
   
   before :each do
+    Capybara.reset_sessions!
     create_user_assign_as_scholar
     in_browser(:one) do
       create_custom_collection({name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf'})

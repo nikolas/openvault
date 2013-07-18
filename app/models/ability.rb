@@ -1,8 +1,10 @@
 class Ability
   include CanCan::Ability
+  include Hydra::Ability
 
   def initialize(user)
     if user
+      
       can :manage, Collection
       
       can [:show, :index], CustomCollection
@@ -17,6 +19,7 @@ class Ability
       
     else
       can :manage, Collection
+
       can [:show, :index], CustomCollection
     end
   end
