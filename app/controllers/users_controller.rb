@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @collections = CustomCollection.where(:user_id => @user.id)
   end
   
+  def scholars
+    @users = User.scholars
+  end
+  
   private
   
   def get_user
