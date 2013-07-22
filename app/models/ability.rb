@@ -3,6 +3,7 @@ class Ability
   include Hydra::Ability
 
   def initialize(user)
+    #
     if user
       
       can :manage, Collection
@@ -22,5 +23,7 @@ class Ability
 
       can [:show, :index], CustomCollection
     end
+    
+    #super
   end
 end

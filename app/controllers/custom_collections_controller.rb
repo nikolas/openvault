@@ -1,5 +1,7 @@
 class CustomCollectionsController < ApplicationController
   
+  before_filter :get_collection, :only => [:show]
+  
   load_and_authorize_resource
   
   # GET /custom_collections
@@ -16,12 +18,13 @@ class CustomCollectionsController < ApplicationController
   # GET /custom_collections/1
   # GET /custom_collections/1.json
   def show
-    @custom_collection = CustomCollection.find(params[:id])
+    #commenting out because before filter gets this for custom routes
+    #@custom_collection = CustomCollection.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @custom_collection }
-    end
+    # respond_to do |format|
+#       format.html # show.html.erb
+#       format.json { render json: @custom_collection }
+#     end
   end
 
   # GET /custom_collections/new
@@ -83,4 +86,20 @@ class CustomCollectionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+  def get_collection
+    if params[:id]
+      @custom_collection = CustomCollection.find(params[:id])
+    else
+      slug = params[:custom_collection_slug]
+      user = User.where(:username => params[:username]).first
+      not_found unless user && slug
+      @custom_collection = CustomCollection.where(:user_id => user.id, :slug => slug).first
+    end
+    
+    @custom_collection or not_found
+  end
+  
 end

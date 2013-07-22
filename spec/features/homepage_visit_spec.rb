@@ -6,8 +6,8 @@ describe "visiting homepage", :type => :feature do
     find('#collections').should have_link('See all >')
   end
   
-  it "shows 6 blog posts" do
-    visit '/'
-    page.should have_css("div#blog .post", :count => 3)
-  end
+  # it "shows 6 blog posts" do
+#     visit '/'
+#     page.should have_css("div#blog .post", :count => 3)
+#   end
 end

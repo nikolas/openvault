@@ -41,6 +41,7 @@ end
 
 group :development do
   gem 'debugger'  
+  #gem 'terminal-notifier'
 end
 
 gem 'jquery-rails'

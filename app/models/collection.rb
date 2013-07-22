@@ -1,6 +1,11 @@
 class Collection < ActiveRecord::Base
   attr_accessible :name, :summary, :image, :position, :display_in_carousel, :slug
   
+  validates_presence_of :name, :on => :create, :message => "can't be blank"
+  validates_presence_of :summary, :on => :create, :message => "can't be blank"
+  validates_presence_of :display_in_carousel, :on => :create, :message => "can't be blank"
+  validates_uniqueness_of :name, :on => :create, :message => "must be unique"
+  
   mount_uploader :image, CollectionImageUploader
   
   before_save :is_new

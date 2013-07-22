@@ -78,7 +78,7 @@ feature "Users wants to edit their profile" do
     fill_in 'user_last_name', with: "Smitherson"
     fill_in 'user_current_password', with: '123456789'
     click_button 'Update profile'
-    expect(page).to have_content("Welcome back Bobby Smitherson")
+    expect(page).to have_content("Edit profile")
   end
   
   scenario "by changing their email" do
@@ -86,7 +86,7 @@ feature "Users wants to edit their profile" do
     fill_in 'user_email', with: "valid_valid_#{Random.new.rand(10..100)}@me.com"
     fill_in 'user_current_password', with: '123456789'
     click_button 'Update profile'
-    expect(page).to have_content("EXPLORE THE COLLECTIONS")
+    expect(page).to have_content("Edit profile")
   end
   
   scenario "by changing their location" do
@@ -95,7 +95,7 @@ feature "Users wants to edit their profile" do
     select 'France', from: 'user_country'
     fill_in 'user_current_password', with: '123456789'
     click_button 'Update profile'
-    expect(page).to have_content("EXPLORE THE COLLECTIONS")
+    expect(page).to have_content("Edit profile")
   end
   
   scenario "by changing their password" do
@@ -105,7 +105,7 @@ feature "Users wants to edit their profile" do
     fill_in 'user_password_confirmation', with: '987654321'
     fill_in 'user_current_password', with: '123456789'
     click_button 'Update profile'
-    expect(page).to have_content("EXPLORE THE COLLECTIONS")
+    expect(page).to have_content("Edit profile")
   end
   
   #bundling delete in this feature as it only one scenario

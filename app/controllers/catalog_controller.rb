@@ -175,6 +175,7 @@ class CatalogController < ApplicationController
     #   render :layout => 'home'
     # end
     @collections = Collection.where(:display_in_carousel => true).order('position ASC')
+    @custom_collections = CustomCollection.limit(6).order('created_at ASC')
     @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
     render :layout => 'home'
   end

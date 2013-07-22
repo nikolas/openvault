@@ -1,0 +1,16 @@
+<h1><%= @user.full_name %></h1>
+<p><%= @user.work_string %></p>
+<%= image_tag @user.avatar.url(:small) %>
+<p><%= @user.bio %></p>
+<h3>My Collections</h3>
+<ul>
+<% @collections.each do |collection| %>
+  <li><%= link_to collection.name, collection.van_url %></li>
+<% end %>
+</ul>
+
+<% if current_user && current_user == @user %>
+  <div class="user-actions">
+    <a href="/users/edit">Edit profile</a>
+  </div>
+<% end %>
