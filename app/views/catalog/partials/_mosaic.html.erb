@@ -1,9 +1,23 @@
 <div class="row-content">
 <div id="mosaic">
+  <% 51.times do %>
   <% @mosaic_items.each do |mosaic_item| %>
     <a href="/catalog/<%= mosaic_item.slug %>" title="<%= mosaic_item.link_title%>">
       <div class="mosaic-item mosaic-<%= mosaic_item.slug %>"></div>
     </a>
+  <% end %>
+  <% end %>
+</div>
+<div id="search_overlay">
+  <%= form_tag search_action_url, :method => :get, :class => 'search-query-form form-inline clearfix' do %>
+    <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page]).html_safe %> 
+       <div class="">
+         <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q", :id => "q"%>
+        <button type="submit" class="search-btn" id="search">
+          <!-- <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span> -->
+          <i class="icon-search"></i>
+        </button>
+       </div>
   <% end %>
 </div>
 </div>
