@@ -138,16 +138,22 @@ p {
 	margin-top: 20px;
   .nav-tabs {
     margin-bottom: 0px;
-    border: none;
+    border:none;
   }
   .nav-tabs > li > a {
-    background-color: #fff;
-    border-radius: 0px;
-  }
-  .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
     background-color: #11629e;
     border-color: #11629e;
     color: #fff;
+    border-radius: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-weight: bold;
+    text-transform: uppercase;
+  }
+  .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff;
   }
 	.panel {
 	  h2 {
@@ -282,7 +288,9 @@ p {
 				border: none;
 			}
     }
-
+    .see_all {
+      color: #000;
+    }
     .byline {
 			display: inline;
 			float: left;
