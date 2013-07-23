@@ -136,6 +136,19 @@ p {
 	font-size: 75%;
 	font-size: 11px;
 	margin-top: 20px;
+  .nav-tabs {
+    margin-bottom: 0px;
+    border: none;
+  }
+  .nav-tabs > li > a {
+    background-color: #fff;
+    border-radius: 0px;
+  }
+  .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background-color: #11629e;
+    border-color: #11629e;
+    color: #fff;
+  }
 	.panel {
 	  h2 {
 		  background-color: #11629e;
@@ -166,7 +179,7 @@ p {
 		}
 	}
 
-	#collections, #blog {
+	#collections, #blog, #scholars {
 	  @extend .panel;
 	}
 
@@ -246,9 +259,9 @@ p {
 	    }
 	  }
 	}
-  #blog {
-		position: relative;
-		display: inline;
+  #blog, #scholars {
+//    position: relative;
+//    display: inline;
 		float: left;
 		margin-right: 0;
 		width: 100%;
@@ -374,7 +387,7 @@ p {
 		display: inline;
 		float: left;
 		margin-right: 8px;
-		width: 140px;
+		width: 150px;
 		border: none;
 		min-height: 2em;
 		height: 250px;

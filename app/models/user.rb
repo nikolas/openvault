@@ -41,7 +41,11 @@ class User < ActiveRecord::Base
   end
   
   def url
-    "/scholar/#{self.username}"
+    if self.role == 'scholar'
+      "/scholar/#{self.username}"
+    else
+      "/user/#{self.username}"
+    end
   end
   
   def full_name
