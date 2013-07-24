@@ -430,6 +430,33 @@ p {
       }
     }
   }
+  #user_show_page {
+    #user_header {
+      overflow:hidden;
+      margin-bottom: 15px;
+      img {
+        float:left;
+        margin-right: 10px;
+      }
+      h3 {
+        margin:0;
+      }
+    }
+    #collection_container {
+      overflow:hidden;
+      .collection_block {
+        width: 23%;
+        margin-right: 2%;
+        float:left;
+        &:last-child {
+          margin-right: 0;
+        }
+        img {
+          height: 100px;
+        }
+      }
+    }
+  }
 }
 
 .blacklight-collections-index, .blacklight-custom_collections-index  {

@@ -1,16 +1,26 @@
-<h1><%= @user.full_name %></h1>
-<p><%= @user.work_string %></p>
-<%= image_tag @user.avatar.url(:small) %>
-<p><%= @user.bio %></p>
-<h3>My Collections</h3>
-<ul>
-<% @collections.each do |collection| %>
-  <li><%= link_to collection.name, collection.van_url %></li>
-<% end %>
-</ul>
-
-<% if current_user && current_user == @user %>
-  <div class="user-actions">
-    <a href="/users/edit">Edit profile</a>
+<div id="user_show_page">
+  <div id="user_header">
+    <%= image_tag @user.avatar.url(:small) %>
+    <h3><%= @user.full_name %></h3>
+    <p><%= @user.work_string %></p>
+    <% if current_user && current_user == @user %>
+      <div class="user-actions">
+        <a href="/users/edit">Edit profile</a>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <p class="bio"><%= @user.bio %></p>
+  <h4><%= (current_user && @user == current_user) ? 'My' : "#{@user.first_name}'s" %> Collections</h4>
+  <div id="collection_container">
+    <% @collections.each do |collection| %>
+      <div class="collection_block">
+        <%= image_tag collection.image.url(:med) %>
+        <p><strong><%= link_to collection.name, collection.van_url %></strong></p>
+        <p><%= truncate(collection.summary, length: 200) %></p>
+      </div>
+    <% end %>
+  </div>
+  <% if current_user && current_user == @user %>
+    <a href="/custom_collections/new">Add collection</a>
+  <% end %>
+</div>
