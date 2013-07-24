@@ -64,7 +64,7 @@
     
     <%= f.input :title, :placeholder => 'Title' %>
     
-    <%= f.input :bio, :placeholder => 'Biography (500 character limit)' %>
+    <%= f.input :bio, :placeholder => 'Biography (500 character limit)', :input_html => { class: 'wysihtml5' } %>
 		
 		<%= f.input :postal_code, :placeholder => 'Postal code' %>
 

@@ -74,6 +74,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
+gem 'bootstrap-wysihtml5-rails'
 #gem 'hydra-collections'
 
 # jcoyne made a gem of useful stuff from hydradam

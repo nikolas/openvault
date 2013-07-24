@@ -457,6 +457,18 @@ p {
       }
     }
   }
+  form#new_custom_collection, form#edit_custom_collection {
+    input.string, textarea {
+      width: 100%;
+    }
+    textarea {
+      height: 200px;
+      resize:none;
+    }
+    input[type="file"] {
+      line-height: 0;
+    }
+  }
 }
 
 .blacklight-collections-index, .blacklight-custom_collections-index  {

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-wysihtml5
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require_tree .

@@ -2,14 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :summary %>
-    <%= f.input :image %>
-    <%= f.input :article %>
+    <%= f.input :name, label: false, placeholder: "Name your collection" %>
+    <%= f.input :summary, label: false, placeholder: "Enter a brief description", :input_html => { class: 'wysihtml5' } %>
+    <div class="row-fluid">
+      <div class="span6">
+        <%= f.input :image, label: 'Choose an image' %>
+      </div>
+      <div class="span6">
+        <%= f.input :article, label: 'Attach your article' %>
+      </div>
+    </div>
     <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id } %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <hr />
+  <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
