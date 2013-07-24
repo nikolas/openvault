@@ -1,7 +1,37 @@
 <%# @page_title = "#{document_show_html_title} - #{application_name}" %>
 <% extra_head_content << render_link_rel_alternates %>
 <% sidebar_items << render(:partial => 'from_this_collection') %>
-
-<h2><%= @collection.name %></h2>
-<%= image_tag @collection.image.url %>
-<p class="summary"><%= @collection.summary %></p>
+<div id="collection_page">
+  <div id="collection_header" class="row-fluid">
+    <h3 class="span10"><%= @collection.name %></h3>
+    <div id="sharing-tools" class="span2 pull-right">
+      <%= render :partial => 'collections/show_tools' %>
+    </div>
+  </div>
+  <div id="collection_top" class="row-fluid">
+    <div class="span6">
+      <%= image_tag @collection.image.url(:large) %>
+    </div>
+    <div class="span6">
+      <p class="summary"><%= @collection.summary %></p>
+    </div>
+  </div>
+  <hr />
+  <!-- This content needs to be made dynamic -->
+  <div id="collection_mid" class="row-fluid">
+    <p><strong>Search within this collection</strong></p>
+    <p><a href="#">All materials</a></p>
+    <p><a href="#">All video</a></p>
+  </div>
+  <hr />
+  <div id="colleciton_bottom" class="row-fluid">
+    <p><strong>Related links</strong></p>
+    <p><a href="#">Related link 1</a></p>
+    <p><a href="#">Related link 2</a></p>
+    <p><a href="#">Related link 3</a></p>
+  </div>
+  <div id="collection_footer" class="row-fluid">
+    <p><strong>Supported by a grant from the Open Society Foundations.</strong></p>
+  </div>
+  <!-- End of content that needs to be made dynamic -->
+</div>

@@ -413,6 +413,23 @@ p {
 	.no-margin {
 		margin: 0;
 	}
+  #collection_page {
+    hr {
+      margin-left: -18px;
+      margin-right: -37px;
+    }
+    #collection_header {
+      margin-top: 0;
+      font-size: 20px;
+      h3 {
+        margin: 0px;
+        font-size: 20px;
+      }
+      #share-tools {
+        margin-top: 10px;
+      }
+    }
+  }
 }
 
 .blacklight-collections-index, .blacklight-custom_collections-index  {

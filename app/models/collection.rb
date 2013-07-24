@@ -15,7 +15,7 @@ class Collection < ActiveRecord::Base
   acts_as_list
   
   def url
-    "/collections/#{self.slug}"
+    "/collection/#{self.slug}"
   end
   
   private
