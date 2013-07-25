@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'helpers/test_helper'
 describe "visiting homepage", :type => :feature do
 
   it "shows collections see all link" do

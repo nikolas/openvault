@@ -7,6 +7,10 @@ require 'capybara/rspec'
 
 Capybara.default_driver = :webkit
 Capybara.javascript_driver = :webkit
+Capybara.default_wait_time = 5
+Capybara.register_driver :webkit do |app|
+  Capybara::Webkit::Driver.new(app, stderr: WarningSuppressor)
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

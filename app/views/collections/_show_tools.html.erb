@@ -1,17 +1,26 @@
-<div id="share-tools">
-  <div class="addthis_toolbox addthis_default_style">
-    <a class="addthis_button_preferred_1"></a>
-    <a class="addthis_button_preferred_2"></a>
-    <a class="addthis_button_preferred_3"></a>
-    <a class="addthis_button_compact"></a>
-  </div>
-  <script type="text/javascript">
-    var addthis_config = { ui_click: true }
+<div class="related-content">
+<h2>From this collection</h2>
 
-    $(function() {
-      addthis_config = { ui_click: true, data_track_clickback: true, data_ga_property: '<%= GOOGLE_ANALYTICS_TRACKER_ID if defined?(GOOGLE_ANALYTICS_TRACKER_ID)%>'}
-      $('<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=interactivetech"></' + 'script>').insertAfter('.addthis_button_compact');
-
-    });
-  </script>
+<%#= render(:partial => 'blacklight_mlt/mlt', :collection => controller.send(:get_solr_response_for_field_values, 'ri_collection_ancestors_s', @document.fedora_object.uri, :rows => 3, :sort => "random_#{rand(9999)} asc").last, :as => :document ) %>
+<div class="mlt">
+<div class="thumbnail">
+  <a href="/catalog/march-5301e9-march-highlights-2-of-2"><img alt="Preview" src="/system/thumbnails/march-5301e9-march-highlights-2-of-2/preview.jpg" &nbsp;=""></a>
+</div>
+<a href="/catalog/march-5301e9-march-highlights-2-of-2">March Highlights [2 of&nbsp;2]</a>
+Highlights from the Educational Radio Network / ERN's coverage of the March on Washington for Jobs and Freedom.
+</div>
+<div class="mlt">
+<div class="thumbnail">
+  <a href="/catalog/march-5301e9-march-highlights-2-of-2"><img alt="Preview" src="/system/thumbnails/march-5301e9-march-highlights-2-of-2/preview.jpg" &nbsp;=""></a>
+</div>
+<a href="/catalog/march-5301e9-march-highlights-2-of-2">March Highlights [2 of&nbsp;2]</a>
+Highlights from the Educational Radio Network / ERN's coverage of the March on Washington for Jobs and Freedom.
+</div>
+<div class="mlt">
+<div class="thumbnail">
+  <a href="/catalog/march-5301e9-march-highlights-2-of-2"><img alt="Preview" src="/system/thumbnails/march-5301e9-march-highlights-2-of-2/preview.jpg" &nbsp;=""></a>
+</div>
+<a href="/catalog/march-5301e9-march-highlights-2-of-2">March Highlights [2 of&nbsp;2]</a>
+Highlights from the Educational Radio Network / ERN's coverage of the March on Washington for Jobs and Freedom.
+</div>
 </div>
