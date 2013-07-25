@@ -434,12 +434,19 @@ p {
     #user_header {
       overflow:hidden;
       margin-bottom: 15px;
+      position: relative;
       img {
         float:left;
         margin-right: 10px;
       }
       h3 {
         margin:0;
+      }
+      #share-tools {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 84px;
       }
     }
     #collection_container {
@@ -457,7 +464,16 @@ p {
       }
     }
   }
-  form#new_custom_collection, form#edit_custom_collection {
+  .user_block {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    h4 {
+      margin-top: 0px;
+      line-height: 18px;
+    }
+  }
+  form#new_custom_collection, form.edit_custom_collection {
     input.string, textarea {
       width: 100%;
     }
@@ -470,9 +486,14 @@ p {
     }
   }
   #signup_form_container {
-    form#edit_user {
-      input.string {
+    form.edit_user, form#new_user {
+      input.string, input.password {
         width: 100%;
+      }
+      input#user_postal_code {
+        width: 50%;
+        box-sizing: border-box;
+        height: 30px;
       }
       input[type="file"] {
         line-height: 0;

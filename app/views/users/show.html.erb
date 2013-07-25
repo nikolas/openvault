@@ -8,19 +8,8 @@
         <a href="/users/edit">Edit profile</a>
       </div>
     <% end %>
+    <%= render partial: 'global_partials/share' %>
   </div>
   <p class="bio"><%= @user.bio %></p>
-  <h4><%= (current_user && @user == current_user) ? 'My' : "#{@user.first_name}'s" %> Collections</h4>
-  <div id="collection_container">
-    <% @collections.each do |collection| %>
-      <div class="collection_block">
-        <%= image_tag collection.image.url(:med) %>
-        <p><strong><%= link_to collection.name, collection.van_url %></strong></p>
-        <p><%= truncate(strip_tags(collection.summary), length: 200) %></p>
-      </div>
-    <% end %>
-  </div>
-  <% if current_user && current_user == @user %>
-    <a href="/custom_collections/new">Add collection</a>
-  <% end %>
+  <%= render partial: 'users/collections' unless @user.role != 'scholar' %>
 </div>

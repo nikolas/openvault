@@ -1,6 +1,6 @@
-<h1>Editing custom_collection</h1>
+<h2>Editing <em><%= @custom_collection.name %></em></h2>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @custom_collection %> |
-<%= link_to 'Back', custom_collections_path %>
+<%= link_to 'Back', (current_user && @custom_collection.user == current_user) ? '/me' : @custom_collection.user.url %>

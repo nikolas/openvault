@@ -1,11 +1,12 @@
 <%# @page_title = "#{document_show_html_title} - #{application_name}" %>
 <% extra_head_content << render_link_rel_alternates %>
 <% sidebar_items << render(:partial => 'from_this_collection') %>
+
 <div id="collection_page">
   <div id="collection_header" class="row-fluid">
     <h3 class="span10"><%= @collection.name %></h3>
     <div id="sharing-tools" class="span2 pull-right">
-      <%= render :partial => 'collections/show_tools' %>
+      <%= render :partial => 'global_partials/share' %>
     </div>
   </div>
   <div id="collection_top" class="row-fluid">

@@ -1,0 +1,17 @@
+<div id="share-tools">
+  <div class="addthis_toolbox addthis_default_style">
+    <a class="addthis_button_preferred_1"></a>
+    <a class="addthis_button_preferred_2"></a>
+    <a class="addthis_button_preferred_3"></a>
+    <a class="addthis_button_compact"></a>
+  </div>
+  <script type="text/javascript">
+    var addthis_config = { ui_click: true }
+
+    $(function() {
+      addthis_config = { ui_click: true, data_track_clickback: true, data_ga_property: '<%= GOOGLE_ANALYTICS_TRACKER_ID if defined?(GOOGLE_ANALYTICS_TRACKER_ID)%>'}
+      $('<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=interactivetech"></' + 'script>').insertAfter('.addthis_button_compact');
+
+    });
+  </script>
+</div>
