@@ -18,8 +18,13 @@
 <p>
   <b>Article:</b>
     <iframe src="http://docs.google.com/gview?url=<%= @custom_collection.article %>&embedded=true" style="width:100%; height:700px;" frameborder="0"></iframe>
+    <%= render partial: 'custom_collections/pdf' %>
 </p>
 
 
 <%= link_to 'Edit', edit_custom_collection_path(@custom_collection) %> |
 <%= link_to 'Back', custom_collections_path %>
+
+<script type="text/javascript" charset="utf-8">
+  window.currentPDF = "<%= @custom_collection.article %>"
+</script>
