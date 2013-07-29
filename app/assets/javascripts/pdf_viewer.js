@@ -26,7 +26,7 @@ var FindStates = {
   FIND_PENDING: 3
 };
 
-PDFJS.imageResourcesPath = './images/';
+PDFJS.imageResourcesPath = './images/pdf_viewer/';
 //#if (FIREFOX || MOZCENTRAL || B2G || GENERIC || CHROME)
 //PDFJS.workerSrc = '../build/pdf.js';
 //#endif
@@ -978,10 +978,10 @@ var PDFView = {
       self.metadata = metadata;
 
       // Provides some basic debug information
-      console.log('PDF ' + pdfDocument.fingerprint + ' [' +
-                  info.PDFFormatVersion + ' ' + (info.Producer || '-') +
-                  ' / ' + (info.Creator || '-') + ']' +
-                  (PDFJS.version ? ' (PDF.js: ' + PDFJS.version + ')' : ''));
+      // console.log('PDF ' + pdfDocument.fingerprint + ' [' +
+      //             info.PDFFormatVersion + ' ' + (info.Producer || '-') +
+      //             ' / ' + (info.Creator || '-') + ']' +
+      //             (PDFJS.version ? ' (PDF.js: ' + PDFJS.version + ')' : ''));
 
       var pdfTitle;
       if (metadata) {
