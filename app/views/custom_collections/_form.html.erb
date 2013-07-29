@@ -6,11 +6,11 @@
     <%= f.input :summary, label: false, placeholder: "Enter a brief description", :input_html => { class: 'wysihtml5' } %>
     <div class="row-fluid">
       <div class="span6">
-        Current image: <%= @custom_collection.image.file.filename unless @custom_collection.image.nil? %>
+        Current image: <%#= @custom_collection.image.file.filename unless @custom_collection.image.nil? %>
         <%= f.input :image, label: 'Choose an image' %>
       </div>
       <div class="span6">
-        Current article: <%= @custom_collection.article.file.filename unless @custom_collection.article.nil? %>
+        Current article: <%#= @custom_collection.article.file.filename unless @custom_collection.article.nil? %>
         <%= f.input :article, label: 'Attach your article' %>
       </div>
     </div>
