@@ -509,8 +509,7 @@ var PDFView = {
   },
 
   // TODO(mack): This function signature should really be pdfViewOpen(url, args)
-  open: function pdfViewOpen(url, scale, password,
-                             pdfDataRangeTransport, args) {
+  open: function pdfViewOpen(url, scale, password, pdfDataRangeTransport, args) {
     var parameters = {password: password};
     if (typeof url === 'string') { // URL
       this.setTitleUsingUrl(url);
@@ -1049,8 +1048,7 @@ var PDFView = {
     }
   },
 
-  getHighestPriority: function pdfViewGetHighestPriority(visible, views,
-                                                         scrolledDown) {
+  getHighestPriority: function pdfViewGetHighestPriority(visible, views, scrolledDown) {
     // The state has changed figure out which page has the highest priority to
     // render next (if any).
     // Priority:
@@ -1488,8 +1486,7 @@ var PDFView = {
   }
 };
 
-var PageView = function pageView(container, id, scale,
-                                 navigateTo, defaultViewport) {
+var PageView = function pageView(container, id, scale, navigateTo, defaultViewport) {
   this.id = id;
 
   this.rotation = 0;
@@ -2177,7 +2174,11 @@ var DocumentOutlineView = function documentOutlineView(outline) {
 };
 
 document.addEventListener('DOMContentLoaded', function webViewerLoad(evt) {
-  PDFView.initialize();
+  if (document.getElementById('outerContainer')) {
+    PDFView.initialize(); 
+  } else {
+    return false;
+  }
   var params = PDFView.parseQueryString(document.location.search.substring(1));
 
 //#if !(FIREFOX || MOZCENTRAL)

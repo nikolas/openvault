@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-wysihtml5
+// Files for pdf reader, need to remove on non-custom collections pages
 //= require l10n
 //= require network
 //= require chunked_stream 
@@ -46,7 +47,6 @@
 //= require pdf_find_bar
 //= require pdf_find_controller
 //= require pdf_history
-
 //= require pdf_viewer
 // Required by Blacklight
 //= require blacklight/blacklight

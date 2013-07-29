@@ -33,7 +33,8 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'email_spec'
-  #gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'launchy'
   # stuff to autorun test
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
@@ -75,6 +76,7 @@ gem 'country_select'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
 gem 'bootstrap-wysihtml5-rails'
+gem 'pdf-reader'
 #gem 'hydra-collections'
 
 # jcoyne made a gem of useful stuff from hydradam
