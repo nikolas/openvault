@@ -1,4 +1,5 @@
 require 'openvault/datastreams'
+require 'openvault/datastreams/converter'
 require 'artesia/datastreams/uois'
 
 class Datastream::UOIS < ActiveFedora::OmDatastream
@@ -66,6 +67,11 @@ class Datastream::UOIS < ActiveFedora::OmDatastream
   #   - wgbh_type.media_type contains "Audio" and nothing else.
   def is_audio?
     (self.wgbh_type.media_type == ["Audio"])
+  end
+
+  # Converts UOIS xml to PBCore xml
+  def to_pbcore_xml
+    Openvault::Datastreams::Converter.uois_to_pbcore(self.to_xml)
   end
 
   class << self

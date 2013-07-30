@@ -75,4 +75,7 @@ gem 'acts_as_list'
 gem 'activeadmin-sortable'
 
 # jcoyne made a gem of useful stuff from hydradam
-gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
+# gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
+gem 'sufia-models'
+
+gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'wgbh-master'
