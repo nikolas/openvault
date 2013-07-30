@@ -2,7 +2,8 @@ $ ->
   collections_timer = null
   $("#collections .document").hide().first().show()
   $("#collections .document").each (i) ->
-    $("<a class=\"page\" href=\"#collections\">" + i + "</a>").bind("click", ->
+    $("<a class=\"page\" href=\"#collections\">" + i + "</a>").bind("click", (e) ->
+      e.preventDefault()
       $("#collections .document").hide().eq(i).show()
       $(".page.active", "#collections").removeClass "active"
       $(this).addClass "active"

@@ -10,8 +10,8 @@ class CustomCollection < ActiveRecord::Base
   has_many :custom_collection_items
   
   before_save :is_new
-  before_save :is_pdf_new
   before_save :create_slug
+  after_save :is_pdf_new?
   
   mount_uploader :image, CustomCollectionImageUploader
   mount_uploader :article, CustomCollectionArticleUploader
@@ -40,9 +40,10 @@ class CustomCollection < ActiveRecord::Base
     return true
   end
   
-  def is_pdf_new
+  def is_pdf_new?
+    #only do this when the article has changed.  this uses Dirty Model
     if self.article_changed?
-      reader = PDF::Reader.new(self.article)
+      reader = PDF::Reader.new(self.article.path)
       reader.pages.each do |page|
         #this is where a callback will go to send to solr index
         puts page.text

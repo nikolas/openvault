@@ -1060,7 +1060,7 @@ canvas {
   display: block;
 }
 
-.page {
+#mainContainer .page {
   direction: ltr;
   width: 816px;
   height: 1056px;
@@ -1073,12 +1073,12 @@ canvas {
   background-color: white;
 }
 
-.page > a {
+#mainContainer .page > a {
   display: block;
   position: absolute;
 }
 
-.page > a:hover {
+#mainContainer .page > a:hover {
   opacity: 0.2;
   background: #ff0;
   box-shadow: 0px 2px 10px #ff0;
