@@ -1,5 +1,5 @@
 class Collection < ActiveRecord::Base
-  attr_accessible :name, :summary, :image, :position, :display_in_carousel, :slug
+  attr_accessible :name, :summary, :image, :position, :display_in_carousel, :slug, :mid_content, :lower_content
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"

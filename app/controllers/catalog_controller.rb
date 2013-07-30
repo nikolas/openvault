@@ -164,7 +164,9 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
-
+  
+  
+  
   def home
     # pids = open(File.join(Rails.root, 'config', 'home.csv')).read.split(",").map(&:strip)
     # response, @document_list = get_solr_response_for_field_values("pid_s",pids, :rows => 90, :fl => 'id,pid_s,title_display', :sort => 'random_1234 desc')

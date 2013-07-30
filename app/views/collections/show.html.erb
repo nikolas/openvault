@@ -14,25 +14,17 @@
       <%= image_tag @collection.image.url(:large) %>
     </div>
     <div class="span6">
-      <p class="summary"><%= @collection.summary %></p>
+      <p class="summary"><%= @collection.summary.html_safe %></p>
     </div>
   </div>
   <hr />
   <!-- This content needs to be made dynamic -->
   <div id="collection_mid" class="row-fluid">
-    <p><strong>Search within this collection</strong></p>
-    <p><a href="#">All materials</a></p>
-    <p><a href="#">All video</a></p>
+    <%= @collection.mid_content.html_safe %>
   </div>
   <hr />
   <div id="colleciton_bottom" class="row-fluid">
-    <p><strong>Related links</strong></p>
-    <p><a href="#">Related link 1</a></p>
-    <p><a href="#">Related link 2</a></p>
-    <p><a href="#">Related link 3</a></p>
-  </div>
-  <div id="collection_footer" class="row-fluid">
-    <p><strong>Supported by a grant from the Open Society Foundations.</strong></p>
+    <%= @collection.lower_content.html_safe %>
   </div>
   <!-- End of content that needs to be made dynamic -->
 </div>

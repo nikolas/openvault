@@ -303,7 +303,10 @@ html[dir='rtl'] #sidebarContent {
   line-height: 14px;
   text-align: left;
   cursor: default;
-  left: 68px;
+  left: 28px;
+}
+.findbar.hidden {
+  display:none;
 }
 
 html[dir='rtl'] .findbar {
