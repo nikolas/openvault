@@ -25,15 +25,7 @@ describe Openvault::Datastreams do
     end
   end
 
-
-  describe '.get_encoding' do
-    it 'returns value of "encoding" attribute of root xml node, if present.' do
-      Openvault::Datastreams.get_encoding('<?xml version="1.0" encoding="iso-8859-1"?>').should == 'iso-8859-1'
-    end
-
-    it 'returns encoding (as string) of xml string if "encoding" attribute of root xml code is not present.' do
-      xml_str = '<foo />'
-      Openvault::Datastreams.get_encoding(xml_str).should == xml_str.encoding.to_s
-    end
+  describe '.uois_to_pbcore' do
+    pending 'converts UOIS xml to PBCore xml'
   end
 end
