@@ -10,6 +10,7 @@ class CustomCollection < ActiveRecord::Base
   has_many :custom_collection_items
   
   before_save :is_new
+  before_save :is_pdf_new
   before_save :create_slug
   
   mount_uploader :image, CustomCollectionImageUploader
@@ -37,6 +38,16 @@ class CustomCollection < ActiveRecord::Base
   def is_new
     @was_a_new_record = new_record?
     return true
+  end
+  
+  def is_pdf_new
+    if self.article_changed?
+      reader = PDF::Reader.new(self.article)
+      reader.pages.each do |page|
+        #this is where a callback will go to send to solr index
+        puts page.text
+      end
+    end
   end
 
   def create_slug
