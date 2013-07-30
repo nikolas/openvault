@@ -5,8 +5,8 @@ FactoryGirl.define do
   annotate = ActiveSupport::HashWithIndifferentAccess.new
   annotate[:test] = "123456"
   
-  factory :custom_collection_item, :class => 'CustomCollectionItems' do
-    cat_slug "MyString"
+  factory :custom_collection_item, :class => 'CustomCollectionItem' do
+    openvault_asset_pid "org.wgbh.mla:gh93hg75d"
     custom_collection_id 1
     annotations annotate
   end

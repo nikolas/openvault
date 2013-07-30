@@ -24,6 +24,10 @@ class CustomCollection < ActiveRecord::Base
     "/scholar/#{self.user.username}/#{self.slug}"
   end
   
+  def add_collection_item(item)
+    CustomCollectionItem.create(:openvault_asset_pid => item, :custom_collection_id => self.id)
+  end
+  
   private
   
   def user_id_scholar

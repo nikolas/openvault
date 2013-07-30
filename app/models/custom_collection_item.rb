@@ -1,4 +1,4 @@
-class CustomCollectionItems < ActiveRecord::Base
+class CustomCollectionItem < ActiveRecord::Base
   
   attr_accessible :annotations, :cat_slug, :custom_collection_id, :openvault_asset_pid
   

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CustomCollectionItems do
+describe CustomCollectionItem do
   
   before :each do
     @u = create(:user, role: 'scholar')
@@ -12,8 +12,8 @@ describe CustomCollectionItems do
     @cci.should be_valid
   end
   
-  it "should be invalid without a cat_slug" do
-    build(:custom_collection_item, cat_slug: nil).should_not be_valid
+  it "should be invalid without a openvault_asset_pid" do
+    build(:custom_collection_item, openvault_asset_pid: nil).should_not be_valid
   end
   
   it "should be invalid without a custom_collections_id" do
