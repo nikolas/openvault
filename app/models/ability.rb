@@ -34,7 +34,7 @@ class Ability
       
       cannot [:create, :new], CustomCollection if @current_user.is_member?
       
-      can [:edit, :destroy, :delete, :update], CustomCollection do |coll|
+      can [:edit, :destroy, :delete, :update, :add_item], CustomCollection do |coll|
         @current_user.is_scholar? && coll.user_can_edit?(@current_user)
       end
       

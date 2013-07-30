@@ -87,6 +87,16 @@ class CustomCollectionsController < ApplicationController
     end
   end
   
+  def add_item
+    @custom_collection = CustomCollection.find(params[:custom_collection_id])
+    if @item = OpenvaultAsset.find(params[:asset_id])
+      @custom_collection.add_collection_item(@item.pid)
+      render json: @custom_collection.custom_collection_items
+    else
+      render json: @custom_collection.errors, status: :unprocessable_entity
+    end
+  end
+  
   private
   
   def get_collection
