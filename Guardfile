@@ -1,8 +1,20 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
+# Pattern for rspec:
+#   pass a regex to watch()
+#   if no block is given
+#     runs rspec with the matched file
+#   if a block is given
+#     passes the regex matches to the block
+#     runs rspec on filename(s) returned from block
 guard 'rspec' do
+
+  # Watches every *_spec.rb under spec/ dir, and by default, runs it.
   watch(%r{^spec/.+_spec\.rb$})
+
+  # Watches anything under lib/ dir and runs rspec for corresponding spec/lib/*_spec.rb
+  # NOTE: this will follow directories, e.g. changing lib/foo/bar.rb will run spec/lib/foo/bar_spec.rb
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
 
@@ -21,4 +33,15 @@ guard 'rspec' do
   # E.g. changeing spec/models/factories/user.rb triggers `rspec spec/models/user_spec.rb'
   # This assumes a 1-to-1 between factory and model spec. If that changes, then will need to change this line.
   watch(%r{^spec/factories/(.+)\.rb$})          { |m| "spec/models/#{m[1]}_spec.rb" }
+
+  # Watches spec/fixtures/teams_asset_files/*.xml and runs spec/lib/openvault/ingester/artesia_spec.rb
+  watch(%r{^spec/fixtures/teams_asset_files/(.+)\.xml$}) do |m| 
+    [
+      "spec/lib/openvault/ingester/artesia_spec.rb",
+      "spec/lib/artesia/datastreams/uois_spec.rb",
+      "spec/models/openvault_asset_spec.rb",
+      "spec/models/artesia_ingest_spec.rb",
+      "spec/models/datastream/uois_spec.rb"
+    ]
+  end
 end
