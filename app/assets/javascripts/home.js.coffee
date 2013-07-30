@@ -2,7 +2,8 @@ $ ->
   collections_timer = null
   $("#collections .document").hide().first().show()
   $("#collections .document").each (i) ->
-    $("<a class=\"page\" href=\"#collections\">" + i + "</a>").bind("click", ->
+    $("<a class=\"page\" href=\"#collections\">" + i + "</a>").bind("click", (e) ->
+      e.preventDefault()
       $("#collections .document").hide().eq(i).show()
       $(".page.active", "#collections").removeClass "active"
       $(this).addClass "active"
@@ -24,6 +25,7 @@ $ ->
     $(".pause", "#collections").show()
     false
   ).hide().prependTo $("#collections .pagination")
+  
   startCollectionsTimer = ->
     window.clearTimeout collections_timer
     collections_timer = window.setTimeout(->
@@ -38,5 +40,9 @@ $ ->
   $("#collections").bind "mouseleave", ->
     return  if $(this).is(".paused")
     startCollectionsTimer()
+  
+  $('#browse input').hide();
+  $('#browse select').bind 'change', ->
+    $(this).closest('form').submit()
 
   startCollectionsTimer()

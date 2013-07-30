@@ -33,7 +33,8 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'email_spec'
-
+  gem 'selenium-webdriver'
+  gem 'launchy'
   # stuff to autorun test
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
@@ -41,9 +42,10 @@ end
 
 group :development do
   gem 'debugger'  
+  #gem 'terminal-notifier'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', "2.3.0"
 
 gem 'blacklight'
 gem 'hydra-head', '6.1.0'
@@ -65,7 +67,7 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
-
+gem "cancan"
 gem 'carrierwave'
 gem 'activeadmin'
 gem "mini_magick"
@@ -73,9 +75,12 @@ gem 'simple_form'
 gem 'country_select'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
+gem 'bootstrap-wysihtml5-rails'
+gem 'pdf-reader'
+#gem 'hydra-collections'
 
 # jcoyne made a gem of useful stuff from hydradam
-# gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
+#gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
 gem 'sufia-models'
 
 gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'wgbh-master'

@@ -12,6 +12,11 @@ FactoryGirl.define do
     # for attr_accessors. When the 
     password { Faker::Lorem.characters 8 }
     password_confirmation { "#{password}" }
+    
+    title {Faker::Name.title}
+    organization {Faker::Company.name}
+    
+    bio { Faker::Lorem.characters(char_count = 300) }
 
     # NOTE: you can use Faker::config.locale to create users from different countries.
     # see https://github.com/stympy/faker

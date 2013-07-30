@@ -1,0 +1,19 @@
+<div id="scholars" class="tab-pane active">
+  <%= link_to 'See all >', '/scholars', :class => 'see_all' %>
+  <% @scholars.each do |scholar| %>
+    <div class="post row-fluid">
+      <div class="byline span3">
+        <div class="thumbnail">
+          <%= image_tag scholar.avatar.url(:med) %>
+        </div>
+    	</div>
+    	<div class="body span8">
+    		<h3><%= link_to scholar.full_name, scholar.url %></h3>
+    		<div><%= truncate(scholar.bio, :length => 120).html_safe unless scholar.bio.blank? %></div>
+				<br />
+        <div class="author"><%= scholar.work_string %></div>
+        <div class="date"><%= pluralize(scholar.custom_collections.length, 'custom colleciton') %></div>
+  		</div>
+  	</div>
+	<% end %>
+</div>

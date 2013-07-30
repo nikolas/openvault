@@ -2,7 +2,7 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController  
-
+  
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   # These before_filters apply the hydra access controls
@@ -164,7 +164,9 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
-
+  
+  
+  
   def home
     # pids = open(File.join(Rails.root, 'config', 'home.csv')).read.split(",").map(&:strip)
     # response, @document_list = get_solr_response_for_field_values("pid_s",pids, :rows => 90, :fl => 'id,pid_s,title_display', :sort => 'random_1234 desc')
@@ -175,6 +177,8 @@ class CatalogController < ApplicationController
     #   render :layout => 'home'
     # end
     @collections = Collection.where(:display_in_carousel => true).order('position ASC')
+    @custom_collections = CustomCollection.limit(6).order('created_at ASC')
+    @scholars = User.scholars
     @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
     render :layout => 'home'
   end

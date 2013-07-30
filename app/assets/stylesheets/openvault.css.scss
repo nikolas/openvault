@@ -1,5 +1,3 @@
-
-
 body {
 	background-image: url(/assets/background.jpg);
 	background-color: #3076aa;
@@ -29,14 +27,6 @@ p {
 	font-size: inherit;
 }
 
-.span12{
-	width: 100%;
-}
-
-.row-content{
-   max-width: 980px;
-}
-
 #mosaic-container {
 	margin-top: -82px;
 	padding-top: 82px;
@@ -47,7 +37,36 @@ p {
 	background-image: -o-linear-gradient(top, #003366,#025a97);
 	background-image: -ms-linear-gradient(top, #003366,#025a97);
 	background-image: linear-gradient(top, #003366,#025a97);
-	height: 297px;
+	height: 277px;
+  margin-right: -20px;
+  .row-content {
+    position: relative;
+    #search_overlay {
+      position: absolute;
+      width: 380px;
+      top: 100px;
+      left: 50%;
+      margin-left: -190px;
+      .search_q {
+        width: 100%;
+        box-sizing: border-box;
+        height: 50px;
+        box-shadow: 0 0 100px #000;
+        padding-right: 40px;
+        font-size: 18px;
+        border-radius: 0px;
+      }
+      .search-btn {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 50px;
+        width: 40px;
+        background: none;
+        border: none;
+      }
+    }
+  }
 }
 .mosaic-row{
 	background-color: #11629e;
@@ -61,6 +80,11 @@ p {
 	background-image: url('/assets/OV_logo_shadow_home.png');
 	background-repeat: no-repeat;
 	padding-top: 29px;
+  .action_links {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
 }
 
 .action_links {
@@ -76,6 +100,21 @@ p {
   }
   padding: 14px;
   height: 21px;
+  position: relative;
+  box-shadow: -5px 5px 10px rgba(0,0,0,.7);
+  margin-right: -10px;
+  padding-right: 30px;
+  &:after {
+    content: ' ';
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: rgba(255, 158, 37, 0.73) transparent transparent transparent;
+  }
 	.search-query-form {
 		float:left;
 		input.search_q {
@@ -98,20 +137,28 @@ p {
 			float: left;
 			margin-right: 10px;
 		}
-		select {
-			width: 175px;
-			height: 21px;
-		}
+    form {
+      float:left;
+      margin-left: 10px;
+      margin-bottom: 0px;
+  		select {
+  			width: 175px;
+  			height: 21px;
+  		}
+    }
 	}
 }
-.blacklight-collections, .blacklight-catalog {
-	#ov-logo-home {
+.blacklight-catalog-home {
+  #search-bar {
+    margin-right: -30px;
+  }
+}
+#ov-logo-home {
 		text-indent: -3000px;
 		width: 246px;
 		height: 31px;
 		background-image: url(/assets/openvault.png);
 		background-repeat: no-repeat;
-	}
 }
 .blacklight-catalog-home {
 	#ov-logo-home {
@@ -136,6 +183,25 @@ p {
 	font-size: 75%;
 	font-size: 11px;
 	margin-top: 20px;
+  .nav-tabs {
+    margin-bottom: 0px;
+    border:none;
+  }
+  .nav-tabs > li > a {
+    background-color: #11629e;
+    border-color: #11629e;
+    color: #fff;
+    border-radius: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff;
+  }
 	.panel {
 	  h2 {
 		  background-color: #11629e;
@@ -166,7 +232,7 @@ p {
 		}
 	}
 
-	#collections, #blog {
+	#collections, #blog, #scholars {
 	  @extend .panel;
 	}
 
@@ -246,9 +312,9 @@ p {
 	    }
 	  }
 	}
-  #blog {
-		position: relative;
-		display: inline;
+  #blog, #scholars {
+//    position: relative;
+//    display: inline;
 		float: left;
 		margin-right: 0;
 		width: 100%;
@@ -269,7 +335,9 @@ p {
 				border: none;
 			}
     }
-
+    .see_all {
+      color: #000;
+    }
     .byline {
 			display: inline;
 			float: left;
@@ -325,6 +393,7 @@ p {
 	padding: 20px 37px 2.591em 18.5px;
 	border: 1px solid #CCC;
 	box-sizing: border-box;
+  margin-top: -15px;
 	.field_with_errors {
 		input {
 			border: 2px solid #c00;
@@ -355,9 +424,100 @@ p {
 	.no-margin {
 		margin: 0;
 	}
+  #collection_page {
+    hr {
+      margin-left: -18px;
+      margin-right: -37px;
+    }
+    #collection_header {
+      margin-top: 0;
+      font-size: 20px;
+      h3 {
+        margin: 0px;
+        font-size: 20px;
+      }
+      #share-tools {
+        margin-top: 10px;
+      }
+    }
+  }
+  #user_show_page {
+    #user_header {
+      overflow:hidden;
+      margin-bottom: 15px;
+      position: relative;
+      img {
+        float:left;
+        margin-right: 10px;
+      }
+      h3 {
+        margin:0;
+      }
+      #share-tools {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 84px;
+      }
+    }
+    #collection_container {
+      overflow:hidden;
+      .collection_block {
+        width: 23%;
+        margin-right: 2%;
+        float:left;
+        &:last-child {
+          margin-right: 0;
+        }
+        img {
+          height: 100px;
+        }
+      }
+    }
+  }
+  .user_block {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    h4 {
+      margin-top: 0px;
+      line-height: 18px;
+    }
+  }
+  form#new_custom_collection, form.edit_custom_collection {
+    input.string, textarea {
+      width: 100%;
+    }
+    textarea {
+      height: 200px;
+      resize:none;
+    }
+    input[type="file"] {
+      line-height: 0;
+    }
+  }
+  #signup_form_container {
+    form.edit_user, form#new_user {
+      input.string, input.password {
+        width: 100%;
+      }
+      input#user_postal_code {
+        width: 50%;
+        box-sizing: border-box;
+        height: 30px;
+      }
+      input[type="file"] {
+        line-height: 0;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  }
 }
 
-.blacklight-collections-index  {
+.blacklight-collections-index, .blacklight-custom_collections-index  {
 	.document {
 		display: inline;
 		float: left;
@@ -374,7 +534,7 @@ p {
 		display: inline;
 		float: left;
 		margin-right: 8px;
-		width: 140px;
+		width: 150px;
 		border: none;
 		min-height: 2em;
 		height: 250px;
@@ -383,6 +543,7 @@ p {
 			border: none;
 			box-shadow: none;
 			border-radius: none;
+      width: 100%;
 			img {
 				height: 90px;
 			}
