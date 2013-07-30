@@ -1,9 +1,12 @@
-require 'artesia'
+require 'openvault/datastreams'
+require 'artesia/datastreams/uois'
 
 class Datastream::TeamsAssetFile < ActiveFedora::OmDatastream
 
+  include Openvault::Datastreams
   include Artesia::Datastreams::UOIS
 
+  # Set the OM terminology.
   set_terminology do |t|
 
     t.root(:path => "TEAMS_ASSET_FILE")

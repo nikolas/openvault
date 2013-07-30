@@ -26,6 +26,7 @@ module Artesia
           terminology.name(:path => {:attribute => "NAME"})
           terminology.import_user_id(:path => {:attribute => "IMPORT_USER_ID"})
           terminology.import_id(:path => {:attribute => "IMPORT_ID"})
+          terminology.master_obj_mime_type(:path => {:attribute => "MASTER_OBJ_MIME_TYPE"})
 
           terminology.security_policy_uois(:path => "SECURITY_POLICY_UOIS") {
             terminology.sec_policy_id(:path => {:attribute => "SEC_POLICY_ID"})
@@ -44,6 +45,7 @@ module Artesia
           }
 
           terminology.wgbh_type(:path => 'WGBH_TYPE') {
+            terminology.media_type(:path => {:attribute => 'MEDIA_TYPE'})
             terminology.item_type(:path => {:attribute => 'ITEM_TYPE'})
           }
 
@@ -94,34 +96,6 @@ module Artesia
           terminology.wgbh_holdings(:path => "WGBH_HOLDINGS") {
             terminology.holdings_department(:path => {:attribute => "HOLDINGS_DEPARTMENT"})
           }
-        end
-      end
-    end
-  end
-
-  class Ingester
-
-    class << self
-      def ingest!(teams_asset_file_xml, depositor_metadata)
-        artesia_ingest = ArtesiaIngest.new
-        artesia_ingest.teams_asset_file.ng_xml = Nokogiri::XML(teams_asset_file_xml) do |config|
-          # set STRICT option for Nokogiri XML parsing.
-          config.strict
-        end
-        artesia_ingest.save!
-
-        # symbols passed to find_by_terms are names of xml nodes. Kinda like xpath assets/asset/metadata/uois/.
-        artesia_ingest.teams_asset_file.find_by_terms(:assets, :asset, :metadata, :uois).each do |ng_uois|
-
-          ov_asset = OpenvaultAsset.new
-          # ng_uois is a Nokogiri::XML::Element, but we want a Nokogiri::XML::Document, so re-parse it.
-          ov_asset.uois.ng_xml = Nokogiri::XML(ng_uois.to_xml)
-          ov_asset.apply_depositor_metadata depositor_metadata
-
-          # Add the OpenvaultAsset to the ArtesiaIngest.
-          # Note that because the ArtesiaIngest instance is already saved,
-          # it will try to save the OpenvaultAsset when it is added to the 'openvault_assets' array.
-          artesia_ingest.openvault_assets << ov_asset
         end
       end
     end

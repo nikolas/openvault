@@ -20,7 +20,7 @@ module Openvault
     config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
 
     # A little tweak to load order to ensure we get the right version of GenericFile.
-    config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
+    #config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
     
     #change scaffold to build rspec tests
     config.generators do |g| 
@@ -33,6 +33,8 @@ module Openvault
         :request_specs => true 
       g.fixture_replacement :factory_girl, :dir => "spec/factories" 
     end
+    # Only needed if we're using BawstunCommons with Sufia.
+    # config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)

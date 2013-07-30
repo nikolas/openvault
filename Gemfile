@@ -45,7 +45,7 @@ group :development do
   #gem 'terminal-notifier'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', "2.3.0"
 
 gem 'blacklight'
 gem 'hydra-head', '6.1.0'
@@ -80,4 +80,7 @@ gem 'pdf-reader'
 #gem 'hydra-collections'
 
 # jcoyne made a gem of useful stuff from hydradam
-gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
+#gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
+gem 'sufia-models'
+
+gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'wgbh-master'

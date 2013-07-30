@@ -1,6 +1,6 @@
 Openvault::Application.routes.draw do
   
-  mount Sufia::Engine => '/sufia'
+  #mount Sufia::Engine => '/sufia'
   
   resources :custom_collections
 
