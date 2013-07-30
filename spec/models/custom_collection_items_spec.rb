@@ -24,4 +24,12 @@ describe CustomCollectionItem do
     build(:custom_collection_item, annotations: 'testing fail').should be {'testing fail'}
   end
   
+  it "should create a have a valid OpenvaultAsset" do
+    ov = OpenvaultAsset.new
+    ov.apply_depositor_metadata "openvault_testing@wgbh.org"
+    ov.save
+    item = create(:custom_collection_item, openvault_asset_pid: ov.pid)
+    item.ov_asset.pid.should eq(ov.pid)
+  end
+  
 end

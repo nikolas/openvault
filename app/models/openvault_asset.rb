@@ -6,7 +6,8 @@ class OpenvaultAsset < ActiveFedora::Base
   has_metadata 'pbcore', :type => HydraPbcore::Datastream::Document
   belongs_to :artesia_ingest, :property => :is_part_of, :class_name => 'ArtesiaIngest'
   
-  has_many :custom_collection_items, :property => :is_part_of, :class_name => 'CustomCollectionItem'
+  #don't think this is working
+  has_many :custom_collection_items, :property => :is_part_of
   
   include Sufia::GenericFile
   

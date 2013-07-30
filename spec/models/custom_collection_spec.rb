@@ -25,4 +25,20 @@ describe CustomCollection do
     build(:custom_collection, summary: nil).should_not be_valid
   end
   
+  it "has a valid vanity url" do
+    user = create(:user, first_name: 'John', last_name: 'Smith', role: 'scholar')
+    collection = create(:custom_collection, name: 'testing 1', user_id: user.id)
+    collection.van_url.should eq("/scholar/john-smith/testing-1")
+  end
+  
+  it "creates a valid custom collection item" do
+    user = create(:user, role: 'scholar')
+    collection = create(:custom_collection, user_id: user.id)
+    ov = OpenvaultAsset.new
+    ov.apply_depositor_metadata "openvault_testing@wgbh.org"
+    ov.save
+    collection.add_collection_item(ov.pid)
+    collection.custom_collection_items[0].ov_asset.pid.should eq(ov.pid)
+  end
+  
 end
