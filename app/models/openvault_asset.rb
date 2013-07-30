@@ -6,7 +6,7 @@ class OpenvaultAsset < ActiveFedora::Base
   
   belongs_to :artesia_ingest, :property => :is_part_of, :class_name => 'ArtesiaIngest'
   
-  #has_many :custom_collection_items, :property => :is_part_of, :class_name => 'CustomCollectionItem'
+  has_many :custom_collection_items, :property => :is_part_of, :class_name => 'CustomCollectionItem'
   
   include Sufia::GenericFile
   
