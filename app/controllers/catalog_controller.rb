@@ -6,21 +6,21 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   
-  include BlacklightOaiProvider::ControllerExtension
-  include BlacklightOembed::ControllerExtension
-
-  include BlacklightHighlight::ControllerExtension
-
-  include BlacklightMoreLikeThis::ControllerExtension
-  
-  include BlacklightFacetExtras::Query::ControllerExtension
-  include BlacklightFacetExtras::Tag::ControllerExtension
-  include BlacklightFacetExtras::Hierarchy::ControllerExtension
-  include BlacklightFacetExtras::Filter::ControllerExtension
-
-  include Openvault::SolrHelper::DefaultSort
-  include Openvault::SolrHelper::BoostMedia
-  include Openvault::SolrHelper::Restrictions
+  # include BlacklightOaiProvider::ControllerExtension
+  # include BlacklightOembed::ControllerExtension
+  # 
+  # include BlacklightHighlight::ControllerExtension
+  # 
+  # include BlacklightMoreLikeThis::ControllerExtension
+  # 
+  # include BlacklightFacetExtras::Query::ControllerExtension
+  # include BlacklightFacetExtras::Tag::ControllerExtension
+  # include BlacklightFacetExtras::Hierarchy::ControllerExtension
+  # include BlacklightFacetExtras::Filter::ControllerExtension
+  # 
+  # include Openvault::SolrHelper::DefaultSort
+  # include Openvault::SolrHelper::BoostMedia
+  # include Openvault::SolrHelper::Restrictions
   
   # These before_filters apply the hydra access controls
   before_filter :enforce_show_permissions, :only=>:show
