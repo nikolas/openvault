@@ -1,32 +1,38 @@
-<div id="sidebar" class="span3">
- <%= render :partial=>'facets' %>
-</div><!--/well -->
+<% title "OpenVault - Search Results" %>
+<% sidebar_items << render(:partial => 'facets') %>
 
-<div id="" class="span9">
+<div id="" class="">
 
     <% unless has_search_parameters? %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
 	    <%= render 'home' %>
     <% else %>
 
-      <h2 class="hide-text top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
+    <% extra_head_content << render_opensearch_response_metadata %>
 
-      <% @page_title = t('blacklight.search.title', :application_name => application_name) %>
+    <%= render :partial => 'did_you_mean' %>
+
+    <%#= render 'constraints', :localized_params=>params %>
+
+    <div class="search-results-header">
+
+      <div class="pageEntriesInfo">
+        <%= render_pagination_info @response, :entry_name=>'item' %>
+        <%=link_to "Start&nbsp;over&thinsp;".html_safe, catalog_index_path, :id=>"startOverLink" %>
+      </div>
+      <%= render :partial => 'search_form_media_only' %>
+
+      <%= render 'sort_and_per_page' %>
+
+      <%= render 'results_pagination' %>
+    </div>
+    
 
 
-      <% extra_head_content << render_opensearch_response_metadata.html_safe %>
+    <%= render_document_list_partial %>
 
-	    <%= render :partial => 'did_you_mean' %>
-
-      <%= render :partial => 'constraints' %>
-
-	    <%= render 'sort_and_per_page' %>
-
-      <h2 class="hide-text"><%= t('blacklight.search.search_results') %></h2>
-	    <%= render_document_index %>
-
-
-	    <%= render 'results_pagination' %>
+    <%= render 'results_pagination' %>
+      
 
 
     <% end %>

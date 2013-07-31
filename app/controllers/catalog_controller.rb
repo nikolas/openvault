@@ -5,13 +5,31 @@ class CatalogController < ApplicationController
   
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
+  
+  include BlacklightOaiProvider::ControllerExtension
+  include BlacklightOembed::ControllerExtension
+
+  include BlacklightHighlight::ControllerExtension
+
+  include BlacklightMoreLikeThis::ControllerExtension
+  
+  include BlacklightFacetExtras::Query::ControllerExtension
+  include BlacklightFacetExtras::Tag::ControllerExtension
+  include BlacklightFacetExtras::Hierarchy::ControllerExtension
+  include BlacklightFacetExtras::Filter::ControllerExtension
+
+  include Openvault::SolrHelper::DefaultSort
+  include Openvault::SolrHelper::BoostMedia
+  include Openvault::SolrHelper::Restrictions
+  
   # These before_filters apply the hydra access controls
   before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
   CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
-
+  
+  caches_action :home, :expires_in => 1.hour, :if => proc { |c| current_user.nil? }
 
   configure_blacklight do |config|
     config.default_solr_params = { 
@@ -165,7 +183,52 @@ class CatalogController < ApplicationController
     config.spell_max = 5
   end
   
+  def index
+    delete_or_assign_search_session_params
+
+    @search_context = 'result' if view_context.has_search_parameters?
+    # extra_head_content << view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format => 'rss')), :title => "RSS for results")
+    # extra_head_content << view_context.auto_discovery_link_tag(:atom, url_for(params.merge(:format => 'atom')), :title => "Atom for results")
+    # extra_head_content << view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type => 'application/xml',  :rel => 'unapi-server', :title => 'unAPI' })
+    puts "SEARCH RESULTS1:"
+    puts get_search_results.inspect
+    (@response, @document_list) = get_search_results
+    @filters = params[:f] || []
+    search_session[:total] = @response.total unless @response.nil?
+    respond_to do |format|
+      format.html { 
+        render 'no_results_found' and return if @document_list.empty?
+        save_current_search_params 
+      }
+      format.rss  { render :layout => false }
+      format.atom { render :layout => false }
+      format.json { render :json => @document_list }
+    end
+  end
   
+  # get single document from the solr index
+  def show
+    # extra_head_content << view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type => 'application/xml',  :rel => 'unapi-server', :title => 'unAPI' })
+    @document = OpenvaultAsset.new()
+    # @response, @document = get_solr_response_for_doc_id    
+#     
+#     redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
+#     
+#     if current_user or stale?(:last_modified => @document.updated_at)
+#       respond_to do |format|
+#         format.html {setup_next_and_previous_documents}
+#         format.jpg { send_data File.read(@document.thumbnail.path(params)), :type => 'image/jpeg', :disposition => 'inline' }
+#     
+#         # Add all dynamically added (such as by document extensions)
+#         # export formats.
+#         @document.export_formats.each_key do | format_name |
+#           # It's important that the argument to send be a symbol;
+#           # if it's a string, it makes Rails unhappy for unclear reasons. 
+#           format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
+#         end
+#       end
+#     end
+  end
   
   def home
     # pids = open(File.join(Rails.root, 'config', 'home.csv')).read.split(",").map(&:strip)
@@ -183,6 +246,36 @@ class CatalogController < ApplicationController
     render :layout => 'home'
   end
 
+  def print
+    @response, @document = get_solr_response_for_doc_id    
+    respond_to do |format|
+      format.html {setup_next_and_previous_documents}
+    end
+  end
 
+  def embed
+    @response, @document = get_solr_response_for_doc_id    
+    @width = params[:width].try(:to_i) || 640
+    @height = params[:height].try(:to_i) || (3 * @width / 4)
+    respond_to do |format|
+      format.html {render :layout => 'embed' }
+      
+      # Add all dynamically added (such as by document extensions)
+      # export formats.
+      @document.export_formats.each_key do | format_name |
+        # It's important that the argument to send be a symbol;
+        # if it's a string, it makes Rails unhappy for unclear reasons. 
+        format.send(format_name.to_sym) { render :text => @document.export_as(format_name) }
+      end
+      
+    end
+  end
+
+  def cite
+    @response, @document = get_solr_response_for_doc_id    
+    respond_to do |format|
+      format.html 
+    end
+  end
 
 end 
