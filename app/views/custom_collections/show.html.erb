@@ -1,10 +1,9 @@
 <% title "OpenVault - #{@custom_collection.name}" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h2>
   <%= @custom_collection.name %>
-</p>
+</h2>
 
 <p>
   <b>Summary:</b>
@@ -15,7 +14,12 @@
   <b>Image:</b>
   <%= image_tag @custom_collection.image.url(:med) %>
 </p>
-
+<p>
+  <b>Custom Collection Items:</b>
+  <% @custom_collection.custom_collection_items.each do |col| %>
+    <%= col.ov_asset.datastreams['pbcore'].to_xml %>
+  <% end %>
+</p>
 <p>
   <b>Article:</b>
     <!-- <iframe src="http://docs.google.com/gview?url=<%= @custom_collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->

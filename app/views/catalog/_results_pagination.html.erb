@@ -1,4 +1,3 @@
-
 <% if paginate_params(@response).num_pages > 1 %>
     <div class="pager"> 
       <%= paginate_rsolr_response @response, :outer_window => 2, :theme => 'blacklight', :route_set=> sufia %>

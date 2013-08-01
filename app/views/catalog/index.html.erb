@@ -1,0 +1,40 @@
+<% title "OpenVault - Search Results" %>
+<% sidebar_items << render(:partial => 'facets') %>
+
+<div id="" class="">
+
+    <% unless has_search_parameters? %>
+	    <%# if there are no input/search related params, display the "home" partial -%>
+	    <%= render 'home' %>
+    <% else %>
+
+    <% extra_head_content << render_opensearch_response_metadata %>
+
+    <%= render :partial => 'did_you_mean' %>
+
+    <%#= render 'constraints', :localized_params=>params %>
+
+    <div class="search-results-header">
+
+      <div class="pageEntriesInfo">
+        <%= render_pagination_info @response, :entry_name=>'item' %>
+        <%=link_to "Start&nbsp;over&thinsp;".html_safe, catalog_index_path, :id=>"startOverLink" %>
+      </div>
+      <%= render :partial => 'search_form_media_only' %>
+
+      <%= render 'sort_and_per_page' %>
+
+      <%= render 'results_pagination' %>
+    </div>
+    
+
+
+    <%= render_document_list_partial %>
+
+    <%= render 'results_pagination' %>
+      
+
+
+    <% end %>
+
+</div>

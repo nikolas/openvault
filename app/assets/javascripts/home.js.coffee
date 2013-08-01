@@ -40,9 +40,5 @@ $ ->
   $("#collections").bind "mouseleave", ->
     return  if $(this).is(".paused")
     startCollectionsTimer()
-  
-  $('#browse input').hide();
-  $('#browse select').bind 'change', ->
-    $(this).closest('form').submit()
 
   startCollectionsTimer()
