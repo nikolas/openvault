@@ -13,5 +13,6 @@
  *  So we require a single scss file that then @imports several more into the same namespace.
  *= require_self
  *= require bootstrap-wysihtml5
+ *= require active_admin/editor/wysiwyg
  */
 @import 'scss_imports';

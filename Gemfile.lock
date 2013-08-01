@@ -47,6 +47,10 @@ GEM
       rdf-rdfxml (= 1.0.1)
       rsolr
       rubydora (~> 1.6, >= 1.6.5)
+    active_admin_editor (1.1.0)
+      activeadmin (>= 0.4.0)
+      ejs
+      rails (>= 3.0.0)
     activeadmin (0.5.1)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
@@ -158,6 +162,7 @@ GEM
     devise-guests (0.3.2)
       devise
     diff-lcs (1.2.4)
+    ejs (1.1.1)
     email_spec (1.5.0)
       launchy (~> 2.1)
       mail (~> 2.2)
@@ -456,6 +461,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_editor
   activeadmin (~> 0.5.1)
   activeadmin-sortable
   acts-as-taggable-on!
