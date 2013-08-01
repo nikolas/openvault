@@ -19,10 +19,8 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :email
-    column :postal_code
-    column :country
     column :role
-    actions
+    default_actions
   end
   
   #overrides the view page format
