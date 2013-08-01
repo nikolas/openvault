@@ -29,6 +29,9 @@ class CatalogController < ApplicationController
   # This filters out objects that you want to exclude from search results, like FileAssets
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
   
+  caches_action :show, :expires_in => 1.day, :if => proc { |c|
+    current_user.nil? 
+  }
   caches_action :home, :expires_in => 1.hour, :if => proc { |c| current_user.nil? }
 
   configure_blacklight do |config|
@@ -276,6 +279,30 @@ class CatalogController < ApplicationController
     respond_to do |format|
       format.html 
     end
+  end
+  
+  # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...
+  # def invalid_solr_id_error
+  #   response, documents = get_solr_response_for_field_values("pid_s",params[:id])
+  #   redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
+  # 
+  #   response, documents = get_solr_response_for_field_values("pid_short_s",params[:id])
+  #   redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
+  # 
+  #   if Rails.env == "development"
+  #     render # will give us the stack trace
+  #   else
+  #   #  flash[:notice] = "Sorry, you have requested a record that doesn't exist."
+  #   #  redirect_to root_path, :status => 404
+  #     render(:file => "#{Rails.root}/public/404.html", :layout => false, :status => 404)
+  #   end
+  #   
+  # end
+
+  def image
+    @response, @document = get_solr_response_for_doc_id    
+    style = params[:style] || 'preview'
+    redirect_to @document.thumbnail.url(:style => style.to_sym) and return
   end
 
 end 

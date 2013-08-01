@@ -1,3 +1,4 @@
+#TODO before each, create two items and put them in solr
 require 'spec_helper'
 
 describe CatalogController do

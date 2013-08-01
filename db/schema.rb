@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730142956) do
+ActiveRecord::Schema.define(:version => 20130801150057) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,6 +67,22 @@ ActiveRecord::Schema.define(:version => 20130730142956) do
     t.text     "mid_content"
     t.text     "lower_content"
   end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.string   "commentable_id"
+    t.string   "commentable_type"
+    t.text     "metadata"
+    t.boolean  "public"
+    t.integer  "user_id"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "custom_collection_items", :force => true do |t|
     t.string   "cat_slug"

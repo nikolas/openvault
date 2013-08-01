@@ -69,7 +69,7 @@ gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
 gem "cancan"
 gem 'carrierwave'
-gem 'activeadmin'
+gem 'activeadmin', "~> 0.5.1"
 gem "mini_magick"
 gem 'simple_form'
 gem 'country_select'
@@ -77,6 +77,8 @@ gem 'acts_as_list'
 gem 'activeadmin-sortable'
 gem 'bootstrap-wysihtml5-rails'
 gem 'pdf-reader'
+gem "acts-as-taggable-on", :git => 'git://github.com/mbleigh/acts-as-taggable-on.git'
+gem "acts_as_commentable", :git => 'git://github.com/jackdempsey/acts_as_commentable.git'
 #gem 'hydra-collections'
 
 # jcoyne made a gem of useful stuff from hydradam
