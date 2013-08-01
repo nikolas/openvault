@@ -1,5 +1,6 @@
 <div id="blog" class="tab-pane">
   <%= link_to 'See all >', blog_path, :class => 'see_all' %>
+  <h2>From the blogroll</h2>
   <% Wordpress.get_recent_posts(:count => 3).each do |post| %>
     <div class="post row-fluid">
       <div class="byline span3">
