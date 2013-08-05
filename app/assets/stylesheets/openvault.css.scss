@@ -194,6 +194,12 @@ p {
     }
 	}
 }
+.lower_body {
+  margin-bottom: 30px;
+  background: #025A97;
+  padding-bottom: 20px;
+  margin-right: -20px;
+}
 .blacklight-catalog-home {
   #search-bar {
     margin-right: -30px;
@@ -261,6 +267,9 @@ p {
 		  font-size: 11px;
 		  line-height: 1.5em;
 			margin-top:0px;
+      border-top: 1px solid #2174B3;
+      border-right: 1px solid #2174b3;
+      border-left: 1px solid #2174b3;
 	  }
 	  .see_all {
 		  float: right;
