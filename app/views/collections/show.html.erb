@@ -14,7 +14,7 @@
       <%= image_tag @collection.image.url(:large) %>
     </div>
     <div class="span6">
-      <p class="summary"><%= @collection.summary.html_safe %></p>
+      <p class="summary"><%= @collection.summary.html_safe unless @collection.summary.nil? %></p>
     </div>
   </div>
   <hr />
