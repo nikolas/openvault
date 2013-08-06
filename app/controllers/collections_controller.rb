@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
 
   def show
     # @collection is build with the before_filter
-    #this will be needed for the sidebar
+    # this will be needed for the sidebar
     @in_collection = []
   end
   
