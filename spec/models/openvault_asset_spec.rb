@@ -9,8 +9,10 @@ describe OpenvaultAsset do
   }
 
   before(:all) do
-    ng = Nokogiri::XML(File.read("#{fixture_path}/teams_asset_files/zoom.xml"))
-    @uois_xml = ng.xpath('//UOIS[@UOI_ID="e3616b02f7257101d85c4a0b8e5e7f119ca0556a"]').to_xml
+    uois_ng = Nokogiri::XML(File.read("#{fixture_path}/teams_asset_files/zoom.xml"))
+    @uois_xml = uois_ng.xpath('//UOIS[@UOI_ID="e3616b02f7257101d85c4a0b8e5e7f119ca0556a"]').to_xml
+
+    @pbcore_ng = Nokogiri::XML(File.read("#{fixture_path}/pbcore/MARS_program.xml"))
   end
 
   it "saves a datastream for UOIS xml" do
@@ -36,6 +38,13 @@ describe OpenvaultAsset do
     ov_asset.save!
     check = OpenvaultAsset.find(ov_asset.pid)
     check.artesia_ingest.should == artesia_ingest
+  end
+
+  it 'saves a datastream for PBCore xml' do
+    ov_asset.pbcore.ng_xml = @pbcore_ng
+    ov_asset.save!
+    compare = OpenvaultAsset.find ov_asset.pid
+    compare.pbcore.to_xml.should == ov_asset.pbcore.to_xml
   end
 
 end

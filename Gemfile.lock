@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/afred/hydra-pbcore.git
-  revision: e299a83cee25b2df4bfe50d0f640151edd108622
-  branch: wgbh-master
+  revision: 6e6cab07d5a4818838e1da073b8786a2a0341f5a
+  branch: master
   specs:
-    hydra-pbcore (3.0.0pre1)
+    hydra-pbcore (3.0.0.rc1)
       active-fedora
       solrizer
 

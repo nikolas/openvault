@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<pbcoreCollection xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html">
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_OXMDD86FCWEUUPJ</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">10/6/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">On Feb. 23, 1987, one of the most violent events since the creation of the universe was observed.  Ian Shelton, a young Canadian astronomer working on a remote mountaintop in Chile, came upon a supernova--the gargantuan explosion in which a star blows itself apart.  A star blows itself apart in a nearby galaxy, and astronomers scramble to study the rare event.  NOVA covers a fast-breaking science story as it is happening. </pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001411 </pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Robin Bates</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1411</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Death of a Star</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_076BABKU6PDWTOA</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">BOSTON'S ILLEGAL IMMIGRANTS;  DAVID BOERI</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">x</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Boston's Illegal Immigrants: Determined to Stay</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Ten O'Clock News</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_NNX4IERNDALWNTE</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">1/10/1979</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Premiered January 10, 1979
+Series Description: Producer Raquel Ortiz anticipates that the bilingual series will serve as a plaza for the entire local Latino community. Ortiz also served as the host during the first season along with guest hosts. The program format varied from week to week, between musical specials, documentaries, in-studio debates, both locally produced and acquired. Spanish language programs were subtitled in English and English language programs were captioned in Spanish.
+
+See January 1979 Prime Time Program Guide for cover story.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">LPLA</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Raquel Ortiz</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Series">La Plaza</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_HJKM13P5OOJC5RE</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">2/24/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">FOLLOWS SCIENTISTS ON AN EXPEDITION IN ANTARCTICA TO DISCOVER IF A HOLE IN THE EARTH'S OZONE LAYER IS A NATURAL PHENOMENON OR THE RESULT OF MAN-MADE FREON GAS.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001406</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Linda Harrar</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1406</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Hole in the Sky, The</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_NUF4AQ15SCSCANK</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">10/13/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Descends into the secret world of espionage to probe the pivotal role that science and technology have played in providing information about the nation's political adversaries on the 25th anniversary of the Cuban missile crisis.  The U-2 was one of the earliest and most celebrated of high-flying machines, becoming known to the world when one was shot down deep inside the Soviet Union in 1960.   By then planes had penetrated Russian air space many times to photograph top military targets.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001412</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Blaine Baggett (KCET) for (WGBH)</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1412</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Spy Machines</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_EKOPK7O05A37CNB</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">10/20/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">EXAMINES SCIENTIFIC EFFORTS TO TRACK DOWN NEW MEDICINES DERIVED FROM SUBSTANCES FOUND IN PLANTS. Just 90 species of plants provide 25 percent of the medicines used in the United States. Most of the world's plants have never been tested for their beneficial effects, but an astonishing number have been tried out as folk remedies over generations of trial and error.  Plants produce some of the world's most potent chemicals in the fight against disease.  NOVA follows the urgent efforts to track down new medicines in nature.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001413</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Vishnu Mathur (CBC); Kate Bernhardt (WGBH)</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1413</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Hidden Power of Plants, The</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_UAGJ5AY3BQEND34</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">10/27/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Japanese industries are betting that the genius behind the amorphous materials, Detroit inventor Stanford Ovshinsky, is onto something big.  His pathbreaking discovery in the 1960s was that amorphous materials -- simple glassy substances-- can serve the same electronic function as hard-to-grow and expensive crystals such as silicon.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001414</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Marion Marzynski</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1414</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Japan's American Genius</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_WHRY0E3284SXEH7</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">THIS SERIES IS BLACK PRODUCED AND IS ONE OF PUBLIC TELEVISION'S LONGEST-RUNNING SERIES THAT IS ROOTED IN AND REFLECTS THE CULTURE, CONCERNS, ACHIEVEMENTS AND HISTORY OF PEOPLE OF AFRICAN DESCENT.  ALSO INCLUDES CONTROVERSIAL ISSUES, African American ARTISTS, AND EVENTS OF SPECIAL INTEREST TO THE African American COMMUNITY.  
+*Episode descriptions and guest lists are available in black binders in the central area of the Audience and Member Services Department.  Contact: Lix Hagyard xt 5407.
+*TITLE CHANGE (to Basic Black) as of Jan. 8, 1998.
+*First aired June 20, 1968.  First anchor Sarah Anne Shaw.
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">x</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">Basic Black</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_KX8GP4UIYEAVHPU</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Gardening program hosted by Jim Wilson and joined by Bob Smaus, Roger Swain, Lucinda Mays and Peter Seabrook as international travel correspondent.  Series chef is Marion Morash.  Special correspondent is Holly Shimizu.  The Boston-based Victory Garden (w/ Roger Swain) is located at a private residence; Victory Garden South is at Callaway Gardens in Pine Mountain, Georgia; Victory Garden West is at Roger's Garden Center in Corona del Mar, California.  Original program:  Crockett's Victory Garden - premiered April 6, 1976.  Hosted by Jim Crockett.  Second host Bob Thomson (for 12 years till 1991).</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">VGAR</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>O'Connor</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Series">Victory Garden</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_PA2SK8GOUZAXA34</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">JAMES EARL JONES NARRATES THIS FILM PORTRAIT OF ALLAN BOESAK, THE MIXED-RACE MINISTER IN THE SEGREGATED DUTCH REFORMED CHURCH OF SOUTH AFRICA WHO HAS BECOME ONE OF THE MOST OUTSPOKEN ANTI-APARTHEID ACTIVISTS IN SOUTH AFRICA.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">ABCJ  000000</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Allan Boesak: Choosing for Justice</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_QVK5OZU7BLZQGJM</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">4/16/1986</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">HERALDED AT THE TURN OF THE CENTURY  AS THE BRIGHT FUTURE OF AIR TRANSPORTATION, THE BLIMP QUICKLY FAILED TO FULFILL THAT PROMISE.  NOW, DECADES LATER, THE NAVY HAS IDENTIFIED NEW MILITARY USES FOR THOSE AIRSHIPS AND ONCE AGAIN THEY ARE BECOMING THE OBJECT OF GREAT ATTENTION.   THIS FOCUSES ON THE REINVENTION OF ZEPPELIN TECHNOLOGY AND THE COMPLETION THAT THE RENEWED INTEREST IN THEM HAS PROMPTED BETWEEN TWO LEADING MANUFACTURERS.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">BZEP  000000</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Executive Producer: Zvi Dor-Ner</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">402</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Battle of the Blimps:  An Enterprise Special</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Enterprise</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_24M4BTUKJAPH2XW</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">THE FOREIGN CURRENCY MARKET COMES TO LIFE AS "ENTERPRISE" CAMERAS FOLLOW THREE MONEY TRADERS:  WILLIAM WONG IN HONG KONG, RICHARD HILL IN LONDON, RONY SCHLAPFER IN NEW YORK, DURING A HECTIC AND LUCRATIVE DAY OF INTERNATIONAL TRADING.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">BDLD  000000</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Ben Loeterman</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">401</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Billion Dollar Day: An Enterprise Special</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Enterprise</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_E081GW0KRZ60LA8</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">3/19/1986</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">STUDIO AUDIENCE QUIZ CONSISTING OF 17 QUESTIONS ON STRESS, EXERCISE, NUTRITION AND SEX.  ANSWERS TO QUESTIONS PROVIDED BY EXPERTS IN PRE-TAPED SEGMENTS SHOT ON LOCATION.
+
+Program description from DIAL program guide, March 1986:
+"Viewers can compare their fitness IQs with studio participants in this quiz show that tracks the latest health-related reserach on stress, exercise, nutrition and sex and offers practical information on maintaining a healthy lifestyle. Dick Cavett hosts. (Bodywatch premiers as a weekly eight-part series next month.)"
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">BWAH</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Executive Producer: Chris Gilbert; Senior Producer: Laurie Donnelly</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Program">In Search Of The Perfect Day</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Bodywatch</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_A50IN75ABYY58A5</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Series host: Dr. James H. "Red" Duke, Jr., Texas physician and professor of surgery.  Health correspondent: Dr. Holly Atkinson, physician and medical journalist. Commentator: T George Harris, editor-in-chief, "American Health" magazine.  Program format: Magazine-style; each program is focused on a single health theme and includes feature stories as well as a commentary.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">BWAH</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Executive Producer: Chris Gilbert; Senior Producer: Laurie Donnelly</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Series">Bodywatch</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_GB8GFCAPIN08DA5</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">IN 1774, YEARS AFTER THE LONDON JOURNAL STORIES, JAMES BOSWELL, NOW A PRACTICING EDINBURGH ATTORNEY, DEFENDS AN ACCUSED SHEEP STEALER IN A CAPITAL OFFENSE--IN THIS GRIPPING COURTROOM DRAMA.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">x</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Dighton Spooner</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Program">Boswell for the Defense</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_AS7HGBXLEPT025S</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">BASED ON JAMES BOSWELL'S REMARKABLY FRANK AND PERSONAL JOURNALS, THIS TWO-PART DRAMA FOLLOWS THE YOUNG WRITER AS HE LEAVES HIS EDINBURGH HOME TO IMMERSE HIMSELF IN THE BUSTLE OF THE 18TH CENTURY LONDON'S HIGH, LOW AND LITERARY LIFE.  BOSWELL SUBSEQUENTLY WROTE THE DEFINITIVE BIOGRAPHY OF DR. SAMUEL JOHNSON, AND THE PROGRAMS EXPLORE THE BEGINNINGS OF THEIR LONG AND FRUITFUL FRIENDSHIP.  THE DRAMA MAKES MAXIMUM USE OF CHROMAKEY TECHNIQUES TO PRESENT THE ACTORS IN AUTHENTIC BACKGROUNDS.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">BJNL  000000</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Boswell's London Journal</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_SVOCTBIP151NRY1</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">MORE THAN TWO DOZEN OF THE TOP PROFESSIONAL BALLROOM DANCERS FROM ACROSS THE UNITED STATES AND CANADA COMPETE IN THE LATIN AND MODERN DIVISIONS OF THE NATIONAL CHAMPIONSHIPS.  1987'S CONTEST, HELD IN COLUMBUS, OHIO, IS AGAIN HOSTED BY DANCER, SINGER AND ACTRESS JULIET PROWSE.  (Series began in 1981)</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">X</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Aida Moreno</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Program">Championship Ballroom Dancing 1985</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Championship Ballroom Dancing</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_PI644T4M646ERSS</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">7/1/1986</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">A SPECIAL 12-PART "FRONTLINE" SERIES WITH JUDY WOODRUFF.  PROFILES OF RUSSIANS, FROM VARIOUS BACKGROUNDS, CULTURES AND PROFESSIONS, REVEAL WHAT EVERYDAY LIFE IS LIKE FOR 270 MILLION SOVIET PEOPLE.
+
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">COMR</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Comrades</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE Special Report</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_2S6WDXLBE3IPC8C</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">IN THIS DOCUMENTARY, TEENS, PARENTS, TEACHERS AND OTHER CARING ADULTS TALK ABOUT ISSUES OF CONCERN TO YOUNG PEOPLE--SELF-ESTEEM, COMMUNICATING WITH ADULTS AND EACH OTHER, REACHING OUT TO THOSE IN NEED, DRUGS AND ALCOHOL , PRESSURES AND ISSUES WHICH CAN CAUSE DEPRESSION, LEAD TO SERIOUS BEHAVIORAL PROBLEMS, AND FAR TOO OFTEN SUICIDE.  IT IS DESIGNED PRIMARILY FOR ADULTS.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">CRIE  000000</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Bartlett</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Program">Cries for Help</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_ZQVQN1WXQ1CCA7Q</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">THIS PROGRAM EXAMINES THE REPERCUSSIONS OF A TRADE EMBARGO ON BOTH SIDES OF THE POLITICAL DIVIDE  --  IN THIS CASE, THE U.S. AND NICARAGUA  --  FOLLOWING BUSINESSMEN ON THREE CONTINENTS AS THEY SEARCH FOR NEW WAYS TO RECONCILE POLITICS AND PROFITS.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">ANAT  000000</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Executive Producer: Zvi Dor-Ner</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">403</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Embargo: An Enterprise Special</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Enterprise</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_O8RG6X4LI78KK74</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">FOLLOWS THE CORPORATE COMPETITORS EFFORTS TO VIE FOR THE PUBLIC'S AWARENESS IN THE $10 MILLION SPONSORSHIP OF THE BOSTON MARATHON.  THE PROGRAM ALSO EXAMINES WHETHER BIG BUSINESS SPONSORSHIP HAS BEEN WORTH THE CORPORATE EFFORT.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">RFTM  000000</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Ben Loeterman</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">404</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Run for the Money: An Enterprise Special</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Enterprise</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_KN2GDQFA4K4JEAG</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Series Description: Broadcast in 1987
+
+Produced by Blackside, Eyes on the Prize tells the definitive story of the civil rights era from the point of view of the ordinary men and women whose extraordinary actions launched a movement that changed the fabric of American life, and embodied a struggle whose reverberations continue to be felt today.
+
+Through contemporary interviews and historical footage, Eyes on the Prize traces the civil rights movement from the Montgomery bus boycott to the Voting Rights Act; from early acts of individual courage through the flowering of a mass movement and its eventual split into factions. Julian Bond, political leader and civil rights activist, narrates.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">EYPZ</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Henry Hampton</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Episode">101-106</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Eyes On The Prize</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_D2EN662ZL8Y3P8M</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">DOCUMENTARY THAT FOCUSES ON THE CONTRIBUTION OF BLACK AVIATORS, BOTH TECHNICALLY AND DEVELOPMENTALLY, TO THE WORLD OF AVIATION.  Rare film footage and dramatic reenactments tell the unknown story of America's pioneering black aviators and the familiar frustrations and struggles created by racial prejudice. This program documents this important phase of history--during the Golden Age of aviators in the 1920's and '30's--including the producer's great-uncle, James Herman Banning. Accompanied by mechanic Thomas C. Allen, Banning was the first black pilot to complete a transcontinental flight, in 1932. The program also celebrates the efforts of Bessie Coleman, the first black pilot to receive a license, which she was forced to earn abroad, in 1922.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FLYY  000000</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Phlllip Hart and Barbara Barrow-Murray</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Program">Flyers in Search of a Dream</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_W3EYT32FZWAD8X8</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">1/2/1988</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Traces the rise and fall of television evangelists Jim and Tammy Bakker and investigates why government agencies failed to vigorously investigate charges of corruption in the Bakker empire. 
+                                 
+                                                          
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FRON 000601</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Stephanie Tepper, William Cran</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">601</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Praise the Lord</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_60223JKPCAY3YN6</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">12/14/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Series Description: Judy Woodruff hosts "definitive history of South Africa" showing the "intransigence of the white government and the enormity of the black struggle for equality, justice and freedom." -- David Fanning.
+Part I: 1652-1948;  Part II:  1948-1963;  Part III:  1963-1977;  Part IV:  1978-1986;  Part V:  1987.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FRON</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Fanning, David</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreTitle titleType="Program">Apartheid</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE Special Report</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_0XC5AVLAG6OIUHX</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">1/17/1983</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">In its premiere broadcast, FRONTLINE investigates the underbelly of the National Football League, the secret connections between professional football and the world of sports gambling and organized crime. </pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FRON 000101</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>William Cran</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">101</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Unauthorized History of the Nfl, An</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_4X2AVX6MVPU7IHJ</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">2/7/1983</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Life for the Taiwanese and the changing U.S.  policy towards the island.  For thirty-four years, those who fled to Taiwan in the wake of the Communist victory have had only their memories and fantasies of mainland China. Now they want to know much more, and a political struggle is underway to determine how Taiwan will relate to the mainland.  
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FRON 000104</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>John David Rabinovitch</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">104</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Chinese Affair, A</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_7NWC7ED21KB5GYF</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">2/14/1983</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Power politics and the Catholic Church involved in collapse of Banco Ambrosiana and the death of banker Roberto Calvi.  In 1982, a man was discovered hanging from a bridge over the Thames River in London.  He was Roberto Calvi, head of Italy's largest bank and chief advisor to the Vatican's bank.  Reporter Jeremy Paxman investigates Calvi's links with the Vatican and with P-2, a secret Italian society, and questions whether his death was really a suicide.  
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FRON 000105</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Peter Bate, David Kuhn</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">105</pbcoreTitle>
+    <pbcoreTitle titleType="Program">God's Banker</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_JAAZLPK4AKCPPRT</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">2/21/1983</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">How Pentagon business decisions affect our society.  Investigates the power of the Pentagon as a business and economic force in the domestic economy. Politicians and themselves chasing Pentagon dollars for the jobs those dollars create in their districts; scientists and universities and themselves dependent on the military if they want to do research in many high-tech areas.  
+</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">FRON 000106</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Sherry Jones</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">106</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Pentagon, Inc.</pbcoreTitle>
+    <pbcoreTitle titleType="Series">FRONTLINE</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_HPFQATBEMLY6MUR</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Subjects such as:  auto pollution,  ignition system,  catalytic converter;  compulsive gambling, obsession,  willpower; designer pets, breeding; digital music, Boston Pops;  Worcester Polytechnic Institute  Robotics Lab, Gail Harris ; plastic horseshoes; ATM, automatic teller machines; dolphins, innovative training; stress, relaxing techniques; spicy food; dance, back injury, Boston Ballet's Elaine Bauer.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">X</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">Science Gazette, The</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_ZLAATZTEHUM6AJT</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">11/3/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">The Panama Canal opened in 1914 after a 30 year effort that dwarfed the building of the pyramids.  Historian David McCullough navigates through the canal and tells the story of the human drama behind that engineering feat.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001415</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Carl Charlson</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1415</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Man, a Plan, a Canal, Panama, A</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_HQBCPJJPPAUPA05</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">11/10/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">NOVA accompanies scientists who are developing new techniques to predict when and how explosively volcanoes will erupt.  Standing on the slopes of a volcano in Central America, British geologist Geoff Brown compares its possible eruption with that of Mount St. Helens in 1980.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001416</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Alain Jehlen; John Simmons</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1416</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Volcano</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_WHFOX0MWS0DUX3Q</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">11/17/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">NOVA takes a behind-the-scenes look at science and technology in the USSR where the government is trying novel approaches in the effort to catch up with the West.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001417</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Martin Smith</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1417</pbcoreTitle>
+    <pbcoreTitle titleType="Program">How Good Is Soviet Science</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_UIRQ7OFYJT4Q5KG</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">3/19/1985</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Explores the breeding, migration and survival patterns of the Rocky Mountain elk.  Telephoto lenses were used so as not to disturb the animals; filmmakers spent 18 months tracking the elk through the breathtaking Wyoming Rockies.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA 001210</pbcoreIdentifier>
+    <pbcoreCreator>
+      <creator>Ray Paunovich (NI); Bebe Nixon (WGBH)</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+    </pbcoreCreator>
+    <pbcoreRightsSummary>
+      <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+    </pbcoreRightsSummary>
+    <pbcoreTitle titleType="Episode">1210</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Monarch of the Mountains</pbcoreTitle>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_ZAVB1CQ1QH0A04A</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">11/17/1986</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Martha Stewart, prominent American chef and author of five books on the art of cooking and entertaining, celebrates the holiday spirit with creative and practical approaches to every aspect of holiday entertaining--from menu planning to food preparation to table settings.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">HEMS  000000</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Holiday Entertaining with Martha Stewart</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_0ZR4SXOW1BV60IV</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">11/27/1987</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">This program profiles Boston Ballet's artistic director, Bruce Marks.  It makes a remarkable visit behind the scenes of the 1987 winter and spring seasons as the company expands their repertoire and creates the world premiere of "Hans Christian Andersen."  It provides a unique look at an art organization's quest for artistic excellence, financial stability and continuing service.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">X</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Dancing with the Future</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Program Record ID">P_BNX5ZKALHT8FMTM</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">3/3/1974</pbcoreAssetDate>
+    <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Series Description: Premiered March 1974
+NOVA is a general-interest documentary series that addresses a single science issue each week.  Billed as "science adventures for curious grown-ups" when it first aired  in March, 1974, NOVA continues to offer an informative and entertaining approach to a challenging subject.  1996 marked NOVA's 23rd season, which makes it the longest-running science program on national television.  It is also one of television's most acclaimed series, having won every major television award, most of them many times over.</pbcoreDescription>
+    <pbcoreIdentifier source="NOLA Code">NOVA</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+  </pbcoreDescriptionDocument>
+</pbcoreCollection>
