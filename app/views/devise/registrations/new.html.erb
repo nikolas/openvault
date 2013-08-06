@@ -1,7 +1,8 @@
 <% title "OpenVault - Sign Up" %>
 <div id="signup_form_container">
-	<h3>Open Vault Registration</h3>
-	<p>An Open Vault account is required to view select media and to add tags and annotations. Sign-up is quick and free.</p>
+	<h2>Open Vault Registration</h2>
+	<p>An Open Vault account is required to view select media and to add tags and annotations to Open Vault content. Sign up is quick, easy and free.</p>
+  <br />
 	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
 	  <%= devise_error_messages! %>
 
@@ -62,5 +63,5 @@
 	  </div>
 		
 	<% end %>
-	
+	<hr />
 	<%= render "devise/shared/links" %>

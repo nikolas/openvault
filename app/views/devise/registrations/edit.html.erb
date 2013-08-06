@@ -1,6 +1,6 @@
 <% title "OpenVault - Edit Profile" %>
 <div id="signup_form_container">
-  <h2>Edit your profile</h2>
+  <h2>Edit your Open Vault profile</h2>
 	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal', :method => :put}) do |f| %>
 	  <%#= devise_error_messages! %>
 
@@ -35,7 +35,7 @@
     
     <%= f.input :title, :placeholder => 'Title' %>
     
-    <%= f.input :bio, :placeholder => 'Biography (500 character limit)', :input_html => { class: 'wysihtml5' } %>
+    <%= f.input :bio, :placeholder => 'Biography (500 character limit)', :input_html => { class: 'wysihtml5bio' } %>
 		
 		<%= f.input :postal_code, :placeholder => 'Postal code' %>
 
@@ -62,11 +62,10 @@
 	  </div>
 		
 	<% end %>
-	
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy with your OpenVault Account?</p>
+	<hr />
+  <h3>Unhappy with your Open Vault account</h3>
+  <br />
   <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-inverse' %>
 
-  <%= link_to "Back", :back %>
+  <%= link_to "Back", :back, :class => 'back' %>
 </div>
