@@ -20,11 +20,11 @@
   <hr />
   <!-- This content needs to be made dynamic -->
   <div id="collection_mid" class="row-fluid">
-    <%= @collection.mid_content.html_safe %>
+    <%= @collection.mid_content.html_safe unless @collection.mid_content.nil? %>
   </div>
   <hr />
   <div id="colleciton_bottom" class="row-fluid">
-    <%= @collection.lower_content.html_safe %>
+    <%= @collection.lower_content.html_safe unless @collection.lower_content.nil? %>
   </div>
   <!-- End of content that needs to be made dynamic -->
 </div>
