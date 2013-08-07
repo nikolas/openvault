@@ -1,7 +1,5 @@
-GIT
-  remote: git://github.com/afred/hydra-pbcore.git
-  revision: 6e6cab07d5a4818838e1da073b8786a2a0341f5a
-  branch: master
+PATH
+  remote: /Users/Shared/web-applications/hydra-pbcore
   specs:
     hydra-pbcore (3.0.0.rc1)
       active-fedora
