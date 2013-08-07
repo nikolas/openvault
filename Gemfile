@@ -76,4 +76,5 @@ gem 'activeadmin-sortable'
 
 gem 'sufia-models'
 
-gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'wgbh-master'
+# TODO: This is going to have to change before deploying to production or staging
+gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'master'

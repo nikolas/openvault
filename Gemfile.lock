@@ -23,7 +23,7 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    active-fedora (6.4.3)
+    active-fedora (6.4.5)
       activesupport (>= 3.0.0)
       deprecation
       mediashelf-loggable
@@ -239,7 +239,7 @@ GEM
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
     mini_portile (0.5.1)
-    multi_json (1.7.7)
+    multi_json (1.7.8)
     mysql2 (0.3.13)
     nest (1.1.2)
       redis
