@@ -43,7 +43,7 @@ group :development do
   gem 'debugger'  
 end
 
-gem 'jquery-rails'
+gem "jquery-rails", "2.3.0"
 
 gem 'blacklight'
 gem 'hydra-head', '6.1.0'
