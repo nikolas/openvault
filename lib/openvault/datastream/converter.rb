@@ -1,5 +1,5 @@
 module Openvault
-  module Datastreams
+  module Datastream
     module Converter
       extend ActiveSupport::Concern
 

@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-require 'openvault/datastreams'
+require 'openvault/datastream'
 
 # Here is a test class that includes the Openvault::Datastreams module
 class TestDatastream < ActiveFedora::OmDatastream
-  include Openvault::Datastreams
+  include Openvault::Datastream
 end
 
-describe Openvault::Datastreams do
+describe Openvault::Datastream do
 
   let(:ov_datastream) { TestDatastream.new }
   let(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }

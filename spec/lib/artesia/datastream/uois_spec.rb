@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Datastream::UOIS do
+describe Artesia::Datastream::UOIS do
 
   # This array specifies which <TEAMS_ASSET_FILE> xml fixtures to use.
   #
@@ -103,7 +103,7 @@ describe Datastream::UOIS do
       uoi_ids_array.each do |uoi_id|
 
         # Create a new Datastream::UOIS object.
-        uois_datastream = Datastream::UOIS.new
+        uois_datastream = Artesia::Datastream::UOIS.new
 
         # Use Nokogiri xpath to get the <UOIS> xml, and pass it to the Datastream::UOIS object.
         uois_datastream.set_xml ng.xpath("//UOIS[@UOI_ID='#{uoi_id}']").to_xml

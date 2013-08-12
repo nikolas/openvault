@@ -38,7 +38,7 @@ guard 'rspec' do
   watch(%r{^spec/fixtures/teams_asset_files/(.+)\.xml$}) do |m| 
     [
       "spec/lib/openvault/ingester/artesia_spec.rb",
-      "spec/lib/artesia/datastreams/uois_spec.rb",
+      "spec/lib/artesia/datastream/uois_spec.rb",
       "spec/models/openvault_asset_spec.rb",
       "spec/models/artesia_ingest_spec.rb",
       "spec/models/datastream/uois_spec.rb"

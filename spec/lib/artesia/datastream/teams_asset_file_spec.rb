@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Datastream::TeamsAssetFile do  
+describe Artesia::Datastream::TeamsAssetFile do  
 
-  subject(:teams_asset_file) { Datastream::TeamsAssetFile.new }
+  subject(:teams_asset_file) { Artesia::Datastream::TeamsAssetFile.new }
 
   describe '#set_xml' do
     let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
