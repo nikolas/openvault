@@ -1,5 +1,7 @@
 # Users pages functions
 $ ->
+  # $('.wysihtml5bio').each (i, elem) ->
+#       $(elem).wysihtml5()
   showUserPasswordChange()
   
 showUserPasswordChange = ->
