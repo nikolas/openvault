@@ -3,9 +3,9 @@
   <% document_show_fields.each do |solr_fname| -%>
     <% if document.has? solr_fname %>
       <div class="blacklight-<%= solr_fname.parameterize %>" >
-	    <div class="label"><%= render_document_show_field_label :field => solr_fname %></div>
-            <div class="value"><%= render_document_show_field_value :document => document, :field => solr_fname %></div>
-          </div>
+	      <div class="label"><%= render_document_show_field_label :field => solr_fname %></div>
+        <div class="value"><%= render_document_show_field_value :document => document, :field => solr_fname %></div>
+      </div>
     <% end -%>
   <% end -%>
   <!-- <div class="blacklight-tags">

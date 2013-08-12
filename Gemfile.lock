@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/afred/hydra-pbcore.git
-  revision: e299a83cee25b2df4bfe50d0f640151edd108622
-  branch: wgbh-master
-  specs:
-    hydra-pbcore (3.0.0pre1)
-      active-fedora
-      solrizer
-
-GIT
   remote: git://github.com/jackdempsey/acts_as_commentable.git
   revision: a637277ce9b4f63b94472febacbfe73011ded107
   specs:
@@ -19,6 +10,13 @@ GIT
   specs:
     acts-as-taggable-on (2.4.2.pre)
       rails (>= 3, < 5)
+
+PATH
+  remote: /Users/Shared/web-applications/hydra-pbcore
+  specs:
+    hydra-pbcore (3.0.0.rc1)
+      active-fedora
+      solrizer
 
 GEM
   remote: https://rubygems.org/

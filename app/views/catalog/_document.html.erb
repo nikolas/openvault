@@ -5,16 +5,32 @@
   <div class="documentHeader">
     
     <% # bookmark/folder functions for items/docs -%>
-    <%= render_index_doc_actions document %>
+    <%#= render_index_doc_actions document %>
     
     <% # main title container for doc partial view -%>
     <h3 class="index_title"><%= link_to_document document, :label=>document_show_link_field, :counter => (document_counter + 1 + @response.params[:start].to_i) %><%= " (Video Excerpt)" if document.get('media_dsid_s') =~ /Video/ and document.get('dc_type_s') =~ /excerpt/ %></h3>
-
     
   </div>
-  
+  <div  class="thumbnail">
+    <%#= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe) %>
+  </div> 
   <% # main container for doc partial view -%>
-  <%= render_document_partial document, :index %>
-  <%= render_document_unapi_microformat document %>
-
+  <%#= render_document_partial document, :index %>
+  <div class="defList_container">
+    <div class="blacklight-summary_ssm" >
+      <div class="label">Summary</div>
+      <div class="value"><%= document['summary_ssm'][0].html_safe %></div>
+    </div>
+    <div class="blacklight-dc_date_s">
+      <div class="label">Date Created</div>
+      <div class="value"><%= document['asset_date_ssm'][0].html_safe %></div>
+    </div>
+    <div class="blacklight-pbcore_pbcoretitle_program_s">
+      <div class="label">Program</div>
+      <div class="value"><%= document['series_ssm'][0].html_safe %></div>
+    </div>
+  </div>
+  
+  <%#= render_document_unapi_microformat document %>
+  <div class="clearfix"></div>
 </div>
