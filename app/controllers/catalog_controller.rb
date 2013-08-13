@@ -43,17 +43,18 @@ class CatalogController < ApplicationController
     }
     
     config.index.show_link = 'title_ssm'
-    config.add_index_field 'title_ssm', :label => 'Title:' 
-    config.add_index_field 'text', :label => 'Text:' 
+    config.add_index_field 'summary_ssm', :label => 'Summary' 
+    config.add_index_field 'asset_date_ssm', :label => 'Date Created'
+    config.add_index_field 'series_ssm', :label => 'Program'
     
-    # # solr field configuration for search results/index views
-#     config.index.show_link = 'title_tesim'
-#     config.index.record_tsim_type = 'has_model_ssim'
 # 
 #     # solr field configuration for document/show views
-#     config.show.html_title = 'title_tesim'
-#     config.show.heading = 'title_tesim'
-#     config.show.display_type = 'has_model_ssim'
+    config.show.html_title = 'title_clip_ssm'
+    config.show.heading = 'title_clip_ssm'
+    config.show.display_type = 'has_model_ssim'
+    config.add_show_field 'desc_clip_ssm', :label => "Summary:"
+    config.add_show_field 'subject_name_ssm', :label => 'Topics:'
+
 # 
 #     # solr fields that will be treated as facets by the blacklight application
 #     #   The ordering of the field names is the order of the display
@@ -281,7 +282,7 @@ class CatalogController < ApplicationController
   def cite
     @response, @document = get_solr_response_for_doc_id    
     respond_to do |format|
-      format.html 
+      format.html {render :layout => 'blank'}
     end
   end
   

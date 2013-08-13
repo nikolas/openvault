@@ -22,26 +22,26 @@ module BlacklightHelper
 # 
 #   end
 # 
-#   def render_document_partial(doc, action_name)
-#     format = self.send "document_#{action_name}_partial_name", doc if self.respond_to? "document_#{action_name}_partial_name"
-#     format ||= document_partial_name(doc)
-#     begin
-#       enforce_rights(doc, action_name) 
-#       render :partial=>"catalog/_#{action_name}_partials/#{format}", :locals=>{:document=>doc}
-#     rescue Openvault::PermissionDenied
+  def render_document_partial(doc, action_name)
+    format = self.send "document_#{action_name}_partial_name", doc if self.respond_to? "document_#{action_name}_partial_name"
+    format ||= document_partial_name(doc)
+    begin
+      #enforce_rights(doc, action_name) 
+      render :partial=>"catalog/_#{action_name}_partials/#{format}", :locals=>{:document=>doc}
+    # rescue Openvault::PermissionDenied
 #       render :partial=>"catalog/_#{action_name}_partials/permission_denied", :locals=>{:document=>doc}
-#     rescue ActionView::MissingTemplate
-#       render :partial=>"catalog/_#{action_name}_partials/default", :locals=>{:document=>doc}
-#     end
-#   end
+    rescue ActionView::MissingTemplate
+      render :partial=>"catalog/_#{action_name}_partials/default", :locals=>{:document=>doc}
+    end
+  end
+
+  # def document_heading
+  #   super.to_s.html_safe
+  # end
 # 
-#   def document_heading
-#     super.to_s.html_safe
-#   end
-# 
-#   def render_document_heading(document=@document, options={})
-#     render :partial => 'document_heading', :locals => { :document => document, :heading => document_heading }
-#   end
+  def render_document_heading(document=@document, options={})
+    render :partial => 'document_heading', :locals => { :document => document, :heading => document_heading }
+  end
 # 
 #   def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
 #     label = render_document_index_label(doc, opts)

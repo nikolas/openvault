@@ -1,5 +1,5 @@
-<% title "OpenVault - Document Title" %>
-<%# title "OpenVault - #{document_show_html_title}" %>
+<%# title "OpenVault - Document Title" %>
+<% title "OpenVault - #{document_show_html_title}" %>
 <%# extra_head_content << render_link_rel_alternates %>
 <%# extra_head_content << render_document_partial(@document, :meta) %>
 <%# extra_head_content << render_document_partial(@document, :opengraph) %>
@@ -8,32 +8,30 @@
 <%# this should be in a partial -%>
 <div id="document" class="<%= render_document_class %>">
   <div id="doc_<%= @document[:id] %>">
-  
-      <% # bookmark/folder functions -%>
-      <%#= render_show_doc_actions @document %>
-        
-
+    <% # bookmark/folder functions -%>
+    <%= render_show_doc_actions @document %>
     <%= render_document_heading %>
-    <div class="tools"><%= render :partial => 'show_tools' %></div>
+    <div class="tools">
+      <%= render :partial => 'show_tools' %>
+    </div>
     <hr />
     <div class="document">
-      <%= render_document_partial @document, :show %>
+      <%#= render_document_partial @document, :show %>
+      <%= render :partial => 'catalog/_show_partials/default', :locals=>{:document=>@document} %>
       <%#= render_document_unapi_microformat @document %>
-    <hr />
+      <hr />
       <div class="media">
         <%= render_document_partial @document, :media %>
       </div>
 
       <div class="metadata">
-        <%# @document.get(:disseminates_s, :sep => nil).each do |f| %>
-          <%#= 
-              begin
-                render :partial => "catalog/_metadata_partials/#{f.parameterize('_').gsub('-', '_')}", :locals => { :document => @document }
-              rescue ActionView::MissingTemplate
+        <%= 
+          begin
+            render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
+          rescue ActionView::MissingTemplate
 
-              end
-              %>
-        <%# end %>
+          end
+        %>
       </div>
 
       <div class="administrative">

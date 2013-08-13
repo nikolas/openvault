@@ -15,20 +15,16 @@
     <%#= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe) %>
   </div> 
   <% # main container for doc partial view -%>
-  <%#= render_document_partial document, :index %>
   <div class="defList_container">
-    <div class="blacklight-summary_ssm" >
-      <div class="label">Summary</div>
-      <div class="value"><%= document['summary_ssm'][0].html_safe %></div>
-    </div>
-    <div class="blacklight-dc_date_s">
-      <div class="label">Date Created</div>
-      <div class="value"><%= document['asset_date_ssm'][0].html_safe %></div>
-    </div>
-    <div class="blacklight-pbcore_pbcoretitle_program_s">
-      <div class="label">Program</div>
-      <div class="value"><%= document['series_ssm'][0].html_safe %></div>
-    </div>
+    <% index_field_names.each do |solr_fname| -%>
+      <% value = render_index_field_value :document => document, :field => solr_fname %>
+      <% unless value.blank? %>
+        <div class="blacklight-<%= solr_fname.parameterize %>" >
+  	    <div class="label"><%= render_index_field_label :field => solr_fname %></div>
+              <div class="value"><%= render_index_field_value :document => document, :field => solr_fname %></div>
+            </div>
+      <% end -%>
+    <% end -%>
   </div>
   
   <%#= render_document_unapi_microformat document %>
