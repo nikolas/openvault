@@ -1,0 +1,17 @@
+<pbcoreDescriptionDocument schemaVersion="2.0">
+  <pbcoreIdentifier source="MARS Program Record ID">P_OXMDD86FCWEUUPJ</pbcoreIdentifier>
+  <pbcoreAssetDate dateType="broadcast">10/6/1987</pbcoreAssetDate>
+  <pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">On Feb. 23, 1987, one of the most violent events since the creation of the universe was observed.  Ian Shelton, a young Canadian astronomer working on a remote mountaintop in Chile, came upon a supernova--the gargantuan explosion in which a star blows itself apart.  A star blows itself apart in a nearby galaxy, and astronomers scramble to study the rare event.  NOVA covers a fast-breaking science story as it is happening. </pbcoreDescription>
+  <pbcoreIdentifier source="NOLA Code">NOVA 001411 </pbcoreIdentifier>
+  <pbcoreCreator>
+    <creator>Robin Bates</creator>
+    <creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+  </pbcoreCreator>
+  <pbcoreRightsSummary>
+    <rightsSummary annotation="rights summary" source="WGBH MARS">   RE-USE RIGHTS AND RESTRICTIONS NOT CONFIRMED - CONSULT THE PROGRAM'S LEGAL FILE(S)
+</rightsSummary>
+  </pbcoreRightsSummary>
+  <pbcoreTitle titleType="Episode">1411</pbcoreTitle>
+  <pbcoreTitle titleType="Program">Death of a Star</pbcoreTitle>
+  <pbcoreTitle titleType="Series">NOVA</pbcoreTitle>
+</pbcoreDescriptionDocument>
