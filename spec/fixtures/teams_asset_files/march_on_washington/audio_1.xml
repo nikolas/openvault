@@ -1,0 +1,32 @@
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2011-06-06 10:40:50.0" UOI_ID="09b97aae9ffdc2df35aab7d997b42e6cb6ffa6eb" NAME="Al_Hulsen_audio.wav" IMPORT_USER_ID="273" IMPORT_ID="202931.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Interviewee3" CONTRIBUTOR_NAME="Hulsen, Al" />
+          <WGBH_COVERAGE DATE_PORTRAYED="04/29/2011" EVENT_LOCATION="Seattle (Wash.)" />
+          <WGBH_RIGHTS RIGHTS_TYPE="All" RIGHTS_HOLDER="WGBH Educational Foundation" />
+          <WGBH_SOURCE SOURCE_TYPE="Asset Source" SOURCE="Digital file supplied directly by Gary Mott in WGBH Radio" />
+          <WGBH_SUBJECT SUBJECT="Lincoln Memorial (Washington, D.C.)" SUBJECT_TYPE="Geographical" />
+          <WGBH_SUBJECT SUBJECT="Civil rights movements United States History 20th century" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Civil rights" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="March on Washington for Jobs and Freedom, Washington, D.C., 1963" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Segregation" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Public radio--United States--History. " SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Reminiscing" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="United States--Politics and government--1961-1963" SUBJECT_TYPE="Corporate" />
+          <WGBH_SUBJECT SUBJECT="Civil rights movement" SUBJECT_TYPE="Corporate" />
+          <WGBH_SUBJECT SUBJECT="Demonstrations--Law and legislation--United States" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_DATE_RELEASE DATE_RELEASE="2011-04-29 00:00:00.0" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+          <WGBH_LANGUAGE LANGUAGE_USAGE="Dialogue" LANGUAGE="eng" />
+          <WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+          <WGBH_TYPE MEDIA_TYPE="Audio" ITEM_TYPE="Radio program (Master)" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary3" DESCRIPTION="Al Hulsen reported from around Washington D.C. on the day of the March, and shares the personal significance of this landmark event. Mr. Hulsen was a producer and journalist from WGBH-FM in Boston in 1963. He was interviewed at Puget Sound Public Radio, KUOW 94.9 FM, in Seattle, Washington on April 29, 2011." DESCRIPTION_COVERAGE_OUT="00:08:29" DESCRIPTION_COVERAGE="00:08:29" DESCRIPTION_COVERAGE_IN="00:00:00" />
+          <WGBH_FORMAT DURATION="00:08:29" ITEM_FORMAT="Digital file" DIGITAL_FORMAT="Wav" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="Revisiting the March on Washington" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="March on Washington" />
+          <WGBH_TITLE TITLE_TYPE="Item3" TITLE="Interview with Al Hulsen" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>

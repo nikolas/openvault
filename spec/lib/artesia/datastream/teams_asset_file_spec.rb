@@ -5,7 +5,7 @@ describe Artesia::Datastream::TeamsAssetFile do
   subject(:teams_asset_file) { Artesia::Datastream::TeamsAssetFile.new }
 
   describe '#set_xml' do
-    let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
+    let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom/zoom.xml") }
 
     it "applies valid xml to the OM terminology" do
       teams_asset_file.set_xml valid_xml

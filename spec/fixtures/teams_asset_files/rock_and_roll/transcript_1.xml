@@ -1,0 +1,13 @@
+<ASSET>
+  <METADATA>
+    <UOIS VERSION="1" IMPORT_DT="2012-10-30 15:20:15.0" UOI_ID="9de1adedf24bf71802851c0ba923018f8916acce" NAME="barcode13850_SMIL.xml" IMPORT_USER_ID="1902" IMPORT_ID="225797.0">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="804" />
+      <WGBH_PUBLISHER PUBLISHER="Funded by a grant from the GRAMMY Foundation®." PUBLISHER_TYPE="Publisher" />
+      <WGBH_TYPE MEDIA_TYPE="Text" ITEM_TYPE="Transcript - Interview4" />
+      <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary4" DESCRIPTION="SMIL XML transcript file from barcode13850, Jerry Leiber and Mike Stoller" />
+      <WGBH_TITLE TITLE_TYPE="Series" TITLE="Rock and Roll" />
+      <WGBH_TITLE TITLE_TYPE="Program" TITLE="In The Groove" />
+    </UOIS>
+  </METADATA>
+  <CONTENT />
+</ASSET>

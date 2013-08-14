@@ -10,7 +10,7 @@ end
 describe Openvault::Datastream do
 
   let(:ov_datastream) { TestDatastream.new }
-  let(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
+  let(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom/zoom.xml") }
   let(:invalid_xml) { 'I am not valid xml' }
 
   describe '#set_xml' do

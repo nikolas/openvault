@@ -18,6 +18,7 @@ module Artesia
       # Params:
       #   * terminology -- instance of OM::XML::Terminology
       def self.add_uois_terminology(terminology)
+
         terminology.version(:path => {:attribute => "VERSION"})
         terminology.import_dt(:path => {:attribute => "IMPORT_DT"})
         terminology.uoi_id(:path => {:attribute => "UOI_ID"})
@@ -30,32 +31,37 @@ module Artesia
           terminology.sec_policy_id(:path => {:attribute => "SEC_POLICY_ID"})
         }
 
-        terminology.wgbh_rights(:path => "WGBH_RIGHTS") {
-          terminology.rights_note(:path => {:attribute => "RIGHTS_NOTE"})
-          terminology.rights_type(:path => {:attribute => "RIGHTS_TYPE"})
-          terminology.rights_credit(:path => {:attribute => "RIGHTS_CREDIT"})
-          terminology.rights_holder(:path => {:attribute => "RIGHTS_HOLDER"})
+        terminology.creator(:path => "WGBH_CREATOR") {
+          terminology.name(:path => {:attribute => "CREATOR_NAME"})
+          terminology.role(:path => {:attribute => "CREATOR_ROLE"})
+        }
+        
+        terminology.rights(:path => "WGBH_RIGHTS") {
+          terminology.note(:path => {:attribute => "RIGHTS_NOTE"})
+          terminology.type(:path => {:attribute => "RIGHTS_TYPE"})
+          terminology.credit(:path => {:attribute => "RIGHTS_CREDIT"})
+          terminology.holder(:path => {:attribute => "RIGHTS_HOLDER"})
         }
 
-        terminology.wgbh_subject(:path => "WGBH_SUBJECT") {
-          terminology.subject(:path => {:attribute => "SUBJECT"})
-          terminology.subject_type(:path => {:attribute => "SUBJECT_TYPE"})
+        terminology.subject(:path => "WGBH_SUBJECT", :default_content_path => 'SUBJECT') {
+          terminology.value(:path => {:attribute => "SUBJECT"})
+          terminology.type(:path => {:attribute => "SUBJECT_TYPE"})
         }
 
-        terminology.wgbh_type(:path => 'WGBH_TYPE') {
-          terminology.media_type(:path => {:attribute => 'MEDIA_TYPE'})
-          terminology.item_type(:path => {:attribute => 'ITEM_TYPE'})
+        terminology.type(:path => 'WGBH_TYPE') {
+          terminology.media(:path => {:attribute => 'MEDIA_TYPE'})
+          terminology.item(:path => {:attribute => 'ITEM_TYPE'})
         }
 
-        terminology.wgbh_description(:path => "WGBH_DESCRIPTION") {
-          terminology.description_type(:path => {:attribute => "DESCRIPTION_TYPE"})
-          terminology.description_coverage_in(:path => {:attribute => "DESCRIPTION_COVERAGE_IN"})
-          terminology.description_coverage(:path => {:attribute => "DESCRIPTION_COVERAGE"})
-          terminology.description_coverage_out(:path => {:attribute => "DESCRIPTION_COVERAGE_OUT"})
-          terminology.description(:path => {:attribute => "DESCRIPTION"})
+        terminology.description(:path => "WGBH_DESCRIPTION") {
+          terminology.type(:path => {:attribute => "DESCRIPTION_TYPE"})
+          terminology.coverage_in(:path => {:attribute => "DESCRIPTION_COVERAGE_IN"})
+          terminology.coverage(:path => {:attribute => "DESCRIPTION_COVERAGE"})
+          terminology.coverage_out(:path => {:attribute => "DESCRIPTION_COVERAGE_OUT"})
+          terminology.value(:path => {:attribute => "DESCRIPTION"})
         }
 
-        terminology.wgbh_format(:path => "WGBH_FORMAT") {
+        terminology.format(:path => "WGBH_FORMAT") {
           terminology.dimensions_height(:path => {:attribute => "DIMENSIONS_HEIGHT"})
           terminology.aspect_ratio(:path => {:attribute => "ASPECT_RATIO"})
           terminology.broadcast_format(:path => {:attribute => "BROADCAST_FORMAT"})
@@ -66,33 +72,33 @@ module Artesia
           terminology.mime_type(:path => {:attribute => "MIME_TYPE"})
         }
 
-        terminology.wgbh_title(:path => "WGBH_TITLE") {
-          terminology.title_type(:path => {:attribute => "TITLE_TYPE"})
-          terminology.title(:path => {:attribute => "TITLE"})
+        terminology.title(:path => "WGBH_TITLE") {
+          terminology.type(:path => {:attribute => "TITLE_TYPE"})
+          terminology.value(:path => {:attribute => "TITLE"})
         }
 
-        terminology.wgbh_annotation(:path => "WGBH_ANNOTATION") {
-          terminology.annotation(:path => {:attribute => "ANNOTATION"})
-          terminology.annotation_type(:path => {:attribute => "ANNOTATION_TYPE"})
+        terminology.annotation(:path => "WGBH_ANNOTATION") {
+          terminology.value(:path => {:attribute => "ANNOTATION"})
+          terminology.type(:path => {:attribute => "ANNOTATION_TYPE"})
         }
 
-        terminology.wgbh_source(:path => "WGBH_SOURCE") {
-          terminology.source_type(:path => {:attribute => "SOURCE_TYPE"})
-          terminology.source(:path => {:attribute => "SOURCE"})
+        terminology.source(:path => "WGBH_SOURCE") {
+          terminology.type(:path => {:attribute => "SOURCE_TYPE"})
+          terminology.value(:path => {:attribute => "SOURCE"})
         }
 
-        terminology.wgbh_language(:path => "WGBH_LANGUAGE") {
-          terminology.language_usage(:path => {:attribute => "LANGUAGE_USAGE"})
-          terminology.language(:path => {:attribute => "LANGUAGE"})
+        terminology.language(:path => "WGBH_LANGUAGE") {
+          terminology.usage(:path => {:attribute => "LANGUAGE_USAGE"})
+          terminology.value(:path => {:attribute => "LANGUAGE"})
         }
 
-        terminology.wgbh_publisher(:path => "WGBH_PUBLISHER") {
-          terminology.publisher_type(:path => {:attribute => "PUBLISHER_TYPE"})
-          terminology.publisher(:path => {:attribute => "PUBLISHER"})
+        terminology.publisher(:path => "WGBH_PUBLISHER") {
+          terminology.type(:path => {:attribute => "PUBLISHER_TYPE"})
+          terminology.value(:path => {:attribute => "PUBLISHER"})
         }
 
-        terminology.wgbh_holdings(:path => "WGBH_HOLDINGS") {
-          terminology.holdings_department(:path => {:attribute => "HOLDINGS_DEPARTMENT"})
+        terminology.holdings(:path => "WGBH_HOLDINGS") {
+          terminology.department(:path => {:attribute => "HOLDINGS_DEPARTMENT"})
         }
       end
 
@@ -113,7 +119,7 @@ module Artesia
       #   - It has exactly one value for wgbh_title.title_type and that value is "Series"
       #   - Does NOT exclusively describe an image
       def is_series?
-        self.wgbh_title.title_type == ["Series"] && !self.is_image?
+        self.title.type == ["Series"] && !self.is_image?
       end
 
       # Returns true if XML descrbes a program record.
@@ -126,28 +132,36 @@ module Artesia
       #     - transcript record
       # NOTE: Sometimes a video or audio record will also serve as the program record.
       def is_program?
-        self.wgbh_title.title_type.include?("Program") && !(self.is_series? || self.is_collection? || self.is_transcript? || self.is_image?)
+        self.title.type.include?("Program") && !(self.is_series? || self.is_collection? || self.is_transcript? || self.is_image? || self.is_element? || self.is_clip?)
       end
 
       # Returns true if XML describes a collection record.
       # It is a collection record iff:
       #  - wgbh_title.title_type contains "Collection"
       def is_collection?
-        self.wgbh_title.title_type.include?("Collection")
+        self.title.type.include?("Collection")
       end
 
       # Returns true if XML describes a video.
       # It is a video record iff:
       #   - The wgbh_type.media_type contains "Moving Image" and nothing else.
       def is_video?
-        (self.wgbh_type.media_type == ["Moving Image"])
+        (self.type.media == ["Moving Image"])
+      end
+
+      def is_element?
+        (self.title.type.grep(/^Element/).count > 0)
+      end
+
+      def is_clip?
+        (self.title.type.grep(/^Clip/).count > 0)
       end
 
       # Returns tue if XML describes a transcript
       # It is a transcript record iff:
       #   - wgbh_type.item_type contains at least one value that begins with "Transcript"
       def is_transcript?
-        (self.wgbh_type.item_type.grep(/^Transcript/).count > 0)
+        (self.type.item.grep(/^Transcript/).count > 0)
       end
 
       # Returns true if XML describes an image.
@@ -155,14 +169,14 @@ module Artesia
       #   - wgbh_type.item_type contains "Static Image" and nothing else.
       #   - OR the master_obj_mime_type (from root node) contains a value that begins with "image".
       def is_image?
-        (self.wgbh_type.item_type == ['Static Image']) || (self.master_obj_mime_type.grep(/^image/).count > 0)
+        (self.type.item == ['Static Image']) || (self.master_obj_mime_type.grep(/^image/).count > 0)
       end
 
       # Returns true if XML describes audio.
       # It is an audio record iff:
       #   - wgbh_type.media_type contains "Audio" and nothing else.
       def is_audio?
-        (self.wgbh_type.media_type == ["Audio"])
+        (self.type.media == ["Audio"])
       end
 
       # Converts UOIS xml to PBCore xml

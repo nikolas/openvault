@@ -5,6 +5,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
 
+require 'openvault'
+
 Capybara.default_driver = :webkit
 Capybara.javascript_driver = :webkit
 
@@ -56,4 +58,12 @@ RSpec.configure do |config|
   end
 
   config.fixture_path = File.expand_path("../fixtures", __FILE__)
+end
+
+
+def uois_from_fixture(file)
+  xml = File.read(file)
+  uois = Artesia::Datastream::UOIS.new
+  uois.ng_xml = Openvault::XML(xml)
+  uois
 end

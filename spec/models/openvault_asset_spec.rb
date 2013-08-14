@@ -10,7 +10,7 @@ describe OpenvaultAsset do
   }
 
   before(:all) do
-    uois_ng = Openvault::XML(File.read("#{fixture_path}/teams_asset_files/zoom.xml"))
+    uois_ng = Openvault::XML(File.read("#{fixture_path}/teams_asset_files/zoom/zoom.xml"))
     @uois_xml = uois_ng.xpath('//UOIS[@UOI_ID="e3616b02f7257101d85c4a0b8e5e7f119ca0556a"]').to_xml
 
     @pbcore_ng = Openvault::XML(File.read("#{fixture_path}/pbcore/MARS_Program_single.xml"))

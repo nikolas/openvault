@@ -5,13 +5,11 @@ describe ArtesiaIngest do
   subject(:artesia_ingest) { ArtesiaIngest.new }
 
   # valid_xml is an export from Artesia.
-  let!(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom.xml") }
-
+  valid_xml = File.read("#{fixture_path}/teams_asset_files/zoom/zoom.xml")
   # valid_xml contains 6 <UOIS> nodes, each of which generate an OpenvaultAsset
-  let(:ov_asset_count) { 6 }
-
-  let(:invalid_xml) { 'this is not xml' }
-  let(:depositor) { 'openvault_testing@wgbh.org' }
+  ov_asset_count = 6
+  invalid_xml = 'this is not xml'
+  depositor = 'openvault_testing@wgbh.org'
 
   it 'saves has_many relationships when unsaved OpenvaultAsset models are added to saved ArtesiaIngest' do
     ov1, ov2 = OpenvaultAsset.new, OpenvaultAsset.new
