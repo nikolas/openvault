@@ -42,8 +42,8 @@ class CatalogController < ApplicationController
       :qf => 'text'
     }
     
-    config.index.show_link = 'title_ssm'
-    config.add_index_field 'summary_ssm', :label => 'Summary' 
+    config.index.show_link = 'title_clip_ssm'
+    config.add_index_field 'desc_clip_ssm', :label => 'Summary' 
     config.add_index_field 'asset_date_ssm', :label => 'Date Created'
     config.add_index_field 'series_ssm', :label => 'Program'
     
@@ -75,18 +75,19 @@ class CatalogController < ApplicationController
 #     #
 #     # :show may be set to false if you don't want the facet to be drawn in the 
 #     # facet bar
-#     config.add_facet_field solr_name('object_type', :facetable), :label => 'Format' 
-#     config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year' 
-#     config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20 
-#     config.add_facet_field solr_name('language', :facetable), :label => 'Language', :limit => true 
-#     config.add_facet_field solr_name('lc1_letter', :facetable), :label => 'Call Number' 
-#     config.add_facet_field solr_name('subject_geo', :facetable), :label => 'Region' 
-#     config.add_facet_field solr_name('subject_era', :facetable), :label => 'Era'  
+    config.add_facet_field solr_name('subject_facet', :facetable), :label => 'Topics' 
+    config.add_facet_field solr_name('program_facet', :facetable), :label => 'Program'
+    # config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year' 
+    # config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20 
+    # config.add_facet_field solr_name('language', :facetable), :label => 'Language', :limit => true 
+    # config.add_facet_field solr_name('lc1_letter', :facetable), :label => 'Call Number' 
+    # config.add_facet_field solr_name('subject_geo', :facetable), :label => 'Region' 
+    # config.add_facet_field solr_name('subject_era', :facetable), :label => 'Era'  
 # 
 #     # Have BL send all facet field names to Solr, which has been the default
 #     # previously. Simply remove these lines if you'd rather use Solr request
 #     # handler defaults, or have no facets.
-#     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
+    config.default_solr_params[:'facet.field'] = config.facet_fields.keys
 #     #use this instead if you don't want to query facets marked :show=>false
 #     #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
 # 
@@ -102,9 +103,9 @@ class CatalogController < ApplicationController
 #     config.add_index_field solr_name('published', :stored_searchable, type: :string), :label => 'Published:'
 #     config.add_index_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
 #     config.add_index_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
-# 
-#     # solr fields to be displayed in the show (single result) view
-#     #   The ordering of the field names is the order of the display 
+# # 
+# #     # solr fields to be displayed in the show (single result) view
+# #     #   The ordering of the field names is the order of the display 
 #     config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'Title:' 
 #     config.add_show_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:' 
 #     config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'Subtitle:' 
@@ -138,7 +139,7 @@ class CatalogController < ApplicationController
 #     # solr request handler? The one set in config[:default_solr_parameters][:qt],
 #     # since we aren't specifying it otherwise. 
 #     
-#     config.add_search_field 'all_fields', :label => 'All Fields'
+    config.add_search_field 'all_fields', :label => 'All Fields'
 #     
 # 
 #     # Now we see how to over-ride Solr request handler defaults, in this
@@ -183,14 +184,13 @@ class CatalogController < ApplicationController
 #     # label in pulldown is followed by the name of the SOLR field to sort by and
 #     # whether the sort is ascending or descending (it must be asc or desc
 #     # except in the relevancy case).
-#     config.add_sort_field 'score desc, pub_date_dtsi desc, title_tesi asc', :label => 'relevance'
-#     config.add_sort_field 'pub_date_dtsi desc, title_tesi asc', :label => 'year'
-#     config.add_sort_field 'author_tesi asc, title_tesi asc', :label => 'author'
-#     config.add_sort_field 'title_tesi asc, pub_date_dtsi desc', :label => 'title'
+      config.add_sort_field 'score desc', :label => 'relevance'
+      config.add_sort_field 'title_ssm asc, asset_date_ssm desc', :label => 'title'
+      config.add_sort_field 'asset_date_ssm desc, title_ssm asc', :label => 'year'
 # 
 #     # If there are more than this many search results, no spelling ("did you 
 #     # mean") suggestion is offered.
-#     config.spell_max = 5
+      config.spell_max = 5
   end
   
   def index

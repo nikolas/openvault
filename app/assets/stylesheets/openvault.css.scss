@@ -121,6 +121,7 @@ p {
 #header {
 	margin-bottom: 15px;
 	position: relative;
+  z-index: 9999;
 }
 #header_top{
 	background-image: url('/assets/OV_logo_shadow_home.png');
@@ -658,6 +659,30 @@ p {
       line-height: inherit;
     }
   }
+  #appliedParams {
+    margin-right: 0;
+    width: 100%;
+    display: inline;
+    float: left;
+    position: relative;
+    margin-left: -19px;
+    padding-left: 38px;
+    background-color: #e8e3e3;
+    padding-top: 1.29545em;
+    padding-bottom: 0;
+    margin-bottom: 1.29545em;
+    color: #666;
+    margin-top: -32px;
+    h3 {
+       @include margin-trailer(0.5);
+       font-weight: normal;
+       width: 100%;
+       background: none;
+       text-shadow: none;
+       color: #666;
+    }
+  }
+  
   .noresults {
     ul {
       list-style: none;
@@ -914,8 +939,10 @@ p {
 }
 
 .appliedFilter {
-//  @include append(0.5);  
-
+  @include append(0.5);  
+  background: none;
+  border:none;
+  padding-left: 0px;
   &.query {
      display: none;
   }
@@ -924,6 +951,8 @@ p {
     text-transform: uppercase;
     font-weight: bold;
     margin-right: 5px;
+    background: none;
+    padding-right: 0;
   }
 
   .filterValue {
@@ -1142,7 +1171,97 @@ ul.facet_extended_list li {list-style:none; margin: 0.5em 0;}
 
    }
 }
+#facets ul {
+  margin-left: 0px;
+}
+#facets h2 {
+  padding-top: 1.295em;
+  padding-bottom: 0.907em;
+  padding-left: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.facet_limit {
+  border-bottom: 1px solid #888;
 
+  h3 {
+    @include padding-leader(0.5);
+    @include padding-trailer(0.5);
+    text-transform: uppercase;
+    @include prepend(0.5);
+    @include append(0.5);
+    background-color: #e8e3e3;
+    &:hover {
+      background-color: darken(#e8e3e3, 10%);
+    }
+  }
+  h5 {
+    display:none;
+  }
+  h4 {
+    @include padding-leader(0.5);
+    font-weight: bold;
+    background-color: #fff;
+    @include prepend(0.5);
+    @include append(0.5);
+  }
+
+  .twiddle {
+    cursor: pointer;
+    background-image: image-url("arrow_closed.png");
+    background-repeat: no-repeat;
+    background-position: 5px 48%;
+    padding-left: 15px;
+  }
+
+  .twiddle-open {
+    background-image: image-url("arrow_open.png");
+    background-position: 3px 48%;
+  }
+
+  .facet-list {
+    background-color: #fff;
+    @include prepend(0.5);
+    @include append(0.5);
+    @include padding-leader(0.25);
+    @include padding-trailer(1.5);
+
+  }
+
+  ul {
+    @extend .facet-list;
+    
+    ul { /* pivot facet? */
+      @include padding-trailer(1);
+    }
+  }
+
+  li {
+    @include padding-trailer(0.2);
+  }
+
+  .range_limit {
+    @extend .facet-list; 
+    @include prepend(0.25);
+    @include append(0.25);
+
+    .distribution {
+      cursor: crosshair;
+    }
+  }
+
+  .selected {
+      @include link-colors(#333, $action-color, $action-color, #333, $action-color);
+      &:hover {
+      text-decoration: none;
+      }
+  }
+
+  .remove {
+     font-weight: bold;
+  }
+}
 //SINGLE DOCUMENT
 #document {
   
