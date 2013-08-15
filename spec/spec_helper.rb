@@ -5,6 +5,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
 
+require 'fixtures'
+
 require 'openvault'
 
 Capybara.default_driver = :webkit
@@ -16,6 +18,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 # Require custom capybara feature steps
 Dir[Rails.root.join("spec/features/steps/**/*.rb")].each { |f| require f }
+
+Fixtures.base_dir = File.expand_path("../fixtures", __FILE__)
 
 RSpec.configure do |config|
   # ## Mock Framework
@@ -57,13 +61,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.fixture_path = File.expand_path("../fixtures", __FILE__)
-end
-
-
-def uois_from_fixture(file)
-  xml = File.read(file)
-  uois = Artesia::Datastream::UOIS.new
-  uois.ng_xml = Openvault::XML(xml)
-  uois
+  # config.fixture_path = File.expand_path("../fixtures", __FILE__)
 end

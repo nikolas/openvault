@@ -16,8 +16,8 @@ describe Openvault do
 
   describe '::XML' do
 
-    let(:valid_xml) { File.read("#{fixture_path}/openvault/valid_xml.xml") }
-    let(:invalid_xml) { File.read("#{fixture_path}/openvault/invalid_xml.xml") }
+    let(:valid_xml) { File.read("#{Fixtures.base_dir}/openvault/valid_xml.xml") }
+    let(:invalid_xml) { File.read("#{Fixtures.base_dir}/openvault/invalid_xml.xml") }
 
     it 'returns an instance of Nokogiri::XML::Document' do
       Openvault::XML(valid_xml).should be_a_kind_of(Nokogiri::XML::Document)

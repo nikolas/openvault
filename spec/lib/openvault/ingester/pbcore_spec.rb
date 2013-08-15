@@ -6,7 +6,7 @@ describe Openvault::Ingester::Pbcore do
   describe '.ingest!' do
 
     let(:depositor) { 'openvault_test@wgbh.org' }
-    let(:valid_xml_batch) { File.read("#{fixture_path}/pbcore/MARS_Programs.xml") }
+    let(:valid_xml_batch) { File.read("#{Fixtures.base_dir}/pbcore/MARS_Programs.xml") }
 
     it "saves one OpenvaultAsset for every pbcoreDescriptionDocument node in the xml." do
       count_before = OpenvaultAsset.count

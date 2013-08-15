@@ -3,7 +3,7 @@ require 'openvault/ingester/artesia'
 
 describe Openvault::Ingester::Artesia do
 
-  let(:valid_xml) { File.read("#{fixture_path}/teams_asset_files/zoom/zoom.xml") }
+  let(:valid_xml) { File.read("#{Fixtures.base_dir}/artesia/zoom/teams_asset_file.xml") }
   let(:depositor) { 'openvault_test@wgbh.org' }
 
   describe '#ingest!' do
