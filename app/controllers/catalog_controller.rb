@@ -77,6 +77,7 @@ class CatalogController < ApplicationController
 #     # facet bar
     config.add_facet_field solr_name('subject_facet', :facetable), :label => 'Topics' 
     config.add_facet_field solr_name('program_facet', :facetable), :label => 'Program'
+    config.add_facet_field solr_name('people', :facetable), :label => "People"
     # config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year' 
     # config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20 
     # config.add_facet_field solr_name('language', :facetable), :label => 'Language', :limit => true 
