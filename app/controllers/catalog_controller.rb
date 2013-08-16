@@ -219,7 +219,10 @@ class CatalogController < ApplicationController
   def show
     # extra_head_content << view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type => 'application/xml',  :rel => 'unapi-server', :title => 'unAPI' })
     #@document = OpenvaultAsset.new()
-    @response, @document = get_solr_response_for_doc_id    
+    @response, @document = get_solr_document_by_slug(params[:id])    
+    #@repspones, @document = get_solr_response_for_doc_id
+    
+    puts @document.inspect
     
     redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
     
@@ -309,6 +312,21 @@ class CatalogController < ApplicationController
     @response, @document = get_solr_response_for_doc_id    
     style = params[:style] || 'preview'
     redirect_to @document.thumbnail.url(:style => style.to_sym) and return
+  end
+  
+  def get_solr_document_by_slug(slug=nil)
+    q = "slug:#{slug}"
+    solr_params = {
+      :defType => "lucene",   # need boolean for OR
+      :q => q,
+      :fl => "*",  
+      :facet => 'false',
+      :spellcheck => 'false'
+    }
+
+    solr_response = find(blacklight_config.qt, self.solr_search_params().merge(solr_params) )
+    document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
+    [solr_response, document_list.first]
   end
 
 end 
