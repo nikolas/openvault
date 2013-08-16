@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'openvault'
+require "#{RSpec.configuration.fixture_path}/openvault/load_fixtures"
 
 describe Openvault do
 
@@ -16,11 +17,10 @@ describe Openvault do
 
   describe '::XML' do
 
-    let(:valid_xml) { File.read("#{Fixtures.base_dir}/openvault/valid_xml.xml") }
-    let(:invalid_xml) { File.read("#{Fixtures.base_dir}/openvault/invalid_xml.xml") }
+    before(:each) { Fixtures.cwd "#{fixture_path}/openvault" }
 
     it 'returns an instance of Nokogiri::XML::Document' do
-      Openvault::XML(valid_xml).should be_a_kind_of(Nokogiri::XML::Document)
+      Openvault::XML(Fixtures.raw('valid_xml.xml')).should be_a_kind_of(Nokogiri::XML::Document)
     end
 
     context 'when Openvault.ng_parse_options is set to "strict" mode' do
@@ -29,11 +29,11 @@ describe Openvault do
       end
 
       it 'will raise an error when Openvault.ng_parse_options is set to STRICT, and xml is invalid' do
-        expect{ Openvault::XML(invalid_xml) }.to raise_error
+        expect{ Openvault::XML(Fixtures.raw('invalid_xml.xml')) }.to raise_error
       end
 
       it 'will not raise an error when Openvault.ng_parse_options is set to STRICT, and xml is valid' do
-        expect{ Openvault::XML(valid_xml) }.to_not raise_error
+        expect{ Openvault::XML(Fixtures.raw('valid_xml.xml')) }.to_not raise_error
       end
     end
   end

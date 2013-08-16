@@ -19,8 +19,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 # Require custom capybara feature steps
 Dir[Rails.root.join("spec/features/steps/**/*.rb")].each { |f| require f }
 
-Fixtures.base_dir = File.expand_path("../fixtures", __FILE__)
-
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -61,5 +59,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  # config.fixture_path = File.expand_path("../fixtures", __FILE__)
+  config.fixture_path = File.expand_path("../fixtures", __FILE__)
 end

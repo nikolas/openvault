@@ -7,7 +7,7 @@ class ArtesiaIngest < ActiveFedora::Base
   attr_accessor :depositor
 
   def apply_teams_asset_file(teams_asset_file)
-    self.teams_asset_file.set_xml teams_asset_file
+    self.teams_asset_file.ng_xml = Openvault::XML(teams_asset_file)
     self.generate_openvault_assets
     self.relate_openvault_assets
   end
@@ -39,10 +39,7 @@ class ArtesiaIngest < ActiveFedora::Base
 
       ov_asset = OpenvaultAsset.new
       # set the uois datastream to original UOIS xml
-      ov_asset.uois.set_xml ng_xml.to_xml
-
-      # convert UOIS xml to PBCore xml and apply it to pbcore datastream.
-      # ov_asset.pbcore.set_xml ov_asset.uois.to_pbcore_xml
+      ov_asset.uois.ng_xml = ng_xml
 
       # set the depositor metadata (comes from Sufia::GenericFile)
       ov_asset.apply_depositor_metadata self.depositor
