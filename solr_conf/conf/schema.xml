@@ -19,7 +19,6 @@
 	<field name="has_model_s" type="string" stored="true" indexed="true"/>
 	<field name="is_governed_by_s" type="string" stored="true" indexed="true"/>
   <field name="text" type="text" stored="true" indexed="true" multiValued="true" />
-  <field name="slug" type="string" stored="true" indexed="true" />
 	
 	<!--
 	These are hard coded in places in hydra-head, but we hope to fix that.
@@ -237,6 +236,8 @@
   </fields>
 
   <!-- START hydra deprecated items -->
+  <solrQueryParser defaultOperator="AND|OR"/>
+    <copyField source="*_ssm" dest="text"/>
 <!--  
   <defaultSearchField>text</defaultSearchField>
 -->
