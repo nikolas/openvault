@@ -37,5 +37,7 @@ describe OpenvaultAsset do
     check = OpenvaultAsset.find(ov_asset.pid)
     check.artesia_ingest.should == artesia_ingest
   end
+  
+  it "doesn't create duplicate solr slugs"
 
 end

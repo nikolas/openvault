@@ -119,6 +119,9 @@
       <str name="fl">*</str>
       <str name="rows">1</str>
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
+      <str name="mlt">true</str>
+      <str name="mlt.fl">title_ssm,summary_ssm</str>
+      <str name="mlt.count">3</str>
     </lst>
   </requestHandler>
 

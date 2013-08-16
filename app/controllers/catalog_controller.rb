@@ -5,6 +5,7 @@ class CatalogController < ApplicationController
   
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
+  include Blacklight::Solr::Document::MoreLikeThis
   
   # include BlacklightOaiProvider::ControllerExtension
   # include BlacklightOembed::ControllerExtension
@@ -180,6 +181,12 @@ class CatalogController < ApplicationController
 #         :pf => '$subject_pf'
 #       }
 #     end
+      config.more_like_this = {
+        :'mlt.fl' => "title_ssm, summary_ssm",
+        :'mlt.qf' => "title_ssm^1000",
+        :'mlt.count' => 3,
+        :'mlt.maxqt' => 50
+      }
 # 
 #     # "sort results by" select (pulldown)
 #     # label in pulldown is followed by the name of the SOLR field to sort by and
@@ -218,7 +225,6 @@ class CatalogController < ApplicationController
   # get single document from the solr index
   def show
     # extra_head_content << view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type => 'application/xml',  :rel => 'unapi-server', :title => 'unAPI' })
-    #@document = OpenvaultAsset.new()
     @response, @document = get_solr_document_by_slug(params[:id])    
     #@repspones, @document = get_solr_response_for_doc_id
     
@@ -317,14 +323,18 @@ class CatalogController < ApplicationController
   def get_solr_document_by_slug(slug=nil)
     q = "slug:#{slug}"
     solr_params = {
-      :defType => "lucene",   # need boolean for OR
+      :defType => "edismax",   # need boolean for OR
       :q => q,
       :fl => "*",  
       :facet => 'false',
-      :spellcheck => 'false'
+      :spellcheck => 'false',
+      :mlt => 'true',
+      :'mlt.fl' => "title_ssm, summary_ssm",
+      :'mlt.count' => 3
     }
 
-    solr_response = find(blacklight_config.qt, self.solr_search_params().merge(solr_params) )
+    solr_response = find('document', self.solr_search_params().merge(solr_params) )
+    puts solr_response.inspect
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     [solr_response, document_list.first]
   end
