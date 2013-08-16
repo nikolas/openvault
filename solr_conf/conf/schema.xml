@@ -19,7 +19,8 @@
 	<field name="has_model_s" type="string" stored="true" indexed="true"/>
 	<field name="is_governed_by_s" type="string" stored="true" indexed="true"/>
   <field name="text" type="text" stored="true" indexed="true" multiValued="true" />
-	
+  <field name="people_sim" type="string" stored="true" indexed="true" multiValued="true" />
+	<field name="slug" type="string" stored="true" indexed="true" />
 	<!--
 	These are hard coded in places in hydra-head, but we hope to fix that.
 	
@@ -242,11 +243,14 @@
   <defaultSearchField>text</defaultSearchField>
 -->
   <!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
-<!--  
-  <solrQueryParser defaultOperator="AND"/>
+ 
+  <solrQueryParser defaultOperator="AND|OR"/>
 
-  <copyField source="title_t" dest="title_unstem_search"/>
-  <copyField source="subtitle_t" dest="subtitle_unstem_search"/>
+  <copyField source="*" dest="text"/>
+  <copyField source="creator_name_ssm" dest="people_sim" />
+  <copyField source="contributor_name_tesim" dest="people_sim" />
+  <copyField source="publisher_name_ssm" dest="people_sim" />
+<!--   <copyField source="subtitle_t" dest="subtitle_unstem_search"/>
   <copyField source="title_addl_t" dest="title_addl_unstem_search"/>
   <copyField source="title_added_entry_t" dest="title_added_entry_unstem_search"/>
   <copyField source="title_series_t" dest="title_series_unstem_search"/>
