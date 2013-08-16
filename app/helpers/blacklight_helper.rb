@@ -44,11 +44,20 @@ module BlacklightHelper
     render :partial => 'document_heading', :locals => { :document => document, :heading => document_heading }
   end
 # 
-  # def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
-  #   label = render_document_index_label(doc, opts)
-  #   return link_to(widont(label).html_safe, collection_path(doc[:slug])) if doc[:format] == "collection"
-  #   link_to(widont(label).html_safe, catalog_path(doc[:slug]))
-  # end
+  def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
+    label = display_title(doc)
+    return link_to(label.html_safe, collection_path(doc[:slug])) if doc[:format] == "collection"
+    link_to(label.html_safe, catalog_path(doc[:slug]))
+  end
+  
+  def display_title(doc=@document)
+    if doc[:title_clip_ssm].nil?
+      title = ("#{doc[:series_ssm].first} - #{doc[:title_ssm].first} - Episode ##{doc[:episode_ssm].first}")
+    else
+      title = doc[:title_clip_ssm].first
+    end
+    title
+  end
 # 
 #   def facet_field_names
 #     names = super
