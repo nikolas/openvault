@@ -334,7 +334,6 @@ class CatalogController < ApplicationController
     }
 
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
-    puts solr_response.inspect
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     [solr_response, document_list.first]
   end

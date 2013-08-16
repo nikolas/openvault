@@ -38,6 +38,36 @@ describe OpenvaultAsset do
     check.artesia_ingest.should == artesia_ingest
   end
   
-  it "doesn't create duplicate solr slugs"
+  describe "creating slugs" do
+    
+    before(:each) do
+      # ActiveFedora::Base.reindex_everything
+      file = File.open("#{fixture_path}/MARS_program.xml")
+      ng = Nokogiri::XML(file)
+      @ov2 = OpenvaultAsset.new
+      @ov2.apply_depositor_metadata 'testing@test.com'
+      @ov2.pbcore.ng_xml = ng
+      @ov2.save!
+      
+      file2 = File.open("#{fixture_path}/MARS_program.xml")
+      ng2 = Nokogiri::XML(file2)
+      @ov22 = OpenvaultAsset.new
+      @ov22.apply_depositor_metadata 'testing@test.com'
+      @ov22.pbcore.ng_xml = ng2
+      @ov22.save!
+    end
+    
+    it "creates the proper slug" do
+      check = OpenvaultAsset.find(:slug => "#{@ov22.pbcore.series.first} #{@ov22.pbcore.title.first} #{@ov22.pbcore.episode.first} #{@ov22.noid}".parameterize)
+      @ov22.pid.should == check.first.pid
+    end
+    
+    it "doesn't create duplicate slugs" do
+      check = OpenvaultAsset.find(:slug => "#{@ov22.pbcore.series.first} #{@ov22.pbcore.title.first} #{@ov22.pbcore.episode.first}".parameterize)
+      check.size.should eq(1)
+    end
+    
+    
+  end
 
 end

@@ -29,7 +29,7 @@ class OpenvaultAsset < ActiveFedora::Base
     slug = ''
     
     if pbcore.title_clip.first.nil?
-      slug = (pbcore.series.first+" "+pbcore.title.first+" "+pbcore.episode.first).parameterize
+      slug = ("#{pbcore.series.first} #{pbcore.title.first} #{pbcore.episode.first}").parameterize
     else
       slug = pbcore.title_clip.first.parameterize
     end
