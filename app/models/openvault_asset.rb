@@ -33,7 +33,7 @@ class OpenvaultAsset < ActiveFedora::Base
     else
       slug = pbcore.title_clip.first.parameterize
     end
-    
-    slug
+    slug_check = OpenvaultAsset.find(:slug => slug)
+    (slug_check.empty?) ? slug : "#{slug}-#{self.noid}"
   end
 end
