@@ -2,7 +2,7 @@ module SearchHelper
 
   # XXX 
   def top_level_categories
-    response = Blacklight.solr.find :rows => 0, :'facet.field' => 'merlot_s', :'f.merlot_s.facet.prefix' => '1/', 'f.merlot_s.facet.sort' => 'index'
+    response = Blacklight.solr.select :params => { :rows => 0, :'facet.field' => 'merlot_s', :'f.merlot_s.facet.prefix' => '1/', 'f.merlot_s.facet.sort' => 'index'}
     response.facet_by_field_name('merlot_s')
   end
 
