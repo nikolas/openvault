@@ -5,3 +5,16 @@
 [![Build Status](https://travis-ci.org/afred/openvault.png)](https://travis-ci.org/afred/openvault)
 
 #### Homepage sprites will be rebuilt when new files are in the mosaic folder in images and the sass file is changed and saved
+
+**To import and parse pbcore XML file**
+
+	ng = Nokogiri::XML(open('PATH/TO/FILE'))
+	
+	all_docs = ng.xpath("//x:pbcoreDescriptionDocument", "x" => "http://www.pbcore.org/PBCore/PBCoreNamespace.html")
+	
+	all_docs.each do |doc|
+		ov = OpenvaultAsset.new
+		ov.apply_depositor_metadata '1123@me.com'
+		ov.pbcore.ng_xml = doc
+		ov.save
+	end

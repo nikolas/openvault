@@ -898,37 +898,37 @@ p {
   text-align: right;
 }
 
-.pagination {
-  overflow:hidden;
-  margin: 0;
-  h2 {
-    display: none;
-  }
-
-  .page_links {
-    text-align: right;
-    display: inline;
-    .page a, .page.current {
-      border: none;
-      margin: 0;
-      padding: 0;
+.pager {
+  width: 195px;
+  margin: 0 auto;
+  .pagination {
+    overflow:hidden;
+    margin: 0;
+    width: 100%;
+    h2 {
+      display: none;
+    }
+    .page_links {
+      text-align: right;
+      display: inline;
+      .page a, .page.current {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .next {
+       margin-left: 5px;
     }
   }
-
-  .previous_page {
-    margin-right: 1em;
-  }
-
-  .next_page {
-     margin-left: 1em;
+}
+.search-results-header {
+  .pager {
+    float:right;
+    margin:0;
   }
 }
 
-
-#documents + .pagination {
-//   @include column(10);
-//   @include prepend(8);
-}
 
 #appliedParams {
     color: #666;
