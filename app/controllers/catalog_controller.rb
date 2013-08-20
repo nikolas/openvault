@@ -52,7 +52,6 @@ class CatalogController < ApplicationController
     config.show.html_title = 'title_clip_ssm'
     config.show.heading = 'title_clip_ssm'
     config.show.display_type = 'has_model_ssim'
-    config.add_show_field 'desc_clip_ssm', :label => "Summary:"
     config.add_show_field 'subject_name_ssm', :label => 'Topics:'
 
 # 
@@ -183,8 +182,11 @@ class CatalogController < ApplicationController
 #       }
 #     end
       config.more_like_this = {
-        :'mlt.fl' => "title_ssm, summary_ssm",
-        :'mlt.qf' => "title_ssm^1000",
+        :qt => 'mlt',
+        :'mlt.fl' => "title_tesim, summary_tesim",
+        :'mlt.mintf' => 1,
+        :'mlt.mindf' => 1,
+        :'mlt.match.include' => false,
         :'mlt.count' => 3,
         :'mlt.maxqt' => 50
       }
@@ -229,7 +231,8 @@ class CatalogController < ApplicationController
     @response, @document = get_solr_document_by_slug(params[:id])    
     #@repspones, @document = get_solr_response_for_doc_id
     
-    puts @document.inspect
+    @rel = get_related_content(params[:id])
+    puts @rel.inspect
     
     redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
     
@@ -319,6 +322,23 @@ class CatalogController < ApplicationController
     @response, @document = get_solr_response_for_doc_id    
     style = params[:style] || 'preview'
     redirect_to @document.thumbnail.url(:style => style.to_sym) and return
+  end
+  
+  def get_related_content(slug=nil)
+    q = "slug:#{slug}"
+    solr_params = { 
+      :q => q,
+      :qt => 'mlt',
+      :'mlt.fl' => "title_tesim, summary_tesim",
+      :'mlt.mintf' => 1,
+      :'mlt.mindf' => 1,
+      :'mlt.match.include' => false
+    }
+    #response = find('mlt', self.solr_search_params().merge(solr_params))
+    response = Blacklight.solr.mlt :params => solr_params
+    puts response.inspect
+    document_list = response['response']['docs'].collect{|doc| SolrDocument.new(doc, response) }
+    document_list
   end
   
   def get_solr_document_by_slug(slug=nil)

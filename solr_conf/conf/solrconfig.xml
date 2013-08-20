@@ -111,6 +111,8 @@
        <str name="defType">lucene</str>
      </lst>
   </requestHandler>
+  <requestHandler name="/mlt" class="solr.MoreLikeThisHandler">
+    </requestHandler>
 
   <!-- for requests to get a single document; use id=666 instead of q=id:666 -->
   <requestHandler name="document" class="solr.SearchHandler" >
