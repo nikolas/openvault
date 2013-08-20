@@ -20,12 +20,12 @@
 		<label>Browse: </label>
     <!-- Need to add dynamic categories and collections -->
     <%= form_tag catalog_index_path, :method => :get, :class => 'categories' do %>
-      <%= select 'f', 'merlot_s', grouped_options_for_select({"Categories" => [['Category 1', 'category-1']]}), { :prompt => "Categories" }, :name => 'f[merlot_s][]' %>
+      <%= select 'f', 'category_sim', grouped_options_for_select({"Categories" => top_level_categories.map { |x| x[0][:value] } }), { :prompt => "Browse by category" }, :name => 'f[category_sim][]' %>
       <%= submit_tag 'Browse Category' %>
     <% end %>
     
     <%= form_tag catalog_index_path, :method => :get, :class => 'collections' do %>
-      <%= select "id", nil, grouped_options_for_select({"Collections and Series" => [['Collection 1', 'collection-1'], ['Collection 2', 'collection-2']], "Series" => [['Series 1', 'series-1'], ['Series 2', 'series-2']]}), { :prompt => "Collections and Series" }  %>
+      <%= select "id", nil, grouped_options_for_select({"Collections and Series" => top_level_collections, "Series" => [['Series 1', 'series-1'], ['Series 2', 'series-2']]}), { :prompt => "Browse by collections and series" }  %>
       <%= submit_tag 'Browse collection'%>
     <% end %>
 	</div>

@@ -20,5 +20,10 @@ $ ->
     $(this).parent().submit()
   
   $('#browse input').hide();
-  $('#browse select').bind 'change', ->
+  $('#browse .categories select').bind 'change', ->
     $(this).closest('form').submit()
+    
+  $(" .collections select").bind 'change', (e) ->
+    e.preventDefault()
+    console.log $(this).val()
+    window.location = '/collection/'+$(this).val()
