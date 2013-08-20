@@ -44,7 +44,6 @@ class CatalogController < ApplicationController
     }
     
     config.index.show_link = 'title_clip_ssm'
-    config.add_index_field 'desc_clip_ssm', :label => 'Summary' 
     config.add_index_field 'asset_date_ssm', :label => 'Date Created'
     config.add_index_field 'series_ssm', :label => 'Program'
     
@@ -77,8 +76,9 @@ class CatalogController < ApplicationController
 #     # :show may be set to false if you don't want the facet to be drawn in the 
 #     # facet bar
     config.add_facet_field solr_name('category', :facetable), :label => "Categories"
-    config.add_facet_field solr_name('subject_facet', :facetable), :label => 'Topics' 
-    config.add_facet_field solr_name('program_facet', :facetable), :label => 'Program'
+    config.add_facet_field solr_name('subject_facet', :facetable), :label => 'Topics'
+    config.add_facet_field solr_name('series', :facetable), :label => 'Series'
+    config.add_facet_field solr_name('program_facet', :facetable), :label => 'Program'    
     config.add_facet_field solr_name('people', :facetable), :label => "People"
     # config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year' 
     # config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20 

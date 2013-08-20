@@ -18,6 +18,10 @@
   </div> 
   <% # main container for doc partial view -%>
   <div class="defList_container">
+    <div class="blacklight-summary">
+      <div class="label">Summary</div>
+      <div class="value"><%= display_summary document %></div>
+    </div>
     <% index_field_names.each do |solr_fname| -%>
       <% value = render_index_field_value :document => document, :field => solr_fname %>
       <% unless value.blank? %>

@@ -60,6 +60,15 @@ module BlacklightHelper
     end
     title
   end
+  
+  def display_summary(doc=@document)
+    if doc[:desc_clip_ssm].nil?
+      summary = doc[:summary_ssm].try(:first)
+    else
+      summary = doc[:desc_clip_ssm].try(:first)
+    end
+    summary
+  end
 # 
 #   def facet_field_names
 #     names = super

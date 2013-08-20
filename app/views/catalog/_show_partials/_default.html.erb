@@ -1,5 +1,9 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <div class="defList_container">
+  <div class="blacklight-summary">
+    <div class="label">Summary</div>
+    <div class="value"><%= display_summary document %></div>
+  </div>
   <% document_show_fields(document).each do |solr_fname, field| -%>
     <% if should_render_show_field? document, field %>
     <div class="blacklight-<%= solr_fname.parameterize %>" >
