@@ -3,10 +3,10 @@
 
 <div id="" class="">
 
-    <% unless has_search_parameters? %>
+    <%# unless has_search_parameters? %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
-	    <%= render 'home' %>
-    <% else %>
+	    <%#= render 'home' %>
+    <%# else %>
 
     <% extra_head_content << render_opensearch_response_metadata %>
 
@@ -35,6 +35,6 @@
       
 
 
-    <% end %>
+    <%# end %>
 
 </div>
