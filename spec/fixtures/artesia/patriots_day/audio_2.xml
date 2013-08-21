@@ -1,0 +1,32 @@
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2011-04-04 09:50:32.0" UOI_ID="5d4bbaad634e956fa9e2cc0e59cc89f5a06ad0b8" NAME="Remembering_James_Brown.mp3" IMPORT_USER_ID="21" IMPORT_ID="199983.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_CREATOR ORGANIZATION="WGBH Educational Foundation" CREATOR_ROLE="Producer" CREATOR_NAME="Morash, Russell" />
+          <WGBH_CREATOR ORGANIZATION="WGBH Educational Foundation" CREATOR_ROLE="Director3" CREATOR_NAME="Atwood, David" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Interviewee3" ORGANIZATION="WGBH Educational Foundation" CONTRIBUTOR_NAME="Davis, Al" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Performer3" CONTRIBUTOR_NAME="Brown, James" />
+          <WGBH_COVERAGE DATE_PORTRAYED="01/30/2012" EVENT_LOCATION="Boston Garden (Boston, Mass.)" />
+          <WGBH_RIGHTS RIGHTS_TYPE="All" RIGHTS_HOLDER="WGBH Educational Foundation " />
+          <WGBH_SUBJECT SUBJECT="Riot control" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Musical performance" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="African American musicians" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Entertainment events" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="African American artists" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Assassination" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Atkins, Tom" SUBJECT_TYPE="Personal" />
+          <WGBH_SUBJECT SUBJECT="White, Kevin H." SUBJECT_TYPE="Personal" />
+          <WGBH_SUBJECT SUBJECT="Civil Rights Leaders" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Brown, James, 1933-2006" SUBJECT_TYPE="Personal" />
+          <WGBH_SUBJECT SUBJECT="King, Martin Luther, Jr., 1929-1968" SUBJECT_TYPE="Personal" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+          <WGBH_LANGUAGE LANGUAGE_USAGE="Dialogue" LANGUAGE="eng" />
+          <WGBH_TYPE ITEM_CATEGORY="Pledge_James_Brown" MEDIA_TYPE="Audio" ITEM_TYPE="Radio program (Master)" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary3" DESCRIPTION="WGBH Radio looks back at the historic 1968 James Brown concert at the Boston Garden on the night following the assassination of Martin Luther King Jr., and the last minute request by Major Kevin White for WGBH Channel Two to broadcast the event. WGBH radio host Al Davis remembers attending the concert as a a 17 year-old." DESCRIPTION_COVERAGE_OUT="00:01:00" DESCRIPTION_COVERAGE="00:01:00" DESCRIPTION_COVERAGE_IN="00:00:00" />
+          <WGBH_FORMAT DURATION="00:01:00" ITEM_FORMAT="Digital file" AUDIO_CHANNEL_TYPE="Stereo" DIGITAL_FORMAT="Wav" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="James Brown At The Boston Garden" />
+          <WGBH_TITLE TITLE_TYPE="Segment3" TITLE="Remembering James Brown at the Boston Garden, 1968" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>

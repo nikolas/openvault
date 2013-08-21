@@ -16,6 +16,11 @@ end
 # Load UOIS fixtures
 Fixtures.load([
 
+  # generic
+  "generic/wgbh_titles.xml",
+  "generic/wgbh_creators.xml",
+  "generic/wgbh_subjects.xml",
+
   # rock and roll UOIS
   "rock_and_roll/series_1.xml",
   "rock_and_roll/program_1.xml",
@@ -36,6 +41,14 @@ Fixtures.load([
 
   # march on washington UOIS
   "march_on_washington/audio_1.xml",
+
+  # patriot's day
+  'patriots_day/video_1.xml',
+  'patriots_day/video_2.xml',
+  "patriots_day/audio_1.xml",
+  "patriots_day/audio_2.xml",
+  "patriots_day/image_1.xml",
+  "patriots_day/image_2.xml"
 
 ]) do |fixture|
   uois = Artesia::Datastream::UOIS.new

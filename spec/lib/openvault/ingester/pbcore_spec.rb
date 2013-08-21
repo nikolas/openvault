@@ -5,6 +5,8 @@ describe Openvault::Ingester::Pbcore do
 
   before(:all) { require "#{fixture_path}/pbcore/load_fixtures" }
 
+  before(:each) { Fixtures.cwd "#{fixture_path}/pbcore" }
+
   describe '.ingest!' do
 
     let(:depositor) { 'openvault_test@wgbh.org' }

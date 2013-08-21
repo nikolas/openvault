@@ -1,0 +1,15 @@
+<!-- All values that we use for WGBH_SUBJECT. -->
+<!-- For testing only. Not a coplete UOIS asset. -->
+<ASSET>
+  <METADATA>
+    <UOIS>
+	  <WGBH_SUBJECT SUBJECT_TYPE="Corporate" SUBJECT="Test Corporate Subject" />
+	  <WGBH_SUBJECT SUBJECT_TYPE="Geographical" SUBJECT="Test Geographical Subject" />
+	  <WGBH_SUBJECT SUBJECT_TYPE="Keyword" SUBJECT="Test Keyword Subject" />
+	  <WGBH_SUBJECT SUBJECT_TYPE="Personal" SUBJECT="Test Personal Subject" />
+	  <WGBH_SUBJECT SUBJECT_TYPE="Personalities" SUBJECT="Test Personalities Subject" />
+	  <WGBH_SUBJECT SUBJECT_TYPE="Subject Heading" SUBJECT="Test Subject Heading Subject" />
+	  <WGBH_SUBJECT SUBJECT_TYPE="Topical" SUBJECT="Test Topical Subject" />
+	</UOIS>
+  </METADATA>
+</ASSET>

@@ -1,0 +1,18 @@
+    <ASSET>
+      <METADATA>
+        <UOIS MASTER_OBJ_MIME_TYPE="image/jpeg" METADATA_STATE_USER_ID="21" UOI_ID="f61dc3bbd9b9ba3aa49e647cea12e967d7df5a85" CONTENT_STATE_DT="2011-08-22 10:51:23.0" CONTENT_STATE="NORMAL" IMPORT_ID="207475.0" MASTER_OBJ_NAME_LOC="data/repository/original/vol0/427/Dr_Worcester_Radio_Clip_e11ef5cbdc4d1e0b5456673487dd3221b86ae250.jpg" IMPORT_DT="2011-08-22 10:51:19.0" METADATA_STATE_DT="2012-05-29 15:32:08.0" METADATA_STATE="NORMAL" BITMAP_COLOR_MAP="TCLR" VERSION="2" BITMAP_COLOR_DEPTH="24" IMPORT_USER_ID="21" IS_SGML_CHUNKED="N" IS_LATEST_VERSION="Y" IS_EDITABLE="Y" CONTENT_TYPE="BITMAP" BITMAP_HEIGHT="427" LOGICAL_UOI_ID="b150bc509262a431242806327bf28965b3beacef" BITMAP_RESOLUTION="361" NAME="Dr_Worcester_Radio_Clip.jpg" BITMAP_WIDTH="569">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="225" />
+          <WGBH_CREATOR CREATOR_ROLE="Photographer" CREATOR_NAME="Pach, G. W. (Gustavus W.), 1845-1904" />
+          <WGBH_RIGHTS RIGHTS_CREDIT="Harvard University Archives, HUP Worcester, Alfred (1)" RIGHTS_TYPE="All" RIGHTS_HOLDER="Harvard University Archives" />
+          <WGBH_SOURCE SOURCE_TYPE="Source" SOURCE="Harvard University, Harvard University Archives, W373341_1" />
+          <WGBH_PUBLISHER PUBLISHER="Harvard Universiry Archives" PUBLISHER_TYPE="Copyright Holder" />
+          <MEDIUM_RES_VIEW OBJECT_NAME_LOCATION="data/repository/screen/vol0/206/Dr_Worcester_Radio_Clip-S_3c6a732c264e4b6e92ce4639f382d66205c6708d.jpg" />
+          <WGBH_TYPE MEDIA_TYPE="Static Image" ITEM_TYPE="Photograph1" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary1" DESCRIPTION="Dr. Alfred Worcester portrait" />
+          <WGBH_FORMAT ORIENTATION="Portrait" DIMENSIONS_HEIGHT="427" ITEM_FORMAT="Photograph - Print" COLOR="B&amp;W (tinted)" DIMENSIONS_WIDTH="569" MIME_TYPE="image/jpeg" DIGITAL_FORMAT="Jpeg" ENCODING_FORMAT="Photo JPEG" />
+          <WGBH_TITLE TITLE_TYPE="Image" TITLE="Alfred Worcester, photographic portrait ca. 1878" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="First Patriots' Day, The: An Eyewitness Account By Dr. Alfred Worcester" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>

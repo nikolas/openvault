@@ -1,0 +1,43 @@
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2012-01-17 12:08:10.0" UOI_ID="dbc105fefb1dd947aa735d0b6469aa35a33dab67" NAME="barcode318380_clip2.mov" IMPORT_USER_ID="268" IMPORT_ID="213080.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_CREATOR ORGANIZATION="WGBH-TV" CREATOR_ROLE="Producer" CREATOR_NAME="Morganthau, Henry" />
+          <WGBH_CREATOR ORGANIZATION="WGBH-TV" CREATOR_ROLE="Director2" CREATOR_NAME="Barzyk, Fred" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Interviewee2" ORGANIZATION="Black Muslims" CONTRIBUTOR_NAME="X, Malcolm, 1925-1965" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Interviewer2" ORGANIZATION="City University of New York. City College" CONTRIBUTOR_NAME="Clark, Kenneth Bancroft, 1914-2005" />
+          <WGBH_COVERAGE DATE_PORTRAYED="06/24/1963" />
+          <WGBH_SUBJECT SUBJECT="Black Muslims " SUBJECT_TYPE="Corporate" />
+          <WGBH_SUBJECT SUBJECT="Civil rights leaders" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="African Americans Politics and government " SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Civil rights" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="African Americans Interviews" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_TYPE MEDIA_TYPE="Moving Image" ITEM_TYPE="Preservation Master" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary" DESCRIPTION="Excerpted interview with Malcolm X from the program &quot;Negro and the American Promise.&quot;" DESCRIPTION_COVERAGE_OUT="01:13:05:19" DESCRIPTION_COVERAGE="00:13:05:19" DESCRIPTION_COVERAGE_IN="01:00:00:00" />
+          <WGBH_FORMAT DIMENSIONS_HEIGHT="486" ASPECT_RATIO="4:3" DIGITAL_FORMAT="Quicktime" BROADCAST_FORMAT="NTSC" DURATION="00:13:05:19" FRAME_RATE="29.97 fps" COLOR="B&amp;W" DIMENSIONS_WIDTH="720" ITEM_FORMAT="Digital betacam" MIME_TYPE="video/quicktime" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="Negro and The American Promise, The" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="Perspectives" />
+          <WGBH_TITLE TITLE_TYPE="Element2" TITLE="Malcolm X Interview" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) duration : 785.619 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="Edited clip from full program." ANNOTATION_TYPE="Source" />
+          <WGBH_ANNOTATION ANNOTATION="/Volumes/bigDisks/Muraszko Projects/Radio/Uncompressed/barcode318380_clip2.mov" ANNOTATION_TYPE="Source" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) bits/channels : 16 / 2 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 720 / 486 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) duration : 785.618 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : 2vuy Apple FCP Uncompressed 8-bit 4:2:2 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 720 / 486 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : 2vuy Apple FCP Uncompressed 8-bit 4:2:2 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) frames per second : 29.97 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) compression format : sowt 16-bit Little Endian " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="318380" />
+          <WGBH_DATE_RELEASE DATE_RELEASE="1963-06-24 00:00:00.0" />
+          <WGBH_LANGUAGE LANGUAGE="eng" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Publisher" />
+          <WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>

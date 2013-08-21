@@ -1,0 +1,75 @@
+    <ASSET>
+      <METADATA>
+        <UOIS VERSION="1" IMPORT_DT="2012-01-26 14:11:10.0" UOI_ID="b3bf8cf2c76ae2e00941561ab5ee243bd5c59c78" NAME="barcode24136.mov" IMPORT_USER_ID="268" IMPORT_ID="213415.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="225" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Performer2" CONTRIBUTOR_NAME="Shepherd, Jean" />
+          <WGBH_CONTRIBUTOR CONTRIBUTOR_ROLE="Producer2" CONTRIBUTOR_NAME="Meath, Jonathan" />
+          <WGBH_COVERAGE DATE_PORTRAYED="10/14/1969" />
+          <WGBH_IDENTIFIER NOLA_CODE="mla000349_RBII" />
+          <WGBH_RIGHTS RIGHTS_NOTE="Media not to be released to Open Vault" RIGHTS_TYPE="All" RIGHTS_HOLDER="Copyright holder is unidentified" />
+          <WGBH_SUBJECT SUBJECT="Fenway Park (Boston, Mass.)" SUBJECT_TYPE="Geographical" />
+          <WGBH_SUBJECT SUBJECT="Television" SUBJECT_TYPE="Topical" />
+          <WGBH_SUBJECT SUBJECT="Anecdotes" SUBJECT_TYPE="Topical" />
+          <WGBH_SUBJECT SUBJECT="Wit and humor" SUBJECT_TYPE="Topical" />
+          <WGBH_SUBJECT SUBJECT="Writing" SUBJECT_TYPE="Topical" />
+          <WGBH_TYPE MEDIA_TYPE="Moving Image" ITEM_TYPE="Preservation Master" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary" DESCRIPTION="Five segments of Jean Shepherd talking about various topics. Segment I: Jean Shepherd, alone in a car, alone in a drive-in theater, opines on the significance of the drive-in to American culture (RT: 7:36) Segment II: Jean Shepherd visits an empty Fenway Park and recalls childhood baseball memories (RT: 11:52) Segment III: Jean Shepherd homage to “Slob Food” (RT: 17:29) Segment IV: “Where's Jean (Shepherd)” B/W (RT: 8:18) Segment V: Jean Shepherd narrates about, and over, footage of Fort Washington in Cambridge, MA, the last remaining Revolutionary Fort in the area (RT: 4:00) Segment VI: shorter version of MOS footage of four individuals smoking, reading, eating, and drinking (only two people are seen in this clip). All clips are in color with the exception of the “Where's Jean“ segment." DESCRIPTION_COVERAGE_OUT="10:59:50:19" DESCRIPTION_COVERAGE="01:00:19:01" DESCRIPTION_COVERAGE_IN="09:59:31:19" />
+          <WGBH_FORMAT DIMENSIONS_HEIGHT="486" ASPECT_RATIO="4:3" DIGITAL_FORMAT="Quicktime" BROADCAST_FORMAT="NTSC" DURATION="01:00:19" COLOR="Color with B&amp;W sequences" DIMENSIONS_WIDTH="720" ITEM_FORMAT="Betacam" MIME_TYPE="video/quicktime" />
+          <WGBH_TITLE TITLE_TYPE="Subseries" TITLE="Rear Bumpers" />
+          <WGBH_TITLE TITLE_TYPE="Program" TITLE="Rear Bumper II" />
+          <WGBH_TITLE TITLE_TYPE="Collection" TITLE="New Television Workshop" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="Rockefeller Artists in Television" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) duration : 3619.052 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) frames per second : 29.97 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) compression format : v210 Apple FCP Uncompressed 10-bit 4:2:2 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 3) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) samples per second : 48000 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 4) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 5) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 7) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="/Volumes/bigDisks/Muraszko Projects/Capture Scratch/Digitizing!/barcode24136.mov" ANNOTATION_TYPE="Source" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Video Track 1) width/height/depth : 720 / 486 / 24 " ANNOTATION_TYPE="Movie Quality" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 1) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 2) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 6) start time : 0.000 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) duration : 3619.052 seconds " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) compression format : in24 24-bit Integer " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_ANNOTATION ANNOTATION="(Audio Track 8) bits/channels : 16 / 1 " ANNOTATION_TYPE="Audio Quality2" />
+          <WGBH_SOURCE SOURCE_TYPE="Tracking Number" SOURCE="24136" />
+          <WGBH_LANGUAGE LANGUAGE="eng" />
+          <WGBH_PUBLISHER PUBLISHER="WGBH Educational Foundation" PUBLISHER_TYPE="Distributor" />
+          <WGBH_HOLDINGS HOLDINGS_DEPARTMENT="Archives" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>

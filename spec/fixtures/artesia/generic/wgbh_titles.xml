@@ -1,0 +1,20 @@
+<!-- All values that we use for WGBH_TITLE. -->
+<!-- For testing only. Not a coplete UOIS asset. -->
+<ASSET>
+  <METADATA>
+    <UOIS>
+	  <WGBH_TITLE TITLE_TYPE="Series" TITLE="Test Series Title" />
+	  <WGBH_TITLE TITLE_TYPE="Program" TITLE="Test Program Title" />
+	  <WGBH_TITLE TITLE_TYPE="Collection" TITLE="Test Collection Title" />
+	  <WGBH_TITLE TITLE_TYPE="Episode" TITLE="Test Episode Title" />
+	  <WGBH_TITLE TITLE_TYPE="Element2" TITLE="Test Element 2 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Element3" TITLE="Test Element 3 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Element4" TITLE="Test Element 4 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Item2" TITLE="Test Item 2 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Item3" TITLE="Test Item 3 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Item4" TITLE="Test Item 4 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Clip" TITLE="Test Clip Title" />
+	  <WGBH_TITLE TITLE_TYPE="Segment" TITLE="Test Segment Title" />
+	</UOIS>
+  </METADATA>
+</ASSET>

@@ -155,61 +155,86 @@ describe Artesia::Datastream::UOIS do
   # Test the terminology
   ##
 
-  describe '#creators, #creators#name, #creators#role' do
-    it 'returns all creator role and creator name' do
-      Fixtures.use("rock_and_roll/series_1.xml").creator.count.should == 2
-      Fixtures.use("rock_and_roll/series_1.xml").creator.name.should == ["Espar, David", "Deane, Elizabeth"]
-      Fixtures.use("rock_and_roll/series_1.xml").creator.role.should == ["Senior Producer5000", "Executive Producer5000"]
+  # all creators
+  describe '#creators' do
+    it 'returns all creators with role name' do
+      Fixtures.use("rock_and_roll/series_1.xml").creators.count.should == 2
+      Fixtures.use("rock_and_roll/series_1.xml").creators.name.should == ["Espar, David", "Deane, Elizabeth"]
+      Fixtures.use("rock_and_roll/series_1.xml").creators.role.should == ["Senior Producer5000", "Executive Producer5000"]
     end
   end
 
-  describe '#rights, #rights#note, #rights#holder, #rights#credit, #rights#type' do
-    it 'returns all values for rights note, rights holder, rights credit, and rights type' do
-      Fixtures.use("zoom/video_1.xml").rights.count.should == 1
-      Fixtures.use("zoom/video_1.xml").rights.note.should == ["Media not to be released to Open Vault"]
-      Fixtures.use("zoom/video_1.xml").rights.holder.should == ["WGBH Educational Foundation"]
-      Fixtures.use("zoom/video_1.xml").rights.credit.should == ["WGBH Educational Foundation"]
-      Fixtures.use("zoom/video_1.xml").rights.type.should == ["Web"]
+  # specific creator roles
+  describe '#artists' do
+    it 'returns the names of all artists' do
+      Fixtures.use("patriots_day/image_2.xml").artists.should == ["Ritchie, A.H."]
     end
   end
 
+  describe '#directors' do
+    it 'returns the names of all directors' do
+      Fixtures.use('patriots_day/audio_2.xml').directors.should == ["Atwood, David"]
+      Fixtures.use('patriots_day/video_2.xml').directors.should == ["Barzyk, Fred"]
+    end
+  end
 
-  describe '#subject, #subject#type, #subject#val' do
-    it 'returns all values for subject and subject type' do
-      Fixtures.use("zoom/video_1.xml").subject.value.should == [
-        "Preteens",
-        "Variety shows (Television programs)",
-        "Zoom (Television program : WGBH (Television station : Boston, Mass.))",
-        "Children's television programs--United States",
-        "Children",
-        "Play",
-        "Children's television programs",
-        "Games",
-        "Amusements"
+  describe '#producers' do
+    it 'returns the names of producers (whose title is just "Producer", i.e. not "Executive Producer", "Senior Producer", etc)' do
+      Fixtures.use('patriots_day/audio_2.xml').producers.should == ["Morash, Russell"]
+    end
+  end
+
+  describe '#senior_producers' do
+    it 'returns the names of senior producers' do
+      Fixtures.use('rock_and_roll/series_1.xml').senior_producers.should == ["Espar, David"]
+    end
+  end
+
+  describe '#exec_producers' do
+    it 'returns the names of executivce producers' do
+      Fixtures.use('rock_and_roll/series_1.xml').exec_producers.should == ["Deane, Elizabeth"]
+    end
+  end
+
+  describe '#all_producers' do
+    it 'returns the names of all producers, executive producers, and senior producers' do
+      Fixtures.use('generic/wgbh_creators.xml').all_producers.should == [
+        "Test Executive Producer 2",
+        "Test Executive Producer 5000",
+        "Test Producer",
+        "Test Senior Producer 5000"
       ]
+    end
+  end
 
-      Fixtures.use("zoom/video_1.xml").subject.type.should == [
-        "Subject Heading",
-        "Subject Heading",
+
+  # Subjects
+  describe '#subjects' do
+    it 'returns all subjects with their values and types' do
+
+      # test the types.
+      Fixtures.use('generic/wgbh_subjects.xml').subjects.type.should == [
         "Corporate",
+        "Geographical",
+        "Keyword",
+        "Personal",
+        "Personalities",
         "Subject Heading",
-        "Subject Heading",
-        "Subject Heading",
-        "Subject Heading",
-        "Subject Heading",
-        "Subject Heading"
+        "Topical"
+      ]
+
+      # test the values.
+      Fixtures.use('generic/wgbh_subjects.xml').subjects.value.should == [
+        "Test Corporate Subject",
+        "Test Geographical Subject",
+        "Test Keyword Subject",
+        "Test Personal Subject",
+        "Test Personalities Subject",
+        "Test Subject Heading Subject",
+        "Test Topical Subject"
       ]
     end
   end
-
-  describe '#type, #type#media, #type#item' do
-    it 'returns all values for type, media type, and item type' do
-      Fixtures.use("rock_and_roll/video_1.xml").type.count.should == 1
-      Fixtures.use("rock_and_roll/video_1.xml").type.media.should == ["Moving Image"]
-      Fixtures.use("rock_and_roll/video_1.xml").type.item.should == ["Original footage"]
-    end
-  end
-
 
   describe '#description, #description#type, #description#coverage, #description#coverage_in, #description#coverage_out, #description#value' do
     it 'returns all values for description type, description coverage, description coverage in, description coverage out, and description value' do
@@ -222,89 +247,116 @@ describe Artesia::Datastream::UOIS do
     end
   end
 
-  describe '#format.dimensions_height, #format.aspect_ratio, #format.broadcast_format, #format.duration, #format.color, #format.dimensions_width, #format.item_format, #format.mime_type' do
-    it 'returns all values for dimensions height, aspect ratio, broadcast format, duration, color, dimension width, item format, and mime type' do
-      Fixtures.use("rock_and_roll/video_1.xml").format.count.should == 1
-      Fixtures.use("rock_and_roll/video_1.xml").format.dimensions_height.should == ["486"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.aspect_ratio.should == ["4:3"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.broadcast_format.should == ["NTSC"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.duration.should == ["00:21:28:10"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.color.should == ["Color"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.dimensions_width.should == ["720"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.item_format.should == ["Betacam"]
-      Fixtures.use("rock_and_roll/video_1.xml").format.mime_type.should == ["video/quicktime"]
-    end
-  end
-
-  describe '#title.value, #title.type' do
-    it 'returns all values for title and title type' do
-
-    end
-  end
-
-  describe '#annotation.value, #annotation.type' do
-    it 'returns all values for annotation and annotation type' do
-      Fixtures.use("zoom/video_2.xml").annotation.count.should == 12
-      Fixtures.use("zoom/video_2.xml").annotation.value.should == [
-        "(Video Track 1) duration : 29.496 seconds ",
-        "(Video Track 1) frames per second : 29.97 ",
-        "(Video Track 1) compression format : avc1 H.264 ",
-        "(Video Track 1) width/height/depth : 320 / 240 / 24 ",
-        "(Audio Track 1) start time : 0.000 seconds ",
-        "(Audio Track 1) duration : 29.496 seconds ",
-        "(Audio Track 1) compression format : mp4a MPEG-4 Audio ",
-        "(Audio Track 1) bits/channels : 16 / 2 ",
-        "/Volumes/bigDisks/Muraszko Projects/Watermarked Programs/Pledge_Zoom_Bernadette.mp4",
-        "Watermarked Mp4 for web",
-        "(Audio Track 1) samples per second : 48000 ",
-        "(Video Track 1) start time : 0.000 seconds "
+  describe '#titles' do
+    it  'returns all titles, with types and values' do
+      Fixtures.use('generic/wgbh_titles.xml').titles.count.should == 12
+      Fixtures.use('generic/wgbh_titles.xml').titles.type.should == [
+        "Series",
+        "Program",
+        "Collection",
+        "Episode",
+        "Element2",
+        "Element3",
+        "Element4",
+        "Item2",
+        "Item3",
+        "Item4",
+        "Clip",
+        "Segment"
       ]
 
-      Fixtures.use("zoom/video_2.xml").annotation.type.should == [
-        "Movie Quality",
-        "Movie Quality",
-        "Movie Quality",
-        "Movie Quality",
-        "Audio Quality2",
-        "Audio Quality2",
-        "Audio Quality2",
-        "Audio Quality2",
-        "Source",
-        "Versioning",
-        "Audio Quality2",
-        "Movie Quality"
+      Fixtures.use('generic/wgbh_titles.xml').titles.value.should == [
+        "Test Series Title",
+        "Test Program Title",
+        "Test Collection Title",
+        "Test Episode Title",
+        "Test Element 2 Title",
+        "Test Element 3 Title",
+        "Test Element 4 Title",
+        "Test Item 2 Title",
+        "Test Item 3 Title",
+        "Test Item 4 Title",
+        "Test Clip Title",
+        "Test Segment Title"
       ]
     end
   end
 
-  describe '#source.value, #source.type' do
-    it 'returns all values for source and source type' do
-      Fixtures.use("rock_and_roll/video_1.xml").source.count.should == 3
-      Fixtures.use("rock_and_roll/video_1.xml").source.value.should == ["10856", "17030028", "104"]
-      Fixtures.use("rock_and_roll/video_1.xml").source.type.should == ["Tracking Number", "Tape", "Program Number"]
+  describe '#series_titles' do
+    it 'returns the series titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').series_titles.should == ["Test Series Title"]
     end
   end
 
-  describe '#language.value, #language.type' do
-    it 'returns all values for language and language type' do
-      Fixtures.use("march_on_washington/audio_1.xml").language.count.should == 1
-      Fixtures.use("march_on_washington/audio_1.xml").language.value.should == ["eng"]
-      Fixtures.use("march_on_washington/audio_1.xml").language.usage.should == ["Dialogue"]
+  describe '#subseries_titles' do
+    it 'returns the subseries titles.' do
+      Fixtures.use('patriots_day/video_1.xml').subseries_titles.should == ["Rear Bumpers"]
     end
   end
 
-  describe '#publisher.value, #publisher.type' do
-    it 'returns all values for publisher and publisher type' do
-      Fixtures.use("zoom/video_3.xml").publisher.count.should == 1
-      Fixtures.use("zoom/video_3.xml").publisher.value.should == ["WGBH Educational Foundation"]
-      Fixtures.use("zoom/video_3.xml").publisher.type.should == ["Publisher"]
+  describe '#program_titles' do
+    it 'returns the program titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').program_titles.should == ["Test Program Title"]
     end
   end
 
-  describe '#holdings.value, #holdings.type' do
-    it 'returns all values for holdings and holdings type' do
-      Fixtures.use("rock_and_roll/video_1.xml").holdings.count.should == 1
-      Fixtures.use("rock_and_roll/video_1.xml").holdings.department.should == ["Archives"]
+  describe '#collection_titles' do
+    it 'returns the collection titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').collection_titles.should == ["Test Collection Title"]
+    end
+  end
+
+  describe '#episode_titles' do
+    it 'returns the episode titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').episode_titles.should == ["Test Episode Title"]
+    end
+  end
+
+  describe '#element_titles' do
+    it 'returns the element titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').element_titles.should == ["Test Element 2 Title", "Test Element 3 Title", "Test Element 4 Title"]
+    end
+  end
+
+  describe '#item_titles' do
+    it 'returns the item titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').item_titles.should == ["Test Item 2 Title", "Test Item 3 Title", "Test Item 4 Title"]
+    end
+  end
+
+  describe '#clip_titles' do
+    it 'returns the clip titles.' do
+      Fixtures.use('generic/wgbh_titles.xml').clip_titles.should == ["Test Clip Title"]
+    end
+  end
+
+  describe '#media_types' do
+    it 'returns the media types.' do
+      Fixtures.use('rock_and_roll/video_1.xml').media_types.should == ["Moving Image"]
+    end
+  end
+
+  describe '#types' do
+    it 'returns the types of thing the UOIS metadata is describing.' do
+      Fixtures.use('rock_and_roll/video_1.xml').types.should == ["Original footage"]
+    end
+  end
+
+  describe '#publishers' do
+    it 'returns value for the publisher.' do
+      Fixtures.use("zoom/video_1.xml").publishers.should == ["WGBH Educational Foundation"]
+    end
+  end
+
+  describe '#copyright_holders' do
+    it 'returns the values for copyright holdeers.' do
+      Fixtures.use('patriots_day/image_1.xml').copyright_holders.should == ["Harvard Universiry Archives"]
+    end
+  end
+
+  describe '#distributors' do
+    it 'returns the values for distributors.' do
+      Fixtures.use('patriots_day/video_1.xml').distributors.should == ["WGBH Educational Foundation"]
     end
   end
 

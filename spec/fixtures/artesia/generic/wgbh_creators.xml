@@ -1,0 +1,16 @@
+    <ASSET>
+      <METADATA>
+        <UOIS>
+          <WGBH_CREATOR CREATOR_ROLE="Artist" CREATOR_NAME="Test Artist" />
+          <WGBH_CREATOR CREATOR_ROLE="Director2" CREATOR_NAME="Test Director 2" />
+          <WGBH_CREATOR CREATOR_ROLE="Director3" CREATOR_NAME="Test Director 3" />
+          <WGBH_CREATOR CREATOR_ROLE="Executive Producer2" CREATOR_NAME="Test Executive Producer 2" />
+          <WGBH_CREATOR CREATOR_ROLE="Executive Producer5000" CREATOR_NAME="Test Executive Producer 5000" />
+          <WGBH_CREATOR CREATOR_ROLE="Illustrator" CREATOR_NAME="Test Illustrator" />
+          <WGBH_CREATOR CREATOR_ROLE="Photographer" CREATOR_NAME="Test Photographer" />
+          <WGBH_CREATOR CREATOR_ROLE="Producer" CREATOR_NAME="Test Producer" />
+          <WGBH_CREATOR CREATOR_ROLE="Senior Producer5000" CREATOR_NAME="Test Senior Producer 5000" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
