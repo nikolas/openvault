@@ -232,7 +232,6 @@ class CatalogController < ApplicationController
     #@repspones, @document = get_solr_response_for_doc_id
     
     @rel = get_related_content(params[:id])
-    puts @rel.inspect
     
     redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
     
@@ -328,16 +327,14 @@ class CatalogController < ApplicationController
     q = "slug:#{slug}"
     solr_params = { 
       :q => q,
-      :qt => 'mlt',
+      :'mlt.count' => 3,
+      :mlt => true,
       :'mlt.fl' => "title_tesim, summary_tesim",
-      :'mlt.mintf' => 1,
-      :'mlt.mindf' => 1,
-      :'mlt.match.include' => false
     }
     #response = find('mlt', self.solr_search_params().merge(solr_params))
-    response = Blacklight.solr.mlt :params => solr_params
-    puts response.inspect
-    document_list = response['response']['docs'].collect{|doc| SolrDocument.new(doc, response) }
+    response = Blacklight.solr.select :params => solr_params
+    id = response['response']['docs'][0]['id']
+    document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
     document_list
   end
   
