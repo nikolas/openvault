@@ -1,5 +1,7 @@
 class CollectionsController < ApplicationController
-  
+  include Blacklight::Catalog
+  include Hydra::Controller::ControllerBehavior
+  include Blacklight::Solr::Document::MoreLikeThis
   skip_authorization_check
   
   before_filter :get_collection, :only => [:show]

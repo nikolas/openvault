@@ -19,6 +19,7 @@ class OpenvaultAsset < ActiveFedora::Base
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     solr_document["slug"] = self.slugify_doc
+    Solrizer.insert_field(solr_document, "collection_ancestry", "Test Collection 1", :facetable, :searchable, :displayable)
     return solr_document
   end
   
