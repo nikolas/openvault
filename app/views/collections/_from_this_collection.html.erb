@@ -1,8 +1,6 @@
 <div class="related-content">
 <h2>From this collection</h2>
-<p>This will show when indexed items have a field of collection_ancestors_tesim</p>
-<%= controller.send(:get_solr_response_for_field_values, 'collection_ancestry_ssm', @collection.name, :rows => 3).inspect %>
-<%= render(:partial => 'blacklight_mlt/mlt', :collection => controller.send(:get_solr_response_for_field_values, 'collection_ancestry_ssm', @collection.name, :rows => 3).last, :as => :document ) %>
+<%= render(:partial => 'blacklight_mlt/mlt', :collection => controller.send(:get_solr_response_for_field_values, 'collection_ancestry_sim', @collection.name, :rows => 3).last, :as => :document ) %>
 
 <!-- <div class="mlt">
 <div class="thumbnail">
