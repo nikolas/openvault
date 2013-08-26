@@ -1,4 +1,5 @@
 require 'openvault/datastream'
+require 'hydra-pbcore'
 
 module Artesia
 
@@ -48,13 +49,24 @@ module Artesia
           terminology.holder(:path => {:attribute => "RIGHTS_HOLDER"})
         }
 
+        # Coverage specifics
+        terminology.dates_portrayed(:path => "WGBH_COVERAGE/@DATE_PORTRAYED")
+        terminology.event_locations(:path => "WGBH_COVERAGE/@EVENT_LOCATION")
+
         # All subjects
         terminology.subjects(:path => "WGBH_SUBJECT") {
           terminology.type(:path => {:attribute => "SUBJECT_TYPE"})
           terminology.value(:path => {:attribute => "SUBJECT"})
         }
 
-        # ["Corporate", "Geographical", "Keyword", "Personal", "Personalities", "Subject Heading", "Topical"]
+        # Specific subjects
+        terminology.subjects_corporate(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Corporate"]/@SUBJECT')
+        terminology.subjects_geographical(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Geographical"]/@SUBJECT')
+        terminology.subjects_keywords(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Keyword"]/@SUBJECT')
+        terminology.subjects_personal(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Personal"]/@SUBJECT')
+        terminology.subjects_personalities(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Personalities"]/@SUBJECT')
+        terminology.subjects_headings(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Subject Heading"]/@SUBJECT')
+        terminology.subjects_topical(:path => 'WGBH_SUBJECT[@SUBJECT_TYPE="Topical"]/@SUBJECT')
 
         # NOTE: #types(from WGBH_TYPE/@ITEM_TYPE in UOIS xml) is not related to #item_titles (from WGBH_TITLE[@TYPE="ITEM"]/@TITLE in UOIS xml).
         # All digital assets should have a #types But #item_titles is for an asset that is of type 'Item', which is a stupidly generic designation
@@ -62,14 +74,13 @@ module Artesia
         terminology.types(:path => 'WGBH_TYPE/@ITEM_TYPE')
         terminology.media_types(:path => 'WGBH_TYPE/@MEDIA_TYPE')
 
+        # All descriptions
+        # We're not worrying about different types of descriptions right now. They are all basically summaries.
+        terminology.descriptions(:path => "WGBH_DESCRIPTION/@DESCRIPTION")
 
-        terminology.description(:path => "WGBH_DESCRIPTION") {
-          terminology.type(:path => {:attribute => "DESCRIPTION_TYPE"})
-          terminology.coverage_in(:path => {:attribute => "DESCRIPTION_COVERAGE_IN"})
-          terminology.coverage(:path => {:attribute => "DESCRIPTION_COVERAGE"})
-          terminology.coverage_out(:path => {:attribute => "DESCRIPTION_COVERAGE_OUT"})
-          terminology.value(:path => {:attribute => "DESCRIPTION"})
-        }
+        terminology.coverage(:path => 'WGBH_DESCRIPTION/@DESCRIPTION_COVERAGE')
+        terminology.coverage_in(:path => 'WGBH_DESCRIPTION/@DESCRIPTION_COVERAGE_IN')
+        terminology.coverage_out(:path => 'WGBH_DESCRIPTION/@DESCRIPTION_COVERAGE_OUT')
 
         # All titles with types and values.
         terminology.titles(:path => 'WGBH_TITLE') {
@@ -85,21 +96,81 @@ module Artesia
         terminology.episode_titles(:path => 'WGBH_TITLE[@TITLE_TYPE="Episode"]/@TITLE')
         terminology.element_titles(:path => 'WGBH_TITLE[@TITLE_TYPE="Element2" or @TITLE_TYPE="Element3" or @TITLE_TYPE="Element4"]/@TITLE')
         terminology.clip_titles(:path => 'WGBH_TITLE[@TITLE_TYPE="Clip"]/@TITLE')
+        terminology.segment_titles(:path => 'WGBH_TITLE[@TITLE_TYPE="Segment"]/@TITLE')
+        terminology.image_titles(:path => 'WGBH_TITLE[@TITLE_TYPE="Image"]/@TITLE')
         # NOTE: #item_titles (from WGBH_TITLE[@TYPE="ITEM"]/@TITLE in UOIS xml) is not related to #types(from WGBH_TYPE/@ITEM_TYPE in UOIS xml).
         # All digital assets should have a #types But #item_titles is for an asset that is of type 'Item', which is a stupidly generic designation
         # that basically means 'a part of something else'.
         terminology.item_titles(:path => 'WGBH_TITLE[@TITLE_TYPE="Item2" or @TITLE_TYPE="Item3" or @TITLE_TYPE="Item4"]/@TITLE')
 
         # Publisher info
-        terminology.publishers(:path => 'WGBH_PUBLISHER[@PUBLISHER_TYPE="Publisher"]/@PUBLISHER')
-        terminology.copyright_holders(:path => 'WGBH_PUBLISHER[@PUBLISHER_TYPE="Copyright Holder"]/@PUBLISHER')
-        terminology.distributors(:path => 'WGBH_PUBLISHER[@PUBLISHER_TYPE="Distributor"]/@PUBLISHER')
+        terminology.publishers(:path => 'WGBH_PUBLISHER') {
+          terminology.type(:path => {:attribute => 'PUBLISHER_TYPE'})
+          terminology.name(:path => {:attribute => 'PUBLISHER'})
+        }
+
+        # Publisher info
+        terminology.contributors(:path => 'WGBH_CONTRIBUTOR') {
+          terminology.name(:path => {:attribute => 'CONTRIBUTOR_NAME'})
+          terminology.role(:path => {:attribute => 'CONTRIBUTOR_ROLE'})
+        }
 
       end
 
       set_terminology do |t|
         t.root(:path => "UOIS")
         self.add_uois_terminology t
+      end
+
+      def to_pbcore
+        pbcore = HydraPbcore::Datastream::Document.new
+
+        pbcore.series += self.series_titles
+        pbcore.collection += self.collection_titles
+        pbcore.program += self.program_titles
+        pbcore.episode += self.episode_titles
+        pbcore.clip += self.clip_titles
+        pbcore.segment += self.segment_titles
+        pbcore.asset_date += self.dates_portrayed
+        pbcore.element += self.element_titles
+        pbcore.item += self.item_titles
+
+        pbcore.description += self.descriptions
+
+
+        # Set the main title based on what the UOIS xml is representing
+        if self.is_series?
+          pbcore.title += pbcore.series
+          pbcore.description.type = "Series"
+        elsif self.is_program?
+          pbcore.title += pbcore.program
+          pbcore.description.type = "Program"
+        elsif self.is_collection?
+          pbcore.title += pbcore.collection
+          pbcore.description.type = "Collection"
+        elsif self.is_clip?
+          pbcore.title += pbcore.clip
+          pbcore.description.type = "Clip"
+        elsif self.is_element?
+          pbcore.title += pbcore.element
+          pbcore.description.type = "Element"
+        elsif self.is_item?
+          pbcore.title += pbcore.item
+          pbcore.description.type = "Item"
+        end
+
+        # Append the subjects
+        pbcore.subject_name += self.subjects_topical
+        pbcore.subject_name += self.subjects_personalities
+        pbcore.subject_name += self.subjects_headings
+
+        pbcore.publisher.name = self.publishers.name
+        pbcore.publisher.role = self.publishers.type
+
+        pbcore.contributor.name = self.contributors.name
+        pbcore.contributor.role = self.contributors.role
+
+        pbcore
       end
 
 
@@ -127,7 +198,7 @@ module Artesia
       #     - transcript record
       # NOTE: Sometimes a video or audio record will also serve as the program record.
       def is_program?
-        !self.program_titles.empty? && !(self.is_series? || self.is_collection? || self.is_transcript? || self.is_image? || self.is_element? || self.is_clip?)
+        !self.program_titles.empty? && !(self.is_series? || self.is_collection? || self.is_transcript? || self.is_image? || self.is_element? || self.is_clip? || self.is_item?)
       end
 
       # Returns true if XML describes a collection record.
@@ -152,6 +223,13 @@ module Artesia
         !self.clip_titles.empty?
       end
 
+      # I am not a fan of this designation, but an 'Item' in this context is a specific type
+      # of asset, similar to an "Element" or a "Clip". Essentially, it is a part of a larger thing.
+      # What is the difference between an "Item" and a "Clip", or an "Item" and an "Element"? Dunno.
+      def is_item?
+        !self.item_titles.empty?
+      end
+
       # Returns tue if XML describes a transcript
       # It is a transcript record iff:
       #   - types contains at least one value that begins with "Transcript"
@@ -172,14 +250,6 @@ module Artesia
       #   - media_typescontains "Audio" and nothing else.
       def is_audio?
         (self.media_types== ["Audio"])
-      end
-
-      # Converts to a HydraPbcore::Datastream::Document
-      def to_pbcore
-        pbcore = HydraPbcore::Datastream::Document.new
-        
-        # Titles
-        pbcore.episode
       end
     end
   end

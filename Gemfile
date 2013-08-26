@@ -45,9 +45,7 @@ end
 
 gem "jquery-rails", "2.3.0"
 
-gem 'blacklight'
-gem 'hydra-head', '6.1.0'
-gem 'jettywrapper'
+gem 'hydra', '6.0.0', :require => 'hydra6'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

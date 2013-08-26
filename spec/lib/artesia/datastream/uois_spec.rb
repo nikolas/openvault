@@ -153,9 +153,11 @@ describe Artesia::Datastream::UOIS do
 
   ##
   # Test the terminology
-  ##
+  #
 
-  # all creators
+  ##
+  # Creators
+  # 
   describe '#creators' do
     it 'returns all creators with role name' do
       Fixtures.use("rock_and_roll/series_1.xml").creators.count.should == 2
@@ -208,7 +210,9 @@ describe Artesia::Datastream::UOIS do
   end
 
 
-  # Subjects
+  ##
+  # All subjects
+  #
   describe '#subjects' do
     it 'returns all subjects with their values and types' do
 
@@ -236,20 +240,90 @@ describe Artesia::Datastream::UOIS do
     end
   end
 
-  describe '#description, #description#type, #description#coverage, #description#coverage_in, #description#coverage_out, #description#value' do
-    it 'returns all values for description type, description coverage, description coverage in, description coverage out, and description value' do
-      Fixtures.use("rock_and_roll/video_1.xml").description.count.should == 1
-      Fixtures.use("rock_and_roll/video_1.xml").description.type.should == ["Summary"]
-      Fixtures.use("rock_and_roll/video_1.xml").description.coverage.should == ["00:21:28:10"]
-      Fixtures.use("rock_and_roll/video_1.xml").description.coverage_out.should == ["08:21:26:23"]
-      Fixtures.use("rock_and_roll/video_1.xml").description.coverage_in.should == ["07:59:58:14"]
-      Fixtures.use("rock_and_roll/video_1.xml").description.value.should == ["Interview with Rufus Thomas [Part 2 of 4]"]
+  ##
+  # Specific subjects
+  #
+
+  describe '#subjects_corporate' do
+    it 'returns the values for corporate subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_corporate.should == ["Test Corporate Subject"]
     end
   end
 
+  describe '#subjects_geographical' do
+    it 'returns the values for geographical subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_geographical.should == ["Test Geographical Subject"]
+    end
+  end
+
+  describe '#subjects_topical' do
+    it 'returns the values for topical subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_topical.should == ["Test Topical Subject"]
+    end
+  end
+
+  describe '#subjects_keywords' do
+    it 'returns the values for keywords subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_keywords.should == ["Test Keyword Subject"]
+    end
+  end
+
+  describe '#subjects_personalities' do
+    it 'returns the values for personalities subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_personalities.should == ["Test Personalities Subject"]
+    end
+  end
+
+  describe '#subjects_personal' do
+    it 'returns the values for personal subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_personal.should == ["Test Personal Subject"]
+    end
+  end
+
+  describe '#subjects_headings' do
+    it 'returns the values for headings subjects' do
+      Fixtures.use('generic/wgbh_subjects.xml').subjects_headings.should == ["Test Subject Heading Subject"]
+    end
+  end
+
+  ##
+  # Descriptions
+  #
+
+  describe '#descriptions' do
+    it 'returns all descriptions' do
+      Fixtures.use("rock_and_roll/video_1.xml").descriptions.should == ["Interview with Rufus Thomas [Part 2 of 4]"]
+    end
+  end
+
+  ##
+  # Coverage
+  #
+
+  describe '#coverage' do
+    it 'returns the coverage (i.e. the time length of of the media file)' do
+      Fixtures.use("rock_and_roll/video_1.xml").coverage.should == ["00:21:28:10"]
+    end
+  end
+
+  describe '#coverage_in' do
+    it 'returns the coverge in (i.e. the start time of a clip, element, or segment in the context of a larger media file)' do
+      Fixtures.use("rock_and_roll/video_1.xml").coverage_in.should == ["07:59:58:14"]
+    end
+  end
+
+  describe '#coverage_out' do
+    it 'returns the coverge out (i.e. the ending time of a clip, element, or segment in the context of a larger media file)' do
+      Fixtures.use("rock_and_roll/video_1.xml").coverage_out.should == ["08:21:26:23"]
+    end
+  end
+
+  ##
+  # Titles
+  #
   describe '#titles' do
     it  'returns all titles, with types and values' do
-      Fixtures.use('generic/wgbh_titles.xml').titles.count.should == 12
+      Fixtures.use('generic/wgbh_titles.xml').titles.count.should == 13
       Fixtures.use('generic/wgbh_titles.xml').titles.type.should == [
         "Series",
         "Program",
@@ -262,7 +336,8 @@ describe Artesia::Datastream::UOIS do
         "Item3",
         "Item4",
         "Clip",
-        "Segment"
+        "Segment",
+        "Image"
       ]
 
       Fixtures.use('generic/wgbh_titles.xml').titles.value.should == [
@@ -277,10 +352,15 @@ describe Artesia::Datastream::UOIS do
         "Test Item 3 Title",
         "Test Item 4 Title",
         "Test Clip Title",
-        "Test Segment Title"
+        "Test Segment Title",
+        "Test Image Title"
       ]
     end
   end
+
+  ##
+  # Specific titles
+  # 
 
   describe '#series_titles' do
     it 'returns the series titles.' do
@@ -324,11 +404,21 @@ describe Artesia::Datastream::UOIS do
     end
   end
 
+  describe '#image_titles' do
+    it 'returns the image titles' do
+      Fixtures.use('generic/wgbh_titles.xml').image_titles.should == ["Test Image Title"]
+    end
+  end
+
   describe '#clip_titles' do
     it 'returns the clip titles.' do
       Fixtures.use('generic/wgbh_titles.xml').clip_titles.should == ["Test Clip Title"]
     end
   end
+
+  ##
+  # Types of media
+  #
 
   describe '#media_types' do
     it 'returns the media types.' do
@@ -342,22 +432,143 @@ describe Artesia::Datastream::UOIS do
     end
   end
 
+
+  ##
+  # Creators, names and roles
+  #
   describe '#publishers' do
-    it 'returns value for the publisher.' do
-      Fixtures.use("zoom/video_1.xml").publishers.should == ["WGBH Educational Foundation"]
+    context 'when PUBLISHER_TYPE="Publisher" in the UOIS xml' do
+      it 'returns publisher name and type.' do
+        Fixtures.use("zoom/video_1.xml").publishers.name == ["WGBH Educational Foundation"]
+        Fixtures.use("zoom/video_1.xml").publishers.type == ["Publisher"]
+      end
+    end
+
+    context 'when PUBLISHER_TYPE="Publisher" in the UOIS xml' do
+      it 'returns the name and type.' do
+        Fixtures.use('patriots_day/image_1.xml').publishers.name == ["Harvard Universiry Archives"]
+        Fixtures.use('patriots_day/image_1.xml').publishers.type == ["Copyright Holder"]
+      end
+    end
+
+    context 'when PUBLISHER_TYPE="Distributor"' do
+      it 'returns the name and type.' do
+        Fixtures.use('patriots_day/video_1.xml').publishers.name == ["WGBH Educational Foundation"]
+        Fixtures.use('patriots_day/image_1.xml').publishers.type == ["Distributor"]
+      end
     end
   end
 
-  describe '#copyright_holders' do
-    it 'returns the values for copyright holdeers.' do
-      Fixtures.use('patriots_day/image_1.xml').copyright_holders.should == ["Harvard Universiry Archives"]
+  ##
+  # Coverage specifics
+  #
+
+  describe '#dates_portrayed' do
+    it 'returns the date portrayed' do
+      Fixtures.use('march_on_washington/audio_1.xml').dates_portrayed.should == ["04/29/2011"]
     end
   end
 
-  describe '#distributors' do
-    it 'returns the values for distributors.' do
-      Fixtures.use('patriots_day/video_1.xml').distributors.should == ["WGBH Educational Foundation"]
+  describe '#event_locations' do
+    it 'returns the event location' do
+      Fixtures.use('march_on_washington/audio_1.xml').event_locations.should == ["Seattle (Wash.)"]
     end
   end
 
+  describe '#to_pbcore' do
+
+    before(:all) {
+
+      Fixtures.cwd("#{fixture_path}/artesia")
+      
+
+      # test series
+      @pbcore_series_1 = Fixtures.use('rock_and_roll/series_1.xml').to_pbcore
+
+      # test collections
+      @pbcore_collection_1 = Fixtures.use('patriots_day/collection_1.xml').to_pbcore
+
+      # test programs
+      @pbcore_program_1 = Fixtures.use('zoom/program_1.xml').to_pbcore
+
+      # test videos
+      @pbcore_video_element_1 = Fixtures.use('rock_and_roll/video_1.xml').to_pbcore
+      @pbcore_video_clip_1 = Fixtures.use('zoom/video_2.xml').to_pbcore
+
+      # test audio
+      @pbcore_audio_item_1 = Fixtures.use('march_on_washington/audio_1.xml').to_pbcore
+
+      # test images
+      @pbcore_image_1 = Fixtures.use('patriots_day/image_1.xml').to_pbcore
+      @pbcore_image_2 = Fixtures.use('patriots_day/image_3.xml').to_pbcore
+    }
+
+    it 'sets value for HydraPbcore::Datasteam::Document#series' do
+      @pbcore_series_1.series.should == ["Rock and Roll"]
+      @pbcore_program_1.series.should == ["ZOOM, Series II"]
+      @pbcore_video_element_1.series.should == ["Rock and Roll"]
+      @pbcore_audio_item_1.series.should == ["March on Washington"]
+      @pbcore_image_2.series.should == ["Perspectives"]
+    end
+
+    it 'sets value for HydraPbcore::Datasteam::Document#program' do
+      @pbcore_program_1.program.should == ["Best of the 70's"]
+      @pbcore_video_element_1.program.should == ["Respect"]
+      @pbcore_audio_item_1.program.should == ["Revisiting the March on Washington"]
+      @pbcore_image_2.program.should == ["Negro and The American Promise, The"]
+    end
+
+    
+    pending 'sets the value for HydraPbcore::Datastream::Document#element'
+    pending 'sets the value for HydraPbcore::Datastream::Document#segment'
+    pending 'sets the value for HydraPbcore::Datastream::Document#clip'
+    pending 'sets the value for HydraPbcore::Datastream::Document#segment'
+    pending 'sets the value for HydraPbcore::Datastream::Document#item'
+    pending 'sets the value for HydraPbcore::Datastream::Document#category'
+    
+
+    it 'sets value for HydraPbcore::Datastream::Document#title according to what the UOIS xml is representing (e.g. Series, Program, Collection, etc).' do
+      # For some reason, direct comaprisons fail here, e.g. @pbcore_series_1.title.should == @pbcore_series_1.series
+      # Converting them to arrays works though, and that's good enough for this test.
+      @pbcore_series_1.title.to_ary.should == @pbcore_series_1.series.to_ary
+      @pbcore_program_1.title.to_ary.should == @pbcore_program_1.program.to_ary
+      @pbcore_collection_1.title.to_ary.should == @pbcore_collection_1.collection.to_ary
+      @pbcore_video_element_1.title.to_ary.should == @pbcore_video_element_1.element.to_ary
+      @pbcore_audio_item_1.title.to_ary.should == @pbcore_audio_item_1.item.to_ary
+      @pbcore_image_1.title.to_ary.should == @pbcore_image_1.image.to_ary
+    end
+
+    it 'sets pbcore description and type for a "Series"' do
+      @pbcore_series_1.description.type.should == ["Series"]
+      # NOTE: The output here is will automatically unescape xhtml entities.
+      @pbcore_series_1.description.should == ["This ten-part series, explores the musical styles, influences, and complex creative processes that have allowed rock to endure, from its renegade beginnings in the 1950s to the 1990s. From performers to producers, songwriters to studio engineers, session musicians to disk jockeys, Rock & Roll is an extensively researched and revealing history built on stories from and about the innovators who defined the music that has rocked the nation and the world for 40 years. A co-production between WGBH/Boston and BBC, this collection contains interviews created for the series."]
+    end
+
+    it 'sets pbcore description and type for a "Program"' do  
+      @pbcore_program_1.description.type.should == ["Program"]
+      @pbcore_program_1.description.should == ["Re-live what it was like to be a ZOOMer in the 1970's, with this retrospective collection of games and music numbers from the Emmy award-winning Children's series."]
+    end
+
+    it 'sets pbcore description and type for  a "Collection"' do  
+      @pbcore_collection_1.description.type.should == ["Collection"]
+      # NOTE: The output here is will automatically unescape xhtml entities.
+      @pbcore_collection_1.description.should == ['"From the Vault" is an ongoing collaboration with WGBH Radio (89.7) and WGBH.org, bringing treasures from the archives to new audiences.This curated collection gives a sense of the range of the WGBH archives, highlighting rare or seldom-seen materials.']
+    end
+
+    it 'sets pbcore description and type for a "Clip"' do  
+      @pbcore_video_clip_1.description.type.should == ["Clip"]
+      @pbcore_video_clip_1.description.should == ["Re-live your favorite ZOOM memories! In this short clip, ZOOM kid Bernadette shows viewers how to perform her complex arm-swinging routine."]
+    end
+
+    it 'sets pbcore description and type for an "Element"' do
+      @pbcore_video_element_1.description.type.should == ["Element"]
+      @pbcore_video_element_1.description.should == ["Interview with Rufus Thomas [Part 2 of 4]"]
+    end
+
+    it 'sets value for HydraPbcore::Datasteam::Document#description.type for an "Item"' do
+      @pbcore_audio_item_1.description.type.should == ["Item"]
+      @pbcore_audio_item_1.description.should == ["Al Hulsen reported from around Washington D.C. on the day of the March, and shares the personal significance of this landmark event. Mr. Hulsen was a producer and journalist from WGBH-FM in Boston in 1963. He was interviewed at Puget Sound Public Radio, KUOW 94.9 FM, in Seattle, Washington on April 29, 2011."]
+    end
+
+  end
 end
