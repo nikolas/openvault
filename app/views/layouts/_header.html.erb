@@ -1,14 +1,25 @@
+<% if flash[:alert] -%>
+    <div class='row error'><%=h flash[:alert] %></p>
+  <% end -%>
 <!-- Openvault Logo and login -->
 <div class="row" id="header_top">
-  <div class="span4">
+  <div class="span6">
 	<a href="<%= root_url %>">
     	<div id="ov-logo-home">
 				<%= application_name %>
 		</div>
 	</a>
   </div>
-  <div class="span2 pull-right action_links">
+  <div class="span6 pull-right action_links">
 		<% if user_signed_in? %>
+      <span class="user_info">
+        Welcome back <%= truncate(current_user.full_name, :length => 30) %>
+      </span>
+      <span>&nbsp;|&nbsp;</span>
+      <span class="edit_profile">
+        <%= link_to "Profile", "/me" %>
+      </span>
+      <span>&nbsp;|&nbsp;</span>
 			<span class="sign_out">
 				<%= link_to "Log Out", destroy_user_session_path %>
 			</span>
@@ -29,8 +40,14 @@
   <div class="span3">
     <div id="mla-logo">Media Library and Archives</div>
   </div>
-  <div class="span9">
-    <%= render :partial => 'catalog/partials/search_form' %>
-  </div>
+  <% if controller.controller_name == 'catalog' && controller.action_name == 'home' %>
+    <div class="span6 pull-right">
+      <%= render :partial => 'catalog/partials/home_search_form' %>
+    </div>
+  <% else %>
+    <div class="span9">
+      <%= render :partial => 'catalog/partials/search_form' %>
+    </div>
+  <% end %>
 </div>
 <!-- /MLA Logo and search bar -->

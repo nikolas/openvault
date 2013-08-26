@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716131951) do
+ActiveRecord::Schema.define(:version => 20130730142956) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -63,6 +63,29 @@ ActiveRecord::Schema.define(:version => 20130716131951) do
     t.string   "image"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "slug"
+    t.text     "mid_content"
+    t.text     "lower_content"
+  end
+
+  create_table "custom_collection_items", :force => true do |t|
+    t.string   "cat_slug"
+    t.integer  "custom_collection_id"
+    t.text     "annotations"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "openvault_asset_pid"
+  end
+
+  create_table "custom_collections", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "image"
+    t.string   "article"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.string   "slug"
   end
 
   create_table "domain_terms", :force => true do |t|
@@ -139,6 +162,11 @@ ActiveRecord::Schema.define(:version => 20130716131951) do
     t.boolean  "mla_updates"
     t.boolean  "terms_and_conditions"
     t.string   "role"
+    t.string   "username"
+    t.text     "bio"
+    t.string   "title"
+    t.string   "organization"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,37 +1,8 @@
-<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-
-<%= link_to "Back", :back %> -->
-
+<% title "OpenVault - Edit Profile" %>
 <div id="signup_form_container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Edit your profile</h2>
 	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal', :method => :put}) do |f| %>
-	  <%= devise_error_messages! %>
+	  <%#= devise_error_messages! %>
 
 		<%= f.input :email, :autofocus => true, :placeholder => 'Email', required: true %>
     
@@ -58,7 +29,13 @@
 		
 		<%= f.input :last_name, :placeholder => 'Last name' %>
     
-    <%= f.input :role, as: :hidden, :input_html => { :value => 'member'} %>
+    <%= f.input :avatar %>
+        
+    <%= f.input :organization, :placeholder => 'Organization' %>
+    
+    <%= f.input :title, :placeholder => 'Title' %>
+    
+    <%= f.input :bio, :placeholder => 'Biography (500 character limit)', :input_html => { class: 'wysihtml5' } %>
 		
 		<%= f.input :postal_code, :placeholder => 'Postal code' %>
 
@@ -88,7 +65,7 @@
 	
   <h3>Cancel my account</h3>
 
-  <p>Unhappy?</p>
+  <p>Unhappy with your OpenVault Account?</p>
   <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-inverse' %>
 
   <%= link_to "Back", :back %>

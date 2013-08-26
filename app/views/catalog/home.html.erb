@@ -1,3 +1,4 @@
+<% title "OpenVault - Home" %>
 <!-- Mosaic -->
 <div class="row" id="mosaic-container">
   <div class="span12">
@@ -15,7 +16,16 @@
 
   <!-- Blog roll -->
   <div class="span6">
-    <%= render :partial=>"catalog/partials/blog_roll" %>
+    <%= render :partial=> "catalog/partials/blog_roll" %>
+    <!-- <ul class="nav nav-tabs">
+      <li class="active"><a href="#scholars" data-toggle="tab">Recent scholars</a></li>
+      <li><a href="#blog" data-toggle="tab">From the blog</a></li>
+    </ul> -->
+    <!-- <div class="tab-content">
+      <%#= render :partial => 'catalog/partials/scholars' %>
+      <%#= render :partial=> "catalog/partials/blog_roll" %>
+    </div> -->
+    <a href="http://www.wgbh.org/donatetowgbh?utm_source=openvault&amp;utm_medium=web&amp;utm_campaign=button"><img alt="Support WGBH" src="/assets/support_btn.jpg" style="float: right;"></a>
   </div>
 </div>
 <!-- /Carousel and Blog roll -->

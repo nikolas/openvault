@@ -1,0 +1,18 @@
+<% @custom_collections.each do |collection| %>
+	<div class="document blacklight-collection">
+		<div class="thumbnail">
+			<%= link_to image_tag(collection.image.url(:med)), collection %>
+		</div>
+		<div class="documentHeader">
+			<h3 class="index_title">
+				<%= link_to collection.name, collection.van_url %>
+			</h3>
+		</div>
+		<div class="defList_container">
+			<div class="blacklight-dc_description_t">
+			<div class="label" style="display:none;">Summary</div>
+			<div class="value"><%= truncate(collection.summary, :length => 150) %></div>
+			</div>
+		</div>
+	</div>
+<% end %>

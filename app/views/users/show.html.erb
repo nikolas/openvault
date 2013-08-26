@@ -1,0 +1,16 @@
+<% title "OpenVault - #{@user.full_name}" %>
+<div id="user_show_page">
+  <div id="user_header">
+    <%= image_tag @user.avatar.url(:small) %>
+    <h3><%= @user.full_name %></h3>
+    <p><%= @user.work_string %></p>
+    <% if current_user && current_user == @user %>
+      <div class="user-actions">
+        <a href="/users/edit">Edit profile</a>
+      </div>
+    <% end %>
+    <%= render partial: 'global_partials/share' %>
+  </div>
+  <p class="bio"><%= @user.bio %></p>
+  <%#= render partial: 'users/collections' unless @user.role != 'scholar' %>
+</div>

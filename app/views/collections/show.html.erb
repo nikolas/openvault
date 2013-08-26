@@ -1,7 +1,30 @@
-<%# @page_title = "#{document_show_html_title} - #{application_name}" %>
+<% title "OpenVault - #{@collection.name}" %>
 <% extra_head_content << render_link_rel_alternates %>
 <% sidebar_items << render(:partial => 'from_this_collection') %>
 
-<h2><%= @collection.name %></h2>
-<%= image_tag @collection.image.url %>
-<p class="summary"><%= @collection.summary %></p>
+<div id="collection_page">
+  <div id="collection_header" class="row-fluid">
+    <h3 class="span10"><%= @collection.name %></h3>
+    <div id="sharing-tools" class="span2 pull-right">
+      <%= render :partial => 'global_partials/share' %>
+    </div>
+  </div>
+  <div id="collection_top" class="row-fluid">
+    <div class="span6">
+      <%= image_tag @collection.image.url(:large) %>
+    </div>
+    <div class="span6">
+      <p class="summary"><%= @collection.summary.html_safe %></p>
+    </div>
+  </div>
+  <hr />
+  <!-- This content needs to be made dynamic -->
+  <div id="collection_mid" class="row-fluid">
+    <%= @collection.mid_content.html_safe %>
+  </div>
+  <hr />
+  <div id="colleciton_bottom" class="row-fluid">
+    <%= @collection.lower_content.html_safe %>
+  </div>
+  <!-- End of content that needs to be made dynamic -->
+</div>

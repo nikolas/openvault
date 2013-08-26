@@ -13,9 +13,9 @@ ActiveAdmin.register Collection do
   end
   
   controller do
-    def scoped_collection
-      Collection.where(display_in_carousel: true)
-    end
+    # def scoped_collection
+#       Collection.where(display_in_carousel: true)
+#     end
   end
   config.sort_order = "position_asc"
   
@@ -68,9 +68,9 @@ ActiveAdmin.register Collection do
   end
   
   # show do
-#     # renders app/views/admin/collections/_show.html.erb
-#     render "show"
-#   end
+  #   #render 'app/views/admin/collections/show.html.erb'
+  #   render "show"
+  # end
   
   form do |f|
     f.inputs "Details" do
@@ -80,6 +80,8 @@ ActiveAdmin.register Collection do
     end
     f.inputs "Content" do
       f.input :summary
+      f.input :mid_content, input_html: {:class => 'wysihtml5'}
+      f.input :lower_content, input_html: {:class => 'wysihtml5'}
     end
     f.actions
   end

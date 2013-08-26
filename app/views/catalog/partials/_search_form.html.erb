@@ -5,9 +5,6 @@
     <% unless search_fields.empty? %>
       <div class="pull-left">
         <label for="search_field" class="hide-text"><%= t('blacklight.search.form.search_field.label') %></label>
-        <!-- 
-        <%= select_tag(:search_field, options_for_select(search_fields, h(params[:search_field])), :title => t('blacklight.search.form.search_field.title'), :class=>"search_field input-small") %>
-        -->
         <span class="hide-text"><%= t('blacklight.search.form.search_field.post_label') %></span>
       </div>
       <% end %>
@@ -15,34 +12,22 @@
         <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
          <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q", :id => "q"%>
         <button type="submit" class="search-btn" id="search">
-          <!-- <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span> -->
           <i class="icon-search"></i>
         </button>
        </div>
   <% end %>
 	<div id="browse">
 		<label>Browse: </label>
-		<select id="category_browse">
-			<option>Categories</option>
-			<optgroup label="Categories">
-				<option value="1">Cat 1</option>
-				<option value="2">Cat 2</option>
-				<option value="3">Cat 3</option>
-			</optgroup>
-		</select>
-		<select id="collection_browse">
-			<option value="">Collections and Series</option>
-			<optgroup label="Collections">
-				<option value="1">Collection 1</option>
-				<option value="2">Collection 2</option>
-				<option value="3">Collection 3</option>
-			</optgroup>
-			<optgroup label="Series">
-				<option value="1">Series 1</option>
-				<option value="2">Series 2</option>
-				<option value="3">Series 3</option>
-			</optgroup>
-		</select>
+    <!-- Need to add dynamic categories and collections -->
+    <%= form_tag catalog_index_path, :method => :get, :class => 'categories' do %>
+      <%= select 'f', 'merlot_s', grouped_options_for_select({"Categories" => [['Category 1', 'category-1']]}), { :prompt => "Categories" }, :name => 'f[merlot_s][]' %>
+      <%= submit_tag 'Browse Category' %>
+    <% end %>
+    
+    <%= form_tag catalog_index_path, :method => :get, :class => 'collections' do %>
+      <%= select "id", nil, grouped_options_for_select({"Collections and Series" => [['Collection 1', 'collection-1'], ['Collection 2', 'collection-2']], "Series" => [['Series 1', 'series-1'], ['Series 2', 'series-2']]}), { :prompt => "Collections and Series" }  %>
+      <%= submit_tag 'Browse collection'%>
+    <% end %>
 	</div>
   <!--
   <div id="search" class="search">

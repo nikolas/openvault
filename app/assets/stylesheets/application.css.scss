@@ -12,5 +12,6 @@
  * NOTE: Multiple SCSS files required by this manifest cannot share methods or variables.
  *  So we require a single scss file that then @imports several more into the same namespace.
  *= require_self
+ *= require bootstrap-wysihtml5
  */
 @import 'scss_imports';

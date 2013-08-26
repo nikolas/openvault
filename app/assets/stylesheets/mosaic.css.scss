@@ -10,13 +10,18 @@
 .mosaic-item {
   text-indent: -3000px;
   height: 42px;
-  width: 54px;
+  width: 47px;
   display: block;
   float: left;
-
-  margin-bottom: 1px;
-  margin-right: 1px;
-
+  opacity: .7;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  transition: opacity .20s ease-in-out;
+  -moz-transition: opacity .20s ease-in-out;
+  -webkit-transition: opacity .20s ease-in-out;
+  &:hover {
+    opacity: .95;
+  }
   &:last-child {
     margin-right: 0px;
   }
