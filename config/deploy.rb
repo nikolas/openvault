@@ -6,6 +6,7 @@ set :user, "openvault"
 
 set :repository,  "git@github.com:afred/openvault.git"
 set :scm, :git
+set :scm_username , "joshuaswilcox"
 #this allows you to choose a branch in the command line or default to master with 'cap -S branch=branchname deploy'
 set :branch, fetch(:branch, "search_feature")
 #tells is to do resuse a single remote git clone
