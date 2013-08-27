@@ -2,7 +2,7 @@ require "bundler/capistrano"
 
 set :application, "WGBH Openvault"
 set :deply_to, "/wgbh/http/open_vault"
-set :user, "openvault"
+set :user, "jwilcox"
 
 set :repository,  "git@github.com:afred/openvault.git"
 set :scm, :git

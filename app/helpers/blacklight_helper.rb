@@ -11,16 +11,16 @@ module BlacklightHelper
 #     super + extra
 #   end
 # 
-#   def render_search_context_options
-#     case 
-#       when params[:f]
-#       render :partial => 'catalog/search_context' 
-# 
-#       when (@document and @document.get(:objModels_s).include? "info:fedora/wgbh:COLLECTION")
-#         render :partial => 'catalog/search_context_collection' 
-#     end
-# 
-#   end
+  def render_search_context_options
+    case 
+      when params[:f]
+      render :partial => 'catalog/search_context' 
+
+      when (@document and @document.get(:objModels_s).include? "info:fedora/wgbh:COLLECTION")
+        render :partial => 'catalog/search_context_collection' 
+    end
+
+  end
 # 
   def render_document_partial(doc, action_name)
     format = self.send "document_#{action_name}_partial_name", doc if self.respond_to? "document_#{action_name}_partial_name"
@@ -63,8 +63,10 @@ module BlacklightHelper
   def display_summary(doc=@document)
     if doc[:desc_clip_ssm].nil?
       summary = doc[:summary_ssm].try(:first)
-    else
+    elsif !doc[:desc_clip_ssm].nil?
       summary = doc[:desc_clip_ssm].try(:first)
+    else
+      summary = ''
     end
     summary
   end

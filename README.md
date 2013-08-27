@@ -18,3 +18,15 @@
 		ov.pbcore.ng_xml = doc
 		ov.save
 	end
+
+**To import a folder of xml files**
+
+	Dir.foreach('/Users/josh_wilcox/Desktop/demo_xml') do |item|
+	  next if item == '.' or item == '..'
+	  ng = Nokogiri::XML(open("/Users/josh_wilcox/Desktop/demo_xml/#{item}"))
+	  ov = OpenvaultAsset.new
+	  ov.apply_depositor_metadata '123@me.com'
+	  ov.pbcore.ng_xml = ng
+	  ov.save
+	end
+  
