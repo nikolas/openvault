@@ -27,6 +27,11 @@ class CatalogController < ApplicationController
   #before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
   #CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  
+  ### Need to figure out why this is breaking search
+  # This applies appropriate access controls to all solr queries
+  #CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  
   # This filters out objects that you want to exclude from search results, like FileAssets
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
   
@@ -35,6 +40,8 @@ class CatalogController < ApplicationController
   }
   caches_action :home, :expires_in => 1.hour, :if => proc { |c| current_user.nil? }
 
+  
+  
   configure_blacklight do |config|
     config.default_solr_params = { 
       :qt => 'search',
@@ -202,6 +209,7 @@ class CatalogController < ApplicationController
 #     # If there are more than this many search results, no spelling ("did you 
 #     # mean") suggestion is offered.
       config.spell_max = 5
+
   end
   
   def index

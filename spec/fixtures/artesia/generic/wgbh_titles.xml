@@ -1,0 +1,39 @@
+<!--
+	All values that we use for WGBH_TITLE/@TITLE_TYPE.
+	For testing only. Not a coplete UOIS asset.
+	This list was compiled from available test fixtures.
+	If it turns out that we need to account for additional title types then:
+
+	1. add the new sample title to this group of XML nodes, e.g.
+		<WGBH_TITLE TITLE_TYPE="Blergifoo" TITLE="Test Blergifoo Title" />
+
+	2. add a test in spec/fictures/lib/artesia/datastream/uois_spec.rb.
+	   See others for examples. e.g.
+		describe '#blergifoo_titles' do
+		  it 'returns the blergifoo titles' do
+		  	the_fixtures.blerfifoo_titles.should == ["Test Blergifoo Title"]
+		  end
+		end
+
+
+-->
+
+<ASSET>
+  <METADATA>
+    <UOIS>
+	  <WGBH_TITLE TITLE_TYPE="Series" TITLE="Test Series Title" />
+	  <WGBH_TITLE TITLE_TYPE="Program" TITLE="Test Program Title" />
+	  <WGBH_TITLE TITLE_TYPE="Collection" TITLE="Test Collection Title" />
+	  <WGBH_TITLE TITLE_TYPE="Episode" TITLE="Test Episode Title" />
+	  <WGBH_TITLE TITLE_TYPE="Element2" TITLE="Test Element 2 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Element3" TITLE="Test Element 3 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Element4" TITLE="Test Element 4 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Item2" TITLE="Test Item 2 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Item3" TITLE="Test Item 3 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Item4" TITLE="Test Item 4 Title" />
+	  <WGBH_TITLE TITLE_TYPE="Clip" TITLE="Test Clip Title" />
+	  <WGBH_TITLE TITLE_TYPE="Segment" TITLE="Test Segment Title" />
+	  <WGBH_TITLE TITLE_TYPE="Image" TITLE="Test Image Title" />
+	</UOIS>
+  </METADATA>
+</ASSET>

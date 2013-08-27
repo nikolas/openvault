@@ -4,6 +4,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
+require 'fixtures'
+require 'openvault'
 
 Capybara.register_driver :webkit do |app|
   Capybara::Webkit::Driver.new(app, stderr: WarningSuppressor)

@@ -34,11 +34,11 @@ guard 'rspec' do
   # This assumes a 1-to-1 between factory and model spec. If that changes, then will need to change this line.
   watch(%r{^spec/factories/(.+)\.rb$})          { |m| "spec/models/#{m[1]}_spec.rb" }
 
-  # Watches spec/fixtures/teams_asset_files/*.xml and runs spec/lib/openvault/ingester/artesia_spec.rb
-  watch(%r{^spec/fixtures/teams_asset_files/(.+)\.xml$}) do |m| 
+  # Watches spec/fixtures/artesia/*.xml and runs spec/lib/openvault/ingester/artesia_spec.rb
+  watch(%r{^spec/fixtures/artesia/(.+)\.xml$}) do |m| 
     [
       "spec/lib/openvault/ingester/artesia_spec.rb",
-      "spec/lib/artesia/datastreams/uois_spec.rb",
+      "spec/lib/artesia/datastream/uois_spec.rb",
       "spec/models/openvault_asset_spec.rb",
       "spec/models/artesia_ingest_spec.rb",
       "spec/models/datastream/uois_spec.rb"

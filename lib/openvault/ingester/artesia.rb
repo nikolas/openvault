@@ -1,6 +1,6 @@
 module Openvault
-  module Ingester
-    module Artesia
+  class Ingester
+    class Artesia
       def self.ingest!(teams_asset_file, depositor)
         artesia_ingest = ArtesiaIngest.new
         artesia_ingest.apply_teams_asset_file teams_asset_file

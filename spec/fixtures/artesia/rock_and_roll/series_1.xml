@@ -1,0 +1,15 @@
+    <ASSET>
+      <METADATA>
+        <UOIS IMPORT_DT="2012-11-06 09:41:44.0" UOI_ID="34a589fdcb189dec43a5bca693bbc607d544ffa1" NAME="RockRollSeries.jpg" IMPORT_USER_ID="21" IMPORT_ID="226305.0">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="804" />
+          <WGBH_CREATOR CREATOR_ROLE="Senior Producer5000" CREATOR_NAME="Espar, David" />
+          <WGBH_CREATOR CREATOR_ROLE="Executive Producer5000" CREATOR_NAME="Deane, Elizabeth" />
+          <WGBH_DATE_RELEASE DATE_RELEASE="1995-09-24 00:00:00.0" />
+          <WGBH_LANGUAGE LANGUAGE="eng" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary5" DESCRIPTION="This ten-part series, explores the musical styles, influences, and complex creative processes that have allowed rock to endure, from its renegade beginnings in the 1950s to the 1990s. From performers to producers, songwriters to studio engineers, session musicians to disk jockeys, Rock &amp; Roll is an extensively researched and revealing history built on stories from and about the innovators who defined the music that has rocked the nation and the world for 40 years. A co-production between WGBH/Boston and BBC, this collection contains interviews created for the series." />
+          <WGBH_FORMAT ASPECT_RATIO="4:3" DURATION="01:00:00" COLOR="Color" />
+          <WGBH_TITLE TITLE_TYPE="Series" TITLE="Rock and Roll" />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
