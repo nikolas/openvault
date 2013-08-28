@@ -481,6 +481,7 @@ DEPENDENCIES
   guard-rspec
   hydra (= 6.0.0)
   hydra-pbcore!
+  jettywrapper
   jquery-rails (= 2.3.0)
   launchy
   mini_magick

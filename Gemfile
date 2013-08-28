@@ -48,6 +48,7 @@ end
 gem 'jquery-rails', "2.3.0"
 
 gem 'hydra', '6.0.0', :require => 'hydra6'
+gem 'jettywrapper'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

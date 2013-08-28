@@ -1,5 +1,5 @@
 require 'artesia/datastream/uois'
-require 'openvault/datastream'
+require 'openvault'
 
 module Artesia
   module Datastream
@@ -9,8 +9,6 @@ module Artesia
     # Represents TEAMS_ASSET_FILE XML, generally a collection of UOIS assets.
     #
     class TeamsAssetFile < ActiveFedora::OmDatastream
-
-      include Openvault::Datastream
 
       # Set the OM terminology.
       set_terminology do |t|
