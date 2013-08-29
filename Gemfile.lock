@@ -403,6 +403,8 @@ GEM
       nokogiri
       rest-client
     rubyzip (0.9.9)
+    rvm-capistrano (1.4.4)
+      capistrano (>= 2.15.4)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -512,6 +514,7 @@ DEPENDENCIES
   rails (~> 3.2.12)
   rb-fsevent (~> 0.9)
   rspec-rails
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   selenium-webdriver
   simple_form

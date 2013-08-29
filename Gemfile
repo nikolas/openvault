@@ -43,6 +43,8 @@ end
 group :development do
   gem 'debugger'  
   #gem 'terminal-notifier'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 gem 'jquery-rails', "2.3.0"
@@ -85,7 +87,6 @@ gem "acts_as_commentable", :git => 'git://github.com/jackdempsey/acts_as_comment
 # jcoyne made a gem of useful stuff from hydradam
 #gem 'bawstun_commons', github: 'curationexperts/bawstun_commons'
 gem 'sufia-models'
-gem 'capistrano'
 
 gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'wgbh-master'
 #gem 'hydra-pbcore', :path => '/Users/Shared/web-applications/hydra-pbcore'
