@@ -11,6 +11,9 @@ module Openvault
 
     ##
     # Convenience method for using self.ng_parse_options when parsing xml with Nokogiri
+    # Usage:
+    #   Openvault::XML(xml_string)
+    #   => Nokogiri::XML::Document
     def XML thing, url = nil, encoding = nil, options = nil, &block
       options ||= self.ng_parse_options
       Nokogiri::XML::Document.parse(thing, url, encoding, options, &block)
