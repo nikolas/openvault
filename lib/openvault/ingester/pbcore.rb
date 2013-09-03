@@ -12,13 +12,17 @@ module Openvault
         ns_name = namespace[0]
         ns_location = namespace[1]
 
+        ingested = []
+
         # get the pbcoreDescriptionDocument nodes with xpath and namespaces.
         ng_xml.xpath("//#{ns_name}:pbcoreDescriptionDocument", ns_name => ns_location).each do |ng_xml_pbcoreDescriptionDocument|
           ov = OpenvaultAsset.new
           ov.pbcore.ng_xml = ng_xml_pbcoreDescriptionDocument
           ov.apply_depositor_metadata depositor
           ov.save!
+          ingested << ov
         end
+        ingested
       end
     end
   end
