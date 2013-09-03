@@ -15,7 +15,7 @@ $link-focus-color: $link-visited-color;
 $link-active-color: $link-visited-color;
 
 $dark-blue: #11629e;
-$light-blue: lighten($dark-blue, 20%);
+$light-blue: lighten($dark-blue, 10%);
 $orange: #ff9e25;
 $grey: #e8e3e3;
 
@@ -68,6 +68,13 @@ input, select, textarea {
   text-align:right;
 }
 
+.sep-line {
+  height:3px;
+  width: 100%;
+  background: $orange;
+  margin: 5px 0px;
+}
+
 #main-container {
   margin-top: 30px;
 }
@@ -76,6 +83,8 @@ input, select, textarea {
 @mixin grainbox {
   border: 1px solid $dark-blue;
   color: #fff;
+  background: $light-blue;
+  padding: 10px;
   a {
     color: #fff;
     &:hover,&:active,&:focus,&:visited {
@@ -88,7 +97,7 @@ input, select, textarea {
 #header {
   background-color: $dark-blue;
   color: #fff;
-  border-bottom:3px solid $orange;
+  border-bottom:2px solid $orange;
   position:fixed;
   top:0px;
   width: 100%;
@@ -109,19 +118,25 @@ input, select, textarea {
       display:none;
     }
   }
+  &.scrolled {
+    box-shadow: 0 0 15px #000;
+  }
 }
 
 //Body section
 #body {
-  
+  .grainbox {
+    @include grainbox;
+  }
 }
 
 //Footer section
 #footer {
+  margin-top: 20px;
   text-align:center;
   background: $dark-blue;
   color: #fff;
-  border-top:3px solid $orange;
+  border-top:2px solid $orange;
   padding: 5px;
   #footer_inner {
     p, a {

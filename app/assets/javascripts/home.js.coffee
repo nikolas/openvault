@@ -1,4 +1,11 @@
 $ ->
+  $(window).scroll ->
+    scrolled = $(window).scrollTop()
+    if scrolled > 5
+      $('#header').addClass('scrolled')
+    else
+      $('#header').removeClass('scrolled')
+    
   collections_timer = null
   $("#collections .document").hide().first().show()
   $("#collections .document").each (i) ->
