@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/afred/hydra-pbcore.git
+  remote: https://github.com/afred/hydra-pbcore.git
   revision: 0ef14795a38efa3116b87b15569080b55c3329e5
   branch: master
   specs:
@@ -8,13 +8,13 @@ GIT
       solrizer
 
 GIT
-  remote: git://github.com/jackdempsey/acts_as_commentable.git
+  remote: https://github.com/jackdempsey/acts_as_commentable.git
   revision: e9baa4826f92c80f90b6e589fd73aa5a0a54851b
   specs:
     acts_as_commentable (4.0.0)
 
 GIT
-  remote: git://github.com/mbleigh/acts-as-taggable-on.git
+  remote: https://github.com/mbleigh/acts-as-taggable-on.git
   revision: 98aecdd86ddf447a88ae6351cc02ab420a78d0ec
   specs:
     acts-as-taggable-on (2.4.2.pre)
@@ -418,6 +418,8 @@ GEM
       nokogiri
       rest-client
     rubyzip (0.9.9)
+    rvm-capistrano (1.4.4)
+      capistrano (>= 2.15.4)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -525,6 +527,7 @@ DEPENDENCIES
   rails (~> 3.2.12)
   rb-fsevent (~> 0.9)
   rspec-rails
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   selenium-webdriver
   simple_form

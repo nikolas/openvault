@@ -43,6 +43,8 @@ end
 group :development do
   gem 'debugger'  
   #gem 'terminal-notifier'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 gem 'jquery-rails', "2.3.0"
@@ -76,10 +78,10 @@ gem 'activeadmin-sortable'
 gem 'active_admin_editor'
 gem 'bootstrap-wysihtml5-rails'
 gem 'pdf-reader'
-gem "acts-as-taggable-on", :git => 'git://github.com/mbleigh/acts-as-taggable-on.git'
-gem "acts_as_commentable", :git => 'git://github.com/jackdempsey/acts_as_commentable.git'
+gem "acts-as-taggable-on", :git => 'https://github.com/mbleigh/acts-as-taggable-on.git'
+gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_commentable.git'
 #gem 'hydra-collections'
 
 gem 'sufia-models'
 gem 'capistrano'
-gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'master'
+gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
