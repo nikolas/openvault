@@ -3,27 +3,27 @@
 
 // Make sprites for mosaic.
 //@import "compass";
-@import "mosaic/*.png";
-@include all-mosaic-sprites;
-
-
-// A singel mosaic item 
-.mosaic-item {
-  text-indent: -3000px;
-  height: 42px;
-  width: 47px;
-  display: block;
-  float: left;
-  opacity: .7;
-  margin-bottom: 0px;
-  margin-right: 0px;
-  transition: opacity .20s ease-in-out;
-  -moz-transition: opacity .20s ease-in-out;
-  -webkit-transition: opacity .20s ease-in-out;
-  &:hover {
-    opacity: .95;
-  }
-  &:last-child {
-    margin-right: 0px;
-  }
-}
+//@import "mosaic/*.png";
+//@include all-mosaic-sprites;
+//
+//
+//// A singel mosaic item 
+//.mosaic-item {
+//  text-indent: -3000px;
+//  height: 42px;
+//  width: 47px;
+//  display: block;
+//  float: left;
+//  opacity: .7;
+//  margin-bottom: 0px;
+//  margin-right: 0px;
+//  transition: opacity .20s ease-in-out;
+//  -moz-transition: opacity .20s ease-in-out;
+//  -webkit-transition: opacity .20s ease-in-out;
+//  &:hover {
+//    opacity: .95;
+//  }
+//  &:last-child {
+//    margin-right: 0px;
+//  }
+//}

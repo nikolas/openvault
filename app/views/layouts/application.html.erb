@@ -34,41 +34,14 @@
     <!-- Main container -->
     <div id="main-container" class="container">
         <!-- Main content column -->
-        <div id="header" class="row">
+        <div id="header" class="row-fluid">
           <div class="span12">
             <%= render :partial => 'layouts/header' %>
           </div>
 				</div>
-
-          <!-- Top bar -->
-          <!-- This comes from Blacklight... what does it do?
-          <div id="search-found" class="row hidden-phone">
-            <%= topbar_items.join('').html_safe %>
-          </div>
-          -->
-          <!-- /Top bar -->
-          
-          <!-- This comes from Blacklight... what does it do?
-          <div class="row">
-            <div class="span12">
-              <div id="main-flashes">
-                <%= render :partial=>'/flash_msg' %>
-              </div>
-            </div>
-          </div>
-          -->
-          
-          <!--
-          Content for this comes from CatalogController (from within Blacklight, Sufia, et al.)
-          because catalog#index is the default route in config/routes.rb.
-          This is a Blacklight convention, but don't necessarily have to do it that way.
-          OV is a bit different though, in that the home page and search results pages are distinctly different,
-          whereas I *think* with Blacklight, they are the same.
-          It might be easier to go with the Blacklight grain rather than against it, but we should consider our options.
-          -->
 				
 				<!-- Body Content -->
-			  <div class="row">
+			  <div class="row-fluid">
 					<div class="span3" id="sidebar">
 						<!-- Sidebar logic to go in here -->
 						<%= sidebar_items.join('').html_safe %>

@@ -1,53 +1,36 @@
 <% if flash[:alert] -%>
-    <div class='row error'><%=h flash[:alert] %></p>
-  <% end -%>
+    <div class='row error'><%=h flash[:alert] %></div>
+<% end -%>
 <!-- Openvault Logo and login -->
-<div class="row" id="header_top">
-  <div class="span6">
-	<a href="<%= root_url %>">
-    	<div id="ov-logo-home">
-				<%= application_name %>
-		</div>
-	</a>
-  </div>
-  <div class="span6 pull-right action_links">
-		<% if user_signed_in? %>
-      <span class="user_info">
-        Welcome back <%= truncate(current_user.full_name, :length => 30) %>
-      </span>
-      <span>&nbsp;|&nbsp;</span>
-      <span class="edit_profile">
-        <%= link_to "Profile", "/me" %>
-      </span>
-      <span>&nbsp;|&nbsp;</span>
-			<span class="sign_out">
-				<%= link_to "Log Out", destroy_user_session_path %>
-			</span>
-		<% else %>
-	    <span class="sign_in">
-				<%= link_to "Log In", new_user_session_path %>
-			</span>
-			<span>&nbsp;|&nbsp;</span>
-	    <span class="sign_up">
-				<%= link_to "Register", new_user_registration_path %>
-			</span>
-		<% end %>
-  </div>
+<div class="span3">
+  <a href="<%= root_url %>">
+		<%= application_name %>
+  </a>
+</div>
+<div class="span6">
+  <%= render :partial => 'catalog/partials/search_form' %>
+</div>
+<div class="span3 pull-right action_links">
+	<% if user_signed_in? %>
+    <span class="user_info">
+      Welcome back <%= truncate(current_user.full_name, :length => 30) %>
+    </span>
+    <span>&nbsp;|&nbsp;</span>
+    <span class="edit_profile">
+      <%= link_to "Profile", "/me" %>
+    </span>
+    <span>&nbsp;|&nbsp;</span>
+		<span class="sign_out">
+			<%= link_to "Log Out", destroy_user_session_path %>
+		</span>
+	<% else %>
+    <span class="sign_in">
+			<%= link_to "Log In", new_user_session_path %>
+		</span>
+		<span>&nbsp;|&nbsp;</span>
+    <span class="sign_up">
+			<%= link_to "Register", new_user_registration_path %>
+		</span>
+	<% end %>
 </div>
 <!-- Logo and login -->
-<!-- MLA Logo and search bar -->
-<div class="row">
-  <div class="span3">
-    <div id="mla-logo">Media Library and Archives</div>
-  </div>
-  <% if controller.controller_name == 'catalog' && controller.action_name == 'home' %>
-    <div class="span6 pull-right">
-      <%= render :partial => 'catalog/partials/home_search_form' %>
-    </div>
-  <% else %>
-    <div class="span9">
-      <%= render :partial => 'catalog/partials/search_form' %>
-    </div>
-  <% end %>
-</div>
-<!-- /MLA Logo and search bar -->
