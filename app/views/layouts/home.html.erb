@@ -25,32 +25,29 @@
 
   <% onload_text = "$('input#q').focus();" if params[:q].to_s.empty? and params[:f].to_s.empty? and params[:id].nil? %>
   <body onload="<%= onload_text %>" class="<%= render_body_class %>">
-
-    <!-- This comes from Blacklight... what does it do?
-    <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
-    -->
+    
+    <!-- Header container -->
+    <div id="header" class="row-fluid">
+      <%= render :partial => 'layouts/header' %>
+		</div>
+    <!-- /Header -->
     
     <!-- Main container -->
     <div id="main-container" class="container">
-        <!-- Main content column -->
-        <div id="header" class="row-fluid">
-          <%= render :partial => 'layouts/header' %>
-				</div>
 				
-				<!-- Body Content -->
-			  <div class="row-fluid">
-          <%= yield %>
-        </div>
-				<!-- /Body Content -->
-				
-        <!-- Footer -->
-        <div class="row-fluid footer_container">
-          <div>
-            <%= render :partial => 'layouts/footer' %>
-          </div>
-        </div>
-        <!-- /Footer -->
+			<!-- Body Content -->
+		  <div id="body" class="row-fluid">
+        <%= yield %>
+      </div>
+			<!-- /Body Content -->
+			
     </div>
     <!-- /Main container -->
+    
+    <!-- Footer -->
+    <div id="footer" class="row-fluid">
+      <%= render :partial => 'layouts/footer' %>
+    </div>
+    <!-- /Footer -->
   </body>
 </html>

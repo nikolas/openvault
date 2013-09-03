@@ -1,36 +1,38 @@
-<% if flash[:alert] -%>
-    <div class='row error'><%=h flash[:alert] %></div>
-<% end -%>
-<!-- Openvault Logo and login -->
-<div class="span3">
-  <a href="<%= root_url %>">
-		<%= application_name %>
-  </a>
+<div id="header_inner">
+  <% if flash[:alert] -%>
+      <div class='row error'><%=h flash[:alert] %></div>
+  <% end -%>
+  <!-- Openvault Logo and login -->
+  <div class="span3">
+    <a href="<%= root_url %>" class="logo-link">
+  		<%= application_name %>
+    </a>
+  </div>
+  <div class="span6">
+    <%= render :partial => 'catalog/partials/search_form' %>
+  </div>
+  <div class="span3 pull-right action_links">
+  	<% if user_signed_in? %>
+      <span class="user_info">
+        Welcome back <%= truncate(current_user.full_name, :length => 30) %>
+      </span>
+      <span>&nbsp;|&nbsp;</span>
+      <span class="edit_profile">
+        <%= link_to "Profile", "/me" %>
+      </span>
+      <span>&nbsp;|&nbsp;</span>
+  		<span class="sign_out">
+  			<%= link_to "Log Out", destroy_user_session_path %>
+  		</span>
+  	<% else %>
+      <span class="sign_in">
+  			<%= link_to "Log In", new_user_session_path %>
+  		</span>
+  		<span>&nbsp;|&nbsp;</span>
+      <span class="sign_up">
+  			<%= link_to "Register", new_user_registration_path %>
+  		</span>
+  	<% end %>
+  </div>
+  <!-- Logo and login -->
 </div>
-<div class="span6">
-  <%= render :partial => 'catalog/partials/search_form' %>
-</div>
-<div class="span3 pull-right action_links">
-	<% if user_signed_in? %>
-    <span class="user_info">
-      Welcome back <%= truncate(current_user.full_name, :length => 30) %>
-    </span>
-    <span>&nbsp;|&nbsp;</span>
-    <span class="edit_profile">
-      <%= link_to "Profile", "/me" %>
-    </span>
-    <span>&nbsp;|&nbsp;</span>
-		<span class="sign_out">
-			<%= link_to "Log Out", destroy_user_session_path %>
-		</span>
-	<% else %>
-    <span class="sign_in">
-			<%= link_to "Log In", new_user_session_path %>
-		</span>
-		<span>&nbsp;|&nbsp;</span>
-    <span class="sign_up">
-			<%= link_to "Register", new_user_registration_path %>
-		</span>
-	<% end %>
-</div>
-<!-- Logo and login -->

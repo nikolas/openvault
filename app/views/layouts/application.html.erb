@@ -41,7 +41,7 @@
 				</div>
 				
 				<!-- Body Content -->
-			  <div class="row-fluid">
+			  <div id="body" class="row-fluid">
 					<div class="span3" id="sidebar">
 						<!-- Sidebar logic to go in here -->
 						<%= sidebar_items.join('').html_safe %>
@@ -54,10 +54,8 @@
 				<!-- /Body Content -->
 				
         <!-- Footer -->
-        <div class="row-fluid footer_container">
-          <div>
-            <%= render :partial => 'layouts/footer' %>
-          </div>
+        <div id="footer" class="row-fluid footer_container">
+          <%= render :partial => 'layouts/footer' %>
         </div>
         <!-- /Footer -->
     </div>

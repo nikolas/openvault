@@ -1,0 +1,137 @@
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/utilities/text/replacement";
+@import "compass/typography/vertical_rhythm";
+
+$base-font-size: 10px;
+$base-line-height: 14.25px;
+$base-font-family: Helvetica, Arial, Helvetica, sans-serif;
+
+$link-color: #000;
+$link-visited-color: #555;
+$link-hover-color: $link-visited-color;
+$link-focus-color: $link-visited-color;
+$link-active-color: $link-visited-color;
+
+$dark-blue: #11629e;
+$light-blue: lighten($dark-blue, 20%);
+$orange: #ff9e25;
+$grey: #e8e3e3;
+
+//Resets and base
+body {
+  height: 100%;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+}
+
+a {
+  color: $link-color;
+  font-weight: bold;
+  text-decoration: underline;
+  &:hover, &:active, &:focus, &:visited {
+    color: $link-visited-color;
+  }
+}
+p, a, label, span {
+  font-size: 13px;
+  line-height: 1.3em;
+  margin-bottom: .9em;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+h1 {
+  font-size: 3.6em;
+}
+h2 {
+  font-size: 2.8em;
+}
+h3 {
+  font-size: 1.8em;
+}
+h4 {
+  font-size: 1.4em;
+}
+
+input, select, textarea {
+  &:focus {
+    box-shadow: none !important;
+    border:  1px solid #cccccc !important;
+  }
+}
+
+.pull-right {
+  text-align:right;
+}
+
+#main-container {
+  margin-top: 30px;
+}
+
+//Mixins
+@mixin grainbox {
+  border: 1px solid $dark-blue;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover,&:active,&:focus,&:visited {
+      color: #fafafa;
+    }
+  }
+}
+
+//Header section
+#header {
+  background-color: $dark-blue;
+  color: #fff;
+  border-bottom:3px solid $orange;
+  position:fixed;
+  top:0px;
+  width: 100%;
+  #header_inner {
+    width: 1170px;
+    margin: 0 auto;
+  }
+  a {
+    color: #fff;
+  }
+  .logo-link {
+    background: url(/assets/ov_logo.png);
+    display:block;
+    text-indent: -9999px;
+  }
+  form.categories {
+    input[type=submit] {
+      display:none;
+    }
+  }
+}
+
+//Body section
+#body {
+  
+}
+
+//Footer section
+#footer {
+  text-align:center;
+  background: $dark-blue;
+  color: #fff;
+  border-top:3px solid $orange;
+  padding: 5px;
+  #footer_inner {
+    p, a {
+      font-size: 11px; 
+      color: #fff;
+      text-decoration:none;
+      font-weight:normal;
+    }
+    a:hover {
+      text-decoration:underline;
+    }
+  }
+}
