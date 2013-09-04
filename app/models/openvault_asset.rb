@@ -5,6 +5,9 @@ class OpenvaultAsset < ActiveFedora::Base
 
   has_metadata 'uois', :type => Artesia::Datastream::UOIS
   has_metadata 'pbcore', :type => HydraPbcore::Datastream::Document
+
+  has_file_datastream 'source_xml'
+
   belongs_to :artesia_ingest, :property => :is_part_of, :class_name => 'ArtesiaIngest'
   
   #don't think this is working
