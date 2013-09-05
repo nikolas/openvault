@@ -1,6 +1,6 @@
 <% title "OpenVault - Home" %>
 <h2 id="welcome-header" class="t-center">Welcome to the WGBH Media Library &amp; Archives OpenVault</h2>
-<p id="welcome-text">We provide online access to unique and historically important content produced by the public television and radio station WGBH. The ever-expanding site contains video, audio, images, searchable transcripts, and resource management tools, all of which are available for individual and classroom learning. For over 25 years the MLA has preserved, cataloged, and provided access to materials produced by WGBH. It currently houses nearly 1 million audio, video, film, and digital assets dating back to 1947. So have a look around and explore!</p>
+<p id="welcome-text" class="hidden-phone">We provide online access to unique and historically important content produced by the public television and radio station WGBH. The ever-expanding site contains video, audio, images, searchable transcripts, and resource management tools, all of which are available for individual and classroom learning. For over 25 years the MLA has preserved, cataloged, and provided access to materials produced by WGBH. It currently houses nearly 1 million audio, video, film, and digital assets dating back to 1947. So have a look around and explore!</p>
 
 <div class="row-fluid">
   <div id="exhibits" class="grainbox span8">
@@ -11,20 +11,23 @@
         <div class="exhibit-item <%= (idx == 0) ? 'active' : '' %> row-fluid" item-num="<%= idx %>">
           <div class="text span6">
             <h3><%= ex.name %></h3>
-            <div class="summary">
-              <%= truncate(ex.summary, length: 760).html_safe %>
+            <div class="summary hidden-tablet hidden-phone">
+              <%= truncate(ex.summary, length: 720).html_safe %>
             </div>
-            <div class="link">
+            <div class="summary-tablet hidden-desktop hidden-phone">
+              <%= truncate(ex.summary, length: 300).html_safe %>
+            </div>
+            <div class="link hidden-phone">
               <a href="/collection/<%= ex.slug %>">View exhibit</a>
             </div>
           </div>
           <div class="image span6">
-            <%= image_tag ex.image.carousel.url %>
+            <%= link_to image_tag(ex.image.carousel.url), "/collection/#{ex.slug}" %>
           </div>
         </div>
       <% end %>
     </div>
-    <div class="clear-fix"></div>
+    <div class="clearfix"></div>
     <div id="exhibit-controls">
       <% @collections.length.times do |idx| %>
         <a href="#" data-num="<%= idx %>" class="<%= (idx == 0) ? 'active' : '' %> page-dot"></a>

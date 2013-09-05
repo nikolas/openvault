@@ -68,6 +68,7 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
+gem "font-awesome-rails"
 gem "cancan"
 gem 'carrierwave'
 gem 'activeadmin', "~> 0.5.1"

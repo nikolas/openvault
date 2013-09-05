@@ -15,12 +15,11 @@
   </div>
   <div class="span2 hidden-phone pull-right action_links">
   	<% if user_signed_in? %>
-      <span class="user_info">
-        Welcome back <%= truncate(current_user.full_name, :length => 30) %>
+      <span class="user_info hidden-tablet hidden-phone">
+        Welcome back <%= truncate(current_user.first_name, :length => 15) %><br />
       </span>
-      <span>&nbsp;|&nbsp;</span>
       <span class="edit_profile">
-        <%= link_to "Profile", "/me" %>
+        <%= link_to "Profile", "/me", :class => 'action_link' %>
       </span>
       <span>&nbsp;|&nbsp;</span>
   		<span class="sign_out">
@@ -28,22 +27,45 @@
   		</span>
   	<% else %>
       <span class="sign_in">
-  			<%= link_to "Log In", new_user_session_path, :class => 'action_link' %>
+  			<%= link_to "Log In", new_user_session_path, :class => 'action_link sign_in_link' %>
   		</span>
   		<span>&nbsp;|&nbsp;</span>
       <span class="sign_up">
-  			<%= link_to "Register", new_user_registration_path, :class => 'action_link' %>
+  			<%= link_to "Register", new_user_registration_path, :class => 'action_link sign_up_link' %>
   		</span>
+  	<% end %>
+  </div>
+  <!-- Sign in form -->
+  <div id="signin-dropdown">
+    <div class="arrow-up"></div>
+  	<%= simple_form_for('user', :remote => true, :url => user_session_path, :html => {:id => 'new_session',:class => 'sign_in_form'}) do |f| %>
+      <%#= devise_error_messages! %>
+      <p class="error"></p>
+  		<%= f.input :email, :autofocus => true, label: false, :placeholder => 'Email', required: true %>
+
+  		<%= f.input :password, :placeholder => 'Password', label: false, required: true %>
+  	  
+      <div class="actions">
+        <a href="#" class="cancel_signin">cancel</a>&nbsp;&nbsp;<%= f.submit "Sign in", :class => 'btn btn-primary' %>
+      </div>
   	<% end %>
   </div>
   <!-- Logo and login -->
   <div id="mobile-header" class="hidden-tablet hidden-desktop">
-    <img src="/assets/ov_logo_220.png" class="logo" />
+    <a href="<%= root_url %>"><img src="/assets/ov_logo_220.png" class="logo" /></a>
     <a href="#" class="search-icon"><i class="icon-search"></i></a>
+    <div class="search-dropdown">
+      <%= render :partial => 'catalog/partials/search_form_mobile' %>
+    </div>
     <a href="#" class="action-menu"><i class="icon-caret-down"></i></a>
     <ul class="action-dropdown-menu">
-      <li><%= link_to "Log In", new_user_session_path, :class => 'action_link' %></li>
-      <li><%= link_to "Register", new_user_registration_path, :class => 'action_link' %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to "Profile", "/me", :class => 'action_link' %></li>
+      <li><%= link_to "Log out", destroy_user_session_path, :class => 'action_link' %></li>
+      <% else %>
+        <li><%= link_to "Log In", new_user_session_path, :class => 'action_link' %></li>
+        <li><%= link_to "Register", new_user_registration_path, :class => 'action_link' %></li>
+      <% end %>
     </ul>
   </div>
 </div>

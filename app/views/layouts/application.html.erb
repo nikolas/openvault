@@ -5,12 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Mobile viewport optimization h5bp.com/ad -->
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=1">
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <!--[if IEMobile]>
     <meta http-equiv="cleartype" content="on">
     <![endif]-->
-    <title><%= content_for(:title) %></title>
+    <title>WGBH <%= content_for(:title) %></title>
     <link href="<%= opensearch_catalog_path(:format => 'xml', :only_path => false) %>" title="<%= application_name%>" type="application/opensearchdescription+xml" rel="search"/>
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= stylesheet_link_tag    "application" %>
@@ -42,17 +42,17 @@
 				
 			<!-- Body Content -->
 		  <div id="body" class="row-fluid">
-        <% if controller.action_name == 'home' %>
-          <div class="span12">
-            <%= yield %>
-          </div>
-        <% else %>
+        <% if controller.action_name == 'index' %>
   				<div class="span3" id="sidebar">
   					<!-- Sidebar logic to go in here -->
   					<%= sidebar_items.join('').html_safe %>
             &nbsp;
   				</div>
           <div class="span9" id="content">
+            <%= yield %>
+          </div>
+        <% else %>
+          <div class="span12">
             <%= yield %>
           </div>
         <% end %>

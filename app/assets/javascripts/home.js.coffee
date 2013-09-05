@@ -5,16 +5,41 @@ $ ->
       $('#header').addClass('scrolled')
     else
       $('#header').removeClass('scrolled')
+      
+  $('body').on "click", '#mobile-header .action-menu', (e) ->
+    e.preventDefault()
+    $('#mobile-header .search-dropdown').hide()
+    $('#mobile-header .action-dropdown-menu').slideToggle("fast")
+    
+  $('body').on "click", '#mobile-header .search-icon', (e) ->
+    e.preventDefault()
+    $('#mobile-header .action-dropdown-menu').hide()
+    $('#mobile-header .search-dropdown').slideToggle("fast")
+    
+  $('body').on "click", ".sign_in_link", (e) ->
+    e.preventDefault()
+    $('#signin-dropdown').toggle("fast")
+  
+  $('body').on "click", ".cancel_signin", (e) ->
+    e.preventDefault()
+    $('#signin-dropdown .error').text('')
+    $('#signin-dropdown').hide()
+    
+  $("form#new_session").bind "ajax:error", (event, request, settings) ->
+    $('form#new_session .error').text(request.responseText)
+
+  $("form#new_session").bind "ajax:success", (evt, data, status, xhr) ->
+    window.reload()
   
   $('body').on "click", '.page-dot', (e) ->
-    e.preventDefault();
-    num = $(this).data('num');
+    e.preventDefault()
+    num = $(this).data('num')
     $('#exhibit-slider .exhibit-item').each (e) ->
-      $(this).removeClass('active');
+      $(this).removeClass('active')
     $('#exhibit-controls .page-dot').each (e) ->
-      $(this).removeClass('active');
-    $('#exhibit-slider').find('.exhibit-item[item-num='+num+']').addClass('active');
-    $('#exhibit-controls').find('.page-dot[data-num='+num+']').addClass('active');
+      $(this).removeClass('active')
+    $('#exhibit-slider').find('.exhibit-item[item-num='+num+']').addClass('active')
+    $('#exhibit-controls').find('.page-dot[data-num='+num+']').addClass('active')
     
   # collections_timer = null
 #   $("#collections .document").hide().first().show()
