@@ -498,6 +498,7 @@ DEPENDENCIES
   acts-as-taggable-on!
   acts_as_commentable!
   acts_as_list
+  blacklight
   bootstrap-sass
   bootstrap-wysihtml5-rails
   cancan
@@ -519,6 +520,7 @@ DEPENDENCIES
   guard-rspec
   hydra (= 6.0.0)
   hydra-pbcore!
+  jettywrapper
   jquery-rails (= 2.3.0)
   launchy
   mini_magick

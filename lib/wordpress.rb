@@ -16,6 +16,11 @@ module Wordpress
       parsed_json = ActiveSupport::JSON.decode(open(self.endpoint_uri("get_recent_posts", options)).read)
       parsed_json['posts'].map { |x| Post.new('post' => x) }
   end
+  
+  def self.get_post(id=nil)
+    parsed_json = ActiveSupport::JSON.decode(open(self.endpoint_uri('get_post', id)).read)
+    Post.new('post' => parsed_json['post'])
+  end
 
   def self.endpoint_uri command, options = {}
     options[:json] = command

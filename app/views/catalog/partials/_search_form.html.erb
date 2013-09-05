@@ -7,14 +7,14 @@
         <label for="search_field" class="hide-text"><%= t('blacklight.search.form.search_field.label') %></label>
         <span class="hide-text"><%= t('blacklight.search.form.search_field.post_label') %></span>
       </div>
-      <% end %>
-       <div class="input-append pull-left">
-        <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
-         <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q", :id => "q"%>
-        <button type="submit" class="search-btn" id="search">
-          <i class="icon-search"></i>
-        </button>
-       </div>
+    <% end %>
+    <div id="nav-s-input" class="input-append pull-left">
+      <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
+      <%= text_field_tag :q, params[:q], :placeholder => "What are you looking for?", :class => "search_q q", :id => "q"%>
+      <button type="submit" class="search-btn" id="search">
+        <i class="icon-search"></i>
+      </button>
+    </div>
   <% end %>
 	<div id="browse">
 		<label>Browse: </label>

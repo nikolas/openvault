@@ -1,18 +1,90 @@
 <% title "OpenVault - Home" %>
+<h2 id="welcome-header" class="t-center">Welcome to the WGBH Media Library &amp; Archives OpenVault</h2>
+<p id="welcome-text">We provide online access to unique and historically important content produced by the public television and radio station WGBH. The ever-expanding site contains video, audio, images, searchable transcripts, and resource management tools, all of which are available for individual and classroom learning. For over 25 years the MLA has preserved, cataloged, and provided access to materials produced by WGBH. It currently houses nearly 1 million audio, video, film, and digital assets dating back to 1947. So have a look around and explore!</p>
 
-<h1 id="testing">This is an H1</h1>
-<h2>This is an H2</h2>
-<h3>This is an H3</h3>
-<h4>This is an H4</h4>
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+<div class="row-fluid">
+  <div id="exhibits" class="grainbox span8">
+    <h2>Exhibits</h2>
+    <div class="sep-line"></div>
+    <div id="exhibit-slider">
+      <% @collections.each_with_index do |ex, idx| %>
+        <div class="exhibit-item <%= (idx == 0) ? 'active' : '' %> row-fluid" item-num="<%= idx %>">
+          <div class="text span6">
+            <h3><%= ex.name %></h3>
+            <div class="summary">
+              <%= truncate(ex.summary, length: 760).html_safe %>
+            </div>
+            <div class="link">
+              <a href="/collection/<%= ex.slug %>">View exhibit</a>
+            </div>
+          </div>
+          <div class="image span6">
+            <%= image_tag ex.image.carousel.url %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="clear-fix"></div>
+    <div id="exhibit-controls">
+      <% @collections.length.times do |idx| %>
+        <a href="#" data-num="<%= idx %>" class="<%= (idx == 0) ? 'active' : '' %> page-dot"></a>
+      <% end %>
+    </div>
+  </div>
+  <div id="collections" class="grainbox span4">
+    <h2>New Collections</h2>
+    <div class="sep-line"></div>
+  </div>
+</div>
 
-<div class="grainbox">
-  <h1 id="testing">This is an H1</h1>
-  <div class="sep-line"></div>
-  <h2>This is an H2</h2>
-  <h3>This is an H3</h3>
-  <h4>This is an H4</h4>
-  <p>Donec ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-  <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+<div id="catalog-scroller" class="row-fluid">
+  <div class="shadow-left">
+    <i class="icon-arrow-left"></i>
+  </div>
+  <div id="scroller-items">
+    <% 12.times do %>
+      <a href="#" class="scroller-item">
+        <img src="/assets/slider_thumb.png" class="scroller-image" />
+      </a>
+    <% end %>
+  </div>
+  <div class="shadow-right"></div>
+</div>
+
+<div class="row-fluid">
+  <div id="blog" class="span8">
+    <h2>From the blog</h2>
+    <div class="sep-line"></div>
+    <div class="row-fluid">
+      <div id="featured-post" class="span7">
+        <% feature = Wordpress.get_post(:id => 1582) rescue nil %>
+        <% if feature != nil %>
+        <%= image_tag feature.images('thumbnail')['url'], alt: feature.title %>
+        <h3><%= feature.title %></h3>
+        <p><%= truncate(sanitize(feature.content, tags: %w{a, strong, em, p}) , :length => 800).html_safe %></p>
+        <a href="<%= feature.url %>" class="action_link">Read more</a>
+        <% else %>
+        <p>We seem to be having a problem, please check back later.</p>
+        <% end %>
+      </div>
+      <div id="more-posts" class="span5">
+        <% posts = Wordpress.get_recent_posts(:count => 3) %>
+        <% posts.each do |post| %>
+          <div class="post row-fluid">
+          	<div class="body span12">
+          		<h3><%= post.title %></h3>
+          		<p><%= truncate(post.excerpt, :length => 180).html_safe %><a href="<%= post.url %>">Read more</a></p>
+        		</div>
+        	</div>
+      	<% end rescue nil %>
+        <% if posts != nil %>
+          <a href="/blog" class="action_link" style="display:block;text-align:center;width:100%;">View all</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="tweets" class="span4">
+    <h2>Recent Tweets</h2>
+    <div class="sep-line"></div>
+  </div>
 </div>

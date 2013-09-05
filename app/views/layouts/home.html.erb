@@ -27,8 +27,12 @@
   <body onload="<%= onload_text %>" class="<%= render_body_class %>">
     
     <!-- Header container -->
-    <div id="header" class="row-fluid">
-      <%= render :partial => 'layouts/header' %>
+    <div id="header">
+      <div class="container">
+        <div class="row-fluid">
+          <%= render :partial => 'layouts/header' %>
+        </div>
+      </div>
 		</div>
     <!-- /Header -->
     
