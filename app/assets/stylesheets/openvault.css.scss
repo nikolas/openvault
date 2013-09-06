@@ -344,6 +344,29 @@ input, select, textarea {
       }
     }
   }
+  #tweets {
+    #tweet-list {
+      text-align: left;
+      margin-bottom: 20px;
+      .tweet-item {
+        margin: 5px 0px 10px 0px;
+        border-bottom: 1px solid #999;
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+    text-align: center;
+    .twitter-follow {
+      @include grainbox;
+      padding: 10px; 
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
   
   //Exhibit Page
   #collection_page {
@@ -361,7 +384,7 @@ input, select, textarea {
   
   //Sign up page
   #signup_form_container {
-    form.simple_form {
+    form#new_user, form#edit_user {
       padding: 15px 0px;
       .control-group {
         label.control-label {
@@ -374,8 +397,11 @@ input, select, textarea {
           margin-top: 8px;
         }
         .controls {
-          input, select {
+          input {
             width: 55%;
+          }
+          select {
+            width: 58%;
           }
           input[type=checkbox] {
             width: 20px;
@@ -388,6 +414,16 @@ input, select, textarea {
       .user_avatar {
         position: absolute;
         visibility: hidden;
+      }
+      .user_bio {
+        label {
+          width: 15% !important;
+        }
+        textarea {
+          width: 78%;
+          height: 110px;
+          resize: none;
+        }
       }
       .choose_avatar_btn {
         margin-bottom: 10px;
@@ -615,6 +651,12 @@ input, select, textarea {
           border-bottom: 1px solid #333;
           padding-bottom: 5px;
         }
+      }
+      #signup_form_container form#new_user .user_bio label {
+        width: 30% !important;
+      }
+      #signup_form_container form#new_user .user_bio textarea {
+        width: 55%;
       }
     }
   }

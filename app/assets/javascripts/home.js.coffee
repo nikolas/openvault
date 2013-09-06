@@ -29,7 +29,7 @@ $ ->
     $('form#new_session .error').text(request.responseText)
 
   $("form#new_session").bind "ajax:success", (evt, data, status, xhr) ->
-    window.reload()
+    location.reload()
   
   $('body').on "click", '.page-dot', (e) ->
     e.preventDefault()
