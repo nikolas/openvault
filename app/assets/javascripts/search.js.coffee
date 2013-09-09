@@ -9,6 +9,11 @@ Blacklight.facet_expand_contract = ->
     
       # toggle the content
       $(this).toggleClass "twiddle-open"
+      $(this).find('i').toggleClass ->
+        if $(this).is(".icon-caret-down")
+          "icon-caret-right"
+        else
+          "icon-caret-down"
       $(f_content).slideToggle()
 $ ->
         

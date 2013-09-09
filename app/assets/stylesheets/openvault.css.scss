@@ -343,7 +343,7 @@ input, select, textarea {
         }
       }
     }
-  }
+  }  
   #tweets {
     #tweet-list {
       text-align: left;
@@ -451,6 +451,158 @@ input, select, textarea {
       
     }
   }
+  
+  //Search index page
+  #search_page {
+    #sidebar {
+      #facets {
+        margin-top: 48px;
+        .facet_limit {
+          h5 {
+            display:none;
+          }
+          .twiddle {
+            background: $dark-blue;
+            color: #fff;
+            padding: 7px 10px;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            .arrow {
+              display: inline-block;
+              margin-right: 10px;
+              color: $orange;
+              font-size: 18px;
+              line-height: 1em;
+              margin: 0 10px 0 0;
+            }
+          }
+          ul {
+            margin: 10px;
+            li {
+              a {
+                color: $orange;
+                text-decoration: none;
+              }
+            }
+          }
+        } 
+      }
+    }
+    #content {
+      #appliedParams {
+        background: #ddd;
+        padding: 10px;
+        border-bottom: 1px solid #666;
+        margin-bottom: 10px;
+        h4 {
+          float:left;
+          margin-right: 10px;
+        }
+        span.query {
+          display:none;
+        }
+        span.appliedFilter {
+          line-height: 24px;
+          background: #fafafa;
+          margin: 0px 5px;
+          padding: 5px;
+          .filterName {
+            font-weight: bold;
+            color: #777;
+          }
+          .remove {
+            a {
+              text-decoration: none;
+              font-weight: normal;
+              i {
+                font-size: 15px;
+              }
+              &:hover {
+                color: #000;
+                i {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+      }
+      .search-results-header {
+        #sortAndPerPage {
+          form.sort {
+            label[for=sort] {
+              float:left;
+              margin: 8px 10px;
+            }
+            select#sort {
+              width: 65%;
+            }
+          }
+        }
+        .media_only {
+          margin-top: 8px;
+          input#media_only {
+            float:left;
+            margin: 0px 10px 0 0;
+          }
+        }
+        .pageEntriesInfo {
+          margin-top: 8px;
+          text-align:center;
+        }
+      }
+      .pager {
+        margin: 8px 0 0 0;
+        .pagination {
+          margin: 0;
+          a {
+            text-decoration:none;
+            color: $orange;
+            font-weight: normal;
+          }
+          .prev {
+            float:left;
+            margin-right: 20px;
+          }
+          .page_links {
+            width: auto;
+            float:left;
+            text-align:center;
+            span.page {
+              margin: 0px 2px;
+            }
+          }
+          .next {
+            float:right;
+          }
+        }
+      }
+      #documents {
+        .document {
+          margin-bottom: 20px;
+          border-bottom: 2px solid $orange;
+          .doc_thumbnail {
+            float: left;
+            margin-right: 10px;
+          }
+          .index_title {
+            a {         
+              font:inherit;
+              text-decoration: none;
+            }
+          }
+          .defList_container {
+            .doc_label {
+              font-weight: bold;
+              margin-right: 5px;
+              display:inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 //Footer section
@@ -483,6 +635,19 @@ input, select, textarea {
       }
       #browse {
         margin-left: 48%;
+      }
+    }
+  }
+  #search_page {
+    #content {
+      #search_content {
+        .search-results-header {
+          #sortAndPerPage {
+            label[for=sort] {
+              display:none;
+            }
+          }
+        }
       }
     }
   }
@@ -524,6 +689,19 @@ input, select, textarea {
           height: 251px;
           .image {
             height: 251px;
+          }
+        }
+      }
+    }
+    #search_page {
+      #content {
+        #search_content {
+          .search-results-header {
+            #sortAndPerPage {
+              label[for=sort] {
+                display:none;
+              }
+            }
           }
         }
       }

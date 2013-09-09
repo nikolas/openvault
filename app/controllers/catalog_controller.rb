@@ -45,7 +45,7 @@ class CatalogController < ApplicationController
   configure_blacklight do |config|
     config.default_solr_params = { 
       :qt => 'search',
-      :rows => 10,
+      :rows => 2,
       :defType => 'edismax',
       :qf => 'text'
     }
@@ -53,6 +53,7 @@ class CatalogController < ApplicationController
     config.index.show_link = 'title_clip_ssm'
     config.add_index_field 'asset_date_ssm', :label => 'Date Created'
     config.add_index_field 'series_ssm', :label => 'Program'
+    config.add_index_field 'media_ssm', :label => 'Media'
     
 # 
 #     # solr field configuration for document/show views
@@ -246,7 +247,7 @@ class CatalogController < ApplicationController
     if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
       respond_to do |format|
         format.html {setup_next_and_previous_documents}
-        format.jpg { send_data File.read(@document.thumbnail.path(params)), :type => 'image/jpeg', :disposition => 'inline' }
+        #format.jpg { send_data File.read(@document.thumbnail.path(params)), :type => 'image/jpeg', :disposition => 'inline' }
     
         # Add all dynamically added (such as by document extensions)
         # export formats.

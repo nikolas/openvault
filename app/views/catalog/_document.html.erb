@@ -1,34 +1,26 @@
-<% # container for a single doc -%>
-<div class="document <%= render_document_class document %>">
-  
-  <% # header bar for doc items in index view -%>
-  <div class="documentHeader">
-    
-    <% # bookmark/folder functions for items/docs -%>
-    <%#= render_index_doc_actions document %>
-    
-    <% # main title container for doc partial view -%>
-    <h3 class="index_title">
-      <%#= link_to document['title'], '/catalog/'+document['slug'] %>
-      <%= link_to_document document, :label=>document_show_link_field, :counter => (document_counter + 1 + @response.params[:start].to_i) %><%= " (Video Excerpt)" if document.get('media_dsid_s') =~ /Video/ and document.get('dc_type_s') =~ /excerpt/ %></h3>
-    
-  </div>
-  <div  class="thumbnail">
-    <%#= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe) %>
-  </div> 
-  <% # main container for doc partial view -%>
+<div class="document <%= render_document_class document %>">  
+    <div  class="doc_thumbnail">
+      <% if document["thumbnail"] %>
+        <%= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe) %>
+      <% else %>
+        <img src="/assets/tmp_cat_image_thumb.jpg" />
+      <% end %>
+    </div> 
+  <h3 class="index_title">
+    <%= link_to_document document, :label=>document_show_link_field, :counter => (document_counter + 1 + @response.params[:start].to_i) %><%= " (Video Excerpt)" if document.get('media_dsid_s') =~ /Video/ and document.get('dc_type_s') =~ /excerpt/ %>
+  </h3>  
   <div class="defList_container">
-    <div class="blacklight-summary">
-      <div class="label">Summary</div>
-      <div class="value"><%= display_summary document %></div>
-    </div>
+    <% unless document[:desc_clip_ssm] %>
+      <div class="blacklight-summary">
+        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= display_summary document %></p></div>
+      </div>
+    <% end %>
     <% index_field_names.each do |solr_fname| -%>
       <% value = render_index_field_value :document => document, :field => solr_fname %>
       <% unless value.blank? %>
         <div class="blacklight-<%= solr_fname.parameterize %>" >
-  	    <div class="label"><%= render_index_field_label :field => solr_fname %></div>
-              <div class="value"><%= render_index_field_value :document => document, :field => solr_fname %></div>
-            </div>
+          <div class="doc_value"><p><span class="doc_label"><%= render_index_field_label :field => solr_fname %>:</span><%= render_index_field_value :document => document, :field => solr_fname %></p></div>
+        </div>
       <% end -%>
     <% end -%>
   </div>

@@ -29,8 +29,8 @@ en:
         no_items_found: 'No %{entry_name} found'
         single_item_found: '<strong>1</strong> to <strong>1</strong> of <strong>1</strong>'
         pages:
-          one: 'Displaying items <strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
-          other: 'Displaying items <strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+          one: 'Showing <strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+          other: 'Showing <strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
       entry_pagination_info:
         one: '<strong>1 of 1</strong>'
         other: '<strong>%{current}</strong> of <strong>%{total}</strong>'

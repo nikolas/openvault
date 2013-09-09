@@ -95,6 +95,9 @@
           <p><%= tweet.text %></p>
         </div>
       <% end %>
+      <% if @tweets.empty? %>
+        <p>There was a problem connecting to twitter, please check back later.</p>
+      <% end %>
     </div>
     <a href="https://twitter.com/wgbharchives" class="twitter-follow">Follow @wgbharchives</a>
   </div>
