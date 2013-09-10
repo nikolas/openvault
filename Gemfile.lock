@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/afred/hydra-pbcore.git
+  remote: https://github.com/afred/hydra-pbcore.git
   revision: 0ef14795a38efa3116b87b15569080b55c3329e5
   branch: master
   specs:
