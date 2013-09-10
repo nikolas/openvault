@@ -45,7 +45,6 @@ group :development do
   #gem 'terminal-notifier'
   gem 'capistrano'
   gem 'rvm-capistrano'
-  gem 'sqlite'
 end
 
 gem 'jquery-rails', "2.3.0"
