@@ -1,4 +1,4 @@
-require 'openvault/datastream'
+require 'openvault'
 require 'hydra-pbcore'
 
 module Artesia
@@ -10,8 +10,6 @@ module Artesia
     # Represents UOIS XML metadata for a single asset.
     #
     class UOIS < ActiveFedora::OmDatastream
-
-      include Openvault::Datastream
 
       ##
       # Adds terminology for attributes and children of a UOIS node.

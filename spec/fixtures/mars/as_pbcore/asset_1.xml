@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<pbcoreCollection xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:fmp="http://www.filemaker.com/fmpdsoresult">
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Asset Record ID">A_QBQBH6VJ6T844KJ</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Summary" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">SSA -woman changing tape on IBM computer
+(PHOTOCOPY) (2) </pbcoreDescription>
+    <pbcoreIdentifier source="MARS Source Creation Order">44820</pbcoreIdentifier>
+    <pbcoreTitle titleType="Episode">2</pbcoreTitle>
+    <pbcoreIdentifier source="Source Tracking Number">144941</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Keyword" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1674.html">Social Security computer</pbcoreDescription>
+    <pbcoreTitle titleType="Series">Machine That Changed The World, The</pbcoreTitle>
+    <pbcoreInstantiation>
+      <instantiationIdentifier annotation="DAM file name">cintosh HD/Users/nancy_dillon/Desktop/MARS_816201224241.xml</instantiationIdentifier>
+      <instantiationMediaType source="WGBH MARS">Static image</instantiationMediaType>
+      <instantiationPhysical source="WGBH MARS">Photocopy</instantiationPhysical>
+      <instantiationLocation>Media Library</instantiationLocation>
+      <instantiationIdentifier source="WGBH Barcode">250249</instantiationIdentifier>
+      <instantiationIdentifier source="WGBH Item ID">28</instantiationIdentifier>
+      <instantiationGenerations source="WGBH MARS">Still</instantiationGenerations>
+      <instantiationLocation>Media Library-----</instantiationLocation>
+      <instantiationAlternativeModes/>
+      <essenceTrack/>
+    </pbcoreInstantiation>
+  </pbcoreDescriptionDocument>
+</pbcoreCollection>

@@ -85,7 +85,9 @@ class Fixtures
     def file_path(filename)
       # if there is a working directory, append a slash to it
       dir = self.pwd.nil? ? '' : self.pwd + "/"
-      return File.expand_path(dir + filename)
+      path = File.expand_path(dir + filename)
+      raise "Fixture file not found for #{path}" unless File.exists? path
+      path
     end
 
     def use(filename, key = nil)

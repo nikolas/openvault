@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~>3.2.12'
+gem 'rails', '~>3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', "~>0.3.11"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,6 +54,7 @@ gem 'blacklight'
 gem 'jettywrapper'
 
 gem 'hydra', '6.0.0', :require => 'hydra6'
+gem 'jettywrapper'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -88,3 +89,6 @@ gem 'twitter'
 gem 'sufia-models'
 gem 'capistrano'
 gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
+
+# for parallel processing
+gem 'celluloid'
