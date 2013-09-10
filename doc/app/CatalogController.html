@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class CatalogController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/catalog_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Blacklight::Catalog</span>
+  
+  
+  
+    <li><span class="include">Hydra::Controller::ControllerBehavior</span>
+  
+  
+  
+    <li><span class="include">Blacklight::Solr::Document::MoreLikeThis</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-cite">#cite</a>
+    
+    <li><a href="#method-i-embed">#embed</a>
+    
+    <li><a href="#method-i-get_related_content">#get_related_content</a>
+    
+    <li><a href="#method-i-get_solr_document_by_slug">#get_solr_document_by_slug</a>
+    
+    <li><a href="#method-i-home">#home</a>
+    
+    <li><a href="#method-i-image">#image</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-print">#print</a>
+    
+    <li><a href="#method-i-show">#show</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Openvault.html">Openvault</a>
+  
+    <li><a href="./Openvault/Datastream.html">Openvault::Datastream</a>
+  
+    <li><a href="./Openvault/Ingester.html">Openvault::Ingester</a>
+  
+    <li><a href="./Openvault/Ingester/Artesia.html">Openvault::Ingester::Artesia</a>
+  
+    <li><a href="./Openvault/Ingester/Pbcore.html">Openvault::Ingester::Pbcore</a>
+  
+    <li><a href="./Artesia.html">Artesia</a>
+  
+    <li><a href="./Artesia/Datastream.html">Artesia::Datastream</a>
+  
+    <li><a href="./Artesia/Datastream/TeamsAssetFile.html">Artesia::Datastream::TeamsAssetFile</a>
+  
+    <li><a href="./Artesia/Datastream/UOIS.html">Artesia::Datastream::UOIS</a>
+  
+    <li><a href="./Wordpress.html">Wordpress</a>
+  
+    <li><a href="./Wordpress/Api.html">Wordpress::Api</a>
+  
+    <li><a href="./Wordpress/Page.html">Wordpress::Page</a>
+  
+    <li><a href="./Wordpress/Post.html">Wordpress::Post</a>
+  
+    <li><a href="./Fixtures.html">Fixtures</a>
+  
+    <li><a href="./Fixtures/Fixture.html">Fixtures::Fixture</a>
+  
+    <li><a href="./Ability.html">Ability</a>
+  
+    <li><a href="./AdminUser.html">AdminUser</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ArtesiaIngest.html">ArtesiaIngest</a>
+  
+    <li><a href="./AvatarUploader.html">AvatarUploader</a>
+  
+    <li><a href="./BlacklightHelper.html">BlacklightHelper</a>
+  
+    <li><a href="./CatalogController.html">CatalogController</a>
+  
+    <li><a href="./Collection.html">Collection</a>
+  
+    <li><a href="./CollectionImageUploader.html">CollectionImageUploader</a>
+  
+    <li><a href="./CollectionsController.html">CollectionsController</a>
+  
+    <li><a href="./CollectionsHelper.html">CollectionsHelper</a>
+  
+    <li><a href="./Comment.html">Comment</a>
+  
+    <li><a href="./CommentsController.html">CommentsController</a>
+  
+    <li><a href="./CustomCollection.html">CustomCollection</a>
+  
+    <li><a href="./CustomCollectionArticleUploader.html">CustomCollectionArticleUploader</a>
+  
+    <li><a href="./CustomCollectionImageUploader.html">CustomCollectionImageUploader</a>
+  
+    <li><a href="./CustomCollectionItem.html">CustomCollectionItem</a>
+  
+    <li><a href="./CustomCollectionsController.html">CustomCollectionsController</a>
+  
+    <li><a href="./CustomCollectionsHelper.html">CustomCollectionsHelper</a>
+  
+    <li><a href="./MosaicItem.html">MosaicItem</a>
+  
+    <li><a href="./MosaicThumbnailUploader.html">MosaicThumbnailUploader</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./OpenvaultAsset.html">OpenvaultAsset</a>
+  
+    <li><a href="./RegistrationsController.html">RegistrationsController</a>
+  
+    <li><a href="./SearchHelper.html">SearchHelper</a>
+  
+    <li><a href="./SolrDocument.html">SolrDocument</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CatalogController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-cite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cite</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cite-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cite</span>
+  <span class="ruby-ivar">@response</span>, <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">get_solr_response_for_doc_id</span>    
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {<span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'blank'</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cite-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cite-method -->
+
+    
+      <div id="method-i-embed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">embed</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="embed-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">embed</span>
+  <span class="ruby-ivar">@response</span>, <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">get_solr_response_for_doc_id</span>    
+  <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:width</span>].<span class="ruby-identifier">try</span>(<span class="ruby-value">:to_i</span>) <span class="ruby-operator">||</span> <span class="ruby-value">640</span>
+  <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:height</span>].<span class="ruby-identifier">try</span>(<span class="ruby-value">:to_i</span>) <span class="ruby-operator">||</span> (<span class="ruby-value">3</span> * <span class="ruby-ivar">@width</span> <span class="ruby-operator">/</span> <span class="ruby-value">4</span>)
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {<span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'embed'</span> }
+    
+    <span class="ruby-comment"># Add all dynamically added (such as by document extensions)</span>
+    <span class="ruby-comment"># export formats.</span>
+    <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">export_formats</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">format_name</span> <span class="ruby-operator">|</span>
+      <span class="ruby-comment"># It's important that the argument to send be a symbol;</span>
+      <span class="ruby-comment"># if it's a string, it makes Rails unhappy for unclear reasons. </span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">format_name</span>.<span class="ruby-identifier">to_sym</span>) { <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">export_as</span>(<span class="ruby-identifier">format_name</span>) }
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- embed-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- embed-method -->
+
+    
+      <div id="method-i-get_related_content" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_related_content</span><span
+            class="method-args">(slug=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_related_content-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_related_content</span>(<span class="ruby-identifier">slug</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">q</span> = <span class="ruby-node">&quot;slug:#{slug}&quot;</span>
+  <span class="ruby-identifier">solr_params</span> = { 
+    <span class="ruby-value">:q</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">q</span>,
+    <span class="ruby-value">:'mlt.count'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>,
+    <span class="ruby-value">:mlt</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+    <span class="ruby-value">:'mlt.fl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;title_tesim, summary_tesim&quot;</span>,
+  }
+  <span class="ruby-comment">#response = find('mlt', self.solr_search_params().merge(solr_params))</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">Blacklight</span>.<span class="ruby-identifier">solr</span>.<span class="ruby-identifier">select</span> <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">solr_params</span>
+  <span class="ruby-identifier">id</span> = <span class="ruby-identifier">response</span>[<span class="ruby-string">'response'</span>][<span class="ruby-string">'docs'</span>][<span class="ruby-value">0</span>][<span class="ruby-string">'id'</span>]
+  <span class="ruby-identifier">document_list</span> = <span class="ruby-identifier">response</span>[<span class="ruby-string">'moreLikeThis'</span>][<span class="ruby-identifier">id</span>][<span class="ruby-string">'docs'</span>].<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span> <span class="ruby-constant">SolrDocument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">response</span>) }
+  <span class="ruby-identifier">document_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_related_content-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_related_content-method -->
+
+    
+      <div id="method-i-get_solr_document_by_slug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_solr_document_by_slug</span><span
+            class="method-args">(slug=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_solr_document_by_slug-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_solr_document_by_slug</span>(<span class="ruby-identifier">slug</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">q</span> = <span class="ruby-node">&quot;slug:#{slug}&quot;</span>
+  <span class="ruby-identifier">solr_params</span> = {
+    <span class="ruby-value">:defType</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;edismax&quot;</span>,   <span class="ruby-comment"># need boolean for OR</span>
+    <span class="ruby-value">:q</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">q</span>,
+    <span class="ruby-value">:fl</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;*&quot;</span>,  
+    <span class="ruby-value">:facet</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'false'</span>,
+    <span class="ruby-value">:spellcheck</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'false'</span>,
+    <span class="ruby-value">:mlt</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'true'</span>,
+    <span class="ruby-value">:'mlt.fl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;title_ssm, summary_ssm&quot;</span>,
+    <span class="ruby-value">:'mlt.count'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+  }
+
+  <span class="ruby-identifier">solr_response</span> = <span class="ruby-identifier">find</span>(<span class="ruby-string">'document'</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">solr_search_params</span>().<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">solr_params</span>) )
+  <span class="ruby-identifier">document_list</span> = <span class="ruby-identifier">solr_response</span>.<span class="ruby-identifier">docs</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span> <span class="ruby-constant">SolrDocument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">solr_response</span>) }
+  [<span class="ruby-identifier">solr_response</span>, <span class="ruby-identifier">document_list</span>.<span class="ruby-identifier">first</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_solr_document_by_slug-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_solr_document_by_slug-method -->
+
+    
+      <div id="method-i-home" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">home</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="home-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">home</span>
+  <span class="ruby-comment"># pids = open(File.join(Rails.root, 'config', 'home.csv')).read.split(&quot;,&quot;).map(&amp;:strip)</span>
+  <span class="ruby-comment"># response, @document_list = get_solr_response_for_field_values(&quot;pid_s&quot;,pids, :rows =&gt; 90, :fl =&gt; 'id,pid_s,title_display', :sort =&gt; 'random_1234 desc')</span>
+  <span class="ruby-comment"># @sprite = Sprite.new(:home_mosaic, @document_list)</span>
+  <span class="ruby-comment"># @sprite.generate! true</span>
+
+  <span class="ruby-comment"># if current_user or stale?(:last_modified =&gt; Time.new.beginning_of_week, :etag =&gt; pids)</span>
+  <span class="ruby-comment">#   render :layout =&gt; 'home'</span>
+  <span class="ruby-comment"># end</span>
+  <span class="ruby-ivar">@collections</span> = <span class="ruby-constant">Collection</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:display_in_carousel</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">'position ASC'</span>)
+  <span class="ruby-ivar">@custom_collections</span> = <span class="ruby-constant">CustomCollection</span>.<span class="ruby-identifier">limit</span>(<span class="ruby-value">6</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">'created_at ASC'</span>)
+  <span class="ruby-ivar">@scholars</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">scholars</span>
+  <span class="ruby-ivar">@mosaic_items</span> = <span class="ruby-constant">MosaicItem</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">mosaic_size</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'home'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- home-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- home-method -->
+
+    
+      <div id="method-i-image" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">image</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>when a request for /catalog/BAD_SOLR_ID is made, this method is executed…
+def invalid_solr_id_error</p>
+
+<pre class="ruby"><span class="ruby-identifier">response</span>, <span class="ruby-identifier">documents</span> = <span class="ruby-identifier">get_solr_response_for_field_values</span>(<span class="ruby-string">&quot;pid_s&quot;</span>,<span class="ruby-identifier">params</span>[:<span class="ruby-identifier">id</span>])
+<span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">url_for</span>(:<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">documents</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">id</span>), :<span class="ruby-identifier">status=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">301</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">documents</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+
+<span class="ruby-identifier">response</span>, <span class="ruby-identifier">documents</span> = <span class="ruby-identifier">get_solr_response_for_field_values</span>(<span class="ruby-string">&quot;pid_short_s&quot;</span>,<span class="ruby-identifier">params</span>[:<span class="ruby-identifier">id</span>])
+<span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">url_for</span>(:<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">documents</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">id</span>), :<span class="ruby-identifier">status=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">301</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">documents</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+
+<span class="ruby-keyword">if</span> <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">env</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;development&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-comment"># will give us the stack trace</span>
+<span class="ruby-keyword">else</span>
+<span class="ruby-comment">#  flash[:notice] = &quot;Sorry, you have requested a record that doesn't exist.&quot;</span>
+<span class="ruby-comment">#  redirect_to root_path, :status =&gt; 404</span>
+  <span class="ruby-identifier">render</span>(:<span class="ruby-identifier">file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{Rails.root}/public/404.html&quot;</span>, :<span class="ruby-identifier">layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, :<span class="ruby-identifier">status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">404</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+          
+
+          
+          <div class="method-source-code" id="image-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">image</span>
+  <span class="ruby-ivar">@response</span>, <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">get_solr_response_for_doc_id</span>    
+  <span class="ruby-identifier">style</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:style</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'preview'</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">url</span>(<span class="ruby-value">:style</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">to_sym</span>) <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- image-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- image-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">delete_or_assign_search_session_params</span>
+
+  <span class="ruby-ivar">@search_context</span> = <span class="ruby-string">'result'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">view_context</span>.<span class="ruby-identifier">has_search_parameters?</span>
+  <span class="ruby-comment"># extra_head_content &lt;&lt; view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format =&gt; 'rss')), :title =&gt; &quot;RSS for results&quot;)</span>
+  <span class="ruby-comment"># extra_head_content &lt;&lt; view_context.auto_discovery_link_tag(:atom, url_for(params.merge(:format =&gt; 'atom')), :title =&gt; &quot;Atom for results&quot;)</span>
+  <span class="ruby-comment"># extra_head_content &lt;&lt; view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type =&gt; 'application/xml',  :rel =&gt; 'unapi-server', :title =&gt; 'unAPI' })</span>
+  (<span class="ruby-ivar">@response</span>, <span class="ruby-ivar">@document_list</span>) = <span class="ruby-identifier">get_search_results</span>
+  <span class="ruby-ivar">@filters</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:f</span>] <span class="ruby-operator">||</span> []
+  <span class="ruby-identifier">search_session</span>[<span class="ruby-value">:total</span>] = <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">total</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { 
+      <span class="ruby-identifier">render</span> <span class="ruby-string">'no_results_found'</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@document_list</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">save_current_search_params</span> 
+    }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">rss</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">atom</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@document_list</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="print-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print</span>
+  <span class="ruby-ivar">@response</span>, <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">get_solr_response_for_doc_id</span>    
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {<span class="ruby-identifier">setup_next_and_previous_documents</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- print-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- print-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>get single document from the solr index</p>
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/catalog_controller.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+  <span class="ruby-comment"># extra_head_content &lt;&lt; view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type =&gt; 'application/xml',  :rel =&gt; 'unapi-server', :title =&gt; 'unAPI' })</span>
+  <span class="ruby-ivar">@response</span>, <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">get_solr_document_by_slug</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])    
+  <span class="ruby-comment">#@repspones, @document = get_solr_response_for_doc_id</span>
+  
+  <span class="ruby-ivar">@rel</span> = <span class="ruby-identifier">get_related_content</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">collection_url</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])) <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">get</span>(<span class="ruby-value">:format</span>) <span class="ruby-operator">==</span> <span class="ruby-string">'collection'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:controller</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'catalog'</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span> <span class="ruby-comment">#or stale?(:last_modified =&gt; @document['system_modified_dtsi'])</span>
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {<span class="ruby-identifier">setup_next_and_previous_documents</span>}
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">jpg</span> { <span class="ruby-identifier">send_data</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-ivar">@document</span>.<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">path</span>(<span class="ruby-identifier">params</span>)), <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'image/jpeg'</span>, <span class="ruby-value">:disposition</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'inline'</span> }
+  
+      <span class="ruby-comment"># Add all dynamically added (such as by document extensions)</span>
+      <span class="ruby-comment"># export formats.</span>
+      <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">export_formats</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">format_name</span> <span class="ruby-operator">|</span>
+        <span class="ruby-comment"># It's important that the argument to send be a symbol;</span>
+        <span class="ruby-comment"># if it's a string, it makes Rails unhappy for unclear reasons. </span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">format_name</span>.<span class="ruby-identifier">to_sym</span>) { <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">export_as</span>(<span class="ruby-identifier">format_name</span>), <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> }
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

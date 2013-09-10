@@ -1,11 +1,11 @@
 <div class="related-content">
   <h2>Related Content</h2>
-  <div class="mlt">
+  <!-- <div class="mlt">
   <div class="thumbnail">
     <a href="/catalog/sbro-mla001079-curtis-mayfield-and-the-impressions-perform-we-re-a-winner"><img alt="Preview" src="http://openvault.wgbh.org/system/thumbnails/sbro-mla001079-curtis-mayfield-and-the-impressions-perform-we-re-a-winner/preview.jpg" &nbsp;=""></a>
   </div>
   <a href="/catalog/sbro-mla001079-curtis-mayfield-and-the-impressions-perform-we-re-a-winner">Curtis Mayfield and The Impressions perform "We're A&nbsp;Winner"</a>
   In celebration of the impending spring season, Say Brother presents a special program showcasing the musical talents of the many African American musicians who appeared on Say Brother during its first year on the air...
-  </div>
-  <%#= render(:partial => 'blacklight_mlt/mlt', :collection => @document.more_like_this.sort_by { |x| x.get('title_s') || '' }, :as => :document ) %>
+  </div> -->
+  <%= render(:partial => 'blacklight_mlt/mlt', :collection => @rel.sort_by { |x| x.get('title_ssm') || '' }, :as => :document ) %>
 </div>

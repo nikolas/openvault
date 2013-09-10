@@ -5,7 +5,7 @@
     <div class="post row-fluid">
       <div class="byline span3">
         <div class="thumbnail">
-          <%= image_tag post.attachments[0]["images"]["thumbnail"]["url"], :alt => '' if post.attachments[0]["images"]["thumbnail"]["url"] %>
+          <%= image_tag(post.attachments[0]["images"]["thumbnail"]["url"], :alt => '') if post.attachments.length > 0 %>
         </div>
     	</div>
     	<div class="body span8">

@@ -1,5 +1,7 @@
 Openvault::Application.routes.draw do
-  
+  ActiveAdmin.routes(self)
+  Blacklight.add_routes(self)
+  HydraHead.add_routes(self)
   #mount Sufia::Engine => '/sufia'
   
   resources :custom_collections do
@@ -15,9 +17,19 @@ Openvault::Application.routes.draw do
   match 'blog' => 'blog#index', :as => 'blog'
 
   root :to => "catalog#home"
+  
+  resources :catalog, :only => [:index, :show, :update], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
+    member do
+      get 'cite'
+      get 'print'
+      get 'image'
+      get 'embed'
+    end
+    resources :comments, :constraints => { :id => /[0-9]+/ }
+    resource :tags
+  end
 
-  Blacklight.add_routes(self)
-  HydraHead.add_routes(self)
+  
   
   #general devise routes
   devise_for :users
@@ -26,7 +38,6 @@ Openvault::Application.routes.draw do
     get 'me', :to => 'users#show', :as => :user_root
   end
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   
   #mount Hydra::Collections::Engine => '/'
   

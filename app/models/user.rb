@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
   validates :terms_and_conditions, acceptance: {allow_nil: false, accept: true, on: :create}
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"
-  validates_presence_of :postal_code, :message => "can't be blank"
   validates_presence_of :country, :message => "can't be blank"
   validates_uniqueness_of :email, :message => "must be unique"
   validates_presence_of :role, :message => "can't be blank"

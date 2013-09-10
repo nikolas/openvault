@@ -1,0 +1,6 @@
+<% if params[:f] or params[:range] %>
+  <div id="appliedParams">
+  	<h4>Filters:</h4>
+    <%= render_constraints(localized_params) %>  
+  </div>
+<% end %>

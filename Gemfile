@@ -43,9 +43,15 @@ end
 group :development do
   gem 'debugger'  
   #gem 'terminal-notifier'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 gem 'jquery-rails', "2.3.0"
+
+gem 'blacklight'
+#gem 'hydra-head', '6.1.0'
+gem 'jettywrapper'
 
 gem 'hydra', '6.0.0', :require => 'hydra6'
 gem 'jettywrapper'
@@ -59,26 +65,29 @@ gem 'jettywrapper'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
+gem "font-awesome-rails"
 gem "cancan"
 gem 'carrierwave'
-gem 'activeadmin'
+gem 'activeadmin', "~> 0.5.1"
 gem "mini_magick"
 gem 'simple_form'
 gem 'country_select'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
+gem 'active_admin_editor'
 gem 'bootstrap-wysihtml5-rails'
 gem 'pdf-reader'
+gem "acts-as-taggable-on", :git => 'https://github.com/mbleigh/acts-as-taggable-on.git'
+gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_commentable.git'
+gem 'twitter'
 #gem 'hydra-collections'
 
 gem 'sufia-models'
+gem 'capistrano'
 gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
 
 # for parallel processing

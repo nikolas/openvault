@@ -1,40 +1,56 @@
 <% title "OpenVault - Search Results" %>
 <% sidebar_items << render(:partial => 'facets') %>
 
-<div id="" class="">
+<div id="search_content">
 
-    <% unless has_search_parameters? %>
+    <%# unless has_search_parameters? %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
-	    <%= render 'home' %>
-    <% else %>
+	    <%#= render 'home' %>
+    <%# else %>
 
     <% extra_head_content << render_opensearch_response_metadata %>
 
     <%= render :partial => 'did_you_mean' %>
 
-    <%#= render 'constraints', :localized_params=>params %>
+    <%= render 'constraints', :localized_params=>params %>
 
-    <div class="search-results-header">
-
-      <div class="pageEntriesInfo">
-        <%= render_pagination_info @response, :entry_name=>'item' %>
-        <%=link_to "Start&nbsp;over&thinsp;".html_safe, catalog_index_path, :id=>"startOverLink" %>
+    <div class="search-results-header row-fluid">
+      <div class="span3">
+        <%= render 'sort_and_per_page' %>
       </div>
-      <%= render :partial => 'search_form_media_only' %>
-
-      <%= render 'sort_and_per_page' %>
-
-      <%= render 'results_pagination' %>
+      <div class="span2">
+        <%= render :partial => 'search_form_media_only' %>
+      </div>
+      <div class="span3">
+        <div class="pageEntriesInfo">
+          <p><%= render_pagination_info @response, :entry_name=>'item' %></p>
+          <%#=link_to "Start&nbsp;over&thinsp;".html_safe, catalog_index_path, :id=>"startOverLink" %>
+        </div>
+      </div>
+      <div class="span4">
+        <%= render 'results_pagination' %>
+      </div>
     </div>
     
 
-
-    <%= render_document_list_partial %>
-
-    <%= render 'results_pagination' %>
+    <div class="row-fluid">
+      <%= render_document_list_partial %>
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span4">
+        &nbsp;
+      </div>
+      <div class="span4">
+        <%= render 'results_pagination' %>
+      </div>
+      <div class="span4">
+        &nbsp;
+      </div>
+    </div>
       
 
 
-    <% end %>
+    <%# end %>
 
 </div>

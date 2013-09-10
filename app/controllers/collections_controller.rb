@@ -1,5 +1,7 @@
 class CollectionsController < ApplicationController
-  
+  include Blacklight::Catalog
+  include Hydra::Controller::ControllerBehavior
+  include Blacklight::Solr::Document::MoreLikeThis
   skip_authorization_check
   
   before_filter :get_collection, :only => [:show]
@@ -10,7 +12,7 @@ class CollectionsController < ApplicationController
 
   def show
     # @collection is build with the before_filter
-    #this will be needed for the sidebar
+    # this will be needed for the sidebar
     @in_collection = []
   end
   

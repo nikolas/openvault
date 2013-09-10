@@ -1,9 +1,12 @@
 <% # container for all documents in index view -%>
 <div id="documents">
-  <%#= render documents, :as => :document %>
+  <%#= 
+  @document_list.inspect
+  %>
+  <%= render documents ||= @document_list, :as => :document %>
   
   <!-- stand in info till search is hooked up -->
-  <div class="document ">
+  <!-- <div class="document ">
   
     <div class="documentHeader">
       <h3 class="index_title"><a href="/catalog/sbro-sbro01401-15-annual-gala-celebration">15 Annual Gala&nbsp;Celebration</a></h3>
@@ -49,5 +52,5 @@
     </div>
   
     <abbr class="unapi-id" title="sbro-sbro01401-15-annual-gala-celebration"></abbr>
-  </div>
+  </div> -->
 </div>

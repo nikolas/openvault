@@ -11,43 +11,65 @@ module BlacklightHelper
 #     super + extra
 #   end
 # 
-#   def render_search_context_options
-#     case 
-#       when params[:f]
-#       render :partial => 'catalog/search_context' 
+  def render_search_context_options
+    case 
+      when params[:f]
+      render :partial => 'catalog/search_context' 
+
+      when (@document and @document.get(:objModels_s).include? "info:fedora/wgbh:COLLECTION")
+        render :partial => 'catalog/search_context_collection' 
+    end
+
+  end
 # 
-#       when (@document and @document.get(:objModels_s).include? "info:fedora/wgbh:COLLECTION")
-#         render :partial => 'catalog/search_context_collection' 
-#     end
-# 
-#   end
-# 
-#   def render_document_partial(doc, action_name)
-#     format = self.send "document_#{action_name}_partial_name", doc if self.respond_to? "document_#{action_name}_partial_name"
-#     format ||= document_partial_name(doc)
-#     begin
-#       enforce_rights(doc, action_name) 
-#       render :partial=>"catalog/_#{action_name}_partials/#{format}", :locals=>{:document=>doc}
-#     rescue Openvault::PermissionDenied
+  def render_document_partial(doc, action_name)
+    format = self.send "document_#{action_name}_partial_name", doc if self.respond_to? "document_#{action_name}_partial_name"
+    format ||= document_partial_name(doc)
+    begin
+      #enforce_rights(doc, action_name) 
+      render :partial=>"catalog/_#{action_name}_partials/#{format}", :locals=>{:document=>doc}
+    # rescue Openvault::PermissionDenied
 #       render :partial=>"catalog/_#{action_name}_partials/permission_denied", :locals=>{:document=>doc}
-#     rescue ActionView::MissingTemplate
-#       render :partial=>"catalog/_#{action_name}_partials/default", :locals=>{:document=>doc}
-#     end
-#   end
+    rescue ActionView::MissingTemplate
+      render :partial=>"catalog/_#{action_name}_partials/default", :locals=>{:document=>doc}
+    end
+  end
+
+
+  # def document_heading
+  #   super.to_s.html_safe
+  # end
 # 
-#   def document_heading
-#     super.to_s.html_safe
-#   end
+  def render_document_heading(document=@document, options={})
+    render :partial => 'document_heading', :locals => { :document => document, :heading => document_heading }
+  end
 # 
-#   def render_document_heading(document=@document, options={})
-#     render :partial => 'document_heading', :locals => { :document => document, :heading => document_heading }
-#   end
-# 
-#   def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
-#     label = render_document_index_label(doc, opts)
-#     return link_to(widont(label).html_safe, collection_path(doc[:id])) if doc[:format] == "collection"
-#     link_to(widont(label).html_safe, catalog_path(doc[:id]))
-#   end
+  def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
+    label = display_title(doc)
+    return link_to(label.html_safe, collection_path(doc[:slug])) if doc[:format] == "collection"
+    link_to(label.html_safe, catalog_path(doc[:slug]))
+  end
+  
+  def display_title(doc=@document)
+    if doc[:title_clip_ssm].nil?
+      title = ("#{doc[:series_ssm].try(:first)} - #{doc[:title_ssm].try(:first)} - Episode ##{doc[:episode_ssm].try(:first)}")
+      #title = "TeSTING"
+    else
+      title = doc[:title_clip_ssm].first
+    end
+    title
+  end
+  
+  def display_summary(doc=@document)
+    if doc[:desc_clip_ssm].nil?
+      summary = doc[:summary_ssm].try(:first)
+    elsif !doc[:desc_clip_ssm].nil?
+      summary = doc[:desc_clip_ssm].try(:first)
+    else
+      summary = ''
+    end
+    summary
+  end
 # 
 #   def facet_field_names
 #     names = super

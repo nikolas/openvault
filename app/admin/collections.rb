@@ -79,9 +79,9 @@ ActiveAdmin.register Collection do
       f.input :image
     end
     f.inputs "Content" do
-      f.input :summary
-      f.input :mid_content, input_html: {:class => 'wysihtml5'}
-      f.input :lower_content, input_html: {:class => 'wysihtml5'}
+      f.input :summary, as: :html_editor
+      f.input :mid_content, as: :html_editor
+      f.input :lower_content, as: :html_editor
     end
     f.actions
   end

@@ -1,7 +1,7 @@
 <div class="mlt">
 <div  class="thumbnail">
-  <%= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe) %>
+  <%= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe unless document.thumbnail.nil?) %>
 </div>
-<%= link_to_document document %>
-<%= truncate(render_document_show_field_value(:document => document, :field => 'dc_description_t'), :length => 300, :separator => '. ').html_safe %>
+<%= link_to display_title(document), "/catalog/#{document['slug']}" %>
+<%= truncate(render_document_show_field_value(:document => document, :field => 'summary_ssm'), :length => 300, :separator => '. ').html_safe %>
 </div>

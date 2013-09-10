@@ -50,4 +50,5 @@
 //= require pdf_viewer
 // Required by Blacklight
 //= require blacklight/blacklight
+//= require search
 //= require_tree .

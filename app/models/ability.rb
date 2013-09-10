@@ -25,7 +25,8 @@ class Ability
   
   def custom_permissions
     if @current_user
-      
+      can :create, Comment 
+      can :manage, Comment, :user_id => @current_user.id
       can :manage, Collection
       
       can [:show, :index], CustomCollection
@@ -40,7 +41,7 @@ class Ability
       
     else
       can :manage, Collection
-  
+      can :read, Comment, :public => true
       can [:show, :index], CustomCollection
     end
     

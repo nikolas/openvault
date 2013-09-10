@@ -1,6 +1,8 @@
 <% if paginate_params(@response).num_pages > 1 %>
-    <div class="pager"> 
-      <%= paginate_rsolr_response @response, :outer_window => 2, :theme => 'blacklight', :route_set=> sufia %>
-      <div class="clearfix"></div>
+    <div class="pager hidden-tablet hidden-phone"> 
+      <%= paginate_rsolr_response @response, :left => 4, :window => 3, :right => 2 %>
     </div><!-- /pager -->
+    <div class="pageer-sm hidden-desktop">
+      <%= paginate_rsolr_response @response, :left => 1, :window => 2, :right => 1 %>
+    </div>
 <% end %>

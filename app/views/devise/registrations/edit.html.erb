@@ -1,72 +1,56 @@
 <% title "OpenVault - Edit Profile" %>
 <div id="signup_form_container">
-  <h2>Edit your profile</h2>
-	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal', :method => :put}) do |f| %>
-	  <%#= devise_error_messages! %>
-
-		<%= f.input :email, :autofocus => true, :placeholder => 'Email', required: true %>
-    
-    <a href="#" class="change_password_edit_link">Change Password</a>
-    <div id="password_change_container">
-    	<div class="control-group password optional user_password">
-        <label class="password optional control-label" for="user_password">Password</label>
-        <div class="controls">
-          <input class="password optional" id="user_password" name="user[password]" placeholder="Password" size="50" type="password">
-        </div>
-      </div>
   
-    	<div class="control-group password_confirmation optional user_password">
-        <label class="password_confirmation optional control-label" for="user_password_confirmation">Password confirmation</label>
-        <div class="controls">
-          <input class="password_confirmation optional" id="user_password_confirmation" name="user[password_confirmation]" placeholder="Password confirmation" size="50" type="password">
-        </div>
-      </div>
+  <div class="row-fluid">
+    <div class="span1">
+      &nbsp;
     </div>
-    
-    <%= f.input :current_password, :placeholder => 'needed to confirm changes' %>
-		
-		<%= f.input :first_name, :placeholder => 'First name' %>
-		
-		<%= f.input :last_name, :placeholder => 'Last name' %>
-    
-    <%= f.input :avatar %>
-        
-    <%= f.input :organization, :placeholder => 'Organization' %>
-    
-    <%= f.input :title, :placeholder => 'Title' %>
-    
-    <%= f.input :bio, :placeholder => 'Biography (500 character limit)', :input_html => { class: 'wysihtml5' } %>
-		
-		<%= f.input :postal_code, :placeholder => 'Postal code' %>
+    <div class="grainbox span10">
+      <h2>Edit your Open Vault profile</h2>
+      <div class="sep-line"></div>
+    	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => '', :method => :put}) do |f| %>
+    	  <%= devise_error_messages! %>
+        <div class="row-fluid">
+          <div class="span6 right">
+        		<%= f.input :first_name, :placeholder => 'First name' %>
+        		<%= f.input :last_name, :placeholder => 'Last name' %>
+            <%= f.input :email, :autofocus => true, :placeholder => 'Email', required: true %>
+            <%= f.input :avatar %>
+            <div class="control-group">
+              <label class="control-label">Profile Image</label>
+              <div class="controls">
+                <button class="choose_avatar_btn btn">Choose a file</button>
+              </div>
+            </div>
+            <div class="password_div" style="display:none;">
+          		<%= f.input :password, :placeholder => 'Password (at least 8 characters)', required: true %>
+          		<%= f.input :password_confirmation, :placeholder => 'Password confirmation', required: true %>
+            </div>
+            <%= f.input :current_password, :placeholder => 'needed to confirm changes' %>
+          </div>
+          <div class="span6 left">
+            <%= f.input :role, as: :hidden, :input_html => { :value => 'member'} %>        
+            <%= f.input :organization, :placeholder => 'Organization' %>
+            <%= f.input :title, :placeholder => 'Title' %>
+            
+         		<div class="control-group">
+         			<%= f.label :country, :class => 'control-label' %>
+         	    <div class="controls">
+         				<%= country_select("user", "country", ["United States"]) %>
+         	    </div>
+         	  </div>
 
-		<div class="control-group">
-			<%= f.label :country, :class => 'control-label' %>
-	    <div class="controls">
-				<%= country_select("user", "country", ["United States"]) %>
-	    </div>
-	  </div>
-	
-		
-		<div class="control-group no-margin">
-	    <div class="controls">
-				<label for="user_tmla_updates" class="checkbox">
-					<input id="user_mla_updates" name="user[mla_updates]" type="checkbox" checked> Notify me of Open Vault updates and Media Library news
-		    </label>
-			</div>
-		</div>
-		
-		<div class="control-group">
-	    <div class="controls">
-	      <%= f.submit "Update profile", :class => 'btn btn-primary' %>
-	    </div>
-	  </div>
-		
-	<% end %>
-	
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy with your OpenVault Account?</p>
-  <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-inverse' %>
-
-  <%= link_to "Back", :back %>
+          </div>
+        </div>
+        <%= f.input :bio, :placeholder => 'Biography (500 character limit)' %>
+        <div class="clearfix"></div>
+        <div class="sep-line"></div>
+        <%= f.submit "Create Profile", :class => 'btn' %>
+		    <div class="clearfix"></div>
+    	<% end %>
+    </div>
+    <div class="span1">
+      &nbsp;
+    </div>
+  </div>
 </div>

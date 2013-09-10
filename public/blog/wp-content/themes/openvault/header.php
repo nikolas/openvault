@@ -46,8 +46,11 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+<link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -68,82 +71,103 @@
 <script type="text/javascript">
 jQuery(function() {
   jQuery('#browse input').hide();
-   jQuery('#browse select').bind('change', function() {
-     jQuery(this).closest('form').submit();
-   });
+  jQuery('#browse select').bind('change', function() {
+   jQuery(this).closest('form').submit();
+  });
+  // jQuery(".categories select").bind("change", function() {
+//    jQuery(this).closest("form").submit();
+//   });
+//   jQuery(".collections select").bind("change", function() {
+//    jQuery(this).closest("form").submit();
+//   });
 
-  jQuery('.user_util_links').load('/user_util_links');
+  // jQuery('.user_util_links').load('/user_util_links');
 });
 </script>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed">
-	<header id="branding" role="banner">
-			<hgroup>
-				<h1 id="site-title"><span><a href="/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</hgroup>
-
-			<?php
-				// Check to see if the header image has been removed
-				$header_image = get_header_image();
-				if ( ! empty( $header_image ) ) :
-			?>
-			<a href="<?php echo home_url( '/' ); ?>">
-				<?php
-					// The header image
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-					if ( is_singular() &&
-							has_post_thumbnail( $post->ID ) &&
-							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-					else : ?>
-					<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-				<?php endif; // end check for featured image or standard header ?>
-			</a>
-			<?php endif; // end check for removed header image ?>
-
-			<?php
-				// Has the text been hidden?
-				if ( 'blank' == get_header_textcolor() ) :
-			?>
-				<div class="only-search<?php if ( ! empty( $header_image ) ) : ?> with-image<?php endif; ?>">
-				<?php get_search_form(); ?>
-				</div>
-			<?php
-				else :
-			?>
-				<?php get_search_form(); ?>
-			<?php endif; ?>
-
-			<div class="user_util_links"></div>
-
-			<nav id="access" role="navigation">
-				<h1 class="section-heading"><?php _e( 'Main menu', 'twentyeleven' ); ?></h1>
-				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyeleven' ); ?>"><?php _e( 'Skip to content', 'twentyeleven' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #access -->
-<div id="search-bar">
-<div id="search" class="search">
-  <form accept-charset="UTF-8" action="/catalog" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-    <h2 class="search"><label for="q">Search Archive</label></h2>
-    <div class="q_field">
-      <input class="q" id="q" name="q" placeholder="Search Archive" type="text">
-    
-    <input id="search_field" name="search_field" type="hidden" value="all_fields">
-            
-    
-    <input alt="search" class="submit" src="/images/magnifying-glass.gif?1304697733" type="image">
+<div id="main-container" class="hfeed container">
+  <div id="header" class="row">
+            <div class="span12">
+              <!-- Openvault Logo and login -->
+  <div class="row" id="header_top">
+    <div class="span6">
+  	<a href="/">
+      	<div id="ov-logo-home">
+  				OpenVault
+  		</div>
+  	</a>
+    </div>
+    <div class="span6 pull-right action_links">
+      &nbsp;
+    </div>
   </div>
-  
-</form>
-  <hr>
-</div>
+  <!-- Logo and login -->
+  <!-- MLA Logo and search bar -->
+  <div class="row">
+    <div class="span3">
+      <div id="mla-logo">Media Library and Archives</div>
+    </div>
+      <div class="span9">
+        <div id="search-bar">
+    <form accept-charset="UTF-8" action="/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+      <input name="slug" type="hidden" value="test-collection-1"> 
+
+        <div class="pull-left">
+          <label for="search_field" class="hide-text">Search in</label>
+          <span class="hide-text">for</span>
+        </div>
+         <div class="input-append pull-left">
+          <label for="q" class="hide-text">Searh Archive</label>
+           <input class="search_q q" id="q" name="q" placeholder="Searh Archive" type="text">
+          <button type="submit" class="search-btn" id="search">
+            <i class="icon-search"></i>
+          </button>
+         </div>
+  </form>	<div id="browse">
+  		<label>Browse: </label>
+      <!-- Need to add dynamic categories and collections -->
+      <form accept-charset="UTF-8" action="/catalog" class="categories" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" style="display: none;"></div>
+        <select id="f_merlot_s" name="f[merlot_s][]"><option value="">Categories</option>
+  <optgroup label="Categories"><option value="category-1">Category 1</option></optgroup></select>
+        <input name="commit" type="submit" value="Browse Category" style="display: none;">
+  </form>    
+      <form accept-charset="UTF-8" action="/catalog" class="collections" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" style="display: none;"></div>
+        <select id="id_" name="id[]"><option value="">Collections and Series</option>
+  <optgroup label="Collections and Series"><option value="collection-1">Collection 1</option>
+  <option value="collection-2">Collection 2</option></optgroup><optgroup label="Series"><option value="series-1">Series 1</option>
+  <option value="series-2">Series 2</option></optgroup></select>
+        <input name="commit" type="submit" value="Browse collection" style="display: none;">
+  </form>	</div>
+
+  </div>
+
+      </div>
+  </div>
+            </div>
+  				</div>
+  <!-- <header id="branding" role="banner">
+      <hgroup>
+        <h1 id="site-title"><span><a href="/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+        <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+      </hgroup>
+<div id="search-bar">
+  <form accept-charset="UTF-8" action="/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+      <input name="slug" type="hidden" value="test-collection-1"> 
+
+        <div class="pull-left">
+          <label for="search_field" class="hide-text">Search in</label>
+          <span class="hide-text">for</span>
+        </div>
+         <div class="input-append pull-left">
+          <label for="q" class="hide-text">Searh Archive</label>
+           <input class="search_q q" id="q" name="q" placeholder="Searh Archive" type="text">
+          <button type="submit" class="search-btn" id="search">
+            <i class="icon-search"></i>
+          </button>
+         </div>
+  </form>
 
 <div id="browse">
   <h2 class="search">Browse Archive</h2>
@@ -156,7 +180,7 @@ jQuery(function() {
 <option value="Massachusetts">Massachusetts</option>
 <option value="Science &amp; Technology">Science &amp; Technology</option>
 <option value="Social Sciences">Social Sciences</option></optgroup></select>
-      <input name="commit" type="submit" value="Browse Category" >
+      <input name="commit" type="submit" value="Browse Category" style="display:none;" >
 </form>
     <form accept-charset="UTF-8" action="/catalog" class="collections" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" style="display: none; "></div>
       <select id="id_" name="id[]"><option value="">Collections and Series</option>
@@ -184,10 +208,9 @@ jQuery(function() {
 <option value="ntw-sond-soundings">Soundings</option>
 <option value="ntw-twca-twentieth-century-artists">Twentieth Century Artists</option>
 <option value="ntw-visi-visions">Visions</option></optgroup></select>
-      <input name="commit" type="submit" value="Browse collection">
+      <input name="commit" type="submit" value="Browse collection" style="display:none;">
 </form></div>
 </div>
-	</header><!-- #branding -->
-
-
-	<div id="main">
+  </header>
+    -->
+	<div id="main" class="row">

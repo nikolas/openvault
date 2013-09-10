@@ -2,5 +2,67 @@ en:
   blacklight:
     application_name: 'Open Vault'
     search:
+      title: '%{application_name} Search Results'
+      search_results_header: 'Search'
+      search_results: 'Search Results'
+      errors:
+        request_error: "Sorry, I don't understand your search."
+        invalid_solr_id: "Sorry, you have requested a record that doesn't exist."
+      per_page:
+        label: '%{count}<span class="hide-text"> per page</span>'
+        button_label: '%{count} per page'
+        title: 'Number of results to display per page'
+        submit: 'Update'
+      sort:
+        label: 'Sort by %{field}'
+        submit: 'sort results'
       form:
-        q: 'Searh Archive'
+        search_field:
+          label: 'Search in'
+          title: 'Targeted search options'
+          post_label: 'for'
+        q: 'Search...'
+        submit: 'Search'
+      pagination:
+        title: 'Results navigation'
+      pagination_info:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<strong>1</strong> to <strong>1</strong> of <strong>1</strong>'
+        pages:
+          one: 'Showing <strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+          other: 'Showing <strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+      entry_pagination_info:
+        one: '<strong>1 of 1</strong>'
+        other: '<strong>%{current}</strong> of <strong>%{total}</strong>'
+      documents:
+        counter: '%{counter}. '
+      facets:
+        title: 'Limit your search'
+        sort:
+          count: 'Numerical Sort'
+          index: 'A-Z Sort'
+        count: '%{number}'
+        more: 'more »'
+        selected:
+          remove: '[remove]'
+      filters:
+        title: 'You searched for:'
+        label: '%{label}:'
+        remove:
+          value: 'Remove constraint %{value}'
+          label_value: 'Remove constraint %{label}: %{value}'
+      librarian_view:
+        title: 'Librarian View'
+        leader: 'LEADER %{leader}'
+      start_over: 'Start Over'
+      show:
+        title: '%{document_title} - %{application_name}'
+      rss_feed: 'RSS for results'
+      atom_feed: 'Atom for results'
+      fields:
+        default: 'Keyword'
+
+    entry_name:
+      default: 'entry'
+
+    did_you_mean: 'Did you mean to type: %{options}?'
