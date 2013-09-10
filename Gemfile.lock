@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/afred/hydra-pbcore.git
+  remote: https://github.com/afred/hydra-pbcore.git
   revision: 0ef14795a38efa3116b87b15569080b55c3329e5
   branch: master
   specs:
@@ -489,9 +489,9 @@ DEPENDENCIES
   jquery-rails (= 2.3.0)
   launchy
   mini_magick
-  mysql2
+  mysql2 (~> 0.3.11)
   pdf-reader
-  rails (~> 3.2.12)
+  rails (~> 3.2.14)
   rb-fsevent (~> 0.9)
   rspec-rails
   sass-rails (~> 3.2.3)

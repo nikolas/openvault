@@ -1,3 +1,9 @@
+# This test has been isolated from other tests in spec/lib/openvault/ingester/mars_spec.rb
+# because Openvault::Ingester::MARS.ingest! uses concurrent threads to write/delete tmp files,
+# and the test to see if there are no tmp files fails, because they are there from other concurrent
+# calls to Openvault::Ingester::MARS.ingest!.
+# TODO: figure out a more elegant way to get this test to pass within spec/lib/openvault/ingester/mars_spec.rb.
+
 require 'spec_helper'
 require 'openvault'
 require 'openvault/mars'

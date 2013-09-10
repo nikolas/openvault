@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~>3.2.12'
+gem 'rails', '~>3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', "~>0.3.11"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -79,7 +79,7 @@ gem 'pdf-reader'
 #gem 'hydra-collections'
 
 gem 'sufia-models'
-gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'master'
+gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
 
 # for parallel processing
 gem 'celluloid'

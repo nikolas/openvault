@@ -115,13 +115,6 @@ describe Openvault::Ingester::MARS do
       end
     end
 
-  
-    # # NOTE: This test doesn't work b/c of threading. It counts tmp files created by other threads.
-    # it 'deletes temporary mars record files after ingest by default' do
-    #   Openvault::Ingester::MARS.ingest!(:assets, :files => Fixtures.file_path('asset_1.xml'), :depositor => depositor)
-    #   Openvault::Ingester::MARS.tmp_filenames.count.should == 0
-    # end
-
     it 'saves MARS xml from temp file created during ingest to datastream on OpenvaultAsset#source_xml' do
       # First, delete the temp mars record files so the tmp dir is empty.
       Openvault::Ingester::MARS.delete_tmp_files('*')
