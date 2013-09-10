@@ -11,6 +11,7 @@ module Openvault
       }
 
       def to_pbcore(mars_table, input_filename)
+        raise "Input file \"#{input_filename}\" for Openvault::MARS.to_pbcore does not exist" unless File.exists? input_filename
         cmd = self.build_xsltproc_command(self.stylesheet_for(mars_table), input_filename)
         %x(#{cmd})
       end
@@ -28,7 +29,7 @@ module Openvault
       end
 
       def mars_table(mars_table)
-        raise "Invalid MARS table. Available types are #{MARS_TABLES.join(',')}." unless MARS_TABLES.include? mars_table.to_sym
+        raise "Invalid MARS table. Available types are :#{MARS_TABLES.join(', :')}." unless MARS_TABLES.include? mars_table.to_sym
         mars_table.to_sym
       end
 

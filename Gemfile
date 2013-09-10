@@ -80,3 +80,6 @@ gem 'pdf-reader'
 
 gem 'sufia-models'
 gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'master'
+
+# for parallel processing
+gem 'celluloid'
