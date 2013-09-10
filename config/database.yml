@@ -1,11 +1,11 @@
 development:
   adapter: mysql2
-  database: ov_dev_new_design
+  database: ov_dev
   username: ov_dev
   password: ov_dev
 
 test:
   adapter: mysql2
-  database: ov_test_new_design
+  database: ov_test
   username: ov_test
   password: ov_test
