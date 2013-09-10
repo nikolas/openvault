@@ -78,4 +78,4 @@ gem 'pdf-reader'
 #gem 'hydra-collections'
 
 gem 'sufia-models'
-gem 'hydra-pbcore', :git => 'git://github.com/afred/hydra-pbcore.git', :branch => 'master'
+gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
