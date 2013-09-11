@@ -1,5 +1,6 @@
 language: ruby
 bundler_args: --without development
+script: 'bundel exex rake db:migrate'
 script: "bundle exec rspec"
 rvm:
   - 1.9.3
