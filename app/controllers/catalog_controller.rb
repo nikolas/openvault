@@ -45,7 +45,7 @@ class CatalogController < ApplicationController
   configure_blacklight do |config|
     config.default_solr_params = { 
       :qt => 'search',
-      :rows => 2,
+      :rows => 10,
       :defType => 'edismax',
       :qf => 'text'
     }
@@ -334,22 +334,23 @@ class CatalogController < ApplicationController
   end
   
   def get_related_content(slug=nil)
-    q = "slug:#{slug}"
-    solr_params = { 
-      :q => q,
-      :'mlt.count' => 3,
-      :mlt => true,
-      :'mlt.fl' => "title_tesim, summary_tesim",
-    }
-    #response = find('mlt', self.solr_search_params().merge(solr_params))
-    response = Blacklight.solr.select :params => solr_params
-    id = response['response']['docs'][0]['id']
-    document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
-    document_list
+    # q = "#{slug}"
+#     solr_params = { 
+#       :q => q,
+#       :'mlt.count' => 3,
+#       :mlt => true,
+#       :'mlt.fl' => "title_tesim, summary_tesim",
+#     }
+#     #response = find('mlt', self.solr_search_params().merge(solr_params))
+#     response = Blacklight.solr.select :params => solr_params
+#     id = response['response']['docs'][0]['id'] unless response['response']['docs'].nil?
+#     document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
+#     document_list
+[]
   end
   
   def get_solr_document_by_slug(slug=nil)
-    q = "slug:#{slug}"
+    q = "#{slug}"
     solr_params = {
       :defType => "edismax",   # need boolean for OR
       :q => q,
@@ -360,8 +361,8 @@ class CatalogController < ApplicationController
       :'mlt.fl' => "title_ssm, summary_ssm",
       :'mlt.count' => 3
     }
-
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
+    puts solr_response
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     [solr_response, document_list.first]
   end

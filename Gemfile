@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~>3.2.14'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2', "~>0.3.11"
 
 # Gems used only for assets and not required
@@ -14,9 +11,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass'
   gem 'compass-rails'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -55,9 +49,6 @@ gem 'jettywrapper'
 
 gem 'hydra', '6.0.0', :require => 'hydra6'
 gem 'jettywrapper'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

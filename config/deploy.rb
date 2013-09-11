@@ -14,7 +14,7 @@ set :deploy_via, :remote_cache
 set :keep_releases, 3
 
 
-set :branch, fetch(:branch, "new-design")
+set :branch, fetch(:branch, "development")
 
 # set :bundle_dir, ''
 # set :bundle_flags, '--system --quiet'
