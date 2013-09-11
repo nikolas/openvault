@@ -603,6 +603,60 @@ input, select, textarea {
       }
     }
   }
+  
+  //Catalog item page
+  #show_page {
+    #sidebar {
+      margin-top: 65px;
+      h4 {
+        text-align:center;
+      }
+      .mlt {
+        img {
+          width: 100%;
+          height: 130px;
+        }
+        a {
+          color: $orange;
+          text-decoration:none;
+        }
+      }
+    }
+    #content {
+      .document_header {
+        
+      }
+      .document_content {
+        border-right: 1px solid #ddd;
+        padding-right: 10px;
+        .metadata {
+          margin-bottom: 20px;
+          .basic {
+            
+          }
+          .more_meta {
+            color: $orange;
+            font-size: 1.3em;
+            text-align:center;
+            display:block;
+            width: 100%;
+            text-decoration: none;
+          }
+          .advanced {
+            display:none;
+          }
+          .visible {
+            display:block;
+          }
+        }
+        #comments {
+          .fb-comments, .fb-comments iframe[style], .fb_iframe_widget > span[style] {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 //Footer section
