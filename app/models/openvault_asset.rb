@@ -16,35 +16,15 @@ class OpenvaultAsset < ActiveFedora::Base
   
   include Sufia::GenericFile
   
-  def to_solr(solr_document={}, options={})
-    super(solr_document, options)
-    #solr_document["the_title"] = "testing"
-    return solr_document
-  end
-  
   def accept_annotations
     #logic will go here to accept annotations from scholars
   end
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    solr_document["slug"] = self.slugify_doc
+    solr_document["slug"] = self.noid
     #Solrizer.insert_field(solr_document, "collection_ancestry", "Collection 2", :facetable, :searchable, :displayable)
     return solr_document
   end
   
-  protected
-  
-  def slugify_doc
-    pbcore = self.pbcore
-    slug = ''
-    
-    if pbcore.title.first.nil?
-      slug = ("#{pbcore.series.first} #{pbcore.program.first} #{pbcore.episode.first}").parameterize
-    else
-      slug = pbcore.title.first.parameterize
-    end
-    slug_check = OpenvaultAsset.find(:slug => slug)
-    (slug_check.empty?) ? slug : "#{slug}-#{self.noid}"
-  end
 end
