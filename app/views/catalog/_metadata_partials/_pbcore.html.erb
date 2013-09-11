@@ -70,9 +70,9 @@ pbcore = OpenvaultAsset.find(@document.id).pbcore
       <div>
         <div>
           <div class="pbcore-description-block pbcore-description-summary">
-            <% unless pbcore.summary.first.nil? %>
-            <strong>Summary</strong> <%= pbcore.summary.first.html_safe %>
-            <% end %>
+            <%# unless pbcore.summary.first.nil? %>
+            <strong>Summary</strong> <%#= pbcore.summary.first.html_safe %>
+            <%# end %>
           </div>
           <div class="pbcore-description-block pbcore-description-series">
             <strong>Series</strong> <%= render_document_show_field_value(@document, :field => 'desc_series_ssm') %>
