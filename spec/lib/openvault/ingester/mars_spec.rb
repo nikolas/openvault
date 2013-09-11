@@ -15,9 +15,15 @@ describe Openvault::Ingester::MARS do
     end
   end
 
-  describe '.parallel' do
-    it 'raises an error if you try to set `parallel` to something that cannot be converted to an integer with to_i' do
-      expect{Openvault::Ingester::MARS.parallel = "foo"}
+  describe '.ingest_threads' do
+    it 'raises an error when passed a value with no #to_i method' do
+      expect{Openvault::Ingester::MARS.ingest_threads = "foo"}.to raise_error TypeError
+    end
+  end
+
+  describe '.ingest_return' do
+    it 'raises a TypeError error when passed an invalid value' do
+      expect{Openvault::Ingester::MARS.ingest_return = "foo"}.to raise_error TypeError
     end
   end
 
