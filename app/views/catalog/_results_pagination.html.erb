@@ -2,7 +2,7 @@
     <div class="pager hidden-tablet hidden-phone"> 
       <%= paginate_rsolr_response @response, :left => 4, :window => 3, :right => 2 %>
     </div><!-- /pager -->
-    <div class="pageer-sm hidden-desktop">
+    <div class="pager hidden-desktop">
       <%= paginate_rsolr_response @response, :left => 1, :window => 2, :right => 1 %>
     </div>
 <% end %>

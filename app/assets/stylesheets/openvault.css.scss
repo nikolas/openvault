@@ -861,6 +861,7 @@ input, select, textarea {
   }
   #main-container {
     padding: 0px 5px;
+    margin-top: 43px;
     #body {
       #exhibits {
         #exhibit-slider {
@@ -889,6 +890,38 @@ input, select, textarea {
       }
       #signup_form_container form#new_user .user_bio textarea {
         width: 55%;
+      }
+      #search_page {
+        #sidebar {
+          display:none;
+          position: fixed;
+          background: #fff;
+          z-index: 9999;
+          box-shadow: 0 5px 5px rgba(0,0,0,.7);
+          width: 100%;
+          top: 43px;
+          left: 0;
+          #facets {
+            margin-top: 0px;
+            .cancel-show {
+              position: absolute;
+              bottom: 0px;
+              right: 0px;
+            }
+          }
+        }
+        #content {
+          .search-results-header {
+            .pageEntriesInfo {
+              position: relative;
+              .mobile-filters {
+                position: absolute;
+                right:0;
+                top:0;
+              }
+            }
+          }
+        }
       }
     }
   }

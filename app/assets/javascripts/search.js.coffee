@@ -32,3 +32,11 @@ $ ->
     e.preventDefault()
     console.log $(this).val()
     window.location = '/collection/'+$(this).val()
+    
+  $('body').on "click", '.mobile-filters', (e) ->
+    e.preventDefault()
+    $('#sidebar').show()
+  
+  $('body').on "click", '.cancel-show', (e) ->
+    e.preventDefault()
+    $('#sidebar').hide()
