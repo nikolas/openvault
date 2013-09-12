@@ -22,12 +22,12 @@ module Openvault
       end
 
       def self.ingest_threads=(threads)
-        raise 'Invalid value for ingest_threads=, valid value must have #to_i method' unless threads.respond_to? :to_i
+        raise TypeError, 'Value for .ingest_threads= needs to be an integer >= 1' unless (threads.respond_to?(:to_i) && threads.to_i >= 1)
         @@ingest_threads = threads.to_i
       end
 
       def self.ingest_return=(return_opt)
-        raise "Invalid value for ingest_return=, valid values are :#{INGEST_RETURN_OPTIONS.join(', :')}" unless INGEST_RETURN_OPTIONS.include? return_opt
+        raise TypeError, "Invalid value for ingest_return=, valid values are :#{INGEST_RETURN_OPTIONS.join(', :')}" unless INGEST_RETURN_OPTIONS.include? return_opt
         @@ingest_return = return_opt
       end
 
