@@ -2,25 +2,25 @@
 #source_credits = '' 
 pbcore = OpenvaultAsset.find(@document.id).pbcore
 %>
-<div class="pbcore-metadata">
+<h4>Metadata</h4>
+<div class="basic">
   <div class="source">
     <%# unless  pbcore.titles.reject { |type, value| value == document.get(:title_display) }.empty? and pbcore.publishers.reject{|type, value| value == 'WGBH Educational Foundation' }.empty? %>
-    <h3 class="toggler">Source</h3>
     <div>
       <% unless pbcore.episode.empty? %>
-      <div><strong>Episode</strong> <%= pbcore.episode.first %></div>
+      <p><strong>Episode</strong> <%= pbcore.episode.first %></p>
       <% end %>
       <% unless pbcore.title.empty? %>
-      <div><strong>Program</strong> <%= pbcore.title.first %></div>
+      <p><strong>Program</strong> <%= pbcore.title.first %></p>
       <% end %>
       <% unless pbcore.series.empty? %>
-      <div><strong>Series</strong> <%= pbcore.series.first %></div>
+      <p><strong>Series</strong> <%= pbcore.series.first %></p>
       <% end %>
       <% pbcore.publisher.reject.each_with_index do |pub, idx| %>
         <% unless pbcore.publisher_name[idx] == 'WGBH Educational Foundation' %>
-          <div><strong><%= pbcore.publisher_role[idx] %></strong>
+          <p><strong><%= pbcore.publisher_role[idx] %></strong>
             <%= pbcore.publisher_name[idx] %>
-          </div>
+          </p>
         <% end %>
       <% end %>
       <div class="source-credits">
@@ -32,12 +32,13 @@ pbcore = OpenvaultAsset.find(@document.id).pbcore
     </div>
     <%# end %>
   </div>
-
+</div>
+<a href="#" class="more_meta">More metadata</a>
+<div class="advanced">
   <% unless pbcore.rights_summary.empty? or pbcore.rights_summary.first =~ /WGBH Educational Foundation/ %>
     <h3 class="toggler">Rights</h3>
     <%= pbcore.rights_summary.first %>
   <% end %>
-
 
   <% instantiations = nil %>
   <% unless instantiations.blank? %>
@@ -86,21 +87,18 @@ pbcore = OpenvaultAsset.find(@document.id).pbcore
   </div>
 
   <% coverage = pbcore.pbcoreCoverage %>
-  <hr />
-  
+
   <% unless coverage.blank? %>
     <div class="date">   
-      <div>
-        <strong>Date Covered</strong>
-        <ul>
-          <% coverage.uniq.each do |s| %>
-            <%= content_tag(:li, link_to(s, catalog_index_path({:q => s }))) %>
-          <% end %>
-        </ul>
-      </div>
+      <strong>Date Covered</strong>
+      <ul>
+        <% coverage.uniq.each do |s| %>
+          <%= content_tag(:li, link_to(s, catalog_index_path({:q => s }))) %>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-  
+
   <% place = nil %>
   <% unless place.blank? %>
     <div class="place">   

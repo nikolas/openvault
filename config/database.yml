@@ -9,3 +9,4 @@ test:
   database: ov_test
   username: ov_test
   password: ov_test
+  encoding: utf8

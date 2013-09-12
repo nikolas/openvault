@@ -62,9 +62,10 @@ namespace :db do
     put db_config, "#{shared_path}/config/database.yml"
   end
  
-  desc "Make symlink for database yaml"
+  desc "Make symlink"
   task :symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
     run "ln -nfs #{shared_path}/jetty #{latest_release}/jetty"
+    run "cp -f ~/#{application}_application.yml #{release_path}/config/application.yml"
   end
 end

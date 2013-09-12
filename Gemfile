@@ -56,6 +56,7 @@ gem 'jettywrapper'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'figaro'
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"

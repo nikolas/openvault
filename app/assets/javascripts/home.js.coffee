@@ -41,6 +41,10 @@ $ ->
     $('#exhibit-slider').find('.exhibit-item[item-num='+num+']').addClass('active')
     $('#exhibit-controls').find('.page-dot[data-num='+num+']').addClass('active')
     
+  $('body').on "click", '.more_meta', (e) ->
+    e.preventDefault();
+    $('.metadata .advanced').toggleClass('visible')
+    
   # collections_timer = null
 #   $("#collections .document").hide().first().show()
 #   $("#collections .document").each (i) ->

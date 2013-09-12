@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+# Ignore some yml files
+/config/application.yml
+
 # Ignore jetty
 /jetty
 

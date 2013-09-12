@@ -8,22 +8,29 @@
 <%# this should be in a partial -%>
 <div id="document" class="<%= render_document_class %>">
   <div id="doc_<%= @document[:id] %>">
-    <% # bookmark/folder functions -%>
-    <%= render_show_doc_actions @document %>
-    <%= render_document_heading %>
-    <div class="tools">
-      <%= render :partial => 'show_tools' %>
+    <div id="document_header">
+      <div class="row-fluid">
+        <div class="document_heading span12">
+          <h2><%= display_title @document %></h2>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 date">
+          <p><span class="doc_label">Dated:</span><span class="datetime"><%= @document['asset_date_ssm'].first.to_s %></span></p>
+        </div>
+        <div class="tools span2">
+          <%= render :partial => 'show_tools' %>
+        </div>
+      </div>
     </div>
-    <hr />
-    <div class="document">
-      <%#= render_document_partial @document, :show %>
-      <%= render :partial => 'catalog/_show_partials/default', :locals=>{:document=>@document} %>
-      <%#= render_document_unapi_microformat @document %>
-      <hr />
+    <div class="sep-line"></div>
+    <div class="document_content">
+      <h4>Summary</h4>
+      <p><%= @document['description_ssm'].first.html_safe %></p>
       <div class="media">
         <%= render_document_partial @document, :media %>
       </div>
-
+      <%#= render :partial => 'catalog/_show_partials/default', :locals=>{:document=>@document} %>
       <div class="metadata">
         <%= 
           begin
@@ -33,20 +40,9 @@
           end
         %>
       </div>
-
-      <div class="administrative">
-        <%#= render_document_partial @document, :administrative %>
+      <div id="comments">
+        <div class="fb-comments" data-href="http://lsopenvault01.wgbh.org" ></div>
       </div>
-
     </div>
   </div>
 </div>
-
-  <%# if @document.respond_to?(:export_as_openurl_ctx_kev) %>
-    <!-- 
-         // COinS, for Zotero among others. 
-         // This document_partial_name(@document) business is not quite right,
-         // but has been there for a while. 
-    -->
-    <span class="Z3988" title="<%#= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
-  <%# end %>
