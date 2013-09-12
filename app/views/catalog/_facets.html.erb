@@ -1,9 +1,10 @@
 <% # main container for facets/limits menu -%>
 <div id="facets" class="facets">
-  <% facet_field_names.each do |solr_fname| %>
-	  <div class="facet_limit blacklight-<%= solr_fname.parameterize %>">
-      <%= render_facet_limit(solr_fname).try(:force_encoding, "UTF-8") %>
-    </div>
-  <% end %>
+  <%# facet_field_names.each do |solr_fname| %>
+    <!-- <div class="facet_limit blacklight-<%#= solr_fname.parameterize %>">
+      <%#= render_facet_limit(solr_fname).try(:force_encoding, "UTF-8") %>
+    </div> -->
+  <%# end %>
+  <%= render_facet_partials(facet_field_names) %>
   <a href="#" class="cancel-show hidden-tablet hidden-desktop">Cancel</a>
 </div>

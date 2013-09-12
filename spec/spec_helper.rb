@@ -48,6 +48,7 @@ RSpec.configure do |config|
 
   config.include CommonSteps
   config.include UserSteps
+  config.include SearchSteps
   config.include CustomCollectionSteps
   
   config.use_transactional_fixtures = false
@@ -70,11 +71,8 @@ module Rack
     def escape(s)
       CGI.escape(s.to_s)
     end
-    module_function :escape
-
     def unescape(s)
       CGI.unescape(s)
     end
-    module_function :unescape
   end
 end

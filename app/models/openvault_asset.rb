@@ -23,7 +23,8 @@ class OpenvaultAsset < ActiveFedora::Base
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     solr_document["slug"] = self.noid
-    #Solrizer.insert_field(solr_document, "collection_ancestry", "Collection 2", :facetable, :searchable, :displayable)
+    Solrizer.insert_field(solr_document, "sort_date", self.pbcore.asset_date.first, :sortable)
+    Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
     return solr_document
   end
   

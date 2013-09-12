@@ -204,8 +204,8 @@ class CatalogController < ApplicationController
 #     # whether the sort is ascending or descending (it must be asc or desc
 #     # except in the relevancy case).
       config.add_sort_field 'score desc', :label => 'relevance'
-      config.add_sort_field 'title_ssm asc, asset_date_ssm desc', :label => 'title'
-      config.add_sort_field 'asset_date_ssm desc, title_ssm asc', :label => 'year'
+      config.add_sort_field 'sort_title_si asc, sort_date_si desc', :label => 'title'
+      config.add_sort_field 'sort_date_si asc, sort_title_si desc', :label => 'year'
 # 
 #     # If there are more than this many search results, no spelling ("did you 
 #     # mean") suggestion is offered.
