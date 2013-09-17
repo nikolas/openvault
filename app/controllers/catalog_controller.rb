@@ -244,9 +244,13 @@ class CatalogController < ApplicationController
     
     redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
     
-    if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
+    #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
       respond_to do |format|
-        format.html {setup_next_and_previous_documents}
+        #format.html {setup_next_and_previous_documents}
+        format.html {
+          choose_render @document
+          #render 'show_series'
+        }
         #format.jpg { send_data File.read(@document.thumbnail.path(params)), :type => 'image/jpeg', :disposition => 'inline' }
     
         # Add all dynamically added (such as by document extensions)
@@ -257,7 +261,7 @@ class CatalogController < ApplicationController
           format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
         end
       end
-    end
+   # end
   end
   
   def home
@@ -365,6 +369,17 @@ class CatalogController < ApplicationController
     puts solr_response
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     [solr_response, document_list.first]
+  end
+  
+  def choose_render(document=nil)
+    case document.kind
+    when 'program'
+      render 'show_program'
+    when 'series'
+      render 'show_series'
+    when 'items'
+      render 'show'
+    end
   end
 
 end 
