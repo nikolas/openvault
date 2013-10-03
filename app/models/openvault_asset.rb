@@ -11,10 +11,6 @@ class OpenvaultAsset < ActiveFedora::Base
 
   belongs_to :artesia_ingest, :property => :is_part_of, :class_name => 'ArtesiaIngest'
   
-  has_many :audios
-  has_many :videos
-  has_many :transcripts
-  
   #don't think this is working
   has_many :custom_collection_items, :property => :is_part_of
   

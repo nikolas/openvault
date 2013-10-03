@@ -1,10 +1,10 @@
-class Video < ActiveFedora::Base
+class Video < OpenvaultAsset
   attr_accessor :length, :people, :format
   
   COVERAGE = ['complete', 'clip', 'segment']
   
   has_many :transcript, :property => :is_part_of
-  belongs_to :program, :property => :is_part_of
+  belongs_to :program, :property => :is_part_of_program
   
   validates_inclusion_of :attribute, :in => COVERAGE
   

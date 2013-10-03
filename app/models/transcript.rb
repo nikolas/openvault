@@ -1,5 +1,8 @@
 #Should this belong to audio or video stream?
-class Transcript < ActiveFedora::Base
-  #Metadata for transcript
-  # - 
+class Trans < OpenvaultAsset
+  
+  belongs_to :video, :property => :is_trans_of_video
+  belongs_to :audio, :property => :is_trans_of_audio
+  belongs_to :asset_collection, :property => :is_part_of_collection
+  
 end

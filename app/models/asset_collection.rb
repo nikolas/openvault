@@ -1,6 +1,5 @@
 class Program < OpenvaultAsset
-
-  belongs_to :series, :property => :is_program_of
+  
   has_many :videos, :property => :is_video_of
   has_many :audios, :property => :is_audio_of
   has_many :images, :property => :is_image_of
