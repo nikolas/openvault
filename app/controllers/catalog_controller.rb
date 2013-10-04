@@ -242,6 +242,11 @@ class CatalogController < ApplicationController
     
     @rel = get_related_content(params[:id])
     
+    @programs = get_series_programs(@document)
+    @audios = get_program_audios(@document)
+    @videos = get_program_videos(@document)
+    @images = get_program_images(@document)
+    
     redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
     
     #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
@@ -354,7 +359,7 @@ class CatalogController < ApplicationController
   end
   
   def get_solr_document_by_slug(slug=nil)
-    q = "#{slug}"
+    q = "slug:#{slug}"
     solr_params = {
       :defType => "edismax",   # need boolean for OR
       :q => q,
@@ -366,20 +371,60 @@ class CatalogController < ApplicationController
       :'mlt.count' => 3
     }
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
-    puts solr_response
+    #puts solr_response.inspect
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     [solr_response, document_list.first]
   end
   
-  def choose_render(document=nil)
-    case document.kind
-    when 'program'
-      render 'show_program'
-    when 'series'
-      render 'show_series'
-    when 'items'
-      render 'show'
+  def get_only_solr_document_by_slug(slug=nil)
+    q = "#{slug}"
+    solr_params = {
+      :defType => "edismax",   # need boolean for OR
+      :q => q,
+    }
+    solr_response = find('document', self.solr_search_params().merge(solr_params) )
+    document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
+    document_list.first
+  end
+  
+  #We need to create a series of these methods for all the type of "included" data on each type of document
+  def get_series_programs(document=nil)
+    progs = []
+    unless document[:programs_ssm].nil?
+      document[:programs_ssm].each do |prog|
+        progs << get_only_solr_document_by_slug(prog.to_s)
+      end
+      progs
     end
+  end
+  
+  def get_program_videos(document=nil)
+    []
+  end
+  def get_program_audios(document=nil)
+    []
+  end
+  def get_program_images(document=nil)
+    []
+  end
+  
+  def choose_render(document=nil)
+    case document[:active_fedora_model_ssi]
+    when 'Program'
+      render 'show_program'
+    when 'Series'
+      render 'show_series'
+    when 'Audio'
+      render 'show_audio'
+    when 'Video'
+      render 'show_video'
+    when 'Image'
+      render 'show_image'
+    when 'AssetCollection'
+      render 'show_asset_collection'
+    else
+      render 'show'
+    end    
   end
 
 end 

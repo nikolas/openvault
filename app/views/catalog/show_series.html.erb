@@ -1,19 +1,19 @@
-<h3><%= @document.title %></h3>
+<!-- THIS IS A TEMPLATE FOR A SERIES LEVEL MODLE -->
+<h3><%= @document[:display_title_ssm].first %></h3>
 <div class="sep-line"></div>
-<p><%= @document.summary %></p>
+<p><%= display_summary @document %></p>
 <div id="series_content">
-  <!-- show images -->
-  <% @document.images.each do |image| %>
-    
-  <% end %>
-  <div class="sep-line"></div>
-  <!-- show videos -->
-  <% @document.videos.each do |video| %>
   
-  <% end %>
   <div class="sep-line"></div>
   <!-- show programs -->
-  <% @document.programs.each do |program| %>
-    
+  <br />
+  <% unless @programs.nil? %>
+    <% @programs.each do |prog| %>
+      <div class="series-program">
+        <h4><%= link_to prog[:display_title_ssm].first.to_s, "/catalog/#{prog[:id].to_s}" %></h4>
+        <img src="<%= prog[:thumbnail_url] %>">
+      </div>
+    <% end %>
   <% end %>
+  
 </div>
