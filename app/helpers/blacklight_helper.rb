@@ -51,13 +51,7 @@ module BlacklightHelper
   end
   
   def display_title(doc=@document)
-    if doc[:title_clip_ssm].nil?
-      title = ("#{doc[:series_ssm].try(:first)} - #{doc[:title_ssm].try(:first)} - Episode ##{doc[:episode_ssm].try(:first)}")
-      #title = "TeSTING"
-    else
-      title = doc[:title_clip_ssm].first
-    end
-    title
+    doc[:display_title_ssm].first.to_s
   end
   
   def display_summary(doc=@document)
