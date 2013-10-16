@@ -1,9 +1,9 @@
 <!-- THIS IS A TEMPLATE FOR A SERIES LEVEL MODLE -->
 <h3><%= @document[:display_title_ssm].first %></h3>
 <div class="sep-line"></div>
-<p><%= display_summary @document %></p>
+<p><strong>Summary: </strong><%= @document[:description_ssm].first.html_safe unless @document[:description_ssm].nil? %></p>
 <div id="series_content">
-  
+  <p><strong>Created: </strong><%= @document[:asset_date_tesim].first unless @document[:asset_date_tesim].nil? %></p>
   <div class="sep-line"></div>
   <!-- show programs -->
   <br />

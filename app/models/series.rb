@@ -24,7 +24,7 @@ class Series < OpenvaultAsset
   
   def title
     #need logic to determine proper title
-    "blah"
+    "This is a series title #{self.id}"
   end
   
   def all_programs
