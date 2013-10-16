@@ -1,0 +1,16 @@
+<h3><%= @document[:display_title_ssm].first %></h3>
+<p><strong>Summary: </strong><%= display_summary @document %></p>
+<!-- List the audio/video files associated with program -->
+<div class="sep-line"></div>
+
+<% @videos.each do |media| %>
+  <%= render :partial, 'catalog/_program_partials/video' %>
+<% end %>
+
+<% @audios.each do |media| %>
+  <%= render :partial, 'catalog/_program_partials/audio' %>
+<% end %>
+
+<% @images.each do |media| %>
+  <%= render :partial, 'catalog/_program_partials/image' %>
+<% end %>
