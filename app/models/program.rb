@@ -12,29 +12,29 @@ class Program < OpenvaultAsset
     Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
     Solrizer.insert_field(solr_document, "display_title", self.title, :sortable, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "videos", self.videos, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "audios", self.audios, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "images", self.images, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
     return solr_document
   end
 
 
   def title
     #need logic to determine proper title
-    "This is a Program sample title"
+    "This is a Program sample title #{self.id}"
   end
 
-  def videos
+  def all_videos
     #This will be an array of the pids build dynamically
     #self.videos.map{|v| v.pid}
-    []
+    ['37720c723']
   end
-  def audios
+  def all_audios
     #This will be an array of the pids build dynamically
     #self.audios.map{|v| v.pid}
-    []
+    ['37720c73c']
   end
-  def images
+  def all_images
     #This will be an array of the pids build dynamically
     #self.images.map{|v| v.pid}
     []

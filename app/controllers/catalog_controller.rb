@@ -214,6 +214,7 @@ class CatalogController < ApplicationController
   end
   
   def index
+    #This is only for the search page
     delete_or_assign_search_session_params
 
     @search_context = 'result' if view_context.has_search_parameters?
@@ -234,107 +235,31 @@ class CatalogController < ApplicationController
     end
   end
   
-  # get single document from the solr index
-  def show
-    # extra_head_content << view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type => 'application/xml',  :rel => 'unapi-server', :title => 'unAPI' })
-    @response, @document = get_solr_document_by_slug(params[:id])    
-    #@repspones, @document = get_solr_response_for_doc_id
-    
-    @rel = get_related_content(params[:id])
-    
-    @programs = get_series_programs(@document)
-    @audios = get_program_audios(@document)
-    @videos = get_program_videos(@document)
-    @images = get_program_images(@document)
-    
-    redirect_to(collection_url(params[:id])) and return if @document.get(:format) == 'collection' and params[:controller] == 'catalog'
-    
-    #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
-      respond_to do |format|
-        #format.html {setup_next_and_previous_documents}
-        format.html {
-          choose_render @document
-          #render 'show_series'
-        }
-        #format.jpg { send_data File.read(@document.thumbnail.path(params)), :type => 'image/jpeg', :disposition => 'inline' }
-    
-        # Add all dynamically added (such as by document extensions)
-        # export formats.
-        @document.export_formats.each_key do | format_name |
-          # It's important that the argument to send be a symbol;
-          # if it's a string, it makes Rails unhappy for unclear reasons. 
-          format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
-        end
-      end
-   # end
-  end
-  
   def home
-    # pids = open(File.join(Rails.root, 'config', 'home.csv')).read.split(",").map(&:strip)
-    # response, @document_list = get_solr_response_for_field_values("pid_s",pids, :rows => 90, :fl => 'id,pid_s,title_display', :sort => 'random_1234 desc')
-    # @sprite = Sprite.new(:home_mosaic, @document_list)
-    # @sprite.generate! true
-
-    # if current_user or stale?(:last_modified => Time.new.beginning_of_week, :etag => pids)
-    #   render :layout => 'home'
-    # end
     @collections = Collection.where(:display_in_carousel => true).order('position ASC')
     @custom_collections = CustomCollection.limit(6).order('created_at ASC')
     @scholars = User.scholars
     @tweets = Twitter.user_timeline('wgbharchives', :count => 5)
     @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
-    #render :layout => 'home'
-  end
-
-  def print
-    @response, @document = get_solr_response_for_doc_id    
-    respond_to do |format|
-      format.html {setup_next_and_previous_documents}
-    end
-  end
-
-  def embed
-    @response, @document = get_solr_response_for_doc_id    
-    @width = params[:width].try(:to_i) || 640
-    @height = params[:height].try(:to_i) || (3 * @width / 4)
-    respond_to do |format|
-      format.html {render :layout => 'embed' }
-      
-      # Add all dynamically added (such as by document extensions)
-      # export formats.
-      @document.export_formats.each_key do | format_name |
-        # It's important that the argument to send be a symbol;
-        # if it's a string, it makes Rails unhappy for unclear reasons. 
-        format.send(format_name.to_sym) { render :text => @document.export_as(format_name) }
-      end
-      
-    end
-  end
-
-  def cite
-    @response, @document = get_solr_response_for_doc_id    
-    respond_to do |format|
-      format.html {render :layout => 'blank'}
-    end
   end
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...
-  # def invalid_solr_id_error
-  #   response, documents = get_solr_response_for_field_values("pid_s",params[:id])
-  #   redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
-  # 
-  #   response, documents = get_solr_response_for_field_values("pid_short_s",params[:id])
-  #   redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
-  # 
-  #   if Rails.env == "development"
-  #     render # will give us the stack trace
-  #   else
-  #   #  flash[:notice] = "Sorry, you have requested a record that doesn't exist."
-  #   #  redirect_to root_path, :status => 404
-  #     render(:file => "#{Rails.root}/public/404.html", :layout => false, :status => 404)
-  #   end
-  #   
-  # end
+  def invalid_solr_id_error
+    response, documents = get_solr_response_for_field_values("pid_s",params[:id])
+    redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
+  
+    response, documents = get_solr_response_for_field_values("pid_short_s",params[:id])
+    redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
+  
+    if Rails.env == "development"
+      render # will give us the stack trace
+    else
+    #  flash[:notice] = "Sorry, you have requested a record that doesn't exist."
+    #  redirect_to root_path, :status => 404
+      render(:file => "#{Rails.root}/public/404.html", :layout => false, :status => 404)
+    end
+    
+  end
 
   def image
     @response, @document = get_solr_response_for_doc_id    
@@ -355,7 +280,7 @@ class CatalogController < ApplicationController
 #     id = response['response']['docs'][0]['id'] unless response['response']['docs'].nil?
 #     document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
 #     document_list
-[]
+    []
   end
   
   def get_solr_document_by_slug(slug=nil)
@@ -377,7 +302,7 @@ class CatalogController < ApplicationController
   end
   
   def get_only_solr_document_by_slug(slug=nil)
-    q = "#{slug}"
+    q = "slug:#{slug}"
     solr_params = {
       :defType => "edismax",   # need boolean for OR
       :q => q,
@@ -385,27 +310,6 @@ class CatalogController < ApplicationController
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     document_list.first
-  end
-  
-  #We need to create a series of these methods for all the type of "included" data on each type of document
-  def get_series_programs(document=nil)
-    progs = []
-    unless document[:programs_ssm].nil?
-      document[:programs_ssm].each do |prog|
-        progs << get_only_solr_document_by_slug(prog.to_s)
-      end
-      progs
-    end
-  end
-  
-  def get_program_videos(document=nil)
-    []
-  end
-  def get_program_audios(document=nil)
-    []
-  end
-  def get_program_images(document=nil)
-    []
   end
   
   def choose_render(document=nil)

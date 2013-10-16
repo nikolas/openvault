@@ -17,7 +17,7 @@ class Series < OpenvaultAsset
     Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
     Solrizer.insert_field(solr_document, "display_title", self.title, :sortable, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "programs", self.programs, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "programs", self.all_programs, :displayable, :searchable)
     return solr_document
   end
   
@@ -27,7 +27,7 @@ class Series < OpenvaultAsset
     "blah"
   end
   
-  def programs
+  def all_programs
     #This will be an array of the pids build dynamically
     ['s7526p520', 's7526p51q', 's7526p474']
   end

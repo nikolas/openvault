@@ -11,7 +11,6 @@ Openvault::Application.routes.draw do
   #get ':controller/:action/:id/:asset_id'
 
   resources :collections, :only => [:index, :show]
-  resources :series, :only => [:show]
   match 'collection/:slug' => 'collections#show', slug: /[\w-]+/, as: 'collection_slug'
   
   match 'blog' => 'blog#index', :as => 'blog'
