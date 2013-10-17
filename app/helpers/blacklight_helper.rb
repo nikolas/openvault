@@ -47,7 +47,22 @@ module BlacklightHelper
   def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
     label = display_title(doc)
     return link_to(label.html_safe, collection_path(doc[:slug])) if doc[:format] == "collection"
-    link_to(label.html_safe, catalog_path(doc[:slug]))
+    link_to(label.html_safe, document_path(doc))
+  end
+  
+  def document_path(doc=nil)
+    case doc[:active_fedora_model_ssi].to_s
+    when 'Audio'
+      return "/audio/#{doc[:slug]}"
+    when 'Video'
+      return "/video/#{doc[:slug]}"
+    when 'Program'
+      return "/programs/#{doc[:slug]}"
+    when 'Series'
+      return "/series/#{doc[:slug]}"
+    else
+      return "/catalog/#{doc[:slug]}"
+    end
   end
   
   def display_title(doc=@document)
