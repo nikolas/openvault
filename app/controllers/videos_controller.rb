@@ -4,7 +4,9 @@ class VideosController < CatalogController
     @response, @document = get_solr_document_by_slug(params[:id])    
     
     @rel = get_related_content(params[:id])
-  
+    @program = get_video_program(@document)
+    @images = get_video_images(@document)
+    @transcripts = get_video_transcripts(@document)
     
     #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
       respond_to do |format|
@@ -57,5 +59,30 @@ class VideosController < CatalogController
   
   protected
   
+  def get_video_program(document=nil)
+    prog = get_only_solr_document_by_slug(document[:program_noid_ssm])
+  end
+  
+  def get_video_images(document=nil)
+    images = []
+    unless document[:video_images_ssm].nil?
+      document[:video_images_ssm].each do |prog|
+        images << get_only_solr_document_by_slug(prog.to_s)
+      end
+      
+    end  
+    images
+  end
+  
+  def get_video_transcripts(document=nil)
+    trans = []
+    unless document[:video_transcript_ssm].nil?
+      document[:video_transcript_ssm].each do |prog|
+        trans << get_only_solr_document_by_slug(prog.to_s)
+      end
+      
+    end  
+    trans
+  end
   
 end

@@ -1,10 +1,6 @@
 class Series < OpenvaultAsset
   # attr_accessible :title, :body
-  has_many :programs, :property => :is_program_of
-  
-  # def self.model_name
-  #   OpenvaultAsset.model_name
-  # end
+  has_many :programs, :property => :series_program
   
   # metadata for Series
   #     - dates / date ranges (e.g. when it aired)

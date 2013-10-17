@@ -1,11 +1,38 @@
 class Audio < OpenvaultAsset
   COVERAGE = ['complete', 'clip', 'segment']
   
-  has_many :transcripts, :property => :has_transcript_of
-  belongs_to :program, :property => :is_part_of_program
+  has_many :transcripts, :property => :transcript_audio
+  has_many :images, :property => :image_audio
+  belongs_to :program, :property => :audio_program
   
-  def self.model_name
-    OpenvaultAsset.model_name
+  def to_solr(solr_document={}, options={})
+    super(solr_document, options)
+    solr_document["slug"] = self.noid
+    Solrizer.insert_field(solr_document, "sort_date", self.pbcore.asset_date.first, :sortable)
+    Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
+    Solrizer.insert_field(solr_document, "display_title", self.title, :sortable, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "audio_url", self.audio_url, :displayable)
+    Solrizer.insert_field(solr_document, "audio_images", self.audio_images, :displayable)
+    Solrizer.insert_field(solr_document, "audio_transcript", self.audio_transcripts, :displayable)
+    return solr_document
+  end
+  
+  def title
+    "This is an audio file title #{self.noid}"
+  end
+  
+  def audio_url
+    #This needs to change based on the decisions made about the streaming server
+    "http://media.wgbh.org/streaming/audios/#{self.noid}.jpg"
+  end
+  
+  def audio_images
+    []
+  end
+  
+  def audio_transcripts
+    []
   end
   
 end

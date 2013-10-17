@@ -4,6 +4,9 @@ class AudiosController < CatalogController
     @response, @document = get_solr_document_by_slug(params[:id])    
     
     @rel = get_related_content(params[:id])
+    @program = get_audio_program(@document)
+    @images = get_audio_images(@document)
+    @transcripts = get_audio_transcripts(@document)
   
     
     #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
@@ -56,6 +59,32 @@ class AudiosController < CatalogController
   end
   
   protected
+  
+  def get_audio_program(document=nil)
+    prog = get_only_solr_document_by_slug(document[:program_noid_ssm])
+  end
+  
+  def get_audio_images(document=nil)
+    images = []
+    unless document[:audio_images_ssm].nil?
+      document[:audio_images_ssm].each do |prog|
+        images << get_only_solr_document_by_slug(prog.to_s)
+      end
+      
+    end  
+    images
+  end
+  
+  def get_audio_transcripts(document=nil)
+    trans = []
+    unless document[:audio_transcript_ssm].nil?
+      document[:audio_transcript_ssm].each do |prog|
+        trans << get_only_solr_document_by_slug(prog.to_s)
+      end
+      
+    end  
+    trans
+  end
   
   
 end
