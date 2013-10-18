@@ -94,6 +94,12 @@ input, select, textarea {
   background: $orange;
   margin: 5px 0px;
 }
+.sep-line-thin {
+  height:1px;
+  width: 100%;
+  background: $orange;
+  margin: 5px 0px;
+}
 
 #main-container {
   margin-top: 58px;
@@ -605,9 +611,9 @@ input, select, textarea {
   }
   
   //Catalog item page
-  #show_page {
-    #sidebar {
-      margin-top: 65px;
+  .show_series, .show_program {
+    .series_sidebar, .program_sidebar {
+      margin-top: -18px;
       h4 {
         text-align:center;
       }
@@ -622,13 +628,57 @@ input, select, textarea {
         }
       }
     }
-    #content {
-      .document_header {
-        
+    #document_header {
+      .date {
+        font-style:italic;
       }
+      .tools {
+        height: 18px;
+        .addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m {
+          height: 18px;
+          margin-bottom: 0px;
+          float: right;
+        }
+      }
+    }
+    .series_content, .program_content {
       .document_content {
         border-right: 1px solid #ddd;
         padding-right: 10px;
+        .asset-content {
+          overflow: hidden;
+          margin-bottom: 10px;
+          .video-js {
+            float:left;
+          }
+          #transcript-box {
+            width: 38%;
+            float:left;
+            margin-left: 2%;
+          }
+        }
+        #program-list {
+          margin-left: 20px;
+          .series-program {
+            overflow:hidden;
+            clear:both;
+            margin-bottom: 5px;
+            position: relative;
+            display:block;
+            img {
+              width: 45px;
+              height: 45px;
+              float:left;
+              border:1px solid #efefef;
+              margin-right: 10px;
+            }
+            h4 {
+              position: absolute;
+              bottom: 0;
+              left: 57px;
+            }
+          }
+        }
         .metadata {
           margin-bottom: 20px;
           .basic {

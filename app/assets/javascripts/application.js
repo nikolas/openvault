@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-wysihtml5
-
+//= require jquery.jplayer.min
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require search

@@ -14,6 +14,7 @@ class Program < OpenvaultAsset
     Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "asset_count", self.asset_count, :displayable, :searchable)
     return solr_document
   end
 
@@ -21,6 +22,10 @@ class Program < OpenvaultAsset
   def title
     #need logic to determine proper title
     "This is a Program sample title #{self.id}"
+  end
+  
+  def asset_count
+    self.videos.count + self.audios.count
   end
 
   def all_videos
