@@ -6,7 +6,6 @@ class AudiosController < CatalogController
     @rel = get_related_content(params[:id])
     @program = get_audio_program(@document)
     @images = get_audio_images(@document)
-    @transcripts = get_audio_transcripts(@document)
   
     
     #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
@@ -73,17 +72,6 @@ class AudiosController < CatalogController
       
     end  
     images
-  end
-  
-  def get_audio_transcripts(document=nil)
-    trans = []
-    unless document[:audio_transcript_ssm].nil?
-      document[:audio_transcript_ssm].each do |prog|
-        trans << get_only_solr_document_by_slug(prog.to_s)
-      end
-      
-    end  
-    trans
   end
   
   

@@ -245,14 +245,15 @@ class CatalogController < ApplicationController
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...
   def invalid_solr_id_error
-    response, documents = get_solr_response_for_field_values("pid_s",params[:id])
-    redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
+    response, documents = get_solr_response_for_field_values("slug",params[:id])
+    #redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
   
-    response, documents = get_solr_response_for_field_values("pid_short_s",params[:id])
-    redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
+    #response, documents = get_solr_response_for_field_values("pid_short_s",params[:id])
+    #redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
   
     if Rails.env == "development"
-      render # will give us the stack trace
+      # render # will give us the stack trace
+      render(:file => "#{Rails.root}/public/404.html", :layout => false, :status => 404)
     else
     #  flash[:notice] = "Sorry, you have requested a record that doesn't exist."
     #  redirect_to root_path, :status => 404

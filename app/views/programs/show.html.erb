@@ -1,25 +1,36 @@
 <h3><%= @document[:display_title_ssm].last %></h3>
-<p><strong>Summary: </strong><%= @document[:description_ssm].first.html_safe %></p>
-<p><strong>Created: </strong><%= @document[:asset_date_tesim].first unless @document[:asset_date_tesim].nil? %></p>
+<% unless @document[:description_ssm].nil? %>
+  <p><strong>Summary: </strong><%= @document[:description_ssm].first.html_safe %></p>
+<% end %>
+<% unless @document[:asset_date_tesim].nil? %>
+  <p><strong>Created: </strong><%= @document[:asset_date_tesim].first %></p>
+<% end %>
 <!-- List the audio/video files associated with program -->
 <div class="sep-line"></div>
 
-<div id="program_videos">
-  <h3>Videos from this program</h3>
-  <% @videos.each do |media| %>
-    <%= render partial: 'programs/partials/video' %>
-  <% end %>
-</div>
-<div id="program_audios">
-  <h3>Videos from this program</h3>
-  <% @audios.each do |media| %>
-    <%= render partial: 'programs/partials/audio' %>
-  <% end %>
-</div>
+<% unless @videos.empty? %>
+  <div id="program_videos">
+    <h3>Videos from this program</h3>
+    <% @videos.each do |media| %>
+      <%= render partial: 'programs/partials/video' %>
+    <% end %>
+  </div>
+<% end %>
 
-<div id="program_images">
-  <h3>Images from this program</h3>
-  <% @images.each do |media| %>
-    <%= render partial: 'programs/partials/image' %>
-  <% end %>
-</div>
+<% unless @audios.empty? %>
+  <div id="program_audios">
+    <h3>Videos from this program</h3>
+    <% @audios.each do |media| %>
+      <%= render partial: 'programs/partials/audio' %>
+    <% end %>
+  </div>
+<% end %>
+
+<% unless @images.empty? %>
+  <div id="program_images">
+    <h3>Images from this program</h3>
+    <% @images.each do |media| %>
+      <%= render partial: 'programs/partials/image' %>
+    <% end %>
+  </div>
+<% end %>

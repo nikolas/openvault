@@ -1,7 +1,6 @@
 class Audio < OpenvaultAsset
   COVERAGE = ['complete', 'clip', 'segment']
   
-  has_many :transcripts, :property => :transcript_audio
   has_many :images, :property => :image_audio
   belongs_to :program, :property => :audio_program
   
@@ -14,7 +13,6 @@ class Audio < OpenvaultAsset
     Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audio_url", self.audio_url, :displayable)
     Solrizer.insert_field(solr_document, "audio_images", self.audio_images, :displayable)
-    Solrizer.insert_field(solr_document, "audio_transcript", self.audio_transcripts, :displayable)
     return solr_document
   end
   
@@ -28,10 +26,6 @@ class Audio < OpenvaultAsset
   end
   
   def audio_images
-    []
-  end
-  
-  def audio_transcripts
     []
   end
   
