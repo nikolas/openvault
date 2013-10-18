@@ -66,7 +66,12 @@ module BlacklightHelper
   end
   
   def display_title(doc=@document)
-    doc[:display_title_ssm].first.to_s
+    #fallback to document id if something is messed up since that is always there
+    if doc[:display_title_ssm].nil?
+      doc[:id].to_s
+    else
+      doc[:display_title_ssm].first.to_s
+    end
   end
   
   def display_summary(doc=@document)
