@@ -5,7 +5,7 @@ $('#video-mp4,#audio-mp3,video,audio').each(function() {
     'flashplayer': '/swfs/player.swf',
     provider: 'http',
     'http.startparam':'start', 
-     skin: '/swfs/glow.zip',
+    skin: 'six',
      events: {
        onTime: function() {
           $(this).trigger('timeupdate'); // HTML5 event

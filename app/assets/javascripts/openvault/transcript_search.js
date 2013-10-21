@@ -6,9 +6,10 @@ $(function() {
   //$('.datastream-transcript').sausage({page: 'h3', content: function(i, $page) { return ''}, onClick: function(e, o) { $('.datastream-transcript').scrollTo($('h3', '.datastream-transcript').eq(o.i)); }});
 
 
-   $('.datastream-action-search').bind('submit', function() {
+   $('.datastream-action-search').bind('submit', function(e) {
+     e.preventDefault();
      current_search = $('input:text', this).val();
-
+     
      if(current_search != last_search) {
        $('.secondary-datastream').unhighlight().highlight(current_search);
 

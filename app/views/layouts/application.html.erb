@@ -16,12 +16,13 @@
     <link href="<%= opensearch_catalog_path(:format => 'xml', :only_path => false) %>" title="<%= application_name%>" type="application/opensearchdescription+xml" rel="search"/>
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= stylesheet_link_tag    "application" %>
-    <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet" >
     <%= javascript_include_tag "application" %>
+    <link href="//vjs.zencdn.net/4.2/video-js.css" rel="stylesheet" >
+    <script src="//vjs.zencdn.net/4.2/video.js"></script>
     <script type="text/javascript">
-      document.createElement('video');document.createElement('audio');
+      document.createElement('video');
+      document.createElement('audio');
     </script>
-    <script src="//vjs.zencdn.net/4.1/video.js"></script>
     <%= csrf_meta_tags %>
     <%= raw(render_head_content) %>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->

@@ -648,13 +648,118 @@ input, select, textarea {
         .asset-content {
           overflow: hidden;
           margin-bottom: 10px;
-          .video-js {
-            float:left;
+          border: 1px solid #ddd;
+          background: #fafafa;
+          box-sizing: border-box;
+          .datastream-container {   
+              h2 {
+                display: inline;
+                float: left;
+                margin-right: 8px;
+                width: 84.5px;
+                text-transform: uppercase;
+                line-height: 30px;
+                font-weight: bold;
+                font-size: 14px;
+              }
+
+              .sync {
+                margin-right: 2px;
+                display: inline-block;
+                @include replace-text-with-dimensions("sync_to_vid.png");
+                cursor: pointer;
+                opacity: 0.5;
+                margin-bottom: 0;
+                &:hover {
+                  @include replace-text-with-dimensions("sync_to_vid_over.png");
+                  opacity: 1;
+                }
+              }
+
+              .datastream-actions {
+                 line-height:35px;
+                 padding-right: 6px;
+                 padding-top: 3px;
+                .print {
+                   text-align: right;
+                   font-size: 17px;
+                   text-decoration: none;
+                   margin-left: 34px;
+                }
+
+                .sync {
+                  position: absolute;
+                  left: -32px;
+                  top: 38px;
+                  text-indent: -119988px;
+                  overflow: hidden;
+                  text-align: left;
+                  width: 29px;
+                  height: 13px;
+                  opacity: 0.5;
+                  @include replace-text-with-dimensions("sync_to_trans.png");
+                  &:hover {
+                    @include replace-text-with-dimensions("sync_to_trans_over.png");
+                    opacity: 1;
+                  }
+                }
+
+                .q_field {
+                  width: 117px;
+                  float: right;
+                  height: 25px;
+                  position: relative;
+                   .q {
+                     width: 100%;
+                     height: 22px;
+                     box-sizing: border-box;
+                     font-size: 11px;
+                     padding-right: 17px;
+                   }
+
+                   .submit {
+                      right: 3px;
+                      position: absolute;
+                      top: 6px;
+                   }
+                 }
+              }
           }
-          #transcript-box {
-            width: 38%;
-            float:left;
-            margin-left: 2%;
+          .primary-datastream-container, .secondary-datastream-container {
+            @extend .datastream-container;
+          }
+
+          .primary-datastream {
+            
+          }
+
+          .primary-datastream-container {
+            @extend .primary-datastream;
+          }
+
+          .secondary-datastream-container {
+            position: relative;
+          }
+
+          .datastream-image {
+             width: auto;
+          }
+
+          .datastream-transcript {   
+            overflow-y: scroll;
+            height: 303px;
+            padding-right: 18px;
+            .highlight {
+              background-color: #ffff00;
+            }
+            .current {
+              color: #8b4d00;
+              font-weight: bold;
+            }
+          }
+
+          .primary-datastream.datastream-transcript {
+            height: 480px;
           }
         }
         #program-list {
