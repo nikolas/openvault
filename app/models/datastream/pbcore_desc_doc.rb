@@ -3,7 +3,7 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
   set_terminology do |t|
     t.root(:path=>"pbcoreDescriptionDocument")
 
-    # All types of pbcoreTitle
+    # Terminology for <pbcoreTitle>
 
     t.series_title(:path=>"pbcoreTitle", :attributes=>{ :titleType=>"Series"}, :index_as => [:facetable, :stored_searchable, :displayable])
 
@@ -43,8 +43,11 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
     t.asset_date(:path=>"pbcoreAssetDate", :type => :string, :index_as => [:facetable, :stored_searchable, :displayable])
 
+    # Terminology for <pbcoreDescription>
 
-    t.description(:path => 'pbcoreDescription', :index_as => [:stored_searchable, :displayable]) {
+    t.summary(:path => 'pbcoreDescription', :attributes => {:descriptionType => "Summary"}, :index_as => [:stored_searchable, :displayable])
+
+    t.all_descriptions(:path => 'pbcoreDescription', :index_as => [:stored_searchable, :displayable]) {
       t.type(:path => {:attribute => 'descriptionType'})
     }
 
