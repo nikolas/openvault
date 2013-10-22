@@ -6,11 +6,6 @@ class Program < OpenvaultAsset
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    solr_document["slug"] = self.noid
-    Solrizer.insert_field(solr_document, "sort_date", self.pbcore.asset_date.first, :sortable)
-    Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
-    Solrizer.insert_field(solr_document, "display_title", self.title, :sortable, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)

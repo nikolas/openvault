@@ -6,11 +6,6 @@ class Audio < OpenvaultAsset
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    solr_document["slug"] = self.noid
-    Solrizer.insert_field(solr_document, "sort_date", self.pbcore.asset_date.first, :sortable)
-    Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
-    Solrizer.insert_field(solr_document, "display_title", self.title, :sortable, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audio_url", self.audio_url, :displayable)
     Solrizer.insert_field(solr_document, "audio_images", self.audio_images, :displayable)
     return solr_document
