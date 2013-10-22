@@ -1,5 +1,4 @@
 require 'openvault'
-require 'hydra-pbcore'
 
 module Artesia
 

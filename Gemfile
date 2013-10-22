@@ -80,7 +80,6 @@ gem 'twitter'
 
 gem 'sufia-models'
 gem 'capistrano'
-gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
 
 # for parallel processing
 gem 'celluloid'

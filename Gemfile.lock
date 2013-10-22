@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/afred/hydra-pbcore.git
-  revision: 0ef14795a38efa3116b87b15569080b55c3329e5
-  branch: master
-  specs:
-    hydra-pbcore (3.0.0.rc1)
-      active-fedora
-      solrizer
-
-GIT
   remote: https://github.com/jackdempsey/acts_as_commentable.git
   revision: e9baa4826f92c80f90b6e589fd73aa5a0a54851b
   specs:
@@ -538,7 +529,6 @@ DEPENDENCIES
   font-awesome-rails
   guard-rspec
   hydra (= 6.0.0)
-  hydra-pbcore!
   jettywrapper
   jquery-rails (= 2.3.0)
   launchy

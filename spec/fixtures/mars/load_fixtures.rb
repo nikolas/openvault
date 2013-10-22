@@ -10,7 +10,7 @@ Fixtures.load([
 Fixtures.load([
   "as_pbcore/asset_1.xml"
 ]) do |fixture|
-  pbcore = HydraPbcore::Datastream::Document.new
+  pbcore = PbcoreDescDoc.new
   pbcore.ng_xml = Openvault::XML(fixture.raw)
   pbcore
 end

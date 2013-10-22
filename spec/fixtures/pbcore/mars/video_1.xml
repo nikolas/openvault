@@ -1,0 +1,23 @@
+<pbcoreDescriptionDocument schemaVersion="2.0">
+<pbcoreIdentifier source="MARS Asset Record ID">A_7LVH8S1XUNDTRMZ</pbcoreIdentifier>
+<pbcoreCreator>
+<creator>Local Programming</creator>
+<creatorRole ref="http://metadataregistry.org/concept/show/id/1426.html">Production Unit</creatorRole>
+</pbcoreCreator>
+<pbcoreIdentifier source="MARS Source Creation Order">25555</pbcoreIdentifier>
+<pbcoreTitle titleType="Program">Big Dig II, The: Down Under</pbcoreTitle>
+<pbcoreInstantiation>
+<instantiationDate dateType="Created">7/11/1993</instantiationDate>
+<instantiationStandard>NTSC</instantiationStandard>
+<instantiationPhysical source="WGBH MARS">1 inch videotape</instantiationPhysical>
+<instantiationDuration>0:57:30</instantiationDuration>
+<instantiationLocation>Vault</instantiationLocation>
+<instantiationIdentifier source="WGBH Barcode">25794</instantiationIdentifier>
+<instantiationIdentifier source="WGBH File Number">A1-00132</instantiationIdentifier>
+<instantiationGenerations source="WGBH MARS">Protection Master (WGBH program)</instantiationGenerations>
+<instantiationMediaType source="WGBH MARS">Moving Image</instantiationMediaType>
+<instantiationLocation>Vault-ML006660-012-1-2-</instantiationLocation>
+<instantiationAlternativeModes/>
+<essenceTrack/>
+</pbcoreInstantiation>
+</pbcoreDescriptionDocument>

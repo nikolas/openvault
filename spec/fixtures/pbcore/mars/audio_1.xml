@@ -1,0 +1,57 @@
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Asset Record ID">A_8W068HGZA5IW6MS</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Summary" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">DS3 Final mix and splits, ep.305-306
+Ref -20dBfs
+Frame Rate 29.97DF
+Broadcast Wave
+48 kHz, 24 bits
+
+Full Mix Stereo
+Full Mix Mono
+Music Stem
+SFX Stem
+Dialog Stem
+
+file names:
+
+DS305_Dial_ST_01.L.wav
+DS305_Dial_ST_01.R.wav
+DS305_Fx_ST_01.L.wav
+DS305_Fx_ST_01.R.wav
+DS305_Mix_MONO_01.wav
+DS305_Mix_ST_01.L.wav
+DS305_Mix_ST_01.R.wav
+DS305_Mus_ST_01.L.wav
+DS305_Mus_ST_01.R.wav
+DS306_Dial_04.L.wav
+DS306_Dial_04.R.wav
+DS306_Fx_04.L.wav
+DS306_Fx_04.R.wav
+DS306_Mix_04.L.wav
+DS306_Mix_04.R.wav
+DS306_Mix_MONO_01.wav
+DS306_Mus_04.L.wav
+DS306_Mus_04.R.wav</pbcoreDescription>
+    <pbcoreCreator>
+      <creator>Children's Programming (STS)</creator>
+      <creatorRole ref="http://metadataregistry.org/concept/show/id/1426.html">Production Unit</creatorRole>
+    </pbcoreCreator>
+    <pbcoreIdentifier source="MARS Source Creation Order">1370192</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">Design Squad</pbcoreTitle>
+    <pbcoreInstantiation>
+      <instantiationStandard>NTSC</instantiationStandard>
+      <instantiationPhysical source="WGBH MARS">DVD</instantiationPhysical>
+      <instantiationLocation>145</instantiationLocation>
+      <instantiationIdentifier source="WGBH Barcode">0000337909</instantiationIdentifier>
+      <instantiationIdentifier source="WGBH File Number">P01231</instantiationIdentifier>
+      <instantiationIdentifier annotation="camera roll">audio</instantiationIdentifier>
+      <instantiationGenerations source="WGBH MARS">Audio Master (full mix)</instantiationGenerations>
+      <instantiationMediaType source="WGBH MARS">Audio</instantiationMediaType>
+      <instantiationIdentifier source="WGBH Item ID">DS3Audio03</instantiationIdentifier>
+      <instantiationLocation>145-----</instantiationLocation>
+      <instantiationAlternativeModes/>
+      <essenceTrack>
+        <essenceTrackFrameRate>29.97</essenceTrackFrameRate>
+      </essenceTrack>
+    </pbcoreInstantiation>
+  </pbcoreDescriptionDocument>

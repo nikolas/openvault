@@ -1,3 +1,5 @@
+<TEAMS_ASSET_FILE>
+  <ASSETS>
     <ASSET>
       <METADATA>
         <UOIS VERSION="1" IMPORT_DT="2011-06-06 10:40:50.0" UOI_ID="09b97aae9ffdc2df35aab7d997b42e6cb6ffa6eb" NAME="Al_Hulsen_audio.wav" IMPORT_USER_ID="273" IMPORT_ID="202931.0">
@@ -30,3 +32,5 @@
       </METADATA>
       <CONTENT />
     </ASSET>
+  </ASSETS>
+</TEAMS_ASSET_FILE>

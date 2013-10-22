@@ -1,11 +1,10 @@
-require 'hydra-pbcore'
 require 'artesia/datastream/uois'
 
 class OpenvaultAsset < ActiveFedora::Base
   include Blacklight::SolrHelper
 
   has_metadata 'uois', :type => Artesia::Datastream::UOIS
-  has_metadata 'pbcore', :type => HydraPbcore::Datastream::Document
+  has_metadata 'pbcore', :type => PbcoreDescDoc
 
   has_file_datastream 'source_xml'
 
@@ -15,42 +14,6 @@ class OpenvaultAsset < ActiveFedora::Base
   has_many :custom_collection_items, :property => :is_part_of
   
   include Sufia::GenericFile
-  
-  def title
-    if is_series?
-      title = self.pbcore.series.first
-    elsif is_program?
-      title = self.pbcore.program.first
-    elsif is_collection?
-      title = self.pbcore.collection.first
-    elsif is_clip?
-      title = self.pbcore.clip.first
-    elsif is_element?
-      title = self.pbcore.element.first
-    elsif is_item?
-      title = self.pbcore.item.first
-    else
-      title = "Openvault Asset #{self.noid}"
-    end
-  end
-  
-  def summary
-    if is_series?
-      title = self.pbcore.series.first
-    elsif is_program?
-      title = self.pbcore.program.first
-    elsif is_collection?
-      title = self.pbcore.collection.first
-    elsif is_clip?
-      title = self.pbcore.clip.first
-    elsif is_element?
-      title = self.pbcore.element.first
-    elsif is_item?
-      title = self.pbcore.item.first
-    else
-      title = "<p>Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere.</p>"
-    end
-  end
   
   def accept_annotations
     #logic will go here to accept annotations from scholars
