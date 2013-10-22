@@ -76,6 +76,7 @@ gem 'pdf-reader'
 gem "acts-as-taggable-on", :git => 'https://github.com/mbleigh/acts-as-taggable-on.git'
 gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_commentable.git'
 gem 'twitter'
+gem "mediaelement_rails"
 #gem 'hydra-collections'
 
 gem 'sufia-models'

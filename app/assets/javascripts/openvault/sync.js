@@ -45,15 +45,13 @@
   }
 
 $(function() {
-    // var player = videojs('video-mp4');
-    // 
-    // player.ready(function() {
-      if($('.datastream-video,.datastream-audio').length > 0 && $('.datastream-transcript').length > 0) {
+    if($('.datastream-video,.datastream-audio').length > 0 && $('.datastream-transcript').length > 0) {
+      videojs("video-mp4").ready(function(){
+        var myPlayer = this;
         //select all timecode-enabled elements
         $('*[data-timecodebegin]').attr('data-timecode', true);
         $('*[data-timecodeend]').attr('data-timecode', true);
         smil_elements = $('*[data-timecode]');
-
         smil_elements.each(function(index) {
           //fill in missing timecode as best as possible
           if(($(this).data('timecodebegin')) == 'undefined') {
@@ -66,7 +64,6 @@ $(function() {
             $(this).data('timecodeend', Math.min(timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodebegin]') }).first().data('timecodebegin')), timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodeend]') }).first().data('timecodeend'))));
           }
         });
-
         //convert hh:mm:ss.ff to seconds
         smil_elements.each(function() {
           var begin = timestamp_to_s($(this).data('timecodebegin'));
@@ -74,10 +71,8 @@ $(function() {
            $(this).data('begin_seconds', begin);
            $(this).data('end_seconds', end);
         });
-
         //sync the media with the transcript
-        $(player).sync(smil_elements, { 'time': function() { return this.getPosition() }});
-        
+        $(myPlayer).sync(smil_elements, { 'time': function() { return this.currentTime() }});
         smil_elements.bind('sync-on', function() { 
           if ($(this).data('timecodebegin') != '' || $(this).data('timecodeend') != '') {
             $(this).addClass('current'); 
@@ -90,14 +85,16 @@ $(function() {
             $(this).removeClass('current').addClass('last'); 
           }
         });
-
         //sync the transcript with the media
         smil_elements.each(function() {
           $('<a class="sync">[sync]</a>').prependTo($(this)).bind('click', function() { 
-            player.seek($(this).parent().data('begin_seconds')); 
+            myPlayer.currentTime($(this).parent().data('begin_seconds'));
+            if (myPlayer.paused()) {
+              myPlayer.play();
+            }
+            
           });
-        });
-     
+        }); 
         if(smil_elements.length > 0) {
           $('<a class="sync">[sync]</a>').prependTo($('.datastream-actions')).bind('click', function() {
             if($('.current').length > 0) {
@@ -107,9 +104,9 @@ $(function() {
             }
             return false;
           });
-       }
-     }
-    // });
+        }
+      });
+   }
 });
 
 (function($) {
@@ -120,8 +117,8 @@ $(function() {
       'end' : 'end_seconds',
       'on' : function() { $(this).trigger('sync-on'); },
       'off' : function() { $(this).trigger('sync-off'); },
-      'time' : function() { return this.currentTime },
-      'poll' : false,
+      'time' : function() { return this.currentTime() },
+      'poll' : true,
       'pollingInterval' : 1000,
       'event': 'timeupdate'
     }

@@ -1,11 +1,11 @@
 <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
-  <%= render_video_player('http://localhost:3000/assets/video_test.mp4', :size => "550x350", :controls => true) %>
-  <!-- <video id="video-mp4" class="video-js vjs-default-skin"
-    controls preload="auto" width="100%" height="350"
+  <%#= render_video_player('http://localhost:3000/assets/video_test.mp4', :size => "550x350", :controls => true) %>
+  <video id="video-mp4" class="video-js vjs-default-skin"
+    controls preload="auto" width="550" height="350"
     data-setup='{}'
     poster="http://video-js.zencoder.com/oceans-clip.png">
-   <source src="http://localhost:3000/assets/barcode64408.mp4" type='video/mp4' />
-  </video> -->
+   <source src="http://localhost:3000/assets/video_test.mp4" type='video/mp4' />
+    </video>
 </div>
 <div id="transcript-box" class="span4 secondary-datastream-container">
   <h2>Transcript</h2>

@@ -176,7 +176,7 @@ input, select, textarea {
       width: 55%;
       .search_q {
         width: 100%;
-        box-sizing: border-box;
+        box-sizing: border-box; -moz-box-sizing: border-box;
         height: 35px;
         padding-right: 26px;
         z-index: 0;
@@ -398,7 +398,7 @@ input, select, textarea {
           float: left;
           text-align: right;
           padding-right: 15px;
-          box-sizing: border-box;
+          box-sizing: border-box; -moz-box-sizing: border-box;
           margin-bottom: 0px;
           margin-top: 8px;
         }
@@ -473,7 +473,7 @@ input, select, textarea {
             padding: 7px 10px;
             width: 100%;
             display: block;
-            box-sizing: border-box;
+            box-sizing: border-box; -moz-box-sizing: border-box;
             .arrow {
               display: inline-block;
               margin-right: 10px;
@@ -650,7 +650,7 @@ input, select, textarea {
           margin-bottom: 10px;
           border: 1px solid #ddd;
           background: #fafafa;
-          box-sizing: border-box;
+          box-sizing: border-box; -moz-box-sizing: border-box;
           .datastream-container {   
               h2 {
                 display: inline;
@@ -712,7 +712,7 @@ input, select, textarea {
                    .q {
                      width: 100%;
                      height: 22px;
-                     box-sizing: border-box;
+                     box-sizing: border-box; -moz-box-sizing: border-box;
                      font-size: 11px;
                      padding-right: 17px;
                    }
@@ -971,20 +971,20 @@ input, select, textarea {
         display:none;
         width: 100%;
         height: 40px;
-        box-sizing: border-box;
+        box-sizing: border-box; -moz-box-sizing: border-box;
         background: rgba(255,255,255,.97);
         box-shadow: 0 4px 5px rgba(0,0,0,.5);
         form {
           width: 100%;
           #nav-s-input {
             width: 100%;
-            box-sizing: border-box;
+            box-sizing: border-box; -moz-box-sizing: border-box;
             position: absolute;
             padding: 5px;
           }
           input.search_q {
             width: 100%;
-            box-sizing: border-box;
+            box-sizing: border-box; -moz-box-sizing: border-box;
             height: 30px;
             padding-right: 30px;
             z-index: 0;
