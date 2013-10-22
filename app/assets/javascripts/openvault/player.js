@@ -1,3 +1,4 @@
+//THIS IS THE OLD JWPLAYER JS
 // var player = null;
 // 
 // $('#video-mp4,#audio-mp3,video,audio').each(function() {
