@@ -3,12 +3,9 @@ require 'artesia/datastream/uois'
 class OpenvaultAsset < ActiveFedora::Base
   include Blacklight::SolrHelper
 
-  has_metadata 'uois', :type => Artesia::Datastream::UOIS
   has_metadata 'pbcore', :type => PbcoreDescDoc
 
   has_file_datastream 'source_xml'
-
-  belongs_to :artesia_ingest, :property => :is_part_of, :class_name => 'ArtesiaIngest'
   
   #don't think this is working
   has_many :custom_collection_items, :property => :is_part_of

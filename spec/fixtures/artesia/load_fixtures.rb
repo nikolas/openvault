@@ -1,6 +1,4 @@
 require 'openvault'
-require 'artesia/datastream/uois'
-require 'artesia/datastream/teams_asset_file'
 
 Fixtures.cwd File.expand_path('../', __FILE__)
 
@@ -10,11 +8,7 @@ Fixtures.load([
   "zoom/teams_asset_file.xml",
   "march_on_washington/teams_asset_file.xml",
   "patriots_day/teams_asset_file.xml"
-]) do |fixture|
-  teams_asset_file = Artesia::Datastream::TeamsAssetFile.new
-  teams_asset_file.ng_xml = Openvault::XML(fixture.raw)
-  teams_asset_file
-end
+])
 
 
 # Load UOIS fixtures
@@ -56,8 +50,4 @@ Fixtures.load([
   "patriots_day/image_2.xml",
   "patriots_day/image_3.xml"
 
-]) do |fixture|
-  ov_asset = OpenvaultAsset.new
-  ov_asset.uois.ng_xml = Openvault::XML(fixture.raw)
-  ov_asset
-end
+])
