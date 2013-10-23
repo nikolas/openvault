@@ -27,9 +27,9 @@ class ProgramsController < CatalogController
   end
   
   def print
-    @response, @document = get_solr_response_for_doc_id    
+    @response, @document = get_solr_document_by_slug(params[:id]) 
     respond_to do |format|
-      format.html {setup_next_and_previous_documents}
+      format.html {render :layout => 'print'}
     end
   end
 

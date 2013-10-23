@@ -730,7 +730,10 @@ input, select, textarea {
           }
 
           .primary-datastream {
-            
+            .video-js {
+              width: 550px;
+              height: 350px;
+            }
           }
 
           .primary-datastream-container {
@@ -847,6 +850,23 @@ input, select, textarea {
       }
     }
   }
+  .show_program {
+    .program_content {
+      .asset-content {
+        .primary-datastream {
+          width: 100%;
+          .video-js {
+            width: 100% !important;
+          }
+        }
+        #transcript-box {
+          margin-left: 40px;
+          width: 94%;
+          clear:both;
+        }
+      }
+    }
+  }
   #search_page {
     #content {
       #search_content {
@@ -898,6 +918,23 @@ input, select, textarea {
           height: 251px;
           .image {
             height: 251px;
+          }
+        }
+      }
+    }
+    .show_program {
+      .program_content {
+        .asset-content {
+          .primary-datastream {
+            width: 100%;
+            .video-js {
+              width: 100% !important;
+            }
+          }
+          #transcript-box {
+            margin-left: 40px;
+            width: 92%;
+            clear:both;
           }
         }
       }

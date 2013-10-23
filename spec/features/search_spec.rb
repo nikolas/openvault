@@ -4,7 +4,7 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 feature 'User searches' do
-  before :each do
+  before :all do
     insert_search_result
   end
   describe "user search features" do
