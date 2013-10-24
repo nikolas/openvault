@@ -20,7 +20,8 @@ class Series < OpenvaultAsset
   
   def all_programs
     #This will be an array of the pids build dynamically
-    ['s7526p520', 's7526p51q', 's7526p474']
+    #['s7526p520', 's7526p51q', 's7526p474']
+    []
   end
   
 end
