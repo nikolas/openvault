@@ -10,9 +10,9 @@
     <%= link_to_document document, :label=>document_show_link_field, :counter => (document_counter + 1 + @response.params[:start].to_i) %><%= " (Video Excerpt)" if document.get('media_dsid_s') =~ /Video/ and document.get('dc_type_s') =~ /excerpt/ %>
   </h3>  
   <div class="defList_container">
-    <% unless document[:display_summary_ssm].nil? %>
+    <% unless document[:summary_ssm].nil? %>
       <div class="blacklight-summary">
-        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(document[:display_summary_ssm].first), :length => 200) unless document[:display_summary_ssm].nil? %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(document[:summary_ssm].first), :length => 200) %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>
