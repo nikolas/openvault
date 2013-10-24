@@ -108,7 +108,7 @@ class OpenvaultAsset < ActiveFedora::Base
   end
   
   def is_item?
-    true
+    false
   end
   
 end
