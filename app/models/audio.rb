@@ -12,12 +12,12 @@ class Audio < OpenvaultAsset
   end
   
   def title
-    "This is an audio file title #{self.noid}"
+    "This is an audio file title #{self.id}"
   end
   
   def audio_url
     #This needs to change based on the decisions made about the streaming server
-    "http://media.wgbh.org/streaming/audios/#{self.noid}.jpg"
+    "http://media.wgbh.org/streaming/audios/#{self.id}.jpg"
   end
   
   def audio_images

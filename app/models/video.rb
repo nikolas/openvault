@@ -8,7 +8,7 @@ class Video < OpenvaultAsset
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    Solrizer.insert_field(solr_document, "program_noid", self.parent_program, :displayable)
+    Solrizer.insert_field(solr_document, "program_id", self.program.pid, :displayable)
     Solrizer.insert_field(solr_document, "video_url", self.video_url, :displayable)
     Solrizer.insert_field(solr_document, "video_images", self.video_images, :displayable)
     Solrizer.insert_field(solr_document, "video_transcript", self.video_transcripts, :displayable)
@@ -16,16 +16,12 @@ class Video < OpenvaultAsset
   end
   
   def title
-    "This is a video title #{self.noid}"
-  end
-  
-  def parent_program
-    self.program.first.noid
+    "This is a video title #{self.pid}"
   end
   
   def video_url
     #This needs to change based on the decisions made about the streaming server
-    "http://media.wgbh.org/streaming/videos/#{self.noid}.mp4"
+    "http://media.wgbh.org/streaming/videos/#{self.pid}.mp4"
   end
   
   def video_transcripts
@@ -33,9 +29,9 @@ class Video < OpenvaultAsset
   end
   
   def video_images
-    # This will be an array of the image noids for the video
-    #[]
     self.images.map{|i| i.id}
+    # This will be an array of the image ids for the video
+    []
   end
   
   #Video Metadata

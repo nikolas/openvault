@@ -12,6 +12,7 @@ Fixtures.load([
   "artesia/rock_and_roll/series_1.xml",
   "artesia/rock_and_roll/program_1.xml",
   "artesia/rock_and_roll/video_element_1.xml",
+  "artesia/rock_and_roll/video_2.xml",
   "artesia/rock_and_roll/transcript_1.xml",
   "artesia/rock_and_roll/image_1.xml",
 
