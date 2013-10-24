@@ -60,7 +60,7 @@ class AudiosController < CatalogController
   protected
   
   def get_audio_program(document=nil)
-    prog = get_only_solr_document_by_slug(document[:program_noid_ssm])
+    prog = get_only_solr_document_by_slug(document[:program_id_ssm])
   end
   
   def get_audio_images(document=nil)
