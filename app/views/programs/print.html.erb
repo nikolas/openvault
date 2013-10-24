@@ -1,5 +1,5 @@
 <h2><%= display_title @document %></h2>
-<%= @document[:display_summary_ssm].first.html_safe unless @document[:display_summary_ssm].nil? %>
+<%= display_summary @document %>
 <hr />
 <h3>Video Transcript</h3>
 <%= render_tei_transcript('/Users/Shared/web-applications/wgbh/app/assets/images/transcript_xml_sample.xml') %>

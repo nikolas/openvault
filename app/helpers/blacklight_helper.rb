@@ -1,16 +1,6 @@
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
-
-  # def application_name
-#     "WGBH Open Vault"
-#   end
-# 
-#   def extra_body_classes
-#     extra = []
-#     extra += ['blacklight-' + controller.class.superclass.controller_name, 'blacklight-' + [controller.class.superclass.controller_name, controller.action_name].join('-')] # if self.class.superclass == CatalogController
-#     super + extra
-#   end
-# 
+  
   def render_search_context_options
     case 
       when params[:f]
@@ -105,68 +95,15 @@ module BlacklightHelper
   
   def display_title(doc=@document)
     #fallback to document id if something is messed up since that is always there
-    if doc[:display_title_ssm].nil?
+    if doc[:title_ssm].nil?
       doc[:id].to_s
     else
-      doc[:display_title_ssm].first.to_s
+      doc[:title_ssm].first.to_s
     end
   end
   
   def display_summary(doc=@document)
-    if doc[:desc_clip_ssm].nil?
-      summary = doc[:summary_ssm].try(:first)
-    elsif !doc[:desc_clip_ssm].nil?
-      summary = doc[:desc_clip_ssm].try(:first)
-    else
-      summary = ''
-    end
-    summary
+    doc[:summary_ssm].try(:first).html_safe
   end
-# 
-#   def facet_field_names
-#     names = super
-# 
-#     unless current_user and current_user.has_role? :admin
-#       names -= ["objModels_s", "ri_collection_ancestors_s", "format", "timestamp_query"]
-#     end
-# 
-#     names
-#   end
-# 
-#   def render_facet_value(facet_solr_field, item, options={})
-#     (link_to_unless(options[:suppress_link], item.value.html_safe, add_facet_params_and_redirect(facet_solr_field, item.value), :class=>"facet_select label") + "&nbsp;".html_safe + render_facet_count(item.hits)).html_safe
-#   end
-# 
-#   def render_selected_facet_value(facet_solr_field, item)
-#     link_to((render_facet_value(facet_solr_field, item, :suppress_link => true) + " " +  content_tag(:span, 'x', :class => 'remove')).html_safe, remove_facet_params(facet_solr_field, item.value, params), :class => "selected label")
-#   end
-# 
-#   def render_index_field_value(args) 
-#     value = super(args)
-# 
-#     if args[:field] and args[:field] == 'dc_description_t' and value.length > 600
-#       return (truncate(value, :length => 500, :separator => ". ") + " #{((link_to_document(args[:document], :label => 'more') if args[:document]))}").html_safe
-#     end
-# 
-#     value
-#   end
-# 
-#   def render_document_show_field_label(*args)
-#     super(*args).gsub(/:$/, '')
-#   end
-# 
-#   def render_index_doc_actions(*args)
-#     nil
-#   end
-# 
-#   def render_show_doc_actions(*args)
-#     nil
-#   end
-# 
-#   def render_field_value value=nil
-#     value = [value] unless value.is_a? Array
-#     value = value.collect { |x| x.respond_to?(:force_encoding) ? x.force_encoding("UTF-8") : x}
-#     return value.join(field_value_separator).html_safe
-#   end
 
 end

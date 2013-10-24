@@ -34,7 +34,7 @@
         <div class="sep-line-thin"></div>
         <div class="document_content">
           <h4>Summary</h4>
-          <p><%= @document[:display_summary_ssm].first.html_safe unless @document[:display_summary_ssm].nil? %></p>
+          <p><%= display_summary @document %></p>
           <div class="asset-content row-fluid">
             <% if !@document[:asset_count].nil? && @document[:asset_count] > 1 %>
               <%= render :partial => 'programs/partials/multiple_assets', :locals => { :document => @document } %>
