@@ -11,7 +11,6 @@ Openvault::Application.routes.draw do
   #get ':controller/:action/:id/:asset_id'
 
   resources :collections, :only => [:index, :show]
-  
   match 'collection/:slug' => 'collections#show', slug: /[\w-]+/, as: 'collection_slug'
   
   match 'blog' => 'blog#index', :as => 'blog'
@@ -28,6 +27,13 @@ Openvault::Application.routes.draw do
     resources :comments, :constraints => { :id => /[0-9]+/ }
     resource :tags
   end
+  
+  
+  get 'series/:id', to: 'series#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
+  get 'programs/:id', to: 'programs#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
+  get 'programs/:id/print', to: 'programs#print', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
+  get 'video/:id', to: 'videos#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
+  get 'audio/:id', to: 'audios#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
 
   
   

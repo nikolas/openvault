@@ -1,0 +1,1847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:smil="http://www.w3.org/2001/SMIL20/Language"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <teiHeader>
+        <profileDesc>
+            <langUsage>
+                <language ident="eng">Enter three-letter language code in the quotes (e.g., "eng")
+                </language>
+            </langUsage>
+            <settingDesc>
+                <setting>
+                    <name type="place" ref="">Enter interview location here, add reference is
+                        available </name>
+                </setting>
+            </settingDesc>
+            <particDesc>
+                <listPerson>
+                    <person xml:id="q" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Julber, Eric</persName>
+                    </person>
+                    <person xml:id="a" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Miller, Howard </persName>
+                    </person>
+
+                    <person xml:id="b" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Hardin, Garrett</persName>
+                    </person>
+
+                    <person xml:id="c" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Unsoeld, William</persName>
+                    </person>
+
+                    <person xml:id="d" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Hummel, Don</persName>
+                    </person>
+
+                    <person xml:id="e" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Dominy, Floyd</persName>
+                    </person>
+
+                    <person xml:id="f" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Dukakis, Michael</persName>
+                    </person>
+
+
+                </listPerson>
+            </particDesc>
+            <textClass>
+                <keywords scheme="http://www.merlot.org/merlot/categories.htm">
+                    <term> Science and Technology -- Agriculture and Environmental Sciences --
+                        Environment and Natural Resources</term>
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                </keywords>
+                <keywords scheme="http://authorities.loc.gov">
+                    <term rdf:resource="http://lccn.loc.gov/n80014824" xml:id="Garrett_Hardin"
+                        xmlns:xml="http://www.w3.org/XML/1998/namespace">Hardin, Garrett James,
+                        1915-2003</term>
+                    <term rdf:resource="http://lccn.loc.gov/n81141325" xml:id="William_Unsoeld"
+                        xmlns:xml="http://www.w3.org/XML/1998/namespace">Unsoeld, William Francis,
+                        1926-1979</term>
+                    <term rdf:resource="http://lccn.loc.gov/n81116567" xml:id="Eric_Julber"
+                        xmlns:xml="http://www.w3.org/XML/1998/namespace">Julber, Eric</term>
+                    <term rdf:resource="http://lccn.loc.gov/n85255027" xml:id="Don_Hummel"
+                        xmlns:xml="http://www.w3.org/XML/1998/namespace">Hummel, Don, 1907-</term>
+                    <term rdf:resource="http://lccn.loc.gov/no97002342" xml:id="Floyd_Dominy"
+                        xmlns:xml="http://www.w3.org/XML/1998/namespace">Dominy, Floyd E.</term>
+                    <term rdf:resource="http://lccn.loc.gov/n80011660" xml:id="Michael_Dukakis"
+                        xmlns:xml="http://www.w3.org/XML/1998/namespace">Dukakis, Michael S.
+                        (Michael Stanley), 1933-</term>
+
+                </keywords>
+                <keywords scheme="http://www.geonames.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter Geonames authority here </term>
+                </keywords>
+                <keywords scheme="http://viaf.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >Enter VIAF name authority here </term>
+                </keywords>
+                <keywords scheme="http://en.wikipedia.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >&amp;lt;!--Enter Wikipedia authority here --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >&amp;lt;!--Enter Wikipedia authority here --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >&amp;lt;!--Enter Wikipedia authority here --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                        >&amp;lt;!--Enter Wikipedia authority here --&amp;gt;</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <u/>
+            </div>
+            <div type="qa" xml:id="q0" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q1" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q2" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q3" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q4" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q5" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q6" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q7" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q8" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q9" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q10" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q11" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q12" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q13" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q14" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q15" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q16" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q17" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q18" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q19" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q20" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q21" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q22" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q23" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q24" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q25" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q26" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q27" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q28" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q29" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q30" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q31" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q32" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q33" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q34" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q35" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q36" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q37" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q38" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q39" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q40" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q41" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q42" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q43" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q44" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q45" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q46" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q47" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q48" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q49" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q50" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q51" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q52" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q53" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q54" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q55" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q56" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q57" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q58" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q59" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q60" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q61" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q62" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q63" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q64" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q65" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q66" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q67" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q68" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q69" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q70" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q71" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q72" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q73" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q74" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q75" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q76" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q77" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q78" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q79" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q80" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q81" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q82" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q83" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q84" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q85" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q86" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q87" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q88" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q89" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q90" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q91" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q92" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q93" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q94" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q95" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q96" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q97" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q98" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q99" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q100" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q101" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q102" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q103" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q104" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q105" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q106" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q107" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q108" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q109" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q110" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q111" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q112" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q113" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q114" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q115" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q116" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q117" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q118" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q119" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q120" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q121" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q122" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q123" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q124" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q125" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q126" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q127" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q128" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q129" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q130" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q131" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q132" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q133" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q134" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q135" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q136" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q137" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q138" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q139" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q140" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q141" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q142" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q143" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q144" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q145" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q146" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q147" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q148" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q149" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q150" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q151" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q152" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q153" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q154" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q155" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q156" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q157" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q158" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q159" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q160" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q161" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q162" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q163" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q164" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q165" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q166" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q167" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q168" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q169" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q170" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q171" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q172" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q173" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q174" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q175" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q176" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q177" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q178" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q179" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q180" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q181" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q182" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q183" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q184" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q185" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q186" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q187" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q188" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q189" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q190" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q191" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q192" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q193" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q194" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q195" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q196" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q197" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q198" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q199" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q200" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q201" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q202" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q203" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q204" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q205" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q206" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q207" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q208" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q209" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q210" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q211" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q212" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q213" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q214" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q215" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q216" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q217" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q218" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q219" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q220" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q221" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q222" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q223" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q224" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q225" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q226" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q227" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q228" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q229" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q230" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q231" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q232" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q233" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q234" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q235" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q236" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q237" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q238" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q239" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q240" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q241" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q242" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q243" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q244" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q245" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q246" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q247" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q248" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q249" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q250" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q251" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q252" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q253" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q254" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q255" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q256" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q257" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q258" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q259" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q260" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q261" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q262" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q263" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q264" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q265" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q266" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q267" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q268" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q269" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q270" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q271" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q272" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q273" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q274" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q275" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q276" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q277" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q278" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q279" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q280" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q281" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q282" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q283" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q284" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q285" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q286" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q287" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q288" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q289" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q290" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q291" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q292" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q293" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q294" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q295" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q296" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q297" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q298" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q299" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q300" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q301" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q302" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q303" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q304" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q305" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q306" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q307" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q308" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q309" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q310" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q311" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q312" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q313" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q314" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q315" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q316" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q317" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q318" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q319" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q320" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q321" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q322" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q323" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q324" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q325" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q326" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q327" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q328" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q329" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q330" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q331" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q332" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q333" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q334" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q335" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q336" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q337" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q338" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q339" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q340" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q341" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q342" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q343" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q344" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q345" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q346" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q347" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q348" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q349" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q350" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q351" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#f"><seg xml:id="para1" smil:begin="00:00:58.114" smil:end="00:01:19.185">
+                        Hi, I'm Mike Dukakis and welcome to "The Advocates" and Yosemite National
+                        Park. Our question today poses a choice between two conflicting policies or
+                        philosophies of Park management: one which leans toward preservation and the
+                        other which leans toward use. Supporting the proposal that public use of our
+                        national parks should be restricted is Advocate Howard Miller.</seg></u>
+                <u who="#a"><seg xml:id="para2" smil:begin="00:01:23.960" smil:end="00:01:57.263">
+                        Thank you. Our national parks are being destroyed, not by man, but by the
+                        automobile and by developers of expensive resorts. It is time to save these
+                        national parks and, by so doing, to save ourselves. With me to support
+                        today's proposal for preservation is biologist Garrett Hardin, Professor of
+                        Human Ecology at the University of California, Santa Barbara, and Willi
+                        Unsoeld, the man who has climbed Mt. Everest and who also has brought
+                        thou sands of boys and girls to the wilderness as Executive Director of
+                        Outward Bound.</seg></u>
+                <u who="#f"><seg xml:id="para3" smil:begin="00:02:01.818" smil:end="00:02:06.504">
+                        Thank you, Mr. Miller, and on the other side of the question is Guest
+                        Advocate Eric Julber.</seg></u>
+                <u who="#q"><seg xml:id="para4" smil:begin="00:02:06.504" smil:end="00:02:29.645">
+                        Thank you. Ladies and gentlemen, on our side, we believe that the people own
+                        these parks. The people have a right to enjoy them and we believe that there
+                        should be more facilities for the American people to enjoy their parks
+                        instead of less. My witnesses are Don Hummel, who heads the park concession
+                        here in Yosemite, and Floyd Dominy, former head of the Bureau of
+                        Reclamation.</seg></u>
+                <u who="#f"><seg xml:id="para5" smil:begin="00:02:32.581" smil:end="00:02:56.423">
+                        Thank you, gentlemen. As many of you know, Mr. Miller is a Professor of Law
+                        at the University of Southern California and our Guest Advocate Eric Julber
+                        is himself a lawyer from Los Angeles. He's an avid outdoorsman and he is the
+                        author of a recent article in the Reader's Digest entitled "Let's Open Up
+                        Our Wilderness". Mr. Miller and Mr. Julber will be bringing their cases to
+                        you shortly, but first let me give you some background on the setting for
+                        our debate today.</seg><seg xml:id="para6" smil:begin="00:02:56.423"
+                        smil:end="00:03:16.597">Yosemite National Park covers over three quarters of
+                        a million acres; it's located in central California on the Nevada/California
+                        border. Most of it is wilderness, accessible only to hikers and campers and
+                        climbers. Over two million people visit the park yearly but the vast
+                        majority of them confine their activities to Yosemite Valley, which is where
+                        we are now.</seg><seg xml:id="para7" smil:begin="00:03:16.597"
+                        smil:end="00:04:45.335">In the summer, in the words of one observer, "The
+                        valley is crowded with people, cars, trailers, camper vehicles, tents,
+                        cabins, sleeping bags, people. " And as well as the natural scenic delights,
+                        visitors to Yosemite Village and its surroundings may enjoy such amenities
+                        as a Pitch and Putt golf course, a swimming pool, tennis courts, a kennel,
+                        barber and beauty shops, a luxury hotel, restaurant and a cocktail lounge.
+                        Is this what our national parks were meant for? Some people don't think so
+                        and, earlier this year, the Conservation Foundation published a report
+                        entitled "National Parks For The Future". It looked at the growing use of
+                        our national parks and the impact of that use on our parks themselves and it
+                        concluded that it was time to adopt a new policy for our national park
+                        system, one that would have the effect of restricting public use in these
+                        parks. Specifically, it recommended that automobiles be phased out of the
+                        parks; that in-park campgrounds should be limited to rustic settings and
+                        structures and provide for camping only in tents; that mechanized camping
+                        should be provided for outside-of-park boundaries; that luxury facilities,
+                        the golf courses and the restaurants, the cocktail lounges and the like,
+                        also should be prohibited inside park boundaries; and that park facilities
+                        now managed by private concessionaires be turned over for management by
+                        non-profit corporations, and it's the sum of these recommendations that
+                        constitutes the meaning of the question, which we're going to be debating
+                        today.</seg><seg xml:id="para8" smil:begin="00:04:45.335"
+                        smil:end="00:05:07.565">Please bear in mind that these proposals do not
+                        necessarily mean that the numbers of people using our national parks be
+                        reduced. They  will, however, significantly change the character of what you
+                        can do when  you get there. Should the use of our national parks be
+                        restricted? That's  the question before us and, Mr. Miller, the meadow is
+                        yours.</seg></u>
+                <u who="#a"><seg xml:id="para9" smil:begin="00:05:07.565" smil:end="00:05:27.671"> I
+                        hope it stays ours. In the last three years, in this valley, in Yosemite
+                        National Park, there has been smog that has blocked out Half-Dome. There
+                        have been traffic jams that equal anything in a major city on a Saturday
+                        night. There has been pollution and sewage in the Merced River that cannot
+                        handle the development that is going on.</seg><seg xml:id="para10"
+                        smil:begin="00:05:27.671" smil:end="00:05:39.382">What we have is, instead
+                        of coming to these national parks for their beauty and bringing that beauty
+                        back to our own lives in the city, is that we've taken the ugliness of the
+                        city and brought it to these national parks.</seg><seg xml:id="para11"
+                        smil:begin="00:05:43.110" smil:end="00:05:50.934">What are the national
+                        parks? The national parks are less than one percent of the total land area
+                        in the United States. Less than one percent!</seg><seg xml:id="para12"
+                        smil:begin="00:05:50.934" smil:end="00:06:37.275">But they are the most
+                        geologically unique and irreplaceable part of our country. And what have we
+                        done in that less than one percent? We've built a ski resort, golf courses.
+                        Here in this valley, there is a hotel, a luxury hotel, $40.00 a night for
+                        two people. The average accommodation for Yosemite Lodge for a family of
+                        four can run $50.00 daily for lodging and food. In Yellowstone National
+                        Park, there are rock concerts. At Rocky Mountain National Park, at eleven
+                        and a half thousand feet, there's a paved road, a pavement, a gift shop that
+                        sells plastic Indians, plastic knives, plastic trinkets and, above all,
+                        everyplace, there are cars, cars and more cars. You know, we are to the
+                        automobile as the dinosaur was to his tar pools. They engulf us and we don't
+                        seem to have the wits to back off.</seg><seg xml:id="para13"
+                        smil:begin="00:06:37.275" smil:end="00:07:11.131">What should we do about
+                        it? The first thing we have to do is ban all the automobiles - everyplace in
+                        the national parks - and substitute for those automobiles public
+                        transportation, small mini-buses that take people around without the
+                        momentous increase in automobile traffic that occurs. The next thing we must
+                        do is ban the resort development that caters, not to the park, but to
+                        convenience, inside the park. Of course, we can develop hotels right outside
+                        the park. People can come in in their mini-buses, but here, inside the park,
+                        in the center of this beauty, there should be none.</seg><seg
+                        xml:id="para14" smil:begin="00:07:11.131" smil:end="00:07:31.607">The
+                        question is simple. Here, in the center of the heart of our country, in this
+                        stillness of time and place, will we have automobiles and developments of
+                        expensive resorts, or will we have use that is for the best in man? We stand
+                        for man. To tell us why, Garrett Hardin.</seg></u>
+                <u who="#f"><seg xml:id="para15" smil:begin="00:07:41.511" smil:end="00:07:42.807">
+                        Welcome to "The Advocates", Mr. Hardin.</seg></u>
+                <u who="#b"><seg xml:id="para16" smil:begin="00:07:42.807" smil:end="00:07:44.919">
+                        Thank you. It's nice to be here.</seg></u>
+                <u who="#f"><seg xml:id="para17" smil:begin="00:07:44.919" smil:end="00:07:45.879">
+                        Nice to have you.</seg></u>
+                <u who="#a"><seg xml:id="para18" smil:begin="00:07:45.879" smil:end="00:07:56.702">
+                        Mr. Hardin is a biologist. He's one of the leading conservationists in the
+                        United States and he's also Professor of Human Ecology at the University of
+                        California, Santa Barbara, Dr. Hardin, what are these national
+                    parks?</seg></u>
+                <u who="#b"><seg xml:id="para19" smil:begin="00:07:56.702" smil:end="00:08:14.442">
+                        Well, they're very exceptional places. They've been picked to be
+                        exceptional, geologically in terms of natural history and so on and they
+                        constitute only about one percent of the area of the country, on which many
+                        of us think there should be restrictions, partly because the other
+                        ninety-nine percent of the country can be developed as people want it to be
+                        developed.</seg></u>
+                <u who="#a"><seg xml:id="para20" smil:begin="00:08:14.442" smil:end="00:08:16.665">
+                        Well, what is the history of development inside these parks?</seg></u>
+                <u who="#b"><seg xml:id="para21" smil:begin="00:08:16.665" smil:end="00:08:28.400">
+                        Roughly, it's rather sad. Over the past fifty years, the development has
+                        been largely one of replacement of people by automobiles. And I think it's
+                        time to free the parks from the automobiles so the people can get back
+                        in.</seg></u>
+                <u who="#a"><seg xml:id="para22" smil:begin="00:08:28.400" smil:end="00:08:29.895">
+                        Is that true here in Yosemite as well?</seg></u>
+                <u who="#b"><seg xml:id="para23" smil:begin="00:08:29.895" smil:end="00:08:50.885">
+                        Yes, It's not as true now as it was two years ago. Two years ago, it reached
+                        a crisis situation, with immense traffic jams, smog and so on. The last
+                        couple of years, the public has been persuaded to a certain extent to leave
+                        their cars behind, come in and take advantage of the mini-buses and, as a
+                        result, it's been more pleasurable by all accounts to be here now with more
+                        of the automobiles outside.</seg></u>
+                <u who="#a"><seg xml:id="para24" smil:begin="00:08:50.885" smil:end="00:08:57.157">
+                        Tell me, Dr. Hardin, why can't we run these parks so that everyone does what
+                        he wants to do in his own way inside them?</seg></u>
+                <u who="#b"><seg xml:id="para25" smil:begin="00:08:57.157" smil:end="00:09:20.327">
+                        This is a very important point and I'm going to take some time explaining.
+                        In economics, there is a famous law, known as "Gresham's Law" which, simply
+                        put, says "bad money drives out good. " If you allow free competition
+                        between counterfeit and real money, the counterfeit displaces the real
+                        money. So we don't allow free competition. We say freedom has to end at that
+                        point.</seg><seg xml:id="para26" smil:begin="00:09:20.327"
+                        smil:end="00:10:11.754">In this area, I like to think of the thing I call
+                        "Hardin's Law of The Environment, " And that is that destruction drives out
+                        gentleness. That if one person wants to have a rock concert and another
+                        person wants to play his recorder, only the man who wants the rock concert
+                        gets his way because we can't hear a recorder when there's a rock band
+                        playing. In the same way, the automobile drives out walkers, drives out
+                        bicycling. The motorboat drives out canoes. Motorboats drive out swimming.
+                        They run at high speeds and so on. Always the more destructive use drives
+                        out the gentler use and the only way you can prevent the automatic working
+                        out of this tragedy is to rule out of a small percentage of the country,
+                        like the national parks, rule out the more destructive uses so the gentler
+                        uses can have their way.</seg></u>
+                <u who="#a"><seg xml:id="para27" smil:begin="00:10:11.754" smil:end="00:10:27.984">
+                        Dr. Hardin, ordinarily people who support these proposals. Are many of them
+                        outdoorsmen, climb mountains like Mr. Unsoeld? You're here - disability -
+                        you obviously can't get into the high backcountry as many people for various
+                        reasons can't get into the high backcountry. Why do you support this
+                        proposal today?</seg></u>
+                <u who="#b"><seg xml:id="para28" smil:begin="00:10:27.984" smil:end="00:11:05.935">
+                        Well, I suppose because I identify myself with mankind. And though I cannot
+                        climb Mt. Everest as my friend Willie here has done, somehow I empathize
+                        with him. I feel with him. I feel that he's a part of me when he does it and
+                        I would hate to think that I was so envious that, because I can't climb Mt.
+                        Everest, I don't want anybody to climb Mt, Everest. I think a much better
+                        thing to do is to say those of us who aren't so able should take vicarious
+                        pleasure in the accounts of those who are. And this somehow integrates us
+                        with some of the best people of mankind and they are part of our team and we
+                        enjoy it in that way.</seg></u>
+                <u who="#a"><seg xml:id="para29" smil:begin="00:11:05.935" smil:end="00:11:12.998">
+                        But even with these restrictions, I take it that you and others could still
+                        come in and enjoy this valley and would want to in your own way.</seg></u>
+                <u who="#b"><seg xml:id="para30" smil:begin="00:11:12.998" smil:end="00:11:27.582">
+                        Yes, I could enjoy some of it. I could come in in the valley. I can walk
+                        around a little bit. I can take the mini-buses but I can't climb "Half-Dome"
+                        or any of the other mountains here, so I would just have to take pleasure in
+                        what my friends tell me about it when they do it.</seg></u>
+                <u who="#a"><seg xml:id="para31" smil:begin="00:11:27.582" smil:end="00:11:28.367">
+                        Thank you, Dr. Hardin.</seg></u>
+                <u who="#f"><seg xml:id="para32" smil:begin="00:11:28.367" smil:end="00:11:34.743">
+                        All right, Dr. Hardin, this is that time in our show. Don't go away. Don't
+                        leave that stump. Mr. Julber is going to ask you some questions, Mr. Julber,
+                        it's time for you now.</seg></u>
+                <u who="#q"><seg xml:id="para33" smil:begin="00:11:34.743" smil:end="00:12:14.589">
+                        It's a pleasure seeing you here, Professor Hardin. Sir, you've been very
+                        outspoken on this issue of what people should have access to the national
+                        parks, what uses should be made. And I know you've written articles about it
+                        and I'd like to refer to one which is a paper that you delivered to the
+                        Sierra Club two years ago. Sir, the fact is you feel not only that certain
+                        uses should be prevented in the national parks, you also feel that certain
+                        classes of people should be prevented from even entering the parks. Isn't
+                        that correct?</seg></u>
+                <u who="#b"><seg xml:id="para34" smil:begin="00:12:14.589" smil:end="00:12:30.252">
+                        Not from entering the parks, but from entering the more difficult areas of
+                        the parks. That is, a person like me should not... well, I suppose you might
+                        say that, if I want to try to climb a mountain, go ahead and kill myself.
+                        But, by and large, you'd say rule me out of the mountainous areas.</seg></u>
+                <u who="#q"><seg xml:id="para35" smil:begin="00:12:30.252" smil:end="00:12:33.635">
+                        Sir, could I quote from your article, "The Economics of
+                    Wilderness"?</seg></u>
+                <u who="#b"><seg xml:id="para36" smil:begin="00:12:33.635" smil:end="00:12:34.243">
+                        Right.</seg></u>
+                <u who="#q"><seg xml:id="para37" smil:begin="00:12:34.243" smil:end="00:12:59.779">
+                        "Our present national parks should be forever closed to small children, fat
+                        people, to people with heart conditions and to old people, in a state of
+                        physical disrepair. On the basis of their lack of merit, such people should
+                        give up all claim of right to the wilderness experience. " You did say that
+                        in that speech and in this article, did you not, Dr. Hardin?</seg></u>
+                <u who="#b"><seg xml:id="para38" smil:begin="00:12:59.779" smil:end="00:13:11.821">
+                        Yes, and I will recant somewhat. In other words, I think now that the parks
+                        should include numerous areas, from some of the portions of which, these
+                        people should be excluded. There may be other parts which should allow these
+                        people to get in.</seg></u>
+                <u who="#q"><seg xml:id="para39" smil:begin="00:13:11.821" smil:end="00:13:25.420">
+                        Sir, in this article, you said that Yosemite Valley should be open only to
+                        persons who could physically pass a test of walking in ten miles from the
+                        entrance. Have you changed your mind about that, also?</seg></u>
+                <u who="#b"><seg xml:id="para40" smil:begin="00:13:25.420" smil:end="00:13:36.140">
+                        I haven't really changed my mind, except in keeping with political
+                        realities. If this were 1870 and we were making the laws for the first time,
+                        I would urge that the laws be made that way.</seg></u>
+                <u who="#q"><seg xml:id="para41" smil:begin="00:13:36.140" smil:end="00:13:43.075">
+                        You mean that you would like to…You, if you had your choice, would keep out
+                        the elderly, small children, fat people and people with heart
+                        conditions…</seg></u>
+                <u who="#b"><seg xml:id="para42" smil:begin="00:13:43.075" smil:end="00:13:43.651">
+                        That's right...</seg></u>
+                <u who="#q"><seg xml:id="para43" smil:begin="00:13:43.651" smil:end="00:13:51.555">
+                        But because political conditions are such, you know you couldn't get away
+                        with that with the voters, so now you say, well, let them enter Yosemite
+                        Valley. Is that correct? </seg></u>
+                <u who="#b"><seg xml:id="para44" smil:begin="00:13:51.555" smil:end="00:14:02.467">
+                        Yes, and the point being that it's very hard to roll back the clock. You
+                        see, in 1870, this had not happened. I think one could have done that. But
+                        now the people are already here. You remember when I said, "rule out these
+                        people"…</seg></u>
+                <u who="#q"><seg xml:id="para45" smil:begin="00:14:02.467" smil:end="00:14:03.227">
+                        Yes.</seg></u>
+                <u who="#b"><seg xml:id="para46" smil:begin="00:14:03.227" smil:end="00:14:05.813">
+                        I'm saying, "rule out me, too. " I'm in that class.</seg></u>
+                <u who="#q"><seg xml:id="para47" smil:begin="00:14:05.813" smil:end="00:14:20.644">
+                        Sir, you also said, "and, let's create some outdoor slums for the people,
+                        but not in Yosemite Valley, which is too good for this purpose. " You call
+                        the use by the American people of Yosemite Valley, an outdoor slum, don't
+                        you, sir? </seg></u>
+                <u who="#b"><seg xml:id="para48" smil:begin="00:14:20.644" smil:end="00:14:33.699">
+                        What's the definition,,,, The definition of a slum is not that it has
+                        Americans in it, or foreigners in it. The definition of a slum is that it
+                        has too many people in it. And too many people, too many Americans will make
+                        it a slum. </seg></u>
+                <u who="#q"><seg xml:id="para49" smil:begin="00:14:33.699" smil:end="00:14:47.028">
+                        Sir, look around, look around. Now, Americans have been coming to this
+                        valley for a hundred years, camping out, using the lodge, having fun here.
+                        Has this valley been damaged? In your judgment, has it been made
+                    ugly?</seg></u>
+                <u who="#b"><seg xml:id="para50" smil:begin="00:14:47.028" smil:end="00:14:47.979">
+                        Yes, it has.</seg></u>
+                <u who="#q"><seg xml:id="para51" smil:begin="00:14:47.979" smil:end="00:15:08.217">
+                        Well, that's very interesting, sir. Let me read you a letter. Let me read
+                        you a letter. Last year, Life magazine did a story about the alleged
+                        problems in Yosemite Valley and Ansell Adams wrote a letter to the editor,
+                        which they published September 24 of last year. You know who Ansell Adams
+                        is, don't you, sir?</seg></u>
+                <u who="#b"><seg xml:id="para52" smil:begin="00:15:08.217" smil:end="00:15:08.729">
+                        Oh, indeed, indeed.</seg></u>
+                <u who="#f"><seg xml:id="para53" smil:begin="00:15:08.729" smil:end="00:15:09.499">
+                        Who is he, Mr.,.</seg></u>
+                <u who="#b"><seg xml:id="para54" smil:begin="00:15:09.499" smil:end="00:15:16.732">
+                        Ansell Adams is a splendid photographer who's taken most of the famous
+                        pictures of Yosemite that you've seen.</seg></u>
+                <u who="#q"><seg xml:id="para55" smil:begin="00:15:16.732" smil:end="00:15:35.416">
+                        Exactly and here's Ansell Adams' letter. "Sirs, I have lived in Yosemite
+                        Valley for fifty-four years and I have never seen it more beautiful than it
+                        is this season. It cannot be locked up as a museum treasure. " Would you
+                        agree with those sentiments, Professor Hardin?</seg></u>
+                <u who="#b"><seg xml:id="para56" smil:begin="00:15:35.416" smil:end="00:15:56.695">
+                        I think that Ansell Adams was comparing Yosemite with the recent past, in
+                        spite of his saying fifty-four years. I think if you went back a hundred
+                        years, you'd find Yosemite doesn't look as good as it did then. But, it does
+                        look much better than it did two years ago and that, naturally, gives him
+                        hope, partly because there are fewer people coming to Yosemite than there
+                        were two years ago.</seg></u>
+                <u who="#q"><seg xml:id="para57" smil:begin="00:15:56.695" smil:end="00:16:15.597">
+                        Now, that you've recanted your views about not letting elderly people, or
+                        anybody who couldn't hike ten miles in, and you're willing to let the public
+                        in, are you willing, sir, to let them have modest hotel accommodations so
+                        they can stay here in the valley, or does everybody have to backpack and
+                        camp out in the open.</seg></u>
+                <u who="#b"><seg xml:id="para58" smil:begin="00:16:15.597" smil:end="00:16:24.515">
+                        No, I think this is the mistake. To make use of this beautiful area merely
+                        for going to a hotel. The country is filled with fine hotels and these
+                        people who you're so concerned about who want a hotel, they don't have to
+                        have a hotel here. They can have it someplace else.</seg></u>
+                <u who="#q"><seg xml:id="para59" smil:begin="00:16:24.515" smil:end="00:16:28.979">
+                        I see. So, if they camp here. If they come here, they have to camp
+                        out.</seg></u>
+                <u who="#b"><seg xml:id="para60" smil:begin="00:16:28.979" smil:end="00:16:29.446">
+                        Yes and that includes me.</seg></u>
+                <u who="#q"><seg xml:id="para61" smil:begin="00:16:29.446" smil:end="00:17:01.783">
+                        All right and now, sir, what it if isn't summertime, or early fall. What if
+                        it's wintertime. People can come here year-round and come to this hotel so
+                        we can spread the recreational load. Aren't you saying, sir, in effect,
+                        that, by making people camp and that's only in canvas tents, isn't it. You
+                        wouldn't permit motor homes, or anything like that, and campers and trailers
+                        - canvas tents. Sir, you're going to concentrate all the usage of this whole
+                        country of people who come to this valley in the summertime and create that
+                        very outdoor slum that you're talking about, aren't you?</seg></u>
+                <u who="#b"><seg xml:id="para62" smil:begin="00:17:01.783" smil:end="00:17:09.119">
+                        This is not true because you can live outdoors in the snow in the wintertime
+                        without a tent and I have slept in the snow myself.</seg></u>
+                <u who="#q"><seg xml:id="para63" smil:begin="00:17:09.119" smil:end="00:17:14.624">
+                        Have you tried sleeping up here in the snow in wintertime, in a canvas tent,
+                        professor?</seg></u>
+                <u who="#b"><seg xml:id="para64" smil:begin="00:17:14.624" smil:end="00:17:18.759">
+                        I haven't, but many of my friends have and I could do it, even with these
+                        crutches.</seg></u>
+                <u who="#f"><seg xml:id="para65" smil:begin="00:17:18.759" smil:end="00:17:32.365">
+                        Some people like, some people don't and , gentlemen, that's all we have time
+                        for. Mr. Julber, Dr. Hardin, thank you for being with us. All right, Mr.
+                        Miller, and on with this, please.</seg></u>
+                <u who="#a"><seg xml:id="para66" smil:begin="00:17:32.365" smil:end="00:17:52.121">
+                        Thank you, Michael. I'm afraid the cross-examination about the hotels in the
+                        wintertime misses the point. There's no prohibition in building hotels just
+                        outside the park and coming in to enjoy, even in the winter, what is here
+                        naturally. And, as for sleeping out in the winter, we have twenty-two people
+                        here, Mr. Unsoeld's students, who did sleep out last night. Had no trouble
+                        in doing so. Let's hear from Willie Unsoeld.</seg></u>
+                <u who="#f"><seg xml:id="para67" smil:begin="00:17:56.265" smil:end="00:17:58.866">
+                        Welcome to "The Advocates". It's good to have you with us.</seg></u>
+                <u who="#a"><seg xml:id="para68" smil:begin="00:17:58.866" smil:end="00:18:24.168">
+                        Willie Unsoeld has climbed Mt. Everest, not just climbed Everest, but
+                        climbed it up it's "impossible" west ridge. Used to be impossible. He hasn't
+                        just done that for himself. He's gone out. He's brought thousands of young
+                        Americans, young people, into the wilderness through Outward Bound, which he
+                        was Executive Director of. Mr. Unsoeld, doesn't the kind of development that
+                        opponents of this proposal talk about - hotels and conveniences - improve
+                        use of this valley for everyone?</seg></u>
+                <u who="#c"><seg xml:id="para69" smil:begin="00:18:24.168" smil:end="00:18:40.435">
+                        Well, it multiplies the funneling of human bodies through the facility. I
+                        would not classify that as improving the use. In actual fact, the legitimate
+                        use of the wilderness is utterly destroyed by the development as has taken
+                        place in the past.</seg></u>
+                <u who="#a"><seg xml:id="para70" smil:begin="00:18:40.435" smil:end="00:18:43.892">
+                        Well, should we increase genuine use of the park? Use in its natural
+                        state?</seg></u>
+                <u who="#c"><seg xml:id="para71" smil:begin="00:18:43.892" smil:end="00:19:13.752">
+                        Of course, the increase in the genuine use - this is what the whole fight is
+                        about. That's why we need more genuine wilderness experiences such as
+                        Outward Bound gives, such as the proliferation of outdoor programs that the
+                        colleges give. The Evergreen State College has sent its Wilderness and
+                        Consciousness down here to monitor this program and I think that's on the
+                        right track. And, also, just the people who really dig the wilderness have
+                        to have the opportunity for that sort of self-renewal.</seg></u>
+                <u who="#f"><seg xml:id="para72" smil:begin="00:19:13.752" smil:end="00:19:17.575">
+                        Mr. Unsoeld, what do you mean by "genuine use", as opposed to something
+                        else?</seg></u>
+                <u who="#c"><seg xml:id="para73" smil:begin="00:19:17.575" smil:end="00:19:23.248">
+                        Well, I'm talking about experiencing the wilderness on its terms, rather
+                        than on our terms.</seg></u>
+                <u who="#a"><seg xml:id="para74" smil:begin="00:19:23.248" smil:end="00:19:31.544">
+                        Mr. Unsoeld, what about old people, as mentioned, for example, by Mr.
+                        Julber. Can we develop Yosemite Valley for older people.</seg></u>
+                <u who="#c"><seg xml:id="para75" smil:begin="00:19:31.544" smil:end="00:20:03.087">
+                        I heard that approach and I'm afraid I have to be pretty emotional. I rate
+                        than an outrageous reference. I'm concerned about old people and I'm not
+                        content to leave it up to a two-week vacation when we can funnel them into
+                        the high country of the national parks. I want a program hitting them fifty
+                        weeks out of the year. The old people have been dealt with shamefully in
+                        this country and I resent the cynical use of this issue in order to
+                        accomplish the destruction of our national heritage.</seg></u>
+                <u who="#f"><seg xml:id="para76" smil:begin="" smil:end=""> What would you do with
+                        those older folks?</seg></u>
+                <u who="#c"><seg xml:id="para77" smil:begin="00:20:02.893" smil:end="00:20:19.669">
+                        I don't really see that question as relevant to this program. The care and
+                        support of the old people is a huge problem that is not solved by opening
+                        the national parks to them. Now, as a natural fact, we are opening the
+                        national parks by way of the mass transit. We are not keeping the old people
+                        out as is being claimed by our opponents.</seg></u>
+                <u who="#f"><seg xml:id="para78" smil:begin="00:20:19.669" smil:end="00:20:21.211">
+                        So what you would provide is mini-buses, etc.</seg></u>
+                <u who="#c"><seg xml:id="para79" smil:begin="00:20:21.211" smil:end="00:20:23.058">
+                        Absolutely. That's part of the proposal.</seg></u>
+                <u who="#a"><seg xml:id="para80" smil:begin="00:20:23.058" smil:end="00:20:36.712">
+                        Part of the proposal. I think the objection is this taking people that we
+                        haven't done a thing for in the natural environment and using them as a
+                        reason to ruin this. Mr. Unsoeld, what does the park experience mean to the
+                        boys and girls you bring in. What is that wilderness experience? Why do we
+                        need it?</seg></u>
+                <u who="#c"><seg xml:id="para81" smil:begin="00:20:36.712" smil:end="00:21:00.337">
+                        My view of the meaning of the wilderness experience has to be seen against
+                        the background of our national culture. We're a safety conscious world
+                        today. You start with Mom herself fulfilling her god-given function. If you
+                        don't believe it, just ask her. She has to protect her children. So do the
+                        unions, so do the schools.</seg></u>
+                <u who="#a"><seg xml:id="para82" smil:begin="00:21:00.337" smil:end="00:21:03.664">
+                        And does coming into this park. Does it provide an experience that all
+                        people need?</seg></u>
+                <u who="#c"><seg xml:id="para83" smil:begin="00:21:03.664" smil:end="00:21:12.144">
+                        It's that element of challenge which allows a young person or an old person
+                        to test himself against his own…</seg></u>
+                <u who="#a"><seg xml:id="para84" smil:begin="00:21:12.144" smil:end="00:21:19.024">
+                        What about you. You climbed Everest - the ultimate - one of the peak
+                        experiences of human days. What did climbing Everest mean to you?</seg></u>
+                <u who="#c"><seg xml:id="para85" smil:begin="00:21:19.024" smil:end="00:21:52.692">
+                        The feel that I get about Everest is that sense of perspective on man's
+                        place in the universe and it's a very humbling one. We have the feeling that
+                        man is in charge and we could be in charge . That's the danger. We could dam
+                        this valley and have another reservoir. We could put a hotel on the top of
+                        "Half-Dome" and I think that would be tragic. What Everett tells me is the
+                        absolute need for harmony within the whole unity of things, man and his
+                        environment and that's what the parks have to offer us.</seg></u>
+                <u who="#f"><seg xml:id="para86" smil:begin="00:21:52.692" smil:end="00:21:56.332">
+                        All right, gentlemen, if I may interrupt, Mr. Julber, I suspect, wants to
+                        ask you some questions.</seg></u>
+                <u who="#f"><seg xml:id="para87" smil:begin="00:21:56.332" smil:end="00:22:02.756">
+                        Well, if you and Dr. Hardin have a tendency to move off that stump, we don't
+                        want to let you do that yet.</seg></u>
+                <u who="#q"><seg xml:id="para88" smil:begin="00:22:02.756" smil:end="00:22:07.708">
+                        Mr. Unsoeld, a pleasure to see you here, sir. By the way, when you climbed
+                        Everest, did you use oxygen?</seg></u>
+                <u who="#c"><seg xml:id="para89" smil:begin="00:22:07.708" smil:end="00:22:09.708">
+                        Yes, we did use oxygen.</seg></u>
+                <u who="#q"><seg xml:id="para90" smil:begin="00:22:09.708" smil:end="00:22:38.972">
+                        Oh, you didn't do it completely "au naturel", is that right? O. K, O.K., let
+                        me say, sir, everybody respects your climbing Everest just as we respect the
+                        astronauts that went to the moon, but that really isn't relevant here. We're
+                        talking about the use of this park. Now, sir, let's have a little
+                        perspective on the situation. From where we stand, extending two hundred
+                        miles south runs the John Muir Wilderness, doesn't it? I've hiked it and I'm
+                        sure you have too. Right?</seg></u>
+                <u who="#c"><seg xml:id="para91" smil:begin="00:22:38.972" smil:end="00:22:39.572">
+                        Right.</seg></u>
+                <u who="#q"><seg xml:id="para92" smil:begin="00:22:39.572" smil:end="00:22:44.036">
+                        Two hundred miles with no roads, no structures. It's just for hikers,
+                        correct?</seg></u>
+                <u who="#c"><seg xml:id="para93" smil:begin="00:22:44.036" smil:end="00:22:45.412">
+                        Loaded with them.</seg></u>
+                <u who="#q"><seg xml:id="para94" smil:begin="00:22:45.412" smil:end="00:22:57.772">
+                        Loaded with them, OK. Good, because you have all your students here that
+                        you're teaching and I think it's a great thing. And in this park, sir,
+                        ninety-nine percent of this park is only open to hiker, isn't it?</seg></u>
+                <u who="#c"><seg xml:id="para95" smil:begin="00:22:57.772" smil:end="00:22:58.636">
+                        That is correct.</seg></u>
+                <u who="#q"><seg xml:id="para96" smil:begin="00:22:58.636" smil:end="00:23:05.484">
+                        Just one percent is open to the American public with accommodations and
+                        where they can camp with their automobiles, right?</seg></u>
+                <u who="#c"><seg xml:id="para97" smil:begin="00:23:05.484" smil:end="00:23:07.676">
+                        Could I ask how many people use the park?</seg></u>
+                <u who="#q"><seg xml:id="para98" smil:begin="00:23:07.676" smil:end="00:23:09.188">
+                        Now, let me ask you sir…</seg></u>
+                <u who="#c"><seg xml:id="para99" smil:begin="00:23:09.188" smil:end="00:23:10.412">
+                        Guess not.</seg></u>
+                <u who="#q"><seg xml:id="para100" smil:begin="00:23:10.412" smil:end="00:23:27.057">
+                        Does the… we'll get to that…does the use by that one percent of the surface
+                        of the park in this valley interfere with you and your students doing your
+                        thing and having these spiritual experiences in that two hundred miles of
+                        wilderness that starts right there at "Half-Dome".</seg></u>
+                <u who="#c"><seg xml:id="para101" smil:begin="00:23:27.057" smil:end="00:23:46.803">
+                        Mr. Julber, I think that's a perfectly fair question, I think that it's
+                        couched a little awkwardly because what we're talking about is not the
+                        national park system we're talking about the United States of America and
+                        when we talk about the reserve wilderness in the United States, we are
+                        talking about less than one percent of the total area open to
+                    mankind.</seg></u>
+                <u who="#q"><seg xml:id="para102" smil:begin="00:23:46.803" smil:end="00:23:48.075">
+                        Sir, I'm talking about this park.</seg></u>
+                <u who="#c"><seg xml:id="para103" smil:begin="00:23:48.075" smil:end="00:23:50.027">
+                        I'm talking about the United States…</seg></u>
+                <u who="#q"><seg xml:id="para104" smil:begin="00:23:50.027" smil:end="00:23:50.795">
+                        Does the use of the public of this park…</seg></u>
+                <u who="#c"><seg xml:id="para105" smil:begin="00:23:50.795" smil:end="00:23:53.467">
+                        and I'm sorry but we can't artificially limit it to this park.</seg></u>
+                <u who="#q"><seg xml:id="para106" smil:begin="00:23:53.467" smil:end="00:24:16.767">
+                        All right. Let's go to the next question, then. Let's take the spiritual
+                        experience that you described and that you try to instill in your students
+                        for them to get when they go to the backcountry right behind "Half-Dome".
+                        Now, spiritual experience is a subjective thing, isn't it? Something every
+                        man feels and it's not capable of being measured?</seg></u>
+                <u who="#c"><seg xml:id="para107" smil:begin="00:24:16.767" smil:end="00:24:17.249">
+                        That's right.</seg></u>
+                <u who="#q"><seg xml:id="para108" smil:begin="00:24:17.249" smil:end="00:24:50.373">
+                        All right. Now I know that you don't want to hear about elderly people, but
+                        let me give you a hypothetical case. Suppose there is a couple in New York
+                        who have worked all their lives and have retired, not just for two weeks,
+                        but retired. They save their money and they come to Yosemite for the first
+                        time. They stay in Yosemite Lodge within sound of Yosemite Falls. They see
+                        the moon from their hotel room come up over "Half-Dome". Do you feel, sir,
+                        that they don't feel just as much a sense of beauty as your young people who
+                        go up and backpack and sleep out in the wilderness.</seg></u>
+                <u who="#c"><seg xml:id="para109" smil:begin="00:24:50.373" smil:end="00:25:06.291">
+                        I'd like to ask them the price that has to be paid for their enjoyment and
+                        the price that we have to pay is the exposure of the rest of the humanity in
+                        this country to the wilderness experience, which they are costing the people
+                        of the United States.</seg></u>
+                <u who="#q"><seg xml:id="para110" smil:begin="00:25:06.291" smil:end="00:25:20.132">
+                        Do you mean, sir, that if at the time that elderly couple is in their hotel
+                        room, looking at Yosemite Falls, your students up there at two hundred miles
+                        of wilderness are going to have their enjoyment spoiled or their spiritual
+                        experience spoiled?</seg></u>
+                <u who="#c"><seg xml:id="para111" smil:begin="00:25:20.132" smil:end="00:25:29.532">
+                        I'm talking about the total valley experience and I refer to Hardin's Law
+                        that good money drives out bad.</seg></u>
+                <u who="#q"><seg xml:id="para112" smil:begin="00:25:29.532" smil:end="00:25:40.996">
+                        Well, Hardin's Law told us three years ago, sir, you have heard, that no old
+                        people, no small children, no people with heart conditions should be
+                        permitted in the valley at all.</seg></u>
+                <u who="#c"><seg xml:id="para113" smil:begin="00:25:40.996" smil:end="00:25:52.540">
+                        I'm not familiar,., with that interpretation of the law, but the present
+                        version and that version says, yes, old people are allowed in in minibuses
+                        as the plan provides, I see nothing wrong with that.</seg></u>
+                <u who="#q"><seg xml:id="para114" smil:begin="00:25:52.540" smil:end="00:26:10.708">
+                        That's a very good point. Do you, sir, who developed that mini-bus
+                        proposition and who financed it at their own risk? The Yosemite Park and
+                        Curry Company, the private concessioner here that you fellows want to get
+                        out of the park.</seg></u>
+                <u who="#c"><seg xml:id="para115" smil:begin="00:26:10.708" smil:end="00:26:14.940">
+                        I'm asking for an act of supererogation. I really think, Mr. .,.</seg></u>
+                <u who="#q"><seg xml:id="para116" smil:begin="00:26:14.940" smil:end="00:26:16.740">
+                        I'm sorry, sir. You'll have to speak simpler.</seg></u>
+                <u who="#c"><seg xml:id="para117" smil:begin="00:26:16.740" smil:end="00:26:29.980">
+                        Well, I'll make an effort. I think that's great that Curry- Company did this
+                        public-spirited gesture and all we're asking is one more gesture - to remove
+                        themselves to the limit of the park.</seg></u>
+                <u who="#q"><seg xml:id="para118" smil:begin="00:26:29.980" smil:end="00:26:45.660">
+                        Well,., Well, fine, and you would have, in accordance with this report that
+                        Mr. Dukakis mentioned. You would have the government take over that function
+                        of furnishing lodging and meals to the American public, right?</seg></u>
+                <u who="#c"><seg xml:id="para119" smil:begin="00:26:45.660" smil:end="00:26:46.580">
+                        No, not necessarily.</seg></u>
+                <u who="#q"><seg xml:id="para120" smil:begin="00:26:46.580" smil:end="00:26:49.230">
+                        Well, that's what a quasi-public corporation means.</seg></u>
+                <u who="#f"><seg xml:id="para121" smil:begin="00:26:49.230" smil:end="00:26:57.634">
+                        I think in fairness to the proposal, it might be a non-profit corporation,
+                        of some kind, I suppose, the Sierra Club, the Audubon Society might be
+                        applicable.</seg></u>
+                <u who="#q"><seg xml:id="para122" smil:begin="00:26:57.634" smil:end="00:27:00.789">
+                        Oh, you would have the Sierra Club take over the concession, is that
+                        right?</seg></u>
+                <u who="#c"><seg xml:id="para123" smil:begin="00:27:00.789" smil:end="00:27:02.427">
+                        I think it would be in safe hands, yes.</seg></u>
+                <u who="#q"><seg xml:id="para124" smil:begin="00:27:02.427" smil:end="00:27:15.211">
+                        Well, let me tell you, I was once a Sierra Clubber and I went on their trip
+                        and the Sierra Club is not a competent caterer to give meals to the American
+                        public.</seg></u>
+                <u who="#c"><seg xml:id="para125" smil:begin="00:27:15.211" smil:end="00:27:16.931">
+                        I'd be willing to take it under advisement.</seg></u>
+                <u who="#q"><seg xml:id="para126" smil:begin="00:27:16.931" smil:end="00:27:20.459">
+                        However, the Audubon Society, that's another thought. Maybe we…</seg></u>
+                <u who="#c"><seg xml:id="para127" smil:begin="00:27:20.459" smil:end="00:27:21.931">
+                        …we could do business together.</seg></u>
+                <u who="#q"><seg xml:id="para128" smil:begin="00:27:21.931" smil:end="00:27:24.187">
+                        Now, sir, let’s get back to…</seg></u>
+                <u who="#f"><seg xml:id="para129" smil:begin="00:27:24.187" smil:end="00:27:25.227">
+                        One last question, please, Mr. Julber.</seg></u>
+                <u who="#q"><seg xml:id="para130" smil:begin="00:27:25.227" smil:end="00:27:40.642">
+                        Let's get back to this one percent of the park that the public really has
+                        use of. Do you feel if we increase that to ten percent and let you
+                        backpackers have only ninety percent of the wilderness area that you have
+                        now, that that would be such a terrible deprivation for your students and
+                        you.</seg></u>
+                <u who="#c"><seg xml:id="para131" smil:begin="00:27:40.642" smil:end="00:27:46.683">
+                        We're looking for one percent of the entire United States area and I think
+                        it's a fair percentage for us to request, yes.</seg></u>
+                <u who="#f"><seg xml:id="para132" smil:begin="00:27:46.683" smil:end="00:27:50.291">
+                        Mr. Unsoeld, that's all that we have time for. Thank you very much for being
+                        here.</seg></u>
+                <u who="#c"><seg xml:id="para133" smil:begin="00:27:50.291" smil:end="00:27:50.866">
+                        Thank you.</seg></u>
+                <u who="#f"><seg xml:id="para134" smil:begin="00:27:57.027" smil:end="00:27:58.062">
+                        All right, Mr. Miller.</seg></u>
+                <u who="#a"><seg xml:id="para135" smil:begin="00:27:58.062" smil:end="00:28:43.183">
+                        I think it's clear that here in Yosemite Valley in Garrett Hardin and Willie
+                        Unsoeld, we have men to match these mountains. There are a couple of things
+                        that have to be said about the cross-examination. The perspective is the
+                        entire country. This is all we've got. You begin to ask for ten percent of
+                        this. You're asking for ten percent of all we've got. The important thing is
+                        that all we've got is only this infinitesimal amount. And what about the old
+                        people - this misuse of people who we disregard and then use as an excuse to
+                        spoil this environment. They can stay outside the park in a hotel and come
+                        in in the morning in a mini-bus. For the sake of the convenience of being in
+                        the center of the park instead of just outside, are we going to ruin the
+                        experience, not for the people in the high country, but for everyone else in
+                        the valley. God has created this valley, but only we can preserve
+                    it.</seg></u>
+                <u who="#f"><seg xml:id="para136" smil:begin="00:28:48.246" smil:end="00:29:08.474">
+                        Thank you, Mr. Miller. For those of you at home who may have joined us late,
+                        we've been debating here in Yosemite National Park the question of park
+                        policy for the future and Mr. Miller and his witnesses have been supporting
+                        the policy of restriction on public use of that park and these parks and all
+                        of our national parks. Now, we're going to turn to Mr. Julber who's going to
+                        take the opposite side of that question. Mr. Julber?</seg></u>
+                <u who="#q"><seg xml:id="para137" smil:begin="00:29:08.474" smil:end="00:30:10.027">
+                        Thank you very much. Ladies and gentlemen, we're standing here in the most
+                        beautiful valley in the world. For over one hundred years, Americans have
+                        come here to see "Half-Dome" and all the other wonders of Yosemite, They've
+                        come here in horse carts, wagons, steam locomotives, Model "T's", Model
+                        "A's" and now they come in campers, trailers and motor homes. And suddenly
+                        we're told you must not come here in this manner anymore. This park will no
+                        longer be for the use and enjoyment of all our people. It must be set aside
+                        for a hiking aristocracy, the way European aristocracy used to set aside
+                        vast hunting preserves from which the common people were excluded. I don't
+                        believe that any small group should have the right to take over our national
+                        parks and no small group, no matter how well intentioned, has the right to
+                        impose by law their choice of a life style on the American people. My first
+                        witness is Mr. Don Hummel, Mr. Hummel. Have your turn on the stump, Mr.
+                        Hummel.</seg></u>
+                <u who="#f"><seg xml:id="para138" smil:begin="00:30:14.043" smil:end="00:30:16.475">
+                        Nice to have you with us.</seg></u>
+                <u who="#d"><seg xml:id="para139" smil:begin="00:30:16.475" smil:end="00:30:17.139">
+                        Thank you.</seg></u>
+                <u who="#q"><seg xml:id="para140" smil:begin="00:30:17.139" smil:end="00:30:36.992">
+                        Mr. Hummel was a ranger in Grand Canyon, been a park concessionaire for
+                        forty years and served under Presidents Kennedy and Johnson as head of all
+                        urban renewal in the United States, Mr. Hummel, in your judgment, is
+                        Yosemite being overused and damaged?</seg></u>
+                <u who="#d"><seg xml:id="para141" smil:begin="00:30:36.992" smil:end="00:31:03.237">
+                        Absolutely not. When you consider that they've only set aside a thousand and
+                        forty acres out of seven hundred and sixty thousand acres in this park for
+                        development for use of ninety-nine percent of the people. In other words,
+                        one-eighth of one percent is set aside for the great majority of the use of
+                        the people and I don't think that's an unfair allocation.</seg></u>
+                <u who="#q"><seg xml:id="para142" smil:begin="00:31:03.237" smil:end="00:31:09.912">
+                        And, by the way, sir, there was some mention here of sewage in the river a
+                        couple of years ago. Where did that sewage come from?</seg></u>
+                <u who="#d"><seg xml:id="para143" smil:begin="00:31:09.912" smil:end="00:31:27.203">
+                        That sewage came from the so-called backpackers up in upper Yosemite. The
+                        sewage that comes out of this valley is treated in a treatment plant and
+                        disposed of. The pollution came not from this use that's controlled, but
+                        from the unscheduled use in upper Yosemite.</seg></u>
+                <u who="#f"><seg xml:id="para144" smil:begin="00:31:27.203" smil:end="00:31:30.499">
+                        I suspect, Mr. Hummel, that it wasn't unscheduled, but it was certainly
+                        uncontrolled.</seg></u>
+                <u who="#d"><seg xml:id="para145" smil:begin="00:31:30.499" smil:end="00:31:34.651">
+                        It's uncontrolled. It's unscheduled, also, I might say.</seg></u>
+                <u who="#q"><seg xml:id="para146" smil:begin="00:31:34.651" smil:end="00:31:41.851">
+                        Sir, do you believe that concessioner facilities, such as hotels for people
+                        who want to come here and stay, damage the ecology of the park?</seg></u>
+                <u who="#d"><seg xml:id="para147" smil:begin="00:31:41.851" smil:end="00:32:03.719">
+                        Absolutely not. I think it's a well known fact that if you have a structure
+                        well managed, a permanent structure, with proper management, in one
+                        location, you can serve more people with less damage than helter skelter
+                        spreading of thousands of campers out through thousands of acres of
+                        wilderness.</seg></u>
+                <u who="#q"><seg xml:id="para148" smil:begin="00:32:03.719" smil:end="00:32:10.527">
+                        What about this idea that hotels should be confined to outside the park
+                        area. What do you think about that?</seg></u>
+                <u who="#d"><seg xml:id="para149" smil:begin="00:32:10.527" smil:end="00:32:41.091">
+                        That's very novel, but you create more problems than you solve because once
+                        you do, you create a horrendous transportation problem because everybody has
+                        to come in in the morning, everybody has to go out in the evening, so you
+                        have a commuter type of traffic condition. You lose control of what services
+                        are to be provided for the people that come in this park, both as to quality
+                        of service, the price to be paid for the service and whether or not they're
+                        serviced at all in the off-season.</seg></u>
+                <u who="#q"><seg xml:id="para150" smil:begin="00:32:41.091" smil:end="00:32:50.194">
+                        Incidentally, sir, both of the opposition speakers praised these buses. Who
+                        was it that invented and financed the beginning of that bus
+                    system?</seg></u>
+                <u who="#d"><seg xml:id="para151" smil:begin="00:32:50.194" smil:end="00:32:59.716">
+                        The Yosemite Park and Curry Company was the concessioner that put up the
+                        first hundred and twenty-five thousand to test this concept because we knew
+                        we had a traffic problem.</seg></u>
+                <u who="#q"><seg xml:id="para152" smil:begin="00:32:59.716" smil:end="00:33:08.907">
+                        O. K,, sir and, incidentally, there's been some reference here to prices at
+                        Yosemite Lodge. Do you, in fact, have low cost accommodations?</seg></u>
+                <u who="#d"><seg xml:id="para153" smil:begin="00:33:08.907" smil:end="00:33:26.563">
+                        We have accommodations as low as $6. 00 for two people in canvas cabins. It
+                        is National Park Service policy to give a range of prices to reach all the
+                        American people, not just one group, as these people would do relegated to
+                        backpackers.</seg></u>
+                <u who="#q"><seg xml:id="para154" smil:begin="00:33:26.563" smil:end="00:33:32.626">
+                        And, sir, what is the average profit of the concessionaires who operate in
+                        the park systems?</seg></u>
+                <u who="#d"><seg xml:id="para155" smil:begin="00:33:32.626" smil:end="00:33:45.771">
+                        In 1970, all the concessioners in the parks made the magnificent sum of 3. 8
+                        percent on their investment and one-third of them in 1970 lost
+                    money,</seg></u>
+                <u who="#q"><seg xml:id="para156" smil:begin="00:33:45.771" smil:end="00:33:56.711">
+                        Sir, we've heard recommendations that people who come up here in campers and
+                        trailers to camp should be prohibited and that all camping should be in
+                        tents. What do you think about that?</seg></u>
+                <u who="#d"><seg xml:id="para157" smil:begin="00:33:56.711" smil:end="00:34:04.848">
+                        Well, those people are so disturbed about the wilderness and the impact on
+                        the land. These are the best campers which you can get.</seg></u>
+                <u who="#q"><seg xml:id="para158" smil:begin="00:34:04.848" smil:end="00:34:06.247">
+                        The people in the campers?</seg></u>
+                <u who="#d"><seg xml:id="para159" smil:begin="00:34:06.247" smil:end="00:34:21.219">
+                        The people in the campers. They're experienced campers. They have their
+                        sanitary system with them. They build less wood fires cause they cook in
+                        their facility and they leave a clean camp, which is more than I can say in
+                        ninety percent of the backpackers.</seg></u>
+                <u who="#q"><seg xml:id="para160" smil:begin="00:34:21.219" smil:end="00:34:30.595">
+                        Now, Mr. Hummel, do you agree that our parks should be preserved for
+                        posterity?</seg></u>
+                <u who="#d"><seg xml:id="para161" smil:begin="00:34:30.595" smil:end="00:34:49.576">
+                        Absolutely, but what I want to know is when does posterity begin. Tomorrow?
+                        Next year? A hundred years from now? Or does it start today, with this
+                        generation. We've got a perfect right as part of posterity to enjoy this and
+                        all the American peoples who own and pay for these parks have a perfect
+                        right to utilize them.</seg></u>
+                <u who="#q"><seg xml:id="para162" smil:begin="00:34:49.576" smil:end="00:34:50.552">
+                        Thank you very much.</seg></u>
+                <u who="#f"><seg xml:id="para163" smil:begin="00:34:50.552" smil:end="00:34:54.424">
+                        All right, Mr. Hummel. Mr. Miller is coming over here and he's going to ask
+                        you some questions.</seg></u>
+                <u who="#a"><seg xml:id="para164" smil:begin="00:34:54.424" smil:end="00:35:07.542">
+                        Mr. Hummel, I was interested in your reference to Yosemite Park and Curry
+                        Company, which is the concessionaire here in the valley, putting up the
+                        hundred and twenty-five thousand dollars for the shuttle system. You're new
+                        as manager of that company, aren't you? You started in July.</seg></u>
+                <u who="#d"><seg xml:id="para165" smil:begin="00:35:07.542" smil:end="00:35:18.086">
+                        Not as manager. I've been connected with the company for two years. I've
+                        been here actively and resident for a short time. No, I wasn't taking
+                        personal credit. I'm talking about Yosemite Park and Curry
+                    Company.</seg></u>
+                <u who="#a"><seg xml:id="para166" smil:begin="00:35:18.086" smil:end="00:35:24.557">
+                        But in fact, Yosemite Park and Curry Company, fifty-one percent has recently
+                        been bought out by another corporation, United States Natural Resources, is
+                        that right?</seg></u>
+                <u who="#d"><seg xml:id="para167" smil:begin="00:35:24.557" smil:end="00:35:24.942">
+                        That's right.</seg></u>
+                <u who="#a"><seg xml:id="para168" smil:begin="00:35:24.942" smil:end="00:35:35.662">
+                        And one of the first things in terms of your expenditure in the valley, one
+                        of the first things that corporation did is write a letter to its
+                        shareholders saying that it's now going to spend money outside the valley
+                        for other investments instead of paying a dividend. Is that
+                    correct?</seg></u>
+                <u who="#d"><seg xml:id="para169" smil:begin="00:35:35.662" smil:end="00:35:54.100">
+                        Yes, it's only good business, I would think, that if you're taking care of
+                        the other man's property and you have all these people making a sulk saying
+                        it should be, you should not develop in the park, then I think you have an
+                        obligation to go into other areas too. That's just good business
+                        judgment.</seg></u>
+                <u who="#a"><seg xml:id="para170" smil:begin="00:35:54.100" smil:end="00:36:01.468">
+                        Let's talk about that good business, USNR, the company that owns this, is in
+                        other businesses too, strip mining in Pennsylvania, forest products, oil and
+                        timber.</seg></u>
+                <u who="#d"><seg xml:id="para171" smil:begin="00:36:01.468" smil:end="00:36:02.627">
+                        That's right.</seg></u>
+                <u who="#a"><seg xml:id="para172" smil:begin="00:36:02.627" smil:end="00:36:14.741">
+                        But tell me what this company that's engaged in these activities, strip
+                        mining and the other things in this conglomerate. What perspective does it
+                        bring to development of the park. Would you, for example, put a golf course
+                        in Yosemite Valley?</seg></u>
+                <u who="#d"><seg xml:id="para173" smil:begin="00:36:14.741" smil:end="00:36:21.725">
+                        No, I wouldn't put a golf course. Fact is if the golf courses were there,
+                        they were allowed, just like the one at Wawona.</seg></u>
+                <u who="#f"><seg xml:id="para174" smil:begin="00:36:21.725" smil:end="00:36:23.292">
+                        Where is Wawona?</seg></u>
+                <u who="#d"><seg xml:id="para175" smil:begin="00:36:23.292" smil:end="00:36:28.455">
+                        Wawona is about thirty miles from here in the southeastern section of this
+                        park. </seg></u>
+                <u who="#a"><seg xml:id="para176" smil:begin="00:36:28.455" smil:end="00:36:29.335">
+                        It's in the park?</seg></u>
+                <u who="#d"><seg xml:id="para177" smil:begin="00:36:29.335" smil:end="00:36:30.231">
+                        It is in the park.</seg></u>
+                <u who="#a"><seg xml:id="para178" smil:begin="00:36:30.231" smil:end="00:36:36.071">
+                        Do you think that there's wilderness area, special regions, that ought to be
+                        set aside in this country and not developed? </seg></u>
+                <u who="#d"><seg xml:id="para179" smil:begin="00:36:36.071" smil:end="00:36:45.669">
+                        Very definitely. The fact is that outside the park, there's thirty million
+                        acres of wilderness being designated. Outside of the national
+                    parks, </seg></u>
+                <u who="#a"><seg xml:id="para180" smil:begin="00:36:45.669" smil:end="00:37:00.376">
+                        The question, the dispute, then is that you think there are some areas that
+                        ought not be developed, but the question is should these places, like the
+                        valley of Yosemite, the center of Yellowstone, Lassen, Glacier, should these
+                        places, these beautiful places, be included in that area. That's really what
+                        we're talking about. </seg></u>
+                <u who="#d"><seg xml:id="para181" smil:begin="00:37:00.376" smil:end="00:37:07.288">
+                        Yes. I say "no", that's not necessary for the wilderness as defined in the
+                        Wilderness Act of 1964. </seg></u>
+                <u who="#a"><seg xml:id="para182" smil:begin="00:37:07.288" smil:end="00:37:18.270">
+                        But what about this experience. Where in the United States, where in the
+                        world, does anyone get an experience of being in this valley without
+                        development so long as there's development in this valley. Is there anything
+                        else like it anyplace?</seg></u>
+                <u who="#d"><seg xml:id="para183" smil:begin="00:37:18.270" smil:end="00:37:26.238">
+                        You are assuming that the development here is adverse to the utilization of
+                        this park and I challenge your premise. </seg></u>
+                <u who="#a"><seg xml:id="para184" smil:begin="00:37:26.238" smil:end="00:37:31.166">
+                        Well, you said there are a thousand and forty acres used. In a peak summer
+                        weekend, how many people are here on that thousand and forty
+                    acres?</seg></u>
+                <u who="#d"><seg xml:id="para185" smil:begin="00:37:31.166" smil:end="00:37:35.936">
+                        We'll run fifteen thousand people in an average peak day.</seg></u>
+                <u who="#a"><seg xml:id="para186" smil:begin="00:37:35.936" smil:end="00:37:40.895">
+                        The L. A, "Times" reports seventy-four thousand on a peak July weekend. Is
+                        that inaccurate?</seg></u>
+                <u who="#d"><seg xml:id="para187" smil:begin="00:37:40.895" smil:end="00:37:44.142">
+                        I think their figures are far, far from the facts.</seg></u>
+                <u who="#a"><seg xml:id="para188" smil:begin="00:37:44.142" smil:end="00:37:47.958">
+                        Well, let's... I'll trust the "Times" on this.</seg></u>
+                <u who="#f"><seg xml:id="para189" smil:begin="00:37:47.958" smil:end="00:37:50.174">
+                        We agree on fifteen thousand, anyway, right?</seg></u>
+                <u who="#d"><seg xml:id="para190" smil:begin="00:37:50.174" smil:end="00:37:53.830">
+                        Fifteen thousand is the park service's figure as an average peak
+                    day.</seg></u>
+                <u who="#a"><seg xml:id="para191" smil:begin="00:37:53.830" smil:end="00:37:56.158">
+                        An average peak day, OK.</seg></u>
+                <u who="#d"><seg xml:id="para192" smil:begin="00:37:56.158" smil:end="00:37:58.958">
+                        An average peak day in July, which is the peak month.</seg></u>
+                <u who="#a"><seg xml:id="para193" smil:begin="00:37:58.958" smil:end="00:38:01.326">
+                        And that's still in the valley, that's fifteen people to the acre.</seg></u>
+                <u who="#d"><seg xml:id="para194" smil:begin="00:38:01.326" smil:end="00:38:05.526">
+                        Well, it's according to whether you're seven hundred and sixty thousand
+                        …</seg></u>
+                <u who="#a"><seg xml:id="para195" smil:begin="00:38:05.526" smil:end="00:38:10.757">
+                        No, no, you say a thousand and forty acres is what's being used. We've been
+                        taking your own figures - this means fifteen people to the acre. </seg></u>
+                <u who="#d"><seg xml:id="para196" smil:begin="00:38:10.757" smil:end="00:38:11.302">
+                        Yes, but…</seg></u>
+                <u who="#a"><seg xml:id="para197" smil:begin="00:38:11.302" smil:end="00:38:11.894">
+                        You can't have it both ways.</seg></u>
+                <u who="#d"><seg xml:id="para198" smil:begin="00:38:11.894" smil:end="00:38:22.383">
+                        There's seven hundred and sixty thousand acres in this park and the people who are
+                        the backpackers unfortunately think that they have to come through this
+                        valley to get to that area instead of coming the other way. </seg></u>
+                <u who="#a"><seg xml:id="para199" smil:begin="00:38:22.383" smil:end="00:38:31.680">
+                        But ninety-nine percent, according to your own testimony, ninety-nine
+                        percent of the people use the thousand and forty acres. That means there's a
+                        density of fifteen people to the acre in the valley on an average peak
+                        weekend.</seg></u>
+                <u who="#d"><seg xml:id="para200" smil:begin="00:38:31.680" smil:end="00:38:38.095">
+                        That's right and the park service by their planning standards say it can
+                        take twenty-five thousand a day without damage.</seg></u>
+                <u who="#a"><seg xml:id="para201" smil:begin="00:38:38.095" smil:end="00:38:41.119">
+                        Their planning standards - their planning standards for what? Now, Mr.
+                        Julber…</seg></u>
+                <u who="#d"><seg xml:id="para202" smil:begin="00:38:41.119" smil:end="00:38:44.048">
+                        That's the park service who is responsible for administering this
+                    act.</seg></u>
+                <u who="#a"><seg xml:id="para203" smil:begin="00:38:44.048" smil:end="00:38:46.504">
+                        Would you accept the park service's standards for Yellowstone?</seg></u>
+                <u who="#d"><seg xml:id="para204" smil:begin="00:38:46.504" smil:end="00:38:48.175">
+                        Yes, I think that. . .</seg></u>
+                <u who="#a"><seg xml:id="para205" smil:begin="00:38:48.175" smil:end="00:38:49.463">
+                        That cars should be banned from Yellowstone?</seg></u>
+                <u who="#d"><seg xml:id="para206" smil:begin="00:38:49.463" smil:end="00:38:50.344">
+                        Not, not all recommendations.</seg></u>
+                <u who="#a"><seg xml:id="para207" smil:begin="00:38:50.344" smil:end="00:38:50.872">
+                        Not all.</seg></u>
+                <u who="#d"><seg xml:id="para208" smil:begin="00:38:50.872" smil:end="00:38:54.855">
+                        Not all, but only three percent of Yellowstone is used.</seg></u>
+                <u who="#a"><seg xml:id="para209" smil:begin="00:38:54.855" smil:end="00:39:00.749">
+                        Only three percent of Yellowstone is used, but Yellowstone is what of what
+                        we have in the United States.</seg></u>
+                <u who="#d"><seg xml:id="para210" smil:begin="00:39:00.749" smil:end="00:39:01.775">
+                        Two and a quarter million acres of land.</seg></u>
+                <u who="#a"><seg xml:id="para211" smil:begin="00:39:01.775" smil:end="00:39:07.496">
+                        Let's talk about this elite now and weather this "aristocracy" of back packing elite.
+                        Anyone can go backpacking, can't they?</seg></u>
+                <u who="#d"><seg xml:id="para212" smil:begin="00:39:07.496" smil:end="00:39:10.483">
+                        No, there are people who are physically handicapped.</seg></u>
+                <u who="#a"><seg xml:id="para213" smil:begin="00:39:10.483" smil:end="00:39:14.292">
+                        I know that, but I mean in terms of economics. You talked about aristocracy.
+                        In terms of economics...</seg></u>
+                <u who="#d"><seg xml:id="para214" smil:begin="00:39:14.292" smil:end="00:39:28.553">
+                        No, actually, a good backpacking equipment. The person who has a family of
+                        five and has to provide the facilities of tents, backpacking equipment and
+                        so forth, is in much heavier financial outlay than the person who comes up
+                        to use one of our cabins.</seg></u>
+                <u who="#a"><seg xml:id="para215" smil:begin="00:39:28.553" smil:end="00:39:32.585">
+                        No wonder you're hooked on development, Mr. Hummel, you're hooked on cost.
+                        Let's talk about an aristocracy. </seg></u>
+                <u who="#d"><seg xml:id="para216" smil:begin="00:39:32.585" smil:end="00:39:33.331">
+                        I'm not hooked on cost.</seg></u>
+                <u who="#a"><seg xml:id="para217" smil:begin="00:39:33.331" smil:end="00:39:43.730">
+                        Is there any reason at all for the Ahwahnee Hotel to be in Yosemite Valley,
+                        forty dollars a night for two. What is the rationale for having a luxury
+                        hotel in the middle of Yosemite Valley? </seg></u>
+                <u who="#d"><seg xml:id="para218" smil:begin="00:39:43.730" smil:end="00:39:45.526">
+                        Because that hotel…</seg></u>
+                <u who="#a"><seg xml:id="para219" smil:begin="00:39:45.526" smil:end="00:39:46.738">
+                        Serves the aristocracy…</seg></u>
+                <u who="#d"><seg xml:id="para220" smil:begin="00:39:46.738" smil:end="00:40:07.446">
+                        the dignity fits in beautifully with the background, I walk every morning
+                        about six o'clock, I can look towards the Ahwahnee Hotel and have a hard
+                        time discerning it because it fits in. I look to the right to where the
+                        backpackers are and I see orange tents, green tents, yellow tents, brown
+                        tents, that offends my sensitivity. </seg></u>
+                <u who="#a"><seg xml:id="para221" smil:begin="00:40:07.446" smil:end="00:40:21.309">
+                        I just think that… I think, Mr. Hummel, that the answer is that your
+                        sensitivities were shaped when you were head of urban development in the
+                        United States, government. I'll even give you a chance to reply,
+                    even…</seg></u>
+                <u who="#d"><seg xml:id="para222" smil:begin="00:40:21.309" smil:end="00:40:30.969">
+                        You show how wrong you are. I started in this when I was a ranger, back when
+                        I was in college, I wasn't in urban renewal.</seg></u>
+                <u who="#a"><seg xml:id="para223" smil:begin="00:40:30.969" smil:end="00:40:32.285">
+                        We all regret our youth…</seg></u>
+                <u who="#d"><seg xml:id="para224" smil:begin="00:40:32.285" smil:end="00:40:33.477">
+                        That was '66 - '69...</seg></u>
+                <u who="#a"><seg xml:id="para225" smil:begin="00:40:33.477" smil:end="00:40:39.805">
+                        But since then you've run concessions and sold them in Lassen. You've been
+                        head of Urban Development, You've come back with this company. </seg></u>
+                <u who="#d"><seg xml:id="para226" smil:begin="00:40:39.805" smil:end="00:40:46.149">
+                        Yes, I consider myself just like many of the concessioners, as good a
+                        conservationist as there is there in the park service.</seg></u>
+                <u who="#a"><seg xml:id="para227" smil:begin="00:40:46.149" smil:end="00:40:52.461">
+                        Why have a ski resort in Yosemite National Park. There's so much land in the
+                        United States for ski resorts. Why do you take part of this park to have a
+                        ski resort? </seg></u>
+                <u who="#d"><seg xml:id="para228" smil:begin="00:40:52.461" smil:end="00:40:56.133">
+                        Why shouldn't a skier come up and enjoy the scenery at Yosemite National
+                        Park? </seg></u>
+                <u who="#a"><seg xml:id="para229" smil:begin="00:40:56.133" smil:end="00:40:58.597">
+                        Cross-country? Absolutely right. We want cross-country skiing opened
+                        up. </seg></u>
+                <u who="#d"><seg xml:id="para230" smil:begin="00:40:58.597" smil:end="00:41:03.749">
+                        Wait a minute. Why should you decide what kind of use. This belongs to the
+                        people of the United States, not to you. </seg></u>
+                <u who="#a"><seg xml:id="para231" smil:begin="00:41:03.749" smil:end="00:41:13.334">
+                        No one's against skiing. Every ski resort in the United States is being
+                        built, in Utah, Colorado, outside of national parks. No one's against
+                        skiing. Why do you need ... Slow down or stop? </seg></u>
+                <u who="#f"><seg xml:id="para232" smil:begin="00:41:13.334" smil:end="00:41:16.461">
+                        No, I'm going to let Mr. Hummel answer that and then.</seg></u>
+                <u who="#a"><seg xml:id="para233" smil:begin="00:41:16.461" smil:end="00:41:18.565">
+                        Why do we need it inside this park?</seg></u>
+                <u who="#f"><seg xml:id="para234" smil:begin="00:41:18.565" smil:end="00:41:20.893">
+                        Why do we need a ski resort inside this park - very quickly, Mr.
+                        Hummel. </seg></u>
+                <u who="#d"><seg xml:id="para235" smil:begin="00:41:20.893" smil:end="00:41:28.981">
+                        Because you spread the use of this park through many seasons and stop the
+                        intensive use in just the summertime. </seg></u>
+                <u who="#a"><seg xml:id="para236" smil:begin="00:41:28.981" smil:end="00:41:29.885">
+                        Why.. .</seg></u>
+                <u who="#f"><seg xml:id="para237" smil:begin="00:41:29.885" smil:end="00:41:32.461">
+                        No, I cannot allow another question.</seg></u>
+                <u who="#d"><seg xml:id="para238" smil:begin="00:41:32.461" smil:end="00:41:33.301">
+                        You allow...</seg></u>
+                <u who="#f"><seg xml:id="para239" smil:begin="00:41:33.301" smil:end="00:41:38.077">
+                        Mr. Hummel's for it and Mr. Miller is against it and, with that, gentlemen,
+                        I have to break in. Thank you very much. </seg></u>
+                <u who="#d"><seg xml:id="para240" smil:begin="00:41:38.077" smil:end="00:41:42.837">
+                        You allow those people to enjoy their national parks in the way they like to
+                        do it, </seg></u>
+                <u who="#f"><seg xml:id="para241" smil:begin="00:41:42.837" smil:end="00:41:44.245">
+                        OK, thanks, Mr. Hummel.</seg></u>
+                <u who="#f"><seg xml:id="para242" smil:begin="00:41:48.069" smil:end="00:41:51.797">
+                        That was a lively exchange. All right, Mr. Julber, another witness,
+                        please. </seg></u>
+                <u who="#q"><seg xml:id="para243" smil:begin="00:41:51.797" smil:end="00:42:00.686">
+                        My next witness is Mr. Floyd Dominy, a lifelong outdoorsman, former head of
+                        the Bureau of Reclamation under four Presidents. </seg></u>
+                <u who="#f"><seg xml:id="para244" smil:begin="00:42:00.686" smil:end="00:42:04.461">
+                        Welcome to "The Advocates", Mr. Dominy.</seg></u>
+                <u who="#e"><seg xml:id="para245" smil:begin="00:42:04.461" smil:end="00:42:05.781">
+                        A pleasure to be here. </seg></u>
+                <u who="#q"><seg xml:id="para246" smil:begin="00:42:05.781" smil:end="00:42:09.429">
+                        Mr. Dominy, do you think we're presently using our national parks
+                        wisely. </seg></u>
+                <u who="#e"><seg xml:id="para247" smil:begin="00:42:09.429" smil:end="00:42:18.101">
+                        No, I think it's a shame we're not developing more of the great natural
+                        areas so people can get into them and use them the way they'd like to use
+                        them. </seg></u>
+                <u who="#q"><seg xml:id="para248" smil:begin="00:42:18.101" smil:end="00:42:21.149">
+                        Is that by backpacking or by automobile.</seg></u>
+                <u who="#e"><seg xml:id="para249" smil:begin="00:42:21.149" smil:end="00:42:30.349">
+                        It certainly wouldn't interfere with backpacking if you developed twice as
+                        much land in Yosemite, twice as much land in Yellowstone and twice as much
+                        land in Glacier for those who don't like to backpack. </seg></u>
+                <u who="#q"><seg xml:id="para250" smil:begin="00:42:30.349" smil:end="00:42:43.570">
+                        Let's take Yellowstone as an example. We've been told that three percent is
+                        developed in Yellowstone, that is, with hotels and with access to the
+                        public. Would you recommend doubling that figure? </seg></u>
+                <u who="#e"><seg xml:id="para251" smil:begin="00:42:43.570" smil:end="00:42:44.099">
+                        At least. </seg></u>
+                <u who="#q"><seg xml:id="para252" smil:begin="00:42:44.099" smil:end="00:42:50.139">
+                        And do you think that'd be unfair to the backpackers who would have the
+                        enjoyment of the remaining ninety-four percent? </seg></u>
+                <u who="#e"><seg xml:id="para253" smil:begin="00:42:50.139" smil:end="00:42:50.803">
+                        Not at all.</seg></u>
+                <u who="#q"><seg xml:id="para254" smil:begin="00:42:50.803" smil:end="00:42:58.699">
+                        Getting back to Yellowstone, now, what would you suggest as a means of
+                        improving the access to the public to the wonders of Yellowstone?</seg></u>
+                <u who="#e"><seg xml:id="para255" smil:begin="00:42:58.699" smil:end="00:43:07.499">
+                        Well, I want to say that I've been to Yellowstone many, many times. I was
+                        actually appointed one of the ninety-day wonders there in 1930, but I didn't
+                        accept it because I thought I'd have to buy my own uniforms.</seg></u>
+                <u who="#q"><seg xml:id="para256" smil:begin="00:43:07.499" smil:end="00:43:08.483">
+                        What was…</seg></u>
+                <u who="#f"><seg xml:id="para257" smil:begin="00:43:08.483" smil:end="00:43:10.811">
+                        For those of us youngsters who were …</seg></u>
+                <u who="#e"><seg xml:id="para258" smil:begin="00:43:10.811" smil:end="00:43:15.755">
+                        The ninety-day wonders were summer rangers who worked for ninety days during
+                        the peak season.</seg></u>
+                <u who="#f"><seg xml:id="para259" smil:begin="00:43:15.755" smil:end="00:43:17.163">
+                        And what would you do about Yellowstone?</seg></u>
+                <u who="#e"><seg xml:id="para260" smil:begin="00:43:17.163" smil:end="00:43:59.361">
+                        Well, I would develop Yellowstone by opening a great many additional areas.
+                        There's no reason to confine total visitation of a park of almost four
+                        thousand square miles to the loop, which occupies only three percent of the
+                        total acreage of two and a quarter million and there are many, many areas in
+                        Yellowstone that could be developed by additional roads. I don't mean
+                        highways with four lanes, I mean a gravel road capable of two cars passing
+                        one another going in the same direction, so people can stop and look at the
+                        elk and the moose and they can enjoy the park and have some outer camps away
+                        from this congested area.</seg></u>
+                <u who="#q"><seg xml:id="para261" smil:begin="00:43:59.361" smil:end="00:44:06.217">
+                        And, sir, would that in your judgment interfere with the use of ninety-four
+                        percent of the park by backpackers.</seg></u>
+                <u who="#e"><seg xml:id="para262" smil:begin="00:44:06.217" smil:end="00:44:07.417">
+                        I don't see how anyone could say that.</seg></u>
+                <u who="#q"><seg xml:id="para263" smil:begin="00:44:07.417" smil:end="00:44:09.441">
+                        And do you think it would hurt the animal life?</seg></u>
+                <u who="#e"><seg xml:id="para264" smil:begin="00:44:09.441" smil:end="00:44:27.247">
+                        Not at all. My experience in the parks in Africa where the animal is the
+                        chief reason for the park, they put roads everywhere, and you ride along.
+                        You're not allowed to get out of the car, of course, and you're not allowed
+                        to feed them and all that, but you can take pictures and the animals pay no
+                        attention to you and that's the same way they do in Yellowstone.</seg></u>
+                <u who="#q"><seg xml:id="para265" smil:begin="00:44:27.247" smil:end="00:44:31.120">
+                        By the way, sir, have you yourself been a backpacker.?</seg></u>
+                <u who="#e"><seg xml:id="para266" smil:begin="00:44:31.120" smil:end="00:44:42.126">
+                        I certainly was. In the late 20's and early 30's when I couldn't afford to
+                        get into the parks and into the mountains any other way. I enjoyed it
+                        thoroughly, but now I prefer not to backpack to get into the
+                    parks.</seg></u>
+                <u who="#q"><seg xml:id="para267" smil:begin="00:44:42.126" smil:end="00:44:51.909">
+                        All right. Now, do you find that if you sleep in a clean bed and have a good
+                        meal in a restaurant, that that at all interferes with your sensitivity? To
+                        the beauties of nature?</seg></u>
+                <u who="#e"><seg xml:id="para268" smil:begin="00:44:51.909" smil:end="00:44:57.269">
+                        Quite the contrary, I think I enjoy it more after a leisurely sleep and a
+                        leisurely breakfast and a warm bath.</seg></u>
+                <u who="#q"><seg xml:id="para269" smil:begin="00:44:57.269" smil:end="00:45:17.482">
+                        And do you think, sir, that any one group such as the back- packers, no
+                        matter how well intentioned they are, no matter how good they think
+                        backpacking is for the American people. Do you really think that they should
+                        impose their standards by law on the American people and say that all the
+                        rest of the public has to be confined to one percent or three
+                    percent?</seg></u>
+                <u who="#e"><seg xml:id="para270" smil:begin="00:45:17.482" smil:end="00:45:35.114">
+                        Well, I can only say that when I was going into the mountains with my
+                        backpack and on my ski trips in the wintertime for cross-country skiing.
+                        There were no ski tows in those days. I didn't feel that I was depriving
+                        anybody else of that pleasure, nor did I think that anyone else was
+                        depriving me of the pleasure by sleeping in a good hotel and in some other
+                        area.</seg></u>
+                <u who="#q"><seg xml:id="para271" smil:begin="00:45:35.114" smil:end="00:45:46.788">
+                        Don't you think that whether people want to backpack or stay in a hotel
+                        should be a matter of individual choice, and not something that is imposed
+                        by the federal government, which adopts the new laws and
+                    regulations.</seg></u>
+                <u who="#e"><seg xml:id="para272" smil:begin="00:45:46.788" smil:end="00:46:07.974">
+                        Well, I certainly think that all this wonderful acreage that belongs to the
+                        people, and it was selected as one of the prime areas of scenic value,
+                        should not be converted into wilderness for the few. I think it ought to be
+                        developed more than it is for the average family that loves to come to the
+                        park and show their kids the natural wonders that's being preserved in their
+                        name.</seg></u>
+                <u who="#q"><seg xml:id="para273" smil:begin="00:46:07.974" smil:end="00:46:30.660">
+                        And, sir, do you think that the average American working man after working
+                        fifty weeks of hard work during the year, is about, on his two-week
+                        vacation, to put a pack on his back and a pack on his wife's back, and packs
+                        on the backs of his kids, and hike off into the wilderness, or does that man
+                        just want a nice place to camp, or a nice hotel to stay at?</seg></u>
+                <u who="#e"><seg xml:id="para274" smil:begin="00:46:30.660" smil:end="00:46:31.804">
+                        I think the answer's very obvious.</seg></u>
+                <u who="#q"><seg xml:id="para275" smil:begin="00:46:31.804" smil:end="00:46:33.620">
+                        O. K. Thanks, Mr. Dominy.</seg></u>
+                <u who="#f"><seg xml:id="para276" smil:begin="00:46:33.620" smil:end="00:46:36.612">
+                        All right, Mr. Dominy, Mr. Miller would like to ask you some questions. Mr.
+                        Miller,</seg></u>
+                <u who="#a"><seg xml:id="para277" smil:begin="00:46:38.685" smil:end="00:46:43.652">
+                        Mr. Dominy, as head of the Bureau of Reclamation for many years, you were a
+                        dam builder, one of the nation's leading dam builders.</seg></u>
+                <u who="#e"><seg xml:id="para278" smil:begin="00:46:43.652" smil:end="00:46:50.292">
+                        Yes, I'm very proud of the fact that I've helped the parks a great deal by
+                        opening up many areas for recreation and taken some of the pressure off the
+                        parks.</seg></u>
+                <u who="#a"><seg xml:id="para279" smil:begin="00:46:50.292" smil:end="00:46:54.356">
+                        Well, tell me. I want to ask you, Mr. Dominy, would you dam the Yosemite
+                        Valley. Would you dam the Merced and dam Yosemite Valley?</seg></u>
+                <u who="#e"><seg xml:id="para280" smil:begin="00:46:54.356" smil:end="00:46:57.948">
+                        Well, there's many reasons why you wouldn't dam Yosemite Valley.</seg></u>
+                <u who="#f"><seg xml:id="para281" smil:begin="00:46:57.948" smil:end="00:47:00.524">
+                        Mr. Miller, the Merced is what?</seg></u>
+                <u who="#a"><seg xml:id="para282" smil:begin="00:47:00.524" smil:end="00:47:01.436">
+                        That's the river that goes through the valley.</seg></u>
+                <u who="#e"><seg xml:id="para283" smil:begin="00:47:01.436" smil:end="00:47:10.523">
+                        There’re many reasons you wouldn't even consider damming the valley, even if
+                        it wasn't a national park in the first place. It has a very steep gradient,
+                        so you'd have a very poor reservoir area and you don't have a very heavy
+                        flow of water. </seg></u>
+                <u who="#a"><seg xml:id="para284" smil:begin="00:47:10.523" smil:end="00:47:19.748">
+                        Well, that's a very interesting answer, especially in terms of our emotional
+                        reaction to Yosemite, because of course, just north of here, in Yosemite
+                        National Park, there is another Yosemite Valley. A twin. </seg></u>
+                <u who="#e"><seg xml:id="para285" smil:begin="00:47:19.748" smil:end="00:47:20.316">
+                        Not on the Merced.</seg></u>
+                <u who="#a"><seg xml:id="para286" smil:begin="00:47:20.316" smil:end="00:47:23.324">
+                        No, not on the Merced, on the Tuolomne. It's Hetch Hetchy Valley. </seg></u>
+                <u who="#e"><seg xml:id="para287" smil:begin="00:47:23.324" smil:end="00:47:24.060">
+                        Well, I don't think…</seg></u>
+                <u who="#a"><seg xml:id="para288" smil:begin="00:47:24.060" smil:end="00:47:25.420">
+                        Let me ask you the question…</seg></u>
+                <u who="#e"><seg xml:id="para289" smil:begin="00:47:25.420" smil:end="00:47:27.765">
+                        ...by talking about that. That was built when I was five years
+                    old. </seg></u>
+                <u who="#a"><seg xml:id="para290" smil:begin="00:47:27.765" smil:end="00:47:28.476">
+                        Well, but I was...</seg></u>
+                <u who="#f"><seg xml:id="para291" smil:begin="00:47:28.476" smil:end="00:47:30.044">
+                        Mr. Dominy, let's let Mr. Miller ask the next question first.</seg></u>
+                <u who="#a"><seg xml:id="para292" smil:begin="00:47:30.044" smil:end="00:47:41.284">
+                        We're arguing about this irreplaceable resource. There was another one, a
+                        twin, Hetch Hetchy Valley. It was dammed, with Hetch Hetchy Dam. It's now
+                        totally under water. That other Yosemite is gone. Do you agree with the
+                        building of Hetch Hetchy Dam? </seg></u>
+                <u who="#e"><seg xml:id="para293" smil:begin="00:47:41.284" smil:end="00:47:48.780">
+                        Like I say, I was five years old. I wasn't consulted, I think probably I
+                        might have done just like I did in Ram Park and in Marble Canyon. I might
+                        have been against it.</seg></u>
+                <u who="#a"><seg xml:id="para294" smil:begin="00:47:48.780" smil:end="00:47:55.748">
+                        But I want to know what you feel about it, because here you see, the real
+                        question we're asking is which of these valleys has really been dammed, and
+                        what I'm asking you. . .</seg></u>
+                <u who="#e"><seg xml:id="para295" smil:begin="00:47:55.748" smil:end="00:48:03.324">
+                        Well, I think, I think the question is completely out of focus to this
+                        discussion, Mr. Moderator, but I would say,,.</seg></u>
+                <u who="#a"><seg xml:id="para296" smil:begin="00:48:03.324" smil:end="00:48:04.381">
+                        I don't understand why you think it's out of focus.</seg></u>
+                <u who="#f"><seg xml:id="para297" smil:begin="00:48:08.820" smil:end="00:48:11.108">
+                        I think it's clear that Mr. Dominy would oppose the Hetch.</seg><seg
+                        xml:id="para298" smil:begin="00:48:11.108" smil:end="00:48:16.364">Hetchy
+                        Dam had he the responsibility for doing that, and it's clear he couldn't
+                        have because he was five years old. How about another question.</seg></u>
+                <u who="#a"><seg xml:id="para299" smil:begin="00:48:16.364" smil:end="00:48:37.504">
+                        O.K. I'll take your five year old. Tell me. What we're talking about now,
+                        Mr. Julber keeps talking about having to backpack in and everything. But
+                        really we're talking about whether these kinds of developments are in the
+                        center of the most beautiful places or outside the parks, where people come
+                        in in the mini-buses. What's wrong with keeping them outside? Our man who
+                        works fifty weeks a year can still go with his family to the hotel, outside,
+                        and he takes a mini-bus in. Why not do that?</seg></u>
+                <u who="#e"><seg xml:id="para300" smil:begin="00:48:37.504" smil:end="00:48:38.679">
+                        It's an entirely different experience.</seg></u>
+                <u who="#a"><seg xml:id="para301" smil:begin="00:48:38.679" smil:end="00:48:40.208">
+                        Well, it certainly is.</seg></u>
+                <u who="#e"><seg xml:id="para302" smil:begin="00:48:40.208" smil:end="00:48:52.056">
+                        In Yellowstone, in all my travels in and out of there, it would have been
+                        ridiculous to take your family and expect to stay out on the east gate or at
+                        the north gate or over at the west gate and go in on a mini-bus.</seg></u>
+                <u who="#a"><seg xml:id="para303" smil:begin="00:48:52.056" smil:end="00:48:53.320">
+                        Why would it have been ridiculous?</seg></u>
+                <u who="#e"><seg xml:id="para304" smil:begin="00:48:53.320" smil:end="00:48:58.553">
+                        Well, it's just. It isn't the way you visit a park if you've got your kids
+                        and you want to go in and show them the park.</seg></u>
+                <u who="#a"><seg xml:id="para305" smil:begin="00:48:58.553" smil:end="00:48:59.879">
+                        Why isn't it the way?</seg></u>
+                <u who="#e"><seg xml:id="para306" smil:begin="00:48:59.879" smil:end="00:49:01.823">
+                        And you want to camp at a family campground.</seg></u>
+                <u who="#a"><seg xml:id="para307" smil:begin="00:49:01.823" smil:end="00:49:09.167">
+                        Why isn't it the way? Why isn't it the way you visit? You still camp.
+                        There's no restriction on camping. You can camp all you want. You just have
+                        to do it in a tent instead of in a motorized monstrosity.</seg></u>
+                <u who="#e"><seg xml:id="para308" smil:begin="00:49:09.167" smil:end="00:49:26.733">
+                        I'm not talking about a motorized monstrosity. I've never had more than a
+                        station wagon, myself, but, for example, when you go to the park with small
+                        children, it'd be a little funny to be riding in on a mini-bus, changing
+                        diapers and this and that, you know.</seg></u>
+                <u who="#a"><seg xml:id="para309" smil:begin="00:49:26.733" smil:end="00:49:42.573">
+                        You think it's better to bring them in.. , Let's talk about the African
+                        parks. I've been to the African parks, I'm not sure. In fact, in the African
+                        parks, the signs are up. The people keep out. The people get fenced in and
+                        you can only drive in any of those parks on guided tours, in the car in a
+                        special way.</seg></u>
+                <u who="#e"><seg xml:id="para310" smil:begin="00:49:42.573" smil:end="00:49:44.357">
+                        You've never been to the ones I've been in.</seg></u>
+                <u who="#a"><seg xml:id="para311" smil:begin="00:49:44.357" smil:end="00:49:59.753">
+                        Well, I've been to the ones that are preserved, and preserved, that seems to
+                        be our various prejudices. Tell me about regulation. We do regulate. You say
+                        why not let people come in and stay in the hotel. We do regulate the amount
+                        of development, don't we. We don't let the Yosemite Park and Curry Company
+                        build any number of units it wants.</seg></u>
+                <u who="#e"><seg xml:id="para312" smil:begin="00:49:59.753" smil:end="00:50:01.822">
+                        No, but there ought to be more development.</seg></u>
+                <u who="#a"><seg xml:id="para313" smil:begin="00:50:01.822" smil:end="00:50:02.933">
+                        But we do regulate?</seg></u>
+                <u who="#e"><seg xml:id="para314" smil:begin="00:50:02.933" smil:end="00:50:11.373">
+                        Well, we regulate, but I'm saying the park service is at fault. They haven't
+                        been willing to develop other areas in the park. They've concentrated. .
+                        .</seg></u>
+                <u who="#a"><seg xml:id="para315" smil:begin="00:50:11.373" smil:end="00:50:20.974">
+                        What other area. There's.. .fifty miles from here, there's the largest
+                        alpine meadow in the western United States, Tuolomne Meadow. Would you
+                        develop Tuolomne Meadows with another Ahwahnee, or Yosemite
+                    Lodge? </seg></u>
+                <u who="#e"><seg xml:id="para316" smil:begin="00:50:20.974" smil:end="00:50:21.589">
+                        Of course not.</seg></u>
+                <u who="#a"><seg xml:id="para317" smil:begin="00:50:21.589" smil:end="00:50:22.189">
+                        Why not?</seg></u>
+                <u who="#e"><seg xml:id="para318" smil:begin="00:50:22.189" smil:end="00:50:22.949">
+                        But there's many other areas...</seg></u>
+                <u who="#a"><seg xml:id="para319" smil:begin="00:50:22.949" smil:end="00:50:23.910">
+                        Why not? Why not?</seg></u>
+                <u who="#e"><seg xml:id="para320" smil:begin="00:50:23.910" smil:end="00:50:31.525">
+                        Well because that's a… That's... My dear sir, I'm only saying that you don't
+                        need to confine it to one percent of those areas. </seg></u>
+                <u who="#a"><seg xml:id="para321" smil:begin="00:50:31.525" smil:end="00:50:33.957">
+                        But what about the babies in their diapers going in on a mini-bus to see
+                        Tuolomne? </seg></u>
+                <u who="#e"><seg xml:id="para322" smil:begin="00:50:33.957" smil:end="00:50:38.517">
+                        You don't need to confine your campgrounds. You don't need to confine your
+                        facilities to one percent. </seg></u>
+                <u who="#a"><seg xml:id="para323" smil:begin="00:50:38.517" smil:end="00:50:47.661">
+                        Now, what's the difference between Tuolomne and Yosemite Valley? Tuolomne is
+                        exceptional, but Yosemite Valley is... it can't be described. You'd preserve
+                        Tuolomne, but develop the Valley? </seg></u>
+                <u who="#e"><seg xml:id="para324" smil:begin="00:50:47.661" smil:end="00:50:54.359">
+                        I think if we started all over again in Yosemite Valley, we might have
+                        scattered the facilities more than putting them all in one spot. </seg></u>
+                <u who="#a"><seg xml:id="para325" smil:begin="00:50:54.359" smil:end="00:50:57.318">
+                        Then why not start all over. Take them down and start out all
+                    over. </seg></u>
+                <u who="#e"><seg xml:id="para326" smil:begin="00:50:57.318" smil:end="00:51:05.742">
+                        Take them down and not have anything? No, indeed, this would defeat the very
+                        purpose of the national parks, </seg></u>
+                <u who="#a"><seg xml:id="para327" smil:begin="00:51:05.742" smil:end="00:51:27.627">
+                        Well, let's talk about the purpose. I want to talk to you about Tuolomne
+                        because we have these two areas here yet you want to save that. Don't all
+                        your arguments hold? People don't want to go in on a mini-bus. It's a
+                        beautiful place. We have to expand the use. It's necessary. It's a small
+                        area. Seeing an alpine meadow is a lovely experience, walking across those
+                        meadows is one of the greatest experiences in life. Shouldn't we build
+                        hotels - Hilton Hotel - so people can stay up there to enjoy that?</seg></u>
+                <u who="#e"><seg xml:id="para328" smil:begin="00:51:27.627" smil:end="00:51:31.108">
+                        There are no Hilton Hotels anywhere in the parks. There shouldn't
+                    be,</seg></u>
+                <u who="#a"><seg xml:id="para329" smil:begin="00:51:31.108" smil:end="00:51:33.164">
+                        Well, shouldn't we build another Ahwahnee Lodge?</seg></u>
+                <u who="#e"><seg xml:id="para330" smil:begin="00:51:33.164" smil:end="00:51:36.106">
+                        There should be more campgrounds up there, perhaps adjacent to Tuolomne
+                        Meadows.</seg></u>
+                <u who="#a"><seg xml:id="para331" smil:begin="00:51:36.106" smil:end="00:51:39.395">
+                        Not build another Ahwahnee Lodge so people who can pay 50 dollars a night
+                        can enjoy the meadow?</seg></u>
+                <u who="#e"><seg xml:id="para332" smil:begin="00:51:39.395" smil:end="00:51:45.404">
+                        I don't think you need any more Ahwahnee Lodges, You've got enough now, 40
+                        dollars a day. There's not many people who want to go there.</seg></u>
+                <u who="#a"><seg xml:id="para333" smil:begin="00:51:45.404" smil:end="00:52:01.227">
+                        You may have one more than is necessary. Let's talk about regulation. The
+                        park not only…talking about regulation of use…this park… now, this park now
+                        regulates use. Isn't that right? You can only be in for seven days for some
+                        purposes and fourteen days for others.</seg></u>
+                <u who="#e"><seg xml:id="para334" smil:begin="00:52:01.227" smil:end="00:52:13.754">
+                        Well, I think that's all right, but I think perhaps they ought to consider
+                        another regulation in a park like Yosemite which is so closely aligned to
+                        large centers of population that use it regularly.</seg></u>
+                <u who="#a"><seg xml:id="para335" smil:begin="00:52:13.754" smil:end="00:52:15.162">
+                        What's that other regulation?</seg></u>
+                <u who="#e"><seg xml:id="para336" smil:begin="00:52:15.162" smil:end="00:52:22.091">
+                        Well, we ought to say to the local folks that they have. ..they're limited
+                        to so many days a year up here so the other guy who's coming from Michigan
+                        can get in.</seg></u>
+                <u who="#a"><seg xml:id="para337" smil:begin="00:52:22.091" smil:end="00:52:41.039">
+                        We limit everyone. Let's talk about the park service's recommendation for
+                        Yellowstone. The park service has a general philosophy and now it is
+                        recommended for Yellowstone, cut out the cars, what they call wilderness
+                        check facilities, take down the massive hotels and open up Yellowstone to
+                        the way you say it could not be seen. Do you disagree with that
+                        recommendation?</seg></u>
+                <u who="#e"><seg xml:id="para338" smil:begin="00:52:41.039" smil:end="00:52:41.672">
+                        Very definitely.</seg></u>
+                <u who="#a"><seg xml:id="para339" smil:begin="00:52:41.672" smil:end="00:52:44.384">
+                        Why do you think the park service is going around making these
+                        recommendations?</seg></u>
+                <u who="#e"><seg xml:id="para340" smil:begin="00:52:44.384" smil:end="00:52:51.216">
+                        Well, because there's a lot of people that believe that way, but there's
+                        more people that believe the other way. You'll find that out before this
+                        get's carried out, sir.</seg></u>
+                <u who="#a"><seg xml:id="para341" smil:begin="00:52:51.216" smil:end="00:53:11.349">
+                        But, isn't one of the reasons there's more people is because we've excluded
+                        that experience. You can't come here and enjoy the Valley as it was. You
+                        hear the traffic? Maybe the cameras aren't picking it up. You know what this
+                        traffic sounds like in July? Do you know how many people are going down the
+                        Merced River on their rafts in July? You can't get into the river because
+                        you're bumped out. Is that an enjoyment of Yosemite Valley?</seg></u>
+                <u who="#f"><seg xml:id="para342" smil:begin="00:53:11.349" smil:end="00:53:15.230">
+                        There's just one more response, Mr. Dominy. We're going to have to end it.
+                        How about a quick one.</seg></u>
+                <u who="#e"><seg xml:id="para343" smil:begin="00:53:15.230" smil:end="00:53:17.901">
+                        Well, that wouldn't be a good visit for me and I wouldn't do that sort of
+                        thing.</seg></u>
+                <u who="#a"><seg xml:id="para344" smil:begin="00:53:17.901" smil:end="00:53:23.470">
+                        No, you certainly wouldn't and you would come in if it were otherwise
+                        developed and so would millions of other Americans...</seg></u>
+                <u who="#f"><seg xml:id="para345" smil:begin="00:53:23.470" smil:end="00:53:31.815">
+                        Gentlemen, at this point I have to break in. Thank you very much, Mr. Dominy
+                        for being with us. All right, Mr. Julber, your summary, please.</seg></u>
+                <u who="#q"><seg xml:id="para346" smil:begin="00:53:31.815" smil:end="00:54:41.593">
+                        Thank you, sir. Ladies and gentlemen, the traffic that you just heard was a
+                        snow plow coming up from Wawona and the smog that was referred to earlier is
+                        the campfire smoke, campfire smoke that is here in summer because there are
+                        a lot of people camping here including a lot of backpackers and people in
+                        tents, and they want to burn wood campfires. I'm from Los Angeles and I know
+                        what smog smells like, Campfire smoke smells good. Now you, you ladies and
+                        gentlemen, not those right here, but those in the listening audience. You've
+                        often been told that you should get out and see your national parks. Well,
+                        take my advice and do it very, very soon because you can see right now, from
+                        this program, that there are people in this country who are soon going to
+                        severely restrict your use of the parks. And these people happen to be a
+                        very well organized political lobby and they're not just kidding when they
+                        see that they want to restrict your use of the parks. They already have
+                        ninety-seven percent of the park areas for their exclusive use. And I know
+                        what I'm talking about because I was a backpacker once, too.</seg><seg
+                        xml:id="para347" smil:begin="00:54:41.593" smil:end="00:55:29.438">What they
+                        want to do is cut down on your access to the very last one percent or three
+                        percent. In Yosemite, it's one percent, here in the valley where the
+                        American public can come. Now, I don't feel that we should let any small
+                        group in our country take over our national parks and w hen one small group
+                        has the exclusive use of ninety-seven percent of Yellowstone or ninety-nine
+                        percent of Yosemite, that small group has taken over the park. No one small
+                        group in our country should impose their life style on another by law. Sure,
+                        talk to people. Try to get them to backpack. Tell them the glories of
+                        hiking, but don't impose those standards by law. In a democratic society,
+                        every person has his own freedom of choice.</seg></u>
+                <u who="#f"><seg xml:id="para348" smil:begin="00:55:29.438" smil:end="00:55:35.462">
+                        Mr. Julber, I'm going to have to break in at that point. We have to go to
+                        Mr. Miller for his summary, Mr. Miller, how about your summary.</seg></u>
+                <u who="#a"><seg xml:id="para349" smil:begin="00:55:35.462" smil:end="00:56:14.676">
+                        Mr. Julber has these endless amounts of time to explain what his position
+                        is. Let's see who this small political group is. My God! In favor of this
+                        proposal, we have one of the world's leading biologists, and a man who
+                        climbed Mt. Everest. And against it an executive who runs concessions and
+                        the former head of the Bureau of Reclamation. Now I understand the positions
+                        of those men, but I don't think this program indicates any small
+                        conspiratorial, spiritual or other group. It's simply people who want to
+                        save Yosemite Valley. If we can't save Yosemite Valley. If we can't save our
+                        other parks, we can't save anything. If we can, we have a chance. We can
+                        begin to save these things.</seg><seg xml:id="para350"
+                        smil:begin="00:56:14.676" smil:end="00:56:42.256">Now, we're not saving the
+                        valley for the sake of the valley. We are saving the valley and these parks
+                        for ourselves. What a man preserves tells us what he is. What we preserve
+                        will tell us what we are. That's why we say, and why we've always said, that
+                        in preserving this valley, we are not simply preserving a human experience
+                        that cannot otherwise be duplicated, we are indeed preserving ourselves.
+                        Thank you.</seg></u>
+                <u who="#f"><seg xml:id="para351" smil:begin="00:56:45.138" smil:end="00:57:23.789">
+                        Thank you, Mr. Miller. And now you've heard the debate and it's time for you
+                        to express your views on what you think our national park system should be.
+                        The national park system was a triumph of democratic ideals in America and,
+                        in the future, it should be no less so. Should public use of our national
+                        parks be drastically restricted? That's the question. Please send us your
+                        yes or no vote on a letter or postcard to "The Advocates", Box 1972, Boston
+                        02134. We'll tabulate your views and make them known to the members of
+                        Congress, to the White House, to the Secretary of the Interior and to the
+                        Director of the National Park Service, all the people who are going to have
+                        make these important decisions in the coming months and years. So remember
+                        that address. It's "The Advocates", Box 1972, Boston 02134 .</seg><seg
+                        xml:id="para352" smil:begin="00:57:23.789" smil:end="00:57:35.023">And now,
+                        with thanks to our Advocates, their very distinguished witnesses, and with
+                        special thanks to Mr. Lynn Thompson, the Park Superintendent here at
+                        Yosemite, and his very fine staff who have so ably cooperated with us on
+                        this broadcast, we conclude our debate.</seg></u>
+            </div>
+        </body>
+        <spanGrp type="topic">
+            <span from="#q0" to="#q2"> Science and Technology -- Agriculture and Environmental
+                Sciences -- Environment and Natural Resources</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+        </spanGrp>
+        <spanGrp type="title">
+            <span from="#q0" to="#q1"></span>
+            <span from="#q0" to="#q1"></span>
+        </spanGrp>
+    </text>
+</TEI>

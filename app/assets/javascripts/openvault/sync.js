@@ -45,59 +45,75 @@
   }
 
 $(function() {
-
-   if($('.datastream-video,.datastream-audio').length > 0 && $('.datastream-transcript').length > 0) {
-     //select all timecode-enabled elements
-     $('*[data-timecodebegin]').attr('data-timecode', true);
-     $('*[data-timecodeend]').attr('data-timecode', true);
-     smil_elements = $('*[data-timecode]');
-
-     smil_elements.each(function(index) {
-       //fill in missing timecode as best as possible
-       if(($(this).data('timecodebegin')) == 'undefined') {
-         var pred = smil_elements.slice(0, index).has('*[data-timecode]');
-         $(this).data('timecodebegin', Math.max(timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodeend]') }).first().data('timecodeend')), timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodebegin]') }).first().data('timecodebegin'))));
-       }
-
-       if(($(this).data('timecodeend')) == 'undefined') {
-         var pred = smil_elements.slice(0, index).has('*[data-timecode]');
-         $(this).data('timecodeend', Math.min(timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodebegin]') }).first().data('timecodebegin')), timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodeend]') }).first().data('timecodeend'))));
-       }
-     });
-
-     //convert hh:mm:ss.ff to seconds
-     smil_elements.each(function() {
-       var begin = timestamp_to_s($(this).data('timecodebegin'));
-       var end = timestamp_to_s($(this).data('timecodeend'));
-        $(this).data('begin_seconds', begin);
-        $(this).data('end_seconds', end);
-     });
-
-     //sync the media with the transcript
-     $(player).sync(smil_elements, { 'time': function() { return this.getPosition() }});
-     smil_elements.bind('sync-on', function() { $(this).addClass('current'); });
-     smil_elements.bind('sync-off', function() { 
-       $('.last').removeClass('last');
-       $(this).removeClass('current').addClass('last'); 
-     });
-
-     //sync the transcript with the media
-     smil_elements.each(function() {
-       $('<a class="sync">[sync]</a>').prependTo($(this)).bind('click', function() { player.seek($(this).parent().data('begin_seconds')); }) ;
-     });
-     if(smil_elements.length > 0) {
-       $('<a class="sync">[sync]</a>').prependTo($('.datastream-actions')).bind('click', function() {
-         if($('.current').length > 0) {
-     $('.secondary-datastream').scrollTo($('.current'));
-         } else {
-     $('.secondary-datastream').scrollTo($('.last'));
-
-         }
-    return false;
-  });
-     }
-   }
+  if ($('.datastream-audio').length > 0) {
+    videojs("audio-mp3").ready(function() {
+      var myPlayer = this;
+      myPlayer.play().pause();
     });
+  }
+  if($('.datastream-video').length > 0 && $('.datastream-transcript').length > 0) {
+    videojs("video-mp4").ready(function(){
+      var myPlayer = this;
+      //select all timecode-enabled elements
+      $('*[data-timecodebegin]').attr('data-timecode', true);
+      $('*[data-timecodeend]').attr('data-timecode', true);
+      smil_elements = $('*[data-timecode]');
+      smil_elements.each(function(index) {
+        //fill in missing timecode as best as possible
+        if(($(this).data('timecodebegin')) == 'undefined') {
+          var pred = smil_elements.slice(0, index).has('*[data-timecode]');
+          $(this).data('timecodebegin', Math.max(timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodeend]') }).first().data('timecodeend')), timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodebegin]') }).first().data('timecodebegin'))));
+        }
+
+        if(($(this).data('timecodeend')) == 'undefined') {
+          var pred = smil_elements.slice(0, index).has('*[data-timecode]');
+          $(this).data('timecodeend', Math.min(timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodebegin]') }).first().data('timecodebegin')), timestamp_to_s(pred.grep(function(e) { return $(e).is('*[data-timecodeend]') }).first().data('timecodeend'))));
+        }
+      });
+      //convert hh:mm:ss.ff to seconds
+      smil_elements.each(function() {
+        var begin = timestamp_to_s($(this).data('timecodebegin'));
+        var end = timestamp_to_s($(this).data('timecodeend'));
+         $(this).data('begin_seconds', begin);
+         $(this).data('end_seconds', end);
+      });
+      //sync the media with the transcript
+      $(myPlayer).sync(smil_elements, { 'time': function() { return this.currentTime() }});
+      smil_elements.bind('sync-on', function() { 
+        if ($(this).data('timecodebegin') != '' || $(this).data('timecodeend') != '') {
+          $(this).addClass('current'); 
+          $('.secondary-datastream').scrollTo($('.current')); 
+        }
+      });
+      smil_elements.bind('sync-off', function() { 
+        if ($(this).data('timecodebegin') != '' || $(this).data('timecodeend') != '') {
+          $('.last').removeClass('last');
+          $(this).removeClass('current').addClass('last'); 
+        }
+      });
+      //sync the transcript with the media
+      smil_elements.each(function() {
+        $('<a class="sync">[sync]</a>').prependTo($(this)).bind('click', function() { 
+          myPlayer.currentTime($(this).parent().data('begin_seconds'));
+          if (myPlayer.paused()) {
+            myPlayer.play();
+          }
+          
+        });
+      }); 
+      if(smil_elements.length > 0) {
+        $('<a class="sync">[sync]</a>').prependTo($('.datastream-actions')).bind('click', function() {
+          if($('.current').length > 0) {
+            $('.secondary-datastream').scrollTo($('.current'));
+          } else {
+            $('.secondary-datastream').scrollTo($('.last'));
+          }
+          return false;
+        });
+      }
+    });
+   }
+});
 
 (function($) {
   $.fn.sync = function(target, options) {
@@ -107,8 +123,8 @@ $(function() {
       'end' : 'end_seconds',
       'on' : function() { $(this).trigger('sync-on'); },
       'off' : function() { $(this).trigger('sync-off'); },
-      'time' : function() { return this.currentTime },
-      'poll' : false,
+      'time' : function() { return this.currentTime() },
+      'poll' : true,
       'pollingInterval' : 1000,
       'event': 'timeupdate'
     }

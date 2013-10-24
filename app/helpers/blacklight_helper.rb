@@ -47,11 +47,69 @@ module BlacklightHelper
   def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
     label = display_title(doc)
     return link_to(label.html_safe, collection_path(doc[:slug])) if doc[:format] == "collection"
-    link_to(label.html_safe, catalog_path(doc[:slug]))
+    link_to(label.html_safe, document_path(doc))
+  end
+  
+  def render_xml_with_xslt xml, xslt
+    require 'open-uri'
+    xslt = Nokogiri::XSLT(open(xslt).read)
+    xml = Nokogiri::XML(open(xml).read)
+    xslt.transform(xml).to_s.html_safe
+  end
+  
+  def render_tei_transcript source, options = {}
+    render_xml_with_xslt(source, "public/xslt/tei2timedtranscript.xsl")
+  end
+  
+  def render_video_player sources, options = {}
+    options.symbolize_keys!
+  
+    options[:poster] &&= path_to_image(options[:poster]) 
+    options[:id] ||= ((sources.first if sources.is_a?(Array)) || sources ).split('/').last.parameterize 
+    options[:preload] ||= 'none'
+  
+    if size = options.delete(:size)
+      options[:width], options[:height] = size.split("x") if size =~ /^\d+x\d+$/
+    end
+  
+    html = ''
+
+    if sources.is_a?(Array)
+        html += content_tag("video", options) do
+        sources.map { |source| tag("source", :src => source) }.join.html_safe
+      end
+    else
+      options[:src] = sources
+      html += tag("video", options)
+    end    
+
+    html += javascript_include_tag('openvault/player.js')
+
+    html.html_safe
+  end
+  
+  def document_path(doc=nil)
+    case doc[:active_fedora_model_ssi].to_s
+    when 'Audio'
+      return "/audio/#{doc[:slug]}"
+    when 'Video'
+      return "/video/#{doc[:slug]}"
+    when 'Program'
+      return "/programs/#{doc[:slug]}"
+    when 'Series'
+      return "/series/#{doc[:slug]}"
+    else
+      return "/catalog/#{doc[:slug]}"
+    end
   end
   
   def display_title(doc=@document)
-    doc[:display_title_ssm].first.to_s
+    #fallback to document id if something is messed up since that is always there
+    if doc[:display_title_ssm].nil?
+      doc[:id].to_s
+    else
+      doc[:display_title_ssm].first.to_s
+    end
   end
   
   def display_summary(doc=@document)

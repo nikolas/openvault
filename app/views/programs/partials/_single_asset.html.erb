@@ -1,0 +1,24 @@
+<div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+  <%#= render_video_player('http://localhost:3000/assets/video_test.mp4', :size => "550x350", :controls => true) %>
+  <video id="video-mp4" class="video-js vjs-default-skin"
+    controls preload="auto" width="550" height="350"
+    data-setup='{}'
+    poster="http://video-js.zencoder.com/oceans-clip.png">
+    <source src="/assets/video_test.mp4" type='video/mp4' />
+  </video>
+</div>
+<div id="transcript-box" class="span4 secondary-datastream-container">
+  <h2>Transcript</h2>
+  <div class="datastream-actions">
+    <%= link_to "<i class='icon-print'></i>".html_safe, "/programs/#{document[:slug]}/print", :class => "print action", :target => "_blank" %>
+    <form action="#" method="GET" class="q_field datastream-action-search">
+      <%= text_field_tag :q, nil, :class => "q", :placeholder => "Search Transcript" %>
+      <%= image_submit_tag("/assets/magnifying-glass.gif", :alt => "Search Transcript", :class => 'submit') %>
+      
+    </form>
+  </div>
+  <div class="datastream secondary-datastream datastream-transcript datastream-transcript-tei-xml">
+    <!-- This is a sample transcript hard-coded for testing -->
+    <%= render_tei_transcript('/Users/Shared/web-applications/wgbh/app/assets/images/transcript_xml_sample.xml') %>
+  </div>
+</div>
