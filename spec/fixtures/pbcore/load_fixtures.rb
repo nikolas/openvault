@@ -28,4 +28,4 @@ Fixtures.load([
   pbcore_ds
 end
 
-# Fixtures.load('mars/programs_1.xml')
+Fixtures.load('mars/programs_1.xml')

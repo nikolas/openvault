@@ -78,7 +78,6 @@ gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_comme
 gem 'twitter'
 #gem 'hydra-collections'
 
-gem 'sufia-models'
 gem 'capistrano'
 
 # for parallel processing

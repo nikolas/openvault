@@ -4,12 +4,11 @@ module Openvault
   class Ingester
     class Pbcore
 
-      def self.ingest!(xml, depositor)
+      def self.ingest!(xml)
         ingested = []
         self.description_documents_from_xml(xml).each do |ng_xml_pbcoreDescriptionDocument|
           ov = OpenvaultAsset.new
           ov.pbcore.ng_xml = ng_xml_pbcoreDescriptionDocument
-          ov.apply_depositor_metadata depositor
           ov.save!
           ingested << ov
         end

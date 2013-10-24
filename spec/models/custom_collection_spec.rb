@@ -35,7 +35,6 @@ describe CustomCollection do
     user = create(:user, role: 'scholar')
     collection = create(:custom_collection, user_id: user.id)
     ov = OpenvaultAsset.new
-    ov.apply_depositor_metadata "openvault_testing@wgbh.org"
     ov.save
     collection.add_collection_item(ov.pid)
     collection.custom_collection_items[0].ov_asset.pid.should eq(ov.pid)

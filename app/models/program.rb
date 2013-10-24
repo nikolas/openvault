@@ -1,17 +1,12 @@
 class Program < OpenvaultAsset
 
-  belongs_to :series, :property => :is_program_of
+  # belongs_to :series, :property => :is_program_of
   # has_many :videos, :property => :is_video_of
 #   has_many :audios, :property => :is_audio_of
 #   has_many :images, :property => :is_image_of
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    solr_document["slug"] = self.noid
-    Solrizer.insert_field(solr_document, "sort_date", self.pbcore.asset_date.first, :sortable)
-    Solrizer.insert_field(solr_document, "sort_title", self.pbcore.title.first, :sortable)
-    Solrizer.insert_field(solr_document, "display_title", self.title, :sortable, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "display_summary", self.summary, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "videos", self.videos, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audios", self.audios, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "images", self.images, :displayable, :searchable)
@@ -20,8 +15,7 @@ class Program < OpenvaultAsset
 
 
   def title
-    #need logic to determine proper title
-    "This is a Program sample title"
+    self.pbcore.program_title
   end
 
   def videos

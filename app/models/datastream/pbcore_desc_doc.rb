@@ -58,8 +58,6 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
   end
 
   def self.xml_template
-    Nokogiri::XML::Builder.new do |xml|
-      xml.pbcoreDescriptionDocument("xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xsi:schemaLocation"=>"http://www.pbcore.org/PBCore/PBCoreNamespace.html")
-    end
+    Nokogiri::XML('<pbcoreDescriptionDocument />')
   end
 end

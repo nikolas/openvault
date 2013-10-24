@@ -5,9 +5,9 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe Openvault::Pbcore do
 
-  describe '.get_model_for' do
+  before(:each) { Fixtures.cwd("#{fixture_path}/pbcore") }
 
-    before(:each) { Fixtures.cwd("#{fixture_path}/pbcore") }
+  describe '.get_model_for' do
 
     it 'returns an instance of Series for PBCore xml that describes a series' do
       Openvault::Pbcore.get_model_for(Fixtures.use('mars/series_1.xml')).should be_a Series
