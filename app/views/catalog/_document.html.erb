@@ -12,7 +12,7 @@
   <div class="defList_container">
     <% unless document[:display_summary_ssm].nil? %>
       <div class="blacklight-summary">
-        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(document[:display_summary_ssm].first), :length => 200) %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(document[:display_summary_ssm].first), :length => 200) unless document[:display_summary_ssm].nil? %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>
