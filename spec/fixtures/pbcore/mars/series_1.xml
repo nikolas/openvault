@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:fmp="http://www.filemaker.com/fmpdsoresult" schemaVersion="2.0">
+<pbcoreIdentifier source="MARS Program Record ID"/>
+<pbcoreAssetDate dateType="broadcast">06/17/2012</pbcoreAssetDate>
+<pbcoreTitle titleType="Series">Neighborhood Kitchens</pbcoreTitle>
+<pbcoreTitle titleType="Episode">100</pbcoreTitle>
+<pbcoreDescription descriptionType="Program" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">Series description: Building on a 34-year history of producing Latino and multicultural programming, WGBH’s La Plaza team has a new offering – Neighborhood Kitchens, premiering Sunday, June 17 at 6:30pm. Hosted by newcomer Margarita Martinez, the series takes viewers on a culinary tour of Boston’s neighborhoods, cooking with, and learning from, the influential chefs who have spent years perfecting cuisine from around the world and introducing it to the region. The series shows how these ethnic restaurants have, in many ways, become the destination spots in their own neighborhoods.
+
+A companion website will feature full recipes, behind-the-scenes photos and stories from each episode, in-depth profiles on each of the chefs featured on the series, interactive boards for viewers to leave comments and recipes of their own, and more.</pbcoreDescription>
+<pbcoreCreator>
+<creator>Alvarado, Patricia</creator>
+<creatorRole ref="http://metadataregistry.org/concept/show/id/1425.html">Producer</creatorRole>
+</pbcoreCreator>
+</pbcoreDescriptionDocument>

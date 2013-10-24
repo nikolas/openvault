@@ -15,8 +15,7 @@ class Program < OpenvaultAsset
 
 
   def title
-    #need logic to determine proper title
-    "This is a Program sample title #{self.id}"
+    self.pbcore.program_title
   end
   
   def asset_count

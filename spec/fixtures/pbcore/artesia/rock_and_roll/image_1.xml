@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Digital file</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">5fc2c6174b99b8724803fd74e93034fe31cd186f</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">226004.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Series">Rock and Roll</pbcoreTitle>
+  <pbcoreTitle titleType="Program">Respect</pbcoreTitle>
+  <pbcoreDescription descriptionType="Summary1">Still from barcode10847, Martha Reeves</pbcoreDescription>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">5fc2c6174b99b8724803fd74e93034fe31cd186f</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2012-10-31 08:15:20.0">barcode10847_thumbnail.jpg</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 486</instantiationDimensions>
+    <instantiationDigital>image/jpeg</instantiationDigital>
+    <instantiationLocation/>
+    <instantiationMediaType>Static Image</instantiationMediaType>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

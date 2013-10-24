@@ -14,7 +14,6 @@
 	
 	all_docs.each do |doc|
 		ov = OpenvaultAsset.new
-		ov.apply_depositor_metadata '1123@me.com'
 		ov.pbcore.ng_xml = doc
 		ov.save
 	end
@@ -25,7 +24,6 @@
 	  next if item == '.' or item == '..'
 	  ng = Nokogiri::XML(open("/Users/josh_wilcox/Desktop/demo_xml/#{item}"))
 	  ov = OpenvaultAsset.new
-	  ov.apply_depositor_metadata '123@me.com'
 	  ov.pbcore.ng_xml = ng
 	  ov.save
 	end

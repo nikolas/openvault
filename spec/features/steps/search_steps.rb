@@ -32,7 +32,6 @@ module SearchSteps
     all_docs = ng.xpath("//x:pbcoreDescriptionDocument", "x" => "http://www.pbcore.org/PBCore/PBCoreNamespace.html")
   	all_docs.each do |doc|
   		ov = OpenvaultAsset.new
-  		ov.apply_depositor_metadata '1123@me.com'
   		ov.pbcore.ng_xml = doc
   		ov.save
   	end

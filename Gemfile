@@ -78,9 +78,7 @@ gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_comme
 gem 'twitter'
 #gem 'hydra-collections'
 
-gem 'sufia-models'
 gem 'capistrano'
-gem 'hydra-pbcore', :git => 'https://github.com/afred/hydra-pbcore.git', :branch => 'master'
 
 # for parallel processing
 gem 'celluloid'

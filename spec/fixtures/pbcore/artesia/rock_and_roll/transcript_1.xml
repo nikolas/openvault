@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Transcript - Interview4</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">9de1adedf24bf71802851c0ba923018f8916acce</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">225797.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Series">Rock and Roll</pbcoreTitle>
+  <pbcoreTitle titleType="Program">In The Groove</pbcoreTitle>
+  <pbcoreDescription descriptionType="Summary4">SMIL XML transcript file from barcode13850, Jerry Leiber and Mike Stoller</pbcoreDescription>
+  <pbcorePublisher>
+    <publisher>Funded by a grant from the GRAMMY Foundation®.</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">9de1adedf24bf71802851c0ba923018f8916acce</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 1902 imported 2012-10-30 15:20:15.0">barcode13850_SMIL.xml</instantiationIdentifier>
+    <instantiationLocation/>
+    <instantiationMediaType>Text</instantiationMediaType>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

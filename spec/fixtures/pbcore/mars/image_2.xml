@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<pbcoreCollection xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:fmp="http://www.filemaker.com/fmpdsoresult">
+  <pbcoreDescriptionDocument schemaVersion="2.0">
+    <pbcoreIdentifier source="MARS Asset Record ID">A_HGMGYCIWEYQGT5D</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Summary" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1702.html">SSA -woman clerk in computer room with IBM 360 and various tape drive machines
+(PHOTOCOPY) (2) Good-Sort Of</pbcoreDescription>
+    <pbcoreIdentifier source="MARS Source Creation Order">44829</pbcoreIdentifier>
+    <pbcoreTitle titleType="Episode">2</pbcoreTitle>
+    <pbcoreIdentifier source="Source Tracking Number">144950</pbcoreIdentifier>
+    <pbcoreDescription descriptionType="Keyword" descriptionTypeRef="http://metadataregistry.org/concept/show/id/1674.html">Social Security computers, operator</pbcoreDescription>
+    <pbcoreTitle titleType="Series">Machine That Changed The World, The</pbcoreTitle>
+    <pbcoreInstantiation>
+      <instantiationMediaType source="WGBH MARS">Static image</instantiationMediaType>
+      <instantiationPhysical source="WGBH MARS">Photocopy</instantiationPhysical>
+      <instantiationLocation>Media Library</instantiationLocation>
+      <instantiationIdentifier source="WGBH Item ID">37</instantiationIdentifier>
+      <instantiationGenerations source="WGBH MARS">Still</instantiationGenerations>
+      <instantiationLocation>Media Library-----</instantiationLocation>
+      <instantiationAlternativeModes/>
+      <essenceTrack/>
+    </pbcoreInstantiation>
+  </pbcoreDescriptionDocument>
+</pbcoreCollection>

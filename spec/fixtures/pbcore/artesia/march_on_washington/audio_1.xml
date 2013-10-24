@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Radio program (Master)</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">09b97aae9ffdc2df35aab7d997b42e6cb6ffa6eb</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">202931.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">Revisiting the March on Washington</pbcoreTitle>
+  <pbcoreTitle titleType="Series">March on Washington</pbcoreTitle>
+  <pbcoreTitle titleType="Item3">Interview with Al Hulsen</pbcoreTitle>
+  <pbcoreSubject subjectType="Geographical">Lincoln Memorial (Washington, D.C.)</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Civil rights movements United States History 20th century</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Civil rights</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">March on Washington for Jobs and Freedom, Washington, D.C., 1963</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Segregation</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Public radio--United States--History. </pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Reminiscing</pbcoreSubject>
+  <pbcoreSubject subjectType="Corporate">United States--Politics and government--1961-1963</pbcoreSubject>
+  <pbcoreSubject subjectType="Corporate">Civil rights movement</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Demonstrations--Law and legislation--United States</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary3" startTime="00:00:00" endTime="00:08:29">Al Hulsen reported from around Washington D.C. on the day of the March, and shares the personal significance of this landmark event. Mr. Hulsen was a producer and journalist from WGBH-FM in Boston in 1963. He was interviewed at Puget Sound Public Radio, KUOW 94.9 FM, in Seattle, Washington on April 29, 2011.</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Asset Source</pbcoreRelationType>
+    <pbcoreRelationIdentifier>Digital file supplied directly by Gary Mott in WGBH Radio</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Seattle (Wash.)</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">04/29/2011</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreContributor>
+    <contributor>Hulsen, Al</contributor>
+    <contributorRole>Interviewee3</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>WGBH Educational Foundation</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_TYPE="All" RIGHTS_HOLDER="WGBH Educational Foundation"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">09b97aae9ffdc2df35aab7d997b42e6cb6ffa6eb</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 273 imported 2011-06-06 10:40:50.0">Al_Hulsen_audio.wav</instantiationIdentifier>
+    <instantiationPhysical>Digital file</instantiationPhysical>
+    <instantiationDigital>Wav</instantiationDigital>
+    <instantiationLocation>Archives (department)</instantiationLocation>
+    <instantiationMediaType>Audio</instantiationMediaType>
+    <instantiationTimeStart>00:00:00</instantiationTimeStart>
+    <instantiationDuration>00:08:29</instantiationDuration>
+    <instantiationLanguage>eng</instantiationLanguage>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Release date information">
+      <WGBH_DATE_RELEASE DATE_RELEASE="2011-04-29 00:00:00.0"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

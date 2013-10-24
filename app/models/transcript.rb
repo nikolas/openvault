@@ -1,3 +1,4 @@
+
 class Transcript < OpenvaultAsset
   
   belongs_to :video, :property => :transcript_video
