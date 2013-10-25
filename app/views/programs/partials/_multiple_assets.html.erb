@@ -1,27 +1,16 @@
 <h3>Assets part of this program</h3>
 <div id="program-asset-list">
-  <div id="sample-video" class="video-asset row-fluid">
-    <div class="asset-type-icon span1">
-      <i class="fa fa-video-camera"></i>
-    </div>
-    <div class="video-thumbail span1">
-      <img src="/assets/tmp_cat_image_thumb.jpg" height="35" width="35">
-    </div>
-    <div class="video-title span10">
-      <h3>Random video title</h3>
-      <p>Video type: Interview</p>
-    </div>
+  <h4>Video assets</h4>
+  <div class="asset-list video-list">
+    <% @videos.each do |video| %>
+      <%= render partial: 'programs/partials/video_multi', locals: {:document => video} %>
+    <% end %>
   </div>
-  <div id="sample-audio">
-    <div class="asset-type-icon span1">
-      <i class="fa fa-music"></i>
-    </div>
-    <div class="span1">
-      <img src="/assets/tmp_cat_image_thumb.jpg" height="35" width="35">
-    </div>
-    <div class="span10">
-      <h3>Random audio title</h3>
-      <p>Audio type: feature</p>
-    </div>
+  <hr />
+  <h4>Audio assets</h4>
+  <div class="asset-list audio-list">
+    <% @audios.each do |audio| %>
+      <%= render partial: 'programs/partials/audio_multi', locals: {:document => audio} %>
+    <% end %>
   </div>
 </div>

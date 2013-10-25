@@ -1,4 +1,7 @@
-<div class="program_video">
-  #video program partial
-  #need to display video thumbnail, video summary, video length
-</div>
+<%#= render_video_player('http://localhost:3000/assets/video_test.mp4', :size => "550x350", :controls => true) %>
+<video id="video-mp4" class="video-js vjs-default-skin"
+  controls preload="auto" width="550" height="350"
+  data-setup='{}'
+  poster="http://video-js.zencoder.com/oceans-clip.png">
+  <source src="/assets/video_test.mp4" type='video/mp4' />
+</video>
