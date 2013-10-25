@@ -22,7 +22,7 @@ Fixtures.load([
   # rock and roll UOIS
   "rock_and_roll/series_1.xml",
   "rock_and_roll/program_1.xml",
-  "rock_and_roll/video_element_1.xml",
+  "rock_and_roll/video_1.xml",
   "rock_and_roll/video_2.xml",
   "rock_and_roll/video_3.xml",
   "rock_and_roll/image_1.xml",

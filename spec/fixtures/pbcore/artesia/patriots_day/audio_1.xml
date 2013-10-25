@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Radio program (Master)</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">253961f1626cd60118eef1a3d6b4d814f0a13f45</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">201228.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Segment3">Bob Seay introduces the clip of Dr. Alfred Worcester</pbcoreTitle>
+  <pbcoreTitle titleType="Program">First Patriots' Day, The: An Eyewitness Account by Dr. Alfred Worcester</pbcoreTitle>
+  <pbcoreSubject subjectType="Subject Heading">Minutemen (Militia)</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Patriots' Day</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">United States History Revolution, 1775-1783</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Lexington (Mass.)</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Battles</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Concord (Mass.)</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Lexington, Battle of, Lexington, Mass., 1775</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary3" startTime="00:00:00" endTime="00:02:33">WGBH 89.7 Morning Edition host Bob Seay introduces this clip from a remarkable 1950 radio interview with Dr. Alfred Worcester, who recalls his great-grandmother telling him about her experiences on the day of the Battle of Lexington. Accompanying photograph supplied by Harvard University Archives, HUP Worcester, Alfred (1)</pbcoreDescription>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Boston, Mass</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreContributor>
+    <contributor>Seay, Bob</contributor>
+    <contributorRole>Host3</contributorRole>
+  </pbcoreContributor>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">253961f1626cd60118eef1a3d6b4d814f0a13f45</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 273 imported 2011-05-04 15:08:35.0">Dr_Worcester_Radio_Clip.wav</instantiationIdentifier>
+    <instantiationDigital>Wav</instantiationDigital>
+    <instantiationLocation/>
+    <instantiationMediaType>Audio</instantiationMediaType>
+    <instantiationTimeStart>00:00:00</instantiationTimeStart>
+    <instantiationDuration>00:02:33</instantiationDuration>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

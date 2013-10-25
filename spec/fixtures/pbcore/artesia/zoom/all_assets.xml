@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreCollection collectionTitle="" collectionDescription="" collectionSource="" collectionRef="" collectionDate="">
+  <pbcoreDescriptionDocument>
+    <pbcoreAssetType>Viewing copy</pbcoreAssetType>
+    <pbcoreIdentifier source="UOI_ID" version="1">e3616b02f7257101d85c4a0b8e5e7f119ca0556a</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">185731.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Program">Best of the 70's</pbcoreTitle>
+    <pbcoreTitle titleType="Series">ZOOM, Series II</pbcoreTitle>
+    <pbcoreSubject subjectType="Subject Heading">Preteens</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Variety shows (Television programs)</pbcoreSubject>
+    <pbcoreSubject subjectType="Corporate">Zoom (Television program : WGBH (Television station : Boston, Mass.))</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children's television programs--United States</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Play</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children's television programs</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Games</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Amusements</pbcoreSubject>
+    <pbcoreDescription descriptionType="Description" startTime="01:00:00;00" endTime="01:39:13;07">Re-live what it was like to be a ZOOMer in the 1970's, with this retrospective collection of games and music numbers from the Emmy award-winning Children's series.</pbcoreDescription>
+    <pbcoreRelation>
+      <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+      <pbcoreRelationIdentifier>321909</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreRelation>
+      <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PLACEDGR</pbcoreRelationType>
+      <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">57939d888c14d68ed4e603a17604f693c880e88b</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreRelation>
+      <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PARENT</pbcoreRelationType>
+      <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">60982844daf6dafc6e20ca9aadd1bc010b80c533</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreRelation>
+      <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CHILD</pbcoreRelationType>
+      <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">ac99f3707a11b13f224eba8494a6e52d1147b305</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreRelation>
+      <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PARENT</pbcoreRelationType>
+      <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">e5551726166cf29bf24f6b32a34edecaa1ee17c2</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreRelation>
+      <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CHILD</pbcoreRelationType>
+      <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcorePublisher>
+      <publisher>WGBH Educational Foundation</publisher>
+      <publisherRole>Publisher</publisherRole>
+    </pbcorePublisher>
+    <pbcoreRightsSummary>
+      <rightsEmbedded>
+        <WGBH_RIGHTS RIGHTS_NOTE="Media not to be released to Open Vault" RIGHTS_CREDIT="WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="WGBH Educational Foundation"/>
+      </rightsEmbedded>
+    </pbcoreRightsSummary>
+    <pbcoreInstantiation>
+      <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">e3616b02f7257101d85c4a0b8e5e7f119ca0556a</instantiationIdentifier>
+      <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2010-07-21 14:39:19.0">barcode321909.mov</instantiationIdentifier>
+      <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 480</instantiationDimensions>
+      <instantiationPhysical>Betacam</instantiationPhysical>
+      <instantiationDigital>video/quicktime</instantiationDigital>
+      <instantiationStandard>NTSC</instantiationStandard>
+      <instantiationLocation>Archives (department)</instantiationLocation>
+      <instantiationMediaType>Moving Image</instantiationMediaType>
+      <instantiationTimeStart>01:00:00;00</instantiationTimeStart>
+      <instantiationDuration>00:39:38;10</instantiationDuration>
+      <instantiationColors>Color</instantiationColors>
+      <instantiationLanguage>eng</instantiationLanguage>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Video</essenceTrackType>
+        <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+        <essenceTrackEncoding>dv5n Apple DVCPRO50 - NTSC</essenceTrackEncoding>
+        <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+        <essenceTrackBitDepth>24</essenceTrackBitDepth>
+        <essenceTrackFrameSize annotation="width x height">720 x 480</essenceTrackFrameSize>
+        <essenceTrackAspectRatio annotation="width:height">3:2</essenceTrackAspectRatio>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 3</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 6</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 7</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 8</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 2</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 4</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 5</essenceTrackIdentifier>
+        <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>2378.312 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+    </pbcoreInstantiation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 480 / 24 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : dv5n Apple DVCPRO50 - NTSC </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Source">/Volumes/bigDisks/Final Cut Pro Documents/Capture Scratch/Zoom/barcode321909.mov</pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) bits/channels : 16 / 1 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) compression format : in24 24-bit Integer </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 2378.312 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreExtension>
+      <extensionEmbedded annotation="Access control information">
+        <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+      </extensionEmbedded>
+    </pbcoreExtension>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument>
+    <pbcoreIdentifier source="UOI_ID">f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID">219270.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">ZOOM</pbcoreTitle>
+    <pbcoreDescription descriptionType="Summary5">Weekly half-hour programs which showed what youngsters do and think. Seven ZOOMers hosted each program, cast changed over run of series. Premiered locally as "Summer-Do" in 1970, nationally in January 1972. ZOOMers played games, told jokes, riddles (called Fannee Doolees) and stories and did crafts projects...and invited ideas from their audience. The result was an avalanche of ZOOMmail - in the first season, over 200,000 letters. Ubbi Dubbi language was invented by ZOOM.</pbcoreDescription>
+    <pbcoreInstantiation>
+      <instantiationIdentifier source="ArtesiaDAM UOI_ID">f6d9c1e1c90b14c0f18088e51d139281d7f2ecd1</instantiationIdentifier>
+      <instantiationIdentifier source="Original file name" annotation="ArtesiaDAM user ID: 21 imported 2012-05-22 15:14:13.0">zoom_barcode321909_series_thumbnail.jpg</instantiationIdentifier>
+      <instantiationLocation/>
+      <instantiationColors>Color</instantiationColors>
+      <instantiationLanguage>eng</instantiationLanguage>
+    </pbcoreInstantiation>
+    <pbcoreExtension>
+      <extensionEmbedded annotation="Access control information">
+        <SECURITY_POLICY_UOIS SEC_POLICY_ID="225"/>
+      </extensionEmbedded>
+    </pbcoreExtension>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument>
+    <pbcoreAssetType>Preservation Master</pbcoreAssetType>
+    <pbcoreIdentifier source="UOI_ID" version="1">e5551726166cf29bf24f6b32a34edecaa1ee17c2</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">189796.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">ZOOM, Series II</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Best of the 70's</pbcoreTitle>
+    <pbcoreTitle titleType="Clip">Send In Your Zoom Ideas</pbcoreTitle>
+    <pbcoreSubject subjectType="Subject Heading">Play</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Amusements</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Games</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children's television programs</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Variety shows (Television programs)</pbcoreSubject>
+    <pbcoreSubject subjectType="Corporate">Zoom (Television program : WGBH (Television station : Boston, Mass.))</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children's television programs--United States</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Preteens</pbcoreSubject>
+    <pbcoreDescription descriptionType="Item2" startTime="01:02:29;25" endTime="01:03:17;13">What should you do when you have a good idea? Send it to Zoom!</pbcoreDescription>
+    <pbcoreRelation>
+      <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+      <pbcoreRelationIdentifier>321909</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreCreator>
+      <creator>Sarson, Christopher</creator>
+      <creatorRole>Executive Producer2</creatorRole>
+    </pbcoreCreator>
+    <pbcorePublisher>
+      <publisher>WGBH Educational Foundation</publisher>
+      <publisherRole>Publisher</publisherRole>
+    </pbcorePublisher>
+    <pbcoreRightsSummary>
+      <rightsEmbedded>
+        <WGBH_RIGHTS RIGHTS_CREDIT="(c) WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation"/>
+      </rightsEmbedded>
+    </pbcoreRightsSummary>
+    <pbcoreInstantiation>
+      <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">e5551726166cf29bf24f6b32a34edecaa1ee17c2</instantiationIdentifier>
+      <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 21 imported 2010-08-17 08:04:19.0">barcode321909_clip1.mov</instantiationIdentifier>
+      <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 480</instantiationDimensions>
+      <instantiationPhysical>Betacam</instantiationPhysical>
+      <instantiationDigital>Quicktime</instantiationDigital>
+      <instantiationStandard>NTSC</instantiationStandard>
+      <instantiationLocation>Archives (department)</instantiationLocation>
+      <instantiationMediaType>Moving Image</instantiationMediaType>
+      <instantiationTimeStart>01:02:29;25</instantiationTimeStart>
+      <instantiationDuration>00:39:13;08</instantiationDuration>
+      <instantiationColors>Color</instantiationColors>
+      <instantiationLanguage>eng</instantiationLanguage>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+        <essenceTrackEncoding>sowt 16-bit Little Endian</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>48.215 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Video</essenceTrackType>
+        <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+        <essenceTrackEncoding>dv5n Apple DVCPRO50 - NTSC</essenceTrackEncoding>
+        <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+        <essenceTrackBitDepth>24</essenceTrackBitDepth>
+        <essenceTrackFrameSize annotation="width x height">720 x 480</essenceTrackFrameSize>
+        <essenceTrackAspectRatio annotation="width:height">3:2</essenceTrackAspectRatio>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>48.215 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+    </pbcoreInstantiation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 2 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Source">/Volumes/MLA_Vietnam_5/Uncompressed_clips/barcode321909_clip1.mov</pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 48.215 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : dv5n Apple DVCPRO50 - NTSC </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 480 / 24 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : dv5n Apple DVCPRO50 - NTSC </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 480 / 24 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 48.215 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : sowt 16-bit Little Endian </pbcoreAnnotation>
+    <pbcoreExtension>
+      <extensionEmbedded annotation="Access control information">
+        <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+      </extensionEmbedded>
+    </pbcoreExtension>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument>
+    <pbcoreAssetType>Viewing copy</pbcoreAssetType>
+    <pbcoreIdentifier source="UOI_ID" version="1">60982844daf6dafc6e20ca9aadd1bc010b80c533</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">193450.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Clip">Here's How You Do It  </pbcoreTitle>
+    <pbcoreTitle titleType="Series">ZOOM, Series II</pbcoreTitle>
+    <pbcoreTitle titleType="Program">Best of the 70's</pbcoreTitle>
+    <pbcoreSubject subjectType="Subject Heading">Children</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Preteens</pbcoreSubject>
+    <pbcoreSubject subjectType="Corporate">Zoom (Television program : United States)</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Children's television programs--United States</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Play</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Amusements</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Games</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Variety shows (Television programs)</pbcoreSubject>
+    <pbcoreDescription descriptionType="Item2" startTime="01:00:00;00" endTime="01:00:29;13">Re-live your favorite ZOOM memories! In this short clip, ZOOM kid Bernadette shows viewers how to perform her complex arm-swinging routine.</pbcoreDescription>
+    <pbcoreRelation>
+      <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+      <pbcoreRelationIdentifier>321909</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreCreator>
+      <creator>Sarson, Christopher</creator>
+      <creatorRole>Executive Producer2</creatorRole>
+    </pbcoreCreator>
+    <pbcoreContributor>
+      <contributor>Yao, Bernadette</contributor>
+      <contributorRole>Performer2</contributorRole>
+    </pbcoreContributor>
+    <pbcorePublisher>
+      <publisher>WGBH Educational Foundation</publisher>
+      <publisherRole>Publisher</publisherRole>
+    </pbcorePublisher>
+    <pbcoreRightsSummary>
+      <rightsEmbedded>
+        <WGBH_RIGHTS RIGHTS_CREDIT="(c) WGBH Educational Foundation" RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation"/>
+      </rightsEmbedded>
+    </pbcoreRightsSummary>
+    <pbcoreInstantiation>
+      <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">60982844daf6dafc6e20ca9aadd1bc010b80c533</instantiationIdentifier>
+      <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2010-10-25 10:50:54.0">Pledge_Zoom_Bernadette.mp4</instantiationIdentifier>
+      <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">320 x 240</instantiationDimensions>
+      <instantiationPhysical>Betacam</instantiationPhysical>
+      <instantiationDigital>video/quicktime</instantiationDigital>
+      <instantiationStandard>NTSC</instantiationStandard>
+      <instantiationLocation>Archives (department)</instantiationLocation>
+      <instantiationMediaType>Moving Image</instantiationMediaType>
+      <instantiationTimeStart>01:00:00;00</instantiationTimeStart>
+      <instantiationDuration>00:00:29;14</instantiationDuration>
+      <instantiationColors>Color</instantiationColors>
+      <instantiationLanguage>eng</instantiationLanguage>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Video</essenceTrackType>
+        <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+        <essenceTrackEncoding>avc1 H.264</essenceTrackEncoding>
+        <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+        <essenceTrackBitDepth>24</essenceTrackBitDepth>
+        <essenceTrackFrameSize annotation="width x height">320 x 240</essenceTrackFrameSize>
+        <essenceTrackAspectRatio annotation="width:height">3:2</essenceTrackAspectRatio>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>29.496 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+      <instantiationEssenceTrack>
+        <essenceTrackType>Audio</essenceTrackType>
+        <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+        <essenceTrackEncoding>mp4a MPEG-4 Audio</essenceTrackEncoding>
+        <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+        <essenceTrackBitDepth>16</essenceTrackBitDepth>
+        <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+        <essenceTrackDuration>29.496 seconds</essenceTrackDuration>
+      </instantiationEssenceTrack>
+    </pbcoreInstantiation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 29.496 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : avc1 H.264 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 320 / 240 / 24 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 29.496 seconds </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : mp4a MPEG-4 Audio </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 2 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Source">/Volumes/bigDisks/Muraszko Projects/Watermarked Programs/Pledge_Zoom_Bernadette.mp4</pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Versioning">Watermarked Mp4 for web</pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+    <pbcoreExtension>
+      <extensionEmbedded annotation="Access control information">
+        <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+      </extensionEmbedded>
+    </pbcoreExtension>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument>
+    <pbcoreAssetType>Digital file</pbcoreAssetType>
+    <pbcoreIdentifier source="UOI_ID" version="1">57939d888c14d68ed4e603a17604f693c880e88b</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">219242.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">ZOOM</pbcoreTitle>
+    <pbcoreDescription descriptionType="Summary1">Thumbnail for ZOOM program and series records on Open Vault</pbcoreDescription>
+    <pbcoreRelation>
+      <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+      <pbcoreRelationIdentifier>321909</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreInstantiation>
+      <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">57939d888c14d68ed4e603a17604f693c880e88b</instantiationIdentifier>
+      <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 21 imported 2012-05-21 14:40:24.0">zoom_barcode321909_thumbnail.jpg</instantiationIdentifier>
+      <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">480 x 277</instantiationDimensions>
+      <instantiationDigital>image/jpeg</instantiationDigital>
+      <instantiationLocation/>
+      <instantiationMediaType>Static Image</instantiationMediaType>
+    </pbcoreInstantiation>
+    <pbcoreExtension>
+      <extensionEmbedded annotation="Access control information">
+        <SECURITY_POLICY_UOIS SEC_POLICY_ID="225"/>
+      </extensionEmbedded>
+    </pbcoreExtension>
+  </pbcoreDescriptionDocument>
+  <pbcoreDescriptionDocument>
+    <pbcoreIdentifier source="UOI_ID">ac99f3707a11b13f224eba8494a6e52d1147b305</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID">218268.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Collection">From the Vault</pbcoreTitle>
+    <pbcoreDescription descriptionType="Summary5">"From the Vault" is an ongoing collaboration with WGBH Radio (89.7) and WGBH.org, bringing treasures from the archives to new audiences.This curated collection gives a sense of the range of the WGBH archives, highlighting rare or seldom-seen materials.</pbcoreDescription>
+    <pbcoreInstantiation>
+      <instantiationIdentifier source="ArtesiaDAM UOI_ID">ac99f3707a11b13f224eba8494a6e52d1147b305</instantiationIdentifier>
+      <instantiationIdentifier source="Original file name" annotation="ArtesiaDAM user ID: 21 imported 2012-05-04 14:12:20.0">From_the_vault6.jpg</instantiationIdentifier>
+      <instantiationLocation/>
+    </pbcoreInstantiation>
+    <pbcoreExtension>
+      <extensionEmbedded annotation="Access control information">
+        <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+      </extensionEmbedded>
+    </pbcoreExtension>
+  </pbcoreDescriptionDocument>
+</pbcoreCollection>

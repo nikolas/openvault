@@ -12,7 +12,7 @@ class Audio < OpenvaultAsset
   end
   
   def title
-    "This is an audio file title #{self.id}"
+    self.pbcore.titles_by_type['Item3'] || self.pbcore.titles_by_type['Segment3']
   end
   
   def audio_url

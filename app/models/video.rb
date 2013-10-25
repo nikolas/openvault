@@ -16,7 +16,7 @@ class Video < OpenvaultAsset
   end
   
   def title
-    "This is a video title #{self.pid}"
+    self.pbcore.titles_by_type['Element2'] || self.pbcore.titles_by_type['Element3'] || self.asset_type
   end
   
   def video_url

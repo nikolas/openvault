@@ -14,8 +14,7 @@ class Series < OpenvaultAsset
   
   
   def title
-    #need logic to determine proper title
-    "This is a series title #{self.id}"
+    self.pbcore.series_title
   end
   
   def all_programs

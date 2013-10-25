@@ -11,12 +11,18 @@ Fixtures.load([
 
   "artesia/rock_and_roll/series_1.xml",
   "artesia/rock_and_roll/program_1.xml",
-  "artesia/rock_and_roll/video_element_1.xml",
+  "artesia/rock_and_roll/video_1.xml",
   "artesia/rock_and_roll/video_2.xml",
+  "artesia/rock_and_roll/video_3.xml",
   "artesia/rock_and_roll/transcript_1.xml",
   "artesia/rock_and_roll/image_1.xml",
 
-  "artesia/march_on_washington/audio_1.xml"
+  "artesia/march_on_washington/audio_1.xml",
+
+  "artesia/patriots_day/video_1.xml",
+  "artesia/patriots_day/video_2.xml",
+  "artesia/patriots_day/audio_1.xml",
+  "artesia/patriots_day/audio_2.xml"
 ]) do |fixture|
 
   # For each of the files loaded, use Nokogiri to grab the first <pbcoreDescriptionDocument> node (should only be one)
