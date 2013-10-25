@@ -1,27 +1,17 @@
-<%
-#source_credits = '' 
-pbcore = OpenvaultAsset.find(@document.id).pbcore
-%>
+<% pbcore = OpenvaultAsset.find(@document.id).pbcore %>
 <h4>Metadata</h4>
 <div class="basic">
   <div class="source">
     <%# unless  pbcore.titles.reject { |type, value| value == document.get(:title_display) }.empty? and pbcore.publishers.reject{|type, value| value == 'WGBH Educational Foundation' }.empty? %>
     <div>
-      <% unless pbcore.episode.empty? %>
-      <p><strong>Episode</strong> <%= pbcore.episode.first %></p>
+      <% unless pbcore.episode_title.empty? %>
+      <p><strong>Episode</strong> <%= pbcore.episode_title.first %></p>
       <% end %>
-      <% unless pbcore.title.empty? %>
-      <p><strong>Program</strong> <%= pbcore.title.first %></p>
+      <% unless pbcore.program_title.empty? %>
+      <p><strong>Program</strong> <%= pbcore.program_title.first %></p>
       <% end %>
-      <% unless pbcore.series.empty? %>
-      <p><strong>Series</strong> <%= pbcore.series.first %></p>
-      <% end %>
-      <% pbcore.publisher.reject.each_with_index do |pub, idx| %>
-        <% unless pbcore.publisher_name[idx] == 'WGBH Educational Foundation' %>
-          <p><strong><%= pbcore.publisher_role[idx] %></strong>
-            <%= pbcore.publisher_name[idx] %>
-          </p>
-        <% end %>
+      <% unless pbcore.series_title.empty? %>
+      <p><strong>Series</strong> <%= pbcore.series_title.first %></p>
       <% end %>
       <div class="source-credits">
       <%# pbcore.publishers.reject{|type, value| value == 'WGBH Educational Foundation' }.each do |type, value| %>
@@ -35,104 +25,41 @@ pbcore = OpenvaultAsset.find(@document.id).pbcore
 </div>
 <a href="#" class="more_meta">More metadata</a>
 <div class="advanced">
-  <% unless pbcore.rights_summary.empty? or pbcore.rights_summary.first =~ /WGBH Educational Foundation/ %>
-    <h3 class="toggler">Rights</h3>
-    <%= pbcore.rights_summary.first %>
+  <% unless pbcore.creator_name.blank? %>
+    <div class="creators">
+      <h3>Creators</h3>
+      <ul>
+        <% pbcore.creator_name.each_with_index do |c, idx| %>
+          <li><%= c.to_s %> - <%= pbcore.creator_role[idx].to_s %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-
-  <% instantiations = nil %>
-  <% unless instantiations.blank? %>
+  <%# instantiations = nil %>
+  <% unless pbcore.instantiations.blank? %>
     <div class="instantiation">
       <h3 class="toggler">Media</h3>
-      <% instantiations.each do |inst| %>
+      <% pbcore.instantiations.each do |inst| %>
         <div>
-          <%
+          <%= inst.inspect %>
+          <%#
             inst_map = {'formatDuration' => 'Duration', 'formatStandard' => 'Standard', 'formatPhysical' => 'Physical format', 'formatGenerations' => 'Type'}
            %> 
 
-          <% inst[:to_xml].xpath('pbcore:pbcoreFormatID[pbcore:formatIdentifierSource="wgbh.org/mars/barcode/"]/pbcore:formatIdentifier', 'pbcore' => 'http://www.pbcore.org/PBCore/PBCoreNamespace.html').map { |e| e.content }.to_a.uniq.each do |e| %>
+          <%# inst[:to_xml].xpath('pbcore:pbcoreFormatID[pbcore:formatIdentifierSource="wgbh.org/mars/barcode/"]/pbcore:formatIdentifier', 'pbcore' => 'http://www.pbcore.org/PBCore/PBCoreNamespace.html').map { |e| e.content }.to_a.uniq.each do |e| %>
           <div><strong>Barcode</strong>
-          <%= e %></div>
-          <% end %>
+          <%#= e %></div>
+          <%# end %>
 
-          <% inst_map.each do |key, label| %>
-            <% inst[key].to_a.uniq.each do |e| %>
-              <div><strong><%= label %></strong> <%= e %></div> 
-            <% end %>
-          <% end %>
+          <%# inst_map.each do |key, label| %>
+            <%# inst[key].to_a.uniq.each do |e| %>
+              <div><strong><%#= label %></strong> <%#= e %></div> 
+            <%# end %>
+          <%# end %>
         </div>
       <% end %> 
     </div>
   <% end %>
 
-  <div class="description">
-    <%# unless pbcore.description.reject{|type, value| type == 'Abstract' or value == @document.get('dc_description_t') }.empty? %>
-      <h3 class="toggler">Description</h3>
-      <div>
-        <div class="pbcore-description-block pbcore-description-summary">
-          <%# unless pbcore.summary.first.nil? %>
-          <strong>Summary</strong> <%#= pbcore.summary.first.html_safe %>
-          <%# end %>
-        </div>
-        <div class="pbcore-description-block pbcore-description-series">
-          <strong>Series</strong> <%= render_document_show_field_value(@document, :field => 'desc_series_ssm') %>
-        </div>
-        <%# pbcore.descriptions.reject{|type, value| type == 'Abstract' or value == @document.get('dc_description_t') }.each do |type, value| %>
-          <!-- <div class="pbcore-description-block pbcore-description-<%#= type.parameterize %>"><strong><%#= type %></strong> <%#= render_field_value(value).html_safe %></div> -->
-        <%# end %>
-      </div>
-    <%# end %>
-  </div>
-
-  <% coverage = pbcore.pbcoreCoverage %>
-
-  <% unless coverage.blank? %>
-    <div class="date">   
-      <strong>Date Covered</strong>
-      <ul>
-        <% coverage.uniq.each do |s| %>
-          <%= content_tag(:li, link_to(s, catalog_index_path({:q => s }))) %>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <% place = nil %>
-  <% unless place.blank? %>
-    <div class="place">   
-      <div>
-        <strong>Place Covered</strong>
-        <ul>
-          <%# coverage['Spatial'].uniq.each do |s| %>
-            <%#= content_tag(:li, link_to(s[:coverage], catalog_index_path({:q => s[:coverage] }))) %>
-          <%# end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="people">
-    <% contributors = pbcore.contributor %>
-    <% creators = pbcore.creator %>
-    <% unless contributors.blank? and creators.blank? %>
-    <div>
-    <% creators.each_with_index do |cont, idx| %>
-      <div><strong><%= pbcore.creator_role[idx] %></strong>
-      <ul>
-        <%= content_tag(:li, link_to(pbcore.creator_name[idx], catalog_index_path({:q => pbcore.creator_name[idx]}))) %>
-      </ul>
-      </div>
-    <% end %>
-
-    <% contributors.each_with_index do |cont, idx| %>
-      <div><strong><%= pbcore.contributor_role[idx] %></strong>
-      <ul>
-        <%= content_tag(:li, link_to(pbcore.contributor_name[idx], catalog_index_path({:q => pbcore.contributor_name[idx]}))) %>
-      </ul>
-      </div>
-    <% end %>
-    </div>
-    <% end %>
-  </div><!-- end .people -->
 </div>
   

@@ -24,7 +24,7 @@ class OpenvaultAsset < ActiveFedora::Base
   end
 
   def summary
-    self.pbcore.summary
+    self.pbcore.all_descriptions.first
   end
   
 end

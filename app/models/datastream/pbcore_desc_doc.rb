@@ -44,6 +44,14 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
     # Terminology for <pbcoreDescription>
 
     t.summary(:path => 'pbcoreDescription', :attributes => {:descriptionType => "Summary"}, :index_as => [:stored_searchable, :displayable])
+    
+    # Creator names and roles
+    t.creator(:path=>"pbcoreCreator") do
+      t.creator
+      t.role_(:path=>"creatorRole")
+    end
+    t.creator_name(:ref=>[:creator, :creator], :type => :string, :index_as => [:stored_searchable, :displayable])
+    t.creator_role(:ref=>[:creator, :role], :type => :string, :index_as => [:stored_searchable, :displayable])
 
     t.all_descriptions(:path => 'pbcoreDescription', :index_as => [:stored_searchable, :displayable]) {
       t.type(:path => {:attribute => 'descriptionType'})

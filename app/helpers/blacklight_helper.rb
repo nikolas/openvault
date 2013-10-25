@@ -103,7 +103,7 @@ module BlacklightHelper
   end
   
   def display_summary(doc=@document)
-    doc[:summary_ssm].try(:first).html_safe
+    doc[:summary_ssm].try(:first)
   end
 
 end

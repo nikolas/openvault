@@ -24,13 +24,11 @@ class Program < OpenvaultAsset
 
   def all_videos
     #This will be an array of the pids build dynamically
-    #self.videos.map{|v| v.pid}
-    ['37720c723']
+    self.videos.map{|v| v.pid}
   end
   def all_audios
     #This will be an array of the pids build dynamically
-    #self.audios.map{|v| v.pid}
-    ['37720c73c']
+    self.audios.map{|v| v.pid}
   end
   def all_images
     #This will be an array of the pids build dynamically

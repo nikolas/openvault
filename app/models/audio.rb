@@ -21,7 +21,7 @@ class Audio < OpenvaultAsset
   end
   
   def audio_images
-    []
+    self.images.map{|i| i.id}
   end
   
 end

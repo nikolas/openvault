@@ -25,24 +25,13 @@ class Video < OpenvaultAsset
   end
   
   def video_transcripts
-    []
+    self.transcripts.map{|t| t.id}
   end
   
   def video_images
+    self.images.map{|i| i.id}
     # This will be an array of the image ids for the video
     []
-  end
-  
-  def length
-    nil
-  end
-  
-  def people
-    nil
-  end
-  
-  def format
-    nil
   end
   
   #Video Metadata
