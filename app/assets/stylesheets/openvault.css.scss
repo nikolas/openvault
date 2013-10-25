@@ -651,6 +651,18 @@ input, select, textarea {
           border: 1px solid #ddd;
           background: #fafafa;
           box-sizing: border-box; -moz-box-sizing: border-box;
+          .asset-type-icon {
+            i {
+              font-size: 20px;
+              color: $orange;
+            }
+          }
+          .grayed-out {
+            font-style: italic;
+            color: #999;
+            text-align: center;
+            padding: 10px 0px 0px 0px
+          }
           .datastream-container {   
               h2 {
                 display: inline;

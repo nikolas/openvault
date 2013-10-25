@@ -1,24 +1,6 @@
 //// We use the application.css manifest to require this file, which then @imports scss.
 //// This technique is required if you plan to share scss methods and variable between scss files.
-//
-//@import "compass";
-////@import "compass/css3/gradient";
-//@import "compass/css3/box-shadow";
-//@import "compass/css3/border-radius";
-//@import "compass/utilities/text/replacement";
-//@import "compass/typography/vertical_rhythm";
 @import "bootstrap";
 @import 'bootstrap-responsive';
 @import "font-awesome";
-//@import 'blacklight/blacklight';
 @import 'openvault';
-//@import "mosaic";
-//@import "pdf_viewer";
-//
-//$font-color: #736854;
-//$link-color: #749807;
-//$wgbh-blue: #02065F;
-//$wgbh-orange: #E28D1E;
-//$blueprint-background-color: #02065F;
-//$blueprint-font-family: Verdana, Arial, sans-serif;
-//$blueprint-font-size: 11px;

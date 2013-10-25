@@ -19,7 +19,7 @@
       </div>
       <div class="row-fluid">
         <div class="span7 date">
-          <p><span class="doc_label">Dated:</span><span class="datetime"><%= @document[:asset_date_ssm].first.to_s unless @document[:asset_date_ssm].nil? %></span></p>
+          &nbsp;
         </div>
         <div class="tools span2">
           <%= render :partial => 'catalog/show_tools' %>
@@ -38,8 +38,10 @@
           <div class="asset-content row-fluid">
             <% if !@document[:asset_count].nil? && @document[:asset_count] > 1 %>
               <%= render :partial => 'programs/partials/multiple_assets', :locals => { :document => @document } %>
-            <% else %>
+            <% elsif !@document[:asset_count].nil? && @document[:asset_count] == 1 %>
               <%= render :partial => 'programs/partials/single_asset', :locals => { :document => @document } %>
+            <% else %>
+              <p class="grayed-out">This program has no digital media yet</p>
             <% end  %>
           </div>
           <br />
