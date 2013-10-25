@@ -8,7 +8,7 @@ class Video < OpenvaultAsset
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    Solrizer.insert_field(solr_document, "program_id", self.program.pid, :displayable)
+    Solrizer.insert_field(solr_document, "program_id", self.program.pid, :displayable) unless self.program.nil?
     Solrizer.insert_field(solr_document, "video_url", self.video_url, :displayable)
     Solrizer.insert_field(solr_document, "video_images", self.video_images, :displayable)
     Solrizer.insert_field(solr_document, "video_transcript", self.video_transcripts, :displayable)
@@ -16,7 +16,7 @@ class Video < OpenvaultAsset
   end
   
   def title
-    self.pbcore.titles_by_type['Element2'] || self.pbcore.titles_by_type['Element3'] || self.asset_type
+    self.pbcore.titles_by_type['Element2'] || self.pbcore.titles_by_type['Element3'] || self.pbcore.asset_type
   end
   
   def video_url
