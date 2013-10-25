@@ -27,7 +27,7 @@ describe Openvault::Pbcore do
 
     it 'returns an instance of Video for PBCore xml that describes a video' do
       Openvault::Pbcore.get_model_for(Fixtures.use('mars/video_1.xml')).should be_a Video
-      Openvault::Pbcore.get_model_for(Fixtures.use('artesia/rock_and_roll/video_element_1.xml')).should be_a Video
+      Openvault::Pbcore.get_model_for(Fixtures.use('artesia/rock_and_roll/video_1.xml')).should be_a Video
     end
 
     it 'returns an instance of Audio for PBCore xml that describes an audio record' do
@@ -64,7 +64,7 @@ describe Openvault::Pbcore do
   describe '.is_video?' do
     it 'returns true if pbcore xml describes a viceo record' do
       Openvault::Pbcore.is_video?(Fixtures.use('mars/video_1.xml')).should == true
-      Openvault::Pbcore.is_video?(Fixtures.use('artesia/rock_and_roll/video_element_1.xml')).should == true
+      Openvault::Pbcore.is_video?(Fixtures.use('artesia/rock_and_roll/video_1.xml')).should == true
     end
   end
 

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Preservation Master</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">dbc105fefb1dd947aa735d0b6469aa35a33dab67</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">213080.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">Negro and The American Promise, The</pbcoreTitle>
+  <pbcoreTitle titleType="Series">Perspectives</pbcoreTitle>
+  <pbcoreTitle titleType="Element2">Malcolm X Interview</pbcoreTitle>
+  <pbcoreSubject subjectType="Corporate">Black Muslims </pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Civil rights leaders</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">African Americans Politics and government </pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Civil rights</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">African Americans Interviews</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary" startTime="01:00:00:00" endTime="01:13:05:19">Excerpted interview with Malcolm X from the program "Negro and the American Promise."</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+    <pbcoreRelationIdentifier>318380</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">06/24/1963</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCreator>
+    <creator affiliation="WGBH-TV">Morganthau, Henry</creator>
+    <creatorRole>Producer</creatorRole>
+  </pbcoreCreator>
+  <pbcoreCreator>
+    <creator affiliation="WGBH-TV">Barzyk, Fred</creator>
+    <creatorRole>Director2</creatorRole>
+  </pbcoreCreator>
+  <pbcoreContributor>
+    <contributor affiliation="Black Muslims">X, Malcolm, 1925-1965</contributor>
+    <contributorRole>Interviewee2</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor affiliation="City University of New York. City College">Clark, Kenneth Bancroft, 1914-2005</contributor>
+    <contributorRole>Interviewer2</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>WGBH Educational Foundation</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">dbc105fefb1dd947aa735d0b6469aa35a33dab67</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2012-01-17 12:08:10.0">barcode318380_clip2.mov</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 486</instantiationDimensions>
+    <instantiationPhysical>Digital betacam</instantiationPhysical>
+    <instantiationDigital>Quicktime</instantiationDigital>
+    <instantiationStandard>NTSC</instantiationStandard>
+    <instantiationLocation>Archives (department)</instantiationLocation>
+    <instantiationMediaType>Moving Image</instantiationMediaType>
+    <instantiationTimeStart>01:00:00:00</instantiationTimeStart>
+    <instantiationDuration>00:13:05:19</instantiationDuration>
+    <instantiationColors>B&amp;W</instantiationColors>
+    <instantiationLanguage>eng</instantiationLanguage>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Video</essenceTrackType>
+      <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>2vuy Apple FCP Uncompressed 8-bit 4:2:2</essenceTrackEncoding>
+      <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+      <essenceTrackBitDepth>24</essenceTrackBitDepth>
+      <essenceTrackFrameSize annotation="width x height">720 x 486</essenceTrackFrameSize>
+      <essenceTrackAspectRatio annotation="width:height">1.48:1</essenceTrackAspectRatio>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>785.619 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>sowt 16-bit Little Endian</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>785.618 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+  </pbcoreInstantiation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 785.619 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Source">Edited clip from full program.</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Source">/Volumes/bigDisks/Muraszko Projects/Radio/Uncompressed/barcode318380_clip2.mov</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 486 / 24 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 785.618 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : 2vuy Apple FCP Uncompressed 8-bit 4:2:2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 486 / 24 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : 2vuy Apple FCP Uncompressed 8-bit 4:2:2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : sowt 16-bit Little Endian </pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Release date information">
+      <WGBH_DATE_RELEASE DATE_RELEASE="1963-06-24 00:00:00.0"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

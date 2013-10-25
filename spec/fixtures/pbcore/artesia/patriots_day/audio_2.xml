@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Radio program (Master)</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">5d4bbaad634e956fa9e2cc0e59cc89f5a06ad0b8</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">199983.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">James Brown At The Boston Garden</pbcoreTitle>
+  <pbcoreTitle titleType="Segment3">Remembering James Brown at the Boston Garden, 1968</pbcoreTitle>
+  <pbcoreSubject subjectType="Subject Heading">Riot control</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Musical performance</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">African American musicians</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Entertainment events</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">African American artists</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Assassination</pbcoreSubject>
+  <pbcoreSubject subjectType="Personal">Atkins, Tom</pbcoreSubject>
+  <pbcoreSubject subjectType="Personal">White, Kevin H.</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Civil Rights Leaders</pbcoreSubject>
+  <pbcoreSubject subjectType="Personal">Brown, James, 1933-2006</pbcoreSubject>
+  <pbcoreSubject subjectType="Personal">King, Martin Luther, Jr., 1929-1968</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary3" startTime="00:00:00" endTime="00:01:00">WGBH Radio looks back at the historic 1968 James Brown concert at the Boston Garden on the night following the assassination of Martin Luther King Jr., and the last minute request by Major Kevin White for WGBH Channel Two to broadcast the event. WGBH radio host Al Davis remembers attending the concert as a a 17 year-old.</pbcoreDescription>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Boston Garden (Boston, Mass.)</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">01/30/2012</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCreator>
+    <creator affiliation="WGBH Educational Foundation">Morash, Russell</creator>
+    <creatorRole>Producer</creatorRole>
+  </pbcoreCreator>
+  <pbcoreCreator>
+    <creator affiliation="WGBH Educational Foundation">Atwood, David</creator>
+    <creatorRole>Director3</creatorRole>
+  </pbcoreCreator>
+  <pbcoreContributor>
+    <contributor affiliation="WGBH Educational Foundation">Davis, Al</contributor>
+    <contributorRole>Interviewee3</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Brown, James</contributor>
+    <contributorRole>Performer3</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>WGBH Educational Foundation</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_TYPE="All" RIGHTS_HOLDER="WGBH Educational Foundation "/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">5d4bbaad634e956fa9e2cc0e59cc89f5a06ad0b8</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 21 imported 2011-04-04 09:50:32.0">Remembering_James_Brown.mp3</instantiationIdentifier>
+    <instantiationPhysical>Digital file</instantiationPhysical>
+    <instantiationDigital>Wav</instantiationDigital>
+    <instantiationLocation/>
+    <instantiationMediaType>Audio</instantiationMediaType>
+    <instantiationTimeStart>00:00:00</instantiationTimeStart>
+    <instantiationDuration>00:01:00</instantiationDuration>
+    <instantiationLanguage>eng</instantiationLanguage>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

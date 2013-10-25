@@ -24,8 +24,6 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
     t.subtitle(:path=>"pbcoreTitle", :attributes=>{ :titleType=>"Subtitle" }, :index_as => [:stored_searchable, :displayable])
     
     t.track_title(:path=>"pbcoreTitle", :attributes=>{ :titleType=>"Track" }, :index_as => [:stored_searchable, :displayable])
-    
-    t.item_title(:path=>"pbcoreTitle", :attributes=>{ :titleType=>"Item" }, :index_as => [:stored_searchable, :displayable])
 
     t.image_title(:path=>"pbcoreTitle", :attributes=>{ :titleType=>"Image" }, :index_as => [:stored_searchable, :displayable])
 
@@ -59,5 +57,13 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
   def self.xml_template
     Nokogiri::XML('<pbcoreDescriptionDocument />')
+  end
+
+  def titles_by_type
+    titles = {}
+    for i in 0..self.all_titles.count
+        titles[self.all_titles(i).type.first] = self.all_titles[i]
+    end
+    titles
   end
 end

@@ -1,3 +1,5 @@
+<TEAMS_ASSET_FILE>
+  <ASSETS>
     <ASSET>
       <METADATA>
         <UOIS VERSION="1" IMPORT_DT="2011-04-04 09:50:32.0" UOI_ID="5d4bbaad634e956fa9e2cc0e59cc89f5a06ad0b8" NAME="Remembering_James_Brown.mp3" IMPORT_USER_ID="21" IMPORT_ID="199983.0">
@@ -30,3 +32,5 @@
       </METADATA>
       <CONTENT />
     </ASSET>
+  </ASSETS>
+</TEAMS_ASSET_FILE>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Original footage</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">02371942bd8cd65a95722996d07671a74953684f</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">222082.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Series">Rock and Roll</pbcoreTitle>
+  <pbcoreTitle titleType="Program">Renegades</pbcoreTitle>
+  <pbcoreTitle titleType="Episode">101</pbcoreTitle>
+  <pbcoreTitle titleType="Element2">Interview with Sam Phillips [Part 6 of 6]</pbcoreTitle>
+  <pbcoreSubject subjectType="Personalities">Phillips, Sam, 1923-2003</pbcoreSubject>
+  <pbcoreSubject subjectType="Topical">Rock and Roll</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">Producer</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">Sun Records</pbcoreSubject>
+  <pbcoreDescription>Interview with Sam Phillips [Part 6 of 6]</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+    <pbcoreRelationIdentifier>10598</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tape</pbcoreRelationType>
+    <pbcoreRelationIdentifier>17010010</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Program Number</pbcoreRelationType>
+    <pbcoreRelationIdentifier>101</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreContributor>
+    <contributor>Phillips, Sam</contributor>
+    <contributorRole>Interviewee2</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>Funded by a grant from the GRAMMY Foundation®.</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_CREDIT="WGBH Educational Foundation" RIGHTS_TYPE="All" RIGHTS_HOLDER="WGBH Educational Foundation"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">02371942bd8cd65a95722996d07671a74953684f</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2012-07-31 13:04:48.0">barcode10598_clip1.mov</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 486</instantiationDimensions>
+    <instantiationPhysical>Betacam</instantiationPhysical>
+    <instantiationDigital>video/quicktime</instantiationDigital>
+    <instantiationStandard>NTSC</instantiationStandard>
+    <instantiationLocation>Archives (department)</instantiationLocation>
+    <instantiationMediaType>Moving Image</instantiationMediaType>
+    <instantiationDuration>00:07:21:00</instantiationDuration>
+    <instantiationColors>Color</instantiationColors>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 3</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 4</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 5</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 6</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 7</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 8</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Video</essenceTrackType>
+      <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>v210 Apple FCP Uncompressed 10-bit 4:2:2</essenceTrackEncoding>
+      <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+      <essenceTrackBitDepth>24</essenceTrackBitDepth>
+      <essenceTrackFrameSize annotation="width x height">720 x 486</essenceTrackFrameSize>
+      <essenceTrackAspectRatio annotation="width:height">1.48:1</essenceTrackAspectRatio>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.842 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 2</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>441.841 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+  </pbcoreInstantiation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Source">/Volumes/bigDisks/Muraszko Projects/EXPORTED_VIDEO/Open_Vault/barcode10598_clip1.mov</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 441.842 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : v210 Apple FCP Uncompressed 10-bit 4:2:2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 486 / 24 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) duration : 441.841 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>
