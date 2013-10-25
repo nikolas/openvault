@@ -61,6 +61,12 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.media_type(:path => 'instantiationMediaType')
     }
 
+    # Relations
+    t.relations(:path => 'pbcoreRelation') {
+      t.type(:path => 'pbcoreRelationType')
+      t.id(:path => 'pbcoreRelationIdentifier')
+    }
+
   end
 
   def self.xml_template
@@ -69,9 +75,19 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
   def titles_by_type
     titles = {}
-    for i in 0..self.all_titles.count
+    for i in 0..(self.all_titles.count-1)
         titles[self.all_titles(i).type.first] = self.all_titles[i]
     end
     titles
+  end
+
+  def relations_by_type
+    relations = {}
+    for i in 0..(self.relations.count-1)
+      type = self.relations(i).type.first
+      relations[type] ||= []
+      relations[self.relations(i).type.first] += self.relations(i).id
+    end
+    relations
   end
 end
