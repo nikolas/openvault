@@ -611,7 +611,7 @@ input, select, textarea {
   }
   
   //Catalog item page
-  .show_series, .show_program {
+  .show_series, .show_program, .show_video, .show_audio {
     .series_sidebar, .program_sidebar {
       margin-top: -18px;
       h4 {
@@ -641,7 +641,7 @@ input, select, textarea {
         }
       }
     }
-    .series_content, .program_content {
+    .series_content, .program_content, .video_content, .audio_content {
       .document_content {
         border-right: 1px solid #ddd;
         padding-right: 10px;

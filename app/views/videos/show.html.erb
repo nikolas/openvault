@@ -1,27 +1,83 @@
-<!-- THIS IS THE VIDEO ASSET TEMPLATE -->
-<h3>This is a single video page</h3>
-<%= @document[:id] %>
-<div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
-  <%#= render_video_player('http://localhost:3000/assets/video_test.mp4', :size => "550x350", :controls => true) %>
-  <video id="video-mp4" class="video-js vjs-default-skin"
-    controls preload="auto" width="550" height="350"
-    data-setup='{}'
-    poster="http://video-js.zencoder.com/oceans-clip.png">
-    <source src="/assets/video_test.mp4" type='video/mp4' />
-  </video>
-</div>
-<div id="transcript-box" class="span4 secondary-datastream-container">
-  <h2>Transcript</h2>
-  <div class="datastream-actions">
-    <%= link_to "<i class='icon-print'></i>".html_safe, "/programs/#{document[:slug]}/print", :class => "print action", :target => "_blank" %>
-    <form action="#" method="GET" class="q_field datastream-action-search">
-      <%= text_field_tag :q, nil, :class => "q", :placeholder => "Search Transcript" %>
-      <%= image_submit_tag("/assets/magnifying-glass.gif", :alt => "Search Transcript", :class => 'submit') %>
-      
-    </form>
-  </div>
-  <div class="datastream secondary-datastream datastream-transcript datastream-transcript-tei-xml">
-    <!-- This is a sample transcript hard-coded for testing -->
-    <%= render_tei_transcript('/Users/Shared/web-applications/wgbh/app/assets/images/transcript_xml_sample.xml') %>
+<!-- THIS IS A TEMPLATE FOR A SERIES LEVEL MODLE -->
+<% title "OpenVault - #{display_title @document}" %>
+<%# extra_head_content << render_link_rel_alternates %>
+<%# extra_head_content << render_document_partial(@document, :meta) %>
+<%# extra_head_content << render_document_partial(@document, :opengraph) %>
+<%# sidebar_items << render(:partial => 'related_content') %>
+
+<%# this should be in a partial -%>
+<div id="document" class="<%= render_document_class %> show_program">
+  <div id="doc_<%= @document[:id] %>">
+    <div id="document_header">
+      <div class="row-fluid">
+        <div class="document_heading span9">
+          <h2><%= display_title @document %></h2>
+        </div>
+        <div class="span3">
+          &nbsp;
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span7 date">
+          &nbsp;
+        </div>
+        <div class="tools span2">
+          <%= render :partial => 'catalog/show_tools' %>
+        </div>
+        <div class="span3">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span9 program_content">
+        <div class="sep-line-thin"></div>
+        <div class="document_content">
+          <h4>Summary</h4>
+          <p><%= display_summary @document %></p>
+          <div class="asset-content row-fluid">
+            <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+              <video id="video-mp4" class="video-js vjs-default-skin"
+                controls preload="auto" width="550" height="350"
+                data-setup='{}'
+                poster="http://video-js.zencoder.com/oceans-clip.png">
+                <source src="/assets/video_test.mp4" type='video/mp4' />
+              </video>
+            </div>
+            <div id="transcript-box" class="span4 secondary-datastream-container">
+              <h2>Transcript</h2>
+              <div class="datastream-actions">
+                <%= link_to "<i class='icon-print'></i>".html_safe, "/programs/#{@document[:slug]}/print", :class => "print action", :target => "_blank" %>
+                <form action="#" method="GET" class="q_field datastream-action-search">
+                  <%= text_field_tag :q, nil, :class => "q", :placeholder => "Search Transcript" %>
+                  <%= image_submit_tag("/assets/magnifying-glass.gif", :alt => "Search Transcript", :class => 'submit') %>
+    
+                </form>
+              </div>
+              <div class="datastream secondary-datastream datastream-transcript datastream-transcript-tei-xml">
+                <!-- This is a sample transcript hard-coded for testing -->
+                <%= render_tei_transcript('/Users/Shared/web-applications/wgbh/app/assets/images/transcript_xml_sample.xml') %>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="metadata">
+            <%= 
+              begin
+                render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
+              rescue ActionView::MissingTemplate
+
+              end
+            %>
+          </div>
+          <div id="comments">
+            <div class="fb-comments" data-href="http://lsopenvault01.wgbh.org" ></div>
+          </div>
+        </div>
+      </div>
+      <div class="span3 program_sidebar">
+        <%= render(:partial => 'related_content') %>
+      </div>
+    </div>
   </div>
 </div>
