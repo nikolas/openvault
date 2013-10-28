@@ -19,7 +19,7 @@ feature 'User searches' do
     end
   
     scenario 'and there are more than 10 results' do
-      search({q: 'Nova'})
+      search({q: ''})
       expect(page).to have_css('.pager')
     end
     
