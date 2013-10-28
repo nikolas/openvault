@@ -40,7 +40,3 @@ app/assets/images/mosaic/*.*
 # image. This is needed so compass doesn't
 # puke when there is nothing ot make a sprite of.
 !app/assets/images/mosaic/sample.png
-
-# lib/openvault/mars/tmp/ stores tmp file used for ingesting MARS records.
-/lib/openvault/ingester/mars/tmp/*
-!/lib/openvault/ingester/mars/tmp/.gitkeep
