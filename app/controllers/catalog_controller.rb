@@ -221,7 +221,7 @@ class CatalogController < ApplicationController
     # extra_head_content << view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format => 'rss')), :title => "RSS for results")
     # extra_head_content << view_context.auto_discovery_link_tag(:atom, url_for(params.merge(:format => 'atom')), :title => "Atom for results")
     # extra_head_content << view_context.auto_discovery_link_tag(:unapi, unapi_url, {:type => 'application/xml',  :rel => 'unapi-server', :title => 'unAPI' })
-    (@response, @document_list) = get_search_results
+    (@response, @document_list) = get_the_search_results
     @filters = params[:f] || []
     search_session[:total] = @response.total unless @response.nil?
     respond_to do |format|
@@ -282,6 +282,13 @@ class CatalogController < ApplicationController
 #     document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
 #     document_list
     []
+  end
+  
+  def get_the_search_results(user_params = params || {}, extra_controller_params = {})
+    extra_controller_params = {:fq => 'has_model_ssim:("info:fedora/afmodel:Series","info:fedora/afmodel:Program","info:fedora/afmodel:Video","info:fedora/afmodel:Audio")' }
+    solr_response = query_solr(user_params, extra_controller_params)
+    document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
+    [solr_response, document_list]
   end
   
   def get_solr_document_by_slug(slug=nil)
