@@ -269,19 +269,20 @@ class CatalogController < ApplicationController
   end
   
   def get_related_content(slug=nil)
-    # q = "#{slug}"
-#     solr_params = { 
-#       :q => q,
-#       :'mlt.count' => 3,
-#       :mlt => true,
-#       :'mlt.fl' => "title_tesim, summary_tesim",
-#     }
-#     #response = find('mlt', self.solr_search_params().merge(solr_params))
-#     response = Blacklight.solr.select :params => solr_params
-#     id = response['response']['docs'][0]['id'] unless response['response']['docs'].nil?
-#     document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
-#     document_list
-    []
+    q = "id:#{slug}"
+    solr_params = { 
+      :q => q,
+      :'mlt.count' => 3,
+      :mlt => true,
+      :'mlt.fl' => "active_fedora_model_ssi",
+      :'mlt.mindf' => 1,
+      :'mlt.mintf' => 1
+    }
+    #response = find('mlt', self.solr_search_params().merge(solr_params))
+    response = Blacklight.solr.select :params => solr_params
+    id = response['response']['docs'][0]['id'] unless response['response']['docs'].nil?
+    document_list = response['moreLikeThis'][id]['docs'].collect{|doc| SolrDocument.new(doc, response) }
+    document_list
   end
   
   def get_the_search_results(user_params = params || {}, extra_controller_params = {})
@@ -304,7 +305,6 @@ class CatalogController < ApplicationController
       :'mlt.count' => 3
     }
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
-    #puts solr_response.inspect
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     [solr_response, document_list.first]
   end

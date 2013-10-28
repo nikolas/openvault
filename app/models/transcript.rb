@@ -7,7 +7,7 @@ class Transcript < OpenvaultAsset
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    Solrizer.insert_field(solr_document, "transcript_path", self.transcript_file, :displayable)
+    Solrizer.insert_field(solr_document, "transcript_path", self.transcript_path, :displayable)
     return solr_document
   end
   

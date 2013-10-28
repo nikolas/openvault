@@ -1,7 +1,10 @@
-<div class="mlt">
-<div  class="thumbnail">
-  <%= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe unless document.thumbnail.nil?) %>
-</div>
-<%= link_to display_title(document), "/catalog/#{document['slug']}" %>
-<%= truncate(render_document_show_field_value(:document => document, :field => 'summary_ssm'), :length => 300, :separator => '. ').html_safe %>
+<div class="mlt grainbox">
+  <div class="doc_thumbnail">
+    <%#= link_to_document document, :label=>(image_tag(document[:thumbnail_url]).html_safe unless document[:thumbnail].nil?) %>
+    <!-- <a href="/catalog/sbro-mla001079-curtis-mayfield-and-the-impressions-perform-we-re-a-winner">
+      <img alt="Preview" src="http://openvault.wgbh.org/system/thumbnails/sbro-mla001079-curtis-mayfield-and-the-impressions-perform-we-re-a-winner/preview.jpg" &nbsp;="">
+    </a> -->
+  </div>
+  <%= link_to display_title(document), document_path(document) %>
+  <%= truncate(render_document_show_field_value(:document => document, :field => 'summary_ssm'), :length => 300, :separator => '. ').html_safe %>
 </div>
