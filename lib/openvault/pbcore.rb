@@ -1,3 +1,5 @@
+require 'openvault'
+
 module Openvault::Pbcore
   class << self
 
@@ -74,6 +76,19 @@ module Openvault::Pbcore
     def is_transcript? pbcore_desc_doc
       asset_type = pbcore_desc_doc.asset_type.first
       !asset_type.nil? && asset_type.downcase.include?('transcript')
+    end
+
+
+    def ingest! xml
+      ng_xml = Openvault::XML(xml)
+      ng_xml.remove_namespaces!
+      ng_pbcore_desc_docs = ng_xml.xpath('//pbcoreDescriptionDocument')
+      ng_pbcore_desc_docs.each do |ng_pbcore_desc_doc|
+        pbcore_desc_doc = PbcoreDescDoc.new
+        pbcore_desc_doc.ng_xml = ng_pbcore_desc_doc
+        model = self.get_model_for pbcore_desc_doc
+        model.save!
+      end
     end
   end
 end
