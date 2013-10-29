@@ -6,7 +6,7 @@
       <img src="/assets/tmp_cat_image_thumb.jpg" height="35" width="35">
     </div>
     <div class="video-title span10">
-      <h3>Random video title</h3>
+      <h3><%= link_to video['title_ssm'].first.to_s, "/video/#{video['slug']}" %></h3>
       <p>Video type: Interview</p>
     </div>
   </div>

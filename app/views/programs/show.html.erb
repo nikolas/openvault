@@ -36,9 +36,9 @@
           <h4>Summary</h4>
           <p><%= display_summary @document %></p>
           <div class="asset-content row-fluid">
-            <% if !@document[:asset_count].nil? && @document[:asset_count] > 1 %>
+            <% if !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i > 1 %>
               <%= render :partial => 'programs/partials/multiple_assets', :locals => { :document => @document } %>
-            <% elsif !@document[:asset_count].nil? && @document[:asset_count] == 1 %>
+            <% elsif !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i == 1 %>
               <%= render :partial => 'programs/partials/single_asset', :locals => { :document => @document } %>
             <% else %>
               <p class="grayed-out">This program has no digital media yet</p>

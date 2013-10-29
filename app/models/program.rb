@@ -50,9 +50,9 @@ class Program < OpenvaultAsset
     if asset.is_a? Series
       self.series = asset
     elsif asset.is_a? Video
-      self.audios += [asset]
+      self.videos << asset
     elsif asset.is_a? Audio
-      self.audios += [asset]
+      self.audios << asset
     else
       super asset
     end

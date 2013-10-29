@@ -49,7 +49,7 @@
     :oai_item_id: itemID
   http://projecthydra.org/ns/relations#:
     :is_governed_by: isGovernedBy
-  http://openvault.wgbh.org:
+  http://openvault.wgbh.org#:
     :series_program: series_program
     :series_video: seriesVideo
     :video_series: videoSeries

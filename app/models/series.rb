@@ -28,7 +28,9 @@ class Series < OpenvaultAsset
 
   def relate_asset asset
     if asset.is_a? Program
-      self.programs += [asset]
+      self.programs << asset
+    elsif asset.is_a? Video
+      self.videos << asset
     else
       super asset
     end

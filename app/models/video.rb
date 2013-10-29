@@ -26,13 +26,11 @@ class Video < OpenvaultAsset
   end
   
   def video_transcripts
-    self.transcripts.map{|t| t.id}
+    self.transcripts.map{|t| t.pid}
   end
   
   def video_images
-    self.images.map{|i| i.id}
-    # This will be an array of the image ids for the video
-    []
+    self.images.map{|i| i.pid}
   end
   
   #Video Metadata
@@ -43,12 +41,11 @@ class Video < OpenvaultAsset
 
   def relate_asset asset
     if asset.is_a? Image
-      debugger
-      self.images += [asset]
+      self.images << asset
     elsif asset.is_a? Program
       self.program = asset
     elsif asset.is_a? Transcript
-      self.transcripts += [asset]
+      self.transcripts << asset
     elsif asset.is_a? Series
       self.series = asset
     else

@@ -1,16 +1,20 @@
 <h3>Assets part of this program</h3>
 <div id="program-asset-list">
-  <h4>Video assets</h4>
-  <div class="asset-list video-list">
-    <% @videos.each do |video| %>
-      <%= render partial: 'programs/partials/video_multi', locals: {:document => video} %>
-    <% end %>
-  </div>
-  <hr />
-  <h4>Audio assets</h4>
-  <div class="asset-list audio-list">
-    <% @audios.each do |audio| %>
-      <%= render partial: 'programs/partials/audio_multi', locals: {:document => audio} %>
-    <% end %>
-  </div>
+  <% unless @videos.count == 0 %>
+    <h4>Video assets</h4>
+    <div class="asset-list video-list">
+      <% @videos.each do |video| %>
+        <%= render partial: 'programs/partials/video_multi', locals: {:video => video} %>
+      <% end %>
+    </div>  
+  <% end %>
+  <% unless @audios.count == 0 %>
+    <hr />
+    <h4>Audio assets</h4>
+    <div class="asset-list audio-list">
+      <% @audios.each do |audio| %>
+        <%= render partial: 'programs/partials/audio_multi', locals: {:document => audio} %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

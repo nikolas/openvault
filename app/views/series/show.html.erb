@@ -42,7 +42,7 @@
                 <% @programs.each do |prog| %>
                   <div class="series-program">
                     <img src="<%= prog[:thumbnail_url] %>">
-                    <h4><%= link_to prog[:display_title_ssm].first.to_s, "/programs/#{prog[:slug].to_s}" %></h4>
+                    <h4><%= link_to prog[:title_ssm].first.to_s, "/programs/#{prog[:slug].to_s}" %></h4>
                   </div>
                 <% end %>
               </div>
