@@ -26,5 +26,35 @@ class OpenvaultAsset < ActiveFedora::Base
   def summary
     self.pbcore.all_descriptions.first
   end
-  
+
+
+  def create_relations_from_pbcore!
+
+  end
+
+  def create_relations_from_pbcore_mars!
+  end
+
+  def create_relations_from_pbcore_artesia!
+
+    # The pbcore datastream can give us Artesia UOI_IDs grouped by relation type,
+    # but what we really want are PIDs, so let's look up the PID from the UOI_ID,
+    # which is indexed as solr field "pbcoreDescriptionDocument_all_ids_tesim"
+    pids_by_relation_type = {}
+    pbcore.relations_by_type.each do |relation_type, uoi_ids|
+      uoi_ids.each do |uoi_id|
+        solr_response = Blacklight.solr.get('select', :params => {:q => "pbcoreDescriptionDocument_all_ids_tesim:#{uoi_id}"})
+        if solr_response['response']['docs'].count > 0
+          related_asset = self.class.find(solr_response['response']['docs'].first['id'], :cast => true)
+          self.relate_asset related_asset
+        end
+      end
+    end
+  end
+
+  # meant to be overridden
+  def relate_asset asset
+    raise "Do not know how to relate #{asset.class}."
+  end
+
 end

@@ -1,6 +1,7 @@
 class Series < OpenvaultAsset
   # attr_accessible :title, :body
   has_many :programs, :property => :series_program
+  has_many :videos, :property => :series_video
   
   # metadata for Series
   #     - dates / date ranges (e.g. when it aired)
@@ -22,6 +23,15 @@ class Series < OpenvaultAsset
     #['s7526p520', 's7526p51q', 's7526p474']
     self.programs.map{|s| s.id }
     #[]
+  end
+
+
+  def relate_asset asset
+    if asset.is_a? Program
+      self.programs += [asset]
+    else
+      super asset
+    end
   end
   
 end

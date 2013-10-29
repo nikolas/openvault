@@ -1,7 +1,11 @@
-class PbcoreDescDoc < ActiveFedora::OmDatastream
+  class PbcoreDescDoc < ActiveFedora::OmDatastream
 
   set_terminology do |t|
     t.root(:path=>"pbcoreDescriptionDocument")
+
+    t.all_ids(:path => "pbcoreIdentifier", :index_as => [:stored_searchable]) {
+      t.source(:path => {:attribute => 'source'})
+    }
 
     # Terminology for <pbcoreTitle>
 
@@ -75,10 +79,18 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
   def titles_by_type
     titles = {}
-    for i in 0..(self.all_titles.count-1)
+    for i in 0..(self.all_titles.count - 1)
         titles[self.all_titles(i).type.first] = self.all_titles[i]
     end
     titles
+  end
+
+  def ids_by_source
+    ids = {}
+    for i in 0..(self.all_ids.count - 1)
+      ids[self.all_ids(i).source.first] = self.all_ids[i]
+    end
+    ids
   end
 
   def relations_by_type

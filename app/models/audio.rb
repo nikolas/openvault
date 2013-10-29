@@ -23,5 +23,16 @@ class Audio < OpenvaultAsset
   def audio_images
     self.images.map{|i| i.id}
   end
+
+
+  def relate_asset asset
+    if asset.is_a? Image
+      self.images += [Image]
+    elsif asset.is_a? Program
+      self.program = asset
+    else
+      super asset
+    end
+  end
   
 end

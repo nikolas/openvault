@@ -5,6 +5,7 @@ class Video < OpenvaultAsset
   has_many :transcripts, :property => :transcript_video
   has_many :images, :property => :image_video
   belongs_to :program, :property => :video_program
+  belongs_to :series, :property => :video_series
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
@@ -38,4 +39,20 @@ class Video < OpenvaultAsset
   # - Length
   # - People involved
   # - formats
+
+
+  def relate_asset asset
+    if asset.is_a? Image
+      debugger
+      self.images += [asset]
+    elsif asset.is_a? Program
+      self.program = asset
+    elsif asset.is_a? Transcript
+      self.transcripts += [asset]
+    elsif asset.is_a? Series
+      self.series = asset
+    else
+      super asset
+    end
+  end
 end

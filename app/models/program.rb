@@ -45,4 +45,16 @@ class Program < OpenvaultAsset
   #     - producer info
   #     - people involved (e.g. interviewees, talent, etc)
   #     - copyright info
+
+  def relate_asset asset
+    if asset.is_a? Series
+      self.series = asset
+    elsif asset.is_a? Video
+      self.audios += [asset]
+    elsif asset.is_a? Audio
+      self.audios += [asset]
+    else
+      super asset
+    end
+  end
 end

@@ -14,5 +14,15 @@ class Transcript < OpenvaultAsset
   def transcript_path
     "http://media.wgbh.org/streaming/transcripts/#{self.pid}.xml"
   end
+
+  def relate_asset asset
+    if asset.is_a? Video
+      self.video = asset
+    elsif asset.is_a? Audio
+      self.audio = asset
+    else
+      super asset
+    end
+  end
   
 end

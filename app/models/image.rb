@@ -3,6 +3,17 @@ class Image < OpenvaultAsset
   
   belongs_to :video, :property => :image_video
   belongs_to :audio, :property => :image_audio
+
+
+  def relate_asset asset
+    if asset.is_a? Video
+      self.video = asset
+    elsif asset.is_a? Audio
+      self.audio = asset
+    else
+      super asset
+    end
+  end
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
