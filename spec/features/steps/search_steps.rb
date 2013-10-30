@@ -1,5 +1,4 @@
 module SearchSteps
-  
   def search(values={})
     values.symbolize_keys!
     retry_on_timeout do
@@ -28,13 +27,12 @@ module SearchSteps
     ActiveFedora::Base.all.each do |ab|
       ab.delete
     end
-    ng = Openvault::XML(open("#{fixture_path}/pbcore/mars/programs_1.xml"))
-    all_docs = ng.xpath("//x:pbcoreDescriptionDocument", "x" => "http://www.pbcore.org/PBCore/PBCoreNamespace.html")
-  	all_docs.each do |doc|
-  		ov = OpenvaultAsset.new
-  		ov.pbcore.ng_xml = doc
-  		ov.save
-  	end
+    Fixtures.cwd("#{fixture_path}/pbcore")
+    (1..3).each do |n|
+      a = Openvault::Pbcore.get_model_for(Fixtures.use("artesia/rock_and_roll/video_#{n}.xml"))
+      a.save!
+      a.create_relations_from_pbcore_artesia!
+    end
   end
   
   def retry_on_timeout(n = 3, &block)

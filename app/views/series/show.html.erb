@@ -35,18 +35,22 @@
         <div class="document_content">
           <h4>Summary</h4>
           <p><%= display_summary @document %></p>
-          <h4>Series Videos</h4>
-          <ul>
-            <% @videos.each do |vid| %>
-              <li><%= link_to vid['title_ssm'].first.to_s, "/video/#{vid['slug']}" %></li>
-            <% end %>
-          </ul>
-          <h4>Series Images</h4>
-          <ul>
-            <% @images.each do |img| %>
-              <li data-id="<%= img['slug'] %>"><%= img['title_ssm'].first.to_s %></li>
-            <% end %>
-          </ul>
+          <% unless @videos.empty? %>
+            <h4>Series Videos</h4>
+            <ul>
+              <% @videos.each do |vid| %>
+                <li><%= link_to vid['title_ssm'].first.to_s, "/video/#{vid['slug']}" %></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <% unless @images.empty? %>
+            <h4>Series Images</h4>
+            <ul>
+              <% @images.each do |img| %>
+                <li data-id="<%= img['slug'] %>"><%= img['title_ssm'].first.to_s %></li>
+              <% end %>
+            </ul>
+          <% end %>
           <div class="progams-list">
             <% unless @programs.nil? %>
               <h4>Programs in this series</h4>
@@ -62,7 +66,7 @@
           </div>
           <br />
           <div class="metadata">
-            <%= 
+            <%#= 
               begin
                 render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
               rescue ActionView::MissingTemplate
