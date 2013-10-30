@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Photograph1</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">b5cf5f67e39f96d264183d3fa960ba0a4a305486</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">175544.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Image">Civil rights march on Wash[ington], D.C.</pbcoreTitle>
+  <pbcoreSubject subjectType="Subject Heading">African Americans--Civil rights</pbcoreSubject>
+  <pbcoreSubject subjectType="Geographical">Lincoln Memorial (Washington, D.C.)</pbcoreSubject>
+  <pbcoreSubject subjectType="Geographical">Washington (D.C.)</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">March on Washington for Jobs and Freedom, Washington, D.C., 1963</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">African Americans--Civil rights--Washington (D.C.)--1960-1970</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Civil rights demonstrations--Washington (D.C.)--1960-1970</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary1">A crowd of African Americans and whites on the grounds of the Lincoln Memorial; two men in foreground read a newspaper with the headline: "they're Pouring In From All Over."</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Source Reference ID</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="LOC Reproduction Number">LC-DIG-ppmsca-03129</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Source Reference ID</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="LOC Digital ID">ppmsca.03129</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Washington, DC</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">08/28/1963</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_NOTE="No known restrictions on publication." RIGHTS="Public Domain" RIGHTS_CREDIT="Library of Congress" RIGHTS_TYPE="All" RIGHTS_HOLDER="Library of Congress"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">b5cf5f67e39f96d264183d3fa960ba0a4a305486</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 21 imported 2010-04-02 12:52:29.0">MOWH1_LOC_03129u.tif</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">4096 x 2825</instantiationDimensions>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">4096 x 2825</instantiationDimensions>
+    <instantiationPhysical>BW Print</instantiationPhysical>
+    <instantiationDigital>Tiff</instantiationDigital>
+    <instantiationLocation/>
+    <instantiationColors>B&amp;W</instantiationColors>
+  </pbcoreInstantiation>
+  <pbcoreAnnotation annotationType="SOURCE">LOC Reproduction Number</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">LOC Digital ID</pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

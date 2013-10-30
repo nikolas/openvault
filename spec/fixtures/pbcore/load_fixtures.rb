@@ -22,6 +22,7 @@ Fixtures.load([
 
   "artesia/patriots_day/video_1.xml",
   "artesia/patriots_day/video_2.xml",
+  "artesia/patriots_day/image_2.xml",
   "artesia/patriots_day/audio_1.xml",
   "artesia/patriots_day/audio_2.xml"
 ]) do |fixture|

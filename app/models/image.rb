@@ -25,5 +25,9 @@ class Image < OpenvaultAsset
   def image_file
     "http://media.wgbh.org/streaming/images/#{self.pid}.jpg"
   end
+
+  def title
+    self.pbcore.image_title.first || "image"
+  end
   
 end

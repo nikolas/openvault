@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Digital file</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="3">7a3c11a0ed27a87ab78472f48a0853458c455ba1</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="3">200513.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Image">The First Blow for Liberty. Battle of Lexington</pbcoreTitle>
+  <pbcoreTitle titleType="Program">First Patriots' Day, The: An Eyewitness Account By Dr. Alfred Worcester</pbcoreTitle>
+  <pbcoreDescription descriptionType="Summary1">The First Blow for Liberty. Battle of Lexington thumbnail for use on Open Vault.</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Source Reference ID</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="ARC Identifier">559250</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Source Reference ID</pbcoreRelationType>
+    <pbcoreRelationIdentifier>JKH-JH-3</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Waltham, MA</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">4/1775</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCreator>
+    <creator>Darley, F.O.C.</creator>
+    <creatorRole>Illustrator</creatorRole>
+  </pbcoreCreator>
+  <pbcoreCreator>
+    <creator>Ritchie, A.H.</creator>
+    <creatorRole>Artist</creatorRole>
+  </pbcoreCreator>
+  <pbcorePublisher>
+    <publisher>NARA</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS="Public Domain" RIGHTS_CREDIT="NARA" RIGHTS_TYPE="All" RIGHTS_HOLDER="NARA"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="3">7a3c11a0ed27a87ab78472f48a0853458c455ba1</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="3" annotation="ArtesiaDAM user ID: 21 imported 2011-04-15 14:55:16.0">barcode157998.jpg</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">600 x 411</instantiationDimensions>
+    <instantiationDimensions unitsOfMeasure="missing value" annotation="horizontal x vertical">600 x 411</instantiationDimensions>
+    <instantiationDigital>Jpeg</instantiationDigital>
+    <instantiationLocation/>
+    <instantiationMediaType>Static Image</instantiationMediaType>
+    <instantiationColors>B&amp;W</instantiationColors>
+  </pbcoreInstantiation>
+  <pbcoreAnnotation annotationType="SOURCE">ARC Identifier</pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="225"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

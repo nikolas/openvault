@@ -1,0 +1,28 @@
+<TEAMS_ASSET_FILE>
+  <ASSETS>
+    <ASSET>
+      <METADATA>
+        <UOIS MASTER_OBJ_MIME_TYPE="image/tiff" METADATA_STATE_USER_ID="273" UOI_ID="b5cf5f67e39f96d264183d3fa960ba0a4a305486" CONTENT_STATE_DT="2010-04-02 12:53:11.0" CONTENT_STATE="NORMAL" IMPORT_ID="175544.0" MASTER_OBJ_NAME_LOC="data/repository/original/vol0/384/MOWH1_LOC_03129u_45009be49cc8935ad1ee7ae27853c51e2bc63064.tif" IMPORT_DT="2010-04-02 12:52:29.0" METADATA_STATE_DT="2011-07-21 15:29:21.0" METADATA_STATE="NORMAL" BITMAP_COLOR_MAP="GR" VERSION="1" BITMAP_COLOR_DEPTH="8" IMPORT_USER_ID="21" IS_SGML_CHUNKED="N" IS_LATEST_VERSION="Y" IS_EDITABLE="Y" CONTENT_TYPE="BITMAP" BITMAP_HEIGHT="2825" LOGICAL_UOI_ID="b5cf5f67e39f96d264183d3fa960ba0a4a305486" BITMAP_RESOLUTION="3000" NAME="MOWH1_LOC_03129u.tif" BITMAP_WIDTH="4096">
+          <SECURITY_POLICY_UOIS SEC_POLICY_ID="12" />
+          <WGBH_COVERAGE DATE_PORTRAYED="08/28/1963" EVENT_LOCATION="Washington, DC" />
+          <WGBH_RIGHTS RIGHTS_NOTE="No known restrictions on publication." RIGHTS="Public Domain" RIGHTS_CREDIT="Library of Congress" RIGHTS_TYPE="All" RIGHTS_HOLDER="Library of Congress" />
+          <WGBH_URL URL="http://loc.gov/pictures/item/2003654394/" URL_TYPE="Primary : Image" />
+          <WGBH_SOURCE SOURCE_TYPE="Source Reference ID" SOURCE="LC-DIG-ppmsca-03129" SOURCE_NOTE="LOC Reproduction Number" />
+          <WGBH_SOURCE SOURCE_TYPE="Source Reference ID" SOURCE="ppmsca.03129" SOURCE_NOTE="LOC Digital ID" />
+          <WGBH_SUBJECT SUBJECT="African Americans--Civil rights" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Lincoln Memorial (Washington, D.C.)" SUBJECT_TYPE="Geographical" />
+          <WGBH_SUBJECT SUBJECT="Washington (D.C.)" SUBJECT_TYPE="Geographical" />
+          <WGBH_SUBJECT SUBJECT="March on Washington for Jobs and Freedom, Washington, D.C., 1963" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="African Americans--Civil rights--Washington (D.C.)--1960-1970" SUBJECT_TYPE="Subject Heading" />
+          <WGBH_SUBJECT SUBJECT="Civil rights demonstrations--Washington (D.C.)--1960-1970" SUBJECT_TYPE="Subject Heading" />
+          <MEDIUM_RES_VIEW OBJECT_NAME_LOCATION="data/repository/screen/vol0/172/MOWH1_LOC_03129u-S_b2fddfb52d8ee729dde68863359527dc9a420403.jpg" />
+          <WGBH_TYPE ITEM_TYPE="Photograph1" />
+          <WGBH_DESCRIPTION DESCRIPTION_TYPE="Summary1" DESCRIPTION="A crowd of African Americans and whites on the grounds of the Lincoln Memorial; two men in foreground read a newspaper with the headline: &quot;they're Pouring In From All Over.&quot;" />
+          <WGBH_FORMAT ORIENTATION="Landscape" DIMENSIONS_HEIGHT="2825" ITEM_FORMAT="BW Print" COLOR="B&amp;W" DIMENSIONS_WIDTH="4096" MIME_TYPE="image/tiff" DIGITAL_FORMAT="Tiff" />
+          <WGBH_TITLE TITLE_TYPE="Image" TITLE="Civil rights march on Wash[ington], D.C." />
+        </UOIS>
+      </METADATA>
+      <CONTENT />
+    </ASSET>
+  </ASSETS>
+</TEAMS_ASSET_FILE>
