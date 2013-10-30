@@ -58,6 +58,7 @@ describe Openvault::Pbcore do
     it 'returns true if pbcore xml describes an image record' do
       Openvault::Pbcore.is_image?(Fixtures.use('mars/image_1.xml')).should == true
       Openvault::Pbcore.is_image?(Fixtures.use('artesia/rock_and_roll/image_1.xml')).should == true
+      Openvault::Pbcore.is_image?(Fixtures.use('artesia/march_on_washington/image_1.xml')).should == true
     end
   end
 
