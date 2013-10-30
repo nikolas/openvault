@@ -50,7 +50,7 @@
   http://projecthydra.org/ns/relations#:
     :is_governed_by: isGovernedBy
   http://openvault.wgbh.org#:
-    :series_program: series_program
+    :series_program: seriesProgram
     :series_video: seriesVideo
     :series_audio: seriesAudio
     :series_image: seriesImage
