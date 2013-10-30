@@ -57,9 +57,12 @@ module Openvault::Pbcore
     # Returns true if PbcoreDescDoc datastream describes a Program record
     # It is a Program if:
     #   - the media type is "static image"
+    #   - OR
+    #   - the asset type contains the string with "photograph"
     def is_image? pbcore_desc_doc
       media_type = pbcore_desc_doc.instantiations(0).media_type.first
-      !media_type.nil? && media_type.downcase == "static image"
+      asset_type = pbcore_desc_doc.asset_type.first
+      (!media_type.nil? && media_type.downcase == "static image") || (!asset_type.nil? && asset_type.downcase.include?("photograph"))
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Program record
