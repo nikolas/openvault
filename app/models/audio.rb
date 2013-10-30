@@ -3,6 +3,7 @@ class Audio < OpenvaultAsset
   
   has_many :images, :property => :image_audio
   belongs_to :program, :property => :audio_program
+  belongs_to :series, :property => :series_audio
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)

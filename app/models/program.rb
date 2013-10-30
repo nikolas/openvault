@@ -53,6 +53,8 @@ class Program < OpenvaultAsset
       self.videos << asset
     elsif asset.is_a? Audio
       self.audios << asset
+    elsif asset.is_a? OpenvaultAsset
+      nil
     else
       super asset
     end

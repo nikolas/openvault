@@ -52,6 +52,9 @@
   http://openvault.wgbh.org#:
     :series_program: series_program
     :series_video: seriesVideo
+    :series_audio: seriesAudio
+    :series_image: seriesImage
+    :series_transcript: seriesTranscript
     :video_series: videoSeries
     :video_program: videoProgram
     :audio_program: audioProgram

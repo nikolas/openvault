@@ -3,6 +3,7 @@ class Image < OpenvaultAsset
   
   belongs_to :video, :property => :image_video
   belongs_to :audio, :property => :image_audio
+  belongs_to :series, :property => :series_image
 
 
   def relate_asset asset

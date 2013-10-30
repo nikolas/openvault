@@ -2,6 +2,9 @@ class Series < OpenvaultAsset
   # attr_accessible :title, :body
   has_many :programs, :property => :series_program
   has_many :videos, :property => :series_video
+  has_many :audios, :property => :series_audio
+  has_many :images, :property => :series_image
+  has_many :transcripts, :property => :series_transcript
   
   # metadata for Series
   #     - dates / date ranges (e.g. when it aired)
@@ -31,6 +34,14 @@ class Series < OpenvaultAsset
       self.programs << asset
     elsif asset.is_a? Video
       self.videos << asset
+    elsif asset.is_a? Audio
+      self.audios << asset
+    elsif asset.is_a? Image
+      self.images << asset
+    elsif asset.is_a? Transcript
+      self.transcripts << asset
+    elsif asset.is_a? OpenvaultAsset
+      nil
     else
       super asset
     end
