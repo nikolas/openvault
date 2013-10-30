@@ -13,6 +13,8 @@ class Series < OpenvaultAsset
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "programs", self.all_programs, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
     return solr_document
   end
   
@@ -22,10 +24,15 @@ class Series < OpenvaultAsset
   end
   
   def all_programs
-    #This will be an array of the pids build dynamically
-    #['s7526p520', 's7526p51q', 's7526p474']
-    self.programs.map{|s| s.id }
-    #[]
+    self.programs.map{|s| s.pid }
+  end
+  
+  def all_videos
+    self.videos.map{|s| s.pid }
+  end
+  
+  def all_images
+    self.images.map{|s| s.pid }
   end
 
 

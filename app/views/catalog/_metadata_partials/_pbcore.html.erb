@@ -47,8 +47,10 @@
            %> 
 
           <%# inst[:to_xml].xpath('pbcore:pbcoreFormatID[pbcore:formatIdentifierSource="wgbh.org/mars/barcode/"]/pbcore:formatIdentifier', 'pbcore' => 'http://www.pbcore.org/PBCore/PBCoreNamespace.html').map { |e| e.content }.to_a.uniq.each do |e| %>
-          <div><strong>Barcode</strong>
-          <%#= e %></div>
+            <div>
+              <!-- <strong>Barcode</strong> -->
+              <%#= e %>
+            </div>
           <%# end %>
 
           <%# inst_map.each do |key, label| %>

@@ -50,7 +50,7 @@
               begin
                 render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
               rescue ActionView::MissingTemplate
-
+                nil
               end
             %>
           </div>

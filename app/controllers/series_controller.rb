@@ -7,6 +7,8 @@ class SeriesController < CatalogController
     @rel = get_related_content(params[:id])
     
     @programs = get_programs(@document)
+    @images = get_images(@document)
+    @videos = get_videos(@document)
     
     respond_to do |format|
       #format.html {setup_next_and_previous_documents}
@@ -76,6 +78,26 @@ class SeriesController < CatalogController
       end
       progs
     end
+  end
+  
+  def get_videos(document=nil)
+    vids = []
+    unless document[:videos_ssm].nil?
+      document[:videos_ssm].each do |vid|
+        vids << get_only_solr_document_by_slug(vid.to_s)
+      end
+    end
+    vids
+  end
+  
+  def get_images(document=nil)
+    imgs = []
+    unless document[:images_ssm].nil?
+      document[:images_ssm].each do |img|
+        imgs << get_only_solr_document_by_slug(img.to_s)
+      end
+    end
+    imgs
   end
   
 end
