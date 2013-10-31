@@ -38,3 +38,14 @@ Fixtures.load([
 end
 
 Fixtures.load('mars/programs_1.xml')
+
+
+# Empty samples for testing ability to ingest:
+# 1) 1 pbcoreDescriptionDocument on it's own
+# 2) 1 pbcoreDescriptionDocument inside of pbcoreCollection
+# 3) >1 pbcoreDescriptionDocument inside of pbcoreCollection
+Fixtures.load([
+  'pbcore_collection_empty_docs_1x.xml',
+  'pbcore_collection_empty_docs_2x.xml',
+  'pbcore_desc_doc_empty.xml'
+])

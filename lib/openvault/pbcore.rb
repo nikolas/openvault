@@ -83,6 +83,7 @@ module Openvault::Pbcore
 
 
     def ingest! xml
+      pids = []
       ng_xml = Openvault::XML(xml)
       ng_xml.remove_namespaces!
       ng_pbcore_desc_docs = ng_xml.xpath('//pbcoreDescriptionDocument')
@@ -91,7 +92,9 @@ module Openvault::Pbcore
         pbcore_desc_doc.ng_xml = ng_pbcore_desc_doc
         model = self.get_model_for pbcore_desc_doc
         model.save!
+        pids << model.pid
       end
+      pids
     end
   end
 end

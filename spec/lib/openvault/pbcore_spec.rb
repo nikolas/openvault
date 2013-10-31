@@ -80,5 +80,32 @@ describe Openvault::Pbcore do
       Openvault::Pbcore.is_transcript?(Fixtures.use('artesia/rock_and_roll/transcript_1.xml')).should == true
     end
   end
+
+  describe '.ingest!' do
+
+    before :all do
+      @pids_1 = Openvault::Pbcore.ingest!(Fixtures.raw("pbcore_desc_doc_empty.xml"))
+      @pids_2 = Openvault::Pbcore.ingest!(Fixtures.raw("pbcore_collection_empty_docs_1x.xml"))
+      @pids_3 = Openvault::Pbcore.ingest!(Fixtures.raw("pbcore_collection_empty_docs_2x.xml"))
+    end
+
+    after :all do
+      OpenvualtAsset.find(@pids_1 + @pids_2 + @pids_3).each do |obj|
+        obj.delete
+      end
+    end
+
+    it 'returns an array of pids' do
+      @pids_1.count.should == 1
+      @pids_2.count.should == 1
+      @pids_3.count.should == 2
+    end
+
+    it 'returns a pid for every subclass of OpenvaultAsset saved' do
+      OpenvaultAsset.find(@pids_1).count.should == @pids_1.count
+      OpenvaultAsset.find(@pids_2).count.should == @pids_2.count
+      OpenvaultAsset.find(@pids_3).count.should == @pids_3.count
+    end
+  end
   
 end
