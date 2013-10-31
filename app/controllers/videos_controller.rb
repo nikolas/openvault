@@ -60,7 +60,8 @@ class VideosController < CatalogController
   protected
   
   def get_video_program(document=nil)
-    prog = get_only_solr_document_by_slug(document[:program_id_ssm])
+    prog = []
+    prog ||= get_only_solr_document_by_slug(document[:program_id_ssm])
   end
   
   def get_video_images(document=nil)

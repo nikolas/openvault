@@ -76,8 +76,8 @@ class SeriesController < CatalogController
       document[:programs_ssm].each do |prog|
         progs << get_only_solr_document_by_slug(prog.to_s)
       end
-      progs
     end
+    progs
   end
   
   def get_videos(document=nil)
