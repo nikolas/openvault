@@ -90,7 +90,7 @@ describe Openvault::Pbcore do
     end
 
     after :all do
-      OpenvualtAsset.find(@pids_1 + @pids_2 + @pids_3).each do |obj|
+      OpenvaultAsset.find(@pids_1 + @pids_2 + @pids_3).each do |obj|
         obj.delete
       end
     end

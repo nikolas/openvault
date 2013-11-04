@@ -167,7 +167,6 @@ feature "User adds a catalog item to a collection" do
   scenario 'when they are signed in as a scholar'do
     login_as(@scholar1, :scope => :user, :run_callbacks => false)
     visit "/video/#{@item.pid}"
-    save_and_open_page
     find("li.add_to_collection").click_link "Add to my collection"
     expect(page).to have_content 'In your collection'
   end
@@ -179,7 +178,6 @@ feature "User adds a catalog item to a collection" do
   end
   
   scenario 'when they are not signed it' do
-    login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/video/#{@item.pid}"
     expect(page).not_to have_content('Add to my collection')
   end
@@ -187,16 +185,31 @@ feature "User adds a catalog item to a collection" do
 end
 
 feature "User removes a catalog item from a collection" do
-  before :all do
+  before :each do
     Capybara.reset_sessions!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
-    @custom_collection1 = create(:custom_collection, user_id: @scholar1.id)
+    @custom_collection1 = create(:custom_collection, user_id: @scholar1.id, name: 'Testing 123123123123', summary: 'Testingasdfjasldkjf')
+    @item = Video.create!
+    create(:custom_collection_item, :custom_collection_id => @custom_collection1.id, :openvault_asset_pid => @item.pid, :kind => 'Video')
   end
   
-  scenario 'when they are signed in as a scholar'
+  scenario 'when they are signed in as a scholar' do
+    login_as(@scholar, :scope => :user, :run_callbacks => false)
+    visit "/custom_collections/#{@custom_collection1.id}"
+    click_link "Remove"
+    expect(page).not_to have_content("Videos:")
+    
+  end
   
-  scenario 'when they are signed in as a non-scholar'
+  scenario 'when they are signed in as a non-scholar' do
+    login_as(@member, :scope => :user, :run_callbacks => false)
+    visit "/custom_collections/#{@custom_collection1.id}"
+    expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
+  end
   
-  scenario 'when they are not signed it'
+  scenario 'when they are not signed it' do
+    visit "/custom_collections/#{@custom_collection1.id}"
+    expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
+  end
 end

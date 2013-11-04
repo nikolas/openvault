@@ -87,6 +87,21 @@ class CustomCollectionsController < ApplicationController
     end
   end
   
+  def remove_item
+    @custom_collection = CustomCollection.find(params[:custom_collection_id])
+    if @custom_collection.remove_collection_item(params[:asset_id])
+      respond_to do |format|
+        format.html {redirect_to @custom_collection}
+        format.json {render json: @custom_collection}
+      end
+    else
+      respond_to do |format|
+        format.html {redirect_to @custom_collection}
+        format.json {render json: @custom_collection.errors, status: :unprocessable_entity}
+      end
+    end
+  end
+  
   def add_item
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
     if @item = OpenvaultAsset.find(params[:asset_id])

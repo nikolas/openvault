@@ -19,6 +19,7 @@
   <b>Custom Collection Items (Videos):</b>
   <% @custom_collection.custom_collection_items.videos.each do |col| %>
     Video: <%= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
+    <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
   <% end %>
 </p>
 <% end %>
@@ -27,6 +28,7 @@
   <b>Custom Collection Items (Audio):</b>
   <% @custom_collection.custom_collection_items.audios.each do |col| %>
     Audio: <%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>
+    <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
   <% end %>
 </p>
 <% end %>
@@ -35,6 +37,7 @@
   <b>Custom Collection Items (Programs):</b>
   <% @custom_collection.custom_collection_items.programs.each do |col| %>
     Program: <%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>
+    <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
   <% end %>
 </p>
 <% end %>
@@ -43,6 +46,7 @@
   <b>Custom Collection Items (Series):</b>
   <% @custom_collection.custom_collection_items.series.each do |col| %>
     Series: <%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>
+    <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
   <% end %>
 </p>
 <% end %>

@@ -28,6 +28,10 @@ class CustomCollection < ActiveRecord::Base
     CustomCollectionItem.create(:openvault_asset_pid => item, :kind => kind, :custom_collection_id => self.id)
   end
   
+  def remove_collection_item(item)
+    CustomCollectionItem.where(openvault_asset_pid: item, custom_collection_id: self.id).delete_all
+  end
+  
   
   private
   
