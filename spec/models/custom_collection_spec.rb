@@ -34,10 +34,10 @@ describe CustomCollection do
   it "creates a valid custom collection item" do
     user = create(:user, role: 'scholar')
     collection = create(:custom_collection, user_id: user.id)
-    ov = OpenvaultAsset.new
-    ov.save
-    collection.add_collection_item(ov.pid)
-    collection.custom_collection_items[0].ov_asset.pid.should eq(ov.pid)
+    v = Video.new
+    v.save
+    collection.add_collection_item(v.pid, "Video")
+    collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
   end
   
 end

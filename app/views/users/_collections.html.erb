@@ -1,4 +1,4 @@
-<h4><%= (current_user && @user == current_user) ? 'My' : "#{@user.first_name}'s" %> Collections</h4>
+<h4><%= (current_user && @user == current_user) ? 'My' : "#{@user.first_name}'s" %> Collection</h4>
 <div id="collection_container">
   <% @collections.each do |collection| %>
     <div class="collection_block">
@@ -8,6 +8,6 @@
     </div>
   <% end %>
 </div>
-<% if current_user && current_user == @user %>
+<% if (current_user && current_user == @user) && (@collections.size == 0) %>
   <a href="/custom_collections/new">Add collection</a>
 <% end %>

@@ -51,7 +51,7 @@ $(function() {
       myPlayer.play().pause();
     });
   }
-  if($('.datastream-video').length > 0 && $('.datastream-transcript').length > 0) {
+  if($('.datastream-video .video-mp4').length > 0 && $('.datastream-transcript').length > 0) {
     videojs("video-mp4").ready(function(){
       var myPlayer = this;
       //select all timecode-enabled elements

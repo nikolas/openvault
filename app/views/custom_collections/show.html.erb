@@ -14,22 +14,49 @@
   <b>Image:</b>
   <%= image_tag @custom_collection.image.url(:med) %>
 </p>
+<% unless @custom_collection.custom_collection_items.videos.count == 0 %>
 <p>
-  <b>Custom Collection Items:</b>
-  <% @custom_collection.custom_collection_items.each do |col| %>
-    <%= col.ov_asset.datastreams['pbcore'].to_xml %>
+  <b>Custom Collection Items (Videos):</b>
+  <% @custom_collection.custom_collection_items.videos.each do |col| %>
+    Video: <%= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
   <% end %>
 </p>
+<% end %>
+<% unless @custom_collection.custom_collection_items.audios.count == 0 %>
+<p>
+  <b>Custom Collection Items (Audio):</b>
+  <% @custom_collection.custom_collection_items.audios.each do |col| %>
+    Audio: <%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>
+  <% end %>
+</p>
+<% end %>
+<% unless @custom_collection.custom_collection_items.programs.count == 0 %>
+<p>
+  <b>Custom Collection Items (Programs):</b>
+  <% @custom_collection.custom_collection_items.programs.each do |col| %>
+    Program: <%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>
+  <% end %>
+</p>
+<% end %>
+<% unless @custom_collection.custom_collection_items.series.count == 0 %>
+<p>
+  <b>Custom Collection Items (Series):</b>
+  <% @custom_collection.custom_collection_items.series.each do |col| %>
+    Series: <%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>
+  <% end %>
+</p>
+<% end %>
 <p>
   <b>Article:</b>
+  <a href="<%= @custom_collection.article.url %>">Download</a>
     <!-- <iframe src="http://docs.google.com/gview?url=<%= @custom_collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
-    <%= render partial: 'custom_collections/pdf' %>
+    <%#= render partial: 'custom_collections/pdf' %>
 </p>
 
-
-<%= link_to 'Edit', edit_custom_collection_path(@custom_collection) %> |
-<%= link_to 'Back', custom_collections_path %>
-
+<% if current_user && current_user.id == @custom_collection.user_id %>
+  <%= link_to 'Edit', edit_custom_collection_path(@custom_collection) %> |
+  <%#= link_to 'Back', custom_collections_path %>
+<% end %>
 <script type="text/javascript" charset="utf-8">
   window.currentPDF = "<%= @custom_collection.article %>"
 </script>
