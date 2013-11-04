@@ -50,7 +50,7 @@ class CustomCollectionsController < ApplicationController
 
     respond_to do |format|
       if @custom_collection.save
-        format.html { redirect_to @custom_collection, notice: 'Custom collection was successfully created.' }
+        format.html { redirect_to '/me', notice: 'Custom collection was successfully created.' }
         format.json { render json: @custom_collection, status: :created, location: @custom_collection }
       else
         format.html { render action: "new" }
@@ -66,7 +66,7 @@ class CustomCollectionsController < ApplicationController
 
     respond_to do |format|
       if @custom_collection.update_attributes(params[:custom_collection])
-        format.html { redirect_to @custom_collection, notice: 'Custom collection was successfully updated.' }
+        format.html { redirect_to '/me', notice: 'Custom collection was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -91,7 +91,7 @@ class CustomCollectionsController < ApplicationController
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
     if @custom_collection.remove_collection_item(params[:asset_id])
       respond_to do |format|
-        format.html {redirect_to @custom_collection}
+        format.html {redirect_to '/me'}
         format.json {render json: @custom_collection}
       end
     else
