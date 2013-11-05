@@ -60,7 +60,7 @@ describe CustomCollectionsController do
 
         it "redirects to the created custom_collection" do
           post :create, {:custom_collection => @CustomCollection}
-          response.should redirect_to(CustomCollection.last)
+          response.should redirect_to("/me")
         end
       end
 
@@ -102,7 +102,7 @@ describe CustomCollectionsController do
         it "redirects to the custom_collection" do
           custom_collection = CustomCollection.create! @CustomCollection
           put :update, {:id => custom_collection.to_param, :custom_collection => @CustomCollection}
-          response.should redirect_to(custom_collection)
+          response.should redirect_to("/me")
         end
       end
 
