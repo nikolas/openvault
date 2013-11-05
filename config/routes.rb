@@ -6,9 +6,8 @@ Openvault::Application.routes.draw do
   
   resources :custom_collections do
     get 'add_item'
+    get 'remove_item'
   end
-    #match 'custom_collections/:id/add_item/:asset_id' => 'custom_collections#add_item'
-  #get ':controller/:action/:id/:asset_id'
 
   resources :collections, :only => [:index, :show]
   match 'collection/:slug' => 'collections#show', slug: /[\w-]+/, as: 'collection_slug'

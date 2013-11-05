@@ -1,20 +1,29 @@
 <ul class="tools">
+  <% if current_user && current_user.role == 'scholar' %>
+    <% if current_user && current_user.has_item_in_collection(@document.id) %>
+      <span>In your collection</span>
+    <% else %>
+      <li class="add_to_collection">
+        <a href="/custom_collections/<%= current_user.collection_id %>/add_item?asset_id=<%= @document.id %>&kind=<%= @document['active_fedora_model_ssi'] %>" data-cctype="<%= @document['active_fedora_model_ssi'] %>" data-ccid="<%= current_user.collection_id %>" data-assetid="<%= @document.id %>">Add to my collection</a>
+      </li>
+    <% end %>
+  <% end %>
   <li class="share">
-<div class="addthis_toolbox addthis_default_style">
-  <a class="addthis_button_compact at300m" href="#"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
-  <a class="addthis_button_preferred_3 addthis_button_email at300b" title="Email" href="#"><span class="at16nc at300bs at15nc at15t_email at16t_email"><span class="at_a11y">Share on email</span></span></a>
-  <a class="addthis_button_preferred_2 addthis_button_twitter at300b" title="Tweet" href="#"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a>
-  <a class="addthis_button_preferred_1 addthis_button_facebook at300b" title="Facebook" href="#"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a>
-<div class="atclear"></div></div>
-<script type="text/javascript">
-  var addthis_config = { ui_click: true }
+    <div class="addthis_toolbox addthis_default_style">
+      <a class="addthis_button_compact at300m" href="#"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+      <a class="addthis_button_preferred_3 addthis_button_email at300b" title="Email" href="#"><span class="at16nc at300bs at15nc at15t_email at16t_email"><span class="at_a11y">Share on email</span></span></a>
+      <a class="addthis_button_preferred_2 addthis_button_twitter at300b" title="Tweet" href="#"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a>
+      <a class="addthis_button_preferred_1 addthis_button_facebook at300b" title="Facebook" href="#"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a>
+    <div class="atclear"></div></div>
+    <script type="text/javascript">
+      var addthis_config = { ui_click: true }
 
-  $(function() {
-    addthis_config = { ui_click: true, data_track_clickback: true, data_ga_property: 'UA-237277-2'}
-    $('<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=interactivetech"></' + 'script>').insertAfter('.addthis_button_compact');
+      $(function() {
+        addthis_config = { ui_click: true, data_track_clickback: true, data_ga_property: 'UA-237277-2'}
+        $('<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=interactivetech"></' + 'script>').insertAfter('.addthis_button_compact');
 
-  });
-</script>
+      });
+    </script>
   </li>
   <!-- <li class="cite">
     <a href="/catalog/<%= @document.id %>/cite">Cite</a>

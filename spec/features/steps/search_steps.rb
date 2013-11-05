@@ -31,7 +31,7 @@ module SearchSteps
     (1..3).each do |n|
       a = Openvault::Pbcore.get_model_for(Fixtures.use("artesia/rock_and_roll/video_#{n}.xml"))
       a.save!
-      a.create_relations_from_pbcore_artesia!
+      a.create_relations_from_pbcore!
     end
   end
   

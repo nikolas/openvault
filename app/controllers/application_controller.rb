@@ -18,6 +18,19 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
-  
+  def model_url(kind=nil)
+    case kind
+    when "Video"
+      "video"
+    when "Audio"
+      "audio"
+    when "Program"
+      "programs"
+    when "Series"
+      "series"
+    else
+      "catalog"
+    end
+  end
   
 end

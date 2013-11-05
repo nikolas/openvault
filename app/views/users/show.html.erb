@@ -22,7 +22,9 @@
       <div id="user_bio" class="span6">
         <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
       </div>
-      <%#= render partial: 'users/collections' unless @user.role != 'scholar' %>
+      <div class="clearfix"></div>
+      <hr />
+      <%= render partial: 'users/collections' unless @user.role != 'scholar' %>
     </div>
   </div>
   <div class="span1">

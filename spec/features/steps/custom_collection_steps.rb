@@ -32,6 +32,7 @@ module CustomCollectionSteps
       puts "Catched error: #{e.message}. #{n-1} more attempts."
       retry_on_timeout(n - 1, &block)
     else
+      save_and_open_page
       raise
     end
   end

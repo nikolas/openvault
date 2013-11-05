@@ -24,9 +24,14 @@ class CustomCollection < ActiveRecord::Base
     "/scholar/#{self.user.username}/#{self.slug}"
   end
   
-  def add_collection_item(item)
-    CustomCollectionItem.create(:openvault_asset_pid => item, :custom_collection_id => self.id)
+  def add_collection_item(item, kind)
+    CustomCollectionItem.create(:openvault_asset_pid => item, :kind => kind, :custom_collection_id => self.id)
   end
+  
+  def remove_collection_item(item)
+    CustomCollectionItem.where(openvault_asset_pid: item, custom_collection_id: self.id).delete_all
+  end
+  
   
   private
   
@@ -38,6 +43,7 @@ class CustomCollection < ActiveRecord::Base
       errors.add(:user_id, 'only scholars can create custom collections') unless user.is_scholar?
     end
   end
+  
     
   def is_new
     @was_a_new_record = new_record?
@@ -46,11 +52,10 @@ class CustomCollection < ActiveRecord::Base
   
   def is_pdf_new?
     #only do this when the article has changed.  this uses Dirty Model
-    if self.article_changed?
+    if self.article_changed? && self.article.file.extension.downcase == 'pdf'
       reader = PDF::Reader.new(self.article.path)
       reader.pages.each do |page|
         #this is where a callback will go to send to solr index
-        puts page.text
       end
     end
   end
