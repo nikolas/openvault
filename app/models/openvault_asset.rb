@@ -27,28 +27,29 @@ class OpenvaultAsset < ActiveFedora::Base
     self.pbcore.all_descriptions.first
   end
 
+  def create_relations_from_pbcore_mars!
+    raise 'this needs to be coded!'
+  end
 
   def create_relations_from_pbcore!
 
-  end
-
-  def create_relations_from_pbcore_mars!
-  end
-
-  def create_relations_from_pbcore_artesia!
-
-    # The pbcore datastream can give us Artesia UOI_IDs grouped by relation type,
-    # but what we really want are PIDs, so let's look up the PID from the UOI_ID,
-    # which is indexed as solr field "pbcoreDescriptionDocument_all_ids_tesim"
-    pids_by_relation_type = {}
-    pbcore.relations_by_type.each do |relation_type, uoi_ids|
-      uoi_ids.each do |uoi_id|
-        solr_response = Blacklight.solr.get('select', :params => {:q => "pbcoreDescriptionDocument_all_ids_tesim:#{uoi_id}"})
-        if solr_response['response']['docs'].count > 0
-          related_asset = self.class.find(solr_response['response']['docs'].first['id'], :cast => true)
-          self.relate_asset related_asset
+    if !pbcore.relations_by_type.empty?
+      # The pbcore datastream can give us Artesia UOI_IDs grouped by relation type,
+      # but what we really want are PIDs, so let's look up the PID from the UOI_ID,
+      # which is indexed as solr field "pbcoreDescriptionDocument_all_ids_tesim"
+      pids_by_relation_type = {}
+      pbcore.relations_by_type.each do |relation_type, uoi_ids|
+        uoi_ids.each do |uoi_id|
+          solr_response = Blacklight.solr.get('select', :params => {:q => "pbcoreDescriptionDocument_all_ids_tesim:#{uoi_id}"})
+          if solr_response['response']['docs'].count > 0
+            related_asset = self.class.find(solr_response['response']['docs'].first['id'], :cast => true)
+            self.relate_asset related_asset
+          end
         end
       end
+    # TODO: Code Openvault::Pbcore.is_from_mars?
+    # elsif Openvault::Pbcore.is_from_mars? pbcore
+    #   create_relations_from_pbcore_mars!
     end
   end
 

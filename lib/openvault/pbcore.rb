@@ -94,7 +94,18 @@ module Openvault::Pbcore
         model.save!
         pids << model.pid
       end
+
+      # Now that all the models are saved, relate them.
+      pids.each do |pid|
+        model = OpenvaultAsset.find pid, :cast => true
+        model.create_relations_from_pbcore!
+      end
+
       pids
+    end
+
+    def is_from_mars? pbcore_desc_doc
+      raise 'needs code!'
     end
   end
 end
