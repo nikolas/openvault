@@ -1,9 +1,9 @@
 <div class="document <%= render_document_class document %>">  
     <div  class="doc_thumbnail">
       <% if document[:thumbnail] %>
-        <%= link_to_document document, :label=>(image_tag(document.thumbnail.url(:style => :preview)).html_safe) %>
-      <% else %>
-        <img src="/assets/tmp_cat_image_thumb.jpg" />
+        <%= link_to_document document, :label=>(image_tag(document[:thumbnail])) %>
+      <%# else %>
+        <!-- <img src="/assets/tmp_cat_image_thumb.jpg" /> -->
       <% end %>
     </div> 
   <h3 class="index_title">
@@ -24,8 +24,6 @@
       <% end -%>
     <% end -%>
   </div>
-  
-  
   <%#= render_document_unapi_microformat document %>
   <div class="clearfix"></div>
 </div>

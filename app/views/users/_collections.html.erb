@@ -1,70 +1,76 @@
-<h4><%= (current_user && @user == current_user) ? 'My' : "#{@user.first_name}'s" %> Collection</h4>
 <div id="collection_container">
   <% @collections.each do |collection| %>
   <div class="collection_block">
-    <p>
-      <b>Summary:</b>
-      <%= collection.summary.html_safe %>
-    </p>
-
-    <p>
-      <b>Image:</b>
-      <%= image_tag collection.image.url(:med) %>
-    </p>
-    <% unless collection.custom_collection_items.videos.count == 0 %>
-    <p>
-      <b>Custom Collection Items (Videos):</b>
-      <% collection.custom_collection_items.videos.each do |col| %>
-        Video: <%= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
-        <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
-      <% end %>
-    </p>
-    <% end %>
-    <% unless collection.custom_collection_items.audios.count == 0 %>
-    <p>
-      <b>Custom Collection Items (Audio):</b>
-      <% collection.custom_collection_items.audios.each do |col| %>
-        Audio: <%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>
-        <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
-      <% end %>
-    </p>
-    <% end %>
-    <% unless collection.custom_collection_items.programs.count == 0 %>
-    <p>
-      <b>Custom Collection Items (Programs):</b>
-      <% collection.custom_collection_items.programs.each do |col| %>
-        Program: <%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>
-        <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
-      <% end %>
-    </p>
-    <% end %>
-    <% unless collection.custom_collection_items.series.count == 0 %>
-    <p>
-      <b>Custom Collection Items (Series):</b>
-      <% collection.custom_collection_items.series.each do |col| %>
-        Series: <%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>
-        <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
-      <% end %>
-    </p>
-    <% end %>
-    <% unless collection.article.nil? %>
-    <p>
-      <b>Article:</b>
-      <a href="<%= collection.article.url %>">Download</a>
-        <!-- <iframe src="http://docs.google.com/gview?url=<%= collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
-        <%#= render partial: 'custom_collections/pdf' %>
-    </p>
-    <% end %>
+    <ul class="nav nav-tabs" id="collectionTabs">
+      <li class="active"><a href="#summary" data-toggle="tab">Summary</a></li>
+      <li><a href="#content" data-toggle="tab">Article Content</a></li>
+      <li><a href="#media" data-toggle="tab">Media</a></li>
+      <li><a href="#related" data-toggle="tab">Related Content</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="summary" class="tab-pane active">
+        <p><%= collection.summary %></p>
+      </div>
+      <div id="content" class="tab-pane">
+        <% unless collection.article.nil? %>
+          <a href="<%= collection.article.url %>">Download</a>
+            <!-- <iframe src="http://docs.google.com/gview?url=<%= collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
+            <%#= render partial: 'custom_collections/pdf' %>
+            <%= pdf_viewer("http://localhost:3000#{collection.article.url}", {toolbar: :minimal}) %>
+            <%= javascript_include_tag "pdfviewer" %>
+            <%= stylesheet_link_tag "viewer" %>
+        <% end %>
+      </div>
+      <div id="media" class="tab-pane">
+        <% unless collection.custom_collection_items.videos.count == 0 %>
+        <p>
+          <b>Custom Collection Items (Videos):</b>
+          <% collection.custom_collection_items.videos.each do |col| %>
+            Video: <%= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
+            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
+          <% end %>
+        </p>
+        <% end %>
+        <% unless collection.custom_collection_items.audios.count == 0 %>
+        <p>
+          <b>Custom Collection Items (Audio):</b>
+          <% collection.custom_collection_items.audios.each do |col| %>
+            Audio: <%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>
+            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
+          <% end %>
+        </p>
+        <% end %>
+        <% unless collection.custom_collection_items.programs.count == 0 %>
+        <p>
+          <b>Custom Collection Items (Programs):</b>
+          <% collection.custom_collection_items.programs.each do |col| %>
+            Program: <%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>
+            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
+          <% end %>
+        </p>
+        <% end %>
+        <% unless collection.custom_collection_items.series.count == 0 %>
+        <p>
+          <b>Custom Collection Items (Series):</b>
+          <% collection.custom_collection_items.series.each do |col| %>
+            Series: <%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>
+            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
+          <% end %>
+        </p>
+        <% end %>
+      </div>
+      <div id="related" class="tab-pane">
+      
+      </div>
+    </div>
     <% if current_user && current_user.id == collection.user_id %>
       <%= link_to 'Edit collection details', edit_custom_collection_path(collection) %>
       <%#= link_to 'Back', custom_collections_path %>
     <% end %>
-    <script type="text/javascript" charset="utf-8">
-      window.currentPDF = "<%= collection.article %>"
-    </script>
   </div>
   <% end %>
 </div>
 <% if (current_user && current_user == @user) && (@collections.size == 0) %>
   <a href="/custom_collections/new">Add collection</a>
 <% end %>
+
