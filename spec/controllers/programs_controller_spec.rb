@@ -12,7 +12,7 @@ describe ProgramsController do
     Fixtures.cwd("#{fixture_path}/pbcore")
     a = Openvault::Pbcore.get_model_for(Fixtures.use("artesia/rock_and_roll/program_1.xml"))
     a.save!
-    a.create_relations_from_pbcore_artesia!
+    a.create_relations_from_pbcore!
     @id = a.pid
   end
   describe "GET show" do

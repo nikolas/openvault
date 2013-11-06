@@ -79,6 +79,3 @@ gem 'twitter'
 #gem 'hydra-collections'
 
 gem 'capistrano'
-
-# for parallel processing
-gem 'celluloid'
