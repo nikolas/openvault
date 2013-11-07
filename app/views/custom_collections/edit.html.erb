@@ -1,7 +1,13 @@
 <% title "OpenVault - Editing #{@custom_collection.name}" %>
-<h2>Editing <em><%= @custom_collection.name %></em></h2>
+<div id="collection_edit_page" class="row-fluid">
+  <div class="span2">&nbsp;</div>
+  <div class="span8">
+    <h2>Editing <em><%= @custom_collection.name %></em></h2>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @custom_collection %> |
-<%= link_to 'Back', (current_user && @custom_collection.user == current_user) ? '/me' : @custom_collection.user.url %>
+    <%= link_to 'Show', @custom_collection %> |
+    <%= link_to 'Back', (current_user && @custom_collection.user == current_user) ? '/me' : @custom_collection.user.url %>
+  </div>
+  <div class="span2">&nbsp;</div>
+</div>

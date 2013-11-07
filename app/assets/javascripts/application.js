@@ -16,5 +16,6 @@
 //= require bootstrap-wysihtml5
 //= require jquery.jplayer.min
 //= require blacklight/blacklight
+//= require jquery_nested_form
 //= require search
 //= require_tree .

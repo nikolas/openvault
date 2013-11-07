@@ -16,7 +16,7 @@
           <a href="<%= collection.article.url %>">Download</a>
             <!-- <iframe src="http://docs.google.com/gview?url=<%= collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
             <%#= render partial: 'custom_collections/pdf' %>
-            <%= pdf_viewer("http://localhost:3000#{collection.article.url}", {toolbar: :minimal}) %>
+            <%= pdf_viewer("http://localhost:3000#{collection.article.url}") %>
             <%= javascript_include_tag "pdfviewer" %>
             <%= stylesheet_link_tag "viewer" %>
         <% end %>
@@ -60,7 +60,12 @@
         <% end %>
       </div>
       <div id="related" class="tab-pane">
-      
+        <% collection.custom_collection_related_links.each do |link| %>
+          <div class="link_block">
+            <a href="<%= link.link %>"><%= link.link %></a>
+            <p><%= link.desc %></p>
+          </div>
+        <% end %>
       </div>
     </div>
     <% if current_user && current_user.id == collection.user_id %>

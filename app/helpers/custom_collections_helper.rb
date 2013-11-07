@@ -16,14 +16,12 @@ module CustomCollectionsHelper
     :page_buttons,
     :zoom_buttons,
     :zoom_select,
-    :fullscreen,
-    :download
+    :fullscreen
   ]
   
   MINIMAL = [
     :page_buttons,
-    :zoom_buttons,
-    :download
+    :zoom_buttons
   ]
   
   def pdf_viewer(filename, options={})
@@ -183,4 +181,5 @@ module CustomCollectionsHelper
   
     html.html_safe
   end
+  
 end

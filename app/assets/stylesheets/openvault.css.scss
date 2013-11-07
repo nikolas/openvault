@@ -464,6 +464,19 @@ input, select, textarea {
     }
   }
   
+  //Edit Collection Page
+  #collection_edit_page {
+    form {
+      textarea {
+        width: 100%;
+        height: 60px;
+      }
+      .new_link {
+        display: none;
+      }
+    }
+  }
+  
   //Search index page
   #search_page {
     #sidebar {

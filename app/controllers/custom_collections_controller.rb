@@ -31,6 +31,7 @@ class CustomCollectionsController < ApplicationController
   # GET /custom_collections/new.json
   def new
     @custom_collection = CustomCollection.new
+    @custom_collection.custom_collection_related_links.build
 
     respond_to do |format|
       format.html # new.html.erb

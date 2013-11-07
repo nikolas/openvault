@@ -1,4 +1,4 @@
-<%= simple_form_for(@custom_collection) do |f| %>
+<%= simple_nested_form_for @custom_collection do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,6 +12,13 @@
       <div class="span6">
         Current article: <%#= @custom_collection.article.file.filename unless @custom_collection.article.nil? %>
         <%= f.input :article, label: 'Attach your article' %>
+      </div>
+      <div class="span12">
+        <h3>Related Links</h3>
+        <%= f.simple_fields_for :custom_collection_related_links do |r| %>
+          <%= render :partial => 'custom_collection_related_links_fields', :locals => {:f => r} %>
+        <% end %>
+        <p><%= f.link_to_add "Add a link", :custom_collection_related_links %></p>
       </div>
     </div>
     <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id } %>

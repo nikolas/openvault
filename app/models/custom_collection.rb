@@ -1,5 +1,5 @@
 class CustomCollection < ActiveRecord::Base
-  attr_accessible :article, :image, :name, :summary, :user_id, :slug
+  attr_accessible :article, :image, :name, :summary, :user_id, :slug, :custom_collection_related_links, :custom_collection_related_links_attributes
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
@@ -7,7 +7,11 @@ class CustomCollection < ActiveRecord::Base
   validate :user_id_scholar
   
   belongs_to :user
-  has_many :custom_collection_items
+  has_many :custom_collection_items, :dependent => :destroy
+  has_many :custom_collection_related_links, :dependent => :destroy
+  
+  accepts_nested_attributes_for :custom_collection_items  
+  accepts_nested_attributes_for :custom_collection_related_links, :allow_destroy => true, :reject_if => lambda { |a| a[:desc].blank? || a[:link].blank? }
   
   before_save :is_new
   before_save :create_slug
