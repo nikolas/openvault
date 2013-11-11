@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131031172557) do
+ActiveRecord::Schema.define(:version => 20131106202111) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -92,6 +92,14 @@ ActiveRecord::Schema.define(:version => 20131031172557) do
     t.datetime "updated_at",           :null => false
     t.string   "openvault_asset_pid"
     t.string   "kind"
+  end
+
+  create_table "custom_collection_related_links", :force => true do |t|
+    t.integer  "custom_collection_id"
+    t.string   "link"
+    t.text     "desc"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "custom_collections", :force => true do |t|

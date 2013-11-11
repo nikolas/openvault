@@ -1,9 +1,8 @@
 # Users pages functions
 $ ->
-  # $('.wysihtml5bio').each (i, elem) ->
-#       $(elem).wysihtml5()
   showUserPasswordChange()
   newUserButtonClick()
+  collectionTabs()
   
 showUserPasswordChange = ->
   $('.change_password_edit_link').on "click", (e) ->
@@ -15,3 +14,8 @@ newUserButtonClick = ->
   $('button.choose_avatar_btn').on "click", (e) ->
     e.preventDefault()
     $('#user_avatar').show().trigger("click").hide()
+    
+collectionTabs = ->
+  $('#collectionTabs a').on "click", (e) ->
+    e.preventDefault()
+    $(this).tab('show')

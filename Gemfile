@@ -76,6 +76,7 @@ gem 'pdf-reader'
 gem "acts-as-taggable-on", :git => 'https://github.com/mbleigh/acts-as-taggable-on.git'
 gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_commentable.git'
 gem 'twitter'
+gem "nested_form"
 #gem 'hydra-collections'
 
 gem 'capistrano'

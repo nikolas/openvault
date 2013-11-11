@@ -447,6 +447,7 @@ input, select, textarea {
     #user_image {
       img {
         border: 2px solid $orange;
+        width: 100%;
       }
       text-align:center;
     }
@@ -455,6 +456,24 @@ input, select, textarea {
     }
     #user_bio {
       
+    }
+    .collection_block {
+      #outerContainer {
+        height: 680px;
+      }
+    }
+  }
+  
+  //Edit Collection Page
+  #collection_edit_page {
+    form {
+      textarea {
+        width: 100%;
+        height: 60px;
+      }
+      .new_link {
+        display: none;
+      }
     }
   }
   

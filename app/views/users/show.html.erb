@@ -5,10 +5,10 @@
   </div>
   <div class="span10">
     <div class="row-fluid">
-      <div id="user_image" class="span3">
+      <div id="user_image" class="span2">
         <%= image_tag @user.avatar.url(:med) %>
       </div>
-      <div id="user_info" class="span3">
+      <div id="user_info" class="span2">
         <h3><%= @user.full_name %></h3>
         <h4><%= @user.title %></h4>
         <h4><%= @user.organization %></h4>
@@ -19,12 +19,12 @@
           </div>
         <% end %>
       </div>
-      <div id="user_bio" class="span6">
+      <div id="user_bio" class="span8">
         <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
       </div>
       <div class="clearfix"></div>
       <hr />
-      <%= render partial: 'users/collections' unless @user.role != 'scholar' %>
+      <%= render partial: 'users/collections' %>
     </div>
   </div>
   <div class="span1">

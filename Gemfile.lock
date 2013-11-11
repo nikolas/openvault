@@ -271,6 +271,7 @@ GEM
     multi_json (1.7.9)
     multipart-post (1.2.0)
     mysql2 (0.3.13)
+    nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -467,6 +468,7 @@ DEPENDENCIES
   launchy
   mini_magick
   mysql2 (~> 0.3.11)
+  nested_form
   pdf-reader
   rails (~> 3.2.14)
   rb-fsevent (~> 0.9)

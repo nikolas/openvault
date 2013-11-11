@@ -18,5 +18,5 @@ $ ->
       error: (data) ->
         console.log(data)
     
-  $('.wysihtml5').each (i, elem) ->
+  $('.blacklight-custom_collections-edit .wysihtml5').each (i, elem) ->
       $(elem).wysihtml5()

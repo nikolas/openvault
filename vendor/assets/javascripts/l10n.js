@@ -25,7 +25,7 @@
     - Removes consoleLog and simplifies consoleWarn;
     - Removes window._ assignment.
 */
-/*jshint browser: true, devel: false, es5: true, globalstrict: true */
+/*jshint browser: true, devel: true, es5: true, globalstrict: true */
 'use strict';
 
 document.webL10n = (function(window, document, undefined) {
@@ -41,8 +41,7 @@ document.webL10n = (function(window, document, undefined) {
 
   // debug helpers
   function consoleWarn(message) {
-    //disabling error logging
-    //console.log('[l10n] ' + message);
+    console.log('[l10n] ' + message);
   };
 
   /**
