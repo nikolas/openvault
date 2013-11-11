@@ -3,30 +3,57 @@ require 'openvault'
 module Openvault::Pbcore
   class << self
 
-    # Returns appropriate ActiveFedora model for the pbcore datastream
+    # Uses values from <pbcoreIdentifier> nodes to check
+    # Fedora for existing instances of models that contain
+    # those values. If not found, returns a new model, and assigns
+    # the pbcore datastream to it.
     def get_model_for pbcore_desc_doc
+
+      # Look for existing recod based on values from <pbcoreIdentifier>
+      model_class = get_model_class_for pbcore_desc_doc
+
+      # only run query if there are actually some pbcore ids.. will error otherwise.
+      # Fix pending in https://github.com/projecthydra/active_fedora/pull/273.
+      # Once fixed can eliminate if!pbcore_desc_doc.all_ids.empty?
+      if !pbcore_desc_doc.all_ids.empty?
+        found = model_class.find({"pbcoreDescriptionDocument_all_ids_tesim" => pbcore_desc_doc.all_ids})
+        if !found.empty?
+          return found.first
+        end
+      end
+
+      # If we didn't find anything, return
+      return get_new_model_for pbcore_desc_doc
+    end
+
+    def get_new_model_for pbcore_desc_doc
+      model = self.get_model_class_for(pbcore_desc_doc).new
+      model.pbcore.ng_xml = pbcore_desc_doc.ng_xml
+      model
+    end
+
+    # Returns appropriate ActiveFedora model for the pbcore datastream
+    def get_model_class_for pbcore_desc_doc
 
       # First figure out what the xml represents. If it is more than one
       # model, then relate them afterward.
       if self.is_series? pbcore_desc_doc
-        model = Series.new
+        model_class= Series
       elsif self.is_program? pbcore_desc_doc
-        model = Program.new
+        model_class= Program
       elsif self.is_video? pbcore_desc_doc
-        model = Video.new
+        model_class= Video
       elsif self.is_image? pbcore_desc_doc
-        model = Image.new
+        model_class= Image
       elsif self.is_audio? pbcore_desc_doc
-        model = Audio.new
+        model_class= Audio
       elsif self.is_transcript? pbcore_desc_doc
-        model = Transcript.new
+        model_class= Transcript
       else
-        model = OpenvaultAsset.new
+        model_class= OpenvaultAsset
       end
 
-
-      model.pbcore.ng_xml = pbcore_desc_doc.ng_xml
-      model
+      model_class
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Series record.
