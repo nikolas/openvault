@@ -93,12 +93,14 @@
     ids
   end
 
+  # relations_by_type
+  # Returns a hash of values from <pbcoreRelationIdentifier> nodes keyed by values from <pbcoreRelationType> nodes.
   def relations_by_type
     relations = {}
     for i in 0..(self.relations.count-1)
       type = self.relations(i).type.first
       relations[type] ||= []
-      relations[self.relations(i).type.first] += self.relations(i).id
+      relations[type] += self.relations(i).id
     end
     relations
   end
