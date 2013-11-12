@@ -7,7 +7,7 @@ Warden.test_mode!
 feature 'User tries to create a custom collection' do
   
   before :each do
-    Capybara.reset_sessions!
+    Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, user_id: @scholar1.id)
@@ -27,8 +27,7 @@ feature 'User tries to create a custom collection' do
   scenario 'when the user is signed in and IS a scholar' do
     login_as(@scholar1, :scope => :user, :run_callbacks => false)
     create_custom_collection({name: "Testing Collection", summary: 'asdf asdf asdf asdf asdf'})
-    #expect page to have the title of the collection on it
-    expect(page).to have_content ('Testing Collection')
+    expect(page).to have_css 'div#collection_container'
   end
   
 end
@@ -36,79 +35,26 @@ end
 feature 'Scholar attaches files to a collection' do
   #need a better way to test these one the final page designs are active
   before :each do
-    Capybara.reset_sessions!
+    Warden.test_reset!
     @scholar = create(:user, role: 'scholar')
-    create(:custom_collection, user_id: @scholar.id, name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf')
-    login_as(@scholar, :scope => :user, :run_callbacks => false)
-  end
-#   
-  scenario 'succeeds when the file is for the image and is a jpg' do
-    user_attach_file({
-      id: @scholar.collection_id,
-      button_name: 'custom_collection_image',
-      file_name: 'test_jpg.jpg'
-    })
-    expect(page).to have_xpath("//img[@src=\"/uploads/custom_collection/image/1/med_test_jpg.jpg\"]")
-  end
-#   
-  scenario 'succeeds when the file is for the image and is a png' do
-    user_attach_file({
-      id: @scholar.collection_id,
-      button_name: 'custom_collection_image',
-      file_name: 'blue.png'
-    })
-    expect(page).to have_xpath("//img[@src=\"/uploads/custom_collection/image/1/med_blue.png\"]")
-  end
-#   
-  scenario 'succeeds when the file is for the image and is a gif' do
-    user_attach_file({
-      id: @scholar.collection_id,
-      button_name: 'custom_collection_image',
-      file_name: 'gif_test.gif'
-    })
-    expect(page).to have_xpath("//img[@src=\"/uploads/custom_collection/image/1/med_gif_test.gif\"]")
-  end
-#   
-  scenario 'fails when the file is for the image and is not of the proper type' do
-    user_attach_file({
-      id: @scholar.collection_id,
-      button_name: 'custom_collection_image',
-      file_name: 'test_file.txt'
-    })
-    expect(page).to have_content("You are not allowed to upload \"txt\" files, allowed types: jpg, jpeg, gif, png
-")
-  end
-#   
-  scenario 'succeeds when the file is for the article and is a txt' do
-    user_attach_file({
-      id: @scholar.collection_id,
-      button_name: 'custom_collection_article',
-      file_name: 'test_file.txt'
-    })
-    expect(page).to have_xpath("//a[@href=\"/uploads/custom_collection/article/1/test_file.txt\"]")
-  end
-#   
-  scenario 'succeeds when the file is for the article and is a doc' do
-    user_attach_file({
-      id: @scholar.collection_id,
-      button_name: 'custom_collection_article',
-      file_name: 'test_doc_file.doc'
-    })
-    expect(page).to have_xpath("//a[@href=\"/uploads/custom_collection/article/1/test_doc_file.doc\"]")
+    @cc = create(:custom_collection, user_id: @scholar.id, name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf')
   end
   
   scenario 'succeeds when the file is for the article and is a pdf' do
+    login_as(@scholar, :scope => :user, :run_callbacks => false)
     user_attach_file({
-      id: @scholar.collection_id,
+      id: @cc.id,
       button_name: 'custom_collection_article',
       file_name: 'test_file.pdf'
     })
-    expect(page).to have_xpath("//a[@href=\"/uploads/custom_collection/article/1/test_file.pdf\"]")
+    cont = page.find_by_id('outerContainer')
+    cont[:'data-pdf'].should match(/test_file.pdf/)
   end
   
   scenario 'fails when the file is for the article and is a jpg' do
+    login_as(@scholar, :scope => :user, :run_callbacks => false)
     user_attach_file({
-      id: @scholar.collection_id,
+      id: @cc.id,
       button_name: 'custom_collection_article',
       file_name: 'test_jpg.jpg'
     })
@@ -120,7 +66,7 @@ end
 feature 'User tries to edit a collection' do
   
   before :each do
-    Capybara.reset_sessions!
+    Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @scholar2 = create(:user, role: 'scholar')
     @member = create(:user)
@@ -157,7 +103,7 @@ end
 
 feature "User adds a catalog item to a collection" do
   before :each do
-    Capybara.reset_sessions!
+    Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, user_id: @scholar1.id, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
@@ -186,7 +132,7 @@ end
 
 feature "User removes a catalog item from a collection" do
   before :each do
-    Capybara.reset_sessions!
+    Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, user_id: @scholar1.id, name: 'Testing 123123123123', summary: 'Testingasdfjasldkjf')
@@ -199,7 +145,6 @@ feature "User removes a catalog item from a collection" do
     visit "/custom_collections/#{@custom_collection1.id}"
     click_link "Remove"
     expect(page).not_to have_content("Videos:")
-    
   end
   
   scenario 'when they are signed in as a non-scholar' do

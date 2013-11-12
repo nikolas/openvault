@@ -71,7 +71,7 @@ gem 'country_select'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
 gem 'active_admin_editor'
-gem 'bootstrap-wysihtml5-rails'
+gem "bootstrap-wysihtml5-rails", "~> 0.3.1.23"
 gem 'pdf-reader'
 gem "acts-as-taggable-on", :git => 'https://github.com/mbleigh/acts-as-taggable-on.git'
 gem "acts_as_commentable", :git => 'https://github.com/jackdempsey/acts_as_commentable.git'

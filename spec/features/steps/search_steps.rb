@@ -2,9 +2,7 @@ module SearchSteps
   def search(values={})
     values.symbolize_keys!
     retry_on_timeout do
-      go_here '/'
-      fill_in 'q', with: values[:q] unless values[:q].nil?
-      click_button 'search'
+      go_here "/catalog?q=#{Rack::Utils.escape(values[:q])}"
     end
   end
   

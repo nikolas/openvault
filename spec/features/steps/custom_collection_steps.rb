@@ -6,7 +6,6 @@ module CustomCollectionSteps
       visit new_custom_collection_path
       fill_in 'custom_collection_name', with: values[:name] unless values[:name].nil?
       fill_in 'custom_collection_summary', with: values[:summary] unless values[:summary].nil?
-      #page.execute_script("var wysihtml5Editor = $('#custom_collection_summary').data('wysihtml5').editor; wysihtml5Editor.composer.commands.exec('insertHTML', '#{values[:summary]}');")
       click_button 'Create Custom collection'
     end
   end

@@ -1,36 +1,84 @@
 <div id="collection_container">
+  <br />
+  <h3><%= @collections.first.name unless @collections.blank? || @collections.nil? %></h3>
   <% @collections.each do |collection| %>
   <div class="collection_block">
     <ul class="nav nav-tabs" id="collectionTabs">
       <li class="active"><a href="#summary" data-toggle="tab">Summary</a></li>
-      <li><a href="#content" data-toggle="tab">Article Content</a></li>
+      <li><a href="#article-content" data-toggle="tab">Article Content</a></li>
       <li><a href="#media" data-toggle="tab">Media</a></li>
       <li><a href="#related" data-toggle="tab">Related Content</a></li>
     </ul>
     <div class="tab-content">
       <div id="summary" class="tab-pane active">
-        <p><%= collection.summary %></p>
+        <%= collection.summary.html_safe %>
       </div>
-      <div id="content" class="tab-pane">
+      <div id="article-content" class="tab-pane" data-article="<%= collection.article.url %>">
         <% unless collection.article.nil? %>
-          <a href="<%= collection.article.url %>">Download</a>
-            <!-- <iframe src="http://docs.google.com/gview?url=<%= collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
-            <%#= render partial: 'custom_collections/pdf' %>
-            <%= pdf_viewer("http://localhost:3000#{collection.article.url}") %>
-            <%= javascript_include_tag "pdfviewer" %>
-            <%= stylesheet_link_tag "viewer" %>
+          <!-- <iframe src="http://docs.google.com/gview?url=<%= collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
+          <%#= render partial: 'custom_collections/pdf' %>
+          <%= pdf_viewer("http://localhost:3000#{collection.article.url}") %>
+          <%= javascript_include_tag "pdfviewer" %>
+          <%= stylesheet_link_tag "viewer" %>
         <% end %>
       </div>
       <div id="media" class="tab-pane">
         <% unless collection.custom_collection_items.videos.count == 0 %>
-        <p>
-          <b>Custom Collection Items (Videos):</b>
-          <% collection.custom_collection_items.videos.each do |col| %>
-            Video: <%= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
-            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
-          <% end %>
-        </p>
+        <div id="cc_video_container">
+          <div id="cc_video_player">
+            <video id="cc_player" class="video-js vjs-default-skin"
+              controls preload="auto" width="100%" height="450"
+              data-setup='{}'
+              poster="/assets/slider_thumb.png">
+              <source src="/assets/video_test.mp4" type='video/mp4' />
+            </video>
+            <p class="video_title">Video Title 1</p>
+          </div>
+          <div id="cc_video_thumbnail_list" class="jThumbnailScroller">
+          	<div class="jTscrollerContainer">
+          		<div class="jTscroller">
+                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                </a>
+                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                </a>
+              </div>
+            </div>
+          	<a href="#" class="jTscrollerPrevButton"></a>
+          	<a href="#" class="jTscrollerNextButton"></a>
+          </div>
+          <%# collection.custom_collection_items.videos.each do |col| %>
+            <%#= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
+          <%# end %>
+        </div>
+        <hr />
         <% end %>
+        <h3>Other assets in this collection</h3>
         <% unless collection.custom_collection_items.audios.count == 0 %>
         <p>
           <b>Custom Collection Items (Audio):</b>

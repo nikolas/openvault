@@ -17,5 +17,7 @@
 //= require jquery.jplayer.min
 //= require blacklight/blacklight
 //= require jquery_nested_form
+//= require video
+//= require video-config
 //= require search
 //= require_tree .

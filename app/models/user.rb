@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
                   
   has_many :custom_collections
 
-  validates :terms_and_conditions, acceptance: {allow_nil: false, accept: true, on: :create}
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"
   validates_presence_of :country, :message => "can't be blank"

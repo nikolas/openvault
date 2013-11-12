@@ -17,8 +17,9 @@ $ ->
     $('#mobile-header .search-dropdown').slideToggle("fast")
     
   $('body').on "click", ".sign_in_link", (e) ->
-    e.preventDefault()
-    $('#signin-dropdown').toggle("fast")
+    if $('#signin-dropdown').length > 0
+      e.preventDefault()
+      $('#signin-dropdown').toggle("fast")
   
   $('body').on "click", ".cancel_signin", (e) ->
     e.preventDefault()

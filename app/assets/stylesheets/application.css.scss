@@ -14,5 +14,7 @@
  *= require_self
  *= require bootstrap-wysihtml5
  *= require active_admin/editor/wysiwyg
+ *= require jquery.thumbnailScroller
+ *= require video-js.min
  */
 @import 'scss_imports';
