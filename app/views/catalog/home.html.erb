@@ -90,12 +90,14 @@
     <h2>Recent Tweets</h2>
     <div class="sep-line"></div>
     <div id="tweet-list">
-      <% @tweets.each_with_index do |tweet| %>
-        <div class="tweet-item">
-          <p><%= tweet.text %></p>
-        </div>
+      <% unless @tweets.nil? %>
+        <% @tweets.each_with_index do |tweet| %>
+          <div class="tweet-item">
+            <p><%= tweet.text %></p>
+          </div>
+        <% end %>
       <% end %>
-      <% if @tweets.empty? %>
+      <% if @tweets.nil? || @tweets.empty? %>
         <p>There was a problem connecting to twitter, please check back later.</p>
       <% end %>
     </div>
