@@ -65,7 +65,7 @@ playlist_scroller = ->
       e.preventDefault()
       paneh = ((cheight / count) * 3) * curPane
       console.log "Next Before: "+curPane
-      c.animate({top: "-"+paneh},300,"easeOutCirc")
+      c.animate({top: "-"+paneh})
       if (curPane + 1) == paneCount
         $(this).hide()
         curPane = curPane + 1
@@ -82,7 +82,7 @@ playlist_scroller = ->
       paneh = ((cheight / count) * 3)
       curPos = $('.jTscroller').position().top
       console.log "Prev Before: "+curPane
-      c.animate({top: "-"+(Math.abs(curPos) - paneh)},300,"easeOutCirc")
+      c.animate({top: "-"+(Math.abs(curPos) - paneh)})
       if (curPane - 1) == 1
         $(this).hide()
         curPane = curPane - 1
