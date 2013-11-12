@@ -9,7 +9,7 @@
         <%= f.input :article, label: 'Attach your article' %>
       </div>
       <div class="span8">
-        <p><strong>Current article: </strong><%#= @custom_collection.article.file.filename unless @custom_collection.article.nil? %></p>
+        <p><strong>Current article: </strong><%= @custom_collection.article.file.filename unless @custom_collection.article.file.nil? %></p>
       </div>
     </div>
     <div class="row-fluid">

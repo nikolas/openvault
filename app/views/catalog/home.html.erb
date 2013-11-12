@@ -37,21 +37,27 @@
   <div id="collections" class="grainbox span4">
     <h2>New Collections</h2>
     <div class="sep-line"></div>
+    <% @custom_collections.each do |coll| %>
+      <div class="collection_block">
+        <h3><%= coll.name %></h3>
+        <img src="<%= coll.user.avatar.url(:thumb) %>">
+        <p><%= coll.user.full_name %></p>
+        <p><%= coll.user.work_string %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 
 <div id="catalog-scroller" class="row-fluid">
-  <div class="shadow-left">
-    <i class="icon-arrow-left"></i>
-  </div>
+  <!-- <div class="shadow-left"></div> -->
   <div id="scroller-items">
-    <% 12.times do %>
-      <a href="#" class="scroller-item">
-        <img src="/assets/slider_thumb.png" class="scroller-image" />
+    <% @scroller_items.each do |item| %>
+      <a href="/video/<%= item[1].to_s %>" class="scroller-item">
+        <img src="<%= item[0].to_s %>" class="scroller-image" />
       </a>
     <% end %>
   </div>
-  <div class="shadow-right"></div>
+  <!-- <div class="shadow-right"></div> -->
 </div>
 
 <div class="row-fluid">

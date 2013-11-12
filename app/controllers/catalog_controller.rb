@@ -240,7 +240,16 @@ class CatalogController < ApplicationController
     @custom_collections = CustomCollection.limit(6).order('created_at ASC')
     @scholars = User.scholars
     @tweets = Twitter.user_timeline('wgbharchives', :count => 5) rescue nil
-    @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
+    #@mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
+    @resp, @items = get_last_n_solr_docs
+    @scroller_items = []
+    @items.each do |item|
+      unless item['video_images_ssm'].nil?
+        im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
+        img = im['image_path_ssm'].first
+        @scroller_items << [img, item['slug']]
+      end
+    end
   end
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...
@@ -318,6 +327,13 @@ class CatalogController < ApplicationController
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
     document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
     document_list.first
+  end
+  
+  def get_last_n_solr_docs(n=12, user_params = params || {}, extra_controller_params = {})
+    extra_controller_params = {:rows => n, :fq => 'has_model_ssim:("info:fedora/afmodel:Video")' }
+    solr_response = query_solr(user_params, extra_controller_params)
+    document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
+    [solr_response, document_list]
   end
   
   def choose_render(document=nil)
