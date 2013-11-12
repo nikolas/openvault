@@ -9,7 +9,7 @@ class CustomCollectionArticleUploader < CarrierWave::Uploader::Base
   end
   
   def extension_white_list
-    %w(pdf doc txt)
+    %w(pdf)
   end
 
 end
