@@ -71,9 +71,15 @@ input, select, textarea {
   &:focus {
     box-shadow: none !important;
     border:  1px solid #cccccc !important;
+    outline:none !important;
   }
 }
-
+input[type=file] {
+  line-height: 10px;
+  &:focus {
+    border:none !important;
+  }
+}
 .pull-right {
   text-align:right;
 }
@@ -118,6 +124,9 @@ input, select, textarea {
       color: #fafafa;
     }
   }
+}
+.bootstrap-wysihtml5-insert-link-modal.modal {
+  top: 40% !important;
 }
 
 //Header section
@@ -458,8 +467,48 @@ input, select, textarea {
       
     }
     .collection_block {
+      margin-top: 20px;
       #outerContainer {
         height: 680px;
+      }
+      .nav {
+        border-bottom: 1px solid #ddd;
+        height: 37px;
+        margin-bottom:0;
+      }
+      .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus, .nav-tabs > li > a {
+        margin-bottom:0;
+      }
+      .tab-content {
+        overflow: auto;
+        clear: both;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      #media {
+        #cc_video_container {
+          overflow:hidden;
+          #cc_video_player {
+            width: 80%;
+            float: left;
+          }
+          #cc_video_thumbnail_list {
+            width: 20%;
+            float:right;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            img {
+              
+            }
+          }
+          .video_title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
       }
     }
   }
@@ -469,7 +518,26 @@ input, select, textarea {
     form {
       textarea {
         width: 100%;
-        height: 60px;
+        height: 100px;
+        box-sizing: border-box;
+      }
+      .link_field {
+        overflow: hidden;
+        background: #F7F7F7;
+        padding: 10px;
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+        textarea {
+          height: 60px;
+          resize:none;
+        }
+      }
+      .remove_nested_fields {
+        text-decoration:none;
+        float:right;
+      }
+      .add_nested_fields {
+        text-decoration:none;
       }
       .new_link {
         display: none;

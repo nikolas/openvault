@@ -71,7 +71,7 @@
         <% end %>
       </div>
       <div id="more-posts" class="span5">
-        <% posts = Wordpress.get_recent_posts(:count => 3) %>
+        <% posts = Wordpress.get_recent_posts(:count => 3) rescue nil %>
         <% posts.each do |post| %>
           <div class="post row-fluid">
           	<div class="body span12">

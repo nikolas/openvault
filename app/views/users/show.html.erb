@@ -23,8 +23,7 @@
         <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
       </div>
       <div class="clearfix"></div>
-      <hr />
-      <%= render partial: 'users/collections' %>
+      <%= render partial: 'users/collections' unless @collections.count == 0 %>
     </div>
   </div>
   <div class="span1">

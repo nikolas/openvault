@@ -1,6 +1,6 @@
 <div class="link_field">
-  <%= f.input :link %>
-  <%= f.input :desc %>
+  <%= f.input :link, label: false, placeholder: 'Link URI' %>
+  <%= f.input :desc, label: false, placeholder: 'Link description' %>
   <%= f.input :_destroy, :as => :hidden %> 
-  <%= f.link_to_remove "Remove link" %>
+  <%= f.link_to_remove "Remove link", :class => 'btn btn-mini btn-danger' %>
 </div>

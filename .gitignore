@@ -40,3 +40,4 @@ app/assets/images/mosaic/*.*
 # image. This is needed so compass doesn't
 # puke when there is nothing ot make a sprite of.
 !app/assets/images/mosaic/sample.png
+app/assets/images/*.mp4

@@ -239,7 +239,8 @@ class CatalogController < ApplicationController
     @collections = Collection.where(:display_in_carousel => true).order('position ASC')
     @custom_collections = CustomCollection.limit(6).order('created_at ASC')
     @scholars = User.scholars
-    @tweets = Twitter.user_timeline('wgbharchives', :count => 5)
+    #@tweets = Twitter.user_timeline('wgbharchives', :count => 5)
+    @tweets = []
     @mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
   end
   
