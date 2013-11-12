@@ -723,6 +723,15 @@ input[type=file] {
       }
       .tools {
         height: 18px;
+        .add_to_collection, .in_collection {
+          float:left;
+          p {
+            
+          }
+          a {
+            text-decoration:none;
+          }
+        }
         .addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m {
           height: 18px;
           margin-bottom: 0px;
