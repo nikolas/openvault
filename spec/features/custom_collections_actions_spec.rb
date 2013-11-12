@@ -58,7 +58,7 @@ feature 'Scholar attaches files to a collection' do
       button_name: 'custom_collection_article',
       file_name: 'test_jpg.jpg'
     })
-    expect(page).to have_content("You are not allowed to upload \"jpg\" files, allowed types: pdf, doc, txt")
+    expect(page).to have_content("You are not allowed to upload \"jpg\" files, allowed types: pdf")
   end
   
 end
