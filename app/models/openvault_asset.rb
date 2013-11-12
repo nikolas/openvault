@@ -31,25 +31,31 @@ class OpenvaultAsset < ActiveFedora::Base
     raise 'this needs to be coded!'
   end
 
+  # Uses pbcore.relations_by_type to establish ActiveFedora relations with existing fedora objects.
+  # NOTE: This method assumes:
+  #   * Two records are related when a value within one record's <pbcoreIdentifier> node is present in another's <pbcoreRelationIdentifier> node
+  #   * There is only one <pbcoreRelationIdentifier> per <pbcoreRelation>
   def create_relations_from_pbcore!
 
     if !pbcore.relations_by_type.empty?
-      # The pbcore datastream can give us Artesia UOI_IDs grouped by relation type,
-      # but what we really want are PIDs, so let's look up the PID from the UOI_ID,
-      # which is indexed as solr field "pbcoreDescriptionDocument_all_ids_tesim"
-      pids_by_relation_type = {}
-      pbcore.relations_by_type.each do |relation_type, uoi_ids|
-        uoi_ids.each do |uoi_id|
-          solr_response = Blacklight.solr.get('select', :params => {:q => "pbcoreDescriptionDocument_all_ids_tesim:#{uoi_id}"})
+      # For each relation type, there is a list of values from <pbcoreRelationIdentifier> nodes, that we will call pbcore_ids
+      pbcore.relations_by_type.each do |relation_type, pbcore_ids|
+
+        # for each of the pbcore_ids...
+        pbcore_ids.each do |pbcore_id|
+
+          # ... find the first existing record that has that pbcore_id as a value for one of it's own <pbcoreIdentifier> nodes
+          solr_response = Blacklight.solr.get('select', :params => {:q => "pbcoreDescriptionDocument_all_ids_tesim:#{pbcore_id}"})
+
+          # If and when we find a match...
           if solr_response['response']['docs'].count > 0
+
+            # Fetch the object from Fedora, and pass it to #relate_asset for this object.
             related_asset = self.class.find(solr_response['response']['docs'].first['id'], :cast => true)
             self.relate_asset related_asset
           end
         end
       end
-    # TODO: Code Openvault::Pbcore.is_from_mars?
-    # elsif Openvault::Pbcore.is_from_mars? pbcore
-    #   create_relations_from_pbcore_mars!
     end
   end
 
