@@ -3,9 +3,9 @@ class CustomCollectionRelatedLink < ActiveRecord::Base
   
   belongs_to :custom_collection
   
-  validate :is_url?
+  validates_presence_of :link, :on => :create, :message => "can't be blank"
+  validates_presence_of :desc, :on => :create, :message => "can't be blank"
+  validates_presence_of :custom_collection_id, :on => :create, :message => "can't be blank"
+  validates_format_of :link, :with => URI::regexp(%w(http https))
   
-  def is_url?
-    true
-  end
 end
