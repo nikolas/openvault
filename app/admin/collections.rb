@@ -49,7 +49,7 @@ ActiveAdmin.register Collection do
   end
   
   index :as => :block do |collection| 
-    div :for => collection, :style => 'height: 140px;border-bottom: 1px solid #aaa;padding-bottom:15px;margin-bottom:15px;' do
+    div :for => collection, :style => 'height: 200px;border-bottom: 1px solid #aaa;padding-bottom:15px;margin-bottom:15px;' do
       a href: admin_collection_path(collection) do
         img src: collection.image.url(:med), style: 'float:left; margin-right:15px;'
       end
@@ -79,9 +79,9 @@ ActiveAdmin.register Collection do
       f.input :image
     end
     f.inputs "Content" do
-      f.input :summary, as: :html_editor
-      f.input :mid_content, as: :html_editor
-      f.input :lower_content, as: :html_editor
+      f.input :summary
+      f.input :mid_content, as: :html_editor, label: 'Browse content'
+      f.input :lower_content, as: :html_editor, label: 'Related links'
     end
     f.actions
   end

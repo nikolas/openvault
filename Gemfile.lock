@@ -160,6 +160,7 @@ GEM
     equivalent-xml (0.3.0)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
+    escape_utils (1.0.0)
     execjs (2.0.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
@@ -457,6 +458,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   email_spec
+  escape_utils
   factory_girl_rails
   faker
   figaro
@@ -470,6 +472,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.11)
   nested_form
   pdf-reader
+  rack-cache
   rails (~> 3.2.14)
   rb-fsevent (~> 0.9)
   rspec-rails

@@ -35,11 +35,7 @@ class CatalogController < ApplicationController
   # This filters out objects that you want to exclude from search results, like FileAssets
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
   
-  caches_action :show, :expires_in => 1.day, :if => proc { |c|
-    current_user.nil? 
-  }
-  caches_action :home, :expires_in => 1.hour, :if => proc { |c| current_user.nil? }
-
+  #caches_action :home
   
   
   configure_blacklight do |config|
@@ -241,7 +237,7 @@ class CatalogController < ApplicationController
     @scholars = User.scholars
     @tweets = Twitter.user_timeline('wgbharchives', :count => 5) rescue nil
     #@mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
-    @resp, @items = get_last_n_solr_docs
+    @resp, @items = get_last_n_solr_docs 
     @scroller_items = []
     @items.each do |item|
       unless item['video_images_ssm'].nil?
@@ -329,7 +325,7 @@ class CatalogController < ApplicationController
     document_list.first
   end
   
-  def get_last_n_solr_docs(n=12, user_params = params || {}, extra_controller_params = {})
+  def get_last_n_solr_docs(n=13, user_params = params || {}, extra_controller_params = {})
     extra_controller_params = {:rows => n, :fq => 'has_model_ssim:("info:fedora/afmodel:Video")' }
     solr_response = query_solr(user_params, extra_controller_params)
     document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
