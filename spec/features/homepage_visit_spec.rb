@@ -6,7 +6,7 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe "visiting homepage", :type => :feature do
   
-  before :all do
+  before :each do
     user = create(:user, :role => 'scholar')
     create(:custom_collection, :user_id => user.id, :name => 'The Collection of Collections', :summary => 'asdfasdfasdf')
   end
