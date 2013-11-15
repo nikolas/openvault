@@ -18,6 +18,7 @@
 //= require blacklight/blacklight
 //= require jquery_nested_form
 //= require jquery.thumbnailScroller
+//= require jquery.flexslider-min
 //= require video
 //= require video-config
 //= require search

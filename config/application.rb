@@ -31,7 +31,7 @@ module Openvault
         :routing_specs => false, 
         :controller_specs => true, 
         :request_specs => true 
-      g.fixture_replacement :factory_girl, :dir => "spec/factories" 
+      #g.fixture_replacement :factory_girl, :dir => "spec/factories" 
     end
     # Only needed if we're using BawstunCommons with Sufia.
     # config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]

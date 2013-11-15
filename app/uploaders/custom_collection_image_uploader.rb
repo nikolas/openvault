@@ -13,15 +13,19 @@ class CustomCollectionImageUploader < CarrierWave::Uploader::Base
   process :to_image
   
   version :thumb do
-    process resize_to_limit: [50, 50]
+    process resize_to_fill: [50, 50]
+  end
+  
+  version :small do
+    process resize_to_fill: [100, 100]
   end
   
   version :med do
-    process resize_to_limit: [200, 200]
+    process resize_to_fill: [200, 200]
   end
   
   version :carousel do
-    process resize_to_limit: [380, 290]
+    process resize_to_fill: [600, 450]
   end
   
   version :large do

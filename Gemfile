@@ -20,7 +20,7 @@ group :test do
 
   # test data stuff
   gem 'factory_girl_rails'
-  gem 'faker'
+  gem 'ffaker'
 
   # acceptance testing stuff
   gem 'capybara'

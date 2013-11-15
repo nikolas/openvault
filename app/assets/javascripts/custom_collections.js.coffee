@@ -5,6 +5,7 @@ $ ->
   add_to_collection()  
   video_playlist()
   playlist_scroller()
+  ccImageGal()
 
 add_to_collection = ->
   $('.add_to_collection a').on "click", (e) ->
@@ -23,7 +24,7 @@ add_to_collection = ->
       error: (data) ->
         console.log(data)
     
-  $('.blacklight-custom_collections-edit .wysihtml5').each (i, elem) ->
+  $('.blacklight-custom_collections .wysihtml5').each (i, elem) ->
       $(elem).wysihtml5
         image: false
 
@@ -93,4 +94,23 @@ playlist_scroller = ->
         $('.jTscrollerNextButton').show()
       else
         $('.jTscrollerNextButton').hide()
-          
+
+ccImageGal = ->
+  $("a[data-toggle=\"tab\"]").on "shown", (e) ->
+      $('#carousel').flexslider
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 150,
+        itemMargin: 5,
+        prevText: " ",
+        nextText: " ",
+        asNavFor: '#imageslider'
+   
+      $('#imageslider').flexslider
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel"

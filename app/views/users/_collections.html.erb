@@ -7,6 +7,7 @@
       <li class="active"><a href="#summary" data-toggle="tab">Summary</a></li>
       <li><a href="#article-content" data-toggle="tab">Article Content</a></li>
       <li><a href="#media" data-toggle="tab">Media</a></li>
+      <li><a href="#images" data-toggle="tab">Images</a></li>
       <li><a href="#related" data-toggle="tab">Related Content</a></li>
     </ul>
     <div class="tab-content">
@@ -15,8 +16,10 @@
       </div>
       <div id="article-content" class="tab-pane" data-article="<%= collection.article.url %>">
         <% unless collection.article.nil? %>
+          <p class="article_rights"><%= collection.article_rights.to_s %></p>
           <!-- <iframe src="http://docs.google.com/gview?url=<%= collection.article %>&embedded=true"  style="width:100%; height:700px;" frameborder="0"></iframe> -->
           <%#= render partial: 'custom_collections/pdf' %>
+          <!-- <iframe width="100%" height="800px" src="http://localhost:3000<%= collection.article.url %>"></iframe> -->
           <%= pdf_viewer("http://localhost:3000#{collection.article.url}") %>
           <%= javascript_include_tag "pdfviewer" %>
           <%= stylesheet_link_tag "viewer" %>
@@ -107,6 +110,24 @@
         </p>
         <% end %>
       </div>
+      <div id="images" class="tab-pane">
+        <div id="sliderContent">
+          <div id="imageslider" class="flexslider">
+            <ul class="slides">
+              <% collection.custom_collection_images.each do |img| %>
+                <li><%= image_tag img.image_url(:carousel), alt: img.rights, title: img.rights %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div id="carousel" class="flexslider">
+            <ul class="slides">
+              <% collection.custom_collection_images.each_with_index do |img, idx| %>
+                <li><%= image_tag img.image_url(:med), alt: img.rights, title: img.rights %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div id="related" class="tab-pane">
         <% collection.custom_collection_related_links.each do |link| %>
           <div class="link_block">
@@ -116,6 +137,7 @@
         <% end %>
       </div>
     </div>
+    <p class="collection_credits">Credits: <%= collection.credits.to_s %></p>
     <% if current_user && current_user.id == collection.user_id %>
       <%= link_to 'Edit collection details', edit_custom_collection_path(collection) %>
       <%#= link_to 'Back', custom_collections_path %>

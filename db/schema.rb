@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106202111) do
+ActiveRecord::Schema.define(:version => 20131114210839) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -84,6 +84,15 @@ ActiveRecord::Schema.define(:version => 20131106202111) do
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
+  create_table "custom_collection_images", :force => true do |t|
+    t.string   "image"
+    t.string   "rights"
+    t.string   "alt_text"
+    t.integer  "custom_collection_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
   create_table "custom_collection_items", :force => true do |t|
     t.string   "cat_slug"
     t.integer  "custom_collection_id"
@@ -107,10 +116,12 @@ ActiveRecord::Schema.define(:version => 20131106202111) do
     t.text     "summary"
     t.string   "image"
     t.string   "article"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "user_id"
     t.string   "slug"
+    t.text     "article_rights"
+    t.text     "credits"
   end
 
   create_table "domain_terms", :force => true do |t|

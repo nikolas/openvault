@@ -260,9 +260,21 @@ input[type=file] {
       .exhibit-item {
         display: none;
         height: 321px;
+        h3 {
+          margin-bottom: 5px;
+        }
+        .summary {
+          p {
+            
+          }
+        }
         .image {
           height: 321px;
           overflow: hidden;
+          img {
+            border: 4px solid #fff;
+            box-sizing: border-box;
+          }
         }
         &.active {
           display:block;
@@ -288,6 +300,7 @@ input[type=file] {
     }
   }
   #collections {
+    overflow: hidden;
     .collection_block {
 //      border-top: 1px solid #fff;
       h3 {
@@ -512,6 +525,10 @@ input[type=file] {
         padding: 10px;
         margin-bottom: 10px;
       }
+      #sliderContent {
+        width: 600px;
+        margin: 0 auto;
+      }
       #media {
         #cc_video_container {
           overflow:hidden;
@@ -542,8 +559,16 @@ input[type=file] {
     form {
       textarea {
         width: 100%;
-        height: 100px;
+        height: 300px;
         box-sizing: border-box;
+      }
+      textarea#custom_collection_credits {
+        height: 30px;
+        resize:none;
+      }
+      textarea#custom_collection_article_rights {
+        height: 30px;
+        resize:none;
       }
       .link_field {
         overflow: hidden;
@@ -556,12 +581,44 @@ input[type=file] {
           resize:none;
         }
       }
+      .cc_images_block {
+        margin-bottom: 10px;
+        .fields_container {
+          overflow:hidden;
+          .fields {
+            overflow: hidden;
+            float:left;
+            margin: 0px 49px 10px 0px;
+            &:nth-child(3n+0) {
+              margin-right: 0px;
+            }
+            .image_field {
+              background: #f7f7f7;
+              padding: 10px;
+              margin: 0 5px 5px 0;
+              border: 1px solid #eee;
+              height: 270px;
+              width: 197px;
+              input.string {
+                width: 200px;
+                box-sizing: border-box;
+                padding: 11px;
+                font-size: 11px;
+              }
+              input.file {
+                width: 195px;
+              }
+            }
+          }
+        }
+      }
       .remove_nested_fields {
         text-decoration:none;
         float:right;
       }
       .add_nested_fields {
         text-decoration:none;
+        clear:both;
       }
       .new_link {
         display: none;

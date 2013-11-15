@@ -13,6 +13,7 @@ module CustomCollectionsHelper
   ]
   
   DEFAULT = [
+    :page_selector,
     :page_buttons,
     :zoom_buttons,
     :zoom_select,
