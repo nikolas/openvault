@@ -1,7 +1,4 @@
 <% title "OpenVault - Home" %>
-<h2 id="welcome-header" class="t-center">Welcome to the WGBH Media Library &amp; Archives OpenVault</h2>
-<p id="welcome-text" class="hidden-phone">We provide online access to unique and historically important content produced by the public television and radio station WGBH. The ever-expanding site contains video, audio, images, searchable transcripts, and resource management tools, all of which are available for individual and classroom learning. For over 25 years the MLA has preserved, cataloged, and provided access to materials produced by WGBH. It currently houses nearly 1 million audio, video, film, and digital assets dating back to 1947. So have a look around and explore!</p>
-
 <div class="row-fluid">
   <div id="exhibits" class="grainbox span8">
     <h2>Exhibits</h2>
@@ -34,19 +31,25 @@
       <% end %>
     </div>
   </div>
-  <div id="collections" class="grainbox span4">
-    <h2>New Collections</h2>
-    <div class="sep-line"></div>
-    <% @custom_collections.each do |coll| %>
-      <div class="collection_block">
-        <h3><%= link_to coll.name, coll.user.url %></h3>
-        <img src="<%= coll.user.avatar.url(:thumb) %>" class="user_img">
-        <div class="user_bio">
-          <p><%= coll.user.full_name %> - <%= coll.user.work_string %></p>
-          <%= link_to "View", coll.user.url %>
+  <div id="home_sidebar" class="span4">
+    <div id="welcome" class="grainbox">
+      <h2>What is the OpenVault?</h2>
+      <div class="sep-line"></div>
+      <p>We provide online access to unique and historically important content produced by the public television and radio station WGBH. So have a look around and explore!</p>
+    </div>
+    <br />
+    <div id="collections" class="grainbox">
+      <h2>New Collections</h2>
+      <div class="sep-line"></div>
+      <% @custom_collections.each do |coll| %>
+        <div class="collection_block">
+          <h3><%= link_to coll.name, coll.user.url %></h3>
+          <div class="user_bio">
+            <p><%= coll.user.full_name %> - <%= coll.user.work_string %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
