@@ -525,6 +525,17 @@ input[type=file] {
         padding: 10px;
         margin-bottom: 10px;
       }
+      #summary {
+        font-size: 13px;
+        line-height: 1.3em;
+        margin-bottom: .9em;
+        b {
+          font-weight: bold;
+        }
+        i {
+          font-style: italic;
+        }
+      }
       #sliderContent {
         width: 600px;
         margin: 0 auto;
