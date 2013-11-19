@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-  add_to_collection()  
+  add_to_collection()
+  remove_from_collection()  
   video_playlist()
   playlist_scroller()
   ccImageGal()
@@ -27,6 +28,19 @@ add_to_collection = ->
   $('.blacklight-custom_collections .wysihtml5').each (i, elem) ->
       $(elem).wysihtml5
         image: false
+        
+remove_from_collection = ->
+  $('.blacklight-custom_collections .remove_item').on "click", (e) ->
+    e.preventDefault()
+    that = $(this)
+    url = $(this).attr('href')
+    $.ajax
+      url: url
+      dataType: 'json'
+      success: (data) ->
+        that.parent().remove()
+      error: (data) ->
+        alert('Sorry there was an error, please try again')
 
 video_playlist = ->
   $('#cc_video_thumbnail_list .v_thumbnail img').on "click", (e) ->

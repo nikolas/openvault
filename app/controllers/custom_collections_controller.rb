@@ -93,7 +93,7 @@ class CustomCollectionsController < ApplicationController
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
     if @custom_collection.remove_collection_item(params[:asset_id])
       respond_to do |format|
-        format.html {redirect_to '/me'}
+        format.html {redirect_to edit_custom_collection_path(@custom_collection)}
         format.json {render json: @custom_collection}
       end
     else
