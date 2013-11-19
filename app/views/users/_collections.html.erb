@@ -29,11 +29,13 @@
         <% unless collection.custom_collection_items.videos.count == 0 %>
         <div id="cc_video_container">
           <div id="cc_video_player">
-            <video id="cc_player" class="video-js vjs-default-skin"
+            <video id="cc_player" class="video-js vjs-default-skin vjs-big-play-centered"
               controls preload="auto" width="100%" height="450"
               data-setup='{}'
               poster="/assets/slider_thumb.png">
               <source src="/assets/video_test.mp4" type='video/mp4' />
+              <source src="/assets/video_test.webm" type='video/webm' />
+              <source src="/assets/video_test.ogg" type='video/ogg' />
             </video>
             <p class="video_title">Video Title 1</p>
           </div>

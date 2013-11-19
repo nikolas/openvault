@@ -250,6 +250,8 @@ input[type=file] {
     @include grainbox;
   }
   
+  .vjs-default-skin .vjs-play-progress, .vjs-default-skin .vjs-volume-level { background-color: #f07b05 }
+  
   //Homepage
   #welcome-text {
     font-size: 14px;
