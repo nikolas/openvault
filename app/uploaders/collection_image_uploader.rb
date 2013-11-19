@@ -48,7 +48,7 @@ class CollectionImageUploader < CarrierWave::Uploader::Base
   end
   
   version :carousel do
-    process resize_to_fill: [400, 350]
+    process resize_to_fill: [364, 228]
   end
   
   version :large do
