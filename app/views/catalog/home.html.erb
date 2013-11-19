@@ -54,7 +54,6 @@
 </div>
 
 <div id="catalog-scroller" class="row-fluid">
-  <!-- <div class="shadow-left"></div> -->
   <div id="scroller-items">
     <% @scroller_items.each do |item| %>
       <a href="/video/<%= item[1].to_s %>" class="scroller-item">
@@ -62,20 +61,6 @@
       </a>
     <% end %>
   </div>
-  <!-- <div class="shadow-right"></div> -->
-  <!-- <div id="tS2" class="jThumbnailScroller">
-      <div class="jTscrollerContainer">
-          <div class="jTscroller">
-            <%# @scroller_items.each do |item| %>
-              <a href="/video/<%#= item[1].to_s %>">
-                <img src="<%#= item[0].to_s %>" class="scroller-image" />
-              </a>
-            <%# end %>
-          </div>
-      </div>
-      <a href="#" class="jTscrollerPrevButton"></a>
-      <a href="#" class="jTscrollerNextButton"></a>
-  </div> -->
 </div>
 
 <div class="row-fluid">
@@ -117,7 +102,7 @@
       <% unless @tweets.nil? %>
         <% @tweets.each_with_index do |tweet| %>
           <div class="tweet-item">
-            <p><%= tweet.text %></p>
+            <p><%= auto_link(tweet.text).html_safe %></p>
           </div>
         <% end %>
       <% end %>

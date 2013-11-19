@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Twitter::Autolink
   def organization_name
     Rails.configuration.organization_name
   end
