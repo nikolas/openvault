@@ -31,7 +31,7 @@ module Openvault
         :routing_specs => false, 
         :controller_specs => true, 
         :request_specs => true 
-      g.fixture_replacement :factory_girl, :dir => "spec/factories" 
+      #g.fixture_replacement :factory_girl, :dir => "spec/factories" 
     end
     # Only needed if we're using BawstunCommons with Sufia.
     # config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
@@ -42,6 +42,12 @@ module Openvault
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+    
+    # Rack Cache
+    # config.middleware.use Rack::Cache,
+    #   :verbose => true,
+    #   :metastore   => 'file:/var/cache/rack/meta',
+    #   :entitystore => 'file:/var/cache/rack/body'
 
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer

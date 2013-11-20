@@ -1,5 +1,5 @@
 class CustomCollection < ActiveRecord::Base
-  attr_accessible :article, :image, :name, :summary, :user_id, :slug, :custom_collection_related_links, :custom_collection_related_links_attributes
+  attr_accessible :article, :image, :name, :summary, :user_id, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
@@ -9,15 +9,16 @@ class CustomCollection < ActiveRecord::Base
   belongs_to :user
   has_many :custom_collection_items, :dependent => :destroy
   has_many :custom_collection_related_links, :dependent => :destroy
+  has_many :custom_collection_images, :dependent => :destroy
   
-  accepts_nested_attributes_for :custom_collection_items  
+  accepts_nested_attributes_for :custom_collection_items
   accepts_nested_attributes_for :custom_collection_related_links, :allow_destroy => true, :reject_if => lambda { |a| a[:desc].blank? || a[:link].blank? }
+  accepts_nested_attributes_for :custom_collection_images, :allow_destroy => true, :reject_if => lambda { |a| a[:image].blank? }
   
   before_save :is_new
   before_save :create_slug
   after_save :is_pdf_new?
   
-  mount_uploader :image, CustomCollectionImageUploader
   mount_uploader :article, CustomCollectionArticleUploader
   
   def user_can_edit?(user)

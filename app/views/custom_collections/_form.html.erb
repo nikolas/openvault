@@ -4,21 +4,86 @@
   <div class="form-inputs">
     <%= f.input :name, label: false, placeholder: "Name your collection" %>
     <textarea class="text optional wysihtml5" id="custom_collection_summary" name="custom_collection[summary]" placeholder="Enter a brief description"><%= @custom_collection.summary unless @custom_collection.summary.nil? %></textarea>
+    <%= f.input :credits, label: false, placeholder: 'Enter something about the who to credit for this collection' %>
     <div class="row-fluid">
       <div class="span4">
         <%= f.input :article, label: 'Attach your article' %>
       </div>
       <div class="span8">
-        <p><strong>Current article: </strong><%#= @custom_collection.article.file.filename unless @custom_collection.article.nil? %></p>
+        <p><strong>Current article: </strong><%= @custom_collection.article.file.filename unless @custom_collection.article.file.nil? %></p>
+        <%= f.input :article_rights, label: false, placeholder: 'Enter specific rights information about this article' %>
       </div>
     </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <h3>Collection Assets</h3>
+        <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
+          <div class="well">
+            <p><strong>Videos</strong></p>
+            <ul>
+            <% @custom_collection.custom_collection_items.videos.each do |col| %>
+              <li><%= link_to col.ov_asset['title_ssm'].first.to_s, "/video/#{col.ov_asset['slug']}" %>&nbsp;
+              <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <% unless @custom_collection.custom_collection_items.audios.count == 0 %>
+        <div class="well">
+          <p><strong>Audios</strong></p>
+          <ul>
+          <% @custom_collection.custom_collection_items.audios.each do |col| %>
+            <li><%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>&nbsp;
+            <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
+          <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <% unless @custom_collection.custom_collection_items.programs.count == 0 %>
+        <div class="well">
+          <p><strong>Programs</strong></p>
+          <ul>
+          <% @custom_collection.custom_collection_items.programs.each do |col| %>
+            <li><%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>&nbsp;
+            <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
+          <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <% unless @custom_collection.custom_collection_items.series.count == 0 %>
+        <div class="well">
+          <p><strong>Series</strong></p>
+          <ul>
+          <% @custom_collection.custom_collection_items.series.each do |col| %>
+            <li><%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>&nbsp;
+            <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
+          <% end %>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="cc_images_block">
+        <h3>Collection Images</h3>
+        <div class="fields_container">
+          <%= f.simple_fields_for :custom_collection_images do |r| %>
+            <%= render :partial => 'custom_collection_images_fields', :locals => {:f => r} %>
+          <% end %>
+        </div>
+        <%= f.link_to_add "Add image (png, jpg or gif)", :custom_collection_images, :class => 'btn btn-mini btn-success', :data => { :target => ".fields_container" } %>
+        </div>
+      </div>
+    </div>
+    <hr />
     <div class="row-fluid">
       <div class="span12">
         <h3>Related Links</h3>
         <%= f.simple_fields_for :custom_collection_related_links do |r| %>
           <%= render :partial => 'custom_collection_related_links_fields', :locals => {:f => r} %>
         <% end %>
-        <p><%= f.link_to_add "Add a link", :custom_collection_related_links, :class => 'btn btn-mini btn-success' %></p>
+        <%= f.link_to_add "Add a link", :custom_collection_related_links, :class => 'btn btn-mini btn-success' %>
       </div>
     </div>
     <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id } %>

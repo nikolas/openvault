@@ -13,6 +13,7 @@ module CustomCollectionsHelper
   ]
   
   DEFAULT = [
+    :page_selector,
     :page_buttons,
     :zoom_buttons,
     :zoom_select,
@@ -174,7 +175,7 @@ module CustomCollectionsHelper
   
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
-        PDFView.open(#{filename.to_json});
+        
       }, true);
     </script>
     HTML

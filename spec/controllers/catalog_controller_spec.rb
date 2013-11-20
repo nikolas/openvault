@@ -1,24 +1,30 @@
-#TODO before each, create two items and put them in solr
 require 'spec_helper'
 
 describe CatalogController do
   
   describe "GET index" do
-    it "returns search results"
+    it "returns search results" do
+      get :index
+      assigns(:document_list).should_not be_nil
+    end
     
-    it "renders no_results when no results found"
-  end
-  
-  describe "GET show" do
-    it "gets the catalog item when requested"
-    
-    it "return 401 when no item exists"
   end
   
   describe "GET home" do
-    it "get has the mosaic items"
+    it "get has the scroller items" do
+      get :home
+      assigns(:scroller_items).should_not be_nil
+    end
     
-    it "gets the collections"
+    it "gets the collections" do
+      get :home
+      assigns(:custom_collections).should_not be_nil
+    end
+    
+    it "gets the tweets" do
+      get :home
+      assigns(:tweets).should_not be_nil
+    end
   end
   
 end
