@@ -24,7 +24,7 @@ describe "visiting homepage", :type => :feature do
   
   it "gets the most recent custom collections" do
     visit '/'
-    save_and_open_page
+    
     page.should have_css('div.collection_block', :count => 1)
   end
   

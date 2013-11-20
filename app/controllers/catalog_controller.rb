@@ -244,11 +244,13 @@ class CatalogController < ApplicationController
     @tweets = client.user_timeline('wgbharchives', :count => 5) rescue nil
     @resp, @items = get_last_n_solr_docs 
     @scroller_items = []
-    @items.each do |item|
-      unless item['video_images_ssm'].nil?
-        im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
-        img = im['image_path_ssm'].first
-        @scroller_items << [img, item['slug']]
+    unless @items.nil?
+      @items.each do |item|
+        unless item['video_images_ssm'].nil?
+          im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
+          img = im['image_path_ssm'].first
+          @scroller_items << [img, item['slug']]
+        end
       end
     end
   end
