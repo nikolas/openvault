@@ -7,6 +7,7 @@ $ ->
   video_playlist()
   playlist_scroller()
   ccImageGal()
+  pdfjs_tab_fix()
 
 add_to_collection = ->
   $('.add_to_collection a').on "click", (e) ->
@@ -68,7 +69,7 @@ video_playlist = ->
       vid_obj.play()
  
 playlist_scroller = ->  
-  $("a[data-toggle=\"tab\"]").on "shown", (e) ->
+  $("a.media-link[data-toggle=\"tab\"]").on "shown", (e) ->
     $('.jTscrollerPrevButton').hide()
     c = $('.jTscroller')
     cheight = $('.jTscroller').outerHeight(true)
@@ -110,7 +111,7 @@ playlist_scroller = ->
         $('.jTscrollerNextButton').hide()
 
 ccImageGal = ->
-  $("a[data-toggle=\"tab\"]").on "shown", (e) ->
+  $("a.images-link[data-toggle=\"tab\"]").on "shown", (e) ->
       $('#carousel').flexslider
         animation: "slide",
         controlNav: false,
@@ -128,3 +129,9 @@ ccImageGal = ->
         animationLoop: false,
         slideshow: false,
         sync: "#carousel"
+
+pdfjs_tab_fix = ->
+  $('a.article-content-link[data-toggle="tab"]').on "shown", (e) ->
+    filename = $('#article-content').data('article')
+    PDFView.open(filename)
+    PDFView.initialize()

@@ -235,8 +235,13 @@ class CatalogController < ApplicationController
     @collections = Collection.where(:display_in_carousel => true).order('position ASC')
     @custom_collections = CustomCollection.limit(3).order('created_at ASC')
     @scholars = User.scholars
-    @tweets = Twitter.user_timeline('wgbharchives', :count => 5) rescue nil
-    #@mosaic_items = MosaicItem.find(:all, :limit => Rails.application.config.mosaic_size)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key = '8rqFySl0hIcwPHka7LEww'
+      config.consumer_secret = '13djLnrNVrCnHfGyfgJqdzNxKqjqM9abI1Q5JZaM'
+      config.access_token = '17239142-za2x9GdzAJuumWhHN76aqEqTqFseKhH9Q5M8Kz14A'
+      config.access_token_secret = 'cRzE9PCkAoUzl0swVnXQVZ9k9iVJhSqVRWhMXofbM'
+    end
+    @tweets = client.user_timeline('wgbharchives', :count => 5) rescue nil
     @resp, @items = get_last_n_solr_docs 
     @scroller_items = []
     @items.each do |item|

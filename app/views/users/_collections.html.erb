@@ -4,11 +4,11 @@
   <% @collections.each do |collection| %>
   <div class="collection_block">
     <ul class="nav nav-tabs" id="collectionTabs">
-      <li class="active"><a href="#summary" data-toggle="tab">Summary</a></li>
-      <li><a href="#article-content" data-toggle="tab">Article Content</a></li>
-      <li><a href="#media" data-toggle="tab">Media</a></li>
-      <li><a href="#images" data-toggle="tab">Images</a></li>
-      <li><a href="#related" data-toggle="tab">Related Content</a></li>
+      <li class="active"><a href="#summary" class="summary-link" data-toggle="tab">Summary</a></li>
+      <li><a href="#article-content" class="article-content-link" data-toggle="tab">Article Content</a></li>
+      <li><a href="#media" class="media-link" data-toggle="tab">Media</a></li>
+      <li><a href="#images" class="images-link" data-toggle="tab">Images</a></li>
+      <li><a href="#related" class="related-link" data-toggle="tab">Related Content</a></li>
     </ul>
     <div class="tab-content">
       <div id="summary" class="tab-pane active">
@@ -27,8 +27,63 @@
       </div>
       <div id="media" class="tab-pane">
         <% unless collection.custom_collection_items.videos.count == 0 %>
-        <div id="cc_video_container">
-          <div id="cc_video_player">
+          <% if collection.custom_collection_items.videos.count > 1 %>
+            <div id="cc_video_container">
+            <div id="cc_video_player">
+              <video id="cc_player" class="video-js vjs-default-skin vjs-big-play-centered"
+                controls preload="auto" width="100%" height="450"
+                data-setup='{}'
+                poster="/assets/slider_thumb.png">
+                <source src="/assets/video_test.mp4" type='video/mp4' />
+                <source src="/assets/video_test.webm" type='video/webm' />
+                <source src="/assets/video_test.ogg" type='video/ogg' />
+              </video>
+              <p class="video_title">Video Title 1</p>
+            </div>
+            <div id="cc_video_thumbnail_list" class="jThumbnailScroller">
+            	<div class="jTscrollerContainer">
+            		<div class="jTscroller">
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
+                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
+                  </a>
+                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
+                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
+                  </a>
+                </div>
+              </div>
+            	<a href="#" class="jTscrollerPrevButton"></a>
+            	<a href="#" class="jTscrollerNextButton"></a>
+            </div>
+            <%# collection.custom_collection_items.videos.each do |col| %>
+              <%#= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
+            <%# end %>
+            </div>
+            <hr />
+          <% else %>
             <video id="cc_player" class="video-js vjs-default-skin vjs-big-play-centered"
               controls preload="auto" width="100%" height="450"
               data-setup='{}'
@@ -37,51 +92,16 @@
               <source src="/assets/video_test.webm" type='video/webm' />
               <source src="/assets/video_test.ogg" type='video/ogg' />
             </video>
-            <p class="video_title">Video Title 1</p>
-          </div>
-          <div id="cc_video_thumbnail_list" class="jThumbnailScroller">
-          	<div class="jTscrollerContainer">
-          		<div class="jTscroller">
-                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                  <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                </a>
-                <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                  <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                </a>
-              </div>
-            </div>
-          	<a href="#" class="jTscrollerPrevButton"></a>
-          	<a href="#" class="jTscrollerNextButton"></a>
-          </div>
-          <%# collection.custom_collection_items.videos.each do |col| %>
-            <%#= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
-          <%# end %>
-        </div>
-        <hr />
+            <h3>
+              <a href="/video/<%= collection.custom_collection_items.videos.first.ov_asset['slug'] %>">
+                <%= collection.custom_collection_items.videos.first.ov_asset['title_ssm'].try(:first).to_s %>
+              </a>
+            </h3>
+            <p class="video_summary">
+              <%= collection.custom_collection_items.videos.first.ov_asset['summary_ssm'].try(:first) %>
+            </p>
+            <hr />
+          <% end %>
         <% end %>
         <h3>Other assets in this collection</h3>
         <% unless collection.custom_collection_items.audios.count == 0 %>
@@ -89,7 +109,6 @@
           <b>Custom Collection Items (Audio):</b>
           <% collection.custom_collection_items.audios.each do |col| %>
             Audio: <%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>
-            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
           <% end %>
         </p>
         <% end %>
@@ -98,7 +117,6 @@
           <b>Custom Collection Items (Programs):</b>
           <% collection.custom_collection_items.programs.each do |col| %>
             Program: <%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>
-            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
           <% end %>
         </p>
         <% end %>
@@ -107,7 +125,6 @@
           <b>Custom Collection Items (Series):</b>
           <% collection.custom_collection_items.series.each do |col| %>
             Series: <%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>
-            <a href="/custom_collections/<%= collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>">Remove</a>
           <% end %>
         </p>
         <% end %>

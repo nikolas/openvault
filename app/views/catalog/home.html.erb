@@ -102,7 +102,8 @@
       <% unless @tweets.nil? %>
         <% @tweets.each_with_index do |tweet| %>
           <div class="tweet-item">
-            <p><%= auto_link(tweet.text).html_safe %></p>
+            <p><% string = tweet.text %>
+            <%= auto_link(string.dup).html_safe %></p>
           </div>
         <% end %>
       <% end %>

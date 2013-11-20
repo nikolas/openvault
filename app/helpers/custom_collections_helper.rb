@@ -175,7 +175,7 @@ module CustomCollectionsHelper
   
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
-        PDFView.open(#{filename.to_json});
+        
       }, true);
     </script>
     HTML
