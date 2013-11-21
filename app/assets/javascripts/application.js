@@ -22,4 +22,5 @@
 //= require video
 //= require video-config
 //= require search
+//= require responsive-tabs
 //= require_tree .

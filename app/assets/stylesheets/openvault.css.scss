@@ -501,6 +501,12 @@ input[type=file] {
       }
       text-align:center;
     }
+    .mobile-user-row {
+      img {
+        float: left;
+        margin-right: 20px;
+      }
+    }
     #user_info {
       
     }
@@ -541,7 +547,7 @@ input[type=file] {
         }
       }
       #sliderContent {
-        width: 600px;
+        max-width: 600px;
         margin: 0 auto;
       }
       #media {
@@ -935,8 +941,7 @@ input[type=file] {
 
           .primary-datastream {
             .video-js {
-              width: 550px;
-              height: 350px;
+
             }
           }
 
@@ -1325,7 +1330,11 @@ input[type=file] {
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  
+  #body {
+    #user_show_page {
+      margin: 0px 0;
+    }
+  }
 }
 
 

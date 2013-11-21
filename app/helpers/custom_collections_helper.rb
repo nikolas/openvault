@@ -17,6 +17,7 @@ module CustomCollectionsHelper
     :page_buttons,
     :zoom_buttons,
     :zoom_select,
+    :download,
     :fullscreen
   ]
   
@@ -37,7 +38,7 @@ module CustomCollectionsHelper
     can_display = lambda { |arg| toolbar.member?(arg) ? '' : ' hidden' }
 
     html = <<-HTML
-      <div id="outerContainer" dir="ltr" data-pdf=#{filename.to_json}>
+      <div id="outerContainer" class="hidden-phone" dir="ltr" data-pdf=#{filename.to_json}>
         <div id="sidebarContainer">
           <div id="toolbarSidebar" class="splitToolbarButton toggled">
             <button id="viewThumbnail" class="toolbarButton group toggled" title="Show Thumbnails" tabindex="1" data-l10n-id="thumbs">

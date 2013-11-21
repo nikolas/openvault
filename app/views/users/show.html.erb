@@ -1,26 +1,39 @@
 <% title "OpenVault - #{@user.full_name}" %>
 <div id="user_show_page" class="row-fluid">
-  <div class="span1">
+  <div class="span1 hidden-phone">
     &nbsp;
   </div>
   <div class="span10">
     <div class="row-fluid">
-      <div id="user_image" class="span2">
-        <%= image_tag @user.avatar.url(:med) %>
-      </div>
-      <div id="user_info" class="span2">
+      <div class="row-fluid hidden-desktop hidden-tablet mobile-user-row">
+        <%= image_tag @user.avatar.url(:thumb) %>
         <h3><%= @user.full_name %></h3>
         <h4><%= @user.title %></h4>
         <h4><%= @user.organization %></h4>
-        <%= render partial: 'global_partials/share' %>
-        <% if current_user && current_user == @user %>
-          <div class="user-actions">
-            <a href="/users/edit">Edit profile</a>
-          </div>
-        <% end %>
+        <%#= render partial: 'global_partials/share' %>
+        <div id="user_bio" class="span8">
+          <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
+        </div>
       </div>
-      <div id="user_bio" class="span8">
-        <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
+      <div class="hidden-phone desktop-user-row">
+        <div id="user_image" class="span2">
+          <%= image_tag @user.avatar.url(:med) %>
+        </div>
+        <div id="user_info" class="span2">
+          <h3><%= @user.full_name %></h3>
+          <h4><%= @user.title %></h4>
+          <h4><%= @user.organization %></h4>
+          <%= render partial: 'global_partials/share' %>
+          <% if current_user && current_user == @user %>
+            <div class="user-actions">
+              <a href="/users/edit">Edit profile</a>
+            </div>
+          <% end %>
+        </div>
+        <div id="user_bio" class="span8">
+          <p class="bio short-bio"><strong>Bio: </strong><%= truncate(@user.bio, :length => 800) %><%= "<a href='#' class='more_bio_link'>More</a>".html_safe unless @user.bio.length < 800 %></p>
+          <p class="bio long-bio" style="display:none;"><strong>Bio: </strong><%= @user.bio %></p>
+        </div>
       </div>
       <div class="clearfix"></div>
       <%= render partial: 'users/collections' unless @collections.count == 0 %>

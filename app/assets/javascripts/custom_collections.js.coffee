@@ -8,6 +8,7 @@ $ ->
   playlist_scroller()
   ccImageGal()
   pdfjs_tab_fix()
+  $(".tabbable.responsive").resptabs();
 
 add_to_collection = ->
   $('.add_to_collection a').on "click", (e) ->
