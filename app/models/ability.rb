@@ -1,27 +1,6 @@
 class Ability
   include CanCan::Ability
   include Hydra::Ability
-
-  # def initialize(user)
-  #   if user
-  #     
-  #     can :manage, Collection
-  #     
-  #     can [:show, :index], CustomCollection
-  #     
-  #     can [:edit, :destroy, :delete, :update], CustomCollection do |coll|
-  #       user.is_scholar? && coll.user_can_edit?(user)
-  #     end
-  #     
-  #     can [:create, :new], CustomCollection if user.is_scholar?
-  #     
-  #   else
-  #     can :manage, Collection
-  # 
-  #     can [:show, :index], CustomCollection
-  #   end
-  #   #super
-  # end
   
   def custom_permissions
     if @current_user
