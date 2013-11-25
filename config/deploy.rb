@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 require "rvm/capistrano"
-set :rvm_ruby_string, :local 
+set :rvm_ruby_string, "2.0"
 before 'deploy', 'rvm:create_gemset'
 set :application, "openvault"
 set :deploy_to, "/wgbh/http/#{application}"
@@ -8,7 +8,7 @@ set :use_sudo, false
 set :rails_env,     "production"
 set :repository,  "https://github.com/afred/openvault.git"
 set :scm, :git
-set :scm_username , "joshuaswilcox"
+set :scm_username , "afred"
 set :user, "openvault"
 set :deploy_via, :remote_cache
 set :keep_releases, 3
