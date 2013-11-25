@@ -2,9 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-  add_to_collection()  
+  add_to_collection()
+  remove_from_collection()  
   video_playlist()
   playlist_scroller()
+  ccImageGal()
+  pdfjs_tab_fix()
+  $(".tabbable.responsive").resptabs();
 
 add_to_collection = ->
   $('.add_to_collection a').on "click", (e) ->
@@ -23,9 +27,22 @@ add_to_collection = ->
       error: (data) ->
         console.log(data)
     
-  $('.blacklight-custom_collections-edit .wysihtml5').each (i, elem) ->
+  $('.blacklight-custom_collections .wysihtml5').each (i, elem) ->
       $(elem).wysihtml5
         image: false
+        
+remove_from_collection = ->
+  $('.blacklight-custom_collections .remove_item').on "click", (e) ->
+    e.preventDefault()
+    that = $(this)
+    url = $(this).attr('href')
+    $.ajax
+      url: url
+      dataType: 'json'
+      success: (data) ->
+        that.parent().remove()
+      error: (data) ->
+        alert('Sorry there was an error, please try again')
 
 video_playlist = ->
   $('#cc_video_thumbnail_list .v_thumbnail img').on "click", (e) ->
@@ -53,7 +70,7 @@ video_playlist = ->
       vid_obj.play()
  
 playlist_scroller = ->  
-  $("a[data-toggle=\"tab\"]").on "shown", (e) ->
+  $("a.media-link[data-toggle=\"tab\"]").on "shown", (e) ->
     $('.jTscrollerPrevButton').hide()
     c = $('.jTscroller')
     cheight = $('.jTscroller').outerHeight(true)
@@ -93,4 +110,29 @@ playlist_scroller = ->
         $('.jTscrollerNextButton').show()
       else
         $('.jTscrollerNextButton').hide()
-          
+
+ccImageGal = ->
+  $("a.images-link[data-toggle=\"tab\"]").on "shown", (e) ->
+      $('#carousel').flexslider
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 150,
+        itemMargin: 5,
+        prevText: " ",
+        nextText: " ",
+        asNavFor: '#imageslider'
+   
+      $('#imageslider').flexslider
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel"
+
+pdfjs_tab_fix = ->
+  $('a.article-content-link[data-toggle="tab"]').on "shown", (e) ->
+    filename = $('#article-content').data('article')
+    PDFView.open(filename)
+    PDFView.initialize()

@@ -31,3 +31,8 @@ body.active_admin ul.header-item li {
   display: inline-block;
   list-style:none;
 }
+body.admin_collections {
+  #collections tbody tr {
+    cursor: move;
+  }
+}

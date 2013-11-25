@@ -17,7 +17,10 @@
 //= require jquery.jplayer.min
 //= require blacklight/blacklight
 //= require jquery_nested_form
+//= require jquery.thumbnailScroller
+//= require jquery.flexslider-min
 //= require video
 //= require video-config
 //= require search
+//= require responsive-tabs
 //= require_tree .

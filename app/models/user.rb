@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :message => "must be unique"
   validates_presence_of :role, :message => "can't be blank"
   validates_inclusion_of :role, :in => %w( member scholar ), :on => :create, :message => "role %s is not included in the list"
-  validates_length_of :bio, :within => 0..500, :on => :create, :message => "must be less at least 3 and no more than 500 characters"
   
   scope :scholars, where(:role => 'scholar')
   

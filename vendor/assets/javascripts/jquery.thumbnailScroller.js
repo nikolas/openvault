@@ -129,7 +129,7 @@ Homepage: manos.malihu.gr/jquery-thumbnail-scroller
 				var posX=$scroller.position().left;
 				var diffX=totalWidth+(posX-$this.width());
 				var posY=$scroller.position().top;
-				var diffY=tota{lHeight+(posY-$this.height());
+				var diffY=totalHeight+(posY-$this.height());
 				$scrollerPrevButton.stop().show("fast");
 				if(options.scrollerOrientation=="horizontal"){
 					if(diffX>=$this.width()){

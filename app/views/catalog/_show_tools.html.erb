@@ -1,10 +1,10 @@
 <ul class="tools">
   <% if current_user && current_user.role == 'scholar' %>
     <% if current_user && current_user.has_item_in_collection(@document.id) %>
-      <span>In your collection</span>
+      <li class="in_collection"><p>In your collection</p></li>
     <% else %>
       <li class="add_to_collection">
-        <a href="/custom_collections/<%= current_user.collection_id %>/add_item?asset_id=<%= @document.id %>&kind=<%= @document['active_fedora_model_ssi'] %>" data-cctype="<%= @document['active_fedora_model_ssi'] %>" data-ccid="<%= current_user.collection_id %>" data-assetid="<%= @document.id %>">Add to my collection</a>
+        <a href="/custom_collections/<%= current_user.collection_id %>/add_item?asset_id=<%= @document.id %>&kind=<%= @document['active_fedora_model_ssi'] %>" class="btn btn-mini" data-cctype="<%= @document['active_fedora_model_ssi'] %>" data-ccid="<%= current_user.collection_id %>" data-assetid="<%= @document.id %>">Add to my collection</a>
       </li>
     <% end %>
   <% end %>

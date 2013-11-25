@@ -43,6 +43,20 @@
       return 0;
     }
   }
+  
+  function getParameters() {
+    var searchString = window.location.search.substring(1),
+        params = searchString.split("&"),
+        hash = {};
+
+    if (searchString == "") return {};
+    for (var i = 0; i < params.length; i++) {
+      var val = params[i].split("=");
+      hash[unescape(val[0])] = unescape(val[1]);
+    }
+    return hash;
+  }
+
 
 $(function() {
   if ($('.datastream-audio').length > 0) {
@@ -51,9 +65,32 @@ $(function() {
       myPlayer.play().pause();
     });
   }
-  if($('.datastream-video .video-mp4').length > 0 && $('.datastream-transcript').length > 0) {
+  if ($('.datastream-video .video-mp4').length > 0 && $('.datastream-transcript').length == 0) {
     videojs("video-mp4").ready(function(){
       var myPlayer = this;
+      
+    });
+  }
+  if($('.datastream-video .video-mp4').length > 0 && $('.datastream-transcript').length > 0) {
+    var urlP = getParameters()
+    videojs("video-mp4", {
+      techOrder: ["html5", "flash"]
+    }).ready(function(){
+      var myPlayer = this;
+      var stime = urlP['start'];
+      var etime = urlP['end'];
+      myPlayer.currentTime(stime);
+
+      myPlayer.on("loadeddata", function(){
+        myPlayer.currentTime(stime).play();
+      });
+      
+      myPlayer.on('timeupdate', function() {
+        if (myPlayer.currentTime() >= etime){
+          myPlayer.pause();
+        }
+      });
+      
       //select all timecode-enabled elements
       $('*[data-timecodebegin]').attr('data-timecode', true);
       $('*[data-timecodeend]').attr('data-timecode', true);
@@ -91,6 +128,7 @@ $(function() {
           $(this).removeClass('current').addClass('last'); 
         }
       });
+      
       //sync the transcript with the media
       smil_elements.each(function() {
         $('<a class="sync">[sync]</a>').prependTo($(this)).bind('click', function() { 
