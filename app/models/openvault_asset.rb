@@ -16,7 +16,6 @@ class OpenvaultAsset < ActiveFedora::Base
     return solr_document
   end
 
-
   # #title should be overridden in subclasses in most cases.
   # For the base class, we just grab the first title found in the pbcore datastream.
   def title
@@ -37,22 +36,21 @@ class OpenvaultAsset < ActiveFedora::Base
   #   * There is only one <pbcoreRelationIdentifier> per <pbcoreRelation>
   def create_relations_from_pbcore!
 
+
+
     if !pbcore.relations_by_type.empty?
       # For each relation type, there is a list of values from <pbcoreRelationIdentifier> nodes, that we will call pbcore_ids
       pbcore.relations_by_type.each do |relation_type, pbcore_ids|
 
-        # for each of the pbcore_ids...
+        # for each of the pbcore_ids specified in the <pbcoreRelationIdentifier> nodes
         pbcore_ids.each do |pbcore_id|
 
-          # ... find the first existing record that has that pbcore_id as a value for one of it's own <pbcoreIdentifier> nodes
-          solr_response = Blacklight.solr.get('select', :params => {:q => "pbcoreDescriptionDocument_all_ids_tesim:#{pbcore_id}"})
+          # find the records that have that pbcore_id as it's <pbcoreIdentifier>, which is stored in all_ids_tesim
+          related_assets = ActiveFedora::Base.find({:all_ids_tesim => pbcore_id})
 
-          # If and when we find a match...
-          if solr_response['response']['docs'].count > 0
-
-            # Fetch the object from Fedora, and pass it to #relate_asset for this object.
-            related_asset = self.class.find(solr_response['response']['docs'].first['id'], :cast => true)
+          related_assets.each do |related_asset|
             self.relate_asset related_asset
+            self.save!
           end
         end
       end

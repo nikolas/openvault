@@ -64,6 +64,23 @@ RSpec.configure do |config|
   end
 
   config.fixture_path = File.expand_path("../fixtures", __FILE__)
+
+  config.before(:suite) do
+    ActiveFedora::TestCleaner.setup
+  end
+
+  config.before(:each) do
+    ActiveFedora::TestCleaner.start
+  end
+
+  config.before(:each) do
+    ActiveFedora::TestCleaner.clean
+  end
+
+  config.after(:suite) do
+    ActiveFedora::Base.destroy_all
+  end
+
 end
 
 module Rack
