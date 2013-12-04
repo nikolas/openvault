@@ -42,9 +42,9 @@ describe User do
       saved_user.work_string.should eq("works at #{saved_user.organization}")
     end
     
-    it "fails to save when user bio is greater than 500 characters" do
-      x501 = Array.new(501, 'x').join
-      unsaved_user = build(:user, bio: x501)
+    it "fails to save when user bio is greater than 1500 characters" do
+      bio = Array.new(1501, 'x').join
+      unsaved_user = build(:user, bio: bio)
       unsaved_user.should_not be_valid
     end
 
