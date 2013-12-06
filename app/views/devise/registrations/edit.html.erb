@@ -16,17 +16,18 @@
         		<%= f.input :last_name, :placeholder => 'Last name' %>
             <%= f.input :email, :autofocus => true, :placeholder => 'Email', required: true %>
             <%= f.input :avatar %>
+
             <div class="control-group">
               <label class="control-label">Profile Image</label>
               <div class="controls">
                 <button class="choose_avatar_btn btn">Choose a file</button>
               </div>
             </div>
-            <div class="password_div" style="display:none;">
-          		<%= f.input :password, :placeholder => 'Password (at least 8 characters)', required: true %>
-          		<%= f.input :password_confirmation, :placeholder => 'Password confirmation', required: true %>
-            </div>
-            <%= f.input :current_password, :placeholder => 'needed to confirm changes' %>
+
+            <%= f.input :current_password, :placeholder => 'Current password', required: true %>
+            <%= f.input :password, :label => "New password", :placeholder => 'New password (at least 8 characters)', required: true %>
+            <%= f.input :password_confirmation, :label => "Confirm new password", :placeholder => 'New password confirmation', required: true %>
+
           </div>
           <div class="span6 left">
             <%= f.input :role, as: :hidden, :input_html => { :value => 'member'} %>        

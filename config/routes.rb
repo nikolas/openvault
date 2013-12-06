@@ -38,8 +38,9 @@ Openvault::Application.routes.draw do
 
   
   
-  #general devise routes
-  devise_for :users
+  #general devise routes. Use custom RegistrationsController
+  devise_for :users, :controllers => {registrations: "registrations"}
+
   #for after you update your profile redirect to users#show instead of root_url (the devise default)
   devise_scope :users do
     get 'me', :to => 'users#show', :as => :user_root

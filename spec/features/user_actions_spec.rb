@@ -49,38 +49,99 @@ feature 'Visitor signs up' do
   
 end
 
-feature "Users wants to edit their profile" do
+feature "Edit User Profile" do
   before :each do 
     Warden.test_reset!
     visit destroy_user_session_url
     @user = create(:user, :password => '123456789')
   end
-  scenario "by changing their name" do
+
+  after :each do
+    @user.delete
+  end
+
+  # Add expectations for any field that does not require a password to be changed.
+  scenario "does not require password to change most fields" do
+
     login_as(@user, :scope => :user, :run_callbacks => false)
     visit '/users/edit'
-    fill_in 'user_first_name', with: "Bobby"
-    fill_in 'user_last_name', with: "Smitherson"
+
+    new_vals = {
+      :first_name => "Bobby",
+      :last_name => "Smitherson",
+      :bio => "today we are testing",
+      :country => "Afghanistan"
+     }
+    
+    fill_in 'user_first_name', with: new_vals[:first_name]
+    fill_in 'user_last_name', with: new_vals[:last_name]
+    fill_in 'user_bio', with: new_vals[:bio]
+    select new_vals[:country], from: "user_country"
+    click_button 'Save Profile'
+
+
+    @user.reload
+    @user.first_name.should == new_vals[:first_name]
+    @user.last_name.should == new_vals[:last_name]
+    @user.bio.should == new_vals[:bio]
+    @user.country.should == new_vals[:country]
+  end
+
+  scenario "requires password to change email" do
+    login_as(@user, :scope => :user, :run_callbacks => false)
+    visit '/users/edit'
+    fill_in 'user_email', with: "a@b.com"
     fill_in 'user_current_password', with: '123456789'
     click_button 'Save Profile'
-    expect(page).to have_content("Edit profile")
+    @user.reload
+    @user.email.should == "a@b.com"
+  end
+
+  scenario 'fails to change email if password is not supplied' do
+    login_as(@user, :scope => :user, :run_callbacks => false)
+    visit '/users/edit'
+    fill_in 'user_email', with: "a@b.com"
+    click_button 'Save Profile'
+    @user.reload
+    @user.email.should_not == "a@b.com"
+  end
+
+  scenario 'fails to change email if password is incorrect' do
+    login_as(@user, :scope => :user, :run_callbacks => false)
+    visit '/users/edit'
+    fill_in 'user_email', with: "a@b.com"
+    fill_in 'user_current_password', with: 'adfadssdfsadf'
+    click_button 'Save Profile'
+    @user.reload
+    @user.email.should_not == "a@b.com"
   end
   
-  scenario "by changing their email" do
+  scenario "allows changing password" do
     login_as(@user, :scope => :user, :run_callbacks => false)
     visit '/users/edit'
-    fill_in 'user_email', with: "valid_valid_#{Random.new.rand(10..100)}@me.com"
+
+    # fill in the current password. This password is set in the before(:each) block of this featere (see above).
     fill_in 'user_current_password', with: '123456789'
+
+    # change the password to something different
+    fill_in 'user_password', with: "abcdefgh"
+    fill_in 'user_password_confirmation', with: "abcdefgh"
     click_button 'Save Profile'
-    expect(page).to have_content("Edit profile")
+
+    # now log out and log back in with the new password
+    visit destroy_user_session_url
+    submit_login_form({email: @user.email, password: "abcdefgh"})
+
+    # and we should be able to see a link for logging back out (i.e. we are now logged in)
+    expect(page).to have_content('Log Out')
   end
   
-  scenario "by changing their location" do
-    login_as(@user, :scope => :user, :run_callbacks => false)
-    visit '/users/edit'
-    select 'France', from: 'user_country'
-    fill_in 'user_current_password', with: '123456789'
-    click_button 'Save Profile'
-    expect(page).to have_content("Edit profile")
-  end
+  # scenario "by changing their location" do
+  #   login_as(@user, :scope => :user, :run_callbacks => false)
+  #   visit '/users/edit'
+  #   select 'France', from: 'user_country'
+  #   click_button 'Save Profile'
+  #   expect(page).to have_content("Edit profile")
+  # end
 
 end

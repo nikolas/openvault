@@ -12,11 +12,11 @@ describe UsersController do
     end
     
     it "/users/edit routes to devise/registrations#edit" do
-      get("/users/edit").should route_to("devise/registrations#edit")
+      get("/users/edit").should route_to("registrations#edit")
     end
     
     it 'routes to devise/registrations#new' do
-      get("/users/sign_up").should route_to("devise/registrations#new")
+      get("/users/sign_up").should route_to("registrations#new")
     end
     
     it 'routes to devise/sessions#new' do
