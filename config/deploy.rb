@@ -25,6 +25,8 @@ before "deploy:setup", "db:configure"
 before  "deploy:assets:precompile", "db:symlink"
 before 'deploy:assets:precompile', 'deploy:migrate'
 
+after 'deploy:update_code', 'deploy:symlink_uploads'
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
@@ -32,6 +34,13 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
     #run "rake jetty:restart"
   end
+
+
+  desc "symlink the uploads folder"
+  task :symlink_uploads do
+    run "ln -nfs #{shared_path}/public/uploads #{latest_release}/public/uploads"
+  end
+
 end
 
 namespace :db do
