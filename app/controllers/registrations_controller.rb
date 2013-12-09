@@ -17,14 +17,8 @@ class RegistrationsController < Devise::RegistrationsController
       set_flash_message :notice, :updated
       # Sign in the user bypassing validation in case his password changed
       sign_in @user, :bypass => true
-
-      debugger
-
       redirect_to after_update_path_for(@user)
     else
-
-      debugger
-
       render "edit"
     end
 
