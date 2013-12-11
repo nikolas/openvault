@@ -86,7 +86,6 @@
         <%= f.link_to_add "Add a link", :custom_collection_related_links, :class => 'btn btn-mini btn-success' %>
       </div>
     </div>
-    <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id } %>
   </div>
   <hr />
   <%= f.button :submit, class: 'btn btn-primary btn-small' %>&nbsp;&nbsp;

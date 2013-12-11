@@ -48,6 +48,13 @@ class CustomCollectionsController < ApplicationController
   # POST /custom_collections
   # POST /custom_collections.json
   def create
+
+    # if we are here, then the user has already been authorized per call to
+    # load_and_authorize_resource (see above).
+    # For now, we are not allowing non-admin users to create CustomCollection owned by an Org
+    # and they can only create CustomCollections for themselves, so go ahead and assign @current_user.
+    params[:custom_collection][:owner] = @current_user
+
     @custom_collection = CustomCollection.new(params[:custom_collection])
 
     respond_to do |format|

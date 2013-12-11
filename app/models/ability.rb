@@ -1,7 +1,9 @@
 class Ability
   include CanCan::Ability
   include Hydra::Ability
-  
+
+  # Override Hydra::Ability#custom_permissions
+  # Because Hydra follows the pattern of defining permissions in `initialize` and we can't override `initialize`.
   def custom_permissions
     if @current_user
       can :create, Comment 

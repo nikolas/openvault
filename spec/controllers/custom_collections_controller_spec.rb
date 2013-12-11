@@ -1,29 +1,25 @@
 require 'spec_helper'
 
 describe CustomCollectionsController do
-  
-  #create a valid Custom Colleciton object
-  def valid_attributes
-    attributes_for(:custom_collection)
-  end
 
   describe "as a scholar" do
     before :each do 
       @user = create(:user, role: 'scholar')
       sign_in @user
-      @CustomCollection = attributes_for(:custom_collection, :user_id => @user.id)
+      # @custom_collection_attrs = attributes_for(:custom_collection, :owner_id => @user.id, :owner_type => "User")
+      @custom_collection_attrs = attributes_for(:custom_collection, :owner_id => @user.id, :owner_type => @user.class.to_s)
+      
     end
     describe "GET index" do
       it "assigns all custom_collections as @custom_collections" do
-        custom_collection = CustomCollection.create! @CustomCollection
         get :index, {}
-        assigns(:custom_collections).should eq([custom_collection])
+        assigns(:custom_collections).should_not be_nil
       end
     end
 
     describe "GET show" do
       it "assigns the requested custom_collection as @custom_collection" do
-        custom_collection = CustomCollection.create! @CustomCollection
+        custom_collection = CustomCollection.create! @custom_collection_attrs
         get :show, {:id => custom_collection.to_param}
         assigns(:custom_collection).should eq(custom_collection)
       end
@@ -38,7 +34,7 @@ describe CustomCollectionsController do
 
     describe "GET edit" do
       it "assigns the requested custom_collection as @custom_collection" do
-        custom_collection = CustomCollection.create! @CustomCollection
+        custom_collection = CustomCollection.create! @custom_collection_attrs
         get :edit, {:id => custom_collection.to_param}
         assigns(:custom_collection).should eq(custom_collection)
       end
@@ -48,18 +44,18 @@ describe CustomCollectionsController do
       describe "with valid params" do
         it "creates a new CustomCollection" do
           expect {
-            post :create, {:custom_collection => @CustomCollection}
+            post :create, {:custom_collection => @custom_collection_attrs}
           }.to change(CustomCollection, :count).by(1)
         end
 
         it "assigns a newly created custom_collection as @custom_collection" do
-          post :create, {:custom_collection => @CustomCollection}
+          post :create, {:custom_collection => @custom_collection_attrs}
           assigns(:custom_collection).should be_a(CustomCollection)
           assigns(:custom_collection).should be_persisted
         end
 
         it "redirects to the created custom_collection" do
-          post :create, {:custom_collection => @CustomCollection}
+          post :create, {:custom_collection => @custom_collection_attrs}
           response.should redirect_to("/me")
         end
       end
@@ -84,7 +80,7 @@ describe CustomCollectionsController do
     describe "PUT update" do
       describe "with valid params" do
         it "updates the requested custom_collection" do
-          custom_collection = CustomCollection.create! @CustomCollection
+          custom_collection = CustomCollection.create! @custom_collection_attrs
           # Assuming there are no other custom_collections in the database, this
           # specifies that the CustomCollection created on the previous line
           # receives the :update_attributes message with whatever params are
@@ -94,21 +90,21 @@ describe CustomCollectionsController do
         end
 
         it "assigns the requested custom_collection as @custom_collection" do
-          custom_collection = CustomCollection.create! @CustomCollection
-          put :update, {:id => custom_collection.to_param, :custom_collection => @CustomCollection}
+          custom_collection = CustomCollection.create! @custom_collection_attrs
+          put :update, {:id => custom_collection.to_param, :custom_collection => @custom_collection_attrs}
           assigns(:custom_collection).should eq(custom_collection)
         end
 
         it "redirects to the custom_collection" do
-          custom_collection = CustomCollection.create! @CustomCollection
-          put :update, {:id => custom_collection.to_param, :custom_collection => @CustomCollection}
+          custom_collection = CustomCollection.create! @custom_collection_attrs
+          put :update, {:id => custom_collection.to_param, :custom_collection => @custom_collection_attrs}
           response.should redirect_to("/me")
         end
       end
 
       describe "with invalid params" do
         it "assigns the custom_collection as @custom_collection" do
-          custom_collection = CustomCollection.create! @CustomCollection
+          custom_collection = CustomCollection.create! @custom_collection_attrs
           # Trigger the behavior that occurs when invalid params are submitted
           CustomCollection.any_instance.stub(:save).and_return(false)
           put :update, {:id => custom_collection.to_param, :custom_collection => { "name" => "invalid value" }}
@@ -116,7 +112,7 @@ describe CustomCollectionsController do
         end
 
         it "re-renders the 'edit' template" do
-          custom_collection = CustomCollection.create! @CustomCollection
+          custom_collection = CustomCollection.create! @custom_collection_attrs
           # Trigger the behavior that occurs when invalid params are submitted
           CustomCollection.any_instance.stub(:save).and_return(false)
           put :update, {:id => custom_collection.to_param, :custom_collection => { "name" => "invalid value" }}
@@ -127,14 +123,14 @@ describe CustomCollectionsController do
 
     describe "DELETE destroy" do
       it "destroys the requested custom_collection" do
-        custom_collection = CustomCollection.create! @CustomCollection
+        custom_collection = CustomCollection.create! @custom_collection_attrs
         expect {
           delete :destroy, {:id => custom_collection.to_param}
         }.to change(CustomCollection, :count).by(-1)
       end
 
       it "redirects to the custom_collections list" do
-        custom_collection = CustomCollection.create! @CustomCollection
+        custom_collection = CustomCollection.create! @custom_collection_attrs
         delete :destroy, {:id => custom_collection.to_param}
         response.should redirect_to(custom_collections_url)
       end
@@ -145,7 +141,7 @@ describe CustomCollectionsController do
     before :each do
       @member = create(:user)
       @scholar = create(:user, role: 'scholar')
-      @cc = create(:custom_collection, user_id: @scholar.id)
+      @cc = create(:custom_collection, owner: @scholar)
       sign_in @member
     end
     

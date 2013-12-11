@@ -8,7 +8,7 @@ describe "visiting homepage", :type => :feature do
   
   before :each do
     user = create(:user, :role => 'scholar')
-    create(:custom_collection, :user_id => user.id, :name => 'The Collection of Collections', :summary => 'asdfasdfasdf')
+    create(:custom_collection, :owner => user, :name => 'The Collection of Collections', :summary => 'asdfasdfasdf')
   end
   
   it "shows 3 blog posts" do

@@ -43,9 +43,9 @@
       <div class="sep-line"></div>
       <% @custom_collections.each do |coll| %>
         <div class="collection_block">
-          <h3><%= link_to coll.name, coll.user.url %></h3>
+          <h3><%= link_to coll.name, coll %></h3>
           <div class="user_bio">
-            <p><%= coll.user.full_name %> - <%= coll.user.work_string %></p>
+            <p><%= link_to coll.owner_name, coll.owner %></p>
           </div>
         </div>
       <% end %>

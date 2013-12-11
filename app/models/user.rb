@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :postal_code, :country, :mla_updates, 
                   :terms_and_conditions, :role, :username, :bio, :title, :organization, :avatar
                   
-  has_many :custom_collections
+  has_many :custom_collections, as: :owner
 
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"

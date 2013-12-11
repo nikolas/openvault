@@ -165,7 +165,7 @@
       </div>
     </div>
     <p class="collection_credits">Credits: <%= collection.credits.to_s %></p>
-    <% if current_user && current_user.id == collection.user_id %>
+    <% if current_user && current_user == collection.owner %>
       <%= link_to 'Edit collection details', edit_custom_collection_path(collection) %>
       <%#= link_to 'Back', custom_collections_path %>
     <% end %>

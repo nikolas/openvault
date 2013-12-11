@@ -45,6 +45,7 @@ Openvault::Application.routes.draw do
   devise_scope :users do
     get 'me', :to => 'users#show', :as => :user_root
   end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   
   #mount Hydra::Collections::Engine => '/'
@@ -53,8 +54,9 @@ Openvault::Application.routes.draw do
   match '/scholar/:username/:custom_collection_slug' => 'custom_collections#show'
   
   #use this for user profile pages - have to override devise routes for user pages and add custom action
-  match '/scholar/:username' => 'users#show', as: 'user_profile_page'
-  match '/user/:username' => 'users#show', as: 'user_profile_page'
+  # match '/scholar/:username' => 'users#show', as: :user
+  # match '/user/:id' => 'users#show', as: :user
+  match '/user/:username' => 'users#show', as: :user
   match '/me' => 'users#show'
   match '/scholars' => 'users#scholars'
   

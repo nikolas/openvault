@@ -10,9 +10,9 @@ feature 'User tries to create a custom collection' do
     Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
-    @custom_collection1 = create(:custom_collection, user_id: @scholar1.id)
+    @custom_collection1 = create(:custom_collection, owner: @scholar1)
   end
-  
+
   scenario 'when the user is not signed in' do
     visit new_custom_collection_path
     expect(page).to have_content("You are not authorized to access this page.")
@@ -37,7 +37,7 @@ feature 'Scholar attaches files to a collection' do
   before :each do
     Warden.test_reset!
     @scholar = create(:user, role: 'scholar')
-    @cc = create(:custom_collection, user_id: @scholar.id, name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf')
+    @cc = create(:custom_collection, owner: @scholar, name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf')
   end
   
   scenario 'succeeds when the file is for the article and is a pdf' do
@@ -70,8 +70,8 @@ feature 'User tries to edit a collection' do
     @scholar1 = create(:user, role: 'scholar')
     @scholar2 = create(:user, role: 'scholar')
     @member = create(:user)
-    @custom_collection1 = create(:custom_collection, user_id: @scholar1.id)
-    @custom_collection2 = create(:custom_collection, user_id: @scholar2.id)
+    @custom_collection1 = create(:custom_collection, owner: @scholar1)
+    @custom_collection2 = create(:custom_collection, owner: @scholar2)
   end
   
   scenario 'when the user is not signed in' do
@@ -106,7 +106,7 @@ feature "User adds a catalog item to a collection" do
     Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
-    @custom_collection1 = create(:custom_collection, user_id: @scholar1.id, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
+    @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
     @item = Video.create!
   end
   
@@ -135,7 +135,7 @@ feature "User removes a catalog item from a collection" do
     Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
-    @custom_collection1 = create(:custom_collection, user_id: @scholar1.id, name: 'Testing 123123123123', summary: 'Testingasdfjasldkjf')
+    @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123123123', summary: 'Testingasdfjasldkjf')
     @item = Video.create!
     create(:custom_collection_item, :custom_collection_id => @custom_collection1.id, :openvault_asset_pid => @item.pid, :kind => 'Video')
   end

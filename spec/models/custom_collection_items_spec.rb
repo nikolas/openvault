@@ -4,7 +4,7 @@ describe CustomCollectionItem do
   
   before :all do
     @u = create(:user, role: 'scholar')
-    @cc = create(:custom_collection, user_id: @u.id)
+    @cc = create(:custom_collection, owner: @u)
     @v = Video.new
     @v.save
     @p = Program.new
