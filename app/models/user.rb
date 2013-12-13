@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :postal_code, :country, :mla_updates, 
                   :terms_and_conditions, :role, :username, :bio, :title, :organization, :avatar
                   
-  has_many :custom_collections, as: :owner
+  has_many :owned_collections, as: :owner, class_name: CustomCollection
 
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"
@@ -63,11 +63,11 @@ class User < ActiveRecord::Base
   end
   
   def collection_id
-    self.custom_collections.first.id unless self.role != 'scholar' and self.custom_collections.count == 0
+    self.owned_collections.first.id unless self.role != 'scholar' and self.owned_collections.count == 0
   end
   
   def has_item_in_collection(id)
-    items = self.custom_collections.first.custom_collection_items.map{|c| c.openvault_asset_pid}
+    items = self.owned_collections.first.custom_collection_items.map{|c| c.openvault_asset_pid}
     items.include?(id)
   end
   

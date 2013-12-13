@@ -12,7 +12,7 @@
     		<div><%= truncate(scholar.bio, :length => 120).html_safe unless scholar.bio.blank? %></div>
 				<br />
         <div class="author"><%= scholar.work_string %></div>
-        <div class="date"><%= pluralize(scholar.custom_collections.length, 'custom colleciton') %></div>
+        <div class="date"><%= pluralize(scholar.owned_collections.length, 'custom colleciton') %></div>
   		</div>
   	</div>
 	<% end %>

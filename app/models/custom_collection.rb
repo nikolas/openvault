@@ -3,10 +3,12 @@ class CustomCollection < ActiveRecord::Base
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
-  validates_presence_of :owner_id, :on => :create, :message => "can't be blank you fool!!!"
+  validates_presence_of :owner_id, :on => :create, :message => "can't be blank"
   validate :owner_id_scholar
   
+  # :owner can be one of multiple models, including User and Org
   belongs_to :owner, polymorphic: true
+
   has_many :custom_collection_items, :dependent => :destroy
   has_many :custom_collection_related_links, :dependent => :destroy
   has_many :custom_collection_images, :dependent => :destroy
