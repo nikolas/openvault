@@ -3,8 +3,7 @@ class CustomCollection < ActiveRecord::Base
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
-  validates_presence_of :owner_id, :on => :create, :message => "can't be blank"
-  validate :owner_id_scholar
+  validate :validate_owner
   
   # :owner can be one of multiple models, including User and Org
   belongs_to :owner, polymorphic: true
@@ -47,17 +46,12 @@ class CustomCollection < ActiveRecord::Base
   
   
   private
-  
-  # There might be a better way to determine abilitiy to create.
-  def owner_id_scholar
-    if self.owner_id.nil? || self.owner_type != "User"
-      false
-    else
-      user = User.find(self.owner_id)
-      errors.add(:owner_id, 'only scholars can create custom collections') unless user.is_scholar?
+
+  def validate_owner
+    if (self.owner.nil?) || !(self.owner.is_a?(User) || self.owner.is_a?(Org)) || (self.owner.is_a?(User) && !self.owner.is_scholar?)
+      errors.add(:owner, "must be a Scholar or an Organization")
     end
   end
-  
     
   def is_new
     @was_a_new_record = new_record?

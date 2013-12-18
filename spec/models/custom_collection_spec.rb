@@ -4,46 +4,33 @@ require 'spec_helper'
 
 describe CustomCollection do
 
-  describe "factory for :custom_collection" do
-    it "makes a valid CustomCollection" do
-      build(:custom_collection).should be_valid
-    end
 
-    it "is owned by a saved User" do
-      cc = build(:custom_collection)
-      cc.owner.should be_a User
-      cc.owner.should_not be_a_new User
-    end
-
-    it "is invalid without an owner" do
-      build(:custom_collection, owner: nil).should_not be_valid
-    end
-
-    it "is invalid when user is not a scholar" do
-      member_user = create(:user)
-      build(:custom_collection, owner: member_user).should_not be_valid
-    end
-    
-    it "is invalid without a name" do
-      build(:custom_collection, name: nil).should_not be_valid
-    end
-    
-    it "is invalid without a summary"  do
-      build(:custom_collection, summary: nil).should_not be_valid
-    end
-
+  it 'has a valid factory' do
+    build(:custom_collection).should be_valid
   end
 
-  describe "factory for :custom_collection_owned_by_org" do
-    it 'makes a valid CustomCollection' do
-      build(:custom_collection_owned_by_org).should be_valid
-    end
+  it 'is invalid without an owner' do
+    build(:custom_collection, owner: nil).should_not be_valid
+  end
 
-    it 'is owned by a saved Org' do
-      cc = build(:custom_collection_owned_by_org)
-      cc.owner.should be_a Org
-      cc.owner.should_not be_a_new Org
-    end
+  it 'is valid if owner is a User who is a scholar' do
+    build(:custom_collection, owner: build(:user, role: "scholar")).should be_valid
+  end
+
+  it 'is valid if owner is an Org' do
+    build(:custom_collection, owner: build(:org)).should be_valid
+  end
+
+  it 'is invalid if User is not a scholar' do
+    build(:custom_collection, owner: build(:user, role: "member")).should_not be_valid
+  end
+
+  it "is invalid without a name" do
+    build(:custom_collection, name: nil).should_not be_valid
+  end
+  
+  it "is invalid without a summary"  do
+    build(:custom_collection, summary: nil).should_not be_valid
   end
   
   

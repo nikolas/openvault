@@ -45,7 +45,8 @@
         <div class="collection_block">
           <h3><%= link_to coll.name, coll %></h3>
           <div class="user_bio">
-            <p><%= link_to coll.owner_name, coll.owner %></p>
+            <p><% # = link_to coll.owner_name, coll.owner
+            %></p>
           </div>
         </div>
       <% end %>
