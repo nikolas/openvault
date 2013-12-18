@@ -23,11 +23,23 @@ class Image < OpenvaultAsset
   end
   
   def image_file
-    "http://media.wgbh.org/streaming/images/#{self.pid}.jpg"
+    "#{media_host}/images/#{original_file_name}"
   end
 
   def title
     self.pbcore.image_title.first || "image"
+  end
+
+  def original_file_name
+    for i in 0..pbcore.instantiations.count do
+      instantiation = pbcore.instantiations(i)
+      for j in 0..instantiation.id.count do
+        instantiation_id = instantiation.id(j)
+        if instantiation_id.source == ["Original file name"]
+          return instantiation_id
+        end
+      end
+    end
   end
   
 end

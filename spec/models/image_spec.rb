@@ -19,5 +19,12 @@ describe Image do
       image.title.should == "image"
     end
   end
+
+  describe '#original_file_name' do
+    it 'returns value of origial file name from the pbcore datastream' do
+      image.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/image_1.xml').ng_xml
+      image.original_file_name.should == ["barcode10847_thumbnail.jpg"]
+    end
+  end
   
 end

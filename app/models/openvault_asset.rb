@@ -62,4 +62,8 @@ class OpenvaultAsset < ActiveFedora::Base
     raise "Do not know how to relate #{asset.class}."
   end
 
+  def media_host
+    "http://mlamedia01.wgbh.org/openvault"
+  end
+
 end

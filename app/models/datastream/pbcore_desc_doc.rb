@@ -63,6 +63,9 @@
 
     t.instantiations(:path => "pbcoreInstantiation") {
       t.media_type(:path => 'instantiationMediaType')
+      t.id(:path => 'instantiationIdentifier') {
+        t.source(:path => {:attribute => 'source'})
+      }
     }
 
     # Relations
