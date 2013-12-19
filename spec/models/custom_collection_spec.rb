@@ -51,5 +51,17 @@ describe CustomCollection do
     collection.add_collection_item(v.pid, "Video")
     collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
   end
+
+  describe 'has many Users' do
+    before :all do
+      @custom_collection = FactoryGirl.create(:custom_collection)
+      @users = FactoryGirl.create_list(:user, 5)
+    end
+
+    it "should handle adding multiple User instances via #collabs" do
+      @users.each { |user| @custom_collection.collabs << user }
+      @custom_collection.collabs.count.should == 5
+    end
+  end
   
 end

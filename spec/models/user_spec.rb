@@ -50,4 +50,18 @@ describe User do
 
   end
 
+  describe "has many CustomCollections" do
+   
+    before(:all) do
+      @user = FactoryGirl.create(:user)
+      @custom_collections = FactoryGirl.create_list(:custom_collection, 5)
+    end
+    
+    it "should handle adding multiple CustomCollections to a User" do
+      @custom_collections.each { |cc| @user.collab_collections << cc }
+      @user.collab_collections.count.should == 5
+    end
+    
+  end
+
 end

@@ -11,6 +11,9 @@ class CustomCollection < ActiveRecord::Base
   has_many :custom_collection_items, :dependent => :destroy
   has_many :custom_collection_related_links, :dependent => :destroy
   has_many :custom_collection_images, :dependent => :destroy
+
+  has_many :custom_collection_collabs
+  has_many :collabs, through: :custom_collection_collabs, source: :user
   
   accepts_nested_attributes_for :custom_collection_items
   accepts_nested_attributes_for :custom_collection_related_links, :allow_destroy => true, :reject_if => lambda { |a| a[:desc].blank? || a[:link].blank? }
