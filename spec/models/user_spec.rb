@@ -64,4 +64,16 @@ describe User do
     
   end
 
+  describe "has many Orgs" do
+    before :all do
+      @user = FactoryGirl.create(:user)
+      @orgs = FactoryGirl.create_list(:org, 5)
+    end
+
+    it 'should handle adding multiple Orgs to a User' do
+      @orgs.each { |org| @user.orgs << org }
+      @user.orgs.count.should == 5
+    end
+  end
+
 end
