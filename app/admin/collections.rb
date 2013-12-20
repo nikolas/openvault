@@ -30,7 +30,7 @@ ActiveAdmin.register Collection do
       image_tag collection.image.url(:thumb)
     end
     column :display_in_carousel
-    default_actions
+    actions
   end
   
   collection_action :sort, :method => :post do

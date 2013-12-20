@@ -61,7 +61,7 @@ gem "bootstrap-sass"
 gem "font-awesome-rails", "~> 4.0.0"
 gem "cancan"
 gem 'carrierwave'
-gem 'activeadmin', "~> 0.5.1"
+gem 'activeadmin', "~> 0.6.0"
 gem "mini_magick"
 gem 'simple_form'
 gem 'country_select'

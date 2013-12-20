@@ -19,16 +19,22 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :email
+    column "Organizations" do |user|
+      raw sorted_org_links(user.orgs).join(', ')
+    end
     column :role
-    default_actions
+    actions
   end
   
   #overrides the view page format
-  show do |ad|
+  show do |user|
     attributes_table do
       row :first_name
       row :last_name
       row :email
+      row "Organizations" do
+        raw sorted_org_links(user.orgs).join(', ')
+      end
       row :postal_code
       row :country
       row :mla_updates
@@ -38,12 +44,13 @@ ActiveAdmin.register User do
   
   #overrides the edit/new form
   form do |f|
-    f.inputs "User Data" do
+    f.inputs "Details" do
       f.input :email
       f.input :password
       f.input :password_confirmation
       f.input :first_name
       f.input :last_name
+      f.input :orgs, as: :select, input_html: {multiple: true}
       f.input :postal_code
       f.input :country
       f.input :mla_updates

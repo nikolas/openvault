@@ -1,6 +1,6 @@
 class Org < ActiveRecord::Base
-  attr_accessible :desc, :name
-
+  attr_accessible :desc, :name, :user_ids
+  
   has_many :owned_collections, as: :owner, class_name: CustomCollection
 
   has_and_belongs_to_many :users
