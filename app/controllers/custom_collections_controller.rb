@@ -83,18 +83,6 @@ class CustomCollectionsController < ApplicationController
       end
     end
   end
-
-  # DELETE /custom_collections/1
-  # DELETE /custom_collections/1.json
-  def destroy
-    @custom_collection = CustomCollection.find(params[:id])
-    @custom_collection.destroy
-
-    respond_to do |format|
-      format.html { redirect_to custom_collections_url }
-      format.json { head :no_content }
-    end
-  end
   
   def remove_item
     @custom_collection = CustomCollection.find(params[:custom_collection_id])

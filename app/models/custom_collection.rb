@@ -25,10 +25,6 @@ class CustomCollection < ActiveRecord::Base
   
   mount_uploader :article, CustomCollectionArticleUploader
   
-  def user_can_edit?(user)
-    self.owner_id == user.id
-  end
-  
   def add_collection_item(item, kind)
     CustomCollectionItem.create(:openvault_asset_pid => item, :kind => kind, :custom_collection_id => self.id)
   end

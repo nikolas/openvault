@@ -121,20 +121,6 @@ describe CustomCollectionsController do
       end
     end
 
-    describe "DELETE destroy" do
-      it "destroys the requested custom_collection" do
-        custom_collection = CustomCollection.create! @custom_collection_attrs
-        expect {
-          delete :destroy, {:id => custom_collection.to_param}
-        }.to change(CustomCollection, :count).by(-1)
-      end
-
-      it "redirects to the custom_collections list" do
-        custom_collection = CustomCollection.create! @custom_collection_attrs
-        delete :destroy, {:id => custom_collection.to_param}
-        response.should redirect_to(custom_collections_url)
-      end
-    end
   end
   
   describe "as a member" do

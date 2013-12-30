@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'cancan/matchers'
 
 # NOTE: FactoryGirl shortcut methods (create, build, attributes_for, etc.) are included in spec_helper.rb
 
@@ -75,5 +76,60 @@ describe User do
       @user.orgs.count.should == 5
     end
   end
+
+
+  describe "abilities" do
+
+    context "when they are a \"scholar\"" do
+
+      let(:user) { create(:user, role: 'scholar') }
+
+      subject { Ability.new(user) }
+
+      it { should be_able_to(:index, CustomCollection) }
+      it { should be_able_to(:show, CustomCollection) }
+      it { should be_able_to(:create, CustomCollection) }
+      it { should_not be_able_to(:destroy, CustomCollection) }
+    end
+
+    context "when they are not a scholar" do
+
+      let(:user)  { create(:user, role: "member") }
+      subject { Ability.new(user) }
+
+      it { should be_able_to(:index, CustomCollection) }
+      it { should be_able_to(:show, CustomCollection) }
+      it { should_not be_able_to(:create, CustomCollection) }
+      it { should_not be_able_to(:destroy, CustomCollection) }
+
+    end
+
+    context "when they own the collection" do
+
+      let(:user) { create(:user, role: 'scholar') }
+      let(:custom_collection) { create(:custom_collection, owner: user) }
+
+      subject { Ability.new(user) }
+
+      it { should be_able_to(:update, custom_collection) }
+      it { should be_able_to(:add_item, custom_collection) }
+      it { should be_able_to(:remove_item, custom_collection) }
+    end
+
+    context "when they do not own the collection" do
+
+      let(:user) { create(:user, role: 'scholar') }
+      let(:custom_collection) { create(:custom_collection) }
+
+      subject { Ability.new(user) }
+
+      it { should_not be_able_to(:update, custom_collection) }
+      it { should_not be_able_to(:add_item, custom_collection) }
+      it { should_not be_able_to(:remove_item, custom_collection) }
+    end
+
+
+  end
+
 
 end
