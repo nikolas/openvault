@@ -29,6 +29,9 @@ ActiveAdmin.register User do
   #overrides the view page format
   show do |user|
     attributes_table do
+      row :avatar do
+        image_tag(user.avatar)
+      end
       row :first_name
       row :last_name
       row :email
@@ -43,14 +46,15 @@ ActiveAdmin.register User do
   end
   
   #overrides the edit/new form
-  form do |f|
+  form(:html => {:multipart => true}) do |f|
     f.inputs "Details" do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
+      f.input :avatar, as: :file
       f.input :first_name
       f.input :last_name
+      f.input :email
       f.input :orgs, as: :select, input_html: {multiple: true}
+      f.input :password
+      f.input :password_confirmation
       f.input :postal_code
       f.input :country
       f.input :mla_updates
