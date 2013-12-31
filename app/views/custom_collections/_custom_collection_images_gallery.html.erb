@@ -1,1 +1,18 @@
-Here are the images!!!
+<div id="images" class="tab-pane fade in">
+  <div id="sliderContent">
+    <div id="imageslider" class="flexslider">
+      <ul class="slides">
+        <% custom_collection.custom_collection_images.each do |img| %>
+          <li><%= image_tag img.image_url(:carousel), alt: img.rights, title: img.rights %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="carousel" class="flexslider">
+      <ul class="slides">
+        <% custom_collection.custom_collection_images.each_with_index do |img, idx| %>
+          <li><%= image_tag img.image_url(:med), alt: img.rights, title: img.rights %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

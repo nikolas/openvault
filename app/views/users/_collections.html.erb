@@ -138,23 +138,13 @@
         <% end %>
       </div>
       <div id="images" class="tab-pane fade in">
-        <div id="sliderContent">
-          <div id="imageslider" class="flexslider">
-            <ul class="slides">
-              <% collection.custom_collection_images.each do |img| %>
-                <li><%= image_tag img.image_url(:carousel), alt: img.rights, title: img.rights %></li>
-              <% end %>
-            </ul>
-          </div>
-          <div id="carousel" class="flexslider">
-            <ul class="slides">
-              <% collection.custom_collection_images.each_with_index do |img, idx| %>
-                <li><%= image_tag img.image_url(:med), alt: img.rights, title: img.rights %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
+        <% if collection.custom_collection_images.count > 0 %>
+          <%= render :partial => "custom_collections/custom_collection_images_gallery", :locals => {:custom_collection => collection} %>
+        <% else %>
+          <%= render :partial => "custom_collections/no_images" %>
+        <% end %>
       </div>
+
       <div id="related" class="tab-pane fade in">
         <% collection.custom_collection_related_links.each do |link| %>
           <div class="link_block">
