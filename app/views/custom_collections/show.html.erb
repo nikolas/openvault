@@ -12,7 +12,7 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag @custom_collection.image.url(:med) %>
+  <%= render :partial => "custom_collection_images_gallery" %>
 </p>
 <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
 <p>

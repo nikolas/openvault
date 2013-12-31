@@ -18,13 +18,11 @@ class CustomCollectionsController < ApplicationController
   # GET /custom_collections/1
   # GET /custom_collections/1.json
   def show
-    #commenting out because before filter gets this for custom routes
-    #@custom_collection = CustomCollection.find(params[:id])
-
-    # respond_to do |format|
-#       format.html # show.html.erb
-#       format.json { render json: @custom_collection }
-#     end
+    # NOTE: @custom_collection is set in the before_filter #get_collection
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @custom_collection }
+    end
   end
 
   # GET /custom_collections/new
