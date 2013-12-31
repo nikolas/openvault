@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     elsif params[:username]
       @user = User.where(:username => params[:username]).first
-    elsif
+    elsif current_user
       @user = User.find(current_user.id)
     end
     
