@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :name, label: false, placeholder: "Name your collection" %>
     <textarea class="text optional wysihtml5" id="custom_collection_summary" name="custom_collection[summary]" placeholder="Enter a brief description"><%= @custom_collection.summary unless @custom_collection.summary.nil? %></textarea>
-    <%= f.input :credits, label: false, placeholder: 'Enter something about the who to credit for this collection' %>
+    <%= f.input :credits, label: false, placeholder: 'Enter something about who to credit for this collection' %>
     <div class="row-fluid">
       <div class="span4">
         <%= f.input :article, label: 'Attach your article' %>
