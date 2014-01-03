@@ -38,8 +38,6 @@ class CustomCollection < ActiveRecord::Base
       self.owner.full_name
     elsif self.owner.is_a? Org
       self.owner.name
-    else
-      ""
     end
   end
   
