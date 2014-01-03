@@ -1,7 +1,7 @@
 <% @custom_collections.each do |collection| %>
 	<div class="document blacklight-collection">
 		<div class="thumbnail">
-			<%= link_to image_tag(collection.image.url(:med)), collection %>
+			<%= link_to image_tag(collection.poster_image), collection %>
 		</div>
 		<div class="documentHeader">
 			<h3 class="index_title">

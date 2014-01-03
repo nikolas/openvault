@@ -1,5 +1,5 @@
 class CustomCollection < ActiveRecord::Base
-  attr_accessible :article, :image, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes
+  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
@@ -43,6 +43,11 @@ class CustomCollection < ActiveRecord::Base
     end
   end
   
+
+  def poster_image
+    custom_collection_images.first.image.url(:med) unless custom_collection_images.empty?
+  end
+
   
   private
 
@@ -85,5 +90,5 @@ class CustomCollection < ActiveRecord::Base
       self.slug = ret
     end
   end
-  
+ 
 end
