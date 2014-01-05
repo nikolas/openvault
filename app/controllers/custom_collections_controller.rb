@@ -1,7 +1,5 @@
 class CustomCollectionsController < ApplicationController
   
-  before_filter :get_collection, :only => [:show]
-  
   load_and_authorize_resource
   
   # GET /custom_collections
@@ -18,7 +16,7 @@ class CustomCollectionsController < ApplicationController
   # GET /custom_collections/1
   # GET /custom_collections/1.json
   def show
-    # NOTE: @custom_collection is set in the before_filter #get_collection
+    @custom_collection = get_collection
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @custom_collection }
