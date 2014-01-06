@@ -526,6 +526,7 @@ input[type=file] {
       .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus, .nav-tabs > li > a {
         margin-bottom:0;
       }
+
       .tab-content {
         overflow: auto;
         clear: both;
@@ -1340,4 +1341,7 @@ input[type=file] {
 
 
 
-
+/* overrides bootstrap/_navs.scss */
+.nav-tabs > li {
+  margin-bottom: -13px;
+}
