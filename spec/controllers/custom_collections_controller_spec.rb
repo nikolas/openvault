@@ -56,7 +56,7 @@ describe CustomCollectionsController do
 
         it "redirects to the created custom_collection" do
           post :create, {:custom_collection => @custom_collection_attrs}
-          response.should redirect_to("/me")
+          response.should redirect_to(custom_collection_url(assigns(:custom_collection)))
         end
       end
 
@@ -98,7 +98,7 @@ describe CustomCollectionsController do
         it "redirects to the custom_collection" do
           custom_collection = CustomCollection.create! @custom_collection_attrs
           put :update, {:id => custom_collection.to_param, :custom_collection => @custom_collection_attrs}
-          response.should redirect_to("/me")
+          response.should redirect_to(custom_collection_url(assigns(:custom_collection)))
         end
       end
 
