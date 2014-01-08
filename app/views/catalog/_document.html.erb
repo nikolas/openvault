@@ -3,7 +3,7 @@
       <% unless document["thumbnail_tesim"].nil? %>
         <%= link_to_document document, label: image_tag(document["thumbnail_tesim"].first) %>
       <% else %>
-        <img src="/assets/no_image.jpg" />
+        <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
     </div> 
   <h3 class="index_title">

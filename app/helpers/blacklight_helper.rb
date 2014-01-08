@@ -34,11 +34,6 @@ module BlacklightHelper
     render :partial => 'document_heading', :locals => { :document => document, :heading => document_heading }
   end
 # 
-  def link_to_document(doc, opts={:label=>Blacklight.config[:index][:show_link].to_sym, :counter => nil, :results_view => true})
-    label = display_title(doc)
-    return link_to(label.html_safe, collection_path(doc[:slug])) if doc[:format] == "collection"
-    link_to(label.html_safe, document_path(doc))
-  end
   
   def render_xml_with_xslt xml, xslt
     require 'open-uri'

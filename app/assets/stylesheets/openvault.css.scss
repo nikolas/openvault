@@ -781,6 +781,8 @@ input[type=file] {
           .doc_thumbnail {
             float: left;
             margin-right: 10px;
+            max-width: 300px;
+            max-height: 300px;
           }
           .index_title {
             a {         
