@@ -18,12 +18,12 @@ class Image < OpenvaultAsset
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-    Solrizer.insert_field(solr_document, "image_path", self.image_file, :displayable)
+    Solrizer.insert_field(solr_document, "image_url", self.image_url, :displayable)
     return solr_document
   end
   
-  def image_file
-    "#{media_host}/images/#{original_file_name}"
+  def image_url
+    "#{media_host}/images/#{original_file_name}" if original_file_name
   end
 
   def title
@@ -36,7 +36,7 @@ class Image < OpenvaultAsset
       for j in 0..instantiation.id.count do
         instantiation_id = instantiation.id(j)
         if instantiation_id.source == ["Original file name"]
-          return instantiation_id
+          return instantiation_id.first
         end
       end
     end

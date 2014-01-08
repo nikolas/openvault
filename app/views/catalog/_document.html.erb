@@ -1,13 +1,13 @@
 <div class="document <%= render_document_class document %>">  
     <div  class="doc_thumbnail">
-      <% if document[:thumbnail] %>
-        <%= link_to_document document, :label=>(image_tag(document[:thumbnail])) %>
-      <%# else %>
-        <!-- <img src="/assets/tmp_cat_image_thumb.jpg" /> -->
+      <% unless document["thumbnail_tesim"].nil? %>
+        <%= link_to_document document, label: image_tag(document["thumbnail_tesim"].first) %>
+      <% else %>
+        <img src="/assets/no_image.jpg" />
       <% end %>
     </div> 
   <h3 class="index_title">
-    <%= link_to_document document, :label=>document_show_link_field, :counter => (document_counter + 1 + @response.params[:start].to_i) %><%= " (Video Excerpt)" if document.get('media_dsid_s') =~ /Video/ and document.get('dc_type_s') =~ /excerpt/ %>
+    <%= link_to_document document, :label=>document[:title_ssm].first, :counter => (document_counter + 1 + @response.params[:start].to_i) %><%= " (Video Excerpt)" if document.get('media_dsid_s') =~ /Video/ and document.get('dc_type_s') =~ /excerpt/ %>
   </h3>  
   <div class="defList_container">
     <% unless document[:summary_ssm].nil? %>

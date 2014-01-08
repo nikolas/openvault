@@ -46,7 +46,8 @@ class CatalogController < ApplicationController
       :qf => 'text'
     }
     
-    config.index.show_link = 'title_clip_ssm'
+    # config.index.show_link = 'title_clip_ssm'
+    config.index.show_link = 'title_teim'
     config.add_index_field 'asset_date_ssm', :label => 'Date Created'
     config.add_index_field 'series_ssm', :label => 'Program'
     config.add_index_field 'media_ssm', :label => 'Media'
@@ -210,6 +211,7 @@ class CatalogController < ApplicationController
   end
   
   def index
+
     #This is only for the search page
     delete_or_assign_search_session_params
 
@@ -248,7 +250,7 @@ class CatalogController < ApplicationController
       @items.each do |item|
         unless item['video_images_ssm'].nil?
           im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
-          img = im['image_path_ssm'].first
+          img = im['image_url_ssm'].first unless im['image_url_ssm'].empty?
           @scroller_items << [img, item['slug']]
         end
       end

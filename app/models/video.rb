@@ -32,6 +32,11 @@ class Video < OpenvaultAsset
   def video_images
     self.images.map{|i| i.pid}
   end
+
+  def thumbnail_url
+
+    self.images.first.image_url unless (self.images.empty? || self.images.first.image_url.nil?)
+  end
   
   #Video Metadata
   # - Length
