@@ -16,7 +16,15 @@
       </div>
       <div class="row-fluid">
         <div class="span10 date">
-          <p><span class="doc_label">Dated:</span><span class="datetime"><%= @document['asset_date_ssm'].first.to_s %></span></p>
+          <p>
+            <span class="doc_label">Dated:</span><span class="datetime">
+              <% unless @document['asset_date_ssm'].nil? || @document['asset_date_ssm'].empty? %>
+                <%= @document['asset_date_ssm'].first.to_s %>
+              <% else %>
+                <%= "unavailable" %>
+              <% end %>
+            </span>
+          </p>
         </div>
         <div class="tools span2">
           <%= render :partial => 'show_tools' %>

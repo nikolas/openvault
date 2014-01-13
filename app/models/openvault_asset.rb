@@ -12,9 +12,9 @@ class OpenvaultAsset < ActiveFedora::Base
 
     solr_document["slug"] = self.pid
 
-
     Solrizer.insert_field(solr_document, "title", self.title, :sortable, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "summary", self.summary, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "asset_date", self.asset_date, :displayable, :sortable, :searchable)
     Solrizer.insert_field(solr_document, "thumbnail", self.thumbnail_url)
     return solr_document
   end
@@ -31,6 +31,10 @@ class OpenvaultAsset < ActiveFedora::Base
 
   def thumbnail_url
     # no-op. Override in extended classes
+  end
+
+  def asset_date
+    self.pbcore.asset_date.first
   end
 
   def create_relations_from_pbcore_mars!
