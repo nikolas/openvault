@@ -267,7 +267,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    marc (0.8.0)
+    marc (0.8.1)
       ensure_valid_encoding
       unf
     mediashelf-loggable (0.4.9)
