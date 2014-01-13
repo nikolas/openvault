@@ -73,21 +73,6 @@ module BlacklightHelper
     html.html_safe
   end
   
-  def document_path(doc=nil)
-    case doc[:active_fedora_model_ssi].to_s
-    when 'Audio'
-      return "/audio/#{doc[:slug]}"
-    when 'Video'
-      return "/video/#{doc[:slug]}"
-    when 'Program'
-      return "/programs/#{doc[:slug]}"
-    when 'Series'
-      return "/series/#{doc[:slug]}"
-    else
-      return "/catalog/#{doc[:slug]}"
-    end
-  end
-  
   def display_title(doc=@document)
     #fallback to document id if something is messed up since that is always there
     if doc[:title_ssm].nil?

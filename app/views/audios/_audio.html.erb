@@ -1,0 +1,33 @@
+<!--
+  Partial used for displaying a single audio result in catalog#index.
+-->
+<div class="document <%= render_document_class audio %>">  
+    <div  class="doc_thumbnail">
+      <% unless audio["thumbnail_tesim"].nil? %>
+        <%= link_to image_tag(audio["thumbnail_tesim"].first), controller: 'audios', action: 'show', id: audio.id %>
+      <% else %>
+        <%= image_tag("no_image.gif", alt: "No Image Available") %>
+      <% end %>
+    </div> 
+  <h3 class="index_title">
+    <%= link_to audio[:title_ssm].first, controller: 'audios', action: 'show', id: audio.id %>
+    <%= " (audio Excerpt)" if audio.get('media_dsid_s') =~ /audio/ and audio.get('dc_type_s') =~ /excerpt/ %>
+  </h3>  
+  <div class="defList_container">
+    <% unless audio[:summary_ssm].nil? %>
+      <div class="blacklight-summary">
+        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(audio[:summary_ssm].first), :length => 200) %></p></div>
+      </div>
+    <% end %>
+    <% index_field_names.each do |solr_fname| -%>
+      <% value = render_index_field_value :document => audio, :field => solr_fname %>
+      <% unless value.blank? %>
+        <div class="blacklight-<%= solr_fname.parameterize %>" >
+          <div class="doc_value"><p><span class="doc_label"><%= render_index_field_label :field => solr_fname %>:</span><%= render_index_field_value :document => audio, :field => solr_fname %></p></div>
+        </div>
+      <% end -%>
+    <% end -%>
+  </div>
+  <%#= render_document_unapi_microformat audio %>
+  <div class="clearfix"></div>
+</div>

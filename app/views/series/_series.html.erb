@@ -1,0 +1,33 @@
+<!--
+  Partial used for displaying a single Series result in catalog#index.
+-->
+<div class="document <%= render_document_class series %>">  
+    <div  class="doc_thumbnail">
+      <% unless series["thumbnail_tesim"].nil? %>
+        <%= link_to image_tag(series["thumbnail_tesim"].first), controller: 'series', action: 'show', id: series.id %>
+      <% else %>
+        <%= image_tag("no_image.gif", alt: "No Image Available") %>
+      <% end %>
+    </div> 
+  <h3 class="index_title">
+    <%= link_to series[:title_ssm].first, controller: 'series', action: 'show', id: series.id %>
+    <%= " (series Excerpt)" if series.get('media_dsid_s') =~ /series/ and series.get('dc_type_s') =~ /excerpt/ %>
+  </h3>  
+  <div class="defList_container">
+    <% unless series[:summary_ssm].nil? %>
+      <div class="blacklight-summary">
+        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(series[:summary_ssm].first), :length => 200) %></p></div>
+      </div>
+    <% end %>
+    <% index_field_names.each do |solr_fname| -%>
+      <% value = render_index_field_value :document => series, :field => solr_fname %>
+      <% unless value.blank? %>
+        <div class="blacklight-<%= solr_fname.parameterize %>" >
+          <div class="doc_value"><p><span class="doc_label"><%= render_index_field_label :field => solr_fname %>:</span><%= render_index_field_value :document => series, :field => solr_fname %></p></div>
+        </div>
+      <% end -%>
+    <% end -%>
+  </div>
+  <%#= render_document_unapi_microformat series %>
+  <div class="clearfix"></div>
+</div>
