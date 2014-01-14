@@ -250,7 +250,7 @@ class CatalogController < ApplicationController
       @items.each do |item|
         unless item['video_images_ssm'].nil?
           im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
-          img = im['image_url_ssm'].first unless im['image_url_ssm'].empty?
+          img = im['image_url_ssm'].first unless im['image_url_ssm'].nil?
           @scroller_items << [img, item['slug']]
         end
       end
