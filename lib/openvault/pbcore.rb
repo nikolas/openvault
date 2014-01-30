@@ -25,7 +25,7 @@ module Openvault::Pbcore
         end
       end
 
-      # If we didn't find anything, return
+      # If we didn't find anything, return a new model
       return get_new_model_for pbcore_desc_doc
     end
 
@@ -51,8 +51,11 @@ module Openvault::Pbcore
       elsif self.is_transcript? pbcore_desc_doc
         Transcript
       else
-        OpenvaultAsset
+        nil
       end
+
+      raise "Hey, I don't know which model to use for this pbcore." if klass.nil?
+      klass
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Series record.
@@ -67,9 +70,18 @@ module Openvault::Pbcore
     # Returns true if PbcoreDescDoc datastream describes a Program record
     # It is a Program if:
     #   - it has a program title
-    #   - it does not have any media types
+    #   - it does not have other title types that would indicate a record other than a program title.
+    #     NOTE: The presence of any of these other titles is enough to indicate that the record is *not* a program record.
+    #     NOTE: A program record may have title types other than "Program", namely it may also have titles of type "Series" and "Episode",
+    #       but for our consideration, it is still a Program record.
     def is_program? pbcore_desc_doc
-      !pbcore_desc_doc.program_title.empty? && pbcore_desc_doc.instantiations.media_type.empty?
+
+      # get all of the title types that would indicate a record *other* than a Program record
+      non_program_titles = pbcore_desc_doc.titles_by_type.keys.select do |title_type|
+        !!(title_type =~ /^Element/) || !!(title_type =~ /^Item/) || !!(title_type =~ /^Segment/) || !!(title_type =~ /^Clip/)  
+      end
+
+      !pbcore_desc_doc.program_title.empty? && non_program_titles.empty? && !is_image?(pbcore_desc_doc)
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Program record

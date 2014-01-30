@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Radio program (Master)</pbcoreAssetType>
+  <pbcoreAssetDate dateType="Item Date">4/1950</pbcoreAssetDate>
+  <pbcoreIdentifier source="UOI_ID" version="2">3e1942afea66ac221d96e0ee94412585708ec2bf</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="2">200520.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">First Patriots' Day, The: An Eyewitness Account By Dr. Alfred Worcester</pbcoreTitle>
+  <pbcoreSubject subjectType="Subject Heading">Minutemen (Militia)</pbcoreSubject>
+  <pbcoreSubject subjectType="Geographical">Lexington (Mass.)</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Battles</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Lexington, Battle of, Lexington, Mass., 1775</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">United States History Revolution, 1775-1783</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Patriots' Day</pbcoreSubject>
+  <pbcoreSubject subjectType="Geographical">Concord (Mass.)</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary3" startTime="00:00:00" endTime="00:14:10">In 1950, Parker Wheatley, General Manager, Lowell Institute Cooperative Broadcasting Council. interviews 95-year old Dr. Alfred Worcester of Waltham, Massachusetts about his memory of his great-grandmother telling him, in about 1860, of the Battle of Lexington and Concord in 1775.</pbcoreDescription>
+  <!-- <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CHILD</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">ac99f3707a11b13f224eba8494a6e52d1147b305</pbcoreRelationIdentifier>
+  </pbcoreRelation> -->
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PARENT</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">253961f1626cd60118eef1a3d6b4d814f0a13f45</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PLACEDGR</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">7a3c11a0ed27a87ab78472f48a0853458c455ba1</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Waltham, MA</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">4/1950</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreContributor>
+    <contributor>Worcester, Alfred</contributor>
+    <contributorRole>Interviewee3</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Wheatley, Parker</contributor>
+    <contributorRole>Interviewer3</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>WGBH Educational Foundation</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_TYPE="Web" RIGHTS_HOLDER="(c) WGBH Educational Foundation"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="2">3e1942afea66ac221d96e0ee94412585708ec2bf</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="2" annotation="ArtesiaDAM user ID: 21 imported 2011-04-15 15:02:03.0">barcode157998.wav</instantiationIdentifier>
+    <instantiationDate>4/1950</instantiationDate>
+    <instantiationPhysical>DAT</instantiationPhysical>
+    <instantiationLocation>Archives (department)</instantiationLocation>
+    <instantiationMediaType>Audio</instantiationMediaType>
+    <instantiationTimeStart>00:00:00</instantiationTimeStart>
+    <instantiationDuration>00:14:10</instantiationDuration>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="225"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Release date information">
+      <WGBH_DATE_RELEASE DATE_RELEASE="1950-04-01 00:00:00.0"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Lifecycle information">
+      <WGBH_DATE ITEM_DATE="4/1950"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

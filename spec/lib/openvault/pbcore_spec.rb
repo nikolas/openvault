@@ -18,7 +18,8 @@ describe Openvault::Pbcore do
 
     it 'returns an instance of Program for PBCore xml that describes a program' do
       Openvault::Pbcore.get_model_for(Fixtures.use('mars/program_1.xml')).should be_a Program
-      Openvault::Pbcore.get_model_for(Fixtures.use('artesia/rock_and_roll/program_1.xml')).should be_a Program      
+      Openvault::Pbcore.get_model_for(Fixtures.use('artesia/rock_and_roll/program_1.xml')).should be_a Program
+      Openvault::Pbcore.get_model_for(Fixtures.use('artesia/patriots_day/program_1.xml')).should be_a Program
     end
 
     it 'returns an instance of Image for PBCore xml that describes a image' do
