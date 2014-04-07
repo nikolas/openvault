@@ -27,11 +27,6 @@ describe VideosController do
       assigns(:program).should_not be_nil
       assigns(:transcripts).should_not be_nil 
     end
-    
-    it "@rel is not nil" do
-      get :show, {id: @id}
-      assigns(:rel).should_not be_nil
-    end
   end
   
   describe "GET print" do
