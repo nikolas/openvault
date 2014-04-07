@@ -1,5 +1,4 @@
 class CustomCollectionsController < ApplicationController
-  
   load_and_authorize_resource
   
   # GET /custom_collections

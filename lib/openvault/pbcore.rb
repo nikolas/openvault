@@ -119,6 +119,13 @@ module Openvault::Pbcore
       !asset_type.nil? && asset_type.downcase.include?('transcript')
     end
 
+    def ingest xml
+      begin
+        self.ingest!(xml)
+      rescue Exception => e
+        Rails.logger.error(e.message)
+      end
+    end
 
     def ingest! xml
       pids = []

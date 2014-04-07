@@ -78,5 +78,3 @@ gem "nested_form"
 #gem 'hydra-collections'
 gem "escape_utils"
 gem 'rack-cache', :require => 'rack/cache'
-
-gem 'capistrano'
