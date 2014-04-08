@@ -1,9 +1,8 @@
-namespace :openvault do
+require 'openvault/pbcore'
 
+namespace :openvault do
   desc "Ingest from pbcore xml file"
   task :ingest => :environment do
-
-    require 'openvault/pbcore'
   
     # Command line args:
     # +file+:: path to xml file
@@ -20,6 +19,6 @@ namespace :openvault do
 
     xml = File.read(ENV['file'])
 
-    Openvault::Pbcore.ingest!(xml)
+    Openvault::Pbcore::Ingester.new(xml).ingest
   end
 end
