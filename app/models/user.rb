@@ -73,7 +73,7 @@ class User < ActiveRecord::Base
     self.owned_collections.first.id unless self.role != 'scholar' and self.owned_collections.count == 0
   end
 
-  def has_item_in_collection(id)
+  def has_item_in_collection?(id)
     return if owned_collections.empty?
     items = self.owned_collections.first.custom_collection_items.map{|c| c.openvault_asset_pid}
     items.include?(id)
