@@ -54,7 +54,15 @@ class CustomCollectionsController < ApplicationController
 
     respond_to do |format|
       if @custom_collection.save
-        format.html { redirect_to @custom_collection, notice: 'Custom collection was successfully created.' }
+        format.html { 
+          if cookies[:redirect_to]
+            target = cookies[:redirect_to]
+            cookies[:redirect_to] = nil
+          else
+            target = @custom_collection
+          end
+          redirect_to target, notice: 'Custom collection was successfully created.' 
+        }
         format.json { render json: @custom_collection, status: :created, location: @custom_collection }
       else
         format.html { render action: "new" }

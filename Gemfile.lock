@@ -402,6 +402,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0.0)
       websocket (~> 1.0.4)
+    sextant (0.2.4)
+      rails (>= 3.2)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -506,6 +508,7 @@ DEPENDENCIES
   rvm-capistrano
   sass-rails (~> 3.2.3)
   selenium-webdriver
+  sextant
   simple_form
   twitter
   twitter-text (~> 1.7.0)

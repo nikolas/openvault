@@ -36,6 +36,7 @@ end
 
 group :development do
   gem 'debugger'  
+  gem 'sextant'
   #gem 'terminal-notifier'
   gem 'capistrano'
   gem 'rvm-capistrano'
