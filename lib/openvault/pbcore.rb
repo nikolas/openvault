@@ -11,7 +11,7 @@ module Openvault::Pbcore
     # Returns appropriate ActiveFedora model class for the pbcore datastream
     def model_class
       %w(series program transcript video audio image).each do |type| 
-        return Kernel.const_get(type.classify) if (send("is_#{type}".to_s))
+        return Kernel.const_get(type.classify) if (send("is_#{type}?".to_s))
       end
       raise "Hey, I don't know which model to use for this pbcore: #{self}" 
     end 
