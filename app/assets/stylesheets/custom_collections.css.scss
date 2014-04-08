@@ -1,3 +1,22 @@
 // Place all the styles related to the CustomCollections controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#menulist {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height:32px;
+    border:1px solid #000;
+    width:260px;
+    text-indent: 8px;
+}
+.arrow{
+    cursor:pointer;
+    height:32px; 
+    width:24px;
+    position:absolute;
+    right:0px;
+    background-color:#c8c8c8;
+    background:url('http://icons.aniboom.com/Energy/Resources/userControls/TimeFrameDropDownFilter/Dropdown_Arrow.png') 0;
+}
