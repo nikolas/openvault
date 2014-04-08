@@ -99,7 +99,7 @@ module Openvault::Pbcore
     # Returns true if PbcoreDescDoc datastream describes a Program record
     # It is a Program if:
     #   - the asset type contains the string "transcript"
-    def is_transcript? pbcore_desc_doc
+    def is_transcript? 
       !asset_type.nil? && asset_type.downcase.include?('transcript')
     end
   end
