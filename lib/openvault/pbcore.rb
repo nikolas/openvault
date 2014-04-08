@@ -13,7 +13,7 @@ module Openvault::Pbcore
       %w(series program transcript video audio image).each do |type| 
         return Kernel.const_get(type.classify) if (send("is_#{type}?".to_s))
       end
-      raise "Hey, I don't know which model to use for this pbcore: #{self}" 
+      raise "Hey, I don't know which model to use for this pbcore: #{self.doc.inspect}" 
     end 
 
     def new_model 
@@ -148,7 +148,11 @@ module Openvault::Pbcore
 
     def ingest 
       with_desc_docs do |doc|
-        doc.model.save && (self.pids << doc.model.pid)
+        begin
+          doc.model.save && (self.pids << doc.model.pid)
+        rescue Exception => e
+          Rails.logger.error(e.message)
+        end
       end
 
       relate_pids
