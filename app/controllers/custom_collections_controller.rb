@@ -99,7 +99,7 @@ class CustomCollectionsController < ApplicationController
     if @item = OpenvaultAsset.find(params[:asset_id])
       @custom_collection.add_collection_item(@item.pid, params[:kind])
       respond_to do |format|
-        format.html { redirect_to "/#{model_url(params[:kind])}/#{params[:asset_id]}", notice: 'added to your collection!' }
+        format.html { redirect_to "/#{model_url(params[:kind]).singularize}/#{params[:asset_id]}", notice: 'added to your collection!' }
         format.json { render json: @custom_collection.custom_collection_items }
       end
     else
