@@ -11,7 +11,7 @@ module Openvault::Pbcore
     # Returns appropriate ActiveFedora model class for the pbcore datastream
     def model_class
       %w(series program transcript video audio image).each do |type| 
-        return Kernel.const_get(type.classify) if (send("is_#{type}".to_s))
+        return Kernel.const_get(type.classify) if (send("is_#{type}?".to_s))
       end
       raise "Hey, I don't know which model to use for this pbcore: #{self}" 
     end 
@@ -99,7 +99,7 @@ module Openvault::Pbcore
     # Returns true if PbcoreDescDoc datastream describes a Program record
     # It is a Program if:
     #   - the asset type contains the string "transcript"
-    def is_transcript? pbcore_desc_doc
+    def is_transcript? 
       !asset_type.nil? && asset_type.downcase.include?('transcript')
     end
   end
