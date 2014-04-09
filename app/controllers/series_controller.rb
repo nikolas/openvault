@@ -1,4 +1,12 @@
 class SeriesController < CatalogController
+
+  def browse_by_title
+    @all_series = Series.all
+    @all_series.sort_by! {|series| series.title}
+    respond_to do |format|
+      format.html {render :browse_by_title}
+    end
+  end
   
   def show
     @response, @document = get_solr_document_by_slug(params[:id])    

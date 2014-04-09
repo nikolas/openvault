@@ -10,11 +10,13 @@ describe SeriesController do
       ab.delete
     end
     Fixtures.cwd("#{fixture_path}/pbcore")
-    a = Openvault::Pbcore.get_model_for(Fixtures.use("artesia/rock_and_roll/series_1.xml"))
+    a = Openvault::Pbcore::DescriptionDocumentWrapper.new(Fixtures.use("artesia/rock_and_roll/series_1.xml")).model
     a.save!
     a.create_relations_from_pbcore!
     @id = a.pid
   end
+
+
   describe "GET show" do
     it "returns a valid solr document" do
       get :show, {id: @id}
@@ -31,6 +33,13 @@ describe SeriesController do
     it "@rel is not nil" do
       get :show, {id: @id}
       assigns(:rel).should_not be_nil
+    end
+  end
+
+  describe "GET browse" do
+    it 'renders browse_by_title' do
+      get :browse_by_title
+      expect(response).to render_template :browse_by_title
     end
   end
   
