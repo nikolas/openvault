@@ -36,16 +36,16 @@ module UserSteps
   end
   
   def create_admin_user
-    FactoryGirl.create(:admin_user, email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+    FactoryGirl.create(:admin, email: 'admin@example.com', password: 'password', password_confirmation: 'password')
   end
   
   def login_as_admin(values={})
     values.symbolize_keys!
     create_admin_user unless values[:create_admin] == "false"
-    go_here '/admin/login'
-    fill_in 'admin_user_email', with: 'admin@example.com'
-    fill_in 'admin_user_password', with: 'password'
-    click_button 'Login'
+    go_here '/admin'
+    fill_in 'user_email', with: 'admin@example.com'
+    fill_in 'user_password', with: 'password'
+    click_button 'Log in'
   end
   
   def assign_user_as_scholar(values={})

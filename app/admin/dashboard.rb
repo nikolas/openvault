@@ -28,7 +28,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Info" do
-          para "Welcome to ActiveAdmin #{current_admin_user.email}."
+          para "Welcome to ActiveAdmin #{current_user.email}."
         end
       end
       

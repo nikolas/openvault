@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
   end
 
+  def authenticate_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = "Unauthorized Access!"
+      redirect_to root_path
+    end
+  end
+
   def layout_name
     'application'
   end
