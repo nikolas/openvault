@@ -125,10 +125,10 @@ ActiveRecord::Schema.define(:version => 20131219171339) do
     t.string   "article"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "owner_id"
     t.string   "slug"
     t.text     "article_rights"
     t.text     "credits"
-    t.integer  "owner_id"
     t.string   "owner_type"
   end
 
