@@ -23,6 +23,7 @@ ActiveAdmin.register User do
       raw sorted_org_links(user.orgs).join(', ')
     end
     column :role
+    column :admin
     actions
   end
   
@@ -42,6 +43,7 @@ ActiveAdmin.register User do
       row :country
       row :mla_updates
       row :role
+      row :admin
     end
   end
   
