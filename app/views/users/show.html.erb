@@ -31,8 +31,11 @@
           <% end %>
         </div>
         <div id="user_bio" class="span8">
-          <p class="bio short-bio"><strong>Bio: </strong><%= truncate(@user.bio, :length => 800) %><%= "<a href='#' class='more_bio_link'>More</a>".html_safe unless @user.bio.length < 800 %></p>
-          <p class="bio long-bio" style="display:none;"><strong>Bio: </strong><%= @user.bio %></p>
+          <p class="bio short-bio"><strong>Bio: </strong>
+            <% if @user.bio? %> 
+              <%= truncate(@user.bio, :length => 800) %><%= "<a href='#' class='more_bio_link'>More</a>".html_safe unless @user.bio.length < 800 %></p>
+              <p class="bio long-bio" style="display:none;"><strong>Bio: </strong><%= @user.bio %></p>
+            <% end %>
         </div>
       </div>
       <div class="clearfix"></div>
