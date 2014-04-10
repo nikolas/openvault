@@ -1,10 +1,19 @@
 require 'openvault'
 
 module Openvault::Pbcore
-  class DescriptionDocumentWrapper 
-    attr_accessor :doc
+  class DescriptionDocumentWrapper
  
-    def initialize(*doc)
+    def initialize(doc=nil)
+      self.doc = doc unless doc.nil?
+    end
+
+    def doc
+      raise 'No PbcoreDescDoc specified. Set with #doc=' unless @doc
+      @doc
+    end
+
+    def doc=(doc)
+      raise ArgumentError, 'Object must be a PbcoreDescDoc' unless doc.is_a? PbcoreDescDoc
       @doc = doc
     end
     
@@ -18,7 +27,7 @@ module Openvault::Pbcore
 
     def new_model 
       model_class.new.tap do |model|
-        model.pbcore.ng_xml = @doc.ng_xml
+        model.pbcore.ng_xml = doc.ng_xml
       end
     end
 
