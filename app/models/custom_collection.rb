@@ -1,5 +1,5 @@
 class CustomCollection < ActiveRecord::Base
-  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes
+  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes, :image, :collabs_attributes
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
@@ -24,6 +24,8 @@ class CustomCollection < ActiveRecord::Base
   after_save :is_pdf_new?
   
   mount_uploader :article, CustomCollectionArticleUploader
+
+  accepts_nested_attributes_for :collabs
   
   def add_collection_item(item, kind)
     CustomCollectionItem.create(:openvault_asset_pid => item, :kind => kind, :custom_collection_id => self.id)
