@@ -1,4 +1,4 @@
-  class PbcoreDescDoc < ActiveFedora::OmDatastream
+class PbcoreDescDoc < ActiveFedora::OmDatastream
 
   set_terminology do |t|
     t.root(:path=>"pbcoreDescriptionDocument")
