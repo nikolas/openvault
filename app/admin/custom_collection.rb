@@ -7,9 +7,13 @@ ActiveAdmin.register CustomCollection do
     actions
   end
 
-  # action_item :only => :show do
-     # link_to "Add Collaborator", ""
-  # end
+  form do |f|
+    f.inputs
+    f.inputs do
+      f.input :collabs,  :as => :check_boxes, :collection => User.all
+    end
+    f.actions
+  end
 
   member_action :add_collaborator, :method => :post do
     redirect_to :action => :show, :notice => "Added collaborator"
@@ -37,17 +41,10 @@ ActiveAdmin.register CustomCollection do
           column(:last_name) {|c| c.last_name}
           column(:email) {|c| c.email}
           column(:role) {|c| c.role}
-          column :action do |c|
-            link_to "Remove", ""
-          end
         end
       else
         "None"
       end
-    end
-
-    panel "Add Collaborator" do
-      "ADD DROPDOWN AND BUTTON"
     end
   end
 end
