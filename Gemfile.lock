@@ -317,7 +317,7 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
-    pry (0.9.12.4)
+    pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
@@ -402,11 +402,13 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0.0)
       websocket (~> 1.0.4)
+    sextant (0.2.4)
+      rails (>= 3.2)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     simple_oauth (0.2.0)
-    slop (3.4.7)
+    slop (3.5.0)
     solrizer (3.1.1)
       activesupport
       daemons
@@ -498,6 +500,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.11)
   nested_form
   pdf-reader
+  pry (~> 0.9.12.6)
   rack-cache
   rails (~> 3.2.14)
   rb-fsevent (~> 0.9)
@@ -505,6 +508,7 @@ DEPENDENCIES
   rvm-capistrano
   sass-rails (~> 3.2.3)
   selenium-webdriver
+  sextant
   simple_form
   twitter
   twitter-text (~> 1.7.0)

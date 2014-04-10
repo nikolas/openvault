@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
-  
+
   def url
     if self.role == 'scholar'
       "/scholar/#{self.username}"
@@ -69,10 +69,12 @@ class User < ActiveRecord::Base
   end
   
   def collection_id
+    return if owned_collections.empty?
     self.owned_collections.first.id unless self.role != 'scholar' and self.owned_collections.count == 0
   end
-  
-  def has_item_in_collection(id)
+
+  def has_item_in_collection?(id)
+    return if owned_collections.empty?
     items = self.owned_collections.first.custom_collection_items.map{|c| c.openvault_asset_pid}
     items.include?(id)
   end

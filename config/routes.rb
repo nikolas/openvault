@@ -5,6 +5,8 @@ Openvault::Application.routes.draw do
   HydraHead.add_routes(self)
   #mount Sufia::Engine => '/sufia'
   
+  get 'custom_collections/new/:asset_id/:kind' => 'custom_collections#new'
+
   resources :custom_collections do
     get 'add_item'
     get 'remove_item'

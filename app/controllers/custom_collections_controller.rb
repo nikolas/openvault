@@ -1,5 +1,4 @@
 class CustomCollectionsController < ApplicationController
-  
   load_and_authorize_resource
   
   # GET /custom_collections
@@ -55,7 +54,15 @@ class CustomCollectionsController < ApplicationController
 
     respond_to do |format|
       if @custom_collection.save
-        format.html { redirect_to @custom_collection, notice: 'Custom collection was successfully created.' }
+        format.html { 
+          if cookies[:redirect_to]
+            target = cookies[:redirect_to]
+            cookies[:redirect_to] = nil
+          else
+            target = @custom_collection
+          end
+          redirect_to target, notice: 'Custom collection was successfully created.' 
+        }
         format.json { render json: @custom_collection, status: :created, location: @custom_collection }
       else
         format.html { render action: "new" }
@@ -100,7 +107,7 @@ class CustomCollectionsController < ApplicationController
     if @item = OpenvaultAsset.find(params[:asset_id])
       @custom_collection.add_collection_item(@item.pid, params[:kind])
       respond_to do |format|
-        format.html { redirect_to "/#{model_url(params[:kind])}/#{params[:asset_id]}", notice: 'added to your collection!' }
+        format.html { redirect_to "/#{model_url(params[:kind]).singularize}/#{params[:asset_id]}", notice: 'added to your collection!' }
         format.json { render json: @custom_collection.custom_collection_items }
       end
     else
