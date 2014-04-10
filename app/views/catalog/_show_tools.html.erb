@@ -1,11 +1,35 @@
 <ul class="tools">
   <% if current_user && current_user.role == 'scholar' %>
-    <% if current_user && current_user.has_item_in_collection(@document.id) %>
-      <li class="in_collection"><p>In your collection</p></li>
-    <% else %>
-      <li class="add_to_collection">
-        <a href="/custom_collections/<%= current_user.collection_id %>/add_item?asset_id=<%= @document.id %>&kind=<%= @document['active_fedora_model_ssi'] %>" class="btn btn-mini" data-cctype="<%= @document['active_fedora_model_ssi'] %>" data-ccid="<%= current_user.collection_id %>" data-assetid="<%= @document.id %>">Add to my collection</a>
+    
+    <% if current_user && current_user.owned_collections.empty? %>
+      <li class="create_collection">
+        <button class="btn btn-mini" type="button"><%= link_to 'Create new collection', new_custom_collection_path %></button>
       </li>
+    <% else %>
+      <span style="position:relative;" >
+        <span class="arrow" ></span>
+          <% @menu_collection = current_user.owned_collections.all.map{|c| [ c.name, c.id ] }.compact %>
+          <% @menu_collection << ['Create a new collection...', 'new'] %>
+          <% @disabled_menus = current_user.owned_collections.all.map{|c| c.id if c.has_item?(@document.id)  } %>
+          <%= select_tag(:collection_id, options_for_select(@menu_collection, disabled: @disabled_menus), {:prompt => 'Add to collection...', :id => 'add_to_collection'}) %>
+          <script>
+            $('#add_to_collection').change(function(){
+              var collectionId = $(this).val();
+              var assetId = "asset_id=<%= @document.id %>";
+              var kind = "kind=<%= @document['active_fedora_model_ssi'] %>";
+
+              if(collectionId == 'new'){
+                $.cookie('redirect_to', window.location.toString(), {path: '/'});
+                window.location = "<%= new_custom_collection_path %>";
+              } else if(collectionId) {
+                var addToCollectionLink = "/custom_collections/"+collectionId+"/add_item?"+assetId+"&"+kind;
+                // NOTE RB: This should *not* be a GET request (but instead, a PUT request)
+                // Needs to be fixed, this is how I found it.
+                window.location = addToCollectionLink;
+              }
+            })
+          </script>
+        </span>
     <% end %>
   <% end %>
   <li class="share">

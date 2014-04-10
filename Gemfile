@@ -36,6 +36,7 @@ end
 
 group :development do
   gem 'debugger'  
+  gem 'sextant'
   #gem 'terminal-notifier'
   gem 'capistrano'
   gem 'rvm-capistrano'
@@ -78,5 +79,4 @@ gem "nested_form"
 #gem 'hydra-collections'
 gem "escape_utils"
 gem 'rack-cache', :require => 'rack/cache'
-
-gem 'capistrano'
+gem 'pry', '~> 0.9.12.6'

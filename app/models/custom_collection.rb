@@ -24,6 +24,10 @@ class CustomCollection < ActiveRecord::Base
   after_save :is_pdf_new?
   
   mount_uploader :article, CustomCollectionArticleUploader
+
+  def has_item?(id)
+    custom_collection_items.map{|c| c.openvault_asset_pid}.include?(id)
+  end
   
   def add_collection_item(item, kind)
     CustomCollectionItem.create(:openvault_asset_pid => item, :kind => kind, :custom_collection_id => self.id)
