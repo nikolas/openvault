@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   has_many :custom_collection_collabs
   has_many :collab_collections, through: :custom_collection_collabs, source: :custom_collection
 
+  def collections
+    (owned_collections + collab_collections).uniq
+  end
+
   has_and_belongs_to_many :orgs
 
   validates_presence_of :first_name, :message => "can't be blank"

@@ -4,10 +4,12 @@ ActiveAdmin.register CustomCollection do
 	index do
     column :name
     column :summary
+    column :owner
     actions
   end
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     f.inputs
     f.inputs do
       f.input :collabs,  :as => :check_boxes, :collection => User.all
