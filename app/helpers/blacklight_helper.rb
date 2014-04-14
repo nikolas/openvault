@@ -74,12 +74,8 @@ module BlacklightHelper
   end
   
   def display_title(doc=@document)
-    #fallback to document id if something is messed up since that is always there
-    if doc[:title_ssm].nil?
-      doc[:id].to_s
-    else
-      doc[:title_ssm].first.to_s
-    end
+    return doc['title_tesim'].first unless doc['title_tesim'].nil?
+    "(No title available)"
   end
   
   def display_summary(doc=@document)

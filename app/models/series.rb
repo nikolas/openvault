@@ -20,7 +20,7 @@ class Series < OpenvaultAsset
   
   
   def title
-    self.pbcore.series_title
+    self.pbcore.series_title.first
   end
   
   def all_programs

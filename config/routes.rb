@@ -31,7 +31,9 @@ Openvault::Application.routes.draw do
   end
   
   get 'series/:id', as: 'series', to: 'series#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
-  get 'series/:id/print', as: 'series', to: 'series#print', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
+  get 'series/:id/print', as: 'print_series', to: 'series#print', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
+  get 'series', as: 'browse_series', to: 'series#browse_by_title'
+
   get 'program/:id', as: 'program', to: 'programs#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
   get 'program/:id/print', as: 'program', to: 'programs#print', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/
   get 'video/:id', as: 'video', to: 'videos#show', id: /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/

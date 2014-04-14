@@ -9,13 +9,10 @@ class OpenvaultAsset < ActiveFedora::Base
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
-
-    solr_document["slug"] = self.pid
-
-    Solrizer.insert_field(solr_document, "title", self.title, :sortable, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "summary", self.summary, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "asset_date", self.asset_date, :displayable, :sortable, :searchable)
-    Solrizer.insert_field(solr_document, "thumbnail", self.thumbnail_url)
+    Solrizer.insert_field(solr_document, "title", self.title, :stored_searchable, :sortable)
+    Solrizer.insert_field(solr_document, "summary", self.summary, :stored_searchable)
+    Solrizer.insert_field(solr_document, "asset_date", self.asset_date, :stored_searchable, :dateable)
+    Solrizer.insert_field(solr_document, "thumbnail", self.thumbnail_url, :displayable)
     return solr_document
   end
 

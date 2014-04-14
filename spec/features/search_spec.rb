@@ -6,18 +6,24 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 include Warden::Test::Helpers
 Warden.test_mode!
 
-feature 'User searches' do
-  before :all do
-    insert_search_result
-  end
-  describe "user search features" do
-    scenario 'and there are no results' do
+feature 'Search' do
+
+  describe "basic search" do
+
+    scenario 'returns no results' do
       search({q: 'asdfasdfasdfasdfasdfasdf'})
       expect(page).to have_content('We did not find any matches for this search')
     end
   
     scenario 'and there are less than 10 results' do
-      search({q: 'Interview with Rufus Thomas'})
+
+      series_records = []
+      5.times { series_records << create(:series) }
+
+      search({q: series_records.first.title })
+
+      save_and_open_page
+
       expect(page).to have_css("#documents .document", :count => 1)
     end
   
