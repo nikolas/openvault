@@ -6,4 +6,8 @@ class Org < ActiveRecord::Base
   has_and_belongs_to_many :users
 
   validates :name, presence: true
+
+  def full_name
+  	"Org: #{name}"
+  end
 end

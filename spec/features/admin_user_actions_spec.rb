@@ -31,7 +31,6 @@ feature 'Admin creates a user and that user can login' do
   	end
   	fill_in 'user_email', :with => 'williamblake@gmail.com'
   	fill_in 'user_password', :with => 'wblake123456'
-  	save_and_open_page
   	click_button 'Log in'
   	expect(page).to have_content("Welcome back William")
   end

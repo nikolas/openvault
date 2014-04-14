@@ -1,17 +1,20 @@
 <ul class="tools">
   <% if current_user && current_user.role == 'scholar' %>
     
-    <% if current_user && current_user.owned_collections.empty? %>
+    <% if current_user && current_user.owned_collections.empty? && current_user.custom_collection_collabs.empty? %>
       <li class="create_collection">
         <button class="btn btn-mini" type="button"><%= link_to 'Create new collection', new_custom_collection_path %></button>
       </li>
     <% else %>
       <span style="position:relative;" >
         <span class="arrow" ></span>
-          <% @menu_collection = current_user.owned_collections.all.map{|c| [ c.name, c.id ] }.compact %>
+          <% @menu_collection = current_user.collections.map{|c| [ c.name, c.id ] }.compact %>
           <% @menu_collection << ['Create a new collection...', 'new'] %>
-          <% @disabled_menus = current_user.owned_collections.all.map{|c| c.id if c.has_item?(@document.id)  } %>
-          <%= select_tag(:collection_id, options_for_select(@menu_collection, disabled: @disabled_menus), {:prompt => 'Add to collection...', :id => 'add_to_collection'}) %>
+          <% @disabled_menus = current_user.collections.map{|c| c.id if c.has_item?(@document.id)  } %>
+          <form>
+            <%= label_tag :collection_id, 'Add to collection' %>
+            <%= select_tag(:collection_id, options_for_select(@menu_collection, disabled: @disabled_menus), {:prompt => 'Add to collection...', :id => 'add_to_collection'}) %>
+          </form>
           <script>
             $('#add_to_collection').change(function(){
               var collectionId = $(this).val();

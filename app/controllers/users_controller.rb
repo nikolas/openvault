@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   
   def show
     @user = @user
-    @collections = CustomCollection.where(:owner_id => @user.id).includes(:custom_collection_items)
+    # @collections = CustomCollection.where(:owner_id => @user.id).includes(:custom_collection_items)
+    @collections = @user.collections
   end
   
   def scholars

@@ -50,6 +50,9 @@
             <div class="documentHeader">
               <h3 class="index_title">
                 <%= link_to custom_collection.name, custom_collection %>
+                <span>
+                  <%= collab_status(custom_collection, @user) %>
+                </span>
               </h3>
             </div>
             <div class="defList_container">

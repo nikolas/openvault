@@ -1,5 +1,5 @@
 class CustomCollection < ActiveRecord::Base
-  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes
+  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes, :image, :collabs_attributes, :collab_ids
   
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
@@ -25,6 +25,8 @@ class CustomCollection < ActiveRecord::Base
   
   mount_uploader :article, CustomCollectionArticleUploader
 
+  accepts_nested_attributes_for :collabs
+
   def has_item?(id)
     custom_collection_items.map{|c| c.openvault_asset_pid}.include?(id)
   end
@@ -43,6 +45,19 @@ class CustomCollection < ActiveRecord::Base
     elsif self.owner.is_a? Org
       self.owner.name
     end
+  end
+
+  def owner?(user)
+    owner == user
+  end
+
+  def collaborator?(user)
+    collabs.include?(user)
+  end
+
+  def status(user)
+    return "owner" if owner?(user)
+    return "collaborator" if collaborator?(user)
   end
   
 

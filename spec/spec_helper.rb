@@ -7,11 +7,11 @@ require 'capybara/rspec'
 require 'fixtures'
 require 'openvault'
 
-Capybara.register_driver :webkit do |app|
-  Capybara::Webkit::Driver.new(app, stderr: WarningSuppressor)
-end
-# Capybara.default_driver = :webkit
-# Capybara.javascript_driver = :webkit
+# Capybara.register_driver :webkit do |app|
+  # Capybara::Webkit::Driver.new(app, stderr: WarningSuppressor)
+# end
+Capybara.default_driver = :webkit
+Capybara.javascript_driver = :webkit
 Capybara.default_wait_time = 5
 
 # Requires supporting ruby files with custom matchers and macros, etc,
