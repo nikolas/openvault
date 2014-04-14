@@ -10,7 +10,14 @@ ActiveAdmin.register CustomCollection do
 
   form do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs
+    f.inputs do 
+      f.input :name
+      f.input :summary
+      f.input :image, :as => :file
+      f.input :owner_id, :as => 'select', :collection => User.scholars + Org.all
+      f.input :owner_type, :collection => ['User', 'Org']
+      f.input :slug
+    end
     f.inputs do
       f.input :collabs,  :as => :check_boxes, :collection => User.all
     end

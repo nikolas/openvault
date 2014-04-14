@@ -23,7 +23,7 @@ ActiveAdmin.register Org, as: "Organization" do
 
     end
 
-    active_admin_comments
+    # active_admin_comments
 
   end
 

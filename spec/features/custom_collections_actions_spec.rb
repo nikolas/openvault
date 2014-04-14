@@ -113,13 +113,6 @@ feature "User adds a catalog item to a collection" do
     @item = Video.create!
   end
   
-  scenario 'when they are signed in as a scholar'do
-    login_as(@scholar1, :scope => :user, :run_callbacks => false)
-    visit "/video/#{@item.pid}"
-    find("li.add_to_collection").click_link "Add to my collection"
-    expect(page).to have_content 'In your collection'
-  end
-  
   scenario 'when they are signed in as a non-scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/video/#{@item.pid}"
@@ -129,6 +122,27 @@ feature "User adds a catalog item to a collection" do
   scenario 'when they are not signed it' do
     visit "/video/#{@item.pid}"
     expect(page).not_to have_content('Add to my collection')
+  end
+  
+end
+
+feature "User adds a catalog item to a custom collection they are a collaborator on" do
+  before :each do
+    Warden.test_reset!
+    @scholar1 = create(:user, role: 'scholar')
+    @scholar2 = create(:user, role: 'scholar')
+    @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
+    @item = Video.create!
+    @custom_collection1.collabs << @scholar2
+  end
+  
+  scenario 'when they are signed in as a scholar' do
+    login_as(@scholar2, :scope => :user, :run_callbacks => false)
+    visit "/video/#{@item.pid}"
+    within ('#add_to_collection') do
+      select("Testing 123123")
+    end
+    expect(page).to have_content('added to your collection!')
   end
   
 end
@@ -143,7 +157,7 @@ feature "User removes a catalog item from a collection" do
     create(:custom_collection_item, :custom_collection_id => @custom_collection1.id, :openvault_asset_pid => @item.pid, :kind => 'Video')
   end
   
-  scenario 'when they are signed in as a scholar' # do
+  # scenario 'when they are signed in as a scholar' # do
  #    login_as(@scholar, :scope => :user, :run_callbacks => false)
  #    visit "/custom_collections/#{@custom_collection1.id}"
  #    click_link "Remove"
