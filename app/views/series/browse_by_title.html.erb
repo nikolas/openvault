@@ -1,0 +1,6 @@
+<h1>Browse Series by Title</h1>
+
+<% @series_results.each do |series_result| %>
+  <%= link_to series_result['title_tesim'].first, series_url(series_result['id']) %>
+  <br />
+<% end %>
