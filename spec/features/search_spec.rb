@@ -29,7 +29,6 @@ feature 'User searches' do
     #need to fix facets display for this to work
     # scenario 'and they filter with a facet' do
 #       search({q: 'Nova'})
-#       save_and_open_page
 #       filter_click({filter: 'Robin Bates'})
 #       expect(page).to have_css('#appliedParams .filterValue a', text: 'Robin Bates')
 #     end
