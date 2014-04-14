@@ -27,7 +27,7 @@ module SearchSteps
     end
     Fixtures.cwd("#{fixture_path}/pbcore")
     (1..3).each do |n|
-      a = Openvault::Pbcore.get_model_for(Fixtures.use("artesia/rock_and_roll/video_#{n}.xml"))
+      a = Openvault::Pbcore::DescriptionDocumentWrapper.new(Fixtures.use("artesia/rock_and_roll/video_#{n}.xml")).model
       a.save!
       a.create_relations_from_pbcore!
     end
