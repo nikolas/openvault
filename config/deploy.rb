@@ -1,80 +1,107 @@
 require 'bundler/capistrano'
-require "rvm/capistrano"
+require 'rvm/capistrano'
+
+
+###############################################################################
+# MULTISTAGE CONFIG - Set configuration for multi-stage deployment.
+###############################################################################
+
+set :stages, %w(staging)
+set :default_stage, "staging"
+require 'capistrano/ext/multistage'
+
+
+###############################################################################
+# COMMON CONFIG - Set configuration common to all stages and tasks
+#   Config for specific stages should be set in config/deploy/name_of_stage.rb
+###############################################################################
+
+# General info
+set :application, "openvault"
+set :user, "openvault"
+set :group, "wgbhtech"
+set :deploy_to, "/wgbh/http/#{application}"
+set :use_sudo, false
+set :rails_env, "production"
+set :keep_releases, 5
+
+# Github
+set :scm, :git
+set :repository,  "https://github.com/afred/openvault.git"
+set :scm_username , "afred"
+set :branch, fetch(:branch, "development")
+set :deploy_via, :remote_cache
+
+# RVM
 set :rvm_ruby_string, "2.0"
 before 'deploy', 'rvm:create_gemset'
-set :application, "openvault"
-set :deploy_to, "/wgbh/http/#{application}"
-set :use_sudo, false 
-set :rails_env,     "production"
-set :repository,  "https://github.com/afred/openvault.git"
-set :scm, :git
-set :scm_username , "afred"
-set :user, "openvault"
-set :deploy_via, :remote_cache
-set :keep_releases, 3
+
+# SSH
+default_run_options[:pty] = true
+set :ssh_options, { :forward_agent => true }
 
 
-set :branch, fetch(:branch, "development")
+###############################################################################
+# HOOKS - Set up all the hooks to say what happens and when
+###############################################################################
+before "deploy:setup", "upload_shared:database_yml"
 
-# set :bundle_dir, ''
-# set :bundle_flags, '--system --quiet'
-
-server "lsopenvault01.wgbh.org", :app, :web, :db, :primary => true
-
-before "deploy:setup", "db:configure"
-before  "deploy:assets:precompile", "db:symlink"
 before 'deploy:assets:precompile', 'deploy:migrate'
+before 'deploy:migrate', 'link_shared:database_yml'
 
-after 'deploy:update_code', 'deploy:symlink_uploads'
+# Symlink all other shared stuffs
+after 'deploy:update_code', 'link_shared:application_yml'
+after 'deploy:update_code', 'link_shared:uploads'
+after 'deploy:upate_code', 'link_shared:blog'
+after 'deploy:update_code', 'link_shared:jetty'
+after 'deploy:update_code', 'link_shared:log'
 
+
+after 'deploy:update', 'deploy:cleanup'
+
+###############################################################################
+# TASKS - Define all tasks for setup, deployment, etc.
+###############################################################################
+
+
+# Deployment Tasks
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    #run "rake jetty:restart"
+    run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+end
+
+namespace :link_shared do
+
+  desc "Link to shared database config in latest release"
+  task :database_yml do
+    run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 
+  desc "Link to shared application config in latest release"
+  task :application_yml do
+    run "ln -nfs #{shared_path}/config/application.yml #{latest_release}/config/application.yml"
+  end
 
-  desc "symlink the uploads folder"
-  task :symlink_uploads do
+  desc "Link to shared blog in latest release"
+  task :blog do
+    run "ln -nfs #{shared_path}/public/blog #{latest_release}/public/blog"
+  end
+
+  desc "Link to shared jetty instance in latest release"
+  task :jetty do
+    run "ln -nfs #{shared_path}/jetty #{latest_release}/jetty"
+  end
+
+  desc "Link to shared log in latest release"
+  task :uploads do
     run "ln -nfs #{shared_path}/public/uploads #{latest_release}/public/uploads"
   end
 
-end
-
-namespace :db do
-  desc "Create database yaml in shared path"
-  task :configure do
-    set :database_username do
-      "ov2"
-    end
- 
-    set :database_password do
-      Capistrano::CLI.password_prompt "Database Password: "
-    end
- 
-    db_config = <<-EOF
-      base: &base
-        adapter:  mysql2
-        host:     localhost
-        pool:     5
-        username: #{database_username}
-        password: #{database_password}
- 
-      production:
-        database: #{application}_production
-        <<: *base
-    EOF
- 
-    run "mkdir -p #{shared_path}/config"
-    put db_config, "#{shared_path}/config/database.yml"
-  end
- 
-  desc "Make symlink"
-  task :symlink do
-    run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
-    run "ln -nfs #{shared_path}/jetty #{latest_release}/jetty"
-    run "cp -f ~/#{application}_application.yml #{release_path}/config/application.yml"
+  desc "Link to shared log in latest release"
+  task :log do
+    run "ln -nfs #{shared_path}/log #{latest_release}/log"
   end
 end
