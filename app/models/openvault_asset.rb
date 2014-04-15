@@ -34,37 +34,6 @@ class OpenvaultAsset < ActiveFedora::Base
     self.pbcore.asset_date.first
   end
 
-  def create_relations_from_pbcore_mars!
-    raise 'this needs to be coded!'
-  end
-
-  # Uses pbcore.relations_by_type to establish ActiveFedora relations with existing fedora objects.
-  # NOTE: This method assumes:
-  #   * Two records are related when a value within one record's <pbcoreIdentifier> node is present in another's <pbcoreRelationIdentifier> node
-  #   * There is only one <pbcoreRelationIdentifier> per <pbcoreRelation>
-  def create_relations_from_pbcore!
-
-
-
-    if !pbcore.relations_by_type.empty?
-      # For each relation type, there is a list of values from <pbcoreRelationIdentifier> nodes, that we will call pbcore_ids
-      pbcore.relations_by_type.each do |relation_type, pbcore_ids|
-
-        # for each of the pbcore_ids specified in the <pbcoreRelationIdentifier> nodes
-        pbcore_ids.each do |pbcore_id|
-
-          # find the records that have that pbcore_id as it's <pbcoreIdentifier>, which is stored in all_ids_tesim
-          related_assets = ActiveFedora::Base.find({:all_ids_tesim => pbcore_id})
-
-          related_assets.each do |related_asset|
-            self.relate_asset related_asset
-            self.save!
-          end
-        end
-      end
-    end
-  end
-
   # meant to be overridden
   def relate_asset asset
     raise "Do not know how to relate #{asset.class}."
