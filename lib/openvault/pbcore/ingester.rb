@@ -1,10 +1,15 @@
+require 'openvault'
+require 'openvault/pbcore/description_document_wrapper'
+
 module Openvault::Pbcore
   class Ingester
-    attr_accessor :xml, :pids 
+    attr_accessor :xml, :pids, :failed 
 
-    def initialize(xml)
+    def initialize(xml=nil)
       @xml = xml
       @pids = []
+      @failed = []
+      @relation_builder = AssetRelationshipBuilder.new()
     end
 
     def find_by_pbcore_ids pbcore_ids
@@ -23,12 +28,11 @@ module Openvault::Pbcore
 
     def with_desc_docs &block
       ng_pbcore_desc_docs.each do |ng_pbcore_desc_doc|
-        wrapper = DescriptionDocumentWrapper.new
-        wrapper.doc = PbcoreDescDoc.new.tap do |doc|
-                        doc.ng_xml = ng_pbcore_desc_doc
-                      end
+        doc = PbcoreDescDoc.new.tap do |doc|
+                doc.ng_xml = ng_pbcore_desc_doc
+              end
         
-        yield wrapper
+        yield DescriptionDocumentWrapper.new(doc)
       end
     end
 
@@ -46,25 +50,30 @@ module Openvault::Pbcore
         begin
           doc.model.save && (self.pids << doc.model.pid)
         rescue Exception => e
+          @failed << doc
           Rails.logger.error(e.message)
         end
       end
+
+      Rails.logger.info "The following pids failed to load: #{failed.join('\n')}"
 
       relate_pids
     end
 
     def relate_pids!
       pids.each do |pid|
-        OpenvaultAsset.find(pid, cast: true).try(:create_relations_from_pbcore!)
+        @relation_builder.asset = OpenvaultAsset.find(pid, cast: true)
+        @relation_builder.relate
       end
     end
 
     def relate_pids
       pids.each do |pid|
         begin
-          OpenvaultAsset.find(pid, cast: true).try(:create_relations_from_pbcore!)
+          @relation_builder.asset = OpenvaultAsset.find(pid, cast: true)
+          @relation_builder.relate
         rescue Exception => e
-          Rails.logger.error("** Error: #{e.message}")
+          Rails.logger.error("** Error: #{e.message}\n **** Backtrace: #{e.backtrace}")
         end
       end
     end
