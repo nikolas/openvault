@@ -20,10 +20,10 @@ module SearchHelper
   end
 
   def collections_list
-    response = Blacklight.solr.select :params => { :rows => 100, :fq => ['active_fedora_model_ssi:(Series)'], 'fl' => 'id,title_ssm,active_fedora_model_ssi,slug,summary_ssm' }
+    response = Blacklight.solr.select :params => { :rows => 100, :fq => ['active_fedora_model_ssi:(Series)'], 'fl' => 'id,title_tesim,active_fedora_model_ssi,slug,summary_ssm' }
     items = []
     response['response']['docs'].each do |s|
-      items << s['title_ssm']
+      items << s['title_tesim']
     end
     items
   end

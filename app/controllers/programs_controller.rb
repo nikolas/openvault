@@ -1,7 +1,7 @@
 class ProgramsController < CatalogController
   
   def show
-    @response, @document = get_solr_document_by_slug(params[:id])    
+    @response, @document = get_solr_response_for_doc_id params[:id]
     
     @rel = get_related_content(params[:id])
     

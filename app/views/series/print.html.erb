@@ -39,7 +39,7 @@
             <h4>Series Videos</h4>
             <ul>
               <% @videos.each do |vid| %>
-                <li><%= link_to vid['title_ssm'].first.to_s, "/video/#{vid['slug']}" %></li>
+                <li><%= link_to vid['title_tesim'].first.to_s, "/video/#{vid['slug']}" %></li>
               <% end %>
             </ul>
           <% end %>
@@ -47,7 +47,7 @@
             <h4>Series Images</h4>
             <ul>
               <% @images.each do |img| %>
-                <li data-id="<%= img['slug'] %>"><%= img['title_ssm'].first.to_s %></li>
+                <li data-id="<%= img['slug'] %>"><%= img['title_tesim'].first.to_s %></li>
               <% end %>
             </ul>
           <% end %>
@@ -58,7 +58,7 @@
                 <% @programs.each do |prog| %>
                   <div class="series-program">
                     <img src="<%= prog[:thumbnail_url] %>">
-                    <h4><%= link_to prog[:title_ssm].first.to_s, "/programs/#{prog[:slug].to_s}" %></h4>
+                    <h4><%= link_to prog[:title_tesim].first.to_s, "/programs/#{prog[:slug].to_s}" %></h4>
                   </div>
                 <% end %>
               </div>

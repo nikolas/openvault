@@ -250,7 +250,7 @@ class CatalogController < ApplicationController
       @items.each do |item|
         unless item['video_images_ssm'].nil?
           im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
-          img = im['image_url_ssm'].first unless im['image_url_ssm'].nil?
+          img = im['image_url_ssm'].first unless (im.nil? || im['image_url_ssm'].nil?)
           @scroller_items << [img, item['slug']]
         end
       end
@@ -315,7 +315,7 @@ class CatalogController < ApplicationController
       :facet => 'false',
       :spellcheck => 'false',
       :mlt => 'true',
-      :'mlt.fl' => "title_ssm, summary_ssm",
+      :'mlt.fl' => "title_tesim, summary_ssm",
       :'mlt.count' => 3
     }
     solr_response = find('document', self.solr_search_params().merge(solr_params) )
