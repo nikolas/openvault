@@ -3,8 +3,8 @@
 -->
 <div class="document <%= render_document_class audio %>">  
     <div  class="doc_thumbnail">
-      <% unless audio["thumbnail_tesim"].nil? %>
-        <%= link_to image_tag(audio["thumbnail_tesim"].first), controller: 'audios', action: 'show', id: audio.id %>
+      <% unless audio["thumbnail_ssm"].nil? %>
+        <%= link_to image_tag(audio["thumbnail_ssm"].first), controller: 'audios', action: 'show', id: audio.id %>
       <% else %>
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>

@@ -3,8 +3,8 @@
 -->
 <div class="document <%= render_document_class program %>">  
     <div  class="doc_thumbnail">
-      <% unless program["thumbnail_tesim"].nil? %>
-        <%= link_to image_tag(program["thumbnail_tesim"].first), controller: 'programs', action: 'show', id: program.id %>
+      <% unless program["thumbnail_ssm"].nil? %>
+        <%= link_to image_tag(program["thumbnail_ssm"].first), controller: 'programs', action: 'show', id: program.id %>
       <% else %>
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
