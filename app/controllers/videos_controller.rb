@@ -1,7 +1,7 @@
 class VideosController < CatalogController
   
   def show
-    @response, @document = get_solr_document_by_slug(params[:id])
+    @response, @document = get_solr_response_for_doc_id params[:id]
 
     @program = get_video_program(@document)
     @images = get_video_images(@document)

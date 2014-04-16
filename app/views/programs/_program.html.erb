@@ -10,7 +10,7 @@
       <% end %>
     </div> 
   <h3 class="index_title">
-    <%= link_to program[:title_ssm].first, controller: 'programs', action: 'show', id: program.id %>
+    <%= link_to program[:title_tesim].first, controller: 'programs', action: 'show', id: program.id %>
     <%= " (program Excerpt)" if program.get('media_dsid_s') =~ /program/ and program.get('dc_type_s') =~ /excerpt/ %>
   </h3>  
   <div class="defList_container">

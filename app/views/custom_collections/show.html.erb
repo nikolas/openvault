@@ -78,7 +78,7 @@
             </div>
             <div class="hidden-desktop hidden-tablet mobile-video-links">
               <% @custom_collection.custom_collection_items.videos.each do |col| %>
-                <%= link_to col.ov_asset['title_ssm'], "/video/#{col.ov_asset['slug']}" %>
+                <%= link_to col.ov_asset['title_tesim'], "/video/#{col.ov_asset['slug']}" %>
               <% end %>
             </div>
             <hr />
@@ -101,7 +101,7 @@
             </video>
             <h3>
               <a href="/video/<%= @custom_collection.custom_collection_items.videos.first.ov_asset['slug'] %>">
-                <%= @custom_collection.custom_collection_items.videos.first.ov_asset['title_ssm'].try(:first).to_s %>
+                <%= @custom_collection.custom_collection_items.videos.first.ov_asset['title_tesim'].try(:first).to_s %>
               </a>
             </h3>
             <p class="video_summary">
@@ -115,7 +115,7 @@
         <p>
           <b>Custom Collection Items (Audio):</b>
           <% @custom_collection.custom_collection_items.audios.each do |col| %>
-            Audio: <%= link_to col.ov_asset['title_ssm'], "/audio/#{col.ov_asset['slug']}" %>
+            Audio: <%= link_to col.ov_asset['title_tesim'], "/audio/#{col.ov_asset['slug']}" %>
           <% end %>
         </p>
         <% end %>
@@ -123,7 +123,7 @@
         <p>
           <b>Custom Collection Items (Programs):</b>
           <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            Program: <%= link_to col.ov_asset['title_ssm'], "/programs/#{col.ov_asset['slug']}" %>
+            Program: <%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" %>
           <% end %>
         </p>
         <% end %>
@@ -131,7 +131,7 @@
         <p>
           <b>Custom Collection Items (Series):</b>
           <% @custom_collection.custom_collection_items.series.each do |col| %>
-            Series: <%= link_to col.ov_asset['title_ssm'], "/series/#{col.ov_asset['slug']}" %>
+            Series: <%= link_to col.ov_asset['title_tesim'], "/series/#{col.ov_asset['slug']}" %>
           <% end %>
         </p>
         <% end %>

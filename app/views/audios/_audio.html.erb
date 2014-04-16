@@ -10,7 +10,7 @@
       <% end %>
     </div> 
   <h3 class="index_title">
-    <%= link_to audio[:title_ssm].first, controller: 'audios', action: 'show', id: audio.id %>
+    <%= link_to audio[:title_tesim].first, controller: 'audios', action: 'show', id: audio.id %>
     <%= " (audio Excerpt)" if audio.get('media_dsid_s') =~ /audio/ and audio.get('dc_type_s') =~ /excerpt/ %>
   </h3>  
   <div class="defList_container">
