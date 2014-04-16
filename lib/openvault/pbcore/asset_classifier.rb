@@ -27,7 +27,7 @@ module Openvault::Pbcore
     #     NOTE: A program record may have title types other than "Program", namely it may also have titles of type "Series" and "Episode",
     #       but for our consideration, it is still a Program record.
     def is_program? 
-      !doc.program_title.empty? && non_program_titles.empty? && !self.is_image?
+      !doc.program_title.empty? && non_program_titles.empty? && !self.is_image? && !self.is_transcript?
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Program record
@@ -66,6 +66,15 @@ module Openvault::Pbcore
 
     def media_type
       @media_type ||= doc.instantiations(0).media_type.first
+    end
+
+    # There are some title types that can be included on a program record,
+    # and other title types that indicate the record is something other than a program.
+    # This method returns the latter.
+    def non_program_titles
+      @non_program_titles ||= doc.titles_by_type.keys.select do |title_type|
+        !!(title_type =~ /^Element/) || !!(title_type =~ /^Item/) || !!(title_type =~ /^Segment/) || !!(title_type =~ /^Clip/)  
+      end
     end
   end
 end

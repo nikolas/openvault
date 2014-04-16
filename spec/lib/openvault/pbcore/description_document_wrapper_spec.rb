@@ -67,11 +67,11 @@ describe Openvault::Pbcore::DescriptionDocumentWrapper do
   end
 
 
-  describe '#is_series?' do
-    it 'returns true if pbcore xml describes a series record' do
-      expect(wrapper_class.new(Fixtures.use('artesia/rock_and_roll/series_1.xml')).is_series?).to be_true
-    end 
-  end
+  # describe '#is_series?' do
+  #   it 'returns true if pbcore xml describes a series record' do
+  #     expect(wrapper_class.new(Fixtures.use('artesia/rock_and_roll/series_1.xml')).is_series?).to be_true
+  #   end 
+  # end
 
   # describe '.is_program?' do
   #   it 'returns true if pbcore xml describes a program record' sw

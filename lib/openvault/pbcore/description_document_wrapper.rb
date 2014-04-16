@@ -43,12 +43,5 @@ module Openvault::Pbcore
       @fedora_models ||= ActiveFedora::Base.find({"all_ids_tesim" => doc.all_ids})
     end
 
-    def non_program_titles
-      # get all of the title types that would indicate a record *other* than a Program record
-      @non_program_titles ||= doc.titles_by_type.keys.select do |title_type|
-        !!(title_type =~ /^Element/) || !!(title_type =~ /^Item/) || !!(title_type =~ /^Segment/) || !!(title_type =~ /^Clip/)  
-      end
-    end
-
   end
 end
