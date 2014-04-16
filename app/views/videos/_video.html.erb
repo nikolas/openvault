@@ -3,8 +3,8 @@
 -->
 <div class="document <%= render_document_class video %>">  
     <div  class="doc_thumbnail">
-      <% unless video["thumbnail_tesim"].nil? %>
-        <%= link_to image_tag(video["thumbnail_tesim"].first), controller: 'videos', action: 'show', id: video.id %>
+      <% unless video["thumbnail_ssm"].nil? %>
+        <%= link_to image_tag(video["thumbnail_ssm"].first), controller: 'videos', action: 'show', id: video.id %>
       <% else %>
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
