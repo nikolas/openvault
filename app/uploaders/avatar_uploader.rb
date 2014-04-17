@@ -24,7 +24,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "fallback/" + [version_name, "default-avatar.png"].compact.join('_')
   end
   
-  process :to_image
+  # process :to_image
   
   version :thumb do
     process resize_to_limit: [50, 50]
@@ -38,17 +38,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process resize_to_limit: [200, 200]
   end
   
-  def to_image
-    manipulate! do |img|
-      if file.path =~ /\.(?:gif|png)/i
-        img.format 'png'
-      else
-        img.format 'jpg'
-      end
-      img = yield(img) if block_given?
-      img
-    end
-  end
+  # def to_image
+  #   binding.pry
+  #   manipulate! do |img|
+  #     if file.path =~ /\.(?:gif|png)/i
+  #       img.format 'png'
+  #     else
+  #       img.format 'jpg'
+  #     end
+  #     img = yield(img) if block_given?
+  #     img
+  #   end
+  # end
   
   def extension_white_list
     %w(jpg jpeg gif png)

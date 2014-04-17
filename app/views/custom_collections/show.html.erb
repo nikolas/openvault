@@ -22,6 +22,10 @@
           <%= javascript_include_tag "pdfviewer" %>
           <%= stylesheet_link_tag "viewer" %>
         <% end %>
+        <p class="collection_credits">Credits: <%= @custom_collection.credits.to_s %></p>
+          <% if current_user && current_user == @custom_collection.owner %>
+            <%= link_to 'Edit collection details', edit_custom_collection_path(@custom_collection) %>
+          <% end %>
       </div>
       <div id="media" class="tab-pane fade in">
         <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
@@ -158,20 +162,30 @@
         <% unless @custom_collection.collabs.nil? %>
         <h3>Collaborators:</h3>
         <ul>
-          <li><strong><%= @custom_collection.owner_name %> (owner)</strong></li>
+          <%# binding.pry %>
+          <li>
+            <div class='avatar'>
+              <%= image_tag(@custom_collection.owner.avatar.url(:thumb)) %>
+            </div>
+            <div class='collab'>
+              <strong><%= link_to @custom_collection.owner_name, user_path(@custom_collection.owner) %> (owner)</strong>
+            </div>
+
+          </li>
           <% @custom_collection.collabs_without_owner.each do |collab| %>
-            <li><%= collab.full_name %></li>
+            <li>
+              <div class='avatar'>
+                <%= image_tag(collab.avatar.url(:thumb)) %>
+              </div>
+              <div class='collab'>
+                <%= link_to collab.full_name, user_path(collab) %></li>
+              </div>
           <% end %>
         </ul>
         <% end %>
         <br/>
       </div>
     </div>
-    <p class="collection_credits">Credits: <%= @custom_collection.credits.to_s %></p>
-    <% if current_user && current_user == @custom_collection.owner %>
-      <%= link_to 'Edit collection details', edit_custom_collection_path(@custom_collection) %>
-      <%#= link_to 'Back', @custom_collections_path %>
-    <% end %>
   </div>
 </div>
 

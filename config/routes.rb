@@ -56,7 +56,7 @@ Openvault::Application.routes.draw do
   #use this for user profile pages - have to override devise routes for user pages and add custom action
   # match '/scholar/:username' => 'users#show', as: :user
   # match '/user/:id' => 'users#show', as: :user
-  match '/user/:username' => 'users#show', as: :user
+  match '/user/:id' => 'users#show', as: :user
   match '/me' => 'users#show'
   match '/scholars' => 'users#scholars'
   
