@@ -234,7 +234,7 @@ class CatalogController < ApplicationController
   end
   
   def home
-    @collections = Collection.where(:display_in_carousel => true).order('position ASC')
+    @carousel_items = CarouselItem.where(:enabled => true).order('position ASC')
     @custom_collections = CustomCollection.limit(3).order('created_at ASC')
     @scholars = User.scholars
     client = Twitter::REST::Client.new do |config|
