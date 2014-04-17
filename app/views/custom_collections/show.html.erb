@@ -123,7 +123,7 @@
         <p>
           <b>Custom Collection Items (Programs):</b>
           <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            Program: <%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" %>
+            Program: <%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" if col.ov_asset %>
           <% end %>
         </p>
         <% end %>
