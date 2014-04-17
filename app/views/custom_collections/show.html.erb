@@ -8,6 +8,7 @@
       <li><a href="#media" class="media-link" data-toggle="tab">Media</a></li>
       <li><a href="#images" class="images-link" data-toggle="tab">Images</a></li>
       <li><a href="#related" class="related-link" data-toggle="tab">Related Content</a></li>
+      <li><a href="#collabs" class="collabs-link" data-toggle="tab">Collaborators</a></li>
     </ul>
     <div class="tab-content">
       <div id="summary" class="tab-pane active fade in">
@@ -123,7 +124,7 @@
         <p>
           <b>Custom Collection Items (Programs):</b>
           <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            Program: <%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" %>
+            Program: <%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" if col.ov_asset %>
           <% end %>
         </p>
         <% end %>
@@ -151,6 +152,19 @@
             <p><%= link.desc %></p>
           </div>
         <% end %>
+      </div>
+
+      <div id="collabs" class="tab-pane fade in">
+        <% unless @custom_collection.collabs.nil? %>
+        <h3>Collaborators:</h3>
+        <ul>
+          <li><strong><%= @custom_collection.owner_name %> (owner)</strong></li>
+          <% @custom_collection.collabs_without_owner.each do |collab| %>
+            <li><%= collab.full_name %></li>
+          <% end %>
+        </ul>
+        <% end %>
+        <br/>
       </div>
     </div>
     <p class="collection_credits">Credits: <%= @custom_collection.credits.to_s %></p>

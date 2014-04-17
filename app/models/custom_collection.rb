@@ -27,6 +27,10 @@ class CustomCollection < ActiveRecord::Base
 
   accepts_nested_attributes_for :collabs
 
+  def collabs_without_owner
+    collabs.reject{|collab| owner == collab}
+  end
+
   def has_item?(id)
     custom_collection_items.map{|c| c.openvault_asset_pid}.include?(id)
   end
