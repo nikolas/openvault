@@ -1,0 +1,12 @@
+<div class="programs-list">
+  <h4>Programs in this series</h4>
+  <% if @series.programs.empty? %>
+    <p>Currently we do not have any programs information available for this series.</p>
+  <% else %>
+    <ul>
+      <% @series.programs.each do |program| %>
+        <li><%= link_to program.title, "/programs/#{program.id}" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

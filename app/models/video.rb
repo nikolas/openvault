@@ -21,8 +21,7 @@ class Video < OpenvaultAsset
   end
   
   def video_url
-    #This needs to change based on the decisions made about the streaming server
-    "http://media.wgbh.org/streaming/videos/#{self.pid}.mp4"
+    "#{media_host}/video/#{mp4_file_name}" if mp4_file_name
   end
   
   def video_transcripts
@@ -34,8 +33,25 @@ class Video < OpenvaultAsset
   end
 
   def thumbnail_url
+    self.images.first.image_url unless self.images.empty?
+  end
 
-    self.images.first.image_url unless (self.images.empty? || self.images.first.image_url.nil?)
+  def mp4_file_name
+    original_file_name.gsub(/\.mov/, ".mp4")
+  end
+
+
+  # TODO: shared with Image model. Make into a concern?
+  def original_file_name
+    for i in 0..pbcore.instantiations.count do
+      instantiation = pbcore.instantiations(i)
+      for j in 0..instantiation.id.count do
+        instantiation_id = instantiation.id(j)
+        if instantiation_id.source == ["Original file name"]
+          return instantiation_id.first
+        end
+      end
+    end
   end
   
   #Video Metadata

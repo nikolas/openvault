@@ -15,7 +15,7 @@ class Program < OpenvaultAsset
 
 
   def title
-    self.pbcore.program_title
+    self.pbcore.program_title.first
   end
   
   def asset_count
