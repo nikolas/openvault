@@ -26,17 +26,9 @@ class SeriesController < CatalogController
   end
   
   def show
-
     @response, @document = get_solr_response_for_doc_id params[:id]
 
-    # @response, @document = get_solr_document_by_id(params[:id])
-    #@repspones, @document = get_solr_response_for_doc_id
-    
-    @rel = get_related_content(params[:id])
-    
-    @programs = get_programs(@document)
-    @images = get_images(@document)
-    @videos = get_videos(@document)
+    @series = Series.find params[:id]
     
     respond_to do |format|
       #format.html {setup_next_and_previous_documents}
@@ -102,8 +94,9 @@ class SeriesController < CatalogController
     progs = []
 
     unless document[:programs_ssm].nil?
-      document[:programs_ssm].each do |prog|
-        progs << get_only_solr_document_by_slug(prog.to_s)
+      document[:programs_ssm].each do |prog_id|
+        response, document = get_solr_response_for_doc_id prog_id
+        progs << document
       end
     end
     progs
@@ -112,8 +105,9 @@ class SeriesController < CatalogController
   def get_videos(document=nil)
     vids = []
     unless document[:videos_ssm].nil?
-      document[:videos_ssm].each do |vid|
-        vids << get_only_solr_document_by_slug(vid.to_s)
+      document[:videos_ssm].each do |vid_id|
+        response, document = get_solr_response_for_doc_id vid_id
+        vids << document
       end
     end
     vids

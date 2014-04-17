@@ -1,0 +1,12 @@
+<div class="video-list">
+  <h4>Videos in this series</h4>
+  <% if @series.videos.empty? %>
+    <p>Currently we do not have any videos available for this series.</p>
+  <% else %>
+    <ul>
+      <% @series.videos.each do |video| %>
+        <li><%= link_to video.title, "/video/#{video.id}" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
