@@ -8,76 +8,29 @@
 <%# this should be in a partial -%>
 <div id="document" class="<%= render_document_class %> show_program">
   <div id="doc_<%= @document[:id] %>">
-    <div id="document_header">
-      <div class="row-fluid">
-        <div class="document_heading span9">
-          <h2><%= display_title @document %></h2>
-        </div>
-        <div class="span3 hidden-phone">
-          &nbsp;
-        </div>
+    
+    <div id="document_header" class="row-fluid">
+      <div class="document_heading span10">
+        <h2><%= @video.title %></h2>
+        <%= render :partial => 'addthis/toolbox' %>
       </div>
-      <div class="row-fluid">
-        <div class="span6 date">
-          &nbsp;
-        </div>
-        <div class="tools span3 hidden-phone">
-          <%= render :partial => 'catalog/show_tools' %>
-        </div>
-        <div class="span3 hidden-phone">
-          &nbsp;
-        </div>
+      <div class="tools span2">
+        <%= render partial: 'catalog/user_tools' %>
       </div>
     </div>
-    <div class="row-fluid">
-      <div class="span12 program_content">
-        <div class="sep-line-thin"></div>
-        <div class="document_content">
-          <h4>Summary</h4>
-          <p><%= display_summary @document %></p>
-          <div class="asset-content row-fluid">
-            <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
-              <%#= @document['video_url_ssm'] %>
-              <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-phone"
-                width="100%" height="350" controls preload="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png">
-                <source src="/assets/video_test.mp4" type='video/mp4' />
-                <source src="/assets/video_test.webm" type='video/webm' />
-                <source src="/assets/video_test.ogg" type='video/ogg' />
-              </video>
-              <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-tablet hidden-desktop"
-                width="100%" height="180" controls preload="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png">
-                <source src="/assets/video_test.mp4" type='video/mp4' />
-                <source src="/assets/video_test.webm" type='video/webm' />
-                <source src="/assets/video_test.ogg" type='video/ogg' />
-              </video>
-            </div>
-            <% unless @transcripts.empty? %>
-              <div id="transcript-box" class="span4 secondary-datastream-container">
-                <h2>Transcript</h2>
-                <div class="datastream-actions">
-                  <%= link_to "<i class='icon-print'></i>".html_safe, "/programs/#{@document[:slug]}/print", :class => "print action", :target => "_blank" %>
-                  <form action="#" method="GET" class="q_field datastream-action-search">
-                    <%= text_field_tag :q, nil, :class => "q", :placeholder => "Search Transcript" %>
-                    <%= image_submit_tag("/assets/magnifying-glass.gif", :alt => "Search Transcript", :class => 'submit') %>
     
-                  </form>
-                </div>
-              
-                  <div class="datastream secondary-datastream datastream-transcript datastream-transcript-tei-xml">
-                    <!-- This is a sample transcript hard-coded for testing -->
-                    <%= @transcripts.first['slug'] %>
-                    <%#= render_tei_transcript('/Users/Shared/web-applications/wgbh/app/assets/images/transcript_xml_sample.xml') %>
-                  </div>
-              </div>
-            <% end %>
-          </div>
-          <h3>Images</h3>
-          <% @images.each do |img| %>
-            <%= img['slug'] %>
-          <% end %>
-          <br />
+    <div class="row-fluid">
+      <div class="span12 video_content">
+        <div class="document_content">
+          <p><%= @video.summary %></p>
+
+
+          <%= render partial: 'videos/player' %>
+
+          <%#= render partial: 'videos/transcript' %>
+
+          <%= render partial: 'videos/images' %>
+
           <div class="metadata">
             
             <%= 
@@ -88,9 +41,11 @@
               end
             %>
           </div>
+
           <div id="comments">
             <div class="fb-comments" data-href="http://lsopenvault01.wgbh.org" ></div>
           </div>
+
         </div>
       </div>
     </div>
