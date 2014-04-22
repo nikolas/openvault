@@ -17,8 +17,11 @@ class CustomCollectionItem < ActiveRecord::Base
   scope :programs, where(:kind => 'Program')
   scope :series, where(:kind => 'Series')
   
+  # TODO: name this method better. OpenvaultAsset is a subclass of ActiveFedora::Base,
+  #  whereas this method returns a solr document.
   def ov_asset
-    item = Blacklight.solr.get('select', :params => {:q => "slug:#{self.openvault_asset_pid}"})
+    item = Blacklight.solr.select(params: {q: "id:#{openvault_asset_pid}"})
+    raise 'CustomCollectionItem could not find corresponding solr document' unless item['response']['docs'].first
     item['response']['docs'].first
   end
   
