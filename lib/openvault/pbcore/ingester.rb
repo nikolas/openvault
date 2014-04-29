@@ -55,7 +55,7 @@ module Openvault::Pbcore
         end
       end
 
-      Rails.logger.info "The following pids failed to load: #{failed.join('\n')}"
+      Rails.logger.info "The following pids failed to load: #{failed.join('\n')}" unless failed.empty?
 
       relate_pids
     end
