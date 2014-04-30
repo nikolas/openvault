@@ -26,7 +26,7 @@ describe "visiting homepage", :type => :feature do
     FactoryGirl.create(:carousel_item, :title => 'The Collection of Collections', :body => 'asdfasdfasdf', enabled: true).save!
     visit '/'
     save_and_open_page
-    page.should have_css('.exhibit-item', :count => 1)
+    page.should have_css('.carousel-item', :count => 1)
   end
   
   it "gets the most recent video assets for scroller"

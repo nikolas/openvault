@@ -1,35 +1,26 @@
+<% content_for :head do %>
+<script type="text/javascript">
+  $(function() {
+    $('#carousel').slidesjs();
+  });
+</script>
+<% end %>
+
+
 <% title "OpenVault - Home" %>
 <div class="row-fluid">
-  <div id="exhibits" class="grainbox span8">
-    <h2>Exhibits</h2>
-    <div class="sep-line"></div>
-    <div id="exhibit-slider">
-      <% @carousel_items.each_with_index do |ex, idx| %>
-        <div class="exhibit-item <%= (idx == 0) ? 'active' : '' %> row-fluid" item-num="<%= idx %>">
-          <div class="text span6">
-            <h3><%= ex.title %></h3>
-            <div class="summary hidden-tablet hidden-phone">
-              <p><%= truncate(ex.body, length: 720).html_safe %></p>
-            </div>
-            <div class="summary-tablet hidden-desktop hidden-phone">
-              <p><%= truncate(ex.body, length: 300).html_safe %></p>
-            </div>
-            <div class="link hidden-phone">
-              <a href="<%= ex.url %>">View exhibit</a>
-            </div>
-          </div>
-          <div class="image span6">
-            <%= link_to image_tag(ex.image), ex.url %>
+  <div id="carousel" class="grainbox span8">
+    <% @carousel_items.each_with_index do |ex, idx| %>
+      <div class="carousel-item slidesjs-slide <%= (idx == 0) ? 'active' : '' %> row-fluid" item-num="<%= idx %>">
+        <div class="image span12 overlayable">
+          <%= link_to image_tag(ex.image), ex.url %>
+
+          <div class="overlay-bottom">
+            <p><%= truncate(ex.body, length: 720).html_safe %></p>
           </div>
         </div>
-      <% end %>
-    </div>
-    <div class="clearfix"></div>
-    <div id="exhibit-controls">
-      <% @carousel_items.length.times do |idx| %>
-        <a href="#" data-num="<%= idx %>" class="<%= (idx == 0) ? 'active' : '' %> page-dot">Dot</a>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
   <div id="home_sidebar" class="span4">
     <div id="welcome" class="grainbox">
