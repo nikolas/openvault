@@ -4,8 +4,7 @@
 @import "compass/utilities/text/replacement";
 @import "compass/typography/vertical_rhythm";
 
-$base-font-size: 10px;
-$base-line-height: 14.25px;
+
 $base-font-family: Arial, Helvetica, sans-serif;
 
 $link-color: #000;
@@ -22,9 +21,7 @@ $grey: #e8e3e3;
 //Resets and base
 body {
   height: 100%;
-  font-size: $base-font-size;
   font-family: $base-font-family;
-  line-height: $base-line-height;
 }
 
 a {
@@ -41,7 +38,7 @@ a.action_link {
     color: lighten($orange, 20%);
   }
 }
-p, a, label, span {
+p, label, span {
   font-size: 13px;
   line-height: 1.3em;
   margin-bottom: .9em;
@@ -49,18 +46,15 @@ p, a, label, span {
 strong {
   font-weight: bold;
 }
-h1, h2, h3, h4, h5 {
-  font-weight: normal;
-  line-height: 1.5em;
-}
+
 h1 {
-  font-size: 3.6em;
-}
-h2 {
   font-size: 2.8em;
 }
+h2 {
+  font-size: 2em;
+}
 h3 {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 h4 {
   font-size: 1.5em;
@@ -242,9 +236,13 @@ input[type=file] {
   }
 }
 
-//Body section
+/**
+ * Body Section
+ */
 #body {
+
   padding: 25px 0px;
+
   //Global
   .grainbox {
     @include grainbox;
@@ -256,6 +254,7 @@ input[type=file] {
   #welcome-text {
     font-size: 14px;
   }
+
 
   /**
    * Overlays -- darkened text boxes to overlay other elements.
@@ -514,91 +513,6 @@ input[type=file] {
       input[type=submit] {
         float: right;
         margin-top: 10px;
-      }
-    }
-  }
-  
-  //User profile page
-  #user_show_page {
-    margin: 20px 0;
-    #user_image {
-      img {
-        border: 2px solid $orange;
-        width: 100%;
-      }
-      text-align:center;
-    }
-    .mobile-user-row {
-      img {
-        float: left;
-        margin-right: 20px;
-      }
-    }
-    #user_info {
-      
-    }
-    #user_bio {
-      
-    }
-    .collection_block {
-      margin-top: 20px;
-      #outerContainer {
-        height: 680px;
-      }
-      .nav {
-        border-bottom: 1px solid #ddd;
-        height: 37px;
-        margin-bottom:0;
-      }
-      .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus, .nav-tabs > li > a {
-        margin-bottom:0;
-      }
-
-      .tab-content {
-        overflow: auto;
-        clear: both;
-        border-right: 1px solid #ddd;
-        border-left: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-      #summary {
-        font-size: 13px;
-        line-height: 1.3em;
-        margin-bottom: .9em;
-        b {
-          font-weight: bold;
-        }
-        i {
-          font-style: italic;
-        }
-      }
-      #sliderContent {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      #media {
-        #cc_video_container {
-          overflow:hidden;
-          #cc_video_player {
-            width: 80%;
-            float: left;
-          }
-          #cc_video_thumbnail_list {
-            width: 20%;
-            float:right;
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            img {
-              
-            }
-          }
-          .video_title {
-            font-size: 16px;
-            font-weight: bold;
-          }
-        }
       }
     }
   }

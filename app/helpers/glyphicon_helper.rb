@@ -1,0 +1,232 @@
+module GlyphiconHelper
+
+  # Helper method to display glyphicons that come with bootstrap.
+  # http://getbootstrap.com/components/#glyphicons
+  def glyphicon(name, size=nil, options={})
+
+    # validate that it is a proper glyphicon name.
+    raise "Unrecognized glyphicon \"#{name}\"" unless glyphicon_names.include? name
+
+    # default size of glyphicons are small, so if :small is specified, then just set to nil.
+    sizes = {small: nil, medium: '2em', large: '3em'}
+    size = sizes[size] if sizes.keys.include? size
+    
+    # Since glyphicons are actually a font (not an image) you set the size using font-size.
+    if size
+      # First we grab any styles that may have been passed into options parameter, either as string or as hash.
+      html_style = case
+      when options[:style].respond_to?(:each)
+        options[:style]
+      when options[:style].is_a?(String)
+        style_to_hash(options[:style])
+      else
+        {}
+      end
+      
+      # set font size if size was specified
+      html_style["font-size"] = size
+
+      # now reset the style in options
+      options[:style] = hash_to_style(html_style)
+    end
+
+    # set the bootstrap glyphicon class name
+    options.merge! class: "glyphicon glyphicon-#{name}"
+
+    content_tag('span', options) { ' ' }
+  end
+
+
+  def glyphicon_names
+    [
+      "asterisk",
+      "plus",
+      "euro",
+      "minus",
+      "cloud",
+      "envelope",
+      "pencil",
+      "glass",
+      "music",
+      "search",
+      "heart",
+      "star",
+      "star-empty",
+      "user",
+      "film",
+      "th-large",
+      "th",
+      "ok",
+      "remove",
+      "zoom-in",
+      "zoom-out",
+      "off",
+      "signal",
+      "cog",
+      "trash",
+      "home",
+      "file",
+      "time",
+      "road",
+      "download-alt",
+      "download",
+      "upload",
+      "inbox",
+      "play-circle",
+      "repeat",
+      "refresh",
+      "lock",
+      "flag",
+      "headphones",
+      "volume-off",
+      "volume-down",
+      "volume-up",
+      "qrcode",
+      "barcode",
+      "tag",
+      "tags",
+      "book",
+      "bookmark",
+      "print",
+      "camera",
+      "font",
+      "bold",
+      "text-height",
+      "text-width",
+      "indent-left",
+      "indent-right",
+      "facetime-video",
+      "picture",
+      "map-marker",
+      "adjust",
+      "tint",
+      "edit",
+      "share",
+      "check",
+      "move",
+      "step-backward",
+      "fast-backward",
+      "backward",
+      "play",
+      "pause",
+      "stop",
+      "forward",
+      "fast-forward",
+      "step-forward",
+      "eject",
+      "chevron-left",
+      "chevron-right",
+      "plus-sign",
+      "minus-sign",
+      "remove-sign",
+      "ok-sign",
+      "question-sign",
+      "info-sign",
+      "screenshot",
+      "remove-circle",
+      "ok-circle",
+      "ban-circle",
+      "arrow-left",
+      "arrow-right",
+      "arrow-up",
+      "arrow-down",
+      "share-alt",
+      "resize-full",
+      "resize-small",
+      "exclamation-sign",
+      "gift",
+      "leaf",
+      "fire",
+      "eye-open",
+      "eye-close",
+      "warning-sign",
+      "plane",
+      "calendar",
+      "random",
+      "comment",
+      "magnet",
+      "chevron-up",
+      "chevron-down",
+      "retweet",
+      "shopping-cart",
+      "folder-close",
+      "folder-open",
+      "resize-vertical",
+      "resize-horizontal",
+      "hdd",
+      "bullhorn",
+      "bell",
+      "certificate",
+      "thumbs-up",
+      "thumbs-down",
+      "hand-right",
+      "hand-left",
+      "hand-up",
+      "hand-down",
+      "circle-arrow-right",
+      "circle-arrow-left",
+      "circle-arrow-up",
+      "circle-arrow-down",
+      "globe",
+      "wrench",
+      "tasks",
+      "filter",
+      "briefcase",
+      "fullscreen",
+      "dashboard",
+      "heart-empty",
+      "phone",
+      "pushpin",
+      "usd",
+      "gbp",
+      "sort",
+      "sort-by-alphabet",
+      "sort-by-alphabet-alt",
+      "sort-by-order",
+      "sort-by-order-alt",
+      "sort-by-attributes",
+      "sort-by-attributes-alt",
+      "unchecked",
+      "expand",
+      "collapse-down",
+      "collapse-up",
+      "log-in",
+      "flash",
+      "log-out",
+      "new-window",
+      "record",
+      "save",
+      "open",
+      "saved",
+      "import",
+      "export",
+      "send",
+      "floppy-disk",
+      "floppy-saved",
+      "floppy-remove",
+      "floppy-save",
+      "floppy-open",
+      "credit-card",
+      "transfer",
+      "cutlery",
+      "header",
+      "compressed",
+      "earphone",
+      "phone-alt",
+      "tower",
+      "stats",
+      "sd-video",
+      "hd-video",
+      "subtitles",
+      "sound-stereo",
+      "sound-dolby",
+      "sound-",
+      "copyright-mark",
+      "registration-mark",
+      "cloud-download",
+      "cloud-upload",
+      "tree-conifer",
+      "tree-deciduous"
+    ]
+  end
+end

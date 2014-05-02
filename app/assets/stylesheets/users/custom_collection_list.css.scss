@@ -1,0 +1,16 @@
+#users_custom_collection_list {
+  .media-object {
+
+    text-align: center;
+    width: 100px;
+
+    span.glyphicon {
+      // Since the image is actually a font character, the size is adjusted
+      // with font-size, and then we need to re-adjust the span size to
+      // accomodate. What works for me is width=font-size; height=0
+      font-size: 80px;
+      width: 80px; 
+      height: 0px;
+    }
+  }
+}

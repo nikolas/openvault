@@ -58,15 +58,10 @@ class CustomCollection < ActiveRecord::Base
   def collaborator?(user)
     collabs.include?(user)
   end
-
-  def status(user)
-    return "owner" if owner?(user)
-    return "collaborator" if collaborator?(user)
-  end
   
 
-  def poster_image
-    custom_collection_images.first.image.url(:med) unless custom_collection_images.empty?
+  def poster_image(size=:med)
+    custom_collection_images.first.image.url(size) unless custom_collection_images.empty?
   end
 
   

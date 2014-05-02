@@ -1,10 +1,11 @@
 <% title "OpenVault - #{@user.full_name}" %>
-<div id="user_show_page" class="row-fluid">
-  <div class="span1 hidden-phone">
-    &nbsp;
-  </div>
-  <div class="span10">
+<div id="users_show" class="row-fluid">
+  <div class="span12">
+
     <div class="row-fluid">
+      
+      <!-- TODO: Test other screens -->
+      <!-- 
       <div class="row-fluid hidden-desktop hidden-tablet mobile-user-row">
         <%= image_tag @user.avatar.url(:thumb) %>
         <h3><%= @user.full_name %></h3>
@@ -15,59 +16,61 @@
           <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
         </div>
       </div>
-      <div class="hidden-phone desktop-user-row">
-        <div id="user_image" class="span2">
-          <%= image_tag @user.avatar.url(:med) %>
-        </div>
-        <div id="user_info" class="span2">
-          <h3><%= @user.full_name %></h3>
-          <h4><%= @user.title %></h4>
-          <h4><%= @user.organization %></h4>
-          <%= render partial: 'global_partials/share' %>
-          <% if current_user && current_user == @user %>
-            <div class="user-actions">
-              <a href="/users/edit">Edit profile</a>
-            </div>
-          <% end %>
-        </div>
-        <div id="user_bio" class="span8">
-          <p class="bio short-bio"><strong>Bio: </strong>
-            <% if @user.bio? %> 
-              <%= truncate(@user.bio, :length => 800) %><%= "<a href='#' class='more_bio_link'>More</a>".html_safe unless @user.bio.length < 800 %></p>
-              <p class="bio long-bio" style="display:none;"><strong>Bio: </strong><%= @user.bio %></p>
-            <% end %>
-        </div>
-      </div>
-      <div class="clearfix"></div>
+      -->
 
-      <div class="span12">
-        <h2><%= "#{@user.full_name}'s Collections"%></h2>
-        <% @collections.each do |custom_collection| %>
-          <div class="document blacklight-collection">
-            <div class="thumbnail">
-              <%= link_to image_tag(custom_collection.poster_image), custom_collection_path(custom_collection.id) %>
-            </div>
-            <div class="documentHeader">
-              <h3 class="index_title">
-                <%= link_to custom_collection.name, custom_collection %>
-                <span>
-                  <%= collab_status(custom_collection, @user) %>
-                </span>
-              </h3>
-            </div>
-            <div class="defList_container">
-              <div class="blacklight-dc_description_t">
-              <div class="label" style="display:none;">Summary</div>
-              <div class="value"><%= truncate(custom_collection.summary, :length => 150) %></div>
-              </div>
-            </div>
-          </div>
-        <% end %>
+      <div class="span2 avatar">
+        <%= image_tag @user.avatar.url(:med) %>
       </div>
       
+      <div class="span10">
+        <h2><%= @user.full_name %></h2>
+        <% if current_user && current_user == @user %>
+          <%= render partial: 'users/show_actions' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span12">
+        <div id="users_show_tabs" class="tabbable responsive">
+
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
+            </li>
+            <li>
+              <a href="#about" class="about-link" data-toggle="tab">About</a>
+            </li>
+          </ul>
+          
+          <div class="tab-content">
+            <div id="custom-collections" class="tab-pane active fade in">
+              <% if @user.collections %>
+                <%= render partial: 'custom_collection_list' %>
+              <% else %>
+                <%= "#{@user.full_name} does not have any collections yet." %>
+              <% end %>
+            </div>
+
+            <div id="about" class="tab-pane fade in">
+              <dl class="dl-horizontal">
+
+                <dt>Title</dt>
+                <dd><%= @user.title %></dd>
+
+                <dt>Organizations</dt>
+                <dd><%= @user.organization %></dd>
+
+                <dt>Biography</dt>
+                <dd><%= @user.bio %></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   </div>
-  <div class="span1">
-    &nbsp;
-  </div>
+
 </div>
