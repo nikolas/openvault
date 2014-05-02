@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   before_filter :get_user, :only => [:show]
   
   def show
-    @user = @user
-    # @collections = CustomCollection.where(:owner_id => @user.id).includes(:custom_collection_items)
-    @collections = @user.collections
   end
   
   def scholars

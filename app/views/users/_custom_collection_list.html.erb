@@ -20,7 +20,9 @@
             <span>(collaborator)</span>
           <% end %>
         </h3>
-        <%= truncate(custom_collection.summary, :length => 150) %>
+        <p>
+          <%= truncate(custom_collection.summary, :length => 450) %>
+        </p>
       </div>
     </div>
   <% end %>
