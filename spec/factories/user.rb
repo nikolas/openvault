@@ -27,6 +27,13 @@ FactoryGirl.define do
     # the fake user agrees to terms and conditions, and wants to hear all about WGBH's Media Library and Archives
     terms_and_conditions true
     mla_updates true
+
+    # For some reason, before_save callback is not getting triggered
+    # for User model, so we force it here with this little hack.
+    # TODO: Why isn't FG triggering before_save hook when 'creating' new instances?
+    after(:create) do |user|
+        user.save!
+    end
   end
 
   factory :admin, class: User do

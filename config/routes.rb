@@ -50,14 +50,12 @@ Openvault::Application.routes.draw do
   
   #mount Hydra::Collections::Engine => '/'
   
-  #use this for routes to scholars collections (i.e "/john-smith/my-awesome-collection-1")
-  match '/scholar/:username/:custom_collection_slug' => 'custom_collections#show'
-  
   #use this for user profile pages - have to override devise routes for user pages and add custom action
   # match '/scholar/:username' => 'users#show', as: :user
   # match '/user/:id' => 'users#show', as: :user
-  match '/user/:username' => 'users#show', as: :user
-  match '/me' => 'users#show'
-  match '/scholars' => 'users#scholars'
+  get '/user/:username', to: 'users#show', as: :user
+  get '/scholar/:username', to: 'users#scholar'
+  get '/me', to: 'users#show'
+  get '/scholars', to: 'users#scholars'
   
 end

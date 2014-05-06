@@ -19,6 +19,11 @@ describe User do
       User.where(:email => unsaved_user.email).count.should == 0
     end
 
+    it 'creates a user with a slugged username field' do
+      # expect(create(:user).username).to_not be_nil
+      expect(FactoryGirl.create(:user).username).to_not be_nil
+    end
+
     it "returns a hash of fields => values to simulate user input for creating a new user" do
       unsaved_user_attributes = attributes_for(:user)
       unsaved_user_attributes.should be_a Hash

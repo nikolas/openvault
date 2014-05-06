@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
   
-  before_filter :get_user, :only => [:show]
-  
   def show
+    @user = get_user
+  end
+
+  def scholar
+    @user = get_user
+    if @user.role == "scholar"
+      render :show
+    else
+      not_found
+    end
   end
   
   def scholars
