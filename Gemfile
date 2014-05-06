@@ -35,7 +35,6 @@ group :test do
 end
 
 group :development do
-  gem 'debugger'  
   gem 'sextant'
   #gem 'terminal-notifier'
   gem 'capistrano'
@@ -79,4 +78,4 @@ gem "nested_form"
 #gem 'hydra-collections'
 gem "escape_utils"
 gem 'rack-cache', :require => 'rack/cache'
-gem 'pry', '~> 0.9.12.6'
+gem 'byebug', group: [:development, :test]

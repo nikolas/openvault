@@ -97,6 +97,9 @@ GEM
       thor
     buftok (0.1)
     builder (3.0.4)
+    byebug (3.0.0)
+      columnize (~> 0.3)
+      debugger-linecache (~> 1.2)
     cancan (1.6.10)
     capistrano (2.15.5)
       highline
@@ -140,12 +143,7 @@ GEM
     country_select (1.2.0)
     daemons (1.1.9)
     database_cleaner (1.2.0)
-    debugger (1.6.2)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.4)
     deprecation (0.0.5)
       activesupport
     descendants_tracker (0.0.3)
@@ -472,6 +470,7 @@ DEPENDENCIES
   blacklight
   bootstrap-sass
   bootstrap-wysihtml5-rails (~> 0.3.1.23)
+  byebug
   cancan
   capistrano
   capybara
@@ -482,7 +481,6 @@ DEPENDENCIES
   compass-rails
   country_select
   database_cleaner
-  debugger
   devise
   devise-guests (~> 0.3)
   email_spec
@@ -500,7 +498,6 @@ DEPENDENCIES
   mysql2 (~> 0.3.11)
   nested_form
   pdf-reader
-  pry (~> 0.9.12.6)
   rack-cache
   rails (~> 3.2.14)
   rb-fsevent (~> 0.9)
