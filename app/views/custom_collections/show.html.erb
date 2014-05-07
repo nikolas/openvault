@@ -16,11 +16,13 @@
       </div>
       <div id="article-content" class="tab-pane fade in" data-article="<%= @custom_collection.article.url %>">
         <% unless @custom_collection.article.nil? %>
-          <p class="article_rights"><%= @custom_collection.article_rights.to_s %></p>
-          <%= pdf_viewer("http://localhost:3000#{@custom_collection.article.url}") %>
           <p class="hidden-tablet hidden-desktop pdf-download-link"><%= link_to 'View PDF', @custom_collection.article.url, :target => "_blank" %></p>
-          <%= javascript_include_tag "pdfviewer" %>
-          <%= stylesheet_link_tag "viewer" %>
+          <iframe class="pdf-container hidden-phone" src="<%= @custom_collection.article.url %>">
+            <p class="pdf-download-link">
+              Browser does not appear to support iframes. Try <%= link_to 'this link', @custom_collection.article.url, :target => "_blank" %>.
+            </p>
+          </iframe>
+          <p class="article_rights"><%= @custom_collection.article_rights.to_s %></p>
         <% end %>
       </div>
       <div id="media" class="tab-pane fade in">
@@ -155,19 +157,23 @@
       </div>
 
       <div id="collabs" class="tab-pane fade in">
+
         <% unless @custom_collection.collabs.nil? %>
-        <h3>Collaborators:</h3>
-        <ul>
-          <li><strong><%= @custom_collection.owner_name %> (owner)</strong></li>
-          <% @custom_collection.collabs_without_owner.each do |collab| %>
-            <li><%= collab.full_name %></li>
-          <% end %>
-        </ul>
+          <h3>Collaborators:</h3>
+          <ul>
+            <li><strong><%= @custom_collection.owner_name %> (owner)</strong></li>
+            <% @custom_collection.collabs_without_owner.each do |collab| %>
+              <li><%= collab.full_name %></li>
+            <% end %>
+          </ul>
         <% end %>
-        <br/>
+        
+        <p class="collection_credits">
+          Advisors: <%= @custom_collection.credits.to_s %>
+        </p>
+
       </div>
     </div>
-    <p class="collection_credits">Credits: <%= @custom_collection.credits.to_s %></p>
     <% if current_user && current_user == @custom_collection.owner %>
       <%= link_to 'Edit collection details', edit_custom_collection_path(@custom_collection) %>
       <%#= link_to 'Back', @custom_collections_path %>
