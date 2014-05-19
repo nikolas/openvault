@@ -7,8 +7,6 @@
 # Ignore bundler config
 /.bundle
 /.rvmrc
-.ruby-version
-.ruby-gemset
 
 /app/assets/images/mosaic-*.png
 # Ignore the default SQLite database.
