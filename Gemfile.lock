@@ -114,9 +114,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.0.0)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -126,6 +123,7 @@ GEM
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     chunky_png (1.2.9)
+    cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -313,6 +311,12 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
+    phantomjs (1.9.7.0)
+    poltergeist (1.5.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -454,6 +458,7 @@ GEM
     warden (1.2.3)
       rack (>= 1.0)
     websocket (1.0.7)
+    websocket-driver (0.3.2)
     xml-simple (1.1.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -476,7 +481,6 @@ DEPENDENCIES
   cancan
   capistrano
   capybara
-  capybara-webkit
   carrierwave
   coffee-rails (~> 3.2.1)
   compass
@@ -501,6 +505,8 @@ DEPENDENCIES
   mysql2 (~> 0.3.11)
   nested_form
   pdf-reader
+  phantomjs
+  poltergeist
   pry
   rack-cache
   rails (~> 3.2.14)

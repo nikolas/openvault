@@ -27,7 +27,8 @@ group :test do
 
   # acceptance testing stuff
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
+  gem 'phantomjs'
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'selenium-webdriver'
