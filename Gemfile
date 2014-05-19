@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '~>3.2.14'
 
 gem 'mysql2', "~>0.3.11"
@@ -16,6 +18,9 @@ end
 
 group :test do
   # functional testing stuff
+  gem 'pry'
+  gem 'rspec'
+  gem 'awesome_print'
   gem 'rspec-rails'
 
   # test data stuff
@@ -30,13 +35,13 @@ group :test do
   gem 'selenium-webdriver'
   gem 'launchy'
   # stuff to autorun test
-  gem 'guard-rspec'
+  gem 'guard', '>= 2.6.0'
+  gem 'guard-rspec', '>= 4.2.8'
   gem 'rb-fsevent', '~> 0.9'
 end
 
 group :development do
   gem 'sextant'
-  #gem 'terminal-notifier'
   gem 'capistrano'
   gem 'rvm-capistrano'
 end
