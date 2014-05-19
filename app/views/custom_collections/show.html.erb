@@ -118,7 +118,7 @@
         <p>
           <b>Custom Collection Items (Audio):</b>
           <% @custom_collection.custom_collection_items.audios.each do |col| %>
-            Audio: <%= link_to col.ov_asset['title_tesim'], "/audio/#{col.ov_asset['slug']}" %>
+            Audio: <%= link_to col.ov_asset['title_tesim'], "/audio/#{col.ov_asset['id']}" %>
           <% end %>
         </p>
         <% end %>
@@ -126,7 +126,7 @@
         <p>
           <b>Custom Collection Items (Programs):</b>
           <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            Program: <%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" if col.ov_asset %>
+            Program: <%= link_to col.ov_asset['title_tesim'], program_path(col.ov_asset['id']) %>
           <% end %>
         </p>
         <% end %>
@@ -134,7 +134,7 @@
         <p>
           <b>Custom Collection Items (Series):</b>
           <% @custom_collection.custom_collection_items.series.each do |col| %>
-            Series: <%= link_to col.ov_asset['title_tesim'], "/series/#{col.ov_asset['slug']}" %>
+            Series: <%= link_to col.ov_asset['title_tesim'], "/series/#{col.ov_asset['id']}" %>
           <% end %>
         </p>
         <% end %>
