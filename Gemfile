@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
 gem 'rails', '~>3.2.14'
 
 gem 'mysql2', "~>0.3.11"
@@ -83,4 +81,4 @@ gem "nested_form"
 #gem 'hydra-collections'
 gem "escape_utils"
 gem 'rack-cache', :require => 'rack/cache'
-gem 'byebug', groups: [:development, :test]
+gem 'byebug', groups: [:development, :test], :platform => :ruby_20
