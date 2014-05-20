@@ -81,7 +81,7 @@
             </div>
             <div class="hidden-desktop hidden-tablet mobile-video-links">
               <% @custom_collection.custom_collection_items.videos.each do |col| %>
-                <%= link_to col.ov_asset['title_tesim'], "/video/#{col.ov_asset['slug']}" %>
+                <%= link_to col.ov_asset['title_tesim'], video_path(col.ov_asset['id']) %>
               <% end %>
             </div>
             <hr />
@@ -103,7 +103,7 @@
               <source src="/assets/video_test.ogg" type='video/ogg' />
             </video>
             <h3>
-              <a href="/video/<%= @custom_collection.custom_collection_items.videos.first.ov_asset['slug'] %>">
+              <a href="/video/<%= @custom_collection.custom_collection_items.videos.first.ov_asset['id'] %>">
                 <%= @custom_collection.custom_collection_items.videos.first.ov_asset['title_tesim'].try(:first).to_s %>
               </a>
             </h3>
