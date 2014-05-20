@@ -7,4 +7,4 @@ rvm:
 before_script:
   - mysql -e 'create database ov_test;'
   - bundle exec rake db:migrate --trace
-  - rake jetty:start
+  - bundle exec rake jetty:start
