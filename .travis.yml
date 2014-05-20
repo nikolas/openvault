@@ -6,4 +6,4 @@ rvm:
   - 2.0.0
 before_script:
   - mysql -e 'create database ov_test;'
-  - bundle exec rake db:migrate
+  - bundle exec rake db:migrate --trace
