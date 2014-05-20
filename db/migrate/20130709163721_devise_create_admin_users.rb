@@ -1,4 +1,7 @@
 class DeviseCreateAdminUsers < ActiveRecord::Migration
+  class AdminUser < User
+  end
+  
   def migrate(direction)
     super
     # Create a default user
