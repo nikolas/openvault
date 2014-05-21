@@ -175,3 +175,18 @@ feature "User removes a catalog item from a collection" do
     expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
   end
 end
+
+feature "Non-scholar users don't see custom collections tab on their profile page" do
+  before :each do
+    Warden.test_reset!
+    @member = create(:user)
+  end
+  
+  scenario 'when they are signed in as a member' do
+    login_as(@member, :scope => :user, :run_callbacks => false)
+    visit me_path
+    within("#users_show_tabs") do
+      expect(page).not_to have_content("Collections")
+    end
+  end
+end

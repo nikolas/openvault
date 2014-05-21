@@ -39,9 +39,11 @@
         <div id="users_show_tabs" class="tabbable responsive">
 
           <ul class="nav nav-tabs">
-            <li class="active">
-              <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
-            </li>
+            <% if @user.role == "scholar" %>
+              <li class="active">
+                <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
+              </li>
+            <% end %>
             <li>
               <a href="#about" class="about-link" data-toggle="tab">About</a>
             </li>
