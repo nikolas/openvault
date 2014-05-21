@@ -49,6 +49,7 @@ gem 'jquery-rails', "2.3.0"
 
 gem 'blacklight'
 gem 'hydra', '6.1.0'
+gem 'hydra-head'
 gem 'jettywrapper'
 
 # To use Jbuilder templates for JSON
