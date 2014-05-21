@@ -27,6 +27,7 @@ group :test do
 
   # acceptance testing stuff
   gem 'capybara'
+  gem 'capybara-screenshot'
   gem 'poltergeist'
   gem 'phantomjs'
   gem 'database_cleaner'
