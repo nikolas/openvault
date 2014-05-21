@@ -49,7 +49,7 @@ feature 'Visitor signs up' do
   
 end
 
-feature "Edit User Profile" do
+feature "Edit User Profile", :wip => true do
   before :each do 
     Warden.test_reset!
     visit destroy_user_session_url
@@ -60,6 +60,10 @@ feature "Edit User Profile" do
     @user.delete
   end
 
+  scenario "user cannot view profile page when not logged in" do 
+    visit user_root_path
+    expect(page).to have_content('You must be logged in to view your profile')
+  end
   # Add expectations for any field that does not require a password to be changed.
   scenario "does not require password to change most fields" do
 
