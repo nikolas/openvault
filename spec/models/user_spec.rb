@@ -99,13 +99,19 @@ describe User do
 
     context "when they are not a scholar" do
 
-      let(:user)  { create(:user, role: "member") }
-      subject { Ability.new(user) }
+      let(:user) { create(:user, role: 'scholar') }
+      let(:custom_collection) { create(:custom_collection, owner: user) }
 
-      it { should be_able_to(:index, CustomCollection) }
-      it { should be_able_to(:show, CustomCollection) }
-      it { should_not be_able_to(:create, CustomCollection) }
-      it { should_not be_able_to(:destroy, CustomCollection) }
+      let(:user2)  { create(:user, role: "member") }
+      subject { Ability.new(user2) }
+
+      it { should be_able_to(:index, custom_collection) }
+      it { should be_able_to(:show, custom_collection) }
+      it { should_not be_able_to(:create, custom_collection) }
+      it { should_not be_able_to(:destroy, custom_collection) }
+      it { should_not be_able_to(:update, custom_collection) }
+      it { should_not be_able_to(:add_item, custom_collection) }
+      it { should_not be_able_to(:remove_item, custom_collection) }
 
     end
 

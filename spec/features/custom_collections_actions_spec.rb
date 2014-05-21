@@ -66,7 +66,7 @@ feature 'Scholar attaches files to a collection' do
   
 end
 
-feature 'User tries to edit a collection' do
+feature 'User tries to edit a collection', :wip => true do
   
   before :each do
     Warden.test_reset!
@@ -74,18 +74,31 @@ feature 'User tries to edit a collection' do
     @scholar2 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, owner: @scholar1)
+    @custom_collection1.save
     @custom_collection2 = create(:custom_collection, owner: @scholar2)
+    @custom_collection2.save
   end
   
   scenario 'when the user is not signed in' do
     visit "/custom_collections/#{@custom_collection1.id}/edit"
     expect(page).to have_content 'You are not authorized to access this page.'
   end
+
+  scenario 'when the user is not signed in they do not see edit collection link' do
+    visit "/custom_collections/#{@custom_collection1.id}"
+    expect(page).not_to have_content 'Edit collection details'
+  end
   
   scenario 'when the user is signed in but not a scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@custom_collection1.id}/edit"
     expect(page).to have_content 'You are not authorized to access this page.'
+  end
+
+  scenario 'when the user is signed in but not a scholar they do not see edit collection link' do
+    login_as(@member, :scope => :user, :run_callbacks => false)
+    visit "/custom_collections/#{@custom_collection1.id}"
+    expect(page).not_to have_content 'Edit collection details'
   end
   
   scenario 'when the user is signed in IS a scholar BUT did not create' do
