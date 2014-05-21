@@ -1,12 +1,20 @@
 require 'spec_helper'
-
-# NOTE: FactoryGirl shortcut methods (create, build, attributes_for, etc.) are included in spec_helper.rb
+require_relative '../factories/user'
+require_relative '../factories/org'
+require_relative '../factories/custom_collection'
+require_relative '../factories/custom_collection_item'
 
 describe CustomCollection do
 
+  describe 'factory' do
+    it 'can build a valid instance' do
+      build(:custom_collection).should be_valid
+    end
 
-  it 'has a valid factory' do
-    build(:custom_collection).should be_valid
+    it 'can create a valid instance' do
+      cc = create(:custom_collection)
+      expect(cc.new_record?).to be_false
+    end
   end
 
   it 'is invalid without an owner' do
@@ -43,24 +51,37 @@ describe CustomCollection do
   end
 
 
-  # TODO: put this creation logic into a factory
-  it "creates a valid custom collection item" do
-    collection = create(:custom_collection)
-    v = Video.new
-    v.save
-    collection.add_collection_item(v.pid, "Video")
-    collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
+  describe '#custom_collection_items <<' do
+    # before :all do
+    #   @custom_collection = FactoryGirl.create(:custom_collection)
+    #   @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
+    # end
+
+    it 'adds CustomCollectionItem instance to has_many association' do
+      @custom_collection = create(:custom_collection)
+      @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
+      @custom_collection_items.each { |item| @custom_collection.custom_collection_items << item }
+      expect(@custom_collection.custom_collection_items.count).to eq 5
+    end
   end
 
-  describe 'has many Users' do
+  # it "creates a valid custom collection item" do
+  #   collection = create(:custom_collection)
+  #   v = Video.new
+  #   v.save
+  #   collection.add_collection_item(v.pid, "Video")
+  #   collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
+  # end
+
+  describe '#users <<' do
     before :all do
       @custom_collection = FactoryGirl.create(:custom_collection)
       @users = FactoryGirl.create_list(:user, 5)
     end
 
-    it "should handle adding multiple User instances via #collabs" do
+    it "adds User instance to has_many association" do
       @users.each { |user| @custom_collection.collabs << user }
-      @custom_collection.collabs.count.should == 5
+      expect(@custom_collection.collabs.count).to eq 5
     end
   end
   

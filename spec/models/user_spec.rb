@@ -1,7 +1,9 @@
 require 'spec_helper'
 require 'cancan/matchers'
+require_relative '../factories/user'
+require_relative '../factories/org'
+require_relative '../factories/custom_collection'
 
-# NOTE: FactoryGirl shortcut methods (create, build, attributes_for, etc.) are included in spec_helper.rb
 
 describe User do
 

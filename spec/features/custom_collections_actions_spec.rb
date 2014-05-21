@@ -1,5 +1,9 @@
 require 'spec_helper'
 require 'helpers/test_helper'
+require_relative '../factories/custom_collection'
+require_relative '../factories/user'
+require_relative '../factories/custom_collection_item'
+
 include Warden::Test::Helpers
 Warden.test_mode!
 

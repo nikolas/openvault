@@ -43,15 +43,17 @@ class Video < OpenvaultAsset
 
   # TODO: shared with Image model. Make into a concern?
   def original_file_name
+    filename = ''
     for i in 0..pbcore.instantiations.count do
       instantiation = pbcore.instantiations(i)
       for j in 0..instantiation.id.count do
         instantiation_id = instantiation.id(j)
         if instantiation_id.source == ["Original file name"]
-          return instantiation_id.first
+          filename = instantiation_id.first
         end
       end
     end
+    filename
   end
   
   #Video Metadata

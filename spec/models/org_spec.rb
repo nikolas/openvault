@@ -1,8 +1,18 @@
 require 'spec_helper'
+require_relative '../factories/org'
+require_relative '../factories/user'
 
 describe Org do
-  it 'has a valid factory' do
-    build(:org).should be_valid
+
+  describe 'factory' do
+    it 'builds a valid instance' do
+      expect(build(:org)).to be_valid
+    end
+
+    it 'creates a record' do
+      org = FactoryGirl.create(:org)
+      expect(org.new_record?).to be_false
+    end
   end
 
   it 'is invalid without a name' do
