@@ -57,7 +57,7 @@
             </div>
 
             <div id="about" class="tab-pane fade in">
-                <p><%= @user.bio %></p>
+                <p><%= simple_format(@user.bio) %></p>
             </div>
           </div>
         </div>
