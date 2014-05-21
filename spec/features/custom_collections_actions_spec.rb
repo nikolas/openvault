@@ -175,3 +175,20 @@ feature "User removes a catalog item from a collection" do
     expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
   end
 end
+
+feature "User visits a custom collection without images", :wip => true do
+  before :each do
+    Warden.test_reset!
+    @scholar = create(:user, role: 'scholar')
+    @cc = create(:custom_collection, owner: @scholar, name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf')
+    @cc.save
+  end
+
+  scenario 'no images in custom collection' do
+    login_as(@scholar, :scope => :user, :run_callbacks => false)
+    visit "/custom_collections/#{@cc.id}"
+    click_link "Images"
+    save_and_open_page
+    expect(page).to have_content("no images for this collection")
+  end
+end
