@@ -49,7 +49,7 @@ feature 'Visitor signs up' do
   
 end
 
-feature "Edit User Profile", :wip => true do
+feature "Edit User Profile" do
   before :each do 
     Warden.test_reset!
     visit destroy_user_session_url
