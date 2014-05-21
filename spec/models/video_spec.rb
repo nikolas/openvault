@@ -21,8 +21,8 @@ describe Video do
 
       video.pbcore.ng_xml = Fixtures.use('artesia/patriots_day/video_2.xml').ng_xml
       video.title.should == "Malcolm X Interview"
-      
+
     end
   end
-  
+
 end
