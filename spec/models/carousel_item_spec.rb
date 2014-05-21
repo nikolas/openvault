@@ -1,6 +1,20 @@
 require 'spec_helper'
+require_relative '../factories/carousel_item'
 
 describe CarouselItem do
+
+  describe 'factory' do
+    it 'builds a valid instance' do
+      expect(build(:carousel_item)).to be_valid
+    end
+
+    it 'creates a record' do
+      carousel_item = create(:carousel_item)
+      expect(carousel_item.new_record?).to be_false
+    end
+  end
+
+
   before :each do
     @carousel_item = build(:carousel_item)
   end
