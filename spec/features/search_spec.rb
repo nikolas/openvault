@@ -3,6 +3,9 @@ require 'helpers/test_helper'
 require 'openvault'
 require 'openvault/pbcore'
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
+
+require_relative '../factories/series'
+
 include Warden::Test::Helpers
 Warden.test_mode!
 
