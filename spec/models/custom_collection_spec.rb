@@ -52,17 +52,16 @@ describe CustomCollection do
 
 
   describe '#custom_collection_items <<' do
-    # before :all do
-    #   @custom_collection = FactoryGirl.create(:custom_collection)
-    #   @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
-    # end
+    before :all do
+      @custom_collection = FactoryGirl.create(:custom_collection)
+      @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
+    end
 
     it 'adds CustomCollectionItem instance to has_many association' do
-      @custom_collection = create(:custom_collection)
-      @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
       @custom_collection_items.each { |item| @custom_collection.custom_collection_items << item }
       expect(@custom_collection.custom_collection_items.count).to eq 5
     end
+
   end
 
   # it "creates a valid custom collection item" do

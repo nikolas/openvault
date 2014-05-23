@@ -22,7 +22,7 @@ module Openvault::Pbcore
       @ng_xml ||= @namespaced_xml.remove_namespaces!
     end
 
-    def ng_pbcore_desc_docs 
+    def ng_pbcore_desc_docs
       @ng_pbcore_desc_docs ||= ng_xml.xpath('//pbcoreDescriptionDocument')
     end
 
@@ -36,16 +36,8 @@ module Openvault::Pbcore
       end
     end
 
-    def ingest!
-      with_desc_docs do |doc|
-        doc.model.save! 
-        self.pids << doc.model.pid
-      end
-
-      relate_pids!
-    end
-
-    def ingest 
+    def ingest
+      Rails.logger.info("#{ng_pbcore_desc_docs.count} records identified.")
       with_desc_docs do |doc|
         begin
           doc.model.save && (self.pids << doc.model.pid)

@@ -22,7 +22,7 @@
             <p><strong>Videos</strong></p>
             <ul>
             <% @custom_collection.custom_collection_items.videos.each do |col| %>
-              <li><%= link_to col.ov_asset['title_tesim'].first.to_s, "/video/#{col.ov_asset['slug']}" %>&nbsp;
+              <li><%= link_to col.solr_doc['title_tesim'].first.to_s, "/video/#{col.solr_doc['slug']}" %>&nbsp;
               <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
             <% end %>
             </ul>
@@ -33,7 +33,7 @@
           <p><strong>Audios</strong></p>
           <ul>
           <% @custom_collection.custom_collection_items.audios.each do |col| %>
-            <li><%= link_to col.ov_asset['title_tesim'], "/audio/#{col.ov_asset['slug']}" %>&nbsp;
+            <li><%= link_to col.solr_doc['title_tesim'], "/audio/#{col.solr_doc['slug']}" %>&nbsp;
             <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
           <% end %>
           </ul>
@@ -44,7 +44,7 @@
           <p><strong>Programs</strong></p>
           <ul>
           <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            <li><%= link_to col.ov_asset['title_tesim'], "/programs/#{col.ov_asset['slug']}" %>&nbsp;
+            <li><%= link_to col.solr_doc['title_tesim'], "/programs/#{col.solr_doc['slug']}" %>&nbsp;
             <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
           <% end %>
           </ul>
@@ -55,7 +55,7 @@
           <p><strong>Series</strong></p>
           <ul>
           <% @custom_collection.custom_collection_items.series.each do |col| %>
-            <li><%= link_to col.ov_asset['title_tesim'], "/series/#{col.ov_asset['slug']}" %>&nbsp;
+            <li><%= link_to col.solr_doc['title_tesim'], "/series/#{col.solr_doc['slug']}" %>&nbsp;
             <a href="/custom_collections/<%= @custom_collection.id %>/remove_item?asset_id=<%= col.openvault_asset_pid %>" class="remove_item" id="remove_<%= col.openvault_asset_pid %>"><i class="icon-trash"></i>&nbsp;Remove</a></li>
           <% end %>
           </ul>
