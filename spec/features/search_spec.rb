@@ -25,8 +25,6 @@ feature 'Search' do
 
       search({q: series_records.first.title })
 
-      save_and_open_page
-
       expect(page).to have_css("#documents .document", :count => 1)
     end
   

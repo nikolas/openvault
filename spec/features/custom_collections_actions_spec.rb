@@ -205,7 +205,6 @@ feature "User visits a custom collection without images", :wip => true do
     login_as(@scholar, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@cc.id}"
     click_link "Images"
-    save_and_open_page
     expect(page).to have_content("no images for this collection")
   end
 end
