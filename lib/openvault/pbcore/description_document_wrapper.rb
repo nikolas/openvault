@@ -1,9 +1,9 @@
 module Openvault::Pbcore
   class DescriptionDocumentWrapper
- 
+
     def initialize(doc=nil)
       @doc = doc unless doc.nil?
-      @classifier = AssetClassifier.new(@doc)      
+      @classifier = AssetClassifier.new(@doc)
     end
 
     def doc
@@ -16,16 +16,16 @@ module Openvault::Pbcore
       @doc = doc
       @classifier.doc = doc
     end
-    
+
     # Returns appropriate ActiveFedora model class for the pbcore datastream
     def model_class
-      %w(series program transcript video audio image).each do |type| 
+      %w(series program transcript video audio image).each do |type|
         return Kernel.const_get(type.classify) if (@classifier.send("is_#{type}?".to_s))
       end
-      raise "Hey, I don't know which model to use for this pbcore: #{self.doc.inspect}" 
-    end 
+      raise "Hey, I don't know which model to use for this pbcore: #{self.doc.inspect}"
+    end
 
-    def new_model 
+    def new_model
       model_class.new.tap do |model|
         model.pbcore.ng_xml = doc.ng_xml
       end
@@ -35,13 +35,12 @@ module Openvault::Pbcore
     # Fedora for existing instances of models that contain
     # those values. If not found, returns a new model, and assigns
     # the pbcore datastream to it.
-    def model 
+    def model
       @model ||= fedora_models.first || new_model
     end
 
     def fedora_models
       @fedora_models ||= ActiveFedora::Base.find({"all_ids_tesim" => doc.all_ids})
     end
-
   end
 end
