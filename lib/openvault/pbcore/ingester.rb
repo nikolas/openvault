@@ -3,7 +3,7 @@ require 'openvault/pbcore/description_document_wrapper'
 
 module Openvault::Pbcore
   class Ingester
-    attr_accessor :xml, :pids, :failed 
+    attr_accessor :xml, :pids, :failed
 
     def initialize(xml=nil)
       @xml = xml
@@ -31,7 +31,6 @@ module Openvault::Pbcore
         doc = PbcoreDescDoc.new.tap do |doc|
                 doc.ng_xml = ng_pbcore_desc_doc
               end
-        
         yield DescriptionDocumentWrapper.new(doc)
       end
     end
