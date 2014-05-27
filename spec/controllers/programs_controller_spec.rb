@@ -10,11 +10,12 @@ describe ProgramsController do
       ab.delete
     end
     Fixtures.cwd("#{fixture_path}/pbcore")
-    a = Openvault::Pbcore.get_model_for(Fixtures.use("artesia/rock_and_roll/program_1.xml"))
+    a = Openvault::Pbcore::DescriptionDocumentWrapper.new(Fixtures.use("artesia/rock_and_roll/program_1.xml")).new_model
     a.save!
-    a.create_relations_from_pbcore!
+    Openvault::Pbcore::AssetRelationshipBuilder.new(a).relate
     @id = a.pid
   end
+
   describe "GET show" do
     it "returns a valid solr document" do
       get :show, {id: @id}
