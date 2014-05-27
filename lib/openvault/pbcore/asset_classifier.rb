@@ -2,6 +2,10 @@ module Openvault::Pbcore
   class AssetClassifier
     attr_accessor :doc
 
+    def self.asset_types
+      %w(series program transcript video audio image)
+    end
+
     def initialize(doc=nil)
       @doc = doc
     end
@@ -27,7 +31,13 @@ module Openvault::Pbcore
     #     NOTE: A program record may have title types other than "Program", namely it may also have titles of type "Series" and "Episode",
     #       but for our consideration, it is still a Program record.
     def is_program?
-      !doc.program_title.empty? && non_program_titles.empty? && !self.is_image? && !self.is_transcript?
+      !doc.program_title.empty? &&
+      non_program_titles.empty? &&
+      non_program_asset_types.reduce { |r, type| r && !send("is_#{type}?".to_sym) }
+    end
+
+    def non_program_asset_types
+      AssetClassifier.asset_types - ['series', 'program', 'episode']
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Video record
