@@ -78,7 +78,6 @@ RSpec.configure do |config|
   config.after(:suite) do
     ActiveFedora::Base.destroy_all
   end
-
 end
 
 module Rack
