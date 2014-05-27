@@ -30,15 +30,15 @@ module Openvault::Pbcore
       !doc.program_title.empty? && non_program_titles.empty? && !self.is_image? && !self.is_transcript?
     end
 
-    # Returns true if PbcoreDescDoc datastream describes a Program record
-    # It is a Program if:
+    # Returns true if PbcoreDescDoc datastream describes a Video record
+    # It is a Video if:
     #   - the media type is "moving image"
     def is_video?
       !media_type.nil? && media_type.downcase ==  "moving image"
     end
 
-    # Returns true if PbcoreDescDoc datastream describes a Program record
-    # It is a Program if:
+    # Returns true if PbcoreDescDoc datastream describes an Image record
+    # It is an Image if:
     #   - the media type is "static image"
     #   - OR
     #   - the asset type contains the string with "photograph"
@@ -46,15 +46,15 @@ module Openvault::Pbcore
       (!media_type.nil? && media_type.downcase == "static image") || (!asset_type.nil? && asset_type.downcase.include?("photograph"))
     end
 
-    # Returns true if PbcoreDescDoc datastream describes a Program record
-    # It is a Program if:
+    # Returns true if PbcoreDescDoc datastream describes an Audio record
+    # It is a Audio if:
     #   - the media type is "audio"
     def is_audio?
       !media_type.nil? && media_type.downcase == "audio"
     end
 
-    # Returns true if PbcoreDescDoc datastream describes a Program record
-    # It is a Program if:
+    # Returns true if PbcoreDescDoc datastream describes a Transcript record
+    # It is a Transcript if:
     #   - the asset type contains the string "transcript"
     def is_transcript?
       !asset_type.nil? && asset_type.downcase.include?('transcript')
