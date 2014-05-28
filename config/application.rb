@@ -25,16 +25,13 @@ module Openvault
     #change scaffold to build rspec tests
     config.generators do |g|
       g.test_framework :rspec,
-        :fixtures => true,
+        :fixtures => false,
         :view_specs => false,
         :helper_specs => false,
         :routing_specs => false,
         :controller_specs => true,
         :request_specs => true
-      # g.fixture_replacement :factory_girl, :dir => "spec/factories"
-      # If you uncomment this configuration line (for example if you remove fixtures)
-      # then be sure to remove the Factory autloader line from spec_helper.rb
-
+      g.factory_girl true
     end
     # Only needed if we're using BawstunCommons with Sufia.
     # config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]

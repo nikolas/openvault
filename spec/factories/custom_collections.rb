@@ -7,6 +7,6 @@ FactoryGirl.define do
     summary { Faker::Lorem.paragraph }
 
     # make the default owned by a User who is a 'scholar'
-    association :owner, factory: :user, role: 'scholar'
+    association :owner, factory: :scholar_user
   end
 end

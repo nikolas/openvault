@@ -1,8 +1,4 @@
 require 'spec_helper'
-require_relative '../factories/user'
-require_relative '../factories/org'
-require_relative '../factories/custom_collection'
-require_relative '../factories/custom_collection_item'
 
 describe CustomCollection do
 

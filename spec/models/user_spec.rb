@@ -1,9 +1,5 @@
 require 'spec_helper'
 require 'cancan/matchers'
-require_relative '../factories/user'
-require_relative '../factories/org'
-require_relative '../factories/custom_collection'
-
 
 describe User do
 
@@ -31,7 +27,7 @@ describe User do
       unsaved_user_attributes.should be_a Hash
       User.where(:email => unsaved_user_attributes[:email]).count.should == 0
     end
-    
+
     # it "returns a contact's full name as a string" do
     #   saved_user = create(:user)
     # end
@@ -39,17 +35,17 @@ describe User do
       saved_user = create(:user)
       saved_user.work_string.should eq("#{saved_user.title} at #{saved_user.organization}")
     end
-    
+
     it "returns the proper work_string when just title is present" do
       saved_user = create(:user, organization: nil)
       saved_user.work_string.should eq("#{saved_user.title}")
     end
-    
+
     it "returns the proper work_string when just org is present" do
       saved_user = create(:user, title: nil)
       saved_user.work_string.should eq("works at #{saved_user.organization}")
     end
-    
+
     it "fails to save when user bio is greater than 5000 characters" do
       bio = Array.new(5001, 'x').join
       unsaved_user = build(:user, bio: bio)
@@ -59,17 +55,17 @@ describe User do
   end
 
   describe "has many CustomCollections" do
-   
+
     before(:all) do
       @user = FactoryGirl.create(:user)
       @custom_collections = FactoryGirl.create_list(:custom_collection, 5)
     end
-    
+
     it "should handle adding multiple CustomCollections to a User" do
       @custom_collections.each { |cc| @user.collab_collections << cc }
       @user.collab_collections.count.should == 5
     end
-    
+
   end
 
   describe "has many Orgs" do

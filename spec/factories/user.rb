@@ -26,6 +26,20 @@ FactoryGirl.define do
     mla_updates true
   end
 
+  factory :scholar_user, parent: :user do
+    role 'scholar'
+  end
+
+  factory :user_with_custom_collection, parent: :scholar_user do
+    after(:create) do |user|
+      user.save!
+      5.times do |n|
+        user.owned_collections << FactoryGirl.create(:custom_collection)
+      end
+    end
+  end
+
+
   factory :admin, class: User do
     # the fake user has arbitrary name, email, and passowrd.
     first_name { Faker::Name.first_name }

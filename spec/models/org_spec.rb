@@ -1,6 +1,4 @@
 require 'spec_helper'
-require_relative '../factories/org'
-require_relative '../factories/user'
 
 describe Org do
 
