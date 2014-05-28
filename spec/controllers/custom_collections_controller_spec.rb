@@ -30,7 +30,7 @@ describe CustomCollectionsController do
     describe "GET show" do
       it "assigns the requested custom_collection as @custom_collection" do
         get :show, {:id => custom_collection.id}
-        expect(assigns(:custom_collection)).to include(custom_collection)
+        expect(assigns(:custom_collection)).to eq(custom_collection)
       end
     end
 
