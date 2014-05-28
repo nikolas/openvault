@@ -39,7 +39,6 @@ RSpec.configure do |config|
   config.order = "random"
 
   # Include some stuff
-  config.include Devise::TestHelpers, type: :controller
   config.include FactoryGirl::Syntax::Methods
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers

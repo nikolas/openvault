@@ -9,8 +9,8 @@ FactoryGirl.define do
 
     # NOTE: The user that is created by this factory will NOT have a password nor password_confirmation
     # for attr_accessors. When the
-    password { Faker::Lorem.characters 8 }
-    password_confirmation { "#{password}" }
+    password { rand(10000..100000).to_s*8 }
+    password_confirmation { |u| "#{u.password}" }
 
     title {Faker::Name.title}
     organization {Faker::Company.name}

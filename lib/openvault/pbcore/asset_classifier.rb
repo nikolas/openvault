@@ -67,7 +67,7 @@ module Openvault::Pbcore
     # It is a Transcript if:
     #   - the asset type contains the string "transcript"
     def is_transcript?
-      !asset_type.nil? && asset_type.downcase.include?('transcript')
+      (!asset_type.nil? && asset_type.downcase.include?('transcript'))
     end
 
     def asset_type
