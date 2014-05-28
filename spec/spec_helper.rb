@@ -15,6 +15,10 @@ Capybara.default_wait_time = 5
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# Because g.fixture_replacement :factory_girl, :dir => "spec/factories"
+# is commented out in application.rb, we have to load factories ourselves.
+Dir[Rails.root.join("spec/factories/**/*.rb")].each {|f| require f}
+
 # Require custom capybara feature steps
 Dir[Rails.root.join("spec/features/steps/**/*.rb")].each { |f| require f }
 
