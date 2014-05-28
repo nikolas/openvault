@@ -36,12 +36,11 @@ describe CustomCollection do
   it "is invalid without a name" do
     build(:custom_collection, name: nil).should_not be_valid
   end
-  
+
   it "is invalid without a summary"  do
     build(:custom_collection, summary: nil).should_not be_valid
   end
-  
-  
+
   pending "has a valid vanity url" do
     # I scrapped this for now because I don't think that URL logic should go in the model,
     # but not sure how to implement it at the moment.
@@ -49,7 +48,6 @@ describe CustomCollection do
     # collection = create(:custom_collection, name: 'testing 1', owner: user)
     # collection.vanity_url.should eq("/scholar/john-smith/testing-1")
   end
-
 
   describe '#custom_collection_items <<' do
     before :all do
@@ -83,5 +81,4 @@ describe CustomCollection do
       expect(@custom_collection.collabs.count).to eq 5
     end
   end
-  
 end

@@ -4,7 +4,7 @@ describe CustomCollectionsController do
 
   describe "as a scholar" do
     before :each do
-      @user = create(:user, role: 'scholar')
+      @user = FactoryGirl.create(:user, role: 'scholar')
       sign_in @user
       # @custom_collection_attrs = attributes_for(:custom_collection, :owner_id => @user.id, :owner_type => "User")
       @custom_collection_attrs = attributes_for(:custom_collection, :owner_id => @user.id, :owner_type => @user.class.to_s)
