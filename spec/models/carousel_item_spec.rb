@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe CarouselItem do
-
   describe 'factory' do
     it 'builds a valid instance' do
       expect(build(:carousel_item)).to be_valid

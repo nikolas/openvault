@@ -20,6 +20,7 @@ describe RegistrationsController do
       # I tried creating the fake user in before(:all), but then you can't simulate signing in with sign_in helper.
       # No logical reason why. Just cant do it. Whatever. Sick of trying to figure out why. Moving on.
       @user = create(:user, :password => '123456789')
+      @user.save
 
       # sign in as the fake user
       sign_in @user

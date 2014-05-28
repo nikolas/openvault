@@ -133,7 +133,6 @@ describe CustomCollectionsController do
 
     before :each do
       sign_in member
-      member.save and scholar.save and cc.save # TODO: should not be necessary, but it is
     end
 
     describe "GET index" do
