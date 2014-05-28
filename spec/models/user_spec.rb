@@ -18,7 +18,7 @@ describe User do
     end
 
     it 'creates a user with a slugged username field' do
-      expect(FactoryGirl.create(:user).username).to_not be_nil
+      expect(FactoryGirl.create(:user).tap {|u| u.save }.username).to_not be_nil
     end
 
     it "returns a hash of fields => values to simulate user input for creating a new user" do
@@ -98,9 +98,10 @@ describe User do
 
       let(:user) { create(:user, role: 'scholar') }
       let(:custom_collection) { create(:custom_collection, owner: user) }
-
       let(:user2)  { create(:user, role: "member") }
       subject { Ability.new(user2) }
+
+      before(:each) { user.save and custom_collection.save and user2.save }
 
       it { should be_able_to(:index, custom_collection) }
       it { should be_able_to(:show, custom_collection) }
@@ -114,10 +115,10 @@ describe User do
 
     context "when they own the collection" do
 
-      let(:user) { create(:user, role: 'scholar') }
-      let(:custom_collection) { create(:custom_collection, owner: user) }
-
+      let(:user) { FactoryGirl.create(:user_with_custom_collection) }
+      let(:custom_collection) { user.owned_collections.first }
       subject { Ability.new(user) }
+      before(:each) { user.save }
 
       it { should be_able_to(:update, custom_collection) }
       it { should be_able_to(:add_item, custom_collection) }
