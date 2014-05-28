@@ -4,21 +4,20 @@ require 'cancan/matchers'
 describe User do
 
   describe "has a factory that" do
-
+    let(:user) { FactoryGirl.create(:user) }
     it "creates a valid user (saved to db)" do
-      saved_user = create(:user)
-      saved_user.should be_valid
-      User.where(:email => saved_user.email).count.should == 1
+      user.should be_valid
+      user.save
+      User.where(:email => user.email).count.should == 1
     end
 
     it "builds a valid user (not saved to db)" do
-      unsaved_user = build(:user)
+      unsaved_user = FactoryGirl.build(:user)
       unsaved_user.should be_valid
       User.where(:email => unsaved_user.email).count.should == 0
     end
 
     it 'creates a user with a slugged username field' do
-      # expect(create(:user).username).to_not be_nil
       expect(FactoryGirl.create(:user).username).to_not be_nil
     end
 
@@ -56,27 +55,27 @@ describe User do
 
   describe "has many CustomCollections" do
 
-    before(:all) do
-      @user = FactoryGirl.create(:user)
-      @custom_collections = FactoryGirl.create_list(:custom_collection, 5)
-    end
+    let(:user) { FactoryGirl.create(:user) }
+    let(:custom_collections) { FactoryGirl.create_list(:custom_collection, 5) }
 
     it "should handle adding multiple CustomCollections to a User" do
-      @custom_collections.each { |cc| @user.collab_collections << cc }
-      @user.collab_collections.count.should == 5
+      expect {
+        custom_collections.each { |cc| user.collab_collections << cc }
+        user.save
+      }.to change(user.collab_collections, :count).by custom_collections.length
     end
 
   end
 
   describe "has many Orgs" do
-    before :all do
-      @user = FactoryGirl.create(:user)
-      @orgs = FactoryGirl.create_list(:org, 5)
-    end
+    let(:user) { FactoryGirl.create(:user) }
+    let(:orgs) { FactoryGirl.create_list(:org, 5) }
 
     it 'should handle adding multiple Orgs to a User' do
-      @orgs.each { |org| @user.orgs << org }
-      @user.orgs.count.should == 5
+      expect {
+        orgs.each { |org| user.orgs << org }
+        user.save
+      }.to change(user.orgs, :count).by orgs.length
     end
   end
 
