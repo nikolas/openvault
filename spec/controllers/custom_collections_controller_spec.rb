@@ -3,13 +3,13 @@ require 'spec_helper'
 describe CustomCollectionsController do
 
   describe "as a scholar" do
-    before :each do 
+    before :each do
       @user = create(:user, role: 'scholar')
       sign_in @user
       # @custom_collection_attrs = attributes_for(:custom_collection, :owner_id => @user.id, :owner_type => "User")
       @custom_collection_attrs = attributes_for(:custom_collection, :owner_id => @user.id, :owner_type => @user.class.to_s)
-      
     end
+
     describe "GET index" do
       it "assigns all custom_collections as @custom_collections" do
         get :index, {}
@@ -122,7 +122,7 @@ describe CustomCollectionsController do
     end
 
   end
-  
+
   describe "as a member" do
     before :each do
       @member = create(:user)
@@ -130,7 +130,7 @@ describe CustomCollectionsController do
       @cc = create(:custom_collection, owner: @scholar)
       sign_in @member
     end
-    
+
     describe "GET index" do
       it "gets all custom collections" do
         get :index, {}
@@ -158,6 +158,5 @@ describe CustomCollectionsController do
         response.should redirect_to root_url
       end
     end
-    
   end
 end
