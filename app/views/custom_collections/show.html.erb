@@ -30,13 +30,6 @@
       <!-- ############################### -->
 
       <div id="media" class="tab-pane fade in">
-        
-        <!-- stuff.each do thing
-             Make everything go in this format. 
-             Ideally you'd have a SINGLE collection of things that you'd iterate over
-             Then you'd pull the basic info you'd need to fill in the thing below
-             Style can be snagged from the other page
-         -->
           <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
             <h5><b>Custom Collection Items (Videos):</b></h5>
             <% @custom_collection.custom_collection_items.videos.each do |col| %> 
