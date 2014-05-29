@@ -16,6 +16,7 @@ class CustomCollectionItem < ActiveRecord::Base
   scope :audios, where(:kind => 'Audio')
   scope :programs, where(:kind => 'Program')
   scope :series, where(:kind => 'Series')
+  scope :by_kind, order('kind DESC')
   
   # TODO: name this method better. OpenvaultAsset is a subclass of ActiveFedora::Base,
   #  whereas this method returns a solr document.

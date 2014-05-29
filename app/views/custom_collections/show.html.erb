@@ -30,94 +30,19 @@
       <!-- ############################### -->
 
       <div id="media" class="tab-pane fade in">
-          <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
-            <h5><b>Custom Collection Items (Videos):</b></h5>
-            <% @custom_collection.custom_collection_items.videos.each do |col| %> 
-              <div id="search_page">
-                <div id="content">
-                  <div id="documents">
-                    <div class="document">  
-                      <div class="doc_thumbnail">
-                        <img alt="No Image Available" src="/assets/no_image.gif">
-                      </div> 
-                      <h3 class="index_title">
-                        <%= link_to col.ov_asset['title_tesim'], video_path(col.ov_asset['id']) %>
-                      </h3> 
-                      <div class="clearfix">
-                      </div>
-                    </div>
-                  </div>
+        <% @custom_collection.custom_collection_items.by_kind.each do |item| %> 
+          <div id="search_page">
+            <div id="content">
+              <div id="documents">
+                <div class="document">
+                  <%= render_collection_item(item) %>
+                  <div class="clearfix"></div>
                 </div>
               </div>
-            <% end %>
-          <% end %>
-
-          <% unless @custom_collection.custom_collection_items.audios.count == 0 %>
-            <h5><b>Custom Collection Items (Audio):</b></h5>
-            <% @custom_collection.custom_collection_items.audios.each do |col| %> 
-              <div id="search_page">
-                <div id="content">
-                  <div id="documents">
-                    <div class="document">  
-                      <div class="doc_thumbnail">
-                        <img alt="No Image Available" src="/assets/no_image.gif">
-                      </div> 
-                      <h3 class="index_title">
-                        <%= link_to col.ov_asset['title_tesim'], audio_path(col.ov_asset['id']) %>
-                      </h3> 
-                      <div class="clearfix">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-
-          <% unless @custom_collection.custom_collection_items.programs.count == 0 %>
-          <h5><b>Custom Collection Items (Programs):</b></h5>
-          <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            <div id="search_page">
-                <div id="content">
-                  <div id="documents">
-                    <div class="document">  
-                      <div class="doc_thumbnail">
-                        <img alt="No Image Available" src="/assets/no_image.gif">
-                      </div> 
-                      <h3 class="index_title">
-                        <%= link_to col.ov_asset['title_tesim'], program_path(col.ov_asset['id']) %>
-                      </h3> 
-                      <div class="clearfix">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-
-          <% unless @custom_collection.custom_collection_items.series.count == 0 %>
-          <h5><b>Custom Collection Items (Series):</b></h5>
-          <% @custom_collection.custom_collection_items.series.each do |col| %>
-            <div id="search_page">
-                <div id="content">
-                  <div id="documents">
-                    <div class="document">  
-                      <div class="doc_thumbnail">
-                        <img alt="No Image Available" src="/assets/no_image.gif">
-                      </div> 
-                      <h3 class="index_title">
-                        <%= link_to col.ov_asset['title_tesim'], series_path(col.ov_asset['id']) %>
-                      </h3> 
-                      <div class="clearfix">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-
+            </div>
+          </div>
+          <!-- series, videos, programs, audios -->
+        <% end %>
       </div>
 
       <!-- <div id="media" class="tab-pane fade in">
