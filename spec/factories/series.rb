@@ -1,9 +1,9 @@
 FactoryGirl.define do
-
-  skip_create
   
   # A factory for instances of Series model.
   factory :series do
+
+    skip_create
 
     ignore do
       # This will be available in in `evaluator.pbcore` in after(:build) hook below.
@@ -18,10 +18,10 @@ FactoryGirl.define do
       new_series.pbcore.ng_xml = evaluator.pbcore.ng_xml
     end
 
-    after(:create) do |new_series, evaluator|
-      new_series.save!
-      # new_series.programs += create_list(:program, evaluator.programs_count, series: new_series) unless evaluator.programs_count.nil?
-    end
+    # after(:create) do |new_series, evaluator|
+    #   new_series.save!
+    #   # new_series.programs += create_list(:program, evaluator.programs_count, series: new_series) unless evaluator.programs_count.nil?
+    # end
   
   end
 end
