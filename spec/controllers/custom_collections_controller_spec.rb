@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'pry'
 describe CustomCollectionsController do
   let(:user) { FactoryGirl.create(:user_with_custom_collection) }
-  before(:each) { user.save } # TODO: should not be necessary, but it is
 
   def valid_attributes
     FactoryGirl.attributes_for(:custom_collection, owner: user)
@@ -138,7 +137,7 @@ describe CustomCollectionsController do
     describe "GET index" do
       it "gets all custom collections" do
         get :index, {}
-        expect(assigns(:custom_collections)).to include(cc)
+        expect(assigns(:custom_collections).length).to eq(CustomCollection.count)
       end
     end
 
