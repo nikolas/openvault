@@ -5,15 +5,12 @@ class Ability
   # override #custom_permissions from Hydra::Ability. This is a hook that allows
   # us to keep the default permissions set in Hydra::Ability#initialize.
   def custom_permissions
-
     # can create new Comments
-    can :create, Comment 
-
+    can :create, Comment
     # can do any action on Comment if Comment belongs to logged in User
     can :manage, Comment, :user_id => current_user.id
-
+    can :update, current_user
     custom_collection_permissions
-    
   end
 
   def create_permissions
@@ -30,8 +27,6 @@ class Ability
 
     # Can update, add items, removes items only if owned by the currently logged in user.
     # No one can delete custom collections at this time.
-    can [:update, :add_item, :remove_item], CustomCollection, :owner_id => current_user.id
+    can [:update, :add_item, :remove_item], CustomCollection, owner: current_user
   end
-
-
 end

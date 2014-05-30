@@ -1,8 +1,4 @@
 require 'spec_helper'
-require_relative '../factories/user'
-require_relative '../factories/org'
-require_relative '../factories/custom_collection'
-require_relative '../factories/custom_collection_item'
 
 describe CustomCollection do
 
@@ -12,7 +8,7 @@ describe CustomCollection do
     end
 
     it 'can create a valid instance' do
-      cc = create(:custom_collection)
+      cc = FactoryGirl.create(:custom_collection).tap { |obj| obj.save } # TODO: chaining #save! should not be required, but it is.
       expect(cc.new_record?).to be_false
     end
   end
@@ -36,12 +32,11 @@ describe CustomCollection do
   it "is invalid without a name" do
     build(:custom_collection, name: nil).should_not be_valid
   end
-  
+
   it "is invalid without a summary"  do
     build(:custom_collection, summary: nil).should_not be_valid
   end
-  
-  
+
   pending "has a valid vanity url" do
     # I scrapped this for now because I don't think that URL logic should go in the model,
     # but not sure how to implement it at the moment.
@@ -50,39 +45,25 @@ describe CustomCollection do
     # collection.vanity_url.should eq("/scholar/john-smith/testing-1")
   end
 
-
   describe '#custom_collection_items <<' do
-    # before :all do
-    #   @custom_collection = FactoryGirl.create(:custom_collection)
-    #   @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
-    # end
+    let(:custom_collection) { FactoryGirl.create(:custom_collection_with_items) }
+    let(:custom_collection_items) { custom_collection.custom_collection_items }
 
     it 'adds CustomCollectionItem instance to has_many association' do
-      @custom_collection = create(:custom_collection)
-      @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
-      @custom_collection_items.each { |item| @custom_collection.custom_collection_items << item }
-      expect(@custom_collection.custom_collection_items.count).to eq 5
+      expect {
+        custom_collection.custom_collection_items << FactoryGirl.create(:custom_collection_item)
+      }.to change(custom_collection_items, :count).by 1
     end
   end
-
-  # it "creates a valid custom collection item" do
-  #   collection = create(:custom_collection)
-  #   v = Video.new
-  #   v.save
-  #   collection.add_collection_item(v.pid, "Video")
-  #   collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
-  # end
 
   describe '#users <<' do
-    before :all do
-      @custom_collection = FactoryGirl.create(:custom_collection)
-      @users = FactoryGirl.create_list(:user, 5)
-    end
+    let(:custom_collection) { FactoryGirl.create(:custom_collection_with_items) }
+    let(:custom_collection_items) { custom_collection.custom_collection_items }
+    let(:users) { FactoryGirl.create_list(:user, 5) }
 
     it "adds User instance to has_many association" do
-      @users.each { |user| @custom_collection.collabs << user }
-      expect(@custom_collection.collabs.count).to eq 5
+      users.each { |user| custom_collection.collabs << user }
+      expect(custom_collection.collabs.count).to eq 5
     end
   end
-  
 end

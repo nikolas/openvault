@@ -7,10 +7,10 @@ describe Openvault::Pbcore::Ingester do
 
   before(:each) { Fixtures.cwd("#{fixture_path}/pbcore") }
 
-  describe '.ingest!' do
+  describe '.ingest' do
 
     context 'with empty <pbcoreDocument> nodes as stand alone xml docs, or inside of <pbcoreCollection> nodes, it' do
-      let(:ingester) { Openvault::Pbcore::Ingester.new } 
+      let(:ingester) { Openvault::Pbcore::Ingester.new }
       let(:pids_1) { ingester.xml = Fixtures.raw("pbcore_desc_doc_empty.xml"); ingester.ingest }
       let(:pids_2) { ingester.xml = Fixtures.raw("pbcore_collection_empty_docs_1x.xml"); ingester.ingest }
       let(:pids_3) { ingester.xml = Fixtures.raw("pbcore_collection_empty_docs_2x.xml"); ingester.ingest }
@@ -32,7 +32,6 @@ describe Openvault::Pbcore::Ingester do
       end
     end
 
-
     context 'with a subset of related assets that have been transformed from Artesia xml' do
       before :all do
         # First ingest a bunch of related assets
@@ -40,7 +39,7 @@ describe Openvault::Pbcore::Ingester do
 
         # Now look up the assets just ingested and use them for testing the relationships.
         @series = Series.find({:all_ids_tesim => "34a589fdcb189dec43a5bca693bbc607d544ffa1"}).first
-        
+
         @program_1 = Program.find({:all_ids_tesim => "35454c33856948f9b70312078470976ae798ced4"}).first
         @program_2 = Program.find({:all_ids_tesim => "86a31c19d423394cfb42cc2b74ff276ab8fd1a0a"}).first
 
@@ -174,7 +173,7 @@ describe Openvault::Pbcore::Ingester do
 
     end
 
-  
+
   end
-  
+
 end
