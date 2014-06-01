@@ -1,61 +1,20 @@
-<h3 class="video_title"><%= collection_item_link(item) %></h3> 
-<br/>
+<div class="doc_thumbnail">
+  <img alt="No Image Available" src="/assets/no_image.gif">
 
-<% video = Video.find(item.ov_asset['id']) %>
-
-<div id="cc_video_container hidden-phone">
-  <div class="asset-content row-fluid">
-    <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
-      <div id="cc_video_player">
-        <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-phone"
-          width="300px" height="300" controls preload="auto"
-          poster="<%= video.thumbnail_url %>">
-          <source src="<%= video.video_url %>" type='video/mp4' />
-        </video>
+  <% video = Video.find(item.ov_asset['id']) %>
+  <div id="cc_video_container hidden-phone">
+    <div class="asset-content row-fluid">
+      <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+        <div id="cc_video_player">
+          <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-phone"
+            width="300px" height="300" controls preload="auto"
+            poster="<%= video.thumbnail_url %>">
+            <source src="<%= video.video_url %>" type='video/mp4' />
+          </video>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- <div id="cc_video_thumbnail_list" class="jThumbnailScroller">
-    <div class="jTscrollerContainer">
-      <div class="jTscroller">
-        <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-          <img src="/assets/slider_thumb.png" alt="Video title 1" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-          <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-          <img src="/assets/slider_thumb.png" alt="Video title 1" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-          <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-          <img src="/assets/slider_thumb.png" alt="Video title 1" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-          <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-          <img src="/assets/slider_thumb.png" alt="Video title 1" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-          <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-          <img src="/assets/slider_thumb.png" alt="Video title 1" />
-        </a>
-        <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-          <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-        </a>
-      </div>
-    </div>
-    <a href="#" class="jTscrollerPrevButton"></a>
-    <a href="#" class="jTscrollerNextButton"></a>
-  </div> -->
 </div>
-<div class="hidden-desktop hidden-tablet mobile-video-links">
-  <%= collection_item_link(item) %>
-</div>
-<br/>
+<h3 class="index_title"><%= collection_item_link(item) %></h3> 
