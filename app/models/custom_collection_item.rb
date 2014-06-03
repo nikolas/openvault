@@ -25,5 +25,8 @@ class CustomCollectionItem < ActiveRecord::Base
     raise 'CustomCollectionItem could not find corresponding solr document' unless item['response']['docs'].first
     item['response']['docs'].first
   end
-  
+
+  def poster_image
+    OpenvaultAsset.find(openvault_asset_pid).thumbnail_url
+  end
 end

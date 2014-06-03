@@ -5,6 +5,7 @@ class Series < OpenvaultAsset
   has_many :audios, :property => :series_audio
   has_many :images, :property => :series_image
   has_many :transcripts, :property => :series_transcript
+ 
   
   # metadata for Series
   #     - dates / date ranges (e.g. when it aired)
@@ -17,7 +18,10 @@ class Series < OpenvaultAsset
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
     return solr_document
   end
-  
+
+  def thumbnail_url
+    # specific image lookup
+  end
   
   def title
     self.pbcore.series_title.first
@@ -34,7 +38,6 @@ class Series < OpenvaultAsset
   def all_images
     self.images.map{|s| s.pid }
   end
-
 
   def relate_asset asset
     if asset.is_a? Program

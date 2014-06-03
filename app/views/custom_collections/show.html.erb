@@ -27,8 +27,6 @@
         <% end %>
       </div>
 
-      <!-- ############################### -->
-
       <div id="media" class="tab-pane fade in">
         <% @custom_collection.custom_collection_items.by_kind.each do |item| %> 
           <div id="search_page">
@@ -41,10 +39,8 @@
               </div>
             </div>
           </div>
-          <!-- series, videos, programs, audios -->
         <% end %>
       </div>
-
 
       <div id="images" class="tab-pane fade in">
         <% if @custom_collection.custom_collection_images.count > 0 %>

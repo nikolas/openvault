@@ -13,6 +13,9 @@ class Program < OpenvaultAsset
     return solr_document
   end
 
+  def thumbnail_url
+    # specific image lookup
+  end
 
   def title
     self.pbcore.program_title.first

@@ -59,7 +59,6 @@ class CustomCollection < ActiveRecord::Base
     collabs.include?(user)
   end
   
-
   def poster_image(size=:med)
     custom_collection_images.first.image.url(size) unless custom_collection_images.empty?
   end

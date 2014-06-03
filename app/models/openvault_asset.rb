@@ -28,6 +28,7 @@ class OpenvaultAsset < ActiveFedora::Base
 
   def thumbnail_url
     # no-op. Override in extended classes
+    "no_image.gif"
   end
 
   def asset_date
