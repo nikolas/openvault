@@ -26,6 +26,13 @@
           <p class="article_rights"><%= @custom_collection.article_rights.to_s %></p>
         <% end %>
       </div>
+
+
+      <div id="media" class="tab-pane fade in">
+        <%= render partial: 'custom_collection_items/list', locals: {custom_collection_items: @custom_collection.custom_collection_items} %>
+      </div>
+
+
       <div id="media" class="tab-pane fade in">
         <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
           <% if @custom_collection.custom_collection_items.videos.count > 1 %>
@@ -140,6 +147,8 @@
         </p>
         <% end %>
       </div>
+
+
       <div id="images" class="tab-pane fade in">
         <% if @custom_collection.custom_collection_images.count > 0 %>
           <%= render :partial => "custom_collection_images_gallery", :locals => {:custom_collection => @custom_collection} %>

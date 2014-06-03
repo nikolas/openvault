@@ -6,7 +6,7 @@ module UserSteps
       go_here '/users/sign_in'
       fill_in 'user_email', with: values[:email] unless values[:email].nil?
       fill_in 'user_password', with: values[:password] unless values[:password].nil?
-      check 'user_remember_me' unless [true, 1, '1'].include? values[:remember_me]  
+      check 'user_remember_me' unless [true, 1, '1'].include? values[:remember_me]
       click_button 'Log in'
     end
   end
@@ -27,18 +27,18 @@ module UserSteps
       click_button 'Create Profile'
     end
   end
-  
+
   def handle_js_confirm(accept=true)
     page.evaluate_script "window.original_confirm_function = window.confirm"
     page.evaluate_script "window.confirm = function(msg) { return #{!!accept}; }"
     yield
     page.evaluate_script "window.confirm = window.original_confirm_function"
   end
-  
+
   def create_admin_user
     FactoryGirl.create(:admin, email: 'admin@example.com', password: 'password', password_confirmation: 'password')
   end
-  
+
   def login_as_admin(values={})
     values.symbolize_keys!
     create_admin_user unless values[:create_admin] == "false"
@@ -47,7 +47,7 @@ module UserSteps
     fill_in 'user_password', with: 'password'
     click_button 'Log in'
   end
-  
+
   def assign_user_as_scholar(values={})
     values.symbolize_keys!
     login_as_admin({create_admin: values[:create_admin]}) unless values[:create_admin] == 'false'
@@ -57,12 +57,12 @@ module UserSteps
     end
     click_button 'Update User'
   end
-  
+
   def in_browser(name)
     Capybara.session_name = name
     yield
   end
-  
+
   def create_user_assign_as_scholar
     in_browser(:one) do
       submit_registration_form({email: "valid_#{Random.new.rand(10..100)}@me.com", password: '123456789', first_name: 'John', last_name: 'Smith', postal_code: '12345', country: 'United Kingdom', mla_updates: '1', terms_and_conditions: '1'})
@@ -71,7 +71,7 @@ module UserSteps
       assign_user_as_scholar({id: '1'})
     end
   end
-  
+
   def retry_on_timeout(n = 3, &block)
     block.call
   rescue Capybara::ElementNotFound => e
@@ -82,5 +82,4 @@ module UserSteps
       raise
     end
   end
-  
 end

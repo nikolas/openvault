@@ -10,7 +10,7 @@ ActiveAdmin.register CustomCollection do
 
   form do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs do 
+    f.inputs do
       f.input :name
       f.input :summary
       f.input :image, :as => :file
