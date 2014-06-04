@@ -1,4 +1,3 @@
-require 'pry'
 class CustomCollectionsController < ApplicationController
   load_and_authorize_resource
 

@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'pry'
+
 describe CustomCollectionsController do
   let(:user) { FactoryGirl.create(:user_with_custom_collection) }
 
