@@ -2,11 +2,11 @@ class OpenvaultAsset < ActiveFedora::Base
   include Blacklight::SolrHelper
 
   has_metadata 'pbcore', :type => PbcoreDescDoc
-  
+
   def accept_annotations
     #logic will go here to accept annotations from scholars
   end
-  
+
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "title", self.title, :stored_searchable, :sortable)
@@ -43,5 +43,4 @@ class OpenvaultAsset < ActiveFedora::Base
   def media_host
     "http://mlamedia01.wgbh.org/openvault"
   end
-
 end

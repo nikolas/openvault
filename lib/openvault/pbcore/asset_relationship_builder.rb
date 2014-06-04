@@ -6,7 +6,7 @@ module Openvault::Pbcore
       @asset = asset
     end
 
-    def pbcore 
+    def pbcore
       asset.pbcore
     end
 
@@ -28,6 +28,5 @@ module Openvault::Pbcore
         end
       end
     end
-  
   end
 end

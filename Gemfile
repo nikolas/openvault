@@ -22,7 +22,7 @@ group :test do
   gem 'rspec-rails'
 
   # test data stuff
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'faker'
 
   # acceptance testing stuff

@@ -28,6 +28,10 @@
       </div>
 
       <div id="media" class="tab-pane fade in">
+        <%= render partial: 'custom_collection_items/list', locals: {custom_collection_items: @custom_collection.custom_collection_items} %>
+      </div>
+
+      <div id="media" class="tab-pane fade in">
         <% @custom_collection.custom_collection_items.by_kind.each do |item| %> 
           <div id="search_page">
             <div id="content">
@@ -41,7 +45,7 @@
           </div>
         <% end %>
       </div>
-
+      
       <div id="images" class="tab-pane fade in">
         <% if @custom_collection.custom_collection_images.count > 0 %>
           <%= render :partial => "custom_collection_images_gallery", :locals => {:custom_collection => @custom_collection} %>

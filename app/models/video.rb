@@ -1,12 +1,12 @@
 class Video < OpenvaultAsset
-  
+
   COVERAGE = ['complete', 'clip', 'segment']
-  
+
   has_many :transcripts, :property => :transcript_video
   has_many :images, :property => :image_video
   belongs_to :program, :property => :video_program
   belongs_to :series, :property => :video_series
-  
+
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "program_id", self.program.pid, :displayable) unless self.program.nil?
@@ -15,19 +15,19 @@ class Video < OpenvaultAsset
     Solrizer.insert_field(solr_document, "video_transcript", self.video_transcripts, :displayable)
     return solr_document
   end
-  
+
   def title
     self.pbcore.titles_by_type['Element2'] || self.pbcore.titles_by_type['Element3'] || self.pbcore.asset_type
   end
-  
+
   def video_url
     "#{media_host}/video/#{mp4_file_name}" if mp4_file_name
   end
-  
+
   def video_transcripts
     self.transcripts.map{|t| t.pid}
   end
-  
+
   def video_images
     self.images.map{|i| i.pid}
   end
@@ -39,7 +39,6 @@ class Video < OpenvaultAsset
   def mp4_file_name
     original_file_name.gsub(/\.mov/, ".mp4")
   end
-
 
   # TODO: shared with Image model. Make into a concern?
   def original_file_name
@@ -55,7 +54,7 @@ class Video < OpenvaultAsset
     end
     filename
   end
-  
+
   #Video Metadata
   # - Length
   # - People involved
