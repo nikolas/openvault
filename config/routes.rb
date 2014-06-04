@@ -57,5 +57,4 @@ Openvault::Application.routes.draw do
   get '/scholar/:username', to: 'users#scholar'
   get '/me', to: 'users#show'
   get '/scholars', to: 'users#scholars'
-
 end

@@ -22,7 +22,7 @@ describe CustomCollectionsController do
     describe "GET index" do
       it "assigns all custom_collections as @custom_collections" do
         get :index, {}
-        assigns(:custom_collections).should_not be_nil
+        expect(assigns(:custom_collections)).to_not be nil
       end
     end
 

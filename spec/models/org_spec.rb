@@ -10,7 +10,7 @@ describe Org do
     it 'creates a record' do
       org = FactoryGirl.create(:org)
       org.save
-      expect(org.new_record?).to be_false
+      expect(org.new_record?).to be false
     end
   end
 

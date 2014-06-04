@@ -5,7 +5,7 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe Openvault::Pbcore::Ingester do
 
-  before(:each) { Fixtures.cwd("#{fixture_path}/pbcore") }
+  before(:all) { Fixtures.cwd("#{fixture_path}/pbcore") }
 
   describe '.ingest' do
 

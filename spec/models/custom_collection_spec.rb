@@ -9,7 +9,7 @@ describe CustomCollection do
 
     it 'can create a valid instance' do
       cc = FactoryGirl.create(:custom_collection).tap { |obj| obj.save } # TODO: chaining #save! should not be required, but it is.
-      expect(cc.new_record?).to be_false
+      expect(cc.new_record?).to be false
     end
   end
 
@@ -43,6 +43,7 @@ describe CustomCollection do
     # user = create(:user, first_name: 'John', last_name: 'Smith', role: 'scholar')
     # collection = create(:custom_collection, name: 'testing 1', owner: user)
     # collection.vanity_url.should eq("/scholar/john-smith/testing-1")
+    fail
   end
 
   describe '#custom_collection_items <<' do

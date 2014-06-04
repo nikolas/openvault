@@ -24,6 +24,7 @@ describe UsersController do
       pending 'saves association between User instance and a the Org instance' do
         # post :add_orgs, id: @user.to_param, org_ids: @orgs.map{ |org| org.id }
         # TODO: verify respose -- see controller for what to expect
+        fail
       end
     end
 
@@ -32,6 +33,7 @@ describe UsersController do
       pending 'saves assocaition between User instance and multiple Org instances' do
         # post :add_orgs, id: @user.to_param, org_ids: @orgs.map{ |org| org.id }
         # TODO: verify respose -- see controller for what to expect
+        fail
       end
     end
 

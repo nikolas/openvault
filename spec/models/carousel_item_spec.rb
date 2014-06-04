@@ -8,7 +8,7 @@ describe CarouselItem do
 
     it 'creates a record' do
       carousel_item = create(:carousel_item).tap { |item| item.save }
-      expect(carousel_item.new_record?).to be_false
+      expect(carousel_item.new_record?).to be false
     end
   end
 

@@ -18,7 +18,7 @@ describe User do
     end
 
     it 'creates a user with a slugged username field' do
-      expect(FactoryGirl.create(:user).tap {|u| u.save }.username).to_not be_nil
+      expect(FactoryGirl.create(:user).tap {|u| u.save }.username).to_not be nil
     end
 
     it "returns a hash of fields => values to simulate user input for creating a new user" do

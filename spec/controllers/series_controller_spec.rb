@@ -19,7 +19,7 @@ describe SeriesController do
 
     it "assigns a solr document to @document" do
       get :show, {id: @series.id}
-      assigns(:document).should_not be_nil
+      assigns(:document).should_not be nil
     end
 
     it "assigns a Series record to @series" do
@@ -39,7 +39,7 @@ describe SeriesController do
   describe "GET print" do
     it "returns a valid solr document" do
       get :print, {id: @series.id}
-      assigns(:document).should_not be_nil
+      assigns(:document).should_not be nil
     end
   end
 end

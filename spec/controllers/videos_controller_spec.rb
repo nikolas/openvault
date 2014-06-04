@@ -21,21 +21,21 @@ describe VideosController do
   describe "GET show" do
     it "returns a valid solr document" do
       get :show, {id: @id}
-      assigns(:document).should_not be_nil
+      expect(assigns(:document)).to_not be nil
     end
 
     it "@images, @videos, @programs are not nil", broken: true do
       get :show, {id: @id}
-      assigns(:images).should_not be_nil
-      assigns(:program).should_not be_nil
-      assigns(:transcripts).should_not be_nil
+      expect(assigns(:images)).to_not be nil
+      expect(assigns(:program)).to_not be nil
+      expect(assigns(:transcripts)).to_not be nil
     end
   end
 
   describe "GET print" do
     it "returns a valid solr document" do
       get :print, {id: @id}
-      assigns(:document).should_not be_nil
+      expect(assigns(:document)).to_not be nil
     end
   end
   

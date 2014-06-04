@@ -5,7 +5,7 @@ describe CatalogController do
   describe "GET index" do
     it "returns search results" do
       get :index
-      assigns(:document_list).should_not be_nil
+      expect(assigns(:document_list)).to_not be nil
     end
 
   end
@@ -13,17 +13,17 @@ describe CatalogController do
   describe "GET home" do
     it "get has the scroller items" do
       get :home
-      assigns(:scroller_items).should_not be_nil
+      expect(assigns(:scroller_items)).to_not be nil
     end
 
     it "gets the collections" do
       get :home
-      assigns(:custom_collections).should_not be_nil
+      expect(assigns(:custom_collections)).to_not be nil
     end
 
     it "gets the tweets" do
       get :home
-      assigns(:tweets).should_not be_nil
+      expect(assigns(:tweets)).to_not be nil
     end
   end
 end

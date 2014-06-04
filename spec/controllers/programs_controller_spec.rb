@@ -19,26 +19,26 @@ describe ProgramsController do
   describe "GET show" do
     it "returns a valid solr document" do
       get :show, {id: @id}
-      assigns(:document).should_not be_nil
+      assigns(:document).should_not be nil
     end
 
     it "@images, @videos, @programs are not nil" do
       get :show, {id: @id}
-      assigns(:images).should_not be_nil
-      assigns(:videos).should_not be_nil
-      assigns(:audios).should_not be_nil
+      assigns(:images).should_not be nil
+      assigns(:videos).should_not be nil
+      assigns(:audios).should_not be nil
     end
 
     it "@rel is not nil" do
       get :show, {id: @id}
-      assigns(:rel).should_not be_nil
+      assigns(:rel).should_not be nil
     end
   end
 
   describe "GET print" do
     it "returns a valid solr document", broken: true do
       get :print, {id: @id}
-      assigns(:document).should_not be_nil
+      assigns(:document).should_not be nil
     end
   end
   
