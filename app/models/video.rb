@@ -59,6 +59,11 @@ class Video < OpenvaultAsset
   # - Length
   # - People involved
   # - formats
+
+  def thumbnail_url
+    # specific image lookup
+  end
+
   def relate_asset asset
     if asset.is_a? Image
       self.images << asset

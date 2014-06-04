@@ -21,6 +21,10 @@ class Image < OpenvaultAsset
     Solrizer.insert_field(solr_document, "image_url", self.image_url, :displayable)
     return solr_document
   end
+
+  def thumbnail_url
+    image_url
+  end
   
   def image_url
     "#{media_host}/images/#{original_file_name}" if original_file_name

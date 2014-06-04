@@ -16,6 +16,7 @@ class CustomCollectionItem < ActiveRecord::Base
   scope :audios, where(:kind => 'Audio')
   scope :programs, where(:kind => 'Program')
   scope :series, where(:kind => 'Series')
+  scope :by_kind, order('kind DESC')
   
   # TODO: Deprecated this method in favor of solr_doc
   def ov_asset
@@ -28,12 +29,8 @@ class CustomCollectionItem < ActiveRecord::Base
     item['response']['docs'].first
   end
 
-  def poster
-    "i am a poster"
-  end
-
-  def title
-
+  def poster_image
+    OpenvaultAsset.find(openvault_asset_pid).thumbnail_url
   end
   
 end

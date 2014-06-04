@@ -1,0 +1,17 @@
+<div class="doc_thumbnail">
+  <% video = Video.find(item.ov_asset['id']) %>
+  <div id="cc_video_container hidden-phone">
+    <div class="asset-content row-fluid">
+      <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+        <div id="cc_video_player">
+          <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-phone"
+            width="300px" height="300" controls preload="auto"
+            poster="<%= video.thumbnail_url %>">
+            <source src="<%= video.video_url %>" type='video/mp4' />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 class="index_title"><%= collection_item_link(item) %></h3> 

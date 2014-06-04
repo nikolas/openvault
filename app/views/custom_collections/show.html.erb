@@ -27,128 +27,25 @@
         <% end %>
       </div>
 
-
       <div id="media" class="tab-pane fade in">
         <%= render partial: 'custom_collection_items/list', locals: {custom_collection_items: @custom_collection.custom_collection_items} %>
       </div>
 
-
       <div id="media" class="tab-pane fade in">
-        <% unless @custom_collection.custom_collection_items.videos.count == 0 %>
-          <% if @custom_collection.custom_collection_items.videos.count > 1 %>
-            <div id="cc_video_container hidden-phone">
-              <div id="cc_video_player">
-              <video id="cc_player" class="video-js vjs-default-skin vjs-big-play-centered"
-                controls preload="auto" width="100%" height="450"
-                data-setup='{}'
-                poster="/assets/slider_thumb.png">
-                <source src="/assets/video_test.mp4" type='video/mp4' />
-                <source src="/assets/video_test.webm" type='video/webm' />
-                <source src="/assets/video_test.ogg" type='video/ogg' />
-              </video>
-              <p class="video_title">Video Title 1</p>
-            </div>
-              <div id="cc_video_thumbnail_list" class="jThumbnailScroller">
-              <div class="jTscrollerContainer">
-                <div class="jTscroller">
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/video_test.mp4">
-                    <img src="/assets/slider_thumb.png" alt="Video title 1" />
-                  </a>
-                  <a href="#" class="v_thumbnail" data-videourl="/assets/test_vid_2.mp4">
-                    <img src="/assets/tmp_cat_image_thumb.jpg" alt="Video title 2" />
-                  </a>
+        <% @custom_collection.custom_collection_items.by_kind.each do |item| %> 
+          <div id="search_page">
+            <div id="content">
+              <div id="documents">
+                <div class="document">
+                  <%= render_collection_item(item) %>
+                  <div class="clearfix"></div>
                 </div>
               </div>
-              <a href="#" class="jTscrollerPrevButton"></a>
-              <a href="#" class="jTscrollerNextButton"></a>
             </div>
-            </div>
-            <div class="hidden-desktop hidden-tablet mobile-video-links">
-              <% @custom_collection.custom_collection_items.videos.each do |col| %>
-                <%= link_to col.ov_asset['title_tesim'], video_path(col.ov_asset['id']) %>
-              <% end %>
-            </div>
-            <hr />
-          <% else %>
-            <video id="cc_player" class="video-js vjs-default-skin vjs-big-play-centered hidden-phone"
-              controls preload="auto" width="100%" height="450"
-              data-setup='{}'
-              poster="/assets/slider_thumb.png">
-              <source src="/assets/video_test.mp4" type='video/mp4' />
-              <source src="/assets/video_test.webm" type='video/webm' />
-              <source src="/assets/video_test.ogg" type='video/ogg' />
-            </video>
-            <video id="cc_player" class="video-js vjs-default-skin vjs-big-play-centered hidden-desktop hidden-tablet"
-              controls preload="auto" width="100%" height="180"
-              data-setup='{}'
-              poster="/assets/slider_thumb.png">
-              <source src="/assets/video_test.mp4" type='video/mp4' />
-              <source src="/assets/video_test.webm" type='video/webm' />
-              <source src="/assets/video_test.ogg" type='video/ogg' />
-            </video>
-            <h3>
-              <a href="/video/<%= @custom_collection.custom_collection_items.videos.first.ov_asset['id'] %>">
-                <%= @custom_collection.custom_collection_items.videos.first.ov_asset['title_tesim'].try(:first).to_s %>
-              </a>
-            </h3>
-            <p class="video_summary">
-              <%= @custom_collection.custom_collection_items.videos.first.ov_asset['summary_ssm'].try(:first) %>
-            </p>
-            <hr />
-          <% end %>
-        <% end %>
-        <h3>Other assets in this collection</h3>
-        <% unless @custom_collection.custom_collection_items.audios.count == 0 %>
-        <p>
-          <b>Custom Collection Items (Audio):</b>
-          <% @custom_collection.custom_collection_items.audios.each do |col| %>
-            Audio: <%= link_to col.ov_asset['title_tesim'], audio_path(col.ov_asset['id']) %>
-          <% end %>
-        </p>
-        <% end %>
-        <% unless @custom_collection.custom_collection_items.programs.count == 0 %>
-        <p>
-          <b>Custom Collection Items (Programs):</b>
-          <% @custom_collection.custom_collection_items.programs.each do |col| %>
-            Program: <%= link_to col.ov_asset['title_tesim'], program_path(col.ov_asset['id']) %>
-          <% end %>
-        </p>
-        <% end %>
-        <% unless @custom_collection.custom_collection_items.series.count == 0 %>
-        <p>
-          <b>Custom Collection Items (Series):</b>
-          <% @custom_collection.custom_collection_items.series.each do |col| %>
-            Series: <%= link_to col.ov_asset['title_tesim'], series_path(col.ov_asset['id']) %>
-          <% end %>
-        </p>
+          </div>
         <% end %>
       </div>
-
-
+      
       <div id="images" class="tab-pane fade in">
         <% if @custom_collection.custom_collection_images.count > 0 %>
           <%= render :partial => "custom_collection_images_gallery", :locals => {:custom_collection => @custom_collection} %>
