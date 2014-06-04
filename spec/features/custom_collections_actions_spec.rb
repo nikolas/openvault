@@ -190,18 +190,18 @@ feature "User removes a catalog item from a collection" do
   end
 end
 
-feature "User visits a custom collection without images", :wip => true do
+
+feature "Non-scholar users don't see custom collections tab on their profile page" do
   before :each do
     Warden.test_reset!
-    @scholar = create(:user, role: 'scholar')
-    @cc = create(:custom_collection, owner: @scholar, name: "Testing Collection blah blah blah", summary: 'asdf asdf asdf asdf asdf')
-    @cc.save
+    @member = create(:user)
   end
 
-  scenario 'no images in custom collection' do
-    login_as(@scholar, :scope => :user, :run_callbacks => false)
-    visit "/custom_collections/#{@cc.id}"
-    click_link "Images"
-    expect(page).to have_content("no images for this collection")
+  scenario 'when they are signed in as a member' do
+    login_as(@member, :scope => :user, :run_callbacks => false)
+    visit me_path
+    within("#users_show_tabs") do
+      expect(page).not_to have_content("Collections")
+    end
   end
 end

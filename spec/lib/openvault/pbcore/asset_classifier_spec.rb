@@ -6,6 +6,9 @@ describe Openvault::Pbcore::AssetClassifier do
 
   let(:wrapper_class) { Openvault::Pbcore::AssetClassifier }
 
+  before :all do
+    Fixtures.cwd "#{fixture_path}/pbcore"
+  end
 
   describe '#is_series?' do
     it 'returns true if pbcore xml describes a series record' do

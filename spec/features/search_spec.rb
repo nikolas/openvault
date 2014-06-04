@@ -16,7 +16,7 @@ feature 'Search' do
       expect(page).to have_content('We did not find any matches for this search')
     end
 
-    scenario 'and there are less than 10 results' do
+    scenario 'and there are less than 10 results', broken: true do
 
       series_records = []
       5.times { series_records << create(:series) }
