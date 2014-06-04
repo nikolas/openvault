@@ -1,6 +1,7 @@
+require 'pry'
 class CustomCollectionsController < ApplicationController
   load_and_authorize_resource
-  
+
   # GET /custom_collections
   # GET /custom_collections.json
   def index
@@ -43,7 +44,6 @@ class CustomCollectionsController < ApplicationController
   # POST /custom_collections
   # POST /custom_collections.json
   def create
-
     # if we are here, then the user has already been authorized per call to
     # load_and_authorize_resource (see above).
     # For now, we are not allowing non-admin users to create CustomCollection owned by an Org
@@ -54,14 +54,14 @@ class CustomCollectionsController < ApplicationController
 
     respond_to do |format|
       if @custom_collection.save
-        format.html { 
+        format.html {
           if cookies[:redirect_to]
             target = cookies[:redirect_to]
             cookies[:redirect_to] = nil
           else
             target = @custom_collection
           end
-          redirect_to target, notice: 'Custom collection was successfully created.' 
+          redirect_to target, notice: 'Custom collection was successfully created.'
         }
         format.json { render json: @custom_collection, status: :created, location: @custom_collection }
       else
@@ -86,7 +86,7 @@ class CustomCollectionsController < ApplicationController
       end
     end
   end
-  
+
   def remove_item
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
     if @custom_collection.remove_collection_item(params[:asset_id])
@@ -101,7 +101,7 @@ class CustomCollectionsController < ApplicationController
       end
     end
   end
-  
+
   def add_item
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
     if @item = OpenvaultAsset.find(params[:asset_id])
@@ -114,9 +114,9 @@ class CustomCollectionsController < ApplicationController
       render json: @custom_collection.errors, status: :unprocessable_entity
     end
   end
-  
+
   private
-  
+
   def get_collection
     if params[:id]
       @custom_collection = CustomCollection.find(params[:id])
@@ -126,8 +126,8 @@ class CustomCollectionsController < ApplicationController
       not_found unless user && slug
       @custom_collection = CustomCollection.where(:user_id => user.id, :slug => slug).first
     end
-    
+
     @custom_collection or not_found
   end
-  
+
 end

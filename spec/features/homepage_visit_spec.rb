@@ -25,7 +25,6 @@ describe "visiting homepage", :type => :feature do
   it "shows the carousel item" do
     FactoryGirl.create(:carousel_item, :title => 'The Collection of Collections', :body => 'asdfasdfasdf', enabled: true).save!
     visit '/'
-    save_and_open_page
     page.should have_css('.carousel-item', :count => 1)
   end
   

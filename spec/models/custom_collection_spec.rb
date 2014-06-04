@@ -1,12 +1,16 @@
 require 'spec_helper'
 
-# NOTE: FactoryGirl shortcut methods (create, build, attributes_for, etc.) are included in spec_helper.rb
-
 describe CustomCollection do
 
+  describe 'factory' do
+    it 'can build a valid instance' do
+      build(:custom_collection).should be_valid
+    end
 
-  it 'has a valid factory' do
-    build(:custom_collection).should be_valid
+    it 'can create a valid instance' do
+      cc = FactoryGirl.create(:custom_collection).tap { |obj| obj.save } # TODO: chaining #save! should not be required, but it is.
+      expect(cc.new_record?).to be_false
+    end
   end
 
   it 'is invalid without an owner' do
@@ -28,12 +32,11 @@ describe CustomCollection do
   it "is invalid without a name" do
     build(:custom_collection, name: nil).should_not be_valid
   end
-  
+
   it "is invalid without a summary"  do
     build(:custom_collection, summary: nil).should_not be_valid
   end
-  
-  
+
   pending "has a valid vanity url" do
     # I scrapped this for now because I don't think that URL logic should go in the model,
     # but not sure how to implement it at the moment.
@@ -42,26 +45,25 @@ describe CustomCollection do
     # collection.vanity_url.should eq("/scholar/john-smith/testing-1")
   end
 
+  describe '#custom_collection_items <<' do
+    let(:custom_collection) { FactoryGirl.create(:custom_collection_with_items) }
+    let(:custom_collection_items) { custom_collection.custom_collection_items }
 
-  # TODO: put this creation logic into a factory
-  it "creates a valid custom collection item" do
-    collection = create(:custom_collection)
-    v = Video.new
-    v.save
-    collection.add_collection_item(v.pid, "Video")
-    collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
-  end
-
-  describe 'has many Users' do
-    before :all do
-      @custom_collection = FactoryGirl.create(:custom_collection)
-      @users = FactoryGirl.create_list(:user, 5)
-    end
-
-    it "should handle adding multiple User instances via #collabs" do
-      @users.each { |user| @custom_collection.collabs << user }
-      @custom_collection.collabs.count.should == 5
+    it 'adds CustomCollectionItem instance to has_many association' do
+      expect {
+        custom_collection.custom_collection_items << FactoryGirl.create(:custom_collection_item)
+      }.to change(custom_collection_items, :count).by 1
     end
   end
-  
+
+  describe '#users <<' do
+    let(:custom_collection) { FactoryGirl.create(:custom_collection_with_items) }
+    let(:custom_collection_items) { custom_collection.custom_collection_items }
+    let(:users) { FactoryGirl.create_list(:user, 5) }
+
+    it "adds User instance to has_many association" do
+      users.each { |user| custom_collection.collabs << user }
+      expect(custom_collection.collabs.count).to eq 5
+    end
+  end
 end

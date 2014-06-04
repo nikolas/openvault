@@ -7,11 +7,8 @@ require 'capybara/rspec'
 require 'fixtures'
 require 'openvault'
 
-# Capybara.register_driver :webkit do |app|
-  # Capybara::Webkit::Driver.new(app, stderr: WarningSuppressor)
-# end
-Capybara.default_driver = :webkit
-Capybara.javascript_driver = :webkit
+Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
 Capybara.default_wait_time = 5
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -42,7 +39,6 @@ RSpec.configure do |config|
   config.order = "random"
 
   # Include some stuff
-  config.include Devise::TestHelpers, type: :controller
   config.include FactoryGirl::Syntax::Methods
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
@@ -51,7 +47,7 @@ RSpec.configure do |config|
   config.include UserSteps
   config.include SearchSteps
   config.include CustomCollectionSteps
-  
+
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
@@ -81,7 +77,6 @@ RSpec.configure do |config|
   config.after(:suite) do
     ActiveFedora::Base.destroy_all
   end
-
 end
 
 module Rack

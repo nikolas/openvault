@@ -16,6 +16,10 @@ class Audio < OpenvaultAsset
     self.pbcore.titles_by_type['Item3'] || self.pbcore.titles_by_type['Segment3'] || self.pbcore.titles_by_type['Element3']
   end
   
+  def thumbnail_url
+    # specific image lookup
+  end
+
   def audio_url
     #This needs to change based on the decisions made about the streaming server
     "http://media.wgbh.org/streaming/audios/#{self.id}.jpg"

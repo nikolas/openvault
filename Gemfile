@@ -16,6 +16,9 @@ end
 
 group :test do
   # functional testing stuff
+  gem 'pry'
+  gem 'rspec'
+  gem 'awesome_print'
   gem 'rspec-rails'
 
   # test data stuff
@@ -24,19 +27,21 @@ group :test do
 
   # acceptance testing stuff
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+  gem 'phantomjs'
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'selenium-webdriver'
   gem 'launchy'
   # stuff to autorun test
-  gem 'guard-rspec'
+  gem 'guard', '>= 2.6.0'
+  gem 'guard-rspec', '>= 4.2.8'
   gem 'rb-fsevent', '~> 0.9'
 end
 
 group :development do
   gem 'sextant'
-  #gem 'terminal-notifier'
   gem 'capistrano'
   gem 'rvm-capistrano'
 end
@@ -45,6 +50,7 @@ gem 'jquery-rails', "2.3.0"
 
 gem 'blacklight'
 gem 'hydra', '6.1.0'
+gem 'hydra-head'
 gem 'jettywrapper'
 
 # To use Jbuilder templates for JSON
@@ -78,4 +84,4 @@ gem "nested_form"
 #gem 'hydra-collections'
 gem "escape_utils"
 gem 'rack-cache', :require => 'rack/cache'
-gem 'byebug', groups: [:development, :test]
+gem 'byebug', groups: [:development, :test], :platform => :ruby_20

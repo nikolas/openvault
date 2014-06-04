@@ -1,8 +1,17 @@
 require 'spec_helper'
 
 describe Org do
-  it 'has a valid factory' do
-    build(:org).should be_valid
+
+  describe 'factory' do
+    it 'builds a valid instance' do
+      expect(build(:org)).to be_valid
+    end
+
+    it 'creates a record' do
+      org = FactoryGirl.create(:org)
+      org.save
+      expect(org.new_record?).to be_false
+    end
   end
 
   it 'is invalid without a name' do
@@ -10,15 +19,14 @@ describe Org do
   end
 
   describe 'has many Users' do
-
-    before :all do
-      @org = create(:org)
-      @users = create_list(:user, 5)
-    end
+    let(:org) { FactoryGirl.create(:org)}
+    let(:users) { FactoryGirl.create_list(:user, 5) }
 
     it 'handles adding multiple User to an Org' do
-      @users.each { |user| @org.users << user }
-      @org.users.count.should == 5
+      expect {
+        users.each { |user| org.users << user }
+        org.save
+      }.to change(org.users, :count).by users.count
     end
   end
 end

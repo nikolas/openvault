@@ -26,9 +26,10 @@ class UsersController < ApplicationController
       @user = User.where(:username => params[:username]).first
     elsif current_user
       @user = User.find(current_user.id)
+    else
+      flash[:alert] = "You must be logged in to view your profile"
+      redirect_to root_path
     end
-    
-    @user or not_found
   end
   
 end 
