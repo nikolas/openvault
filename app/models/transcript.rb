@@ -16,6 +16,10 @@ class Transcript < OpenvaultAsset
     "http://media.wgbh.org/streaming/transcripts/#{self.pid}.xml"
   end
 
+  def tei
+    'transcript present but feature not yet implemented'
+  end
+
   def relate_asset asset
     if asset.is_a? Video
       self.video = asset

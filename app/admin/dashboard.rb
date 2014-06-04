@@ -7,10 +7,10 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       
       column do
-        panel "Recent Collections" do
+        panel "Custom Collections" do
           ul do
-            Collection.limit(15).map do |post|
-              li link_to(post.name, admin_collection_path(post))
+            CustomCollection.all.map do |custom_collection|
+              li link_to(custom_collection.name, admin_custom_collection_path(custom_collection))
             end
           end
         end

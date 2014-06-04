@@ -21,8 +21,14 @@ describe Video do
 
       video.pbcore.ng_xml = Fixtures.use('artesia/patriots_day/video_2.xml').ng_xml
       video.title.should == "Malcolm X Interview"
-      
+
     end
   end
-  
+
+  describe '#original_file_name' do
+    it 'returns an empty string when the Video has no pbcore xml' do
+      expect(video.original_file_name).to eq ''
+    end
+  end
+
 end

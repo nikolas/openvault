@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
   
-  before_filter :get_user, :only => [:show]
-  
   def show
-    @user = @user
-    # @collections = CustomCollection.where(:owner_id => @user.id).includes(:custom_collection_items)
-    @collections = @user.collections
+    @user = get_user
+  end
+
+  def scholar
+    @user = get_user
+    if @user.role == "scholar"
+      render :show
+    else
+      not_found
+    end
   end
   
   def scholars
@@ -21,9 +26,10 @@ class UsersController < ApplicationController
       @user = User.where(:username => params[:username]).first
     elsif current_user
       @user = User.find(current_user.id)
+    else
+      flash[:alert] = "You must be logged in to view your profile"
+      redirect_to root_path
     end
-    
-    @user or not_found
   end
   
 end 

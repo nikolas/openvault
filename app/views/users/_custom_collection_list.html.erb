@@ -1,0 +1,29 @@
+<div id="users_custom_collection_list">
+  <% @user.collections.each do |custom_collection| %>
+    <div class="media">
+
+      <div class="media-object pull-left">
+        <%
+          poster = image_tag(custom_collection.poster_image(:small)) unless custom_collection.poster_image.nil?
+          poster ||= glyphicon('film')
+        %>
+
+        <%= link_to(poster, custom_collection) %>
+      </div>
+
+      <div class="media-body">
+        <h3 class="media-heading">
+          <%= link_to custom_collection.name, custom_collection %>
+          <% if custom_collection.owner? @user %>
+            <span>(owner)</span>
+          <% elsif custom_collection.collaborator? @user %>
+            <span>(collaborator)</span>
+          <% end %>
+        </h3>
+        <p>
+          <%= truncate(custom_collection.summary, :length => 450).html_safe %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

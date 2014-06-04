@@ -74,12 +74,13 @@ module BlacklightHelper
   end
   
   def display_title(doc=@document)
-    return doc['title_tesim'].first unless doc['title_tesim'].nil?
-    "(No title available)"
+    return '' if (doc.nil? || doc['title_tesim'].try(:first).nil?)
+    doc['title_tesim'].first
   end
   
   def display_summary(doc=@document)
-    doc[:summary_ssm].try(:first)
+    return '' if (doc.nil? || doc['summary_tesim'].try(:first).nil?)
+    doc['summary_tesim'].first
   end
 
 end

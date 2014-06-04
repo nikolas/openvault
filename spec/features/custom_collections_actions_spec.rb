@@ -1,11 +1,12 @@
 require 'spec_helper'
 require 'helpers/test_helper'
+
 include Warden::Test::Helpers
 Warden.test_mode!
 
 #Many of these will need to change as the UI changes
 feature 'User tries to create a custom collection' do
-  
+
   before :each do
     Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
@@ -17,7 +18,7 @@ feature 'User tries to create a custom collection' do
     visit new_custom_collection_path
     expect(page).to have_content("You are not authorized to access this page.")
   end
-  
+
   scenario 'when the user is signed in but not a scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit new_custom_collection_path
@@ -30,7 +31,7 @@ feature 'User tries to create a custom collection' do
   #   create_custom_collection({name: "Testing Collection", summary: 'asdf asdf asdf asdf asdf'})
   #   expect(page).to have_css 'div#collection_container'
   # end
-  
+
 end
 
 feature 'Scholar attaches files to a collection' do
@@ -63,37 +64,50 @@ feature 'Scholar attaches files to a collection' do
     })
     expect(page).to have_content("You are not allowed to upload \"jpg\" files, allowed types: pdf")
   end
-  
+
 end
 
-feature 'User tries to edit a collection' do
-  
+feature 'User tries to edit a collection', :wip => true do
+
   before :each do
     Warden.test_reset!
     @scholar1 = create(:user, role: 'scholar')
     @scholar2 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, owner: @scholar1)
+    @custom_collection1.save
     @custom_collection2 = create(:custom_collection, owner: @scholar2)
+    @custom_collection2.save
   end
-  
+
   scenario 'when the user is not signed in' do
     visit "/custom_collections/#{@custom_collection1.id}/edit"
     expect(page).to have_content 'You are not authorized to access this page.'
   end
-  
+
+  scenario 'when the user is not signed in they do not see edit collection link' do
+    visit "/custom_collections/#{@custom_collection1.id}"
+    expect(page).not_to have_content 'Edit collection details'
+  end
+
   scenario 'when the user is signed in but not a scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@custom_collection1.id}/edit"
     expect(page).to have_content 'You are not authorized to access this page.'
   end
-  
+
+  scenario 'when the user is signed in but not a scholar they do not see edit collection link' do
+    login_as(@member, :scope => :user, :run_callbacks => false)
+    visit "/custom_collections/#{@custom_collection1.id}"
+    expect(page).not_to have_content 'Edit collection details'
+  end
+
   scenario 'when the user is signed in IS a scholar BUT did not create' do
     login_as(@scholar2, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@custom_collection1.id}/edit"
     expect(page).to have_content 'You are not authorized to access this page.'
   end
-  
+
   scenario 'when the user is signed in IS a scholar DID create' do
     login_as(@scholar1, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@custom_collection1.id}/edit"
@@ -101,7 +115,7 @@ feature 'User tries to edit a collection' do
     click_button 'Update Custom collection'
     expect(page).to have_content 'Edited Testing Collection'
   end
-  
+
 end
 
 feature "User adds a catalog item to a collection" do
@@ -112,18 +126,18 @@ feature "User adds a catalog item to a collection" do
     @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
     @item = Video.create!
   end
-  
+
   scenario 'when they are signed in as a non-scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/video/#{@item.pid}"
     expect(page).not_to have_content('Add to my collection')
   end
-  
+
   scenario 'when they are not signed it' do
     visit "/video/#{@item.pid}"
     expect(page).not_to have_content('Add to my collection')
   end
-  
+
 end
 
 feature "User adds a catalog item to a custom collection they are a collaborator on" do
@@ -135,7 +149,7 @@ feature "User adds a catalog item to a custom collection they are a collaborator
     @item = Video.create!
     @custom_collection1.collabs << @scholar2
   end
-  
+
   scenario 'when they are signed in as a scholar' do
     login_as(@scholar2, :scope => :user, :run_callbacks => false)
     visit "/video/#{@item.pid}"
@@ -144,7 +158,7 @@ feature "User adds a catalog item to a custom collection they are a collaborator
     end
     expect(page).to have_content('added to your collection!')
   end
-  
+
 end
 
 feature "User removes a catalog item from a collection" do
@@ -156,22 +170,38 @@ feature "User removes a catalog item from a collection" do
     @item = Video.create!
     create(:custom_collection_item, :custom_collection_id => @custom_collection1.id, :openvault_asset_pid => @item.pid, :kind => 'Video')
   end
-  
+
   # scenario 'when they are signed in as a scholar' # do
  #    login_as(@scholar, :scope => :user, :run_callbacks => false)
  #    visit "/custom_collections/#{@custom_collection1.id}"
  #    click_link "Remove"
  #    expect(page).not_to have_content("Videos:")
  #  end
-  
+
   scenario 'when they are signed in as a non-scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@custom_collection1.id}"
     expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
   end
-  
+
   scenario 'when they are not signed it' do
     visit "/custom_collections/#{@custom_collection1.id}"
     expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
+  end
+end
+
+
+feature "Non-scholar users don't see custom collections tab on their profile page" do
+  before :each do
+    Warden.test_reset!
+    @member = create(:user)
+  end
+
+  scenario 'when they are signed in as a member' do
+    login_as(@member, :scope => :user, :run_callbacks => false)
+    visit me_path
+    within("#users_show_tabs") do
+      expect(page).not_to have_content("Collections")
+    end
   end
 end

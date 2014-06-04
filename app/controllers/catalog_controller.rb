@@ -234,7 +234,7 @@ class CatalogController < ApplicationController
   end
   
   def home
-    @collections = Collection.where(:display_in_carousel => true).order('position ASC')
+    @carousel_items = CarouselItem.where(:enabled => true).order('position ASC')
     @custom_collections = CustomCollection.limit(3).order('created_at ASC')
     @scholars = User.scholars
     client = Twitter::REST::Client.new do |config|
@@ -244,17 +244,20 @@ class CatalogController < ApplicationController
       config.access_token_secret = 'cRzE9PCkAoUzl0swVnXQVZ9k9iVJhSqVRWhMXofbM'
     end
     @tweets = client.user_timeline('wgbharchives', :count => 5) rescue nil
-    @resp, @items = get_last_n_solr_docs 
+    @resp, @items = get_last_n_solr_docs
+
+
     @scroller_items = []
-    unless @items.nil?
-      @items.each do |item|
-        unless item['video_images_ssm'].nil?
-          im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
-          img = im['image_url_ssm'].first unless (im.nil? || im['image_url_ssm'].nil?)
-          @scroller_items << [img, item['slug']]
-        end
-      end
-    end
+    # Pull this out?
+    # unless @items.nil?
+    #   @items.each do |item|
+    #     unless item['video_images_ssm'].nil?
+    #       im = get_only_solr_document_by_slug(item['video_images_ssm'].first)
+    #       img = im['image_url_ssm'].first unless (im.nil? || im['image_url_ssm'].nil?)
+    #       @scroller_items << [img, item['slug']]
+    #     end
+    #   end
+    # end
   end
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...

@@ -31,16 +31,6 @@ $ ->
 
   $("form#new_session").bind "ajax:success", (evt, data, status, xhr) ->
     location.reload()
-  
-  $('body').on "click", '.page-dot', (e) ->
-    e.preventDefault()
-    num = $(this).data('num')
-    $('#exhibit-slider .exhibit-item').each (e) ->
-      $(this).removeClass('active')
-    $('#exhibit-controls .page-dot').each (e) ->
-      $(this).removeClass('active')
-    $('#exhibit-slider').find('.exhibit-item[item-num='+num+']').addClass('active')
-    $('#exhibit-controls').find('.page-dot[data-num='+num+']').addClass('active')
     
   $('body').on "click", '.more_meta', (e) ->
     e.preventDefault();

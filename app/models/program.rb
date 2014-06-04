@@ -3,7 +3,7 @@ class Program < OpenvaultAsset
   belongs_to :series, :property => :series_program
   has_many :videos, :property => :video_program
   has_many :audios, :property => :audio_program
-  
+
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
@@ -13,11 +13,14 @@ class Program < OpenvaultAsset
     return solr_document
   end
 
+  def thumbnail_url
+    # specific image lookup
+  end
 
   def title
-    self.pbcore.program_title
+    self.pbcore.program_title.first
   end
-  
+
   def asset_count
     self.videos.count + self.audios.count
   end
@@ -35,9 +38,7 @@ class Program < OpenvaultAsset
     #self.images.map{|v| v.pid}
     []
   end
-  
-  
-  
+
   # metadata for Program
   #     - episodic info
   #     - segment info (e.g. "part 1 of 3")

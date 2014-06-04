@@ -22,10 +22,10 @@ describe "visiting homepage", :type => :feature do
     page.should have_css('div.tweet-item', :count => 5)
   end
   
-  it "gets the most recent custom collections" do
+  it "shows the carousel item" do
+    FactoryGirl.create(:carousel_item, :title => 'The Collection of Collections', :body => 'asdfasdfasdf', enabled: true).save!
     visit '/'
-    
-    page.should have_css('div.collection_block', :count => 1)
+    page.should have_css('.carousel-item', :count => 1)
   end
   
   it "gets the most recent video assets for scroller"

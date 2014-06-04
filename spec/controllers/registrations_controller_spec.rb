@@ -20,6 +20,7 @@ describe RegistrationsController do
       # I tried creating the fake user in before(:all), but then you can't simulate signing in with sign_in helper.
       # No logical reason why. Just cant do it. Whatever. Sick of trying to figure out why. Moving on.
       @user = create(:user, :password => '123456789')
+      @user.save
 
       # sign in as the fake user
       sign_in @user
@@ -46,7 +47,7 @@ describe RegistrationsController do
       # check response redirect location
       response.should redirect_to "/me"
       # ensure a `user` instance variable was set
-      assigns(:user).should_not be_nil
+      assigns(:user).should_not be nil
     end
 
   
@@ -68,7 +69,7 @@ describe RegistrationsController do
       response.should redirect_to "/me"
 
       # Should assign @user instance var.
-      assigns(:user).should_not be_nil
+      assigns(:user).should_not be nil
     end
 
     it 'redirects back to `edit` page and sets errors when trying to update `email` and `current_password` is invalid' do
@@ -129,7 +130,7 @@ describe RegistrationsController do
       response.should redirect_to "/me"
 
       # Should assign @user instance var.
-      assigns(:user).should_not be_nil
+      assigns(:user).should_not be nil
     end
 
     it 're-renders `edit` page with errors when trying to update `password`, and `password` matches `password_confirmation`, but `current_password` is invalid' do

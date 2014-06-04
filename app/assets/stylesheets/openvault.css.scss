@@ -1,11 +1,10 @@
 @import "compass/reset";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
-@import "compass/utilities/text/replacement";
+@import "compass/typography/text/replacement";
 @import "compass/typography/vertical_rhythm";
 
-$base-font-size: 10px;
-$base-line-height: 14.25px;
+
 $base-font-family: Arial, Helvetica, sans-serif;
 
 $link-color: #000;
@@ -22,9 +21,7 @@ $grey: #e8e3e3;
 //Resets and base
 body {
   height: 100%;
-  font-size: $base-font-size;
   font-family: $base-font-family;
-  line-height: $base-line-height;
 }
 
 a {
@@ -41,7 +38,7 @@ a.action_link {
     color: lighten($orange, 20%);
   }
 }
-p, a, label, span {
+p, label, span {
   font-size: 13px;
   line-height: 1.3em;
   margin-bottom: .9em;
@@ -49,18 +46,15 @@ p, a, label, span {
 strong {
   font-weight: bold;
 }
-h1, h2, h3, h4, h5 {
-  font-weight: normal;
-  line-height: 1.5em;
-}
+
 h1 {
-  font-size: 3.6em;
-}
-h2 {
   font-size: 2.8em;
 }
+h2 {
+  font-size: 2em;
+}
 h3 {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 h4 {
   font-size: 1.5em;
@@ -242,49 +236,78 @@ input[type=file] {
   }
 }
 
-//Body section
+/**
+ * Body Section
+ */
 #body {
+
   padding: 25px 0px;
+
   //Global
   .grainbox {
     @include grainbox;
   }
-  
+
   .vjs-default-skin .vjs-play-progress, .vjs-default-skin .vjs-volume-level { background-color: #f07b05 }
   
   //Homepage
   #welcome-text {
     font-size: 14px;
   }
-  #exhibits {
 
-    #exhibit-slider {
-      margin-top: 19px;
-      .exhibit-item {
-        display: none;
-        height: 271px;
-        h3 {
-          margin-bottom: 5px;
-        }
-        .summary {
-          p {
-            
-          }
-        }
-        .image {
-          height: 271px;
-          overflow: hidden;
-          img {
-            border: 4px solid #fff;
-            box-sizing: border-box;
-          }
-        }
-        &.active {
-          display:block;
+
+  /**
+   * Overlays -- darkened text boxes to overlay other elements.
+   */
+
+   // overlays are dark, half transparent.
+  $overlay-bg: rgba(0,0,0,0.5);
+
+  // if you want to overlay on top of #some-element, then #some-element must have class .overlayable.
+  .overlayable {
+    position: relative;
+  }
+
+  // base class for overlays
+  .overlay {
+    position: absolute;
+    background: $overlay-bg;
+    padding: 1em;
+  }
+
+  // standard bottom overlay
+  .overlay-bottom {
+    @extend .overlay;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+  }
+
+  /* End Overlays */
+
+  
+  /**
+   * Carousel -- A widget that cycles through a series of images, displaying one at a time.
+   */
+  #carousel {
+
+    .carousel-item {
+      height: inherit;
+      border: 4px solid $overlay-bg;
+      box-sizing: border-box;
+      h3 {
+        margin-bottom: 5px;
+      }
+      .image {
+        overflow: hidden;
+        height: inherit;
+        img {
+          width: 100%;
         }
       }
     }
-    #exhibit-controls {
+
+    #carousel-controls {
       padding: 5px 0px;
       overflow:hidden;
       text-align: center;
@@ -303,6 +326,9 @@ input[type=file] {
       }
     }
   }
+  /* End Carousel */
+
+
   #collections {
     overflow: hidden;
     .collection_block {
@@ -487,91 +513,6 @@ input[type=file] {
       input[type=submit] {
         float: right;
         margin-top: 10px;
-      }
-    }
-  }
-  
-  //User profile page
-  #user_show_page {
-    margin: 20px 0;
-    #user_image {
-      img {
-        border: 2px solid $orange;
-        width: 100%;
-      }
-      text-align:center;
-    }
-    .mobile-user-row {
-      img {
-        float: left;
-        margin-right: 20px;
-      }
-    }
-    #user_info {
-      
-    }
-    #user_bio {
-      
-    }
-    .collection_block {
-      margin-top: 20px;
-      #outerContainer {
-        height: 680px;
-      }
-      .nav {
-        border-bottom: 1px solid #ddd;
-        height: 37px;
-        margin-bottom:0;
-      }
-      .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus, .nav-tabs > li > a {
-        margin-bottom:0;
-      }
-
-      .tab-content {
-        overflow: auto;
-        clear: both;
-        border-right: 1px solid #ddd;
-        border-left: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-      #summary {
-        font-size: 13px;
-        line-height: 1.3em;
-        margin-bottom: .9em;
-        b {
-          font-weight: bold;
-        }
-        i {
-          font-style: italic;
-        }
-      }
-      #sliderContent {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      #media {
-        #cc_video_container {
-          overflow:hidden;
-          #cc_video_player {
-            width: 80%;
-            float: left;
-          }
-          #cc_video_thumbnail_list {
-            width: 20%;
-            float:right;
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            img {
-              
-            }
-          }
-          .video_title {
-            font-size: 16px;
-            font-weight: bold;
-          }
-        }
       }
     }
   }
@@ -776,7 +717,8 @@ input[type=file] {
       }
       #documents {
         .document {
-          margin-bottom: 20px;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
           border-bottom: 2px solid $orange;
           .doc_thumbnail {
             float: left;
@@ -844,7 +786,6 @@ input[type=file] {
     }
     .series_content, .program_content, .video_content, .audio_content {
       .document_content {
-        border-right: 1px solid #ddd;
         padding-right: 10px;
         .asset-content {
           overflow: hidden;
@@ -1123,10 +1064,10 @@ input[type=file] {
     }
   }
   #main-container {
-    #exhibits {
+    #carousel {
       height: 358px;
-      #exhibit-slider {
-        .exhibit-item {
+      #carousel-slider {
+        .carousel-item {
           height: 251px;
           .image {
             height: 251px;
@@ -1267,9 +1208,9 @@ input[type=file] {
     padding: 0px 5px;
     margin-top: 43px;
     #body {
-      #exhibits {
-        #exhibit-slider {
-          .exhibit-item {
+      #carousel {
+        #carousel-slider {
+          .carousel-item {
             .image {
               height: 280px;
             }

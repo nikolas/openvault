@@ -16,13 +16,5 @@
       </button>
     </div>
   <% end %>
-	<div id="browse">
-		<label>Browse: </label>
-    <!-- Need to add dynamic categories and collections -->
-    <%= form_tag catalog_index_path, :method => :get, :class => 'categories' do %>
-      <%= select 'f', 'category_sim', grouped_options_for_select({"Collections" => top_level_collections, "Series" => collections_list }), { :prompt => "Select filter" }, :name => 'f[category_sim][]' %>
-      <%= submit_tag 'Browse filter' %>
-    <% end %>
-	</div>
 
 </div>

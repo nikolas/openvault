@@ -11,7 +11,7 @@
 		<div class="defList_container">
 			<div class="blacklight-dc_description_t">
 			<div class="label" style="display:none;">Summary</div>
-			<div class="value"><%= truncate(collection.summary, :length => 150) %></div>
+			<div class="value"><%= truncate(collection.summary, :length => 150).html_safe %></div>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,87 @@
+//User profile page
+#users_show {
+
+  a {
+    text-decoration: none;
+  }
+
+  #about {
+    dl.dl-horizontal {
+      dt {
+        font-weight: bold;
+      }
+      dt, dd {
+        padding: 0.2em;
+      }
+    }
+  }
+
+  margin: 20px 0;
+
+  .avatar {
+    img {
+      border: 2px solid $orange;
+      width: 100%;
+    }
+  }
+
+  #users_show_actions {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .mobile-user-row {
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+  }
+  
+  #users_show_tabs {
+
+    margin-top: 20px;
+
+    #outerContainer {
+      height: 680px;
+    }
+
+    #summary {
+      font-size: 13px;
+      line-height: 1.3em;
+      margin-bottom: .9em;
+      b {
+        font-weight: bold;
+      }
+      i {
+        font-style: italic;
+      }
+    }
+    #sliderContent {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #media {
+      #cc_video_container {
+        overflow:hidden;
+        #cc_video_player {
+          width: 80%;
+          float: left;
+        }
+        #cc_video_thumbnail_list {
+          width: 20%;
+          float:right;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          img {
+            
+          }
+        }
+        .video_title {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
