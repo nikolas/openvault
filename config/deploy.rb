@@ -71,6 +71,11 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+
+  desc 'Show deployed revision'
+  task :revision, :roles => :app do
+    run "cat #{current_path}/REVISION"
+  end
 end
 
 namespace :link_shared do
