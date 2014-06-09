@@ -26,6 +26,7 @@
         <h2><%= @user.full_name %></h2>
         <% if current_user && current_user == @user %>
           <%= render partial: 'users/show_actions' %>
+          <%= render partial: "user_items", user_artifacts: @user.artifacts %>
         <% end %>
 
         <% if @user.title || @user.organization %>

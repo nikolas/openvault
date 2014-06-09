@@ -1,5 +1,7 @@
 <ul class="tools">
   <% if current_user && current_user.role == 'scholar' %>
+
+  <%= artifact_digitization_link(@document, @artifact) %>
     
     <% if current_user && current_user.owned_collections.empty? && current_user.custom_collection_collabs.empty? %>
       <li class="create_collection">

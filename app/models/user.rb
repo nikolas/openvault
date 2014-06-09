@@ -20,6 +20,18 @@ class User < ActiveRecord::Base
   has_many :custom_collection_collabs
   has_many :collab_collections, through: :custom_collection_collabs, source: :custom_collection
 
+  has_many :artifact_logs
+  has_many :sponsorships
+  has_many :artifacts, :through => :sponsorships
+
+  has_many :sponsored_artifacts, :through => :sponsorships, 
+    :conditions => {'sponsorships.confirmed' => true},
+    :source => :artifact
+  
+  has_many :potentially_sponsored_artifacts, :through => :sponsorships, 
+    :conditions => {'sponsorships.confirmed' => false},
+    :source => :artifact
+
   def collections
     (owned_collections + collab_collections).uniq
   end
@@ -58,6 +70,10 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  def requested_artifact?(pid)
+    !!artifacts.find_by_pid(pid)
   end
 
   def work_string
