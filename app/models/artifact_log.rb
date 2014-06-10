@@ -1,9 +1,9 @@
 class ArtifactLog < ActiveRecord::Base
+  attr_accessible :user, :artifact, :event, :from, :to, :description
   belongs_to :artifact
   belongs_to :user
 
   def self.record(user, artifact, options={})
-    binding.pry
     create(
       :user => user, 
       :artifact => artifact, 

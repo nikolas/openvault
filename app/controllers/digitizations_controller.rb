@@ -17,7 +17,9 @@ class DigitizationsController < ApplicationController
 		else
 		  flash[:error] = 'failure'
 		end
-		redirect_to dashboard_path
+		redirect_to user_root_path
 	end
+
+
 
 end

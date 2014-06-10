@@ -146,14 +146,19 @@ class Artifact < ActiveRecord::Base
       description: 'Digitization has been published and is available'
     })
   end
+
+  def ov_asset
+    OpenvaultAsset::find pid, cast: true
+  end
+
+  # def solr_doc
+  #   item = Blacklight.solr.select(params: {q: "id:#{openvault_asset_pid}"})
+  #   raise 'CustomCollectionItem could not find corresponding solr document' unless item['response']['docs'].first
+  #   item['response']['docs'].first
+  # end
  
   def title
-    @title ||=  Blacklight.solr.select(params: {q: "id:#{solr_document_id}"}).
-      try(:[], 'response').
-      try(:[], 'docs').
-      try(:first).
-      try(:[], 'title_s').
-      try(:first)
+    @title ||= ov_asset.title
   end
   
   def digitizing?

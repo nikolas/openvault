@@ -29,7 +29,7 @@ module ArtifactsHelper
   end
 
   def already_requested
-    dashboard_link = link_to 'view request' , dashboard_path, :class => "label label-info"
+    dashboard_link = link_to 'view request' , user_root_path, :class => "label label-info"
     "You have requested this item, #{dashboard_link}".html_safe
   end
 
