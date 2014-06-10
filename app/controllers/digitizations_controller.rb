@@ -19,7 +19,4 @@ class DigitizationsController < ApplicationController
 		end
 		redirect_to user_root_path
 	end
-
-
-
 end
