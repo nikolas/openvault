@@ -13,7 +13,6 @@
  *  So we require a single scss file that then @imports several more into the same namespace.
  *= require_self
  *= require bootstrap-wysihtml5
- *= require active_admin/editor/wysiwyg
  *= require jquery.thumbnailScroller
  *= require flexslider
  *= require video-js.min
