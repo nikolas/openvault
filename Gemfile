@@ -64,6 +64,7 @@ gem 'jettywrapper'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'state_machine'
 gem 'figaro'
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
