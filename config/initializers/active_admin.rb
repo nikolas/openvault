@@ -131,17 +131,16 @@ ActiveAdmin.setup do |config|
   # We recommend using the built in Active Admin layout and loading
   # up your own stylesheets / javascripts to customize the look
   # and feel.
-  #
-  # To load a stylesheet:
-  #   config.register_stylesheet 'my_stylesheet.css'
+  # 
+  # By default ActiveAdmin automatically registers app/assets/javascripts/active_admin.js
+  # and app/assets/stylesheets/active_admin.css. But we don't want to do that. Instead,
+  # we move JS and CSS into 'admin' directories to keep them separate from the rest of the app,
+  # and call .clear_javascripsts! and .clear_stylesheets! to unset the defaults.
+  config.clear_javascripts!
+  config.register_javascript 'admin/active_admin.js'
 
-  # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
-  #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
-  #
-  # To load a javascript file:
-  #   config.register_javascript 'my_javascript.js'
-  config.register_stylesheet 'bootstrap-wysihtml5.css'
-
+  config.clear_stylesheets!
+  config.register_stylesheet 'admin/active_admin.css'
 
   # == CSV options
   #

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'helpers/test_helper'
 include Devise::TestHelpers
 include Warden::Test::Helpers
 Warden.test_mode!

@@ -23,4 +23,6 @@
 //= require video-config
 //= require search
 //= require responsive-tabs
-//= require_tree .
+//= require_directory ./
+//= require_directory ./openvault
+//= require_directory ./helpers

@@ -1,5 +1,5 @@
 class CustomCollection < ActiveRecord::Base
-  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes, :image, :collabs_attributes, :collab_ids
+  attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :owner_type_and_id, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes, :collabs_attributes, :collab_ids
 
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :summary, :on => :create, :message => "can't be blank"
@@ -26,6 +26,16 @@ class CustomCollection < ActiveRecord::Base
   mount_uploader :article, CustomCollectionArticleUploader
 
   accepts_nested_attributes_for :collabs
+
+  def owner_type_and_id
+    "#{owner.class.to_s}:#{owner.id}" unless owner.nil?
+  end
+
+  def owner_type_and_id=(type_and_id)
+    if type_and_id.present?
+      self.owner_type, self.owner_id = type_and_id.split(':')
+    end
+  end
 
   def collabs_without_owner
     collabs.reject{|collab| owner == collab}
