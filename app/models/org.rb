@@ -1,4 +1,9 @@
+require 'random_record'
+
 class Org < ActiveRecord::Base
+
+  include RandomRecord
+
   attr_accessible :desc, :name, :user_ids
   
   has_many :owned_collections, as: :owner, class_name: CustomCollection

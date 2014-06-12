@@ -1,8 +1,13 @@
+require 'random_record'
+
 class User < ActiveRecord::Base
   # Connects this user object to Hydra behaviors.
   include Hydra::User
   # Connects this user object to Blacklights Bookmarks.
   include Blacklight::User
+
+  include RandomRecord
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
