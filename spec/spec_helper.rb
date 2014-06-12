@@ -32,6 +32,7 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
 
+  # This is needed so we don't have to add metadata for the type of spec. Use Rails conventions instead.
   config.infer_spec_type_from_file_location!
 
   # Run specs in random order to surface order dependencies. If you find an
@@ -52,13 +53,15 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = false
 
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean_with :truncation
   end
-  config.before(:each) do
+  config.before(:context) do
     DatabaseCleaner.start
   end
-  config.after (:each) do
+  config.after (:context) do
     DatabaseCleaner.clean
   end
 
