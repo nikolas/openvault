@@ -61,7 +61,7 @@ Openvault::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  config.assets.precompile += ['pdfviewer.js', 'viewer.css']
+  config.assets.precompile += ['pdfviewer.js', 'viewer.css', 'admin/active_admin.css', 'admin/active_admin.js']
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
