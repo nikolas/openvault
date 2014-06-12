@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+
+  raise 'No HTTP basic authentication password has been set.' unless ENV['http_basic_auth_password']
+  http_basic_authenticate_with :name => "ov", :password => ENV['http_basic_auth_password']
+
   # Adds a few additional behaviors into the application controller 
    include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on 
