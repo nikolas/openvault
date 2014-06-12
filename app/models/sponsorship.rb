@@ -2,6 +2,8 @@ class Sponsorship < ActiveRecord::Base
   belongs_to :artifact
   belongs_to :user
 
+  attr_accessible :confirmed
+
   def status
     confirmed? ? 'Confirmed/Sponsor' : 'Requested'
   end
