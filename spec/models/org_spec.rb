@@ -2,6 +2,14 @@ require 'spec_helper'
 
 describe Org do
 
+  describe '.random' do
+    let!(:orgs) { create_list(:org, 3) }
+    
+    it 'selects a random record from the database' do
+      expect(orgs.include? Org.random).to be true 
+    end
+  end
+
   describe 'factory' do
     it 'builds a valid instance' do
       expect(build(:org)).to be_valid

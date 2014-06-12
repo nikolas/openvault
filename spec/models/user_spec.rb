@@ -3,6 +3,13 @@ require 'cancan/matchers'
 
 describe User do
 
+  describe '.random' do
+    let!(:users) { create_list(:user, 3) }
+    it 'selects a random user from the database' do
+      expect(users.include? User.random).to be true
+    end
+  end
+
   describe "has a factory that" do
     let(:user) { FactoryGirl.create(:user) }
     it "creates a valid user (saved to db)" do
