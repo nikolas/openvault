@@ -2,6 +2,7 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController  
+  before_filter :find_artifact, :only => :show
   
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
@@ -258,6 +259,10 @@ class CatalogController < ApplicationController
     #     end
     #   end
     # end
+  end
+
+  def find_artifact
+    @artifact = Artifact.where(pid: params[:id]).first
   end
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...

@@ -30,6 +30,14 @@ Openvault::Application.routes.draw do
     resource :tags
   end
 
+  resources :digitizations
+  resources :sponsorships do
+    member do
+      put 'confirm'
+      put 'unconfirm'
+    end
+  end
+
   get 'series/:id', as: 'series', to: 'series#show'
   get 'series/:id/print', as: 'print_series', to: 'series#print'
   get 'series', as: 'browse_series', to: 'series#browse_by_title'

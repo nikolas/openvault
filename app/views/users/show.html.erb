@@ -45,6 +45,9 @@
               </li>
             <% end %>
             <li>
+              <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
+            </li>
+            <li>
               <a href="#about" class="about-link" data-toggle="tab">About</a>
             </li>
           </ul>
@@ -55,6 +58,14 @@
                 <%= render partial: 'custom_collection_list' %>
               <% else %>
                 <%= "#{@user.full_name} does not have any collections yet." %>
+              <% end %>
+            </div>
+
+            <div id="digitization-requests" class="tab-pane fade in">
+              <% if @user.sponsorships %>
+                <%= render partial: 'user_items' %>
+              <% else %>
+                <%= "#{@user.full_name} does not have any digitization requests." %>
               <% end %>
             </div>
 
