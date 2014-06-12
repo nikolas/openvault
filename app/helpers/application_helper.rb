@@ -10,8 +10,8 @@ module ApplicationHelper
   end
 
   def collection_item_link(item, options={})
-  	id = item.ov_asset['id']
-  	title = "#{item.ov_asset['title_tesim'].first} - #{item.kind}"
+  	id = item.solr_doc['id']
+  	title = "#{item.solr_doc['title_tesim'].first} - #{item.kind}"
   	path = send("#{item.kind.downcase}_path", id)
   	link_to title, path, options
   end
