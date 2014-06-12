@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CustomCollection do
 
-  describe 'factory' do
+  describe 'factory :custom_collection' do
     it 'can build a valid instance' do
       build(:custom_collection).should be_valid
     end
@@ -10,6 +10,28 @@ describe CustomCollection do
     it 'can create a valid instance' do
       cc = FactoryGirl.create(:custom_collection).tap { |obj| obj.save } # TODO: chaining #save! should not be required, but it is.
       expect(cc.new_record?).to be false
+    end
+
+    describe ':with_items' do
+      it 'creates an instance with associated CustomCollectionItems, 2 by default.' do
+        expect(create(:custom_collection, :with_items).custom_collection_items.count).to eq 2
+      end
+
+      it 'creates an instance with N associated CustomCollectionItems, where :num_items => N' do
+        num_items = rand 3
+        expect(create(:custom_collection, :with_items, num_items: num_items).custom_collection_items.count).to eq num_items
+      end
+    end
+
+    describe ':with_collabs' do
+      it 'creates an instance with assocated Users, 2 by default' do
+        expect(create(:custom_collection, :with_collabs).collabs.count).to eq 2
+      end
+
+      it 'creates an instance with N associated Users, where :num_collabs => N' do
+        num_collabs = rand 3
+        expect(create(:custom_collection, :with_collabs, num_collabs: num_collabs).collabs.count).to eq num_collabs
+      end
     end
   end
 
@@ -44,27 +66,5 @@ describe CustomCollection do
     # collection = create(:custom_collection, name: 'testing 1', owner: user)
     # collection.vanity_url.should eq("/scholar/john-smith/testing-1")
     fail
-  end
-
-  describe '#custom_collection_items <<' do
-    let(:custom_collection) { FactoryGirl.create(:custom_collection_with_items) }
-    let(:custom_collection_items) { custom_collection.custom_collection_items }
-
-    it 'adds CustomCollectionItem instance to has_many association' do
-      expect {
-        custom_collection.custom_collection_items << FactoryGirl.create(:custom_collection_item)
-      }.to change(custom_collection_items, :count).by 1
-    end
-  end
-
-  describe '#users <<' do
-    let(:custom_collection) { FactoryGirl.create(:custom_collection_with_items) }
-    let(:custom_collection_items) { custom_collection.custom_collection_items }
-    let(:users) { FactoryGirl.create_list(:user, 5) }
-
-    it "adds User instance to has_many association" do
-      users.each { |user| custom_collection.collabs << user }
-      expect(custom_collection.collabs.count).to eq 5
-    end
   end
 end
