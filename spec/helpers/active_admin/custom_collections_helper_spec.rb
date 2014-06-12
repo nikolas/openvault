@@ -9,14 +9,14 @@ describe ActiveAdmin::CustomCollectionsHelper do
 
   describe '#scholar_owner_options' do
 
-    let(:scholar_owner_options) { scholar_owner_options }
+    let(:options) { scholar_owner_options }
 
     it 'contains an entry for each User who is a "scholar"' do
-      expect(scholar_owner_options.count).to eq User.scholars.count
+      expect(options.count).to eq User.scholars.count
     end
 
     it 'has "User:###" as the second value of each options, where "###" is the ID of the scholar' do
-      scholar_owner_options.each do |option|
+      options.each do |option|
         expect(option.last).to match(/^User:\d+$/)
       end
     end
