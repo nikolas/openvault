@@ -23,6 +23,9 @@ ActiveAdmin.register User do
       raw sorted_org_links(user.orgs).join(', ')
     end
     column :role
+    column :requests do |user|
+      user.artifacts.count
+    end
     column :admin
     actions
   end
@@ -44,6 +47,22 @@ ActiveAdmin.register User do
       row :mla_updates
       row :role
       row :admin
+    end
+
+    panel "Requests" do
+      table_for user.sponsorships do
+        column :id do |sponsorship|
+          link_to sponsorship.artifact.id, admin_artifact_path(sponsorship.artifact)
+        end
+        column :pid do |sponsorship|
+          sponsorship.artifact.pid
+        end
+        column :state do |sponsorship|
+          sponsorship.artifact.state
+        end
+        column :status
+        column :created_at
+      end
     end
   end
   

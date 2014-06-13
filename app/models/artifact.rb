@@ -148,16 +148,12 @@ class Artifact < ActiveRecord::Base
   end
 
   def ov_asset
+    return unless pid
     OpenvaultAsset::find pid, cast: true
   end
-
-  # def solr_doc
-  #   item = Blacklight.solr.select(params: {q: "id:#{openvault_asset_pid}"})
-  #   raise 'CustomCollectionItem could not find corresponding solr document' unless item['response']['docs'].first
-  #   item['response']['docs'].first
-  # end
  
   def title
+    return unless ov_asset
     @title ||= ov_asset.title
   end
   
