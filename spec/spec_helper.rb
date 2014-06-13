@@ -51,20 +51,11 @@ RSpec.configure do |config|
   config.include SearchSteps
   config.include CustomCollectionSteps
 
-  config.use_transactional_fixtures = false
-
+  config.use_transactional_fixtures = true
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
+    # DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with :truncation
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
   end
 
   config.fixture_path = File.expand_path("../fixtures", __FILE__)
