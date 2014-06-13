@@ -16,6 +16,7 @@ feature Admin::ArtifactsController do
     @user3 = create(:user)
     @admin = create(:admin)
     @ov_asset = OpenvaultAsset.new(:pid => 'test:1234')
+    Fixtures.cwd("#{fixture_path}/pbcore")
     @ov_asset.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
     @ov_asset.save
     @artifact = Artifact.create(:pid => @ov_asset.pid)
