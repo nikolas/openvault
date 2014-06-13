@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "bostonlocaltv@wgbh.org"
+  default from: "openvault@wgbh.org"
 
   def digitization_approval_email(user, artifact)
   	@user, @artifact = user, artifact
