@@ -3,7 +3,7 @@ ActiveAdmin.register Artifact do
 
   filter :email
   filter :first_name
-  filter :artifact
+  filter :ov_asset
   filter :pid
   filter :created_at
   filter :updated_at
@@ -12,7 +12,9 @@ ActiveAdmin.register Artifact do
 
   index do
     column :id
-    # column :artifact
+    column :ov_asset do |artifact|
+    	link_to artifact.title, admin_artifact_path(artifact)
+    end
     column :pid
     column :created_at
     column :updated_at

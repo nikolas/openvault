@@ -14,4 +14,4 @@ ActiveAdmin.register ArtifactLog do
   filter :email
   filter :event
   filter :created_at
-end   
+end

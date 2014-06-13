@@ -2,7 +2,7 @@ require 'spec_helper'
 include Devise::TestHelpers
 
 describe Admin::ArtifactsController, type: feature do
-	render_views
+  render_views
 
   def login(user)
     visit new_user_session_path
@@ -11,31 +11,31 @@ describe Admin::ArtifactsController, type: feature do
     click_button 'Sign in'
   end
 
-	before(:each) do
-		@user1 = create(:user)
-		@user2 = create(:user)
-		@user3 = create(:user)
-	  @admin = create(:admin)
-	  @artifact = create(:artifact)
-	end
+  before(:each) do
+    @user1 = create(:user)
+    @user2 = create(:user)
+    @user3 = create(:user)
+    @admin = create(:admin)
+    @artifact = create(:artifact)
+  end
 
-	describe "Artifact index" do
-	  before(:each) do
-			@artifact.request_digitization(@user1)
+  describe "Artifact index" do
+    before(:each) do
+      @artifact.request_digitization(@user1)
       login(@admin)
       visit admin_artifacts_path
-	  end
+    end
 
-	  it "shows the artifact in the index" do
-	  	expect(page).to have_content(@artifact.solr_document_id)
-	  end
+    it "shows the artifact in the index" do
+      expect(page).to have_content(@artifact.pid)
+    end
 
-	  it "when multiple requests on artifact are made, requests column updates" do
-			within "tr#artifact_#{@artifact.id}" do
-				expect(page).to have_content(@artifact.sponsorships.count)
-			end
-	  end
-	end
+    it "when multiple requests on artifact are made, requests column updates" do
+      within "tr#artifact_#{@artifact.id}" do
+        expect(page).to have_content(@artifact.sponsorships.count)
+      end
+    end
+  end
 
   describe "Artifact show" do
     before(:each) do
