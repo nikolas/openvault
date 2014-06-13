@@ -1,14 +1,13 @@
 require 'spec_helper'
 include Devise::TestHelpers
+require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
-describe Admin::ArtifactsController, type: feature do
-  render_views
-
+feature Admin::ArtifactsController do
   def login(user)
     visit new_user_session_path
     fill_in 'Email', :with => @admin.email
     fill_in 'Password', :with => @admin.password
-    click_button 'Sign in'
+    click_button 'Log in'
   end
 
   before(:each) do
@@ -16,7 +15,10 @@ describe Admin::ArtifactsController, type: feature do
     @user2 = create(:user)
     @user3 = create(:user)
     @admin = create(:admin)
-    @artifact = create(:artifact)
+    @ov_asset = OpenvaultAsset.new(:pid => 'test:1234')
+    @ov_asset.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
+    @ov_asset.save
+    @artifact = Artifact.create(:pid => @ov_asset.pid)
   end
 
   describe "Artifact index" do
