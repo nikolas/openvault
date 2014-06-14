@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
 
-  if ENV['HTTP_BASIC_AUTH_PASSWORD']
-    name = ENV['HTTP_BASIC_AUTH_USER'] || 'openvault'
-    http_basic_authenticate_with name: name, :password => ENV['HTTP_BASIC_AUTH_PASSWORD']
+  if ENV['HTTP_BASIC_AUTH_PASSWORD'] && ENV['HTTP_BASIC_AUTH_USER']
+    http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_USER'], password: ENV['HTTP_BASIC_AUTH_PASSWORD']
   end
   
 
