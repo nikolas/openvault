@@ -10,13 +10,15 @@
   <div id="doc_<%= @document[:id] %>">
     
     <div id="document_header" class="row-fluid">
-      <div class="document_heading span10">
+      <div class="document_heading span8">
         <h2><%= @video.title %></h2>
         <%= render :partial => 'addthis/toolbox' %>
       </div>
-      <div class="tools span2">
+      <div class="tools span4">
         <%= render partial: 'catalog/user_tools' %>
-        <%= artifact_digitization_link(@document, @artifact) %>
+        <p><%= artifact_digitization_link(@document, @digitization_artifact) %></p>
+        <p><%= artifact_transcription_link(@document, @transcription_artifact) %></p>
+        <div class='clearfix'></div>
       </div>
     </div>
     

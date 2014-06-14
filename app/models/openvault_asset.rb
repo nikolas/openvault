@@ -7,6 +7,16 @@ class OpenvaultAsset < ActiveFedora::Base
     #logic will go here to accept annotations from scholars
   end
 
+  def solr_doc
+    item = Blacklight.solr.select(params: {q: "id:#{id}"})
+    raise 'CustomCollectionItem could not find corresponding solr document' unless item['response']['docs'].first
+    item['response']['docs'].first
+  end
+
+  def kind
+    self.class.to_s.downcase
+  end
+
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "title", self.title, :stored_searchable, :sortable)

@@ -1,6 +1,6 @@
-class DigitizationsController < ApplicationController
+class TranscriptionsController < ApplicationController
 	def create
-		artifact = Artifact.find_or_create_by_pid_and_type(params[:id], 'digitization')
+		artifact = Artifact.find_or_create_by_pid_and_type(params[:id], 'transcription')
 		if artifact.request_digitization(current_user)
 			flash[:notice] = 'request successfully made'
 		else

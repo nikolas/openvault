@@ -1,4 +1,12 @@
 module ArtifactsHelper
+  def artifact_transcription_link(document, artifact)
+    return nil if published_artifact?(artifact)
+    return nil if artifact && artifact.ov_asset.transcripts.size >= 1
+    return nil if artifact && !%w(audio video series).include?(artifact.ov_asset.kind)
+    return authenticated_transcription_link(document, artifact) if current_user
+    unauthenticated_digitization_link
+  end
+
 	def artifact_digitization_link(document, artifact)
     return nil if published_artifact?(artifact)
     return nil if document.has? "video_s"
@@ -7,8 +15,15 @@ module ArtifactsHelper
     unauthenticated_digitization_link
   end
 
+  def authenticated_transcription_link(document, artifact)
+    return already_requested('transcription') if currently_requested?(document, artifact)
+    return track_artifact_link(document) if requested_by_someone_else?(document, artifact) && artifact.digitizing?
+    return request_transcription_link(document) if !blocked_artifact?(artifact)
+    return 
+  end
+
   def authenticated_digitization_link(document, artifact)
-    return already_requested if currently_requested?(document, artifact)
+    return already_requested('digitization') if currently_requested?(document, artifact)
     return track_artifact_link(document) if requested_by_someone_else?(document, artifact) && artifact.digitizing?
     return request_digitization_link(document) if !blocked_artifact?(artifact)
     return 
@@ -25,12 +40,13 @@ module ArtifactsHelper
   end
 
   def currently_requested?(document, artifact)
-    current_user.requested_artifact?(document.id)
+    return unless artifact
+    current_user.requested_artifact?(artifact)
   end
 
-  def already_requested
-    dashboard_link = link_to 'view request' , user_root_path, :class => "label label-info"
-    "You have requested this item, #{dashboard_link}".html_safe
+  def already_requested(type)
+    dashboard_link = link_to "view #{type} request" , user_root_path, :class => ""
+    "<span>You have requested this item, #{dashboard_link}</span>".html_safe
   end
 
   def blocked_artifact?(artifact)
@@ -50,8 +66,11 @@ module ArtifactsHelper
    "Currently in the digitization process... #{track}".html_safe
   end
 
+  def request_transcription_link(document)
+    link_to "Request transcript of this item", transcriptions_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-default"
+  end
+
   def request_digitization_link(document)
     link_to "Request digitization of this item", digitizations_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-primary"
   end
-
 end

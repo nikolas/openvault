@@ -1,4 +1,7 @@
 class Artifact < ActiveRecord::Base
+  # Disable STI
+  self.inheritance_column = :_type_disabled
+
   has_many :artifact_logs
   has_many :sponsorships
   has_many :users, :through => :sponsorships
