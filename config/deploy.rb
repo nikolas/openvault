@@ -93,7 +93,7 @@ namespace :deploy do
     file_contents = <<-EOS
 # Environment varaibles to be use for basic HTTP authentication.
 ENV['HTTP_BASIC_AUTH_USERNAME'] = '#{username}'
-ENV['HTTP_BASIC_AUTH_HTTP_PASSWORD'] = '#{http_password}'
+ENV['HTTP_BASIC_AUTH_PASSWORD'] = '#{http_password}'
 EOS
 
     put file_contents, "#{shared_path}/config/initializers/basic_http_auth.rb"
