@@ -262,7 +262,8 @@ class CatalogController < ApplicationController
   end
 
   def find_artifact
-    @artifact = Artifact.where(pid: params[:id]).first
+    @digitization_artifact = Artifact.where(pid: params[:id], type:'digitization').first
+    @transcription_artifact = Artifact.where(pid: params[:id], type:'transcription').first
   end
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...

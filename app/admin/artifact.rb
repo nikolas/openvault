@@ -8,6 +8,7 @@ ActiveAdmin.register Artifact do
   filter :created_at
   filter :updated_at
   filter :state
+  filter :type
   filter :sponsorship_user_ids, :as => :select, :collection => proc { User.all.collect{|u| [u.to_s, u.id]} }, :label => 'Requestor / Sponsor' 
 
   index do
@@ -19,6 +20,7 @@ ActiveAdmin.register Artifact do
     column :created_at
     column :updated_at
     column :state
+    column :type
     column :requests do |artifact|
       artifact.sponsorships.count
     end
@@ -30,6 +32,7 @@ ActiveAdmin.register Artifact do
       row :id
       row :pid
       row :state
+      row :type
       row :created_at
       row :potential_sponsors do
         artifact.potential_sponsors.collect{|s| s.to_s}.join(', ')

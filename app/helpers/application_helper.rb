@@ -1,5 +1,6 @@
 module ApplicationHelper
   include Twitter::Autolink
+
   def organization_name
     Rails.configuration.organization_name
   end
@@ -10,10 +11,14 @@ module ApplicationHelper
   end
 
   def collection_item_link(item, options={})
-  	id = item.ov_asset['id']
-  	title = "#{item.ov_asset['title_tesim'].first} - #{item.kind}"
-  	path = send("#{item.kind.downcase}_path", id)
+  	id = item.solr_doc['id']
+  	title = "#{item.solr_doc['title_tesim'].first} - #{item.kind}"
+  	path = send("#{collection_item_path(item)}_path", id)
   	link_to title, path, options
+  end
+
+  def collection_item_path(item)
+    item.kind.downcase
   end
 
   def render_collection_item(item, options={})

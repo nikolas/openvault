@@ -81,8 +81,8 @@ class User < ActiveRecord::Base
     "#{last_name}, #{first_name}"
   end
 
-  def requested_artifact?(pid)
-    !!artifacts.find_by_pid(pid)
+  def requested_artifact?(artifact)
+    !!artifacts.find_by_id(artifact.id)
   end
 
   def work_string

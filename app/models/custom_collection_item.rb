@@ -32,5 +32,4 @@ class CustomCollectionItem < ActiveRecord::Base
   def poster_image
     OpenvaultAsset.find(openvault_asset_pid).thumbnail_url
   end
-  
 end

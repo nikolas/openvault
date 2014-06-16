@@ -1,4 +1,4 @@
-<ul class="tools">
+<ul class="user-tools">
   <% if current_user && current_user.role == 'scholar' %>
     <% if current_user && current_user.owned_collections.empty? && current_user.custom_collection_collabs.empty? %>
       <li class="create_collection">
