@@ -24,6 +24,25 @@ body {
   font-family: $base-font-family;
 }
 
+.btn {
+  text-decoration: none;
+}
+
+.btn-primary{
+  color: #fff;
+  &:visited {
+  text-decoration: none;
+    color: #fff;
+  }
+}
+
+.btn-default{
+  color: #000;
+  &:visited {
+    color: #000;
+  }
+}
+
 a {
   color: $link-color;
   font-weight: bold;
@@ -763,11 +782,11 @@ input[type=file] {
       }
     }
     #document_header {
+      // min-height: 90px;
       .date {
         font-style:italic;
       }
       .tools {
-        height: 18px;
         .add_to_collection, .in_collection {
           float:left;
           p {

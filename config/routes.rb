@@ -31,6 +31,8 @@ Openvault::Application.routes.draw do
   end
 
   resources :digitizations
+  resources :transcriptions
+
   resources :sponsorships do
     member do
       put 'confirm'
