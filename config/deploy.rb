@@ -92,7 +92,7 @@ namespace :deploy do
 
     file_contents = <<-EOS
 # Environment varaibles to be use for basic HTTP authentication.
-ENV['HTTP_BASIC_AUTH_USERNAME'] = '#{username}'
+ENV['HTTP_BASIC_AUTH_USER'] = '#{username}'
 ENV['HTTP_BASIC_AUTH_PASSWORD'] = '#{http_password}'
 EOS
 
