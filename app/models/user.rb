@@ -41,6 +41,11 @@ class User < ActiveRecord::Base
     (owned_collections + collab_collections).uniq
   end
 
+  # This is a Rails thing that returns the value used in user routes, e.g. user_path, and edit_user_path
+  def to_param
+    username
+  end
+
   has_and_belongs_to_many :orgs
 
   validates_presence_of :first_name, :message => "can't be blank"
