@@ -19,6 +19,7 @@ ActiveAdmin.register CustomCollection do
 
     f.inputs do
       f.input :collabs,  as: :check_boxes, collection: User.scholars.sort_by {|scholar| scholar.last_name_first}, member_label: :last_name_first
+      f.input :credits
     end
 
     f.inputs do
@@ -47,6 +48,7 @@ ActiveAdmin.register CustomCollection do
 	  	row :owner
 	  	row :slug
 	  	row :owner_type
+      row :credits
   	end
 
     panel "Collaborators" do
