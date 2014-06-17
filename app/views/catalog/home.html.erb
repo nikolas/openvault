@@ -41,30 +41,17 @@
     </div>
     <br />
     <div id="collections" class="grainbox">
-      <h2>New Collections</h2>
+      <h2>Scholar Collections</h2>
       <div class="sep-line"></div>
       <% @custom_collections.each do |coll| %>
         <div class="collection_block">
-          <h3><%= link_to coll.name, coll %></h3>
-          <div class="user_bio">
-            <p><% # = link_to coll.owner_name, coll.owner
-            %></p>
-          </div>
+          <h5 class="collection_title"><%= link_to coll.name, coll %></h5>
+          <span class="collection_owner">by <%= link_to coll.owner.full_name, coll.owner %></span>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
-<!-- <div id="catalog-scroller" class="row-fluid">
-  <div id="scroller-items">
-    <% @scroller_items.each do |item| %>
-      <a href="/video/<%= item[1].to_s %>" class="scroller-item">
-        <img src="<%= item[0].to_s %>" class="scroller-image" />
-      </a>
-    <% end %>
-  </div>
-</div> -->
 
 <div class="row-fluid">
   <div class="span12"></div>

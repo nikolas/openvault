@@ -358,23 +358,35 @@ input[type=file] {
     overflow: hidden;
     .collection_block {
       overflow:hidden;
-      h3 {
-        a {
-         text-decoration: none; 
-         font-size: inherit;
-        }
+
+      padding: 10px 0;
+
+      a {
+        text-decoration: none
       }
-      .user_img {
-        float:left;
-        border: 2px solid #fff;
-        margin-right: 10px;
+
+      .collection_title {
+        float: left;
       }
-      .user_bio {
-        float:left;
+
+      .collection_owner {
+        float: right;
+
+        // reset from style set somewhere else
+        margin-bottom: 0;
       }
-      &:first-child {
-        border: none;
-      }
+
+      // .user_img {
+      //   float:left;
+      //   border: 2px solid #fff;
+      //   margin-right: 10px;
+      // }
+      // .user_bio {
+      //   float:left;
+      // }
+      // &:first-child {
+      //   border: none;
+      // }
     }
   }
   #catalog-scroller {
