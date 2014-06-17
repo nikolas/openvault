@@ -1,0 +1,42 @@
+div.slidesjs-container {
+  margin-bottom: 10px;
+}
+
+
+a.slidesjs-navigation {
+  text-decoration: none;
+}
+
+a.slidesjs-previous {
+  float: left;
+}
+
+a.slidesjs-next {
+  float: left;
+  margin-left: 10px
+}
+
+a.slidesjs-stop {
+  float: right;
+}
+
+a.slidesjs-play {
+  float: right;
+}
+
+ul.slidesjs-pagination {
+
+  a {
+    text-decoration: none;
+    padding: 10px 5px;
+  }
+
+  a.active {
+    background: rgba(150, 150, 150, 0.6)
+  }
+
+  li.slidesjs-pagination-item {
+    display: inline;
+    float: left;
+  }
+}

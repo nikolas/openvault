@@ -298,8 +298,14 @@ input[type=file] {
   .overlay-bottom {
     @extend .overlay;
     bottom: 0px;
-    height: 50px;
     width: 100%;
+  }
+
+  // override some upstream styles
+  .overlay-bottom {
+    p {
+      margin-bottom: 0px;
+    }
   }
 
   /* End Overlays */
