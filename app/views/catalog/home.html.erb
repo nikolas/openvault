@@ -34,12 +34,15 @@
     <% end %>
   </div>
   <div id="home_sidebar" class="span4">
+
     <div id="welcome" class="grainbox">
       <h2>What is the OpenVault?</h2>
       <div class="sep-line"></div>
       <p>We provide online access to unique and historically important content produced by the public television and radio station WGBH. So have a look around and explore!</p>
     </div>
+
     <br />
+
     <div id="collections" class="grainbox">
       <h2>Scholar Collections</h2>
       <div class="sep-line"></div>
@@ -90,21 +93,14 @@
     </div>
   </div>
   <div id="tweets" class="span4">
-    <h2>Recent Tweets</h2>
+    <h2>
+      @WGBHArchives
+    </h2>
+
     <div class="sep-line"></div>
-    <div id="tweet-list">
-      <% unless @tweets.nil? %>
-        <% @tweets.each_with_index do |tweet| %>
-          <div class="tweet-item">
-            <p><% string = tweet.text %>
-            <%= auto_link(string.dup).html_safe %></p>
-          </div>
-        <% end %>
-      <% end %>
-      <% if @tweets.nil? || @tweets.empty? %>
-        <p>There was a problem connecting to twitter, please check back later.</p>
-      <% end %>
-    </div>
-    <a href="https://twitter.com/wgbharchives" class="twitter-follow">Follow @wgbharchives</a>
+
+    <a class="twitter-timeline" data-dnt="true" width="100%" height="475px" href="https://twitter.com/wgbharchives" data-widget-id="471296080181596162">Tweets by @wgbharchives</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
   </div>
 </div>
