@@ -1,7 +1,17 @@
 <% content_for :head do %>
 <script type="text/javascript">
   $(function() {
-    $('#carousel').slidesjs();
+    $('#carousel').slidesjs({
+      // config for "Previous" / "Next" buttons.
+      navigation: {active: false},
+
+      // config for playing the slideshow.
+      play: {
+        active: true,
+        auto: true,
+        interval: 10000
+      }
+    });
   });
 </script>
 <% end %>
