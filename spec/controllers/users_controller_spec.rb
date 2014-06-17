@@ -8,6 +8,13 @@ describe UsersController do
   let(:orgs) { FactoryGirl.create_list(:org, 3) }
   before(:each) { scholar.save and member.save and org.save }
 
+
+  describe 'GET user/:username' do
+    it 'responds with 404 if user does not exist' do
+      expect{ get :show, username: "bliggity-blabbly-blah" }.to raise_error ActionController::RoutingError
+    end
+  end
+
   describe "#scholar" do
     it 'responds with 200 success if user is a a scholar' do
       get :scholar, username: scholar.username

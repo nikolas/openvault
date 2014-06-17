@@ -55,16 +55,13 @@ Openvault::Application.routes.draw do
 
   #for after you update your profile redirect to users#show instead of root_url (the devise default)
   devise_scope :users do
-    get 'me', :to => 'users#show', :as => :user_root
+    get 'me', :to => 'users#show_profile', :as => :user_root
   end
 
   #mount Hydra::Collections::Engine => '/'
 
   #use this for user profile pages - have to override devise routes for user pages and add custom action
-  # match '/scholar/:username' => 'users#show', as: :user
-  # match '/user/:id' => 'users#show', as: :user
   get '/user/:username', to: 'users#show', as: :user
-  get '/scholar/:username', to: 'users#scholar'
-  get '/me', to: 'users#show'
+  get '/scholar/:username', to: 'users#scholar', as: :scholar
   get '/scholars', to: 'users#scholars'
 end
