@@ -7,7 +7,9 @@
       <li class="active"><a href="#summary" class="summary-link" data-toggle="tab">Summary</a></li>
       <li><a href="#article-content" class="article-content-link" data-toggle="tab">Article Content</a></li>
       <li><a href="#media" class="media-link" data-toggle="tab">Media</a></li>
-      <li><a href="#images" class="images-link" data-toggle="tab">Images</a></li>
+      <% if !@custom_collection.custom_collection_images.empty? %>
+        <li><a href="#images" class="images-link" data-toggle="tab">Images</a></li>
+      <% end %>
       <li><a href="#related" class="related-link" data-toggle="tab">Related Content</a></li>
       <li><a href="#collabs" class="collabs-link" data-toggle="tab">Collaborators</a></li>
     </ul>
@@ -46,13 +48,11 @@
         <% end %>
       </div>
       
-      <div id="images" class="tab-pane fade in">
-        <% if @custom_collection.custom_collection_images.count > 0 %>
+      <% if !@custom_collection.custom_collection_images.empty? %>
+        <div id="images" class="tab-pane fade in">
           <%= render :partial => "custom_collection_images_gallery", :locals => {:custom_collection => @custom_collection} %>
-        <% else %>
-          <%= render :partial => "no_images" %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
       <div id="related" class="tab-pane fade in">
         <% @custom_collection.custom_collection_related_links.each do |link| %>
