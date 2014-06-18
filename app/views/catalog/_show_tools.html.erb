@@ -6,7 +6,6 @@
       </li>
     <% else %>
       <span style="position:relative;" >
-        <span class="arrow" ></span>
           <% @menu_collection = current_user.collections.map{|c| [ c.name, c.id ] }.compact %>
           <% @menu_collection << ['Create a new collection...', 'new'] %>
           <% @disabled_menus = current_user.collections.map{|c| c.id if c.has_item?(@document.id)  } %>
