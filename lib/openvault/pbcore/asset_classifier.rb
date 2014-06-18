@@ -2,6 +2,10 @@ module Openvault::Pbcore
   class AssetClassifier
     attr_accessor :doc
 
+    # TODO: Rename this method! It's too easy to confuse
+    # with Openvault::Pbcore#asset_type, which returns
+    # the value inside of <pbcoreAssetType></pbcoreAssetType>,
+    # which is totally different than what this class method does.
     def self.asset_types
       %w(series program transcript video audio image)
     end
@@ -10,6 +14,8 @@ module Openvault::Pbcore
       @doc = doc
     end
 
+    # TODO: I don't think we need this anymore. We are not converting from MARS xml
+    # here. Instead we expect it to already be converted to pbcore before ingest.
     def is_from_mars?
       raise 'Unless you implement me, I will report that I am from venus!'
     end
@@ -36,6 +42,11 @@ module Openvault::Pbcore
       non_program_asset_types.reduce { |r, type| r && !send("is_#{type}?".to_sym) }
     end
 
+    # TODO: Rename this method!
+    # The method #asset_type returns the value inside of <pbcoreAssetType>...</pbcoreAssetType>
+    # for a given <pbcoreDescriptionDocument>.
+    # The class method `.asset_types` was added later and probably was not aware of the potential
+    # for confusion.
     def non_program_asset_types
       AssetClassifier.asset_types - ['series', 'program', 'episode']
     end
@@ -44,7 +55,7 @@ module Openvault::Pbcore
     # It is a Video if:
     #   - the media type is "moving image"
     def is_video?
-      !media_type.nil? && media_type.downcase ==  "moving image"
+      (!media_type.nil? && media_type.downcase ==  "moving image") || (asset_type.downcase == 'preservation master')
     end
 
     # Returns true if PbcoreDescDoc datastream describes an Image record
@@ -70,6 +81,10 @@ module Openvault::Pbcore
       (!asset_type.nil? && asset_type.downcase.include?('transcript'))
     end
 
+    # TODO: Rename the class methods AssetClassifier.asset_types
+    # and AssetClassifier#non_program_asset_types as they are too easy
+    # to confuse with this method, which specifically returns the value
+    # for a given <pbcoreAssetType>...</pbcoreAssetType>.
     def asset_type
       @asset_type ||= doc.asset_type.first
     end
