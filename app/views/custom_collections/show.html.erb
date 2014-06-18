@@ -1,6 +1,6 @@
 <div id="collection_container">
   <h2><%= @custom_collection.name %></h2>
-  <p><strong>Created By: <%= @custom_collection.owner_name %></strong> <em>(owner)</em></p>
+  <p><strong>Created By: <%= @custom_collection.owner_name %></strong></p>
   <br />
   <div class="tabbable responsive">
     <ul class="nav nav-tabs">
@@ -25,7 +25,7 @@
           </iframe>
           <p class="article_rights"><%= @custom_collection.article_rights.to_s %></p>
         <% end %>
-        <p class="collection_credits">Credits: <%= @custom_collection.credits.to_s %></p>
+        <p class="collection_credits">Additional Credits: <%= @custom_collection.credits.to_s %></p>
           <% if current_user && current_user == @custom_collection.owner %>
             <%= link_to 'Edit collection details', edit_custom_collection_path(@custom_collection) %>
           <% end %>
@@ -66,14 +66,13 @@
       <div id="collabs" class="tab-pane fade in">
 
         <% unless @custom_collection.collabs.nil? %>
-          <h3>Collaborators:</h3>
           <ul>
             <li>
               <div class='avatar'>
                 <%= image_tag(@custom_collection.owner.avatar.url(:thumb)) %>
               </div>
               <div class='collab'>
-                <strong><%= link_to @custom_collection.owner_name, user_path(@custom_collection.owner) %> (owner)</strong>
+                <strong><%= link_to @custom_collection.owner_name, user_path(@custom_collection.owner) %> (creator)</strong>
               </div>
 
             </li>
