@@ -16,6 +16,11 @@ feature 'Visitor signs up' do
     expect(page).to have_content('Email is invalid')
   end
 
+  scenario 'no terms and conditions' do
+    submit_registration_form({email: "valid_#{Random.new.rand(10..100)}", password: '123456789', first_name: 'John', last_name: 'Smith', country: 'United Kingdom', mla_updates: '1'})
+    expect(page).to have_content('Terms and conditions must be agreed to')
+  end
+
   scenario 'with blank password' do
     submit_registration_form({email: "valid_#{Random.new.rand(10..100)}@me.com", password: '', first_name: 'John', last_name: 'Smith', country: 'United Kingdom', mla_updates: '1', terms_and_conditions: '1'})
     expect(page).to have_content('Password can\'t be blank')
