@@ -64,11 +64,6 @@
 		  <div id="body" class="row-fluid">
         <% if controller.action_name == 'index' && controller.controller_name == 'catalog' %>
         <div id="search_page">
-  				<div class="span3" id="sidebar">
-  					<!-- Sidebar logic to go in here -->
-  					<%= sidebar_items.join('').html_safe %>
-            &nbsp;
-  				</div>
           <div class="span9" id="content">
             <%= yield %>
           </div>
