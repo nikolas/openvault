@@ -89,5 +89,26 @@ feature 'User edits their profile' do
       expect(page).to have_content('Current password is invalid')
     end
 
+    scenario "adding Organization results in only the organization name displayed" do
+      fill_in 'user_organization', with: "Testing, Inc."
+      click_button 'Save Profile'
+      expect(page).to have_content('You updated your account successfully.')
+      expect(page).to have_content('Testing, Inc.')
+    end
+
+    scenario "adding Title results in only the title name displayed" do
+      fill_in 'user_title', with: "President"
+      click_button 'Save Profile'
+      expect(page).to have_content('You updated your account successfully.')
+      expect(page).to have_content('President')
+    end
+
+    scenario "adding Organization and Title results in both being displayed with dash" do
+      fill_in 'user_organization', with: "Testing, Inc."
+      fill_in 'user_title', with: "President"
+      click_button 'Save Profile'
+      expect(page).to have_content('You updated your account successfully.')
+      expect(page).to have_content('President — Testing, Inc.')
+    end
   end
 end
