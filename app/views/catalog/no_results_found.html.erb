@@ -1,5 +1,5 @@
 <% extra_body_classes << 'no-results-found' %>
-<% title "OpenVault - No Results Found" %>
+<% title "#{application_name} - No Results Found" %>
 <%= render :partial => 'did_you_mean' %>
 <%= render 'constraints', :localized_params=>params %>
 
@@ -14,8 +14,8 @@
   </ul>
 </div>
 
-<p>Please note that the Open Vault site contains records for WGBH productions, which aired on WGBH or PBS. For current programs, try <a href="http://wgbh.org" target="_blank">WGBH.org</a> or <a href="http://pbs.org" target="_blank">PBS.org</a>.</p>
+<p>Please note that the <%= application_name %> site contains records for WGBH productions, which aired on WGBH or PBS. For current programs, try <a href="http://wgbh.org" target="_blank">WGBH.org</a> or <a href="http://pbs.org" target="_blank">PBS.org</a>.</p>
 <br />
 
-<p>You can also explore Open Vault through its <%= link_to "Collections and Series", collections_path %>.</p>
+<p>You can also explore <%= application_name %> through its <%= link_to "Collections and Series", collections_path %>.</p>
 

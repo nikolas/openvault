@@ -1,4 +1,4 @@
-<% title "OpenVault - #{@user.full_name}" %>
+<% title "#{application_name} - #{@user.full_name}" %>
 <div id="users_show" class="row-fluid">
   <div class="span12">
 
@@ -28,8 +28,10 @@
           <%= render partial: 'users/show_actions' %>
         <% end %>
 
-        <% if @user.title || @user.organization %>
+        <% if !@user.title.empty? && !@user.organization.empty? %>
           <h4><%= [@user.title, @user.organization].join(' &mdash; ').html_safe %></h4>
+        <% else %>
+          <h4><%= [@user.title, @user.organization].join('').html_safe %></h5>
         <% end %>
       </div>
     </div>

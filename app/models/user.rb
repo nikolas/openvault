@@ -55,6 +55,7 @@ class User < ActiveRecord::Base
   validates_presence_of :role, :message => "can't be blank"
   validates_inclusion_of :role, :in => %w( member scholar ), :on => :create, :message => "role %s is not included in the list"
   validates :bio, :length => { :maximum => 5000 }
+  validates_presence_of :terms_and_conditions, :message => "must be agreed to"
 
   scope :scholars, where(:role => 'scholar')
 
