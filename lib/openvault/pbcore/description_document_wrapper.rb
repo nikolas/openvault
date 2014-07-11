@@ -35,12 +35,20 @@ module Openvault::Pbcore
     # Fedora for existing instances of models that contain
     # those values. If not found, returns a new model, and assigns
     # the pbcore datastream to it.
-    def model
-      @model ||= fedora_models.first || new_model
+    def model(opts={})
+      if opts[:reset_from_pbcore]
+        @model = fedora_models(refresh: true).first || new_model
+      else
+        @model ||= fedora_models.first || new_model
+      end
     end
 
-    def fedora_models
-      @fedora_models ||= ActiveFedora::Base.find({"all_ids_tesim" => doc.all_ids})
+    def fedora_models(opts={})
+      if opts[:refresh]
+        @fedora_models = ActiveFedora::Base.find({"all_ids_tesim" => doc.all_ids})
+      else
+        @fedora_models ||= ActiveFedora::Base.find({"all_ids_tesim" => doc.all_ids})
+      end
     end
   end
 end
