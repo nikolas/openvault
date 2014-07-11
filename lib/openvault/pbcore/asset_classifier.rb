@@ -14,12 +14,6 @@ module Openvault::Pbcore
       @doc = doc
     end
 
-    # TODO: I don't think we need this anymore. We are not converting from MARS xml
-    # here. Instead we expect it to already be converted to pbcore before ingest.
-    def is_from_mars?
-      raise 'Unless you implement me, I will report that I am from venus!'
-    end
-
     # Returns true if PbcoreDescDoc datastream describes a Series record.
     # It is a Series if:
     #   - it has a series title
