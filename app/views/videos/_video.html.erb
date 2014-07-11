@@ -14,9 +14,14 @@
     <%= " (Video Excerpt)" if video.get('media_dsid_s') =~ /Video/ and video.get('dc_type_s') =~ /excerpt/ %>
   </h3>  
   <div class="defList_container">
-    <% unless video[:summary_ssm].nil? %>
+    <% unless video[:summary_tesim].nil? %>
       <div class="blacklight-summary">
-        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(video[:summary_ssm].first), :length => 200) %></p></div>
+        <div class="doc_value"><p><%= truncate(strip_tags(video[:summary_tesim].first), :length => 250) %></p></div>
+      </div>
+    <% end %>
+    <% unless video[:active_fedora_model_ssi].nil? %>
+      <div class="blacklight-model">
+        <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= truncate(strip_tags(video[:active_fedora_model_ssi])) %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>
