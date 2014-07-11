@@ -88,7 +88,7 @@ module Openvault
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.application_name = "OpenVault"
+    config.application_name = "Open Vault"
     config.organization_name = "WGBH Media Library and Archives"
 
     config.mosaic_size = 93
