@@ -17,7 +17,7 @@
 <% end %>
 
 
-<% title "Open Vault - Home" %>
+<% title "#{application_name} - Home" %>
 <div class="row-fluid">
   <div id="carousel" class="grainbox span8">
     <% @carousel_items.each_with_index do |ex, idx| %>
@@ -36,7 +36,7 @@
   <div id="home_sidebar" class="span4">
 
     <div id="welcome" class="grainbox">
-      <h2>What is the Open Vault?</h2>
+      <h2>What is the <%= application_name %>?</h2>
       <div class="sep-line"></div>
       <p>We provide online access to unique and historically important content produced by the public television and radio station WGBH. So have a look around and explore!</p>
     </div>
