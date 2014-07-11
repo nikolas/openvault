@@ -1,26 +1,17 @@
 <% pbcore = OpenvaultAsset.find(@document.id).pbcore %>
-<h4>Metadata</h4>
 <div class="basic">
   <div class="source">
-    <%# unless  pbcore.titles.reject { |type, value| value == document.get(:title_display) }.empty? and pbcore.publishers.reject{|type, value| value == 'WGBH Educational Foundation' }.empty? %>
     <div>
-      <% unless pbcore.episode_title.empty? %>
-      <p><strong>Episode</strong> <%= pbcore.episode_title.first %></p>
+      <% unless pbcore.series_title.empty? %>
+        <p><strong>Series</strong> <%= pbcore.series_title.first %></p>
       <% end %>
       <% unless pbcore.program_title.empty? %>
-      <p><strong>Program</strong> <%= pbcore.program_title.first %></p>
+        <p><strong>Program</strong> <%= pbcore.program_title.first %></p>
       <% end %>
-      <% unless pbcore.series_title.empty? %>
-      <p><strong>Series</strong> <%= pbcore.series_title.first %></p>
+      <% unless pbcore.episode_title.empty? %>
+        <p><strong>Episode</strong> <%= pbcore.episode_title.first %></p>
       <% end %>
-      <div class="source-credits">
-      <%# pbcore.publishers.reject{|type, value| value == 'WGBH Educational Foundation' }.each do |type, value| %>
-        <%#= "Footage Courtesy of <a href=\"http://www.abcnewsvsource.com/\" rel=\"nofollow\">ABCNews</a>".html_safe if value =~ /ABC/ %>
-        <%#= "Footage Courtesy of <a href=\"http://www.cbsnews.com/\" rel=\"nofollow\">CBS News</a>".html_safe if value =~ /CBS/ %>
-      <%# end %>
-      </div>
     </div>
-    <%# end %>
   </div>
 </div>
 <a href="#" class="more_meta">More metadata</a>
