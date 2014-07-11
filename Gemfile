@@ -23,7 +23,8 @@ group :test do
 
   # test data stuff
   gem 'factory_girl_rails'
-  gem 'faker'
+  # gem 'faker', github: 'stympy/faker'
+  gem 'faker', github: 'afred/faker', branch: 'for-openvault'
 
   # acceptance testing stuff
   gem 'capybara'
