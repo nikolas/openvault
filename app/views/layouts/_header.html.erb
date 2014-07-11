@@ -3,7 +3,7 @@
   <div class="span4 hidden-phone">
     <h1>
       <a href="<%= root_url %>" class="logo-link">
-    		WGBH Media Library &amp; Archives <%= application_name %>
+        WGBH Media Library &amp; Archives <%= application_name %>
       </a>
     </h1>
   </div>
@@ -11,42 +11,40 @@
     <%= render :partial => 'catalog/partials/search_form' %>
   </div>
   <div class="span2 hidden-phone pull-right action_links">
-  	<% if user_signed_in? %>
-      <span class="user_info hidden-tablet hidden-phone">
-        Welcome back <%= truncate(current_user.first_name, :length => 15) %><br />
-      </span>
+    <% if user_signed_in? %>
+      <span class="user_info hidden-tablet hidden-phone" style="white-space: nowrap;">
+        Welcome back <%= current_user.first_name %>
+      </span><br />
       <span class="edit_profile">
         <%= link_to "Profile", "/me", :class => 'action_link' %>
       </span>
       <span>&nbsp;|&nbsp;</span>
-  		<span class="sign_out">
-  			<%= link_to "Log Out", destroy_user_session_path, :class => 'action_link' %>
-  		</span>
-  	<% else %>
+      <span class="sign_out">
+        <%= link_to "Log Out", destroy_user_session_path, :class => 'action_link' %>
+      </span>
+    <% else %>
       <span class="sign_in">
-  			<%= link_to "Log In", new_user_session_path, :class => 'action_link sign_in_link' %>
-  		</span>
-  		<span>&nbsp;|&nbsp;</span>
+        <%= link_to "Log In", new_user_session_path, :class => 'action_link sign_in_link' %>
+      </span>
+      <span>&nbsp;|&nbsp;</span>
       <span class="sign_up">
-  			<%= link_to "Register", new_user_registration_path, :class => 'action_link sign_up_link' %>
-  		</span>
-  	<% end %>
+        <%= link_to "Register", new_user_registration_path, :class => 'action_link sign_up_link' %>
+      </span>
+    <% end %>
   </div>
   <!-- Sign in form -->
   <% if controller.controller_name != 'users' && (controller.action_name != 'new' && controller.action_name != 'edit') %>
     <div id="signin-dropdown">
       <div class="arrow-up"></div>
-    	<%= simple_form_for('user', :remote => true, :url => user_session_path, :html => {:id => 'new_session',:class => 'sign_in_form'}) do |f| %>
+      <%= simple_form_for('user', :remote => true, :url => user_session_path, :html => {:id => 'new_session',:class => 'sign_in_form'}) do |f| %>
         <%#= devise_error_messages! %>
         <p class="error"></p>
-    		<%= f.input :email, :autofocus => true, label: false, :placeholder => 'Email', required: true %>
-
-    		<%= f.input :password, :placeholder => 'Password', label: false, required: true %>
-  	  
+        <%= f.input :email, :autofocus => true, label: false, :placeholder => 'Email', required: true %>
+        <%= f.input :password, :placeholder => 'Password', label: false, required: true %>
         <div class="actions">
           <a href="#" class="cancel_signin">cancel</a>&nbsp;&nbsp;<%= f.submit "Sign in", :class => 'btn btn-primary' %>
         </div>
-    	<% end %>
+      <% end %>
     </div>
   <% end %>
   <!-- Logo and login -->

@@ -55,7 +55,7 @@ module Openvault::Pbcore
     # It is a Video if:
     #   - the media type is "moving image"
     def is_video?
-      (!media_type.nil? && media_type.downcase ==  "moving image") || (asset_type.downcase == 'preservation master')
+      (!media_type.nil? && media_type.downcase ==  "moving image") || (!asset_type.nil? && (asset_type.downcase == 'preservation master'))
     end
 
     # Returns true if PbcoreDescDoc datastream describes an Image record

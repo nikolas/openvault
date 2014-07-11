@@ -14,3 +14,8 @@
     }
   }
 }
+
+input {
+    // Corrects over-eager glyphicons css: https://github.com/afred/openvault/issues/419
+    box-sizing: content-box;
+}

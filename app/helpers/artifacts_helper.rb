@@ -7,12 +7,11 @@ module ArtifactsHelper
     unauthenticated_digitization_link
   end
 
-	def artifact_digitization_link(document, artifact)
+  def artifact_digitization_link(document, artifact)
     return nil if published_artifact?(artifact)
     return nil if document.has? "video_s"
     return unable_to_digitize if blocked_artifact?(artifact)
     return authenticated_digitization_link(document, artifact) if current_user
-    unauthenticated_digitization_link
   end
 
   def authenticated_transcription_link(document, artifact)
@@ -68,7 +67,8 @@ module ArtifactsHelper
 
   def request_transcription_link(document)
     link_to "Request transcript of this item", transcriptions_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-default"
-  end
+  end 
+
 
   def request_digitization_link(document)
     link_to "Request digitization of this item", digitizations_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-primary"
