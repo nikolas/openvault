@@ -10,11 +10,24 @@ feature "User views search results" do
     @program.save!
   end
 
+  scenario "metadata includes title" do 
+    visit "/"
+    fill_in 'q', with: @program.title
+    click_button 'search'
+    expect(page).to have_content("#{@program.title}")
+  end
+
+  scenario "metadata includes media type" do
+    visit "/"
+    fill_in 'q', with: @program.title
+    click_button 'search'
+    expect(page).to have_content("Media Type:#{@program.to_solr['active_fedora_model_ssi']}")
+  end
+
   scenario "metadata includes date" do
     visit "/"
     fill_in 'q', with: @program.title
     click_button 'search'    
-    save_and_open_page
-    expect(page).to have_content("Date:#{@program.pbcore.asset_date.first}")
+    expect(page).to have_content("Date:#{@program.asset_date}")
   end
 end

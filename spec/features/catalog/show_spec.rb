@@ -12,7 +12,6 @@ feature "User visits catalog#show" do
 
   scenario "metadata includes date" do
     visit "/catalog/#{@program.pid}"
-    save_and_open_page
     expect(page).to have_content("#{@program.pbcore.asset_date.first}")
   end
 end
