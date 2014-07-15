@@ -24,7 +24,7 @@ describe VideosController do
       expect(assigns(:document)).to_not be nil
     end
 
-    it "@images, @videos, @programs are not nil", broken: true do
+    it "@images, @videos, @programs are not nil" do
       get :show, {id: @id}
       expect(assigns(:images)).to_not be nil
       expect(assigns(:program)).to_not be nil

@@ -36,7 +36,7 @@ describe ProgramsController do
   end
 
   describe "GET print" do
-    it "returns a valid solr document", broken: true do
+    it "returns a valid solr document" do
       get :print, {id: @id}
       assigns(:document).should_not be nil
     end
