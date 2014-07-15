@@ -18,7 +18,6 @@ class CustomCollectionItem < ActiveRecord::Base
   scope :series, where(:kind => 'Series')
   scope :by_kind, order('kind DESC')
   
-  # TODO: Deprecated this method in favor of solr_doc
   def ov_asset
     OpenvaultAsset::find openvault_asset_pid, cast: true
   end
