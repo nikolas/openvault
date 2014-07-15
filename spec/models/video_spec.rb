@@ -6,6 +6,7 @@ describe Video do
   before(:each) { Fixtures.cwd("#{fixture_path}/pbcore") }
 
   subject(:video) { Video.new }
+  subject(:image) { Image.new }
 
   describe '#title' do
     it 'returns the correct title from a pbcore datastream' do
@@ -31,4 +32,12 @@ describe Video do
     end
   end
 
+  describe '#thumbnail_url' do
+    it 'returns the same url as the associated image' do
+      video.pbcore.ng_xml = Fixtures.use('artesia/patriots_day/video_1.xml').ng_xml
+      image.pbcore.ng_xml = Fixtures.use('artesia/patriots_day/image_2.xml').ng_xml
+      video.images << image
+      expect(video.images.first.image_url).to eq video.thumbnail_url
+    end
+  end
 end
