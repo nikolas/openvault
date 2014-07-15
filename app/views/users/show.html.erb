@@ -28,7 +28,7 @@
           <%= render partial: 'users/show_actions' %>
         <% end %>
 
-        <% if !@user.title.empty? && !@user.organization.empty? %>
+        <% if @user.title.present? && @user.organization.present? %>
           <h4><%= [@user.title, @user.organization].join(' &mdash; ').html_safe %></h4>
         <% else %>
           <h4><%= [@user.title, @user.organization].join('').html_safe %></h5>

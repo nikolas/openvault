@@ -34,7 +34,7 @@ $ ->
     
   $('body').on "click", '.more_meta', (e) ->
     e.preventDefault();
-    $('.metadata .advanced').toggleClass('visible')
+    $('.metadata .advanced').toggle()
     
   # collections_timer = null
 #   $("#collections .document").hide().first().show()
