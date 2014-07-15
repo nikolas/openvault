@@ -86,6 +86,13 @@ ActiveAdmin.register User do
   end
   
   controller do
+
+    # URLs generated for User instances will use the
+    # slugged username instead of the ID. This little
+    # bit of magic from 'inherited_resources' gem allows
+    # those URLs to work.
+    defaults finder: :find_by_username
+
     # This code is evaluated within the controller class and overrides the exisiting methods if they are the same
     def update
        @user = User.find(params[:id])
