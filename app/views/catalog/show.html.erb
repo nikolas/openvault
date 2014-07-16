@@ -17,8 +17,9 @@
         <div class="span8 date">
           <p>
             <span class="doc_label">Dated:</span><span class="datetime">
-              <% unless @document['asset_date_ssm'].nil? || @document['asset_date_ssm'].empty? %>
-                <%= @document['asset_date_ssm'].first.to_s %>
+              <% dates = @document['asset_date_tesim']
+                unless dates.nil? || dates.empty? %>
+                <%= dates.first.to_s %>
               <% else %>
                 <%= "unavailable" %>
               <% end %>
