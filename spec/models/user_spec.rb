@@ -6,7 +6,7 @@ describe User do
   describe '.random' do
     let!(:users) { create_list(:user, 3) }
     it 'selects a random user from the database' do
-      expect(users.include? User.random).to be true
+      expect(User.all).to include(User.random)
     end
   end
 
