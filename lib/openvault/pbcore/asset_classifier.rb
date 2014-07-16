@@ -42,7 +42,7 @@ module Openvault::Pbcore
     # The class method `.asset_types` was added later and probably was not aware of the potential
     # for confusion.
     def non_program_asset_types
-      AssetClassifier.asset_types - ['series', 'program', 'episode']
+      AssetClassifier.asset_types - ['program']
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Video record

@@ -9,28 +9,6 @@ describe Openvault::Pbcore::Ingester do
 
   describe '.ingest' do
 
-    context 'with empty <pbcoreDocument> nodes as stand alone xml docs, or inside of <pbcoreCollection> nodes, it' do
-      let(:ingester) { Openvault::Pbcore::Ingester.new }
-      let(:pids_1) { ingester.xml = Fixtures.raw("pbcore_desc_doc_empty.xml"); ingester.ingest }
-      let(:pids_2) { ingester.xml = Fixtures.raw("pbcore_collection_empty_docs_1x.xml"); ingester.ingest }
-      let(:pids_3) { ingester.xml = Fixtures.raw("pbcore_collection_empty_docs_2x.xml"); ingester.ingest }
-
-      before :all do
-        @count_before = ActiveFedora::Base.count
-      end
-
-      it 'returns an array of pids', broken: true do
-        pids_1.count.should == 1
-        pids_2.count.should == 1
-        pids_3.count.should == 2
-      end
-
-      it 'returns a pid for every subclass of OpenvaultAsset saved' do
-        OpenvaultAsset.find(pids_1).count.should == pids_1.count
-        OpenvaultAsset.find(pids_2).count.should == pids_2.count
-        OpenvaultAsset.find(pids_3).count.should == pids_3.count
-      end
-    end
 
     context 'with a subset of related assets that have been transformed from Artesia xml' do
       before :all do
