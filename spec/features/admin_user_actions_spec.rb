@@ -25,12 +25,10 @@ feature 'Admin creates a user and that user can login' do
   	click_button "Create User"
   	expect(page).to have_content("User was successfully created.")
   	click_link "Logout"
-  	within ('.action-dropdown-menu') do
-  		click_link "Log In"
-  	end
+  	click_link "Log In"
   	fill_in 'user_email', :with => 'williamblake@gmail.com'
   	fill_in 'user_password', :with => 'wblake123456'
-  	click_button 'Log in'
+  	click_button 'Sign in'
   	expect(page).to have_content("Welcome back William")
   end
 end
