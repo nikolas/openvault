@@ -64,7 +64,7 @@
             </div>
 
             <div id="digitization-requests" class="tab-pane fade in">
-              <% if @user.sponsorships %>
+              <% if @user.sponsorships.present? %>
                 <%= render partial: 'user_items' %>
               <% else %>
                 <%= "#{@user.full_name} does not have any digitization requests." %>
