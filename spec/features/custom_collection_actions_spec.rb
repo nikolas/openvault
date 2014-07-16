@@ -198,7 +198,7 @@ feature "Non-scholar users don't see custom collections tab on their profile pag
 
   scenario 'when they are signed in as a member' do
     login_as(@member, :scope => :user, :run_callbacks => false)
-    visit me_path
+    visit '/me'
     within("#users_show_tabs") do
       expect(page).not_to have_content("Collections")
     end
