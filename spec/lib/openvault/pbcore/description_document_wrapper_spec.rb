@@ -18,13 +18,18 @@ describe Openvault::Pbcore::DescriptionDocumentWrapper do
     end
 
     describe 'for any metadata sample we have of a "program" record' do
-      it 'returns a Program model', broken: true do
+      it 'returns a Program model' do
         expect(wrapper_class.new(Fixtures.use('mars/program_1.xml')).model).to be_a Program
         expect(wrapper_class.new(Fixtures.use('artesia/rock_and_roll/program_1.xml')).model).to be_a Program
-        expect(wrapper_class.new(Fixtures.use('artesia/patriots_day/program_1.xml')).model).to be_a Program
       end
     end
 
+    describe 'for any metadata sample we have of a "audio" record' do
+      it 'returns an Audio model' do
+        expect(wrapper_class.new(Fixtures.use('artesia/patriots_day/audio_3.xml')).model).to be_a Audio
+      end
+    end
+        
     describe 'for any metadta sample we have of an "image" record' do
       it 'returns an Image model' do
         expect(wrapper_class.new(Fixtures.use('mars/image_1.xml')).model).to be_a Image

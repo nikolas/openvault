@@ -20,7 +20,7 @@ Fixtures.load([
   "artesia/march_on_washington/audio_1.xml",
   "artesia/march_on_washington/image_1.xml",
 
-  "artesia/patriots_day/program_1.xml",
+  "artesia/patriots_day/audio_3.xml",
   "artesia/patriots_day/video_1.xml",
   "artesia/patriots_day/video_2.xml",
   "artesia/patriots_day/image_2.xml",

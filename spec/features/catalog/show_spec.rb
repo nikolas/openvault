@@ -6,7 +6,7 @@ feature "User visits catalog#show" do
   before(:all) do 
     Fixtures.cwd("#{fixture_path}/pbcore")
     @program = Program.new
-    @program.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/program_1.xml")
+    @program.pbcore.ng_xml = Fixtures.raw("artesia/rock_and_roll/program_1.xml")
     @program.save!
   end
 
