@@ -49,7 +49,7 @@ module Openvault::Pbcore
     end
 
     def skip_existing(doc)
-      Rails.logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.all_ids.inspect}. Skipping due to policy #{policy.inspect}...")
+      Rails.logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Skipping due to policy #{policy.inspect}...")
     end
 
     def replace_existing(doc)
