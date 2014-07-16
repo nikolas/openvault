@@ -2,10 +2,10 @@ require 'spec_helper'
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe 'Digitization Requests Tab for User Profile Page' do
-	 before(:each) do
+  before(:each) do
     @user = create(:user, :password => 'password', :password_confirmation => 'password')
     submit_login_form({email: @user.email, password: @user.password})
-    @ov_asset = OpenvaultAsset.new(:pid => 'test:1234')
+    @ov_asset = Video.new(:pid => 'test:1234')
     Fixtures.cwd("#{fixture_path}/pbcore")
     @ov_asset.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
     @ov_asset.save
