@@ -3,6 +3,7 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe AdminMailer do
 	before do
+    Fixtures.cwd("#{fixture_path}/pbcore")
 	  @user = create(:user)
     @ov_asset = OpenvaultAsset.new(:pid => 'test:1234')
     @ov_asset.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
