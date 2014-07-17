@@ -12,7 +12,7 @@ feature 'Admin creates a user and that user can login' do
     expect(page).to have_content('Welcome to ActiveAdmin')
   end
 
-  scenario 'admin creates a new user', broken: true do
+  scenario 'admin creates a new user' do
     first = 'William'
     email = 'williamblake@gmail.com'
     password = 'wblake123456'
@@ -33,6 +33,9 @@ feature 'Admin creates a user and that user can login' do
     fill_in 'user_email', :with => email
     fill_in 'user_password', :with => password
     click_button 'Sign in'
-    expect(page).to have_content("Welcome back #{first}")
+    expect(page).to have_content("Welcome back #{first}"), # TODO: when this test is working, kill the verbosity.
+      'After capybara timeout, still not logged in: ajax calls still active: ' \
+      + page.evaluate_script('jQuery.active').to_s \
+      + '. Page content: ' + page.body
   end
 end
