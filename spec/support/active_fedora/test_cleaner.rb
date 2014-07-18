@@ -21,6 +21,7 @@ module ActiveFedora
 
     def register(obj)
       registry << obj.pid
+      @registry
     end
 
     def registry

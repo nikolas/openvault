@@ -4,9 +4,14 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 feature 'Admin creates a user and that user can login' do
-  before(:each) do 
-    login_as_admin
+  before(:all) do
+    @admin = create(:admin)
   end
+
+  before(:each) do 
+    login_as @admin
+  end
+
   scenario 'admin can login and visit admin dashboard', broken: true do
     go_here "/admin"
     expect(page).to have_content('Welcome to ActiveAdmin')
