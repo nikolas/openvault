@@ -52,45 +52,44 @@ feature Admin::ArtifactsController do
     end
 
     it "admin can see potential sponsors when viewing artifact in interface" do
-      click_link "View"
+      first(:link, "View").click
       expect(page).to have_content(@user1.email)
     end
 
     it "admin can see list of users who requested the artifact" do
-      click_link "View"
+      first(:link, "View").click
       expect(page).to have_content(@user1.email)
       expect(page).to have_content(@user2.email)
       expect(page).to have_content(@user3.email)
     end
 
     it "admin can make a user a sponsor of artifact" do
-      save_and_open_page
-      click_link "View"
-      first(:link, "Confirm sponsorship").click;
+      first(:link, "View").click
+      first(:link, "Confirm sponsorship").click
       expect(page).to have_content("Confirmed/Sponsor")
     end
 
     it "admin can withdraw a user's request" do
-      click_link "View"
-      first(:link, "Withdraw user's request").click;
+      first(:link, "View").click
+      first(:link, "Withdraw user's request").click
       expect(page).to have_no_content(@user1.email)
     end
 
     it "admin can withdraw a user's request and other requests should still be there" do
-      click_link "View"
-      first(:link, "Withdraw user's request").click;
+      first(:link, "View").click
+      first(:link, "Withdraw user's request").click
       expect(page).to have_content(@user2.email)
     end
 
     it "shows 'digitize' action link when artifact hasn't been digitized" do 
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         expect(page).to have_css(".approve_digitization")
       end
     end
 
     it "clicking 'digitize' link changes artifact state to digitizing" do
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         click_link("Digitize")
       end
@@ -101,14 +100,14 @@ feature Admin::ArtifactsController do
 
     it "when artifact state is 'digitizing', there should be no 'digitize' link" do
       @artifact.approve_digitization(@admin)
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         expect(page).not_to have_css(".approve_digitization")
       end
     end
 
     it "clicking 'block' link changes artifact state to blocked" do
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         click_link("Block")
       end
@@ -118,7 +117,7 @@ feature Admin::ArtifactsController do
     end
 
     it "clicking 'digitze' link changes makes the 'Publish' link available" do
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         click_link("Digitize")
       end
@@ -128,7 +127,7 @@ feature Admin::ArtifactsController do
     end
 
     it "clicking 'publish' link changes artifact state to published" do
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         click_link("Digitize")
       end
@@ -141,7 +140,7 @@ feature Admin::ArtifactsController do
     end
 
     it "when artifact state is 'requested', there should be no 'publish' link" do
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         expect(page).not_to have_css(".publish_digitization")
       end
@@ -149,7 +148,7 @@ feature Admin::ArtifactsController do
 
     it "when artifact state is 'blocked', there should be no 'publish' link" do
       @artifact.block_digitization(@admin)
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         expect(page).not_to have_css(".publish_digitization")
       end
@@ -157,7 +156,7 @@ feature Admin::ArtifactsController do
 
     it "when artifact state is 'blocked', there should be no 'block' link" do
       @artifact.block_digitization(@admin)
-      click_link "View"
+      first(:link, "View").click
       within ".attributes_table" do
         expect(page).not_to have_css(".block_digitization")
       end
