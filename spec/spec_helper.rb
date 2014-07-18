@@ -54,7 +54,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
-    # DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with :truncation
   end
 
@@ -64,6 +64,11 @@ RSpec.configure do |config|
     ActiveFedora::Base.destroy_all
     DatabaseCleaner.clean
   end
+
+  config.before(:context) do
+    DatabaseCleaner.start
+  end
+  
 end
 
 module Rack
