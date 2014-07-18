@@ -9,28 +9,6 @@ describe Openvault::Pbcore::Ingester do
 
   describe '.ingest' do
 
-    context 'with empty <pbcoreDocument> nodes as stand alone xml docs, or inside of <pbcoreCollection> nodes, it' do
-      let(:ingester) { Openvault::Pbcore::Ingester.new }
-      let(:pids_1) { ingester.xml = Fixtures.raw("pbcore_desc_doc_empty.xml"); ingester.ingest }
-      let(:pids_2) { ingester.xml = Fixtures.raw("pbcore_collection_empty_docs_1x.xml"); ingester.ingest }
-      let(:pids_3) { ingester.xml = Fixtures.raw("pbcore_collection_empty_docs_2x.xml"); ingester.ingest }
-
-      before :all do
-        @count_before = ActiveFedora::Base.count
-      end
-
-      it 'returns an array of pids', broken: true do
-        pids_1.count.should == 1
-        pids_2.count.should == 1
-        pids_3.count.should == 2
-      end
-
-      it 'returns a pid for every subclass of OpenvaultAsset saved' do
-        OpenvaultAsset.find(pids_1).count.should == pids_1.count
-        OpenvaultAsset.find(pids_2).count.should == pids_2.count
-        OpenvaultAsset.find(pids_3).count.should == pids_3.count
-      end
-    end
 
     context 'with a subset of related assets that have been transformed from Artesia xml' do
       before :all do
@@ -173,6 +151,77 @@ describe Openvault::Pbcore::Ingester do
 
     end
 
+    context 'when Fedora object exists with pbcore datasream that matches all pbcoreIdentifiers' do
+
+      # let(:pbcore_desc_doc) { build(:pbcore_desc_doc, :with_artesia_id, :with_series_title) }
+      # let(:ingester) {  }
+      # let(:saved_pid) do
+
+      # end
+
+
+      before do
+        @pbcore_desc_doc = build(:pbcore_desc_doc, :with_artesia_id, :with_series_title)
+
+        ov_asset = OpenvaultAsset.new
+
+        # We can't just assign the datastream directly, because that hasn't been built.
+        # There might be a better way to do this, but for now, assign the Nokogiri object.
+        ov_asset.pbcore.ng_xml = @pbcore_desc_doc.ng_xml
+        ov_asset.save!
+
+        @saved_pid = ov_asset.pid
+
+        @ingester = Openvault::Pbcore::Ingester.new(@pbcore_desc_doc.to_xml)
+
+
+      end
+
+      context 'and when policy == :skip_if_exists' do
+        it 'does not ingest the record.' do
+          @ingester.policy = :skip_if_exists
+          @ingester.ingest!
+
+          # Expect the ingester to not have ingested anything
+          expect(@ingester.pids).to be_empty
+
+          # And expect the record that was found to still be there
+          expect{ OpenvaultAsset.find(@saved_pid, cast: true) }.to_not raise_error
+        end
+      end
+
+      context 'and when policy == :replace_if_exists' do
+        it 'replaces the record with a new one.' do
+          @ingester.policy = :replace_if_exists
+          @ingester.ingest!
+
+          expect(@ingester.pids).to_not be_empty
+
+          # Expect the ingested record's pid to not match the previous pid.
+          expect(@ingester.pids.first).to_not eq @saved_pid
+
+          # Expect the orig object with @saved_pid to have been deleted by the ingester.
+          expect{ OpenvaultAsset.find(@saved_pid, cast: true) }.to raise_error ActiveFedora::ObjectNotFoundError
+        end
+      end
+
+      context 'and when policy == :update_if_exists' do
+
+        it 'updates the existing record.' do
+
+          @ingester.policy = :update_if_exists
+          @ingester.ingest!
+
+          expect(@ingester.pids).to_not be_empty
+
+          # Expect the ingested pid to be the same as the previously saved pid.
+          expect(@ingester.pids.first).to eq @saved_pid
+          
+          # And expect the previously saved pid to still be there.
+          expect{OpenvaultAsset.find(@saved_pid, cast: true)}.to_not raise_error
+        end
+      end
+    end
 
   end
 

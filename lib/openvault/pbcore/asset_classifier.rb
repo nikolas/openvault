@@ -14,12 +14,6 @@ module Openvault::Pbcore
       @doc = doc
     end
 
-    # TODO: I don't think we need this anymore. We are not converting from MARS xml
-    # here. Instead we expect it to already be converted to pbcore before ingest.
-    def is_from_mars?
-      raise 'Unless you implement me, I will report that I am from venus!'
-    end
-
     # Returns true if PbcoreDescDoc datastream describes a Series record.
     # It is a Series if:
     #   - it has a series title
@@ -48,7 +42,7 @@ module Openvault::Pbcore
     # The class method `.asset_types` was added later and probably was not aware of the potential
     # for confusion.
     def non_program_asset_types
-      AssetClassifier.asset_types - ['series', 'program', 'episode']
+      AssetClassifier.asset_types - ['program']
     end
 
     # Returns true if PbcoreDescDoc datastream describes a Video record

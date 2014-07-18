@@ -5,29 +5,29 @@ require 'openvault/pbcore'
 feature "User views search results" do
   before(:all) do 
     Fixtures.cwd("#{fixture_path}/pbcore")
-    @program = Program.new
-    @program.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/program_1.xml")
-    @program.save!
+    @audio = Audio.new
+    @audio.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/audio_3.xml")
+    @audio.save!
   end
 
   scenario "metadata includes title" do 
     visit "/"
-    fill_in 'q', with: @program.title
+    fill_in 'q', with: @audio.title
     click_button 'search'
-    expect(page).to have_content("#{@program.title}")
+    expect(page).to have_content("#{@audio.title}")
   end
 
   scenario "metadata includes media type" do
     visit "/"
-    fill_in 'q', with: @program.title
+    fill_in 'q', with: @audio.title
     click_button 'search'
-    expect(page).to have_content("Media Type:#{@program.to_solr['active_fedora_model_ssi']}")
+    expect(page).to have_content("Media Type:#{@audio.to_solr['active_fedora_model_ssi']}")
   end
 
   scenario "metadata includes date" do
     visit "/"
-    fill_in 'q', with: @program.title
+    fill_in 'q', with: @audio.title
     click_button 'search'    
-    expect(page).to have_content("Date:#{@program.asset_date}")
+    expect(page).to have_content("Date:#{@audio.asset_date}")
   end
 end

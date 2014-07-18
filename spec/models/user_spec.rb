@@ -6,16 +6,17 @@ describe User do
   describe '.random' do
     let!(:users) { create_list(:user, 3) }
     it 'selects a random user from the database' do
-      expect(users.include? User.random).to be true
+      expect(User.all).to include(User.random)
     end
   end
 
   describe "has a factory that" do
+    
     let(:user) { FactoryGirl.create(:user) }
+    
     it "creates a valid user (saved to db)" do
-      user.should be_valid
-      user.save
-      User.where(:email => user.email).count.should == 1
+      expect(user).to be_valid
+      expect(User.where(:email => user.email).count).to eq 1
     end
 
     it "builds a valid user (not saved to db)" do

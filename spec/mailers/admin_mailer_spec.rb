@@ -2,14 +2,15 @@ require "spec_helper"
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe AdminMailer do
-	before do
-	  @user = create(:user)
-    @ov_asset = OpenvaultAsset.new(:pid => 'test:1234')
-    @ov_asset.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
-    @ov_asset.save
-  	@artifact = Artifact.create(:pid => @ov_asset.pid)
-  	@artifact.request!(@user)
-  	@artifact.save
+  before do
+    @user = create(:user)
+    @video = Video.new
+    Fixtures.cwd("#{fixture_path}/pbcore")
+    @video.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
+    @video.save
+    @artifact = Artifact.create(pid: @video.pid)
+    @artifact.request!(@user)
+    @artifact.save
   end
 
   it "should email an admin when a request is made" do

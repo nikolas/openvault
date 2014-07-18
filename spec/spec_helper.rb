@@ -51,30 +51,24 @@ RSpec.configure do |config|
   config.include SearchSteps
   config.include CustomCollectionSteps
 
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   config.before(:suite) do
-    # DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with :truncation
   end
 
   config.fixture_path = File.expand_path("../fixtures", __FILE__)
 
-  config.before(:suite) do
-    ActiveFedora::TestCleaner.setup
-  end
-
-  config.before(:each) do
-    ActiveFedora::TestCleaner.start
-  end
-
-  config.before(:each) do
-    ActiveFedora::TestCleaner.clean
-  end
-
-  config.after(:suite) do
+  config.before(:context) do
     ActiveFedora::Base.destroy_all
+    DatabaseCleaner.clean
   end
+
+  config.before(:context) do
+    DatabaseCleaner.start
+  end
+  
 end
 
 module Rack

@@ -3,9 +3,9 @@ class VideosController < CatalogController
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]
 
-    # @program = get_video_program(@document)
-    # @images = get_video_images(@document)
-    # @transcripts = get_video_transcripts(@document)
+    @program = get_video_program(@document)
+    @images = get_video_images(@document)
+    @transcripts = get_video_transcripts(@document)
     @video  = Video.find params[:id]
     
     # if @document.nil?
