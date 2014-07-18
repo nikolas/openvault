@@ -3,14 +3,9 @@ require 'spec_helper'
 describe Org do
 
   describe '.random' do
-    n = 3
-    let!(:orgs) { create_list(:org, n) }
-    
     it 'selects a random record from the database' do
-      expect(orgs.count).to eq(n), "Expected #{n} records, not #{orgs.count}  (#{orgs})"
-      r = Org.random
-      expect(orgs).to include(r), "Expected to find id:#{r.id} name:'#{r.name}' in #{orgs}"
-      # TODO: why isn't r.to_s useful?
+      create_list(:org, 3)
+      expect(Org.all).to include Org.random
     end
   end
 
@@ -21,7 +16,6 @@ describe Org do
 
     it 'creates a record' do
       org = FactoryGirl.create(:org)
-      org.save
       expect(org.new_record?).to be false
     end
   end
