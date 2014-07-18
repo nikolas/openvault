@@ -2,8 +2,6 @@ require 'spec_helper'
 include Devise::TestHelpers
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
-Capybara.asset_host = 'http://localhost:3000'
-
 feature Admin::ArtifactsController do
   def login(user)
     visit new_user_session_path
