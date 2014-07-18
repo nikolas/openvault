@@ -2,6 +2,8 @@ require 'spec_helper'
 include Devise::TestHelpers
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
+Capybara.asset_host = 'http://localhost:3000'
+
 feature Admin::ArtifactsController do
   def login(user)
     visit new_user_session_path
@@ -62,6 +64,7 @@ feature Admin::ArtifactsController do
     end
 
     it "admin can make a user a sponsor of artifact" do
+      save_and_open_page
       click_link "View"
       first(:link, "Confirm sponsorship").click;
       expect(page).to have_content("Confirmed/Sponsor")
@@ -86,7 +89,7 @@ feature Admin::ArtifactsController do
       end
     end
 
-    it "clicking 'digitze' link changes artifact state to digitizing" do
+    it "clicking 'digitize' link changes artifact state to digitizing" do
       click_link "View"
       within ".attributes_table" do
         click_link("Digitize")
