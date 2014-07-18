@@ -5,11 +5,11 @@ describe 'Digitization Requests Tab for User Profile Page' do
   before(:each) do
     @user = create(:user, :password => 'password', :password_confirmation => 'password')
     submit_login_form({email: @user.email, password: @user.password})
-    @ov_asset = Video.new(:pid => 'test:1234')
+    @video = Video.new
     Fixtures.cwd("#{fixture_path}/pbcore")
-    @ov_asset.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
-    @ov_asset.save
-    @artifact = Artifact.create(:pid => @ov_asset.pid)
+    @video.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
+    @video.save
+    @artifact = Artifact.create(pid: @video.pid)
     @artifact.request_digitization(@user)
     @sponsorship = @user.sponsorships.first
     @sponsorship.save
