@@ -12,7 +12,6 @@
   <h3 class="index_title">
     <% if video[:title_tesim] %>
       <%= link_to video[:title_tesim].first, controller: 'videos', action: 'show', id: video.id %>
-      <%= " (Video Excerpt)" if video.get('media_dsid_s') =~ /Video/ and video.get('dc_type_s') =~ /excerpt/ %>
     <% else %>
       <%= "Untitled Video" %>
     <% end %>
