@@ -12,7 +12,6 @@
   <h3 class="index_title">
     <% if audio[:title_tesim] %>
       <%= link_to audio[:title_tesim].first, controller: 'audios', action: 'show', id: audio.id %>
-      <%= " (audio Excerpt)" if audio.get('media_dsid_s') =~ /audio/ and audio.get('dc_type_s') =~ /excerpt/ %>
     <% else %>
       [untitled audio]
     <% end %>

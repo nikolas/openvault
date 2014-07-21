@@ -11,7 +11,6 @@
     </div> 
   <h3 class="index_title">
     <%= link_to series[:title_tesim].first, controller: 'series', action: 'show', id: series.id %>
-    <%= " (series Excerpt)" if series.get('media_dsid_s') =~ /series/ and series.get('dc_type_s') =~ /excerpt/ %>
   </h3>  
   <div class="defList_container">
     <% unless series[:summary_tesim].nil? %>
