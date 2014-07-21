@@ -7,3 +7,6 @@ rvm:
 before_script:
   - mysql -e 'create database ov_test;'
   - bundle exec rake dev:ci:prepare
+  # Make sure we give jetty enough time to start up.
+  - JETTY='http://127.0.0.1:8983'
+  - for X in `seq 1 8`; do sleep $((2 ** $X)); curl $JETTY && break; done
