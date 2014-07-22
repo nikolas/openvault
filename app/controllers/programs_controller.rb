@@ -5,6 +5,9 @@ class ProgramsController < CatalogController
 
     @rel = get_related_content(params[:id])
 
+    @program = Program.find params[:id]
+
+    #TODO: Get rid of these in favor of using @program.videos etc.
     @audios = get_program_audios(@document)
     @videos = get_program_videos(@document)
     @images = get_program_images(@document)

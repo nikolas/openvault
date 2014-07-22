@@ -2,8 +2,8 @@
 <video id="video-mp4" class="video-js vjs-default-skin vjs-big-play-centered"
   controls preload="auto" width="550" height="350"
   data-setup='{}'
-  poster="<%= Video.find(@document[:videos_ssm].first).to_solr['thumbnail_ssm'].first %>" >
-  <source src="<%= Video.find(@document[:videos_ssm].first).to_solr['video_url_ssm'].first %>" type='video/mp4' />
-  <source src="<%= Video.find(@document[:videos_ssm].first).to_solr['video_url_ssm'].first %>" type='video/webm' />
-  <source src="<%= Video.find(@document[:videos_ssm].first).to_solr['video_url_ssm'].first %>" type='video/ogg' />
+  poster="<%= @program.videos.first.thumbnail_url %>" >
+  <source src="<%= @program.videos.first.video_url %>" type='video/mp4' />
+  <source src="<%= @program.videos.first.video_url %>" type='video/webm' />
+  <source src="<%= @program.videos.first.video_url %>" type='video/ogg' />
 </video>
