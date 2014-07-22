@@ -1,4 +1,4 @@
-<% asset_style = Video.find(@document[:videos_ssm].first).transcripts.present? ? 'asset-content' : '' %>
+<% asset_style = @program.videos.first.transcripts.present? ? 'asset-content' : '' %>
 
 <div class="<%= asset_style %> row-fluid">
   <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
