@@ -108,7 +108,7 @@ feature 'User edits their profile' do
       fill_in 'user_title', with: "President"
       click_button 'Save Profile'
       expect(page).to have_content('You updated your account successfully.')
-      expect(page).to have_content('President — Testing, Inc.')
+      expect(page).to have_content("President \u2014 Testing, Inc.")
     end
   end
 end
