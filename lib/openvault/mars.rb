@@ -13,7 +13,9 @@ module Openvault
       def to_pbcore(mars_table, input_filename)
         raise "Input file \"#{input_filename}\" for Openvault::MARS.to_pbcore does not exist" unless File.exists? input_filename
         cmd = self.build_xsltproc_command(self.stylesheet_for(mars_table), input_filename)
-        %x(#{cmd})
+        output = `#{cmd}`
+        raise "Command '#{cmd}' failed with status #{$?.exitstatus} and output '#{output}'" if $?.exitstatus != 0
+        output
       end
 
       def build_xsltproc_command(xsl_stylesheet, input_filename, output_filename=nil)
