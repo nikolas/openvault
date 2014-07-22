@@ -17,14 +17,12 @@ describe 'Digitization Requests Tab for User Profile Page' do
 
   it "shows artifacts user have requested", halp: true  do
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     expect(page).to have_content(@artifact.title)
   end
 
   it "shows digitization status of 'requested' when user has requested artifact" do
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     within("tr#sponsorship-#{@sponsorship.id} .state") do
       expect(page).to have_content("requested")
@@ -33,7 +31,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
 
   it "shows user status of 'following' when user has requested artifact" do
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     within("tr#sponsorship-#{@sponsorship.id} .status") do
       expect(page).to have_content("Following")
@@ -42,7 +39,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
 
   it "shows option to 'unfollow' requested artifact" do
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     within("tr#sponsorship-#{@sponsorship.id} .actions") do
       expect(page).to have_content("Unfollow")
@@ -52,7 +48,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
   it "shows digitization status of 'digitizing' when artifact is digitizing" do
     @artifact.approve_digitization(@user)
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     expect(find("tr#sponsorship-#{@sponsorship.id} .state")).to have_content('digitizing')
   end
@@ -60,7 +55,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
   it "shows digitization status of 'denied' when digitization has been denied" do
     @artifact.block(@user)
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     expect(find("tr#sponsorship-#{@sponsorship.id} .state")).to have_content('blocked')
   end
@@ -69,7 +63,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
     @sponsorship.confirm!
     @sponsorship.save
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     expect(find("tr#sponsorship-#{@sponsorship.id} .status")).to have_content('Confirmed/Sponsor')
   end
@@ -78,7 +71,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
     @sponsorship.confirm!
     @artifact.approve_digitization(@user)
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     within("#sponsorship-#{@sponsorship.id} .actions") do
       expect(page).to have_content("")
@@ -88,13 +80,11 @@ describe 'Digitization Requests Tab for User Profile Page' do
   it "clicking 'Unfollow' removes artifact from dashboard" do
     @sponsorship.confirm!
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     within("tr#sponsorship-#{@sponsorship.id} .actions") do
       click_on("Unfollow")
     end
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     expect(page).not_to have_content(@artifact.title)
   end
@@ -104,7 +94,6 @@ describe 'Digitization Requests Tab for User Profile Page' do
     @artifact.approve_digitization(@user)
     @artifact.publish(@user)
     visit user_root_path
-    sleep 4
     click_link("Digitization Requests")
     within("tr#sponsorship-#{@sponsorship.id} .state") do
       expect(page).to have_content("published")
