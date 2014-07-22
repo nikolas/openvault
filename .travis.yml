@@ -4,6 +4,7 @@ script: 'bundle exec rspec'
 rvm:
   - 2.0.0
 before_script:
+  - sudo apt-get install -q xsltproc # Just for one xslt test.
   - mysql -e 'create database ov_test;'
   - bundle exec rake dev:ci:prepare
   # Make sure we give jetty enough time to start up.
