@@ -33,7 +33,8 @@ class OpenvaultAsset < ActiveFedora::Base
   end
 
   def summary
-    self.pbcore.all_descriptions.first
+    # '.last' in this case because the summary supplied by the scholar follows the original description.
+    self.pbcore.all_descriptions.last
   end
 
   def thumbnail_url
