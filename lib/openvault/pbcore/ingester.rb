@@ -3,7 +3,7 @@ require 'openvault/pbcore/description_document_wrapper'
 
 module Openvault::Pbcore
   class Ingester
-    attr_accessor :xml, :pids, :failed, :policy
+    attr_accessor :xml, :pids, :policy
 
     POLICIES = [
       :skip_if_exists,
@@ -14,7 +14,6 @@ module Openvault::Pbcore
     def initialize(xml=nil)
       @xml = xml
       @pids = []
-      @failed = []
       @relation_builder = AssetRelationshipBuilder.new()
 
       @policy = :skip_if_exists
@@ -91,7 +90,6 @@ module Openvault::Pbcore
           end
         rescue Exception => e
           if opts[:continue_on_error]
-            @failed << doc.model.pid
             Rails.logger.error(e.message)
             Rails.logger.info(e.message)
           else
@@ -99,8 +97,6 @@ module Openvault::Pbcore
           end
         end
       end
-
-      Rails.logger.info "The following pids failed to load: #{failed.join('\n')}" unless failed.empty?
 
       relate_pids
     end
