@@ -12,7 +12,7 @@
     <div id="document_header" class="row-fluid">
       <div class="document_heading span8">
         <h2><%= @video.title %></h2>
-        <%= render :partial => 'addthis/toolbox' %>
+        <%= render partial: 'addthis/toolbox' %>
       </div>
       <div class="tools span4">
         <%= render partial: 'catalog/user_tools' %>
@@ -32,7 +32,7 @@
             
             <%= 
               begin
-                render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
+                render partial: "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
               rescue ActionView::MissingTemplate
 
               end
