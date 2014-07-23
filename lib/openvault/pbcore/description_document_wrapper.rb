@@ -22,7 +22,7 @@ module Openvault::Pbcore
       AssetClassifier.asset_types.each do |type|
         return Kernel.const_get(type.classify) if (@classifier.send("is_#{type}?".to_s))
       end
-      raise "Hey, I don't know which model to use for this pbcore: #{self.doc.inspect}"
+      raise "Hey, I don't know which model to use for this pbcore: #{self.doc.all_ids}"
     end
 
     def new_model
