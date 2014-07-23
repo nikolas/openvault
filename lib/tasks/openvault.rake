@@ -11,8 +11,9 @@ namespace :openvault do
     Rails.logger = Logger.new(STDOUT)
     Rails.logger.level = 0
 
-    raise ArgumentError, "USAGE: rake openvault:ingest file=[filename or glob]" unless ENV['file']
-
+    policies = Openvault::Pbcore::Ingester::POLICIES
+    raise ArgumentError, "USAGE: rake openvault:ingest file=[filename or glob] if_exists=[#{policies.join '|'}]" unless ENV['file'] 
+    
     files = Dir[ENV['file']]
     files = Array(ENV['file']) if files.empty?
 
@@ -24,7 +25,9 @@ namespace :openvault do
     files.each do |file|
       Rails.logger.info "Ingesting #{file}"
       xml = File.read(file)
-      Openvault::Pbcore::Ingester.new(xml).ingest
+      ingester = Openvault::Pbcore::Ingester.new(xml)
+      ingester.policy = ENV['if_exists'].to_sym if ENV['if_exists']
+      ingester.ingest
     end
     Rails.logger.info "\nIngest complete.\n"
   end
