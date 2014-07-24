@@ -10,7 +10,7 @@ feature "User views search results" do
     @audio.save!
   end
 
-  scenario "metadata includes title" do 
+  scenario "metadata includes title" do
     visit "/"
     fill_in 'q', with: @audio.title
     click_button 'search'

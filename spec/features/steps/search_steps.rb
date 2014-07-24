@@ -1,23 +1,17 @@
 module SearchSteps
   def search(values={})
     values.symbolize_keys!
-    retry_on_timeout do
-      go_here "/catalog?q=#{Rack::Utils.escape(values[:q])}"
-    end
+    go_here "/catalog?q=#{Rack::Utils.escape(values[:q])}"
   end
   
   def filter_click(values={})
     values.symbolize_keys!
-    retry_on_timeout do
-      click_on values[:filter]
-    end
+    click_on values[:filter]
   end
   
   def sort_click(values={})
     values.symbolize_keys!
-    retry_on_timeout do
-      select values[:sort], from: 'sort' unless values[:sort].nil?
-    end
+    select values[:sort], from: 'sort' unless values[:sort].nil?
   end
   
   def insert_search_result
@@ -33,14 +27,4 @@ module SearchSteps
     end
   end
   
-  def retry_on_timeout(n = 3, &block)
-    block.call
-  rescue Capybara::ElementNotFound => e
-    if n > 0
-      puts "Catched error: #{e.message}. #{n-1} more attempts."
-      retry_on_timeout(n - 1, &block)
-    else
-      raise
-    end
-  end
 end
