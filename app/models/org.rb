@@ -13,6 +13,7 @@ class Org < ActiveRecord::Base
   validates :name, presence: true
 
   def full_name
+    # TODO: does anything use this?
   	"Org: #{name}"
   end
 end

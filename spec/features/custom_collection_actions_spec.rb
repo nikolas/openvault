@@ -15,7 +15,7 @@ feature 'Organizations can own collections' do
   
   scenario 'collection page loads' do
     visit "/custom_collections/#{@custom_collection.id}"
-    expect(page).to have_content('todo')
+    expect(page).to have_content(@org.name)
   end
   
 end
