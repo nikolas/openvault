@@ -4,6 +4,9 @@ class AudiosController < CatalogController
     @response, @document = get_solr_response_for_doc_id params[:id]
     
     @rel = get_related_content(params[:id])
+
+    @audio = Audio.find params[:id]
+
     @program = get_audio_program(@document)
     @images = get_audio_images(@document)
   
