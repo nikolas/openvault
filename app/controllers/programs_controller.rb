@@ -30,7 +30,7 @@ class ProgramsController < ContentController
   end
 
   def print
-    @response, @document = get_solr_response_for_doc_id params[:id]
+    @response, @document = get_solr_response_for_doc_id
     respond_to do |format|
       format.html {render :layout => 'print'}
     end
