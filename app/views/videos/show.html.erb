@@ -8,20 +8,7 @@
 <%# this should be in a partial -%>
 <div id="document" class="<%= render_document_class %> show_program">
   <div id="doc_<%= @document[:id] %>">
-    
-    <div id="document_header" class="row-fluid">
-      <div class="document_heading span8">
-        <h2><%= @video.title %></h2>
-        <%= render partial: 'addthis/toolbox' %>
-      </div>
-      <div class="tools span4">
-        <%= render partial: 'catalog/user_tools' %>
-        <p><%= artifact_digitization_link(@document, @digitization_artifact) %></p>
-        <p><%= artifact_transcription_link(@document, @transcription_artifact) %></p>
-        <div class='clearfix'></div>
-      </div>
-    </div>
-    
+    <%= render partial: 'catalog/document_heading' %> 
     <div class="row-fluid">
       <div class="span12 video_content">
         <div class="document_content">
