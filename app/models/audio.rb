@@ -18,11 +18,13 @@ class Audio < OpenvaultAsset
   
   def thumbnail_url
     # specific image lookup
+    self.images.first.image_url unless self.images.empty?
   end
 
   def audio_url
     #This needs to change based on the decisions made about the streaming server
-    "http://media.wgbh.org/streaming/audios/#{self.id}.jpg"
+    #"http://media.wgbh.org/streaming/audios/#{self.id}.mp3"
+    "#{media_host}/audio/#{original_file_name}" if original_file_name
   end
   
   def audio_images
@@ -38,6 +40,20 @@ class Audio < OpenvaultAsset
     else
       super asset
     end
+  end
+
+  def original_file_name
+    filename = ''
+    for i in 0..pbcore.instantiations.count do
+      instantiation = pbcore.instantiations(i)
+      for j in 0..instantiation.id.count do
+        instantiation_id = instantiation.id(j)
+        if instantiation_id.source == ["Original file name"]
+          filename = instantiation_id.first
+        end
+      end
+    end
+    filename
   end
   
 end
