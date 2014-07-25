@@ -18,6 +18,11 @@ feature 'Organizations can own collections' do
     expect(page).to have_content(@org.name)
   end
   
+  scenario 'home page loads' do
+    visit '/'
+    expect(page).to have_content(@org.name)
+  end
+  
 end
 
 feature 'User tries to create a custom collection' do
