@@ -1,4 +1,4 @@
-class ProgramsController < CatalogController
+class ProgramsController < ContentController
 
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]
@@ -50,13 +50,6 @@ class ProgramsController < CatalogController
         # if it's a string, it makes Rails unhappy for unclear reasons.
         format.send(format_name.to_sym) { render :text => @document.export_as(format_name) }
       end
-    end
-  end
-
-  def cite
-    @response, @document = get_solr_response_for_doc_id
-    respond_to do |format|
-      format.html {render :layout => 'blank'}
     end
   end
 

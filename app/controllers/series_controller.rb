@@ -1,4 +1,4 @@
-class SeriesController < CatalogController
+class SeriesController < ContentController
 
   def browse_by_title
     @series_results = Blacklight.solr.select(params: {q: "has_model_ssim:*Series*", rows: 10000})['response']['docs']
@@ -67,13 +67,6 @@ class SeriesController < CatalogController
         format.send(format_name.to_sym) { render :text => @document.export_as(format_name) }
       end
 
-    end
-  end
-
-  def cite
-    @response, @document = get_solr_response_for_doc_id
-    respond_to do |format|
-      format.html {render :layout => 'blank'}
     end
   end
 

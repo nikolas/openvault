@@ -1,4 +1,4 @@
-class AudiosController < CatalogController
+class AudiosController < ContentController
   
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]
@@ -50,13 +50,6 @@ class AudiosController < CatalogController
         format.send(format_name.to_sym) { render :text => @document.export_as(format_name) }
       end
       
-    end
-  end
-
-  def cite
-    @response, @document = get_solr_response_for_doc_id    
-    respond_to do |format|
-      format.html {render :layout => 'blank'}
     end
   end
   
