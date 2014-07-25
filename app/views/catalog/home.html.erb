@@ -49,7 +49,7 @@
       <% @custom_collections.each do |coll| %>
         <div class="collection_block">
           <h5 class="collection_title"><%= link_to coll.name, coll %></h5>
-          <span class="collection_owner">by <%= link_to coll.owner.full_name, coll.owner %></span>
+          <span class="collection_owner">by <%= link_to(coll.owner.full_name, coll.owner) rescue coll.owner.full_name %></span>
         </div>
       <% end %>
     </div>
