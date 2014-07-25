@@ -29,13 +29,6 @@ class ProgramsController < ContentController
    # end
   end
 
-  def print
-    @response, @document = get_solr_response_for_doc_id
-    respond_to do |format|
-      format.html {render :layout => 'print'}
-    end
-  end
-
   def embed
     @response, @document = get_solr_response_for_doc_id
     @width = params[:width].try(:to_i) || 640
