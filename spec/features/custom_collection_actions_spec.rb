@@ -4,6 +4,27 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 #Many of these will need to change as the UI changes
+
+feature 'Organizations can own collections' do
+  
+  before :each do
+    Warden.test_reset!
+    @org = create(:org)
+    @custom_collection = create(:custom_collection, owner: @org)
+  end
+  
+  scenario 'collection page loads' do
+    visit "/custom_collections/#{@custom_collection.id}"
+    expect(page).to have_content(@org.name)
+  end
+  
+  scenario 'home page loads' do
+    visit '/'
+    expect(page).to have_content(@org.name)
+  end
+  
+end
+
 feature 'User tries to create a custom collection' do
 
   before :each do
