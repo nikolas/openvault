@@ -1,0 +1,31 @@
+<!-- Partial used for displaying the header -->
+
+<div id="document_header">
+  <div class="row-fluid">
+    <div class="document_heading span9">
+      <h2><%= display_title @document %></h2>
+    </div>
+    <div class="span3">
+      &nbsp;
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span7 date">
+      &nbsp;
+    </div>
+    <div class="tools span2">
+      <% if @document['active_fedora_model_ssi'] == "Video" %>
+        <p><%= artifact_digitization_link(@document, @digitization_artifact) %></p>
+        <p><%= artifact_transcription_link(@document, @transcription_artifact) %></p>
+        <div class='clearfix'></div>
+      <% elsif @document['active_fedora_model_ssi'] == "Audio" %>
+        <p><%= artifact_digitization_link(@document, @digitization_artifact) %></p>
+        <div class='clearfix'></div>
+      <% end %>
+      <%= render partial: 'catalog/show_tools' %>
+    </div>
+    <div class="span3">
+      &nbsp;
+    </div>
+  </div>
+</div>
