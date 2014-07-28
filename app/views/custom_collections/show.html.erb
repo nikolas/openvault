@@ -4,14 +4,14 @@
   <br />
   <div class="tabbable responsive">
     <ul class="nav nav-tabs">
-      <li class="active"><a href="#summary" class="summary-link" data-toggle="tab">Summary</a></li>
-      <li><a href="#article-content" class="article-content-link" data-toggle="tab">Article Content</a></li>
+      <li class="active"><a href="#summary" class="summary-link" data-toggle="tab">Abstract</a></li>
+      <li><a href="#article-content" class="article-content-link" data-toggle="tab">Article</a></li>
       <li><a href="#media" class="media-link" data-toggle="tab">Media</a></li>
       <% if !@custom_collection.custom_collection_images.empty? %>
         <li><a href="#images" class="images-link" data-toggle="tab">Images</a></li>
       <% end %>
       <li><a href="#related" class="related-link" data-toggle="tab">Related Content</a></li>
-      <li><a href="#collabs" class="collabs-link" data-toggle="tab">Collaborators</a></li>
+      <li><a href="#collabs" class="collabs-link" data-toggle="tab">Authors</a></li>
     </ul>
     <div class="tab-content">
       <div id="summary" class="tab-pane active fade in">
