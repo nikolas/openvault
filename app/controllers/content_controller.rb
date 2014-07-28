@@ -1,4 +1,4 @@
-class ContentController < CatalogController
+module ContentController
   
   def cite
     @response, @document = get_solr_response_for_doc_id

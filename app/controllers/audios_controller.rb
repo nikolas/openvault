@@ -1,4 +1,6 @@
-class AudiosController < ContentController
+class AudiosController < CatalogController
+  
+  include ContentController
   
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]

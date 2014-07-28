@@ -1,4 +1,6 @@
-class SeriesController < ContentController
+class SeriesController < CatalogController
+  
+  include ContentController
 
   def browse_by_title
     @series_results = Blacklight.solr.select(params: {q: "has_model_ssim:*Series*", rows: 10000})['response']['docs']
