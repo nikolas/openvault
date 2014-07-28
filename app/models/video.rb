@@ -1,4 +1,5 @@
 class Video < OpenvaultAsset
+  include SharedMethods
 
   COVERAGE = ['complete', 'clip', 'segment']
 
@@ -42,21 +43,6 @@ class Video < OpenvaultAsset
 
   def mp4_file_name
     original_file_name.gsub(/\.mov/, ".mp4")
-  end
-
-  # TODO: shared with Image model. Make into a concern?
-  def original_file_name
-    filename = ''
-    for i in 0..pbcore.instantiations.count do
-      instantiation = pbcore.instantiations(i)
-      for j in 0..instantiation.id.count do
-        instantiation_id = instantiation.id(j)
-        if instantiation_id.source == ["Original file name"]
-          filename = instantiation_id.first
-        end
-      end
-    end
-    filename
   end
 
   #Video Metadata

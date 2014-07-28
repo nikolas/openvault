@@ -1,5 +1,6 @@
 #Should this belong to audio or video stream?
 class Image < OpenvaultAsset
+  include SharedMethods
   
   belongs_to :video, :property => :image_video
   belongs_to :audio, :property => :image_audio
@@ -34,16 +35,4 @@ class Image < OpenvaultAsset
     self.pbcore.image_title.first || "image"
   end
 
-  def original_file_name
-    for i in 0..pbcore.instantiations.count do
-      instantiation = pbcore.instantiations(i)
-      for j in 0..instantiation.id.count do
-        instantiation_id = instantiation.id(j)
-        if instantiation_id.source == ["Original file name"]
-          return instantiation_id.first
-        end
-      end
-    end
-  end
-  
 end
