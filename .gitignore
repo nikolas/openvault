@@ -39,3 +39,6 @@ app/assets/images/mosaic/*.*
 # puke when there is nothing ot make a sprite of.
 !app/assets/images/mosaic/sample.png
 app/assets/images/*.mp4
+
+# Ignore test coverage
+/coverage
