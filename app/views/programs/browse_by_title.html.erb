@@ -1,6 +1,20 @@
-<h1>Browse Programs by Title</h1>
+<h1>Browse Programs by Year</h1>
+
+<p>TODO: Is this the UI and the URL structure we want?</p>
+
+<table class="table table-condensed">
+  <% (1950..2010).step(10) do |decade| %>
+    <tr>
+      <% (decade..(decade+9)).each do |year| %>
+        <td>
+          <%= link_to year, "/programs-by-year/#{year}"  if year.between? 1951, Time.now().year %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
 
 <% @results.each do |result| %>
-  <%= link_to result['title_tesim'].first, programs_url(result['id']) %>
+  <%#= TODO: link_to result['title_tesim'].first, programs_url(result['id']) %>
   <br />
 <% end %>
