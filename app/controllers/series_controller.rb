@@ -1,7 +1,8 @@
 class SeriesController < CatalogController
 
   def browse_by_title
-    @series_results = Blacklight.solr.select(params: {q: "has_model_ssim:*Series*", rows: 10000})['response']['docs']
+    model = self.class.to_s.sub('Controller','')
+    @series_results = Blacklight.solr.select(params: {q: "has_model_ssim:info:fedora/afmodel:#{model}", rows: 10000})['response']['docs']
 
     # You can sort using Solr, but it defaults to being case sensitive, and putting numbers before letters.
     # This custom sort puts letters before numbers and is case insensitive.

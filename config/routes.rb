@@ -46,6 +46,8 @@ Openvault::Application.routes.draw do
 
   get 'program/:id', as: 'program', to: 'programs#show'
   get 'program/:id/print', as: 'print_program', to: 'programs#print'
+  get 'program', as: 'browse_program', to: 'program#browse_by_title'
+  
   get 'video/:id', as: 'video', to: 'videos#show'
   get 'video/:id/print', as: 'print_video', to: 'videos#print'
   get 'audio/:id', as: 'audio', to: 'audios#show'
