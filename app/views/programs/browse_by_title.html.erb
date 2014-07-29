@@ -1,0 +1,6 @@
+<h1>Browse Programs by Title</h1>
+
+<% @results.each do |result| %>
+  <%= link_to result['title_tesim'].first, programs_url(result['id']) %>
+  <br />
+<% end %>

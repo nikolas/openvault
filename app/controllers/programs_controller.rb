@@ -1,5 +1,8 @@
 class ProgramsController < CatalogController
 
+  require 'concerns/browsable_by_title'
+  include BrowsableByTitle
+  
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]
 
