@@ -3,14 +3,14 @@
 <!-- List the audio/video files associated with program -->
 <div class="sep-line"></div>
 
-<% @videos.each do |media| %>
+<% @program.videos.each do |media| %>
   <%= render :partial, 'catalog/_program_partials/video' %>
 <% end %>
 
-<% @audios.each do |media| %>
+<% @program.audios.each do |media| %>
   <%= render :partial, 'catalog/_program_partials/audio' %>
 <% end %>
 
-<% @images.each do |media| %>
+<% @program.images.each do |media| %>
   <%= render :partial, 'catalog/_program_partials/image' %>
 <% end %>
