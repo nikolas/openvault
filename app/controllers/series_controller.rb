@@ -1,5 +1,6 @@
 class SeriesController < CatalogController
   
+  require 'concerns/content_controller.rb'
   include ContentController
 
   def browse_by_title
