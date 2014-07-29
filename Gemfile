@@ -35,10 +35,14 @@ group :test do
   gem 'email_spec'
   gem 'selenium-webdriver'
   gem 'launchy'
+  
   # stuff to autorun test
   gem 'guard', '>= 2.6.0'
   gem 'guard-rspec', '>= 4.2.8'
   gem 'rb-fsevent', '~> 0.9'
+  
+  # measure coverage
+  gem 'simplecov', :require => false
 end
 
 group :development do
