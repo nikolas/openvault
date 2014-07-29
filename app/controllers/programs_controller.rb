@@ -1,5 +1,6 @@
 class ProgramsController < CatalogController
 
+  # TODO: If we just use the search page, this isn't necessary.
   require 'concerns/browsable_by_title'
   include BrowsableByTitle
   

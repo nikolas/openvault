@@ -1,20 +1,17 @@
 <h1>Browse Programs by Year</h1>
 
-<p>TODO: Is this the UI and the URL structure we want?</p>
+<p>TODO: This just links to the old site: would it be ok to do the same thing with the new, when dates are available?
+Or do you not want to reuse the search page in this way? Either way, we need to get a year for our objects.</p>
 
 <table class="table table-condensed">
   <% (1950..2010).step(10) do |decade| %>
     <tr>
       <% (decade..(decade+9)).each do |year| %>
         <td>
-          <%= link_to year, "/programs-by-year/#{year}"  if year.between? 1951, Time.now().year %>
+          <%= link_to year, "http://openvault.wgbh.org/catalog?range[dc_date_year_i][begin]=#{year}
+&range[dc_date_year_i][end]=#{year+1}" if year.between? 1951, Time.now().year %>
         </td>
       <% end %>
     </tr>
   <% end %>
 </table>
-
-<% @results.each do |result| %>
-  <%#= TODO: link_to result['title_tesim'].first, programs_url(result['id']) %>
-  <br />
-<% end %>
