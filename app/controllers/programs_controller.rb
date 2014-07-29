@@ -7,11 +7,6 @@ class ProgramsController < CatalogController
 
     @program = Program.find params[:id]
 
-    #TODO: Get rid of these in favor of using @program.videos etc.
-    @audios = get_program_audios(@document)
-    @videos = get_program_videos(@document)
-    @images = get_program_images(@document)
-
     #if current_user #or stale?(:last_modified => @document['system_modified_dtsi'])
       respond_to do |format|
         #format.html {setup_next_and_previous_documents}
