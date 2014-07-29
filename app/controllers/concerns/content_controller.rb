@@ -15,7 +15,6 @@ module ContentController
   end
   
   def embed
-    byebug
     @response, @document = get_solr_response_for_doc_id
     @width = params[:width].try(:to_i) || 640
     @height = params[:height].try(:to_i) || (3 * @width / 4)
