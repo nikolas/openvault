@@ -14,6 +14,15 @@ module Openvault::Pbcore
       @doc = doc
     end
 
+    # Raises exception if PbcoreDescDoc datastream matches multiple models.
+    def one_model?
+      models = 0
+      Openvault::Pbcore::AssetClassifier.asset_types.each do |model|
+        models += 1 if Openvault::Pbcore::AssetClassifier.new(doc).send("is_#{model}?")
+      end
+      raise 'Document should only be one model' if models != 1
+    end 
+
     # Returns true if PbcoreDescDoc datastream describes a Series record.
     # It is a Series if:
     #   - it has a series title
