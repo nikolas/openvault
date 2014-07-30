@@ -52,6 +52,9 @@
           <span class="collection_owner">by <%= link_to(coll.owner.full_name, coll.owner) rescue coll.owner.full_name %></span>
         </div>
       <% end %>
+      <div>
+        <%= link_to 'Show all', '/scholars' %>
+      </div>
     </div>
   </div>
 </div>
