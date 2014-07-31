@@ -33,7 +33,7 @@ describe Openvault::Pbcore::AssetClassifier do
   end
 
   describe '.is_video?' do
-    it 'returns true if pbcore xml describes a viceo record' do
+    it 'returns true if pbcore xml describes a video record' do
       expect(wrapper_class.new(Fixtures.use('mars/video_1.xml')).is_video?).to be true
       expect(wrapper_class.new(Fixtures.use('artesia/rock_and_roll/video_1.xml')).is_video?).to be true
     end
@@ -48,6 +48,12 @@ describe Openvault::Pbcore::AssetClassifier do
   describe '.is_transcript?' do
     it 'returns true if pbcore xml describes a transcript record' do
       expect(wrapper_class.new(Fixtures.use('artesia/rock_and_roll/transcript_1.xml')).is_transcript?).to be true
+    end
+  end
+
+  describe 'exception' do
+    it 'is raised if pbcore xml is appropriate for more than one model' do
+      expect{wrapper_class.new(Fixtures.use('artesia/joyce_chen/multiple_models.xml')).one_model?}.to raise_error("Document should only be one model: [\"video\", \"image\"]")
     end
   end
 end
