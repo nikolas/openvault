@@ -1,6 +1,5 @@
 class ProgramsController < CatalogController
 
-  require 'concerns/content_controller.rb'
   include ContentController
   
   def show
