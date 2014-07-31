@@ -21,6 +21,7 @@ module Openvault::Pbcore
         models += 1 if Openvault::Pbcore::AssetClassifier.new(doc).send("is_#{model}?")
       end
       raise 'Document should only be one model' if models != 1
+      return true
     end 
 
     # Returns true if PbcoreDescDoc datastream describes a Series record.

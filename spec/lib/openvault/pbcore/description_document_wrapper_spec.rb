@@ -44,7 +44,7 @@ describe Openvault::Pbcore::DescriptionDocumentWrapper do
       end
     end
 
-    describe 'for any metadata sample we have of a "video" record' do
+    describe 'for any metadata sample we have of an "audio" record' do
       it 'returns an Audio model' do
         expect(wrapper_class.new(Fixtures.use('mars/audio_1.xml')).model).to be_a Audio
         expect(wrapper_class.new(Fixtures.use('artesia/march_on_washington/audio_1.xml')).model).to be_a Audio
@@ -58,6 +58,11 @@ describe Openvault::Pbcore::DescriptionDocumentWrapper do
       end
     end
   
+    describe 'for any metadata sample we have that matches multiple records' do
+      it 'raises an exception' do
+        expect{wrapper_class.new(Fixtures.use('artesia/joyce_chen/video_image.xml')).model}.to raise_error("Document should only be one model")
+      end
+    end
 
     it 'returns a new, unsaved model if values from PbcoreDescDoc#all_ids have not yet been saved' do
       pbcore_desc_doc = Fixtures.use('artesia/rock_and_roll/series_1.xml')
