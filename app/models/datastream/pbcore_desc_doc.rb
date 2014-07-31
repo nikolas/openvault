@@ -63,6 +63,7 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
     t.instantiations(:path => "pbcoreInstantiation") {
       t.media_type(:path => 'instantiationMediaType')
+      t.digital(path: 'instantiationDigital')
       t.id(:path => 'instantiationIdentifier') {
         t.source(:path => {:attribute => 'source'})
       }
@@ -107,4 +108,9 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
     end
     relations
   end
+
+  def digital
+    return self.instantiations.digital.first
+  end
+
 end
