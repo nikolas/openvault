@@ -1,0 +1,24 @@
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Digital file</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">7400119adc06ef0f73064d4b657d916ad123c774</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">254971.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">Peking Duck II</pbcoreTitle>
+  <pbcoreTitle titleType="Series">Joyce Chen Cooks</pbcoreTitle>
+  <pbcoreDescription descriptionType="Summary1">Still from Barcode227256</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">ARTESIA.LINKTYPE.ISPLACEDGROF</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">f53d75e0de277228aff220178f5a15d8181add96</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">7400119adc06ef0f73064d4b657d916ad123c774</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 1501 imported 2014-01-10 12:02:23.0">thumbnail_Barcode227256.jpg</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">480 x 324</instantiationDimensions>
+    <instantiationDigital>image/jpeg</instantiationDigital>
+    <instantiationLocation/>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

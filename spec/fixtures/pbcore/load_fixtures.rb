@@ -28,6 +28,7 @@ Fixtures.load([
   "artesia/patriots_day/audio_2.xml",
 
   "artesia/joyce_chen/multiple_models.xml"
+  "artesia/joyce_chen/image_1.xml"
 ]) do |fixture|
 
   # For each of the files loaded, use Nokogiri to grab the first <pbcoreDescriptionDocument> node (should only be one)

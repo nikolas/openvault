@@ -28,6 +28,7 @@ describe Openvault::Pbcore::AssetClassifier do
       expect(wrapper_class.new(Fixtures.use('mars/image_1.xml')).is_image?).to be true
       expect(wrapper_class.new(Fixtures.use('artesia/rock_and_roll/image_1.xml')).is_image?).to be true
       expect(wrapper_class.new(Fixtures.use('artesia/march_on_washington/image_1.xml')).is_image?).to be true
+      expect(wrapper_class.new(Fixtures.use('artesia/joyce_chen/image_1.xml')).is_image?).to be true
     end
   end
 

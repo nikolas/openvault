@@ -68,7 +68,7 @@ module Openvault::Pbcore
     #   - OR
     #   - the asset type contains the string with "photograph"
     def is_image?
-      (!media_type.nil? && media_type.downcase == "static image") || (!asset_type.nil? && asset_type.downcase.include?("photograph"))
+      (!media_type.nil? && media_type.downcase == "static image") || (!asset_type.nil? && asset_type.downcase.include?("photograph")) || (!digital.nil? && digital.downcase == "image/jpeg")
     end
 
     # Returns true if PbcoreDescDoc datastream describes an Audio record
@@ -95,6 +95,10 @@ module Openvault::Pbcore
 
     def media_type
       @media_type ||= doc.instantiations(0).media_type.first
+    end
+
+    def digital
+      digital = doc.instantiations.digital.first
     end
 
     # There are some title types that can be included on a program record,
