@@ -16,11 +16,11 @@ module Openvault::Pbcore
 
     # Raises exception if PbcoreDescDoc datastream matches multiple models.
     def one_model?
-      models = 0
+      models = [] 
       Openvault::Pbcore::AssetClassifier.asset_types.each do |model|
-        models += 1 if Openvault::Pbcore::AssetClassifier.new(doc).send("is_#{model}?")
+        models << model if Openvault::Pbcore::AssetClassifier.new(doc).send("is_#{model}?")
       end
-      raise 'Document should only be one model' if models != 1
+      raise "Document should only be one model: #{models}" if models.length != 1
       return true
     end 
 

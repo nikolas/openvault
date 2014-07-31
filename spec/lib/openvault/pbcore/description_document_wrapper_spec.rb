@@ -60,7 +60,7 @@ describe Openvault::Pbcore::DescriptionDocumentWrapper do
   
     describe 'for any metadata sample we have that matches multiple records' do
       it 'raises an exception' do
-        expect{wrapper_class.new(Fixtures.use('artesia/joyce_chen/multiple_models.xml')).model}.to raise_error("Document should only be one model")
+        expect{wrapper_class.new(Fixtures.use('artesia/joyce_chen/multiple_models.xml')).model}.to raise_error("Document should only be one model: [\"video\", \"image\"]")
       end
     end
 
