@@ -22,11 +22,11 @@ describe ProgramsController do
       assigns(:document).should_not be nil
     end
 
-    it "@images, @videos, @programs are not nil" do
+    it "@images, @videos, @audios are not nil" do
       get :show, {id: @id}
-      assigns(:images).should_not be nil
-      assigns(:videos).should_not be nil
-      assigns(:audios).should_not be nil
+      assigns(:program).all_images.should_not be nil
+      assigns(:program).videos.should_not be nil
+      assigns(:program).audios.should_not be nil
     end
 
     it "@rel is not nil" do

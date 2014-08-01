@@ -36,7 +36,7 @@
   <div id="home_sidebar" class="span4">
 
     <div id="welcome" class="grainbox">
-      <h2>What is the <%= application_name %>?</h2>
+      <h2>What is <%= application_name %>?</h2>
       <div class="sep-line"></div>
       <p>We provide online access to unique and historically important content produced by the public television and radio station WGBH. So have a look around and explore!</p>
     </div>
@@ -52,6 +52,9 @@
           <span class="collection_owner">by <%= link_to(coll.owner.full_name, coll.owner) rescue coll.owner.full_name %></span>
         </div>
       <% end %>
+      <div>
+        <%= link_to 'Show all', '/scholars' %>
+      </div>
     </div>
   </div>
 </div>

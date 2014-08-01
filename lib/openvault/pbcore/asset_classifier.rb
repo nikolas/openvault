@@ -14,6 +14,16 @@ module Openvault::Pbcore
       @doc = doc
     end
 
+    # Raises exception if PbcoreDescDoc datastream matches multiple models.
+    def one_model?
+      models = [] 
+      Openvault::Pbcore::AssetClassifier.asset_types.each do |model|
+        models << model if Openvault::Pbcore::AssetClassifier.new(doc).send("is_#{model}?")
+      end
+      raise "Document should only be one model: #{models}" if models.length != 1
+      return true
+    end 
+
     # Returns true if PbcoreDescDoc datastream describes a Series record.
     # It is a Series if:
     #   - it has a series title
@@ -58,7 +68,7 @@ module Openvault::Pbcore
     #   - OR
     #   - the asset type contains the string with "photograph"
     def is_image?
-      (!media_type.nil? && media_type.downcase == "static image") || (!asset_type.nil? && asset_type.downcase.include?("photograph"))
+      (!media_type.nil? && media_type.downcase == "static image") || (!asset_type.nil? && asset_type.downcase.include?("photograph")) || (!digital.nil? && digital.downcase == "image/jpeg")
     end
 
     # Returns true if PbcoreDescDoc datastream describes an Audio record
@@ -85,6 +95,10 @@ module Openvault::Pbcore
 
     def media_type
       @media_type ||= doc.instantiations(0).media_type.first
+    end
+
+    def digital
+      digital = doc.instantiations.digital.first
     end
 
     # There are some title types that can be included on a program record,

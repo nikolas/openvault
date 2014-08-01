@@ -42,3 +42,6 @@ app/assets/images/*.mp4
 
 # Ignore test coverage
 /coverage
+
+# Ignore NetBeans project data
+/nbproject
