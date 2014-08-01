@@ -4,7 +4,7 @@ module Openvault::Pbcore
     def self.classify(doc)
       matches = []
       MODELS.each do |model, test|
-        matches << model if test.call(doc)
+        matches << Kernel.const_get(model) if test.call(doc)
       end
       matches -= [Program] unless matches == [Program]
       raise 'No matching AF-model' if matches.count == 0
@@ -15,26 +15,27 @@ module Openvault::Pbcore
     private
     
     MODELS = {
-      Series => lambda {|doc| 
+      # Bare classes could be used at runtime, but they choked 'rake dev:ci:prepare'
+      'Series' => lambda {|doc| 
         !doc.series_title.empty? && 
           doc.program_title.empty? && 
           doc.instantiations.media_type.empty?},
       
-      Program => lambda {|doc|
+      'Program' => lambda {|doc|
         !doc.program_title.empty? &&
           doc.titles_by_type.keys.grep(/^(Element|Item|Segment|Clip)/).none?},
       
-      Transcript => lambda {|doc|
+      'Transcript' => lambda {|doc|
         asset_type(doc).match(/transcript/i)},
       
-      Video => lambda {|doc|
+      'Video' => lambda {|doc|
         media_type(doc).match(/^moving image$/i) || 
           asset_type(doc).match(/^preservation master$/i)},
       
-      Audio => lambda {|doc|
+      'Audio' => lambda {|doc|
         media_type(doc).match(/^audio$/i)},
       
-      Image => lambda {|doc|
+      'Image' => lambda {|doc|
         media_type(doc).match(/^static image$/i) ||
           asset_type(doc).match(/photograph/i) || 
           digital(doc).match(/^image/)
