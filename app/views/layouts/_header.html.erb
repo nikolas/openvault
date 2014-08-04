@@ -56,6 +56,9 @@
   <!-- Logo and login -->
   <div id="mobile-header" class="hidden-tablet hidden-desktop">
     <a href="<%= root_url %>"><img src="/assets/ov_logo_220.png" class="logo" /></a>
+    
+    <%= link_to 'series', browse_series_path, class: 'series-icon' %>
+    <%= link_to 'programs', browse_programs_path, class: 'programs-icon' %>
     <a href="#" class="search-icon"><i class="icon-search icon-white"></i></a>
     <div class="search-dropdown">
       <%= render :partial => 'catalog/partials/search_form_mobile' %>

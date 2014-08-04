@@ -1170,26 +1170,44 @@ input[type=file] {
       .logo {
         margin-top: 5px;
       }
+      
+      .programs-icon, .series-icon {
+        right: 84px;
+        font-size: 12px;
+        text-align: center;
+        width: 7em;
+        padding: 2px 15px 3px;
+      }
+      .programs-icon {
+        top: 0px;
+      }
+      .series-icon {
+        top: 19px;
+      }
+      
+      .search-icon, .action-menu {
+        top: 0px;
+        padding: 7px 15px;
+        font-size: 20px;
+      }
       .search-icon {
         right: 42px;
       }
       .action-menu {
         right: 0px;
       }
-      .action-menu, .search-icon {
+      
+      .action-menu, .search-icon, .programs-icon, .series-icon  {
         position: absolute;
         background: $light-blue;
-        top: 0;
-        padding: 7px 15px;
-        font-size: 20px;
         text-decoration: none;
         color: #fff;
-        border-right: 1px solid darken($light-blue, 20%);
-        border-left: 1px solid darken($light-blue, 20%);
+        border: 1px solid darken($light-blue, 20%);
         &:active {
           background: $orange;
         }
       }
+      
       .search-dropdown {
         display:none;
         width: 100%;
