@@ -1073,6 +1073,13 @@ input[type=file] {
 @media (min-width: 768px) and (max-width: 979px) {
   #header {
     height: 45px;
+    .btn {
+      height: 26px;
+      padding: 2px 12px;
+    }
+    #browse-label {
+      display: none;
+    }
     .logo-link {
       background: url(/assets/ov_logo_220.png);
       width: 220px;
@@ -1086,7 +1093,7 @@ input[type=file] {
     }
     #search-bar {
       #nav-s-input {
-        width: 85%;
+        width: 45%;
         .search_q {
           height: 26px;
         }
