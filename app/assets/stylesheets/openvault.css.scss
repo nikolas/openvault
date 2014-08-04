@@ -1170,30 +1170,20 @@ input[type=file] {
       .logo {
         margin-top: 5px;
       }
-      .action-menu {
-        position: absolute;
-        background: $light-blue;
-        top: 0;
-        right: 0;
-        padding: 7px 15px;
-        font-size: 20px;
-        text-decoration: none;
-        color: #fff;
-        border-right: 1px solid darken($light-blue, 20%);
-        border-left: 1px solid darken($light-blue, 20%);
-        &:active {
-          background: $orange;
-        }
-      }
       .search-icon {
+        right: 42px;
+      }
+      .action-menu {
+        right: 0px;
+      }
+      .action-menu, .search-icon {
+        position: absolute;
         background: $light-blue;
+        top: 0;
+        padding: 7px 15px;
+        font-size: 20px;
         text-decoration: none;
         color: #fff;
-        font-size: 20px;
-        position: absolute;
-        top: 0;
-        right: 42px;
-        padding: 7px 15px;
         border-right: 1px solid darken($light-blue, 20%);
         border-left: 1px solid darken($light-blue, 20%);
         &:active {
