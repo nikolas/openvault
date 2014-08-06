@@ -8,7 +8,8 @@ class Org < ActiveRecord::Base
   
   has_many :owned_collections, as: :owner, class_name: CustomCollection
 
-  has_and_belongs_to_many :users
+  has_many :affiliations
+  has_many :users, through: :affiliations
 
   validates :name, presence: true
 
