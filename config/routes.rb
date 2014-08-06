@@ -44,9 +44,9 @@ Openvault::Application.routes.draw do
   get 'series/:id/print', as: 'print_series', to: 'series#print'
   get 'series', as: 'browse_series', to: 'series#browse_by_title'
 
-  get 'programs/:id', as: 'programs', to: 'programs#show'
-  get 'programs/:id/print', as: 'print_programs', to: 'programs#print'
-  get 'programs', as: 'browse_programs', to: 'programs#browse_by_year'
+  get 'program/:id', as: 'program', to: 'programs#show'
+  get 'program/:id/print', as: 'print_program', to: 'programs#print'
+  get 'program', as: 'browse_programs', to: 'programs#browse_by_year'
   
   get 'video/:id', as: 'video', to: 'videos#show'
   get 'video/:id/print', as: 'print_video', to: 'videos#print'
