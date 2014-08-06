@@ -1,18 +1,17 @@
-<% @custom_collections.each do |collection| %>
-	<div class="document blacklight-collection">
-		<div class="thumbnail">
-			<%= link_to image_tag(collection.poster_image), collection %>
-		</div>
-		<div class="documentHeader">
-			<h3 class="index_title">
-				<%= link_to collection.name, collection %>
-			</h3>
-		</div>
-		<div class="defList_container">
-			<div class="blacklight-dc_description_t">
-			<div class="label" style="display:none;">Summary</div>
-			<div class="value"><%= truncate(collection.summary, :length => 150).html_safe %></div>
-			</div>
-		</div>
-	</div>
+<% title "#{application_name} - Collections" %>
+<h2>Collections</h2>
+<% @custom_collections.map {|collection| collection.owner}.each do |owner| %>
+  <div class="user_block row-fluid">
+    <div class="span2">
+      <%= link_to image_tag(owner.avatar.url(:small)), owner.url rescue '' %>
+    </div>
+    <div class="span10">
+      <h4><%= link_to owner.full_name, owner.url rescue owner.name %></h4>
+      <p><%= owner.work_string rescue ''%></p>
+      <p><%= truncate(owner.bio, :length => 300) rescue '' %></p>
+      <% owner.owned_collections.each do |collection| %>
+        <p><%= link_to collection.name, collection %></p>
+      <% end %>
+    </div>
+  </div>
 <% end %>
