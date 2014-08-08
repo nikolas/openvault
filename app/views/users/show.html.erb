@@ -9,8 +9,8 @@
       <div class="row-fluid hidden-desktop hidden-tablet mobile-user-row">
         <%= image_tag @user.avatar.url(:thumb) %>
         <h3><%= @user.full_name %></h3>
-        <h4><%= @user.title %></h4>
-        <h4><%= @user.organization %></h4>
+        <h4><%= primary_organization_title(@user) %></h4>
+        <h4><%= primary_organization(@user) %></h4>
         <%#= render partial: 'global_partials/share' %>
         <div id="user_bio" class="span8">
           <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
@@ -28,10 +28,10 @@
           <%= render partial: 'users/show_actions' %>
         <% end %>
 
-        <% if @user.title.present? && @user.organization.present? %>
-          <h4><%= [@user.title, @user.organization].join(' &mdash; ').html_safe %></h4>
+        <% if primary_organization_title(@user).present? && primary_organization(@user).present? %>
+          <h4><%= [primary_organization_title(@user), primary_organization(@user)].join(' &mdash; ').html_safe %></h4>
         <% else %>
-          <h4><%= [@user.title, @user.organization].join('').html_safe %></h5>
+          <h4><%= [primary_organization_title(@user), primary_organization(@user)].join('').html_safe %></h5>
         <% end %>
       </div>
     </div>
