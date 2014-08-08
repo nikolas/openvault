@@ -1,0 +1,14 @@
+<h1>Browse Programs by Year</h1>
+
+<table class="table table-condensed">
+  <% (1950..2010).step(10) do |decade| %>
+    <tr>
+      <% (decade..(decade+9)).each do |year| %>
+        <td>
+          <%= link_to year, "http://openvault.wgbh.org/catalog?range[dc_date_year_i][begin]=#{year}
+&range[dc_date_year_i][end]=#{year+1}" if year.between? 1951, Time.now().year %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

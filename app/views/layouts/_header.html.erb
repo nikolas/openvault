@@ -9,12 +9,18 @@
   </div>
   <div class="span6 hidden-phone">
     <%= render :partial => 'catalog/partials/search_form' %>
+    <div class="pull-right" >
+      <span id="browse-label">Browse:</span>
+      <%= link_to 'Series', browse_series_path, class: 'btn' %>
+      <%= link_to 'Programs', browse_programs_path, class: 'btn' %>
+    </div>
   </div>
+
   <div class="span2 hidden-phone pull-right action_links">
     <% if user_signed_in? %>
       <span class="user_info hidden-tablet hidden-phone" style="white-space: nowrap;">
-        Welcome back <%= current_user.first_name %>
-      </span><br />
+        Welcome back <%= current_user.first_name %><br/>
+      </span>
       <span class="edit_profile">
         <%= link_to "Profile", "/me", :class => 'action_link' %>
       </span>
@@ -50,6 +56,9 @@
   <!-- Logo and login -->
   <div id="mobile-header" class="hidden-tablet hidden-desktop">
     <a href="<%= root_url %>"><img src="/assets/ov_logo_220.png" class="logo" /></a>
+    
+    <%= link_to 'series', browse_series_path, class: 'series-icon' %>
+    <%= link_to 'programs', browse_programs_path, class: 'programs-icon' %>
     <a href="#" class="search-icon"><i class="icon-search icon-white"></i></a>
     <div class="search-dropdown">
       <%= render :partial => 'catalog/partials/search_form_mobile' %>
