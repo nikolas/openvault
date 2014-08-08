@@ -46,7 +46,8 @@ class User < ActiveRecord::Base
     username
   end
 
-  has_and_belongs_to_many :orgs
+  has_many :affiliations
+  has_many :orgs, through: :affiliations
 
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"
@@ -92,14 +93,14 @@ class User < ActiveRecord::Base
   end
 
   def work_string
-    if self.title.blank? && self.organization.blank?
+    if primary_organization_title(self).blank? && primary_organization(self).blank?
       ""
-    elsif self.title.blank? && !self.organization.blank?
-      "works at #{self.organization}"
-    elsif !self.title.blank? && self.organization.blank?
-      "#{self.title}"
+    elsif primary_organization_title(self).blank? && !primary_organization(self).blank?
+      "works at #{primary_organization(self)}"
+    elsif !primary_organization_title(self).blank? && primary_organization(self).blank?
+      "#{primary_organization_title(self)}"
     else
-      "#{self.title} at #{self.organization}"
+      "#{primary_organization_title(self)} at #{primary_organization(self)}"
     end
   end
 
