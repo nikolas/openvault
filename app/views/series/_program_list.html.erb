@@ -1,10 +1,10 @@
 <div class="programs-list">
   <h4>Programs in this series</h4>
-  <% if @item.programs.empty? %>
+  <% if @ov_asset.programs.empty? %>
     <p>Currently we do not have any programs information available for this series.</p>
   <% else %>
     <ul>
-      <% @item.programs.each do |program| %>
+      <% @ov_asset.programs.each do |program| %>
         <li><%= link_to program.title, program_path(program.id) %></li>
       <% end %>
     </ul>

@@ -2,8 +2,8 @@
 <video id="video-mp4" class="video-js vjs-default-skin vjs-big-play-centered"
   controls preload="auto" width="550" height="350"
   data-setup='{}'
-  poster="<%= @item.videos.first.thumbnail_url %>" >
-  <source src="<%= @item.videos.first.video_url %>" type='video/mp4' />
-  <source src="<%= @item.videos.first.video_url %>" type='video/webm' />
-  <source src="<%= @item.videos.first.video_url %>" type='video/ogg' />
+  poster="<%= @ov_asset.videos.first.thumbnail_url %>" >
+  <source src="<%= @ov_asset.videos.first.video_url %>" type='video/mp4' />
+  <source src="<%= @ov_asset.videos.first.video_url %>" type='video/webm' />
+  <source src="<%= @ov_asset.videos.first.video_url %>" type='video/ogg' />
 </video>

@@ -1,18 +1,18 @@
 <h3>Assets part of this program</h3>
 <div id="program-asset-list">
-  <% unless @item.videos.count == 0 %>
+  <% unless @ov_asset.videos.count == 0 %>
     <h4>Video assets</h4>
     <div class="asset-list video-list">
-      <% @item.videos.each do |video| %>
+      <% @ov_asset.videos.each do |video| %>
         <%= render partial: 'programs/partials/video_multi', locals: {:video => video} %>
       <% end %>
     </div>  
   <% end %>
-  <% unless @item.audios.count == 0 %>
+  <% unless @ov_asset.audios.count == 0 %>
     <hr />
     <h4>Audio assets</h4>
     <div class="asset-list audio-list">
-      <% @item.audios.each do |audio| %>
+      <% @ov_asset.audios.each do |audio| %>
         <%= render partial: 'programs/partials/audio_multi', locals: {:document => audio} %>
       <% end %>
     </div>

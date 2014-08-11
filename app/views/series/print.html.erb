@@ -35,27 +35,27 @@
         <div class="document_content">
           <h4>Summary</h4>
           <p><%= display_summary @document %></p>
-          <% unless @item.videos.empty? %>
+          <% unless @ov_asset.videos.empty? %>
             <h4>Series Videos</h4>
             <ul>
-              <% @item.videos.each do |vid| %>
+              <% @ov_asset.videos.each do |vid| %>
                 <li><%= link_to vid['title_tesim'].first.to_s, "/video/#{vid['slug']}" %></li>
               <% end %>
             </ul>
           <% end %>
-          <% unless @item.images.empty? %>
+          <% unless @ov_asset.images.empty? %>
             <h4>Series Images</h4>
             <ul>
-              <% @item.images.each do |img| %>
+              <% @ov_asset.images.each do |img| %>
                 <li data-id="<%= img['slug'] %>"><%= img['title_tesim'].first.to_s %></li>
               <% end %>
             </ul>
           <% end %>
           <div class="progams-list">
-            <% unless @item.programs.nil? %>
+            <% unless @ov_asset.programs.nil? %>
               <h4>Programs in this series</h4>
               <div id="program-list">
-                <% @item.programs.each do |prog| %>
+                <% @ov_asset.programs.each do |prog| %>
                   <div class="series-program">
                     <img src="<%= prog[:thumbnail_url] %>">
                     <h4><%= link_to prog[:title_tesim].first.to_s, "/programs/#{prog[:slug].to_s}" %></h4>

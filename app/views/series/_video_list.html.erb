@@ -1,10 +1,10 @@
 <div class="video-list">
   <h4>Videos in this series</h4>
-  <% if @item.videos.empty? %>
+  <% if @ov_asset.videos.empty? %>
     <p>Currently we do not have any videos available for this series.</p>
   <% else %>
     <ul>
-      <% @item.videos.each do |video| %>
+      <% @ov_asset.videos.each do |video| %>
         <li><%= link_to video.title, "/video/#{video.id}" %></li>
       <% end %>
     </ul>

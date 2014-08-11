@@ -149,17 +149,17 @@ feature "User adds a catalog item to a collection" do
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
-    @item = Video.create!
+    @ov_asset = Video.create!
   end
 
   scenario 'when they are signed in as a non-scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
-    visit "/video/#{@item.pid}"
+    visit "/video/#{@ov_asset.pid}"
     expect(page).not_to have_content('Add to my collection')
   end
 
   scenario 'when they are not signed it' do
-    visit "/video/#{@item.pid}"
+    visit "/video/#{@ov_asset.pid}"
     expect(page).not_to have_content('Add to my collection')
   end
 
@@ -171,13 +171,13 @@ feature "User adds a catalog item to a custom collection they are a collaborator
     @scholar1 = create(:user, role: 'scholar')
     @scholar2 = create(:user, role: 'scholar')
     @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123', summary: 'Testingasdfjasldkjf')
-    @item = Video.create!
+    @ov_asset = Video.create!
     @custom_collection1.collabs << @scholar2
   end
 
   scenario 'when they are signed in as a scholar' do
     login_as(@scholar2, :scope => :user, :run_callbacks => false)
-    visit "/video/#{@item.pid}"
+    visit "/video/#{@ov_asset.pid}"
     within ('#add_to_collection') do
       select("Testing 123123")
     end
@@ -192,8 +192,8 @@ feature "User removes a catalog item from a collection" do
     @scholar1 = create(:user, role: 'scholar')
     @member = create(:user)
     @custom_collection1 = create(:custom_collection, owner: @scholar1, name: 'Testing 123123123123', summary: 'Testingasdfjasldkjf')
-    @item = Video.create!
-    create(:custom_collection_item, :custom_collection_id => @custom_collection1.id, :openvault_asset_pid => @item.pid, :kind => 'Video')
+    @ov_asset = Video.create!
+    create(:custom_collection_item, :custom_collection_id => @custom_collection1.id, :openvault_asset_pid => @ov_asset.pid, :kind => 'Video')
   end
 
   # scenario 'when they are signed in as a scholar' # do
@@ -206,12 +206,12 @@ feature "User removes a catalog item from a collection" do
   scenario 'when they are signed in as a non-scholar' do
     login_as(@member, :scope => :user, :run_callbacks => false)
     visit "/custom_collections/#{@custom_collection1.id}"
-    expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
+    expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@ov_asset.pid}\"]")
   end
 
   scenario 'when they are not signed it' do
     visit "/custom_collections/#{@custom_collection1.id}"
-    expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@item.pid}\"]")
+    expect(page).not_to have_xpath("//a[@href=\"/custom_collections/#{@custom_collection1.id}/remove_item/?asset_id=#{@ov_asset.pid}\"]")
   end
 end
 

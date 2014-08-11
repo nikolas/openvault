@@ -4,7 +4,7 @@ class AudiosController < CatalogController
   
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]
-    @item  = ActiveFedora::Base.find(params[:id], cast: true) 
+    @ov_asset  = ActiveFedora::Base.find(params[:id], cast: true) 
     respond_to do |format|
       format.html #show.html.erb
       @document.export_formats.each_key do | format_name |
