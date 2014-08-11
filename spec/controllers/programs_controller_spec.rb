@@ -28,11 +28,6 @@ describe ProgramsController do
       assigns(:program).videos.should_not be nil
       assigns(:program).audios.should_not be nil
     end
-
-    it "@rel is not nil" do
-      get :show, {id: @id}
-      assigns(:rel).should_not be nil
-    end
   end
 
   describe "GET print" do

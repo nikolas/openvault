@@ -23,13 +23,6 @@ describe VideosController do
       get :show, {id: @id}
       expect(assigns(:document)).to_not be nil
     end
-
-    it "@images, @videos, @programs are not nil" do
-      get :show, {id: @id}
-      expect(assigns(:images)).to_not be nil
-      expect(assigns(:program)).to_not be nil
-      expect(assigns(:transcripts)).to_not be nil
-    end
   end
 
   describe "GET print" do
