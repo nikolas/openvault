@@ -4,14 +4,14 @@
 <div class="document <%= render_document_class video %>">  
     <div  class="doc_thumbnail">
       <% unless video["thumbnail_ssm"].nil? %>
-        <%= link_to image_tag(video["thumbnail_ssm"].first), controller: 'videos', action: 'show', id: video.id %>
+        <%= link_to image_tag(video["thumbnail_ssm"].first), controller: 'catalog', action: 'show', id: video.id %>
       <% else %>
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
     </div> 
   <h3 class="index_title">
     <% if video[:title_tesim] %>
-      <%= link_to video[:title_tesim].first, controller: 'videos', action: 'show', id: video.id %>
+      <%= link_to video[:title_tesim].first, controller: 'catalog', action: 'show', id: video.id %>
     <% else %>
       <%= "Untitled Video" %>
     <% end %>

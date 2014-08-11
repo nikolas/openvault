@@ -296,5 +296,19 @@ class CatalogController < ApplicationController
     document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
     [solr_response, document_list]
   end
+  
+  def show
+    @response, @document = get_solr_response_for_doc_id params[:id]
+    @ov_asset  = ActiveFedora::Base.find(params[:id], cast: true)
+    render action:(@ov_asset.class.to_s.downcase + '/show')
+#    respond_to do |format|
+#      format.html #show.html.erb
+#      @document.export_formats.each_key do | format_name |
+#        # It's important that the argument to send be a symbol;
+#        # if it's a string, it makes Rails unhappy for unclear reasons.
+#        format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
+#      end
+#    end
+  end
 
 end 

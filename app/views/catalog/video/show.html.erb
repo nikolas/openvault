@@ -14,8 +14,8 @@
         <div class="sep-line-thin"></div>
         <div class="document_content">
           <p><%= @ov_asset.summary unless @ov_asset.title == @ov_asset.summary %></p>
-          <%= render partial: 'videos/player' %>
-          <%= render partial: 'videos/images' %>
+          <%= render partial: 'catalog/video/player' %>
+          <%= render partial: 'catalog/video/images' %>
           <div class="metadata">
             
             <%= 

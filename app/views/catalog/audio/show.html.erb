@@ -7,7 +7,7 @@
         <div class="sep-line-thin"></div>
         <div class="document_content">
           <p><%= @ov_asset.summary unless @ov_asset.title == @ov_asset.summary %></p>
-          <%= render partial: 'audios/player' %>
+          <%= render partial: 'catalog/audio/player' %>
           <div class="metadata">
             <%=
               begin

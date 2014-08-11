@@ -40,17 +40,8 @@ Openvault::Application.routes.draw do
     end
   end
 
-  get 'series/:id', as: 'series', to: 'series#show'
-  get 'series/:id/print', as: 'print_series', to: 'series#print'
   get 'series', as: 'browse_series', to: 'series#browse_by_title'
-
-  get 'program/:id', as: 'program', to: 'programs#show'
-  get 'program/:id/print', as: 'print_program', to: 'programs#print'
   get 'program', as: 'browse_programs', to: 'programs#browse_by_year'
-  
-  get 'video/:id', as: 'video', to: 'videos#show'
-  get 'video/:id/print', as: 'print_video', to: 'videos#print'
-  get 'audio/:id', as: 'audio', to: 'audios#show'
 
   #general devise routes. Use custom RegistrationsController
   devise_for :users, :controllers => {registrations: "registrations"}

@@ -4,14 +4,14 @@
 <div class="document <%= render_document_class audio %>">  
     <div  class="doc_thumbnail">
       <% unless audio["thumbnail_ssm"].nil? %>
-        <%= link_to image_tag(audio["thumbnail_ssm"].first), controller: 'audios', action: 'show', id: audio.id %>
+        <%= link_to image_tag(audio["thumbnail_ssm"].first), controller: 'catalog', action: 'show', id: audio.id %>
       <% else %>
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
     </div> 
   <h3 class="index_title">
     <% if audio[:title_tesim] %>
-      <%= link_to audio[:title_tesim].first, controller: 'audios', action: 'show', id: audio.id %>
+      <%= link_to audio[:title_tesim].first, controller: 'catalog', action: 'show', id: audio.id %>
     <% else %>
       [untitled audio]
     <% end %>
