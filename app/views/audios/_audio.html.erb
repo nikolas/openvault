@@ -12,15 +12,24 @@
   <h3 class="index_title">
     <% if audio[:title_tesim] %>
       <%= link_to audio[:title_tesim].first, controller: 'audios', action: 'show', id: audio.id %>
-      <%= " (audio Excerpt)" if audio.get('media_dsid_s') =~ /audio/ and audio.get('dc_type_s') =~ /excerpt/ %>
     <% else %>
       [untitled audio]
     <% end %>
   </h3>  
   <div class="defList_container">
-    <% unless audio[:summary_ssm].nil? %>
+    <% unless audio[:summary_tesim].nil? %>
       <div class="blacklight-summary">
-        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(audio[:summary_ssm].first), :length => 200) %></p></div>
+        <div class="doc_value"><p><%= truncate(strip_tags(audio[:summary_tesim].first), :length => 250) %></p></div>
+      </div>
+    <% end %>
+    <% unless audio[:active_fedora_model_ssi].nil? %>
+      <div class="blacklight-model">
+        <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= truncate(strip_tags(audio[:active_fedora_model_ssi])) %></p></div>
+      </div>
+    <% end %>
+    <% unless audio[:asset_date_tesim].nil? %>
+      <div class="blacklight-date">
+        <div class="doc_value"><p><span class="doc_label">Date:</span><%= truncate(strip_tags(audio[:asset_date_tesim].first)) %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>

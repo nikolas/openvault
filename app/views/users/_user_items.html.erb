@@ -1,0 +1,27 @@
+<h2>My Requested Items</h2>
+
+<% if @user.artifacts.blank? %>
+  <em>You currently don't have any items requested.</em>
+<% else %>
+    <table class="table table-striped table-bordered table-hover">
+    <tr>
+      <th>Item</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>User Status</th>
+      <th>Actions</th>
+    </tr>
+    <% @user.sponsorships.each do |sponsorship| %>
+      <tr id="sponsorship-<%= sponsorship.id %>">
+        <td><%= collection_item_link(sponsorship.artifact.ov_asset) %></td>
+        <td class='state'><%= sponsorship.artifact.state %></td>
+        <td class='type'><%= sponsorship.artifact.type %></td>
+        <td class='status'><%= sponsorship_status(sponsorship) %></td>
+        <% if sponsorship_status(sponsorship) == "Confirmed/Sponsor" %>
+          <td class='actions'><button class="btn btn-mini btn-inverse disabled" type="button"><%= "Unfollow" %></button></td>
+        <% else %>
+          <td class='actions'><button class="btn btn-mini btn-danger" type="button"><%= sponsorship_actions(sponsorship) %></button></td>
+        <% end %>
+    <% end %>
+  </table>
+<% end %>

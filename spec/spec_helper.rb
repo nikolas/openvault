@@ -1,8 +1,11 @@
+require 'simplecov'
+SimpleCov.start
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
+# require 'rspec/autorun'
 require 'capybara/rspec'
 require 'fixtures'
 require 'openvault'
@@ -32,6 +35,9 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
 
+  # This is needed so we don't have to add metadata for the type of spec. Use Rails conventions instead.
+  config.infer_spec_type_from_file_location!
+
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
@@ -39,7 +45,6 @@ RSpec.configure do |config|
   config.order = "random"
 
   # Include some stuff
-  config.include Devise::TestHelpers, type: :controller
   config.include FactoryGirl::Syntax::Methods
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
@@ -52,33 +57,21 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
-  end
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-  config.after (:each) do
-    DatabaseCleaner.clean
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
   end
 
   config.fixture_path = File.expand_path("../fixtures", __FILE__)
 
-  config.before(:suite) do
-    ActiveFedora::TestCleaner.setup
-  end
-
-  config.before(:each) do
-    ActiveFedora::TestCleaner.start
-  end
-
-  config.before(:each) do
-    ActiveFedora::TestCleaner.clean
-  end
-
-  config.after(:suite) do
+  config.before(:context) do
     ActiveFedora::Base.destroy_all
+    DatabaseCleaner.clean
   end
 
+  config.before(:context) do
+    DatabaseCleaner.start
+  end
+  
 end
 
 module Rack

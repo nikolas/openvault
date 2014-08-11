@@ -1,4 +1,10 @@
 class ApplicationController < ActionController::Base
+
+  if ENV['HTTP_BASIC_AUTH_PASSWORD'] && ENV['HTTP_BASIC_AUTH_USER']
+    http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_USER'], password: ENV['HTTP_BASIC_AUTH_PASSWORD']
+  end
+  
+
   # Adds a few additional behaviors into the application controller 
    include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on 

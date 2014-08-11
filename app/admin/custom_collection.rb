@@ -10,17 +10,26 @@ ActiveAdmin.register CustomCollection do
 
   form do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs do 
+    f.inputs do
       f.input :name
       f.input :summary
-      f.input :image, :as => :file
-      f.input :owner_id, :as => 'select', :collection => User.scholars + Org.all
-      f.input :owner_type, :collection => ['User', 'Org']
+      f.input :owner_type_and_id, as: :select, collection: grouped_options_for_select({"Organizations" => org_owner_options, "Scholars" => scholar_owner_options}, f.object.owner_type_and_id)
       f.input :slug
     end
+
     f.inputs do
-      f.input :collabs,  :as => :check_boxes, :collection => User.all
+      f.input :collabs,  as: :check_boxes, collection: User.scholars.sort_by {|scholar| scholar.last_name_first}, member_label: :last_name_first
+      f.input :credits
     end
+
+    f.inputs do
+      f.has_many :custom_collection_images, allow_destroy: true, heading: 'Images', new_record: true do |cc_img|
+        cc_img.input :image, as: :file
+        cc_img.input :alt_text
+        cc_img.input :rights
+      end
+    end
+
     f.actions
   end
 
@@ -33,21 +42,20 @@ ActiveAdmin.register CustomCollection do
 	  	row :id
 	  	row :name
 	  	row :summary
-	  	row :image
 	  	row :article
 	  	row :created_at
 	  	row :updated_at
 	  	row :owner
 	  	row :slug
 	  	row :owner_type
+      row :credits
   	end
 
     panel "Collaborators" do
       if custom_collection.collabs.present?
         table_for custom_collection.collabs do
-          column(:id) {|c| c.id}
-          column(:first_name) {|c| c.first_name}
           column(:last_name) {|c| c.last_name}
+          column(:first_name) {|c| c.first_name}
           column(:email) {|c| c.email}
           column(:role) {|c| c.role}
         end
@@ -55,5 +63,16 @@ ActiveAdmin.register CustomCollection do
         "None"
       end
     end
+
+    panel "Images" do
+      if custom_collection.custom_collection_images.present?
+        table_for custom_collection.custom_collection_images do
+          column(:image) { |cc_img| image_tag(cc_img.image.small, alt: cc_img.alt_text) }
+        end
+      else
+        "None"
+      end
+    end
   end
+
 end

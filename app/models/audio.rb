@@ -1,4 +1,6 @@
 class Audio < OpenvaultAsset
+  include SharedMethods
+
   COVERAGE = ['complete', 'clip', 'segment']
   
   has_many :images, :property => :image_audio
@@ -16,9 +18,15 @@ class Audio < OpenvaultAsset
     self.pbcore.titles_by_type['Item3'] || self.pbcore.titles_by_type['Segment3'] || self.pbcore.titles_by_type['Element3']
   end
   
+  def thumbnail_url
+    # specific image lookup
+    self.images.first.image_url unless self.images.empty?
+  end
+
   def audio_url
     #This needs to change based on the decisions made about the streaming server
-    "http://media.wgbh.org/streaming/audios/#{self.id}.jpg"
+    #"http://media.wgbh.org/streaming/audios/#{self.id}.mp3"
+    "#{media_host}/audio/#{original_file_name}" if original_file_name
   end
   
   def audio_images
@@ -35,5 +43,5 @@ class Audio < OpenvaultAsset
       super asset
     end
   end
-  
+
 end

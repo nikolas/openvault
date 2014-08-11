@@ -1,19 +1,37 @@
 require 'spec_helper'
-require_relative '../factories/user'
-require_relative '../factories/org'
-require_relative '../factories/custom_collection'
-require_relative '../factories/custom_collection_item'
 
 describe CustomCollection do
 
-  describe 'factory' do
+  describe 'factory :custom_collection' do
     it 'can build a valid instance' do
       build(:custom_collection).should be_valid
     end
 
     it 'can create a valid instance' do
-      cc = create(:custom_collection)
-      expect(cc.new_record?).to be_false
+      cc = FactoryGirl.create(:custom_collection).tap { |obj| obj.save } # TODO: chaining #save! should not be required, but it is.
+      expect(cc.new_record?).to be false
+    end
+
+    describe ':with_items' do
+      it 'creates an instance with associated CustomCollectionItems, 2 by default.' do
+        expect(create(:custom_collection, :with_items).custom_collection_items.count).to eq 2
+      end
+
+      it 'creates an instance with N associated CustomCollectionItems, where :num_items => N' do
+        num_items = rand 3
+        expect(create(:custom_collection, :with_items, num_items: num_items).custom_collection_items.count).to eq num_items
+      end
+    end
+
+    describe ':with_collabs' do
+      it 'creates an instance with assocated Users, 2 by default' do
+        expect(create(:custom_collection, :with_collabs).collabs.count).to eq 2
+      end
+
+      it 'creates an instance with N associated Users, where :num_collabs => N' do
+        num_collabs = rand 3
+        expect(create(:custom_collection, :with_collabs, num_collabs: num_collabs).collabs.count).to eq num_collabs
+      end
     end
   end
 
@@ -36,53 +54,17 @@ describe CustomCollection do
   it "is invalid without a name" do
     build(:custom_collection, name: nil).should_not be_valid
   end
-  
+
   it "is invalid without a summary"  do
     build(:custom_collection, summary: nil).should_not be_valid
   end
-  
-  
+
   pending "has a valid vanity url" do
     # I scrapped this for now because I don't think that URL logic should go in the model,
     # but not sure how to implement it at the moment.
     # user = create(:user, first_name: 'John', last_name: 'Smith', role: 'scholar')
     # collection = create(:custom_collection, name: 'testing 1', owner: user)
     # collection.vanity_url.should eq("/scholar/john-smith/testing-1")
+    fail
   end
-
-
-  describe '#custom_collection_items <<' do
-    # before :all do
-    #   @custom_collection = FactoryGirl.create(:custom_collection)
-    #   @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
-    # end
-
-    it 'adds CustomCollectionItem instance to has_many association' do
-      @custom_collection = create(:custom_collection)
-      @custom_collection_items = FactoryGirl.create_list(:custom_collection_item, 5)
-      @custom_collection_items.each { |item| @custom_collection.custom_collection_items << item }
-      expect(@custom_collection.custom_collection_items.count).to eq 5
-    end
-  end
-
-  # it "creates a valid custom collection item" do
-  #   collection = create(:custom_collection)
-  #   v = Video.new
-  #   v.save
-  #   collection.add_collection_item(v.pid, "Video")
-  #   collection.custom_collection_items[0].ov_asset['slug'].should eq(v.pid)
-  # end
-
-  describe '#users <<' do
-    before :all do
-      @custom_collection = FactoryGirl.create(:custom_collection)
-      @users = FactoryGirl.create_list(:user, 5)
-    end
-
-    it "adds User instance to has_many association" do
-      @users.each { |user| @custom_collection.collabs << user }
-      expect(@custom_collection.collabs.count).to eq 5
-    end
-  end
-  
 end

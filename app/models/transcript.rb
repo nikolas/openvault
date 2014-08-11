@@ -1,6 +1,4 @@
-
 class Transcript < OpenvaultAsset
-  
   belongs_to :video, :property => :transcript_video
   belongs_to :audio, :property => :transcript_audio
   belongs_to :series, :property => :series_transcript
@@ -14,6 +12,10 @@ class Transcript < OpenvaultAsset
   
   def transcript_path
     "http://media.wgbh.org/streaming/transcripts/#{self.pid}.xml"
+  end
+
+  def tei
+    'transcript present but feature not yet implemented'
   end
 
   def relate_asset asset

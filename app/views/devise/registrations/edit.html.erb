@@ -1,4 +1,4 @@
-<% title "OpenVault - Edit Profile" %>
+<% title "#{application_name} - Edit Profile" %>
 <div id="signup_form_container">
   
   <div class="row-fluid">
@@ -6,7 +6,7 @@
       &nbsp;
     </div>
     <div class="grainbox span10">
-      <h2>Edit your Open Vault profile</h2>
+      <h2>Edit your <%= application_name %> profile</h2>
       <div class="sep-line"></div>
     	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => '', :method => :put}) do |f| %>
     	  <%= devise_error_messages! %>
@@ -30,8 +30,6 @@
 
           </div>
           <div class="span6 left">
-            <%= f.input :organization, :placeholder => 'Organization' %>
-            <%= f.input :title, :placeholder => 'Title' %>
             
          		<div class="control-group">
          			<%= f.label :country, :class => 'control-label' %>

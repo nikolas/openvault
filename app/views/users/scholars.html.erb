@@ -1,4 +1,4 @@
-<% title "OpenVault - Scholars" %>
+<% title "#{application_name} - Scholars" %>
 <h2>Scholars</h2>
 <% @users.each do |user| %>
   <div class="user_block row-fluid">
@@ -9,7 +9,9 @@
       <h4><%= link_to user.full_name, user.url %></h4>
       <p><%= user.work_string %></p>
       <p><%= truncate(user.bio, :length => 300) %></p>
-      <p><%= pluralize(user.owned_collections.length, 'custom collection') %></p>
+      <% user.owned_collections.each do |collection| %>
+        <p><%= link_to collection.name, collection %></p>
+      <% end %>
     </div>
   </div>
 <% end %>

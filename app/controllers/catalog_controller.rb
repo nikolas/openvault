@@ -2,6 +2,7 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController  
+  before_filter :find_artifact, :only => :show
   
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
@@ -48,7 +49,7 @@ class CatalogController < ApplicationController
     
     # config.index.show_link = 'title_clip_ssm'
     config.index.show_link = 'title_teim'
-    config.add_index_field 'asset_date_ssm', :label => 'Date Created'
+    config.add_index_field 'asset_date_tesim', :label => 'Date Created'
     config.add_index_field 'series_ssm', :label => 'Program'
     config.add_index_field 'media_ssm', :label => 'Media'
     
@@ -258,6 +259,11 @@ class CatalogController < ApplicationController
     #     end
     #   end
     # end
+  end
+
+  def find_artifact
+    @digitization_artifact = Artifact.where(pid: params[:id], type:'digitization').first
+    @transcription_artifact = Artifact.where(pid: params[:id], type:'transcription').first
   end
   
   # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...

@@ -1,8 +1,17 @@
 require 'capybara/poltergeist'
 
 Capybara.register_driver :poltergeist do |app|
-  options = { inspector: true, js_errors: false }
-  options[:timeout] = ENV["CI"] ? 60 : 30
+  options = {
+    inspector: true,
+    js_errors: false,
+    timeout: ENV["CI"] ? 180 : 30,
+    phantomjs_logger: StringIO.new,
+    logger: nil,
+    phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes']    
+  }
+
+  puts "\n\nPOLTERGEIST OPTIONS = #{options}\n\n"
+
   Capybara::Poltergeist::Driver.new(app, options)
 end
 

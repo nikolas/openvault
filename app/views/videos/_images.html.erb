@@ -1,4 +1,6 @@
-<h3>Images</h3>
-<% @video.images.each do |image| %>
-  <img src="<%= image.image_url %>" />
-<% end %>
+<div class="row-fluid">
+  <h3>Images</h3>
+  <% @video.images.each do |image| %>
+    <img src="<%= image.image_url %>" />
+  <% end %>
+</div>

@@ -21,28 +21,28 @@ module Openvault
 
     # A little tweak to load order to ensure we get the right version of GenericFile.
     #config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
-    
+
     #change scaffold to build rspec tests
-    config.generators do |g| 
-      g.test_framework :rspec, 
-        :fixtures => true, 
-        :view_specs => false, 
-        :helper_specs => false, 
-        :routing_specs => false, 
-        :controller_specs => true, 
-        :request_specs => true 
-      #g.fixture_replacement :factory_girl, :dir => "spec/factories" 
+    config.generators do |g|
+      g.test_framework :rspec,
+        :fixtures => false,
+        :view_specs => false,
+        :helper_specs => false,
+        :routing_specs => false,
+        :controller_specs => true,
+        :request_specs => true
+      g.factory_girl true
     end
     # Only needed if we're using BawstunCommons with Sufia.
     # config.railties_order = [:main_app, BawstunCommons::Engine, Sufia::Engine, :all]
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += Dir["#{config.root}/app/models/*/**/"]
+    config.autoload_paths += Dir["#{config.root}/app/{models,controllers}/*/**/"]
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-    
+
     # Rack Cache
     # config.middleware.use Rack::Cache,
     #   :verbose => true,
@@ -81,16 +81,16 @@ module Openvault
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = true    
+    config.assets.enabled = true
     # Default SASS Configuration, check out https://github.com/rails/sass-rails for details
     config.assets.compress = !Rails.env.development?
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.application_name = "OpenVault"
+    config.application_name = "Open Vault"
     config.organization_name = "WGBH Media Library and Archives"
 
-    config.mosaic_size = 93 
+    config.mosaic_size = 93
   end
 end

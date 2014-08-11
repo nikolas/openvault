@@ -1,5 +1,5 @@
 <!-- THIS IS A TEMPLATE FOR A SERIES LEVEL MODLE -->
-<% title "OpenVault - #{display_title @document}" %>
+<% title "#{application_name} - #{display_title @document}" %>
 <%# extra_head_content << render_link_rel_alternates %>
 <%# extra_head_content << render_document_partial(@document, :meta) %>
 <%# extra_head_content << render_document_partial(@document, :opengraph) %>
@@ -8,34 +8,19 @@
 <%# this should be in a partial -%>
 <div id="document" class="<%= render_document_class %> show_program">
   <div id="doc_<%= @document[:id] %>">
-    
-    <div id="document_header" class="row-fluid">
-      <div class="document_heading span10">
-        <h2><%= @video.title %></h2>
-        <%= render :partial => 'addthis/toolbox' %>
-      </div>
-      <div class="tools span2">
-        <%= render partial: 'catalog/user_tools' %>
-      </div>
-    </div>
-    
+    <%= render partial: 'catalog/document_heading' %> 
     <div class="row-fluid">
-      <div class="span12 video_content">
+      <div class="span9 video_content">
+        <div class="sep-line-thin"></div>
         <div class="document_content">
-          <p><%= @video.summary %></p>
-
-
+          <p><%= @video.summary unless @video.title == @video.summary %></p>
           <%= render partial: 'videos/player' %>
-
-          <%#= render partial: 'videos/transcript' %>
-
           <%= render partial: 'videos/images' %>
-
           <div class="metadata">
             
             <%= 
               begin
-                render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
+                render partial: "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
               rescue ActionView::MissingTemplate
 
               end

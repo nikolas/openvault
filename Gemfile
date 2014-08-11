@@ -22,8 +22,9 @@ group :test do
   gem 'rspec-rails'
 
   # test data stuff
-  gem 'factory_girl'
-  gem 'faker'
+  gem 'factory_girl_rails'
+  # gem 'faker', github: 'stympy/faker'
+  gem 'faker', github: 'afred/faker', branch: 'for-openvault'
 
   # acceptance testing stuff
   gem 'capybara'
@@ -34,16 +35,25 @@ group :test do
   gem 'email_spec'
   gem 'selenium-webdriver'
   gem 'launchy'
+  
   # stuff to autorun test
   gem 'guard', '>= 2.6.0'
   gem 'guard-rspec', '>= 4.2.8'
   gem 'rb-fsevent', '~> 0.9'
+  
+  # measure coverage
+  gem 'simplecov', :require => false
 end
 
 group :development do
   gem 'sextant'
   gem 'capistrano'
   gem 'rvm-capistrano'
+
+  # There's a bug in net-ssh that causes a failure during capistrano deployments.
+  # Failure is that it will fail to connect to remote server without asking for username or password.
+  # Pinning to 2.7.x fixes it.
+  gem 'net-ssh', "~>2.7.0"
 end
 
 gem 'jquery-rails', "2.3.0"
@@ -59,6 +69,7 @@ gem 'jettywrapper'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'state_machine'
 gem 'figaro'
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"

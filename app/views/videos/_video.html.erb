@@ -10,13 +10,26 @@
       <% end %>
     </div> 
   <h3 class="index_title">
-    <%= link_to video[:title_tesim].first, controller: 'videos', action: 'show', id: video.id %>
-    <%= " (Video Excerpt)" if video.get('media_dsid_s') =~ /Video/ and video.get('dc_type_s') =~ /excerpt/ %>
+    <% if video[:title_tesim] %>
+      <%= link_to video[:title_tesim].first, controller: 'videos', action: 'show', id: video.id %>
+    <% else %>
+      <%= "Untitled Video" %>
+    <% end %>
   </h3>  
   <div class="defList_container">
-    <% unless video[:summary_ssm].nil? %>
+    <% unless video[:summary_tesim].nil? %>
       <div class="blacklight-summary">
-        <div class="doc_value"><p><span class="doc_label">Summary:</span><%= truncate(strip_tags(video[:summary_ssm].first), :length => 200) %></p></div>
+        <div class="doc_value"><p><%= truncate(strip_tags(video[:summary_tesim].first), :length => 250) %></p></div>
+      </div>
+    <% end %>
+    <% unless video[:active_fedora_model_ssi].nil? %>
+      <div class="blacklight-model">
+        <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= truncate(strip_tags(video[:active_fedora_model_ssi])) %></p></div>
+      </div>
+    <% end %>
+    <% unless video[:asset_date_tesim].nil? %>
+      <div class="blacklight-date">
+        <div class="doc_value"><p><span class="doc_label">Date:</span><%= truncate(strip_tags(video[:asset_date_tesim].first)) %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>

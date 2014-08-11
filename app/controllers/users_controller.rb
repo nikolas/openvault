@@ -1,35 +1,34 @@
 class UsersController < ApplicationController
   
   def show
-    @user = get_user
+    @user = User.where(username: params[:username]).first
+
+    # raise a Not Found exception if the user wasn't found
+    not_found unless @user
   end
 
   def scholar
-    @user = get_user
-    if @user.role == "scholar"
-      render :show
-    else
-      not_found
-    end
+    @user = User.where(username: params[:username], role: "scholar").first
+    # raise a Not Found exception if the user wasn't found.
+    not_found unless @user
+
+    # otherwise, render #show view.
+    render :show
   end
   
   def scholars
     @users = User.scholars
   end
-  
-  private
-  
-  def get_user
-    if params[:id]
-      @user = User.find(params[:id])
-    elsif params[:username]
-      @user = User.where(:username => params[:username]).first
-    elsif current_user
-      @user = User.find(current_user.id)
-    else
+
+  def show_profile
+    if !current_user
       flash[:alert] = "You must be logged in to view your profile"
       redirect_to root_path
+      return
     end
+
+    @user = current_user
+    render :show
   end
   
 end 

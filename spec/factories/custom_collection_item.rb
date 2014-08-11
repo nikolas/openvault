@@ -5,7 +5,7 @@ FactoryGirl.define do
   
   factory :custom_collection_item, :class => 'CustomCollectionItem' do
     openvault_asset_pid "changeme:gh93hg75d"
-    custom_collection_id 1
+    custom_collection
     kind "Video"
     annotations annotate
   end

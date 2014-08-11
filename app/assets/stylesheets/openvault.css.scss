@@ -1,7 +1,7 @@
 @import "compass/reset";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
-@import "compass/utilities/text/replacement";
+@import "compass/typography/text/replacement";
 @import "compass/typography/vertical_rhythm";
 
 
@@ -24,6 +24,25 @@ body {
   font-family: $base-font-family;
 }
 
+.btn {
+  text-decoration: none;
+}
+
+.btn-primary{
+  color: #fff;
+  &:visited {
+  text-decoration: none;
+    color: #fff;
+  }
+}
+
+.btn-default{
+  color: #000;
+  &:visited {
+    color: #000;
+  }
+}
+
 a {
   color: $link-color;
   font-weight: bold;
@@ -41,7 +60,6 @@ a.action_link {
 p, label, span {
   font-size: 13px;
   line-height: 1.3em;
-  margin-bottom: .9em;
 }
 strong {
   font-weight: bold;
@@ -279,8 +297,14 @@ input[type=file] {
   .overlay-bottom {
     @extend .overlay;
     bottom: 0px;
-    height: 50px;
     width: 100%;
+  }
+
+  // override some upstream styles
+  .overlay-bottom {
+    p {
+      margin-bottom: 0px;
+    }
   }
 
   /* End Overlays */
@@ -333,23 +357,35 @@ input[type=file] {
     overflow: hidden;
     .collection_block {
       overflow:hidden;
-      h3 {
-        a {
-         text-decoration: none; 
-         font-size: inherit;
-        }
+
+      padding: 10px 0;
+
+      a {
+        text-decoration: none
       }
-      .user_img {
-        float:left;
-        border: 2px solid #fff;
-        margin-right: 10px;
+
+      .collection_title {
+        float: left;
       }
-      .user_bio {
-        float:left;
+
+      .collection_owner {
+        float: right;
+
+        // reset from style set somewhere else
+        margin-bottom: 0;
       }
-      &:first-child {
-        border: none;
-      }
+
+      // .user_img {
+      //   float:left;
+      //   border: 2px solid #fff;
+      //   margin-right: 10px;
+      // }
+      // .user_bio {
+      //   float:left;
+      // }
+      // &:first-child {
+      //   border: none;
+      // }
     }
   }
   #catalog-scroller {
@@ -717,7 +753,8 @@ input[type=file] {
       }
       #documents {
         .document {
-          margin-bottom: 20px;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
           border-bottom: 2px solid $orange;
           .doc_thumbnail {
             float: left;
@@ -762,11 +799,11 @@ input[type=file] {
       }
     }
     #document_header {
+      // min-height: 90px;
       .date {
         font-style:italic;
       }
       .tools {
-        height: 18px;
         .add_to_collection, .in_collection {
           float:left;
           p {
@@ -1036,6 +1073,13 @@ input[type=file] {
 @media (min-width: 768px) and (max-width: 979px) {
   #header {
     height: 45px;
+    .btn {
+      height: 26px;
+      padding: 2px 12px;
+    }
+    #browse-label {
+      display: none;
+    }
     .logo-link {
       background: url(/assets/ov_logo_220.png);
       width: 220px;
@@ -1049,7 +1093,7 @@ input[type=file] {
     }
     #search-bar {
       #nav-s-input {
-        width: 85%;
+        width: 45%;
         .search_q {
           height: 26px;
         }
@@ -1126,36 +1170,44 @@ input[type=file] {
       .logo {
         margin-top: 5px;
       }
-      .action-menu {
-        position: absolute;
-        background: $light-blue;
-        top: 0;
-        right: 0;
+      
+      .programs-icon, .series-icon {
+        right: 84px;
+        font-size: 12px;
+        text-align: center;
+        width: 7em;
+        padding: 2px 15px 3px;
+      }
+      .programs-icon {
+        top: 0px;
+      }
+      .series-icon {
+        top: 19px;
+      }
+      
+      .search-icon, .action-menu {
+        top: 0px;
         padding: 7px 15px;
         font-size: 20px;
-        text-decoration: none;
-        color: #fff;
-        border-right: 1px solid darken($light-blue, 20%);
-        border-left: 1px solid darken($light-blue, 20%);
-        &:active {
-          background: $orange;
-        }
       }
       .search-icon {
+        right: 42px;
+      }
+      .action-menu {
+        right: 0px;
+      }
+      
+      .action-menu, .search-icon, .programs-icon, .series-icon  {
+        position: absolute;
         background: $light-blue;
         text-decoration: none;
         color: #fff;
-        font-size: 20px;
-        position: absolute;
-        top: 0;
-        right: 42px;
-        padding: 7px 15px;
-        border-right: 1px solid darken($light-blue, 20%);
-        border-left: 1px solid darken($light-blue, 20%);
+        border: 1px solid darken($light-blue, 20%);
         &:active {
           background: $orange;
         }
       }
+      
       .search-dropdown {
         display:none;
         width: 100%;
@@ -1286,4 +1338,27 @@ input[type=file] {
 /* overrides bootstrap/_navs.scss */
 .nav-tabs > li {
   margin-bottom: -13px;
+}
+
+.blacklight-custom_collections-show {
+  #collabs{
+    h3 {
+      margin-bottom: 15px;
+    }
+    li {
+      width: 100%;
+      float: left;
+      margin-bottom: 10px;
+      .collab {
+        margin-top: 18px;
+      }
+      .avatar {
+        text-align: center;
+        width: 50px; 
+        float: left;
+        padding-right: 10px;
+      }
+    }
+  }
+
 }

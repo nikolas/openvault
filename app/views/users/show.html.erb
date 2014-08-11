@@ -1,4 +1,4 @@
-<% title "OpenVault - #{@user.full_name}" %>
+<% title "#{application_name} - #{@user.full_name}" %>
 <div id="users_show" class="row-fluid">
   <div class="span12">
 
@@ -9,8 +9,8 @@
       <div class="row-fluid hidden-desktop hidden-tablet mobile-user-row">
         <%= image_tag @user.avatar.url(:thumb) %>
         <h3><%= @user.full_name %></h3>
-        <h4><%= @user.title %></h4>
-        <h4><%= @user.organization %></h4>
+        <h4><%= primary_organization_title(@user) %></h4>
+        <h4><%= primary_organization(@user) %></h4>
         <%#= render partial: 'global_partials/share' %>
         <div id="user_bio" class="span8">
           <p class="bio"><strong>Bio: </strong><%= @user.bio %></p>
@@ -28,8 +28,10 @@
           <%= render partial: 'users/show_actions' %>
         <% end %>
 
-        <% if @user.title || @user.organization %>
-          <h4><%= [@user.title, @user.organization].join(' &mdash; ').html_safe %></h4>
+        <% if primary_organization_title(@user).present? && primary_organization(@user).present? %>
+          <h4><%= [primary_organization_title(@user), primary_organization(@user)].join(' &mdash; ').html_safe %></h4>
+        <% else %>
+          <h4><%= [primary_organization_title(@user), primary_organization(@user)].join('').html_safe %></h5>
         <% end %>
       </div>
     </div>
@@ -39,8 +41,13 @@
         <div id="users_show_tabs" class="tabbable responsive">
 
           <ul class="nav nav-tabs">
-            <li class="active">
-              <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
+            <% if @user.role == "scholar" %>
+              <li class="active">
+                <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
+              </li>
+            <% end %>
+            <li>
+              <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
             </li>
             <li>
               <a href="#about" class="about-link" data-toggle="tab">About</a>
@@ -56,14 +63,20 @@
               <% end %>
             </div>
 
+            <div id="digitization-requests" class="tab-pane fade in">
+              <% if @user.sponsorships.present? %>
+                <%= render partial: 'user_items' %>
+              <% else %>
+                <%= "#{@user.full_name} does not have any digitization requests." %>
+              <% end %>
+            </div>
+
             <div id="about" class="tab-pane fade in">
                 <p><%= simple_format(@user.bio) %></p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
     </div>
   </div>
 

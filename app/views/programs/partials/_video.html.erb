@@ -2,8 +2,8 @@
 <video id="video-mp4" class="video-js vjs-default-skin vjs-big-play-centered"
   controls preload="auto" width="550" height="350"
   data-setup='{}'
-  poster="http://video-js.zencoder.com/oceans-clip.png">
-  <source src="/assets/video_test.mp4" type='video/mp4' />
-  <source src="/assets/video_test.webm" type='video/webm' />
-  <source src="/assets/video_test.ogg" type='video/ogg' />
+  poster="<%= @program.videos.first.thumbnail_url %>" >
+  <source src="<%= @program.videos.first.video_url %>" type='video/mp4' />
+  <source src="<%= @program.videos.first.video_url %>" type='video/webm' />
+  <source src="<%= @program.videos.first.video_url %>" type='video/ogg' />
 </video>

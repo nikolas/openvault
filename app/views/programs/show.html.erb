@@ -1,5 +1,5 @@
 <!-- THIS IS A TEMPLATE FOR A SERIES LEVEL MODLE -->
-<% title "OpenVault - #{display_title @document}" %>
+<% title "#{application_name} - #{display_title @document}" %>
 <%# extra_head_content << render_link_rel_alternates %>
 <%# extra_head_content << render_document_partial(@document, :meta) %>
 <%# extra_head_content << render_document_partial(@document, :opengraph) %>
@@ -8,42 +8,19 @@
 <%# this should be in a partial -%>
 <div id="document" class="<%= render_document_class %> show_program">
   <div id="doc_<%= @document[:id] %>">
-    <div id="document_header">
-      <div class="row-fluid">
-        <div class="document_heading span9">
-          <h2><%= display_title @document %></h2>
-        </div>
-        <div class="span3">
-          &nbsp;
-        </div>
-      </div>
-      <div class="row-fluid">
-        <div class="span7 date">
-          &nbsp;
-        </div>
-        <div class="tools span2">
-          <%= render :partial => 'catalog/show_tools' %>
-        </div>
-        <div class="span3">
-          &nbsp;
-        </div>
-      </div>
-    </div>
+    <%= render partial: 'catalog/document_heading' %>
     <div class="row-fluid">
       <div class="span9 program_content">
         <div class="sep-line-thin"></div>
         <div class="document_content">
-          <h4>Summary</h4>
-          <p><%= display_summary @document %></p>
-          <div class="asset-content row-fluid">
-            <% if !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i > 1 %>
-              <%= render :partial => 'programs/partials/multiple_assets', :locals => { :document => @document } %>
-            <% elsif !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i == 1 %>
-              <%= render :partial => 'programs/partials/single_asset', :locals => { :document => @document } %>
-            <% else %>
-              <p class="grayed-out">This program has no digital media yet</p>
-            <% end  %>
-          </div>
+          <p><%= display_summary @document unless @document[:title_tesim] == @document[:summary_tesim]%></p>
+          <% if !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i > 1 %>
+            <%= render :partial => 'programs/partials/multiple_assets', :locals => { :document => @document } %>
+          <% elsif !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i == 1 %>
+            <%= render :partial => 'programs/partials/single_asset', :locals => { :document => @document } %>
+          <% else %>
+            <p class="grayed-out">This program has no digital media yet</p>
+          <% end  %>
           <br />
           <div class="metadata">
             <%= 
@@ -58,9 +35,6 @@
             <div class="fb-comments" data-href="http://lsopenvault01.wgbh.org" ></div>
           </div>
         </div>
-      </div>
-      <div class="span3 program_sidebar">
-        <%= render(:partial => 'catalog/related_content') %>
       </div>
     </div>
   </div>

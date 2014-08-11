@@ -1,6 +1,8 @@
-<div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
-  <%= render partial: 'programs/partials/video', locals: {:document => @document} %>
-</div>
-<div id="transcript-box" class="span4 secondary-datastream-container">
+<% asset_style = @program.videos.first.transcripts.present? ? 'asset-content' : '' %>
+
+<div class="<%= asset_style %> row-fluid">
+  <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+    <%= render partial: 'programs/partials/video', locals: {:document => @document} %>
+  </div>
   <%= render partial: 'programs/partials/transcript', locals: {:document => @document} %>
 </div>
