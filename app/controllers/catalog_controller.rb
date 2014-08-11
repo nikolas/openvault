@@ -266,31 +266,6 @@ class CatalogController < ApplicationController
     @transcription_artifact = Artifact.where(pid: params[:id], type:'transcription').first
   end
   
-  # when a request for /catalog/BAD_SOLR_ID is made, this method is executed...
-  def invalid_solr_id_error
-    response, documents = get_solr_response_for_field_values("slug",params[:id])
-    #redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
-  
-    #response, documents = get_solr_response_for_field_values("pid_short_s",params[:id])
-    #redirect_to url_for(:id => documents.first.id), :status=>301 and return if documents.length > 0
-  
-    if Rails.env == "development"
-      # render # will give us the stack trace
-      render(:file => "#{Rails.root}/public/404.html", :layout => false, :status => 404)
-    else
-    #  flash[:notice] = "Sorry, you have requested a record that doesn't exist."
-    #  redirect_to root_path, :status => 404
-      render(:file => "#{Rails.root}/public/404.html", :layout => false, :status => 404)
-    end
-    
-  end
-
-  def image
-    @response, @document = get_solr_response_for_doc_id    
-    style = params[:style] || 'preview'
-    redirect_to @document.thumbnail.url(:style => style.to_sym) and return
-  end
-  
   def get_related_content(slug=nil)
     q = "id:#{slug}"
     solr_params = { 
@@ -315,58 +290,11 @@ class CatalogController < ApplicationController
     [solr_response, document_list]
   end
   
-  def get_solr_document_by_slug(slug=nil)
-    q = "slug:#{slug}"
-    solr_params = {
-      :defType => "edismax",   # need boolean for OR
-      :q => q,
-      :fl => "*",  
-      :facet => 'false',
-      :spellcheck => 'false',
-      :mlt => 'true',
-      :'mlt.fl' => "title_tesim, summary_ssm",
-      :'mlt.count' => 3
-    }
-    solr_response = find('document', self.solr_search_params().merge(solr_params) )
-    document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
-    [solr_response, document_list.first]
-  end
-  
-  def get_only_solr_document_by_slug(slug=nil)
-    q = "slug:#{slug}"
-    solr_params = {
-      :defType => "edismax",   # need boolean for OR
-      :q => q,
-    }
-    solr_response = find('document', self.solr_search_params().merge(solr_params) )
-    document_list = solr_response.docs.collect{|doc| SolrDocument.new(doc, solr_response) }
-    document_list.first
-  end
-  
   def get_last_n_solr_docs(n=13, user_params = params || {}, extra_controller_params = {})
     extra_controller_params = {:rows => n, :fq => 'has_model_ssim:("info:fedora/afmodel:Video")' }
     solr_response = query_solr(user_params, extra_controller_params)
     document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
     [solr_response, document_list]
-  end
-  
-  def choose_render(document=nil)
-    case document[:active_fedora_model_ssi]
-    when 'Program'
-      render 'show_program'
-    when 'Series'
-      render 'show_series'
-    when 'Audio'
-      render 'show_audio'
-    when 'Video'
-      render 'show_video'
-    when 'Image'
-      render 'show_image'
-    when 'AssetCollection'
-      render 'show_asset_collection'
-    else
-      render 'show'
-    end    
   end
 
 end 
