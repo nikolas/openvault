@@ -29,7 +29,7 @@ class SeriesController < CatalogController
   
   def show
     @response, @document = get_solr_response_for_doc_id params[:id]
-    @series = Series.find params[:id]
+    @item  = ActiveFedora::Base.find(params[:id], cast: true) 
     respond_to do |format|
       format.html #show.html.erb
       @document.export_formats.each_key do | format_name |

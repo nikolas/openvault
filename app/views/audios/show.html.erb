@@ -6,7 +6,7 @@
       <div class="span9 audio_content">
         <div class="sep-line-thin"></div>
         <div class="document_content">
-          <p><%= @audio.summary unless @audio.title == @audio.summary %></p>
+          <p><%= @item.summary unless @item.title == @item.summary %></p>
           <%= render partial: 'audios/player' %>
           <div class="metadata">
             <%=

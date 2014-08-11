@@ -38,7 +38,7 @@ describe SeriesController do
 
   describe "GET print" do
     it "returns a valid solr document" do
-      get :print, {id: @series.id}
+      get :print, {id: @item.id}
       assigns(:document).should_not be nil
     end
   end

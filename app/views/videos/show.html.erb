@@ -13,7 +13,7 @@
       <div class="span9 video_content">
         <div class="sep-line-thin"></div>
         <div class="document_content">
-          <p><%= @video.summary unless @video.title == @video.summary %></p>
+          <p><%= @item.summary unless @item.title == @item.summary %></p>
           <%= render partial: 'videos/player' %>
           <%= render partial: 'videos/images' %>
           <div class="metadata">

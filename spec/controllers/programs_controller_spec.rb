@@ -21,13 +21,6 @@ describe ProgramsController do
       get :show, {id: @id}
       assigns(:document).should_not be nil
     end
-
-    it "@images, @videos, @audios are not nil" do
-      get :show, {id: @id}
-      assigns(:program).all_images.should_not be nil
-      assigns(:program).videos.should_not be nil
-      assigns(:program).audios.should_not be nil
-    end
   end
 
   describe "GET print" do
