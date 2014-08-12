@@ -6,14 +6,6 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe SeriesController do
 
-  before :all do
-    @series = create(:series)
-  end
-
-  after :all do
-    @series.delete
-  end
-
   describe "GET browse" do
     it 'renders browse_by_title' do
       get :browse_by_title
