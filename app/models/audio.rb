@@ -14,12 +14,8 @@ class Audio < OpenvaultAsset
     return solr_document
   end
   
-  def titles_by_type
-    @titles_by_type || self.pbcore.titles_by_type
-  end
-
   def title
-    titles_by_type['Item3'] || titles_by_type['Segment3'] || titles_by_type['Element3'] || titles_by_type['Clip'] || self.pbcore.asset_type
+    self.pbcore.titles_by_type['Item3'] || self.pbcore.titles_by_type['Segment3'] || self.pbcore.titles_by_type['Element3']
   end
   
   def thumbnail_url
