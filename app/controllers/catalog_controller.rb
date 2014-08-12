@@ -212,7 +212,6 @@ class CatalogController < ApplicationController
   end
   
   def index
-
     #This is only for the search page
     delete_or_assign_search_session_params
 
@@ -224,7 +223,7 @@ class CatalogController < ApplicationController
     @filters = params[:f] || []
     search_session[:total] = @response.total unless @response.nil?
     respond_to do |format|
-      format.html { 
+      format.html {
         render 'no_results_found' and return if @document_list.empty?
         save_current_search_params 
       }
@@ -309,6 +308,8 @@ class CatalogController < ApplicationController
 #        format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
 #      end
 #    end
+  rescue Blacklight::Exceptions::InvalidSolrID
+    render :text => "The page you were looking for doesn't exist.", :status => :not_found # TODO: something fancier?
   end
   
 #  def cite

@@ -177,7 +177,7 @@ feature "User adds a catalog item to a custom collection they are a collaborator
 
   scenario 'when they are signed in as a scholar' do
     login_as(@scholar2, :scope => :user, :run_callbacks => false)
-    visit "/video/#{@ov_asset.pid}"
+    visit "/catalog/#{@ov_asset.pid}"
     within ('#add_to_collection') do
       select("Testing 123123")
     end
