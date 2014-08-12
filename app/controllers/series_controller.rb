@@ -1,4 +1,4 @@
-class SeriesController < CatalogController
+class SeriesController < ApplicationController
   
   def browse_by_title
     @results = Blacklight.solr.select(params: {q: "has_model_ssim:info:fedora/afmodel:Series", rows: 10000})['response']['docs']
