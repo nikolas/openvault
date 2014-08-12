@@ -14,7 +14,7 @@ feature "User views search results" do
     visit "/"
     fill_in 'q', with: @audio.title
     click_button 'search'
-    expect(page).to have_content("#{@audio.title}")
+    expect(page).to have_content("#{@audio.title.first}")
   end
 
   scenario "metadata includes media type" do
