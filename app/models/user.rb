@@ -92,18 +92,6 @@ class User < ActiveRecord::Base
     !!artifacts.find_by_id(artifact.id)
   end
 
-  def work_string
-    if primary_organization_title(self).blank? && primary_organization(self).blank?
-      ""
-    elsif primary_organization_title(self).blank? && !primary_organization(self).blank?
-      "works at #{primary_organization(self)}"
-    elsif !primary_organization_title(self).blank? && primary_organization(self).blank?
-      "#{primary_organization_title(self)}"
-    else
-      "#{primary_organization_title(self)} at #{primary_organization(self)}"
-    end
-  end
-
   def collection_id
     return if owned_collections.empty?
     self.owned_collections.first.id unless self.role != 'scholar' and self.owned_collections.count == 0
@@ -121,6 +109,24 @@ class User < ActiveRecord::Base
 
   def is_member?
     self.role == 'member'
+  end
+
+  def primary_organization
+    affiliations.each do |affiliation| 
+      if affiliation.org.nil?
+        return nil
+      elsif affiliation.primary 
+        return affiliation.org.name
+      end
+    end
+  end
+
+  def primary_title
+    affiliations.each do |affiliation|
+      if affiliation.primary
+        return affiliation.title
+      end
+    end
   end
 
   private
