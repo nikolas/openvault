@@ -12,7 +12,6 @@ FactoryGirl.define do
     password { rand(10000..100000).to_s*8 }
     password_confirmation { |u| "#{u.password}" }
 
-    organization {Faker::Company.name}
     bio { Faker::Lorem.characters(char_count = 300) }
 
     # NOTE: you can use Faker::config.locale to create users from different countries.
