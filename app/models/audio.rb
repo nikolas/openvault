@@ -19,7 +19,7 @@ class Audio < OpenvaultAsset
   end
 
   def title
-    titles_by_type['Item3'] || titles_by_type['Segment3'] || titles_by_type['Element3'] || titles_by_type['Clip'] || self.pbcore.asset_type
+    titles_by_type['Item3'] || titles_by_type['Segment3'] || titles_by_type['Element3'] || titles_by_type['Clip'] || self.pbcore.asset_type.first
   end
   
   def thumbnail_url

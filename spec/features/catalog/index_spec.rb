@@ -12,21 +12,21 @@ feature "User views search results" do
 
   scenario "metadata includes title" do
     visit "/"
-    fill_in 'q', with: @audio.title.first
+    fill_in 'q', with: @audio.title
     click_button 'search'
-    expect(page).to have_content("#{@audio.title.first}")
+    expect(page).to have_content("#{@audio.title}")
   end
 
   scenario "metadata includes media type" do
     visit "/"
-    fill_in 'q', with: @audio.title.first
+    fill_in 'q', with: @audio.title
     click_button 'search'
     expect(page).to have_content("Media Type:#{@audio.to_solr['active_fedora_model_ssi']}")
   end
 
   scenario "metadata includes date" do
     visit "/"
-    fill_in 'q', with: @audio.title.first
+    fill_in 'q', with: @audio.title
     click_button 'search'    
     expect(page).to have_content("Date:#{@audio.asset_date}")
   end
