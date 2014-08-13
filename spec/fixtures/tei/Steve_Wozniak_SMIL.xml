@@ -1,0 +1,1831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:smil="http://www.w3.org/2001/SMIL20/Language" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <teiHeader>
+        <profileDesc>
+            <langUsage>
+                <language ident="eng"> Enter three-letter language code in the quotes (e.g., "eng") </language>
+            </langUsage>
+            <settingDesc>
+                <setting>
+                    <name type="place" ref=""> Enter interview location here, add reference is available </name>
+                </setting>
+            </settingDesc>
+            <particDesc>
+                <listPerson>
+                    <person xml:id="q" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Interviewer, A</persName>
+                    </person>
+                    <person xml:id="a" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Wozniak, Steve </persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+            <textClass>
+                <keywords scheme="http://www.merlot.org/merlot/categories.htm">
+                    <term>Enter MERLOT subject string here</term>
+                    <term>Enter MERLOT subject string here</term>
+                    <term>Enter MERLOT subject string here</term>
+                    <term>Enter MERLOT subject string here</term>
+                </keywords>
+                <keywords scheme="http://authorities.loc.gov">
+                    <term rdf:resource="Wozniak, Steve, 1950-" xml:id="Steve_Wozniak_LC" xmlns:xml="http://www.w3.org/XML/1998/namespace">Wozniak, Steve, 1950-</term>
+                </keywords>
+                <keywords scheme="http://www.geonames.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here</term>
+                </keywords>
+                <keywords scheme="http://viaf.org">
+                    <term rdf:resource="http://viaf.org/viaf/266183231" xml:id="Steve_Wozniak_VIAF" xmlns:xml="http://www.w3.org/XML/1998/namespace">Wozniak, Steve,
+                        1950-</term>
+                </keywords>
+                <keywords scheme="http://en.wikipedia.org">
+                    <term rdf:resource="http://en.wikipedia.org/wiki/Steve_Wozniak" xml:id="Steve_Wozniak_WIKI" xmlns:xml="http://www.w3.org/XML/1998/namespace">Steve
+                        Wozniak</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <incident xml:id="__incident14" xmlns:xml="http://www.w3.org/XML/1998/namespace" smil:begin="00:00:00.511" smil:end="00:00:00.848">
+                    <desc>THE MACHINE THAT CHANGED THE WORLD - TAPES F30-F35 STEVE WOZNIAK</desc>
+                </incident>
+            </div>
+
+            <div type="qa" xml:id="q0" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para3" smil:begin="00:00:00.848" smil:end="00:00:06.103"> DID YOU CONSIDER YOURSELF LUCKY TO BE DESIGNING COMPUTERS AT THE TIME?</seg></u></div>
+
+            <div>
+                <u who="#a">
+                    <seg xml:id="para2" xmlns:xml="http://www.w3.org/XML/1998/namespace" smil:begin="00:00:09.936" smil:end="00:00:37.199"> I don't consider myself lucky for having been designing computers, 'caus I was going to be designing computers. I was going to build that computer, that year, for a lot of other reasons in my life for the prior twenty years.  I would consider myself lucky that it was a real successful and popular product, and something the world wanted.  And it brought me a lot of, I don't know, wealth and fame and good things in my life and considered that very, very lucky and it was just at that point in
+                        time the world wanted the kind of product I was meant to build.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q0_1" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para3" smil:begin="00:00:00.848" smil:end="00:00:06.103"> SO YOU WEREN'T SETTING OUT TO BUILD A COMPANY. YOU WERE JUST HAVING FUN
+                        BUILDING A COMPUTER. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para4" smil:begin="00:00:42.847" smil:end="00:00:50.245"> Absolutely just having fun building the computer. Wanting to build an
+                        impressive one, show it off. I wanted to own it and use it also and it had to be good enough for
+                        me.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q1" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para5" smil:begin="00:00:50.245" smil:end="00:00:54.464">IN CASE MY QUESTION ISN'T HEARD IF YOU COULD...</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para6" smil:begin="00:00:54.464" smil:end="00:02:18.816"> Sure. I usually do. No so I...I was not designing the computer for a
+                        company. I was just designing a computer to have, to use for my job, to play games. It had to be
+                        good enough for me. It had to be interesting enough that I could show it off. And it didn't
+                        have to be somehow a set of definitions that has to do this much, have that many memories, run
+                        at that speed. Be able to do these kind of calculations on this type of printer. Didn't have to
+                        do these things... So I was, I was not designing a computer with any idea we'd ever start a
+                        company, ever have a product, ever be successful. It was just to go down to the club and show
+                        off, and to own and to use. I used it at work to run some calculations for the calculator chips
+                        I was designing. I'd run it right there on my desk and I was impressing quite a few people. They
+                        would come by, engineers would come by my desk. After Hewlett-Packard had turned me down for
+                        doing it as a product, they'd come by and say this is the most incredible product I've ever
+                        seen. So they could recognize it was great but they couldn't come up with a reason that
+                        Hewlett-Packard could make it. And I was I just had to satisfy myself. It had to be
+                        interesting. It had to be able to...to show it off and so it was, it was lucky that it was
+                        good, but it was that the world wanted something that good.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q2" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para8" smil:begin="00:02:18.816" smil:end="00:02:34.668"> WE TALKED ABOUT MARKKULA BRINGING THE MONEY AND JOBS WAS CALLING PEOPLE THIS
+                        AND THAT. HOW IMPORTANT WAS IT FOR A HACKER, A PERSON THAT WAS GOING TO BE THE TECHNICAL, WAS
+                        THEIR TECHNICAL PERSON TO REALLY FOCUS IN. HOW IMPORTANT WAS THAT?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para9" smil:begin="00:02:36.787" smil:end="00:02:39.587">Oh you've got to repeat the question.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q3" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para10" smil:begin="00:02:39.587" smil:end="00:02:59.613"> WE WERE TALKING ABOUT THAT MARKKULA BROUGHT IN MONEY AND BUSINESS, AND JOBS
+                        WAS CONSTANTLY TRYING TO DO THINGS. HOW IMPORTANT WAS IT FOR THE HACKER? WAS THIS THE HACKERS
+                        REVOLUTION? WAS THIS SOMETHING THAT THEY TOOK OVER AS OPPOSED TO THE BUSINESS PEOPLE? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para11" smil:begin="00:02:59.613" smil:end="00:04:12.860"> Inside of Apple, the hacker's revolution started fading away. For even in
+                        my own head. Once I was designing these products for a company although I'd gone there saying
+                        I'd just like to design these products, I can do that and show them off at the club, I was now
+                        part of a company and we were in business. And a lot of, Mike Markkula was very, very strong. He
+                        was the businessman. He said the company should be run by marketing. All great companies are.
+                        That marketing has to go out and sort of sense what a market wants and come back to engineering
+                        and you know work with engineering in a give and take sense of what can you build that would
+                        satisfy these needs of our customers. He was very adamant at that and that's the sort of company
+                        Apple became because he was in charge. A hacker would have sat there and said, we can do
+                        this neat thing with technology. I learned this in school. Here's a product idea I got, and
+                        there'd be a lot of randomness and not so much concern for the customer. And Apple really
+                        really started changing and becoming more mature in a sense but less of, less of a hacker's
+                        world. There were a lot of them out there and we...we serviced a lot of their needs for awhile,
+                        but not permanently.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q4" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para12" smil:begin="00:04:12.860" smil:end="00:04:29.069"> LET'S GO PRE-APPLE THOUGH. IN THE HOME BREW. AND WITHOUT THE HOME BREW, WE
+                        PROBABLY WOULDN'T HAVE HAD THE PERSONAL COMPUTER REVOLUTION AS SOON AS WE DID. WHAT WAS THEN THE
+                        HACKER'S LEGACY THAT STARTED SOMETHING LIKE THE HOMEBREW? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para13" smil:begin="00:04:29.069" smil:end="00:05:18.142"> In the Homebrew Computer Club, the hacker's legacy was pretty much computers
+                        as a tool for everyone, affordable you know you don't withhold knowledge for reasons of you know, of profit and whatever. It's...it's hard to say how much the hackers want. Kind of
+                        like the whole world of personal computers outside of the technicians, outside of the hackers
+                        went so far so fast beyond them that the hacker type products were kind of lost in the
+                        mainstream of publicity and awareness. If you go back and read a history, the history is going
+                        to be written on what historians can find publishes in newspaper articles, in magazine articles.
+                        And they were publishing articles about the computers that were selling tens of thousands.
+                        Hundreds of thousands eventually and not the computers that were still selling just in thousands.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q5" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para14" smil:begin="00:05:18.142" smil:end="00:05:37.407"> THAT IS A PROBLEM IN HISTORY. WHAT WAS THE GOAL OF THE PEOPLE IN THE HOME BREW
+                        COMPUTER CLUB? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para15" smil:begin="00:05:39.695" smil:end="00:06:22.708"> I don't know if the people in the home brew club had a specific goal. It would
+                        have almost been like making ourself a structured formal entity which we liked just, we were
+                        just showing up because it was interesting. We did tend to share an interesting technology. We
+                        liked to design. We were designers. We knew how to hook transistors together. If there was
+                        any one goal it would have been to help personal computing, help home computing come to
+                        everyone. Help make it affordable. Help make it cheap and abundant. Help make it good
+                        quality. Help make it serve people and not be a master of the people. I think the, I think
+                        that would be one summary statement I'd make.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q6" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para16" smil:begin="00:06:22.708" smil:end="00:06:48.090"> SOME PEOPLE HAVE MADE THE PLAN THAT AND THIS IS MOSTLY LEE WAS, IBM
+                        WAS THE PRIESTHOOD IN ALL OF THAT. HOW MUCH OF IT WAS THE IDEA THAT WE DID THIS A LITTLE
+                        BIT, AND THIS AND THAT WAS THAT A SENSE FOR YOU OR NOT? FREEING IT FROM THE IBM. MAKING IT MORE ACCESSIBLE
+                        TO... </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para17" smil:begin="00:06:48.090" smil:end="00:07:38.246"> One of the ideas was that IBM by being a priesthood and by going out there
+                        and having corporate clients who were rather stuffy and they would operate in a sales world that
+                        they could sell computers that didn't have the best features over computers that had more
+                        features for the same price from other companies. And this was sort of always a perception of
+                        IBM. You know I don't how accurate it is but a lot of, one of our goals in the home brew
+                        computer club was to overturn this sort of thing and to kind of free the world from being the
+                        subject of master companies who claim they are in charge of computer knowledge. All of a sudden
+                        the world was going to discover computer knowledge, is abundant and is not so scarce. It's
+                        available. It's cheap. Even even eight year olds can sit down and write great programs. And
+                        it used to be controlled by programmers at IBM. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q7" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para18" smil:begin="00:07:51.015" smil:end="00:08:00.998">WHAT DID YOU ACCOMPLISH? WITH APPLE II?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para19" smil:begin="00:08:00.998" smil:end="00:08:22.627"> Well at one time the...the people that used computers were kind of a servant
+                        of the computer. You were a slave. It was worth much more than you. Now the computer is a slave
+                        to...to the people. The computer does our bidding. The computer is a tool. It's...it's at our
+                        command. It's like we have a greater sense of of self esteem. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q8" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para20" smil:begin="00:08:22.627" smil:end="00:08:25.603">DO YOU MIND TRYING IT AGAIN?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para21" smil:begin="00:08:25.603" smil:end="00:08:26.004">Sure</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q9" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para22" smil:begin="00:08:26.004" smil:end="00:08:30.658">WHAT DID YOU ACHIEVE WITH THE APPLE II?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para23" smil:begin="00:08:30.658" smil:end="00:08:56.707"> With the Apple II, and with a few other computer ongoings in those days it used to be that computers were so important that they were more important than the people
+                        using them. And we were a slave to doing things their ways. Now the computer does things our
+                        ways. We're the master. We can command it. It's obedient. It's friendly. It's helpful. It's like
+                        our self esteem has been enhanced as computer users.</seg>
+                    <seg xml:id="para24" smil:begin="00:08:56.707" smil:end="00:09:24.571"> It used to be that computers were worth more than the people using them and
+                        that we were slaves to doing things their ways. Now we're in control and computers do things our
+                        ways and they're obedient slaves to us. And we're very happy for it and lucky and we're
+                        motivated and our self esteem is up. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q10" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para25" smil:begin="00:09:24.571" smil:end="00:09:25.507">OKAY.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para26" smil:begin="00:09:25.507" smil:end="00:09:25.936">I can do it shorter</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q11" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para27" smil:begin="00:09:25.936" smil:end="00:09:31.611"> ...SLAVES TO US, RATHER THAN GOING UP, JUST BOOM, NOW THEY'RE OUR SERVANTS.
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para28" smil:begin="00:09:31.611" smil:end="00:09:45.011"> Okay it used to be that the computers were valuable and huge and important
+                        that they were worth more to the company than the people using them. Now the computers are
+                        obediently at our service. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q12" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para29" smil:begin="00:09:45.011" smil:end="00:09:54.318"> DON'T LOOK AT THE CAMERA, LOOK AT ME. TELL ME WHAT YOU'D STARTED. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para30" smil:begin="00:09:54.318" smil:end="00:10:19.451"> Okay. In the ancient days in the older days the computer was so valuable
+                        that was vastly important than the people using it. It had to be protected and... In the older
+                        days, in the older days the computers were so valuable, they were with more than the people
+                        using them and we had to obey them and do things their ways. Now the computers are obedient
+                        servants to us. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q13" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                                        <seg xml:id="para32" smil:begin="00:10:20.518" smil:end="00:10:23.910">WHAT'S SO SPECIAL ABOUT COMPUTERS?  WHY ARE THEY SO INTERESTING?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para33" smil:begin="00:10:23.910" smil:end="00:11:39.618"> God knows why. It's like asking somebody who is interested in mathematics,
+                        what's so interesting about mathematics? Somebody who is interested in cooking, what's so
+                        interesting about cooking, you know, and recipes and the like? It's an easy thing. It's got
+                        a lot of, a lot of abil., it, it goes so far. You can learn one stage of it and there's more you
+                        can learn. You can take, you can advance level by level. It's one of those type of subjects,
+                        like anything you get into seriously. So you kind of can know that you're going up the level and
+                        it's interesting, you're learning, you're solving puzzles. Your mind is developing. And you can
+                        appreciate it for that, even before it has some value in terms of, this is how I earn my living.
+                        And it's kind of intriguing. It's like puzzles. Why are puzzles interesting? There are
+                        things you have to sit down, figure out a clever answer and solve them. And then you have this
+                        feel of, feeling of worthwhileness, it's very motivating. I accomplished something. I figured
+                        out where that person, where, where, which one has to be the murderer. You solve it
+                        yourself. It's very personal. You own it when you've done it yourself. And everything about
+                        computers, learning how to do them, tackling a programming problem, coming up with a new, clever
+                        design that's different than other people might have, it's one of these wide open fields. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q14" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para34" smil:begin="00:11:39.618" smil:end="00:11:44.609"> WHEN DID YOU FIRST LEARN ABOUT COMPUTERS AND HOW DID THEY STRIKE YOU BACK
+                        THEN? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para35" smil:begin="00:11:44.609" smil:end="00:14:28.429"> Boy, I started learning about computers in elementary school. And I was heavy
+                        into just normal electronics back then. This is before integrated circuits. And my father
+                        somehow would pass me a book from work on programming and I couldn't understand it, maybe
+                        in about 4th grade. Didn't make any sense but by junior high school, he showed me a book
+                        from back in the late '50s, you know, the, some computers that they had designed, some articles
+                        about them. And I read these articles with fascination, how they used oscilloscope screens that,
+                        that showed patterns of light, how they could use that to store information like memories,
+                        very little information in today's terms but I read these articles and I started picking up
+                        computer concepts. And I found it interesting at first. And later on, I started, I got a book on
+                        Boolean algebra and this was, I was good at math, this was algebra. I studied it and learned how
+                        to do calculations and by 8th grade built a really great science fair project- I built a few
+                        computer projects even in elementary school for science fairs to show off things that could, you
+                        know, like, I learned the concepts of how you would build a machine to play tic-tac-toe. And I
+                        nearly built one on a big piece of plywood with nails pounded in and transistors that a local
+                        company gave me, Fairchild gave me 400 transistors and diodes free, to build a project. And, I,
+                        I soldered all these transistors to the post and I didn't quite get it working but by 8th grade
+                        I built a working computer element, an adder, subtracter in binary, built it out of transistors
+                        because this was before chips were affordable. And it was just out of interest. It wasn't
+                        like I got graded, graded on it. I didn't have any friends that did it. I didn't do it for,
+                        cause I had a group of computer people. Did it all alone. I don't know why. It was, I knew when
+                        I was doing it, it was like, I'm solving crossword puzzles in a sense. I would dream computers
+                        and wake up with a solution in the middle of the night. And I learned after a while I might
+                        forget it so I'd write them down- And it was like that all through my childhood. By the end of
+                        high school I learned how real computers, the computers from the new company Digital had
+                        the PDP-8. The small computer handbook was one of the key manuals in those days that taught me a
+                        lot about computers. Ahro, my electronics teacher arranged, arranged for me to go down to a
+                        local company and program computers every Friday because we didn't have computers in high
+                        schools back then. It was just a lot of, a lot of factors. I was always interested and
+                        always going in that direction when the opportunity arose. Even when I got to college in 1968
+                        there were, there were probably no universities that had computers as an undergraduate
+                        curriculum. And I went to the University of Colorado and I simply took a graduate course. You
+                        know, didn't matter I was a freshman. That was my interest. Got my A plus but I also got put on
+                        probation for computer abuse cause I ran too many programs. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q15" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para36" smil:begin="00:14:28.429" smil:end="00:14:39.110"> DID YOU GET THE SENSE THAT YOU WERE DIFFERENT OR DID IT MATTER? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para37" smil:begin="00:14:39.110" smil:end="00:15:30.877"> I knew that I was different, in the sense, that I would be sitting in math
+                        class in high school designing computers on page after page after page of paper and not doing
+                        the math. I'd be sitting in the back designing and I knew that I couldn't show it to anyone else
+                        in the school, no students, no one would know, would look at this picture of gates all connected
+                        up to each other and understand what the signals meant and how they flowed. No one knew this
+                        kind of stuff. Nobody even knew that much electronics in my high school. So, I knew that I was
+                        kind of like special. I didn't think there were going to be jobs in computers for me. I thought
+                        I was going to be an engineer some day designing the things engineers design, TVs, radios, you
+                        know, that kind of stuff. I had no idea what computers was like as a discipline, you know, to
+                        work some day. So I didn't think I was advanced in something important. I just knew that I was
+                        one of the few people that knew something that was interesting and neat.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q16" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para38" smil:begin="00:15:30.877" smil:end="00:15:56.275"> LET'S JUST KEEP GOING ON THE SAME LINE WHAT LED TO THE CREAM SODA COMPUTER AND
+                        WHAT WAS THAT ACTUALLY ABOUT? WHAT WERE YOU TRYING TO DO? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para39" smil:begin="00:15:56.275" smil:end="00:17:31.214"> Okay, I had been designing computers for my last year of high school and
+                        my first year of college. I got in the habit of getting manuals for all the mini-computers that
+                        companies were producing. I would study those computers and then I got all the latest manuals
+                        from the Silicone Valley companies making better and better chips. So, I'd always get the latest
+                        manual and design the computers. I, there were several of my favorite computers that I liked to
+                        design over and over and over and get my designs better and better and better, meaning fewer
+                        parts. And I, I tried to get local companies, like Fairchild, to give me some chips. If you can
+                        give me this many chips I can build a computer and they kept sort of promising me some rejects
+                        and nothing ever came through until it was my second year of college, I believe, and a
+                        local company did give me some chips, Signetics gave me a bunch of chips. And I designed a
+                        computer of my own. I thought up, I had taken classes and one of the things you do in computer
+                        classes is you, what is the very smallest instruction set that can make a complete computer?
+                        And, I was real good at that one, but solving it. But I still designed a very tiny
+                        computer that had few instructions, that did everything you needed to do, it did a lot. It was a
+                        computer and it was my own. It was almost no chips, almost, just about 20 chips was all. So I
+                        got them from Signetics and a friend and I wired it up in his garage. I designed it. We wired it
+                        up every night for about a week in his garage and we would drink cream soda late into night
+                        cause we weren't even Coke drinkers back then and Bill Fernandez and I and got it done and
+                        working. And we showed it off. And a local paper even came and took some pictures of it and it,
+                        it was really a computer and it ran and computed. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q17" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para40" smil:begin="00:17:31.214" smil:end="00:17:32.742">I HEARD ABOUT THE POWER SUPPLY.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para41" smil:begin="00:17:32.742" smil:end="00:18:18.826"> Oh, I think Bill stepped on the power supply cable while the press was out
+                        doing a story on us and kind of smoked and that was gone, 35 volts got applied to all our chips.
+                        But in that day it was very, very rare, a couple of companies, Intel and one called it was
+                        another I word. In., Int., Int., I forget the name but a local company gave us some memory
+                        chips, eight chips that had 256 bits each. So I had 256 bytes on my cream soda computer and it
+                        was solid state memory. Back in 1969, '70, all the memories in computers that were manufactured
+                        were core memories. Solid state memories on chips cost way too much. It was just impossible to
+                        conceive even 4 K bytes of that kind of memory, not, not affordable. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q18" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para42" smil:begin="00:18:18.826" smil:end="00:18:23.539">IT'S AMAZING THAT THINGS HAVE CHANGED SO FAST.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para43" smil:begin="00:18:23.539" smil:end="00:18:48.998"> Yes, as a matter of fact, it was during the Apple I design that that
+                        random memory chips went underneath. They finally went under core memories, magnetic core
+                        memories in price. And that was starting with the 4K dynamic RAM and all the other hobby
+                        computers coming out in 1975 used static RAMs that cost more than core memories and our Apple I
+                        was the first one that used the dynamics. That was one of the real keys to our success. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q19" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para44" smil:begin="00:18:48.998" smil:end="00:18:56.440"> WHAT WAS IT LIKE WHEN YOU WENT TO THE FIRST HOMEBREW MEETING? WHAT WERE YOU
+                        EXPECTING AND WHAT DID YOU FIND? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para45" smil:begin="00:18:56.440" smil:end="00:19:54.278"> Well, I was expecting just some enthusiasts that were interested in things
+                        like terminals. And I had just designed a terminal cause I did a lot of side projects. And a
+                        friend of mine told me, this club is for people interested in terminals and things. He didn't
+                        tell me it was a microprocessor club or I would have been afraid to go because for about
+                        three years I'd drifted away from computers. I hadn't followed microprocessors. I didn't think
+                        they were going to be worth much. I was designing calculators for Hewlett-Packard, doing side
+                        projects with video tape recorders and building my own terminals, you know, just at night-time.
+                        But I didn't know what microprocessors were. And I went to this meeting and I was kind of
+                        shocked that everybody knew about these computers were coming out and affordable prices,
+                        microprocessors were here. And I was scared to death that I was in the wrong place. And I just
+                        thought, I didn't want to let anything on. I'll just sort of sit and listen. And I listened a
+                        lot that night and heard a lot of interesting things and it really changed my life, got
+                        re-interested in computers once I found out microprocessors were just like the mini-computers
+                        that I used to design. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q20" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para46" smil:begin="00:19:54.278" smil:end="00:19:59.023"> WHAT WAS YOUR IMPRESSION OF THE ALTER? WHAT DID YOU THINK WHEN YOU SAW IT?
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para47" smil:begin="00:19:59.023" smil:end="00:21:08.773"> Well, I didn't know that there was a computer being sold for maybe $400 that
+                        might equate to like $800, $1,000 of today's dollars. But there was some little, tiny computer,
+                        256 bytes of memory. It was basically what I had built for my cream soda computer but it was now
+                        being sold at affordable prices. And there were a bunch of people that wanted to buy it, you
+                        know. They didn't have the, very much money yet cause all the people at the Homebrew Computer
+                        Club, throughout its entire existence, were just low level technical sorts that don't have
+                        any spare money. It takes you a year to save a thousand dollars. And I, it was it was
+                        a real, real experience for me to discover that so many people knew about this computer and
+                        they're talking about floppy discs coming out for it. And some people had visited the factory
+                        and they saw it being manufactured and the software basic was taking off like hotcakes with all
+                        these games, game programs. You could play games on it. And every time, for any company that had
+                        computers, if you went to the company's open house, they'd set up their computers in a row,
+                        playing games. It was like a typical way to show off a computer and now you could have your own.
+                        It was like things that only belonged to companies before were coming real for people. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q21" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para48" smil:begin="00:21:08.773" smil:end="00:21:16.725"> DO YOU GET THE SENSE THAT THERE WAS, REVOLUTION IS THE WRONG WORD, BUT THAT
+                        THERE WAS A BIG CHANGE ON THE WAY? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para49" smil:begin="00:21:16.725" smil:end="00:22:03.251"> Oh, no revolution, thought the word revolution at every meeting. Every two
+                        weeks we had a meeting at SLAC, Stanford Linux Accelerator Center and the word revolution was
+                        spoken frequently by us and that's all I ever thought that, this is a revolution occurring. It
+                        was real obvious. These computers were so inexpensive for what they did, so popular among
+                        technical people, that they were going to just, just sell like hotcakes to at least anyone
+                        technical and they did have a place in virtually every home and the rest of the world was
+                        denying it. A lot of the world didn't see this happening. The large companies, you know, that
+                        have ways to research the computer market means they can research the people buying $20,000,
+                        $50,000 computers. They had no way to, to find out from those people if they wanted a $1,000
+                        computer because it was dentists and lawyers and students that were going to buy the $1,000
+                        computers. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q22" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para50" smil:begin="00:22:03.251" smil:end="00:22:08.547"> WHY IS IT IMPORTANT TO OWN YOUR OWN AS OPPOSED TO TIME SHARING? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para51" smil:begin="00:22:08.547" smil:end="00:23:18.599"> For us, in the Homebrew Computer Club in 1975 we were all technicians,
+                        programmers, we could kind of write a program for a computer for our company but we had to give
+                        it to them to run on their computer. We were denied access to the computer in a lot of ways. And
+                        yet this was the thing we had grown up to love. When I was in, in high school, I told my father
+                        that some day, back then the mini-computer with 4K RAM cost as much as a house. I told my
+                        father, I've decided that some day I'm going to have an apartment instead of a house and I'm
+                        going to buy myself a computer. I'm going to be the one person that owns a computer in the
+                        world. And a lot of us had really made that decision. We wanted a computer but our company owned
+                        it. We would sneak time, there was one friend that went to the Homebrew Computer Club with me
+                        and in earlier years when we were both at a local community college, he had a key and he, we'd
+                        use the key and we'd go in at midnight and we'd sit there for two hours running programs with
+                        cards on this IBM computer and then sneak back out. You just wanted as much access as you could
+                        get to the computer because that's how you could learn more. And we all wanted our own computers
+                        and finally we were going to be able to have our computer and it wasn't our company's computer.
+                        And we were going to be able to use that tool. With so much of our free time, we'd be able to do
+                        more than their programmers could anyway. </seg>
+                </u>
+            </div>
+            
+            <div type="qa" xml:id="q24" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para54" smil:begin="00:23:39.807" smil:end="00:23:48.064"> SO, GETTING BACK TO THE FIRST HOMEBREW MEETING. WHY WERE SO MANY PEOPLE SO INTERESTED? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para55" smil:begin="00:23:48.064" smil:end="00:25:53.320"> I wouldn't say so many people were so interested in the days of the first Home
+                        meeting. There were only 40 of us that met in a garage. God knows why. The thing that spurred it
+                        was a cover, cover article on Popular Electronics Magazine that showed a picture of the Altair
+                        computer, kind of the first computer you could buy. It wasn't really a computer, it was a kit,
+                        meaning you had to be electronic and there were only 40 of us. But the club, even for that type
+                        of club, technical people, see, our, our only, the only thing we had in common was, we all had
+                        to be a little bit strange. We were all interested in technology or something pertaining to
+                        strange types of people, strange things going on in the world, strange diets, strange clothing,
+                        strange ways of doing things, you know. There were probably very few people in there that
+                        had a credit card. I don't, so, it was unusual for that, that, those type of people to grow
+                        over a year to maybe 500 of us meeting every two weeks. But it's like we were all there, just
+                        listening to every word. A lot of us were very shy, like myself, afraid to, I never raised my
+                        hand and offered something to the club. Occasionally I'd submit an article of a clever program I
+                        had written or something to the club journal cause we wanted to pass around good things. And I
+                        would haul down my TV set from home, hook it up and show off the computer every two weeks, even
+                        the Apple II, showing it off while it was being developed. You never heard of a successful
+                        product being treated that way by a company because they'd be afraid, well, other people seeing
+                        it is going to stop us from being able to sell it. Well, here's a case where it obviously
+                        didn't. And a lot of people would look at it and not quite be sure that we were going to go
+                        anywhere even without the Apple II. But boy, I, I don't know, those, it's just hard, anyone
+                        who was a part of the Homebrew Computer Club, it just, it's the sort of thing that existed once
+                        in your life and may never exist again cause it was that was the big excitement. We were
+                        hearing what companies were coming out with what products. Some people were offering to sell RAM
+                        chips at a certain low price or talking about a new product they were working on or some
+                        other company was going to introduce. I mean, some of it was flaky rumors and some of it was
+                        good rumors. But, you loved to hear it. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q25" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para56" smil:begin="00:25:53.320" smil:end="00:26:00.717"> A LITTLE BIT MORE ABOUT THE SHOWING IT OFF AND THE SHARING ASPECT.
+                        THERE WEREN'T TALKS OF COPYRIGHT AND ALL THIS AT THAT POINT, WAS THERE? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para57" smil:begin="00:26:00.717" smil:end="00:27:16.253"> There was no business yet, there was no business. So there really wasn't the idea that anything you came up with, it was more or less, offered to somebody else. You know
+                        if you bought it for a buck, sell it for a buck, just. Everybody is helping each other with
+                        technology and there wasn't an idea that somehow it's going to turn into a bunch of businesses.
+                        Although a lot of companies sprung out of our club. Copyright issue, really, hadn't been hit
+                        very much. But one of the things was you could buy the computer, the Altair computer for, I
+                        think $400 or $600 back then, but you had to pay another $600 to buy the basic language on paper
+                        tape. And we had a copy in our club library. And anyone who wanted, could borrow it, even though
+                        only about ten of us had computers after a year they could borrow the tape and run it. But
+                        then somebody brought it back with a couple extra copies. I think it was my friend, Dan Sokol,
+                        brought it back with a couple extra copies and said, anybody can take the tapes but if you do,
+                        please bring back more than you took. And it brought a stern letter from Microsoft or
+                        whoever, from MITS themselves, the company making the computer but it turned into Microsoft.
+                        Bill Gates was the, the author of that language and he's the one who founded Microsoft. They
+                        came out with a stern letter, you know. They got upset about copying it, you know, don't copy
+                        this. They just started realizing that people were copying it instead of buying it. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q26" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para58" smil:begin="00:27:16.253" smil:end="00:27:18.947">BUT THAT WAS IN KEEPING WITH THE HOMEBREW.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para59" smil:begin="00:27:18.947" smil:end="00:28:14.458"> It was in keeping with the Homebrew but there was also no fixed idea to even
+                        know that you were copying something you shouldn't be- And to this day, I think it's,
+                        to see people who are other there having an adventure and cracking something just to crack it
+                        and have a copy for themselves that works but they don't really need it or use it, they wouldn't
+                        have bought it, I love that. They're, they're minds are developing, they're learning just like
+                        we did. I kind of see the world the way I was. But, but I see some people copy a program and
+                        then use it like a word processor, an important great word processor, instead of paying a few
+                        hundred dollars. And I see it all over the place and it bothers me a lot to see that sort
+                        of thing, the sort of people that don't place the idea that if you're really are going to use it
+                        then you should pay for it. And I just sort of, at one time, thought that all technical freaks
+                        are very ethical like myself. And just would never think of, you know, something
+                        equivalent to stealing from another. But even technical people do that.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q27" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para60" smil:begin="00:28:14.458" smil:end="00:28:25.536"> HOW PREVALENT, YOU WERE TALKING ABOUT REVOLUTIONARY, REVOLUTIONARY IN THE
+                        SENSE OF US AND THEM AND IF THAT'S THE CASE WHO IS THE US AND WHO IS THE THEM? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para61" smil:begin="00:28:25.536" smil:end="00:30:28.376"> The sense of revolutionary was partly us and them. But I think it was a minor
+                        amount. We saw it as a technological revolution where a new technology was going to change the
+                        world, change our lives, allow things to be done by individuals that had never been done before,
+                        allow young school kids to find themselves the big, the people who control things because
+                        of their money, they controlled computers, were no longer going to be in power in the computer
+                        world. Those who were smart and loved computers and wanted to do, make good products were going
+                        to be, in a sense, in more power. That was the revolution in the way we saw it. The us - them,
+                        was only in the sense of, we were kind of turning the tides, not so much on the large computer
+                        manufacturers but the large companies who owned computers, the companies that we worked for and
+                        that owned computers but had restricted us from them, kept us from having good access to them.
+                        And to a lesser extent, us versus, us versus them we kind of saw ourselves doing a
+                        better a job but the large companies that made computers like Hewlett-Packard were predicting
+                        that these small computers, they're nothing. It's a little hobbyist fad. They're going to be
+                        dinky kids sold in surplus stores. There's no, there's really nothing to this. It's like they
+                        were saying one story and we were out there saying, this is the greatest product ever, we're
+                        going, you're going to improve homes, you're going to be able to do calculations, you're going
+                        to be able to play games. And it's here now and it's affordable and everybody can have one. And,
+                        we thought it was the greatest thing ever. And we could see it. We could see what they could
+                        do and these other companies, didn't, didn't even talk. You know, they're marketing people and
+                        they're business people. They didn't talk the same language we did. They talked proper business
+                        language, but you know they, they had marketing terms for why the market wasn't going to be
+                        very large and involved. But they didn't, they were not the users. You could tell, they didn't
+                        realize what this thing was, you know. This was a computer in the home. They just talked about
+                        it like the market size, such and such a share and this and that. Oh, man, so it was kind of we
+                        were, we always made fun of that that they, you know, we'd always open up one of the magazines
+                        and someone would read a story about such and such a company doesn't think it's a very big
+                        marketplace and we'd all laugh. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q28" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para62" smil:begin="00:30:28.376" smil:end="00:30:31.536"> WHEN WAS THIS THAT YOU WERE ABLE TO LAUGH ABOUT IT? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para63" smil:begin="00:30:31.536" smil:end="00:30:49.660"> Oh, 1975, the Homebrew Computer Club, even '76, those were, those were the two
+                        big years. And for me they were big years, designed the Apple I in '75, the Apple II in '76, you
+                        know. Both products had their official introduction, it was me holding up a board in front of a
+                        club, pointing out the chips. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q29" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para64" smil:begin="00:30:49.660" smil:end="00:30:56.349"> HOW IMPORTANT WAS THAT IN THE DEVELOPMENT IN FINE TUNING AND CONTINUING THE
+                        DEVELOPMENT OF THE APPLE II? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para65" smil:begin="00:30:56.349" smil:end="00:31:01.046"> The fact that it was sort of revolutionary product you mean? </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q30" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para66" smil:begin="00:31:01.046" smil:end="00:31:08.704"> I HEARD YOU TALK ABOUT HOW YOU WERE ABLE TO GO BACK TO PEOPLE, GET QUICK FEEDBACK.
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para67" smil:begin="00:31:08.704" smil:end="00:32:20.857"> The feedback was motivational. In other words when you saw a lot of other
+                        people that thought the same way you did. You found out that, you know, even though you were a
+                        bit strange, there were a lot of other strange people that loved electronics and things that was
+                        motivating. It made you feel that what you were doing had value. It had value at least to these
+                        groups. You could do something and show it off and that gave you another sense that what you
+                        were doing had value. You had a lot of freedom in those days. It wasn't like, there were a
+                        couple of brands, you can make a choice. There's standard word processor to buy. Nothing was
+                        kind of, there was no structure, it was unstructured. We used to, every meeting, it was very,
+                        very important that Lee Felsenstein, our leader announced, this is the Homebrew Computer Club
+                        which does not officially exist. And everyone applauded. For some reason, it was a group of
+                        people that were glad that they didn't exist formally. Very much against structure and
+                        that, that also was motivational. It let you be very autonomous, let you do kind of what
+                        you wanted to do. There were a lot of choices and nobody to push you and telling you, you were
+                        making a wrong choice. What processor you chose, whether you were going to build your own
+                        computer or buy one of the kits, what magazines, you know, you bought, what, what your interests
+                        were, it was all different. It was scrambled.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q31" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para68" smil:begin="00:32:20.857" smil:end="00:32:23.473">NOT SO COMPETITIVE, RIGHT?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para69" smil:begin="00:32:23.473" smil:end="00:33:42.009"> It was only in later days- There were a few companies that sprung out of
+                        it that turned out to be minor competitors but pretty much not so. For example, Processor
+                        Technology made some computers and I'm trying to think, there were a couple of other
+                        companies that made boards that would plug into that computer among others. If there was any
+                        competitiveness in 1976, several of the companies making the first small computers banded
+                        together, kind of against the first computer company, MITS. They banded together and said, MITS,
+                        MITS had come out with this great computer, the Altair 8800. They had the Altair bus. And one of
+                        the first things these other companies decided to do was to not give this bus a name that's
+                        named after a company's product but to neutralize it and call it the S-100 bus. And oddly enough
+                        that's very, that's sort of a political thing and not the thing that technical people do very
+                        often. Technical people gen., generally, you know, are, are upset when, you know kind of,
+                        somebody's name gets removed from something. What do we have? We used to have
+                        Washington's birthday and now it's President's Day. You used to have Easter vacation and now
+                        it's spring break. It's like these names kind of get pulled away for some political reason
+                        to try to, try to hide them. And we're the sort of people that are against that. So I, I never
+                        understood. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q32" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para70" smil:begin="00:33:42.009" smil:end="00:33:45.466"> ALL THESE LAWS/ PHYSICAL LAWS THAT ARE NAMED AFTER PEOPLE </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para71" smil:begin="00:33:45.466" smil:end="00:33:58.017"> Yeah, so they had the same computer bus but instead of calling it the Altair
+                        bus, it got changed to S-100. But it was to give the other companies a bit of a, more of a
+                        presence over Altair to make it, you think that Altair wasn't the only company around. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q33" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para72" smil:begin="00:33:58.017" smil:end="00:34:05.291"> I MEANT MORE IN TERMS OF, CAN YOU TOP THIS? YOU DIDN'T WANT TO GO INTO THE
+                        HOMEBREW WITH JUST AN AVERAGE PIECE OF EQUIPMENT. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para73" smil:begin="00:34:05.291" smil:end="00:37:23.028"> Well, I think, judging most of the people in Homebrew were not what I'd call
+                        top designers, the sort of people that do excellent, excellent work. They were not, maybe the,
+                        the brightest, you know, top students. I was one, I was rare in that sense. I had taught myself
+                        to be a very good designer. I worked for Hewlett-Packard, a top company designing calculators.
+                        Most of the people at the club were like the other people designing computers, that were coming
+                        out in those days, all the computers that come out were kits. Okay, that speaks of this
+                        hobbyist, surplus parts, capacitors and resistors and a couple big, big inductors, you know.
+                        This, this kind of world that people live in, some very strange stores, not even the normal
+                        electronic stores and their designs showed it. You'd look at their design it would be way too
+                        many parts, way too many components, too many chips for what they did. They would use the, the,
+                        lousier, lower, state of RAM chip, of memory chip, just simply because it was the one hobbyists
+                        were used to. It was available on the surplus market. It was, you know, in stores. And I
+                        was just by looking at their designs, I was not impressed technically with the other people
+                        designing computers. Most of the people in the club that I got to know I had a similar opinion
+                        of that they were not at the top technically. They just, motivations we were alike. And so I was
+                        maybe one of the rare ones where I always designed to try to do the most excellent job. I was, I
+                        sort of knew that in certain kinds of designs I was better than anyone else that I had ever
+                        encountered. And I would come to the club and pull out a board that had maybe a third as many
+                        chips as another computer, maybe a fifth as many that did the same thing. And I'd show this one,
+                        simple, little board doing what five boards over there did and even more and just amazing
+                        people. You mean you can sit down and just type on this, this one little board, you can type on
+                        a keyboard and see it on a TV set? And over there, you have to have this huge apparatus that
+                        costs a fortune with a ton of boards and you have to have a special monitor, not a TV set
+                        and you don't even have a keyboard to type yet. You have to toggle some switches and push
+                        buttons. And so I was a little bit, my, my stuff was probably kind of impressive but I
+                        wasn't expressive enough to, to even explain to most of the people what this one had the others
+                        didn't have, why it was a better direction. I just chose that I liked computers for a couple
+                        things; writing some programs to help me at Hewlett-Packard in my job and playing games. And I
+                        designed the computer very specifically to have some good features for that. But it wasn't like
+                        the other computers. They were just to be like normal computers that you'd buy normal
+                        computers that people were used to using at their own places of employment, the same style of
+                        computer that had been shipped by manufacturers for ten years, the sorts of things those
+                        computers did were not play games, they didn't have color, they didn't have graphics, they
+                        didn't have paddles, they didn't come with a keyboard built in, they didn't attach to your home
+                        TV, they didn't have all these real nice, simple ideas. But I was lucky. I was only building the
+                        computer for myself. That was one of the neat things. And the club was a place you could show it
+                        off. There were, if you designed a product just for yourself, it might be a great product but
+                        it's hard to get, show it to a marketplace, hard to show it anyone necessarily. But his club, it
+                        was just a place where, it doesn't matter what you have. You have anything at all that's
+                        interesting, there are some people here, some technical people that would love to look at it and
+                        give you some good comments and say neat. And I had a group that gathered around me at every
+                        meeting as I designed the computers. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q34" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para74" smil:begin="00:37:23.028" smil:end="00:37:24.587">ESPINOZA, WIGGINGTON.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para75" smil:begin="00:37:24.587" smil:end="00:37:58.766"> Espinoza, Wiggington, but there were really about ten, many that I don't even know
+                        to this day that I just, you know, forgot which ones they were. But there was a group and some
+                        of them were very quiet and they'd all sit around me in the back of the hall and during, after,
+                        when we took the second part of our meeting and went out and I had my demos on display, they
+                        would all hang around me, asking a few questions. But they were interested in building a
+                        computer the cheap as possible. And here, I had a whole computer, very few parts, schematics,
+                        didn't have to buy, you had to buy a couple of things for it like a keyboard and a
+                        microprocessor but they were, that was the cheapest you could do. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q35" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para76" smil:begin="00:37:58.766" smil:end="00:38:12.534"> YOU WEREN'T WORKING WITH THE HOT CHIP? THE HOT CHIP WAS THE 8080 AND YOU
+                        PICKED THE 6502. DO YOU GET A SENSE THAT YOU'RE DEVELOPMENTS WEREN'T APPRECIATED BECAUSE YOU
+                        WEREN'T WORKING WITH THE HOT CHIP? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para77" smil:begin="00:38:12.534" smil:end="00:39:21.218"> Well, the chip choice was very important. The first chip that came out was
+                        maybe, that got this kind of interest was maybe the 8008. But around the time our Homebrew
+                        Computer Club started, the 8080 had come out. It was the hot microprocessor. It was the one that
+                        was in almost all these kits. But to me, and to the other technical people, the hot processor
+                        means the one that performs the best, that does the most the fastest, that's the easiest to use,
+                        that has more instructions than the other. That's the hot processor. And the 6502 was the most
+                        recent one that had been introduced, that's the one I chose. I chose it only because, instead of
+                        paying $400 to some distributor that wants me to act like I'm a company, I went over to, went to
+                        a show in San Francisco called WestCon and with a bunch of my friends, paid $20 over the counter
+                        and go this chip. You know, it's like a $400 product is being sold for $20 to people. Like, you
+                        can go down to a store and buy it. We had never heard of this sort of thing for a
+                        microprocessor. And a microprocessor is a computer. Well, I bought it because it was cheap but
+                        it was the newest one. And I opened up the instruction book and it had so many features in it,
+                        hands down, hands down, I claim it was the hot one in terms of performance. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q36" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para78" smil:begin="00:39:21.218" smil:end="00:39:32.394"> BUT DIDN'T YOU GET A SENSE, AT LEAST FROM WHAT I'VE TALKED WITH LEE AND
+                        GORDON, THEY SAID, WELL APPLE, IS DIFFERENT OR APPLE REALLY WAS IT BECAUSE HE'S NOT USING THE
+                        8080. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para79" smil:begin="00:39:32.394" smil:end="00:42:11.870"> You, you're talking about other people's view of Apple after it started. I'm
+                        talking even long before Apple started. We're just at the club. There are some technical people,
+                        I'm showing off the neatest computer. I happen to chose this chip. It was a very well accepted
+                        chip by everyone except, every processor that was out, was accepted by everyone in the club,
+                        ahm. The one that most people chose to buy, you know, maybe 80 to 90 percent of the club even in
+                        the days when I was designing my Apple I, before we had a company, maybe 90 percent of the
+                        people were on the Intel 8080 side of things. And I had this MOS Technology 6502 chip. And, but,
+                        I got a group that gathered around me and it was maybe 20 strong that became 6502 enthusiasts
+                        either because that's the chip they had bought or because they planned to build the computer
+                        that I was showing off. They planned to buy that computer somehow. When we started the
+                        company, I think it was real easy for a company building a product on the old standard chip, to
+                        look at anybody using a new chip and one of the things that you'd say is, they're not even using
+                        the hot processor that there's a lot of software out that uses it. For example, you could buy,
+                        if you bought one of the many computers, using that other chip, the Intel chip, you could buy
+                        basic language, you could buy a lot of games, you could,. there were a lot of things that were
+                        coming out from various companies that you could add on to your computer. If you bought a new
+                        computer like the Apple with the 6502, you got a couple programs from Apple that came from it.
+                        You got some help from Apple. But it was kind of, start writing your own. And it wasn't for,
+                        till about a year after the Apple II was out that a lot of games, good games using color
+                        graphics on a TV screen set, sort of set the tone for where games were going to go in our life,
+                        video games, small, little, color pictures moving on a screen combined with sounds. It had never
+                        been, never happened before. Nobody could have predicted it. We did not predict it. We didn't
+                        build those features in. I didn't build those features in thinking people were going to write
+                        these kind of games that now every Nintendo game you buy is along that style of colored graph.,
+                        colored characters moving around on a screen and colored pictures and all. No, I just sort of
+                        threw it in because, well, it's color, it's graphics. I don't know where it goes. I don't know
+                        what people use it for. I even argued briefly that maybe we ought to leave it out and save three
+                        chips. And Steve fought, you know, no, let's put it in, we got it. It wasn't till the games
+                        showed up that we knew what people were going to do with it. Well, it was around that time,
+                        after that first year, and all of a sudden the Apple had all these great games and the other
+                        machines didn't cause we had a better processor, a hotter one, in technical terms. It was
+                        easier, well, we really had a hotter computer. Our computer, for a very low price, could do a
+                        lot of neat things and that invited the software to come, the programs that did all these things
+                        and once we had the programs behind us there was no comparison. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q37" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para80" smil:begin="00:42:11.870" smil:end="00:42:28.724"> ONE OF THE DISTINCTIONS WE'RE MAKING IS TIME SHARING VERSUS ON YOUR OWN. WHAT
+                        WAS WRONG WITH TIME SHARING? AND HOW DID OWNING YOUR OWN SOLVE THAT PROBLEM? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para81" smil:begin="00:42:28.724" smil:end="00:46:13.484"> I was never that close to time sharing to really speak very much about it. My
+                        experiences were that large companies like General Electric came around to our high school and
+                        showed how we could have terminals but our school did some calculations. I think just the phone
+                        bill alone to connect to it was bothersome. It was too expensive. I even wrote when I
+                        was in high school I wrote a, after a GE demonstration of their machine. I was the only one who
+                        could program. I sat down and wrote a couple little programs that did something. I wrote a
+                        letter to the head of our math department, why we should have computers, why they would help
+                        people learn important thing. But school wasn't into that in 1968. I also was, there was a
+                        local company called - Call Computer and for a lower price you could call, they had a cheaper
+                        computer, for a fairly low price, if you had a terminal, you could phone them up and connect for
+                        just a few bucks an hour you could type away and run some programs and it was kind of, kind of
+                        popular among the hobbyists. It was even a place where we had a low price account that was given
+                        to the club so that every Tuesday night, I think, club members could come on at a reduced price
+                        and chat with each other through a program called Chat. They could send messages to one
+                        another. I, I used to send the, I wrote a program of my own that would sit there and wait until
+                        this file called Chatex freed up. As soon as it freed up I'd dump 14 pages worth of Polack jokes
+                        into it. And everybody came back to the club meeting complaining that every, when they did this
+                        Chat program it just dumped 14 pages of Polish jokes on them. And Randy Wiggington was a
+                        friend of mine that was supposed to maintain it for the club and they always chastised him for,
+                        why is this happening? All these things that were going wrong with it and nobody knew it was me.
+                        Time sharing, time sharing it was interesting cause that's what got me a
+                        little bit into computers. I saw a friend of mine, John Draper, sitting at a terminal talking to
+                        computers out in Boston playing chess. But it just wasn't close and quick. It wasn't' fast. Kind
+                        of, you'd always type something and wait and wait and wait. Ch., ch., ch., and here would come a
+                        slow, little answer, it would type it out on a typewriter and then you'd type in the next
+                        answer, it was text only. Had a lot of the time sharing systems they weren't real, real
+                        quick, real personal, colorful, they weren't so much fun. They could do and they were expensive.
+                        They were expensive. You could pay as much on a time sharing system, I mean, let's say, let's
+                        say you had a job at work to do and you, went and wrote a bunch of programs, you could easily
+                        spend a few hundred dollars, easily. If you wanted to, I could not afford to use when
+                        the 6502 microprocessor came out and I bought it. I wanted to write the basic language. That's
+                        a, that's a many man month job, maybe up to a man year's worth of work to write this kind of a
+                        program. And I'm supposed to rent time on a time sharing system to write the code called
+                        computer language, machine language, to write the code and have the computer assemble it and
+                        give me back the codes that will run on my processor. You're supposed to rent it on a time
+                        sharing machine. It would have cost me thousands of dollars to have done that. So, I couldn't
+                        use it, what's called an assembler. I couldn't use the assembler on a time sharing system, I
+                        couldn't afford to. I had to figure out a way to do it myself and the way I did it was I looked
+                        at conversion cards and I figured out all the codes myself. I had the entire basic is
+                        handwritten, was, it's rare to find a program that wasn't somehow entered into a computer to
+                        calculate. I did it all myself on paper and wrote down the codes. And I've still got my
+                        handwritten copy but that was the biggest problem of time sharing. None of us had money. Company
+                        coming up with a product, some test equipment for engineers had enough money to put into that
+                        product cause you had to, to, to write some programs on a computer to help develop it. We
+                        didn't, once we had our own computer we had computing free forever, just the cost of electricity.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q38" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para82" smil:begin="00:46:13.484" smil:end="00:46:18.684">WHAT DID THE MEETINGS MEAN TO YOU AS A PERSON?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para83" smil:begin="00:46:18.684" smil:end="00:47:30.048"> As a person that was probably the only club I'd ever really belonged to in my life and attended except for high school clubs, you know, math clubs,
+                        science clubs, that sort of thing. I
+                        didn't think, you know, once, once you get to a certain age, you're still, if you're
+                        technically, you're always a bit young. You're playing pranks, you're doing a lot of jokes. But
+                        you kind of think the grown-up world is just more of a world of reading the financial reports or
+                        newspapers and going to work every day and you're out of the young life. Clubs kind of go with
+                        the younger life. And it was a club, like ham radio clubs are so it, it was a place to
+                        belong and find other people that had similar interests, that would sit down and talk with you.
+                        I had people that, you know, I was very shy but I ran into a few people and I invited them over
+                        to my apartment, with, you know, filled with wires and junk on the floor, you know, the typical
+                        techie place, a technical nerd I was but I could talk to them about something, which was what I
+                        was doing, what computers should be, how my computer was different. And these were about
+                        the only sort of people I could have socialized with in my life. So I was lucky to have a good,
+                        regular place to encounter a lot of them.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q39" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para84" smil:begin="00:47:30.048" smil:end="00:47:33.120">HOW MUCH A PART OF YOUR LIFE WERE THOSE MEETINGS?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para85" smil:begin="00:47:33.120" smil:end="00:48:34.802"> Yeah, as I think I've said before, the Homebrew Computer Club was the most
+                        important event of my life. I lived for it. Every spare minute of every day, up late till 2, 3,
+                        4 in the morning. I had asthma for a while and couldn't sleep and I had to force myself to stay
+                        awake. I wrote programs. I was always trying. My sched., my life was schedule around getting a
+                        certain number of programs perfect, as perfect as could be by Wednesday night for the Homebrew
+                        Computer Club meeting because I could pass them around to a few people. We had a part of the
+                        club meeting, we could just pass them out to anyone who wanted them. And everybody would take
+                        something that was given. I tried to get the next stage of my computer always done by the
+                        meeting. And I don't think I ever missed once, one of my goals for what I'd have done by the
+                        next meeting. But, boy, it just drove my life, gave it a reason to have a schedule. But that's
+                        because it was the most important thing happening in the world. It was, it was like a revolution
+                        that I'd never seen. Like, you read about technological revolutions the industrial
+                        revolution and here was one of those sort of things happening and I was a part of it. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q40" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para86" smil:begin="00:48:34.802" smil:end="00:48:37.282"> WHY WAS IT IMPORTANT TO SHOW IT TO OTHER PEOPLE THOUGH? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para87" smil:begin="00:48:37.282" smil:end="00:49:28.685"> Well, for me, I, I knew I had a, a good, I had a good sense of myself as a
+                        designer and I happened to be designing this kind of thing. For myself I was going to design it
+                        anyway. But the club kind of stood for people who were talking a lot. There was a lot of talk
+                        about if you have some good ideas, you should share them, tell other people how to do it. That
+                        way the world gets more. The world gets more technological good. Lee was kind of one of the
+                        leaders. But there were many in the club that spoke this way and felt this way, that we should
+                        somehow be good on a social level and you don't hear this thing in normal business. You don't
+                        hear this kind of talk. People talking about ethically and morally how we should be and what's
+                        good and what's bad. And and that, I don't know, that just, it just, I don't, I don't
+                        know, I don't know what question I was answering but.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q41" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                
+                <u who="#a">
+                    <seg xml:id="para89" smil:begin="00:49:31.184" smil:end="00:50:14.876"> Three months to write, okay, it took me maybe three months to write the basic
+                        language without a computer. Normally, you have a computer and then you write a program. I did
+                        the opposite. I had a processor but I wrote the program and I simulated it on another computer,
+                        got it working and then I said, well, now I've got this program called, Basic Language. It's
+                        going to be real popular. And I've worked for three months to get this thing done at a breakneck
+                        pace. It was, now November in 1975. I said, I need a computer. So I sat down and I had to design
+                        the computer and build it and it only took a couple of weeks and I had the computer all up and
+                        running and built. And that was back in the days when it was, I had to write 256 bytes of a
+                        program that came with the computer, built into it. And that was a lot in, a lot of memory in
+                        those days to build into a computer. You know, it's lucky I worked at Hewlett-Packard where we
+                        had chips that could do that.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q42" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para90" smil:begin="00:50:14.876" smil:end="00:50:37.710"> WHEN DID YOU FIRST MEET STEVE JOBS AND WHAT WAS YOUR FIRST BUSINESS VENTURE?
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para91" smil:begin="00:50:37.710" smil:end="00:51:12.125"> It's hard to go back a lot of years and remember exactly what year it was but
+                        my recollection is that we were introduced by Bill Fernandez while working on the Home Brew,
+                        the Cream Soda Computer and, around 1970. I was a little bit out of high school. Steve was
+                        still in high school. His recollection is, we were introduced earlier. But, Bill, Bill figured
+                        we both were interested in electronics and we both liked to pull pranks. And he thought, you
+                        know, you really like to meet this guy. And we met each other and hit if off and we talked about
+                        pranks we'd done and electronic circuits and the like and got along great for quite a few years.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q43" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para92" smil:begin="00:51:12.125" smil:end="00:51:21.240"> WHAT WAS HIS ROLE IN TERMS OF THE APPLE I AND HOW THAT WORKED? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para93" smil:begin="00:51:21.240" smil:end="00:54:30.910"> Yeah, the Apple I, I was going to the Homebrew Computer Club and Steve was
+                        kind of interested in following a little but he really didn't have the interest to go and really
+                        do these things and. But he, he had sold surplus parts for a local surplus company and he
+                        kind of knew the world of buying something and selling it for me and he was very into like
+                        Eastern religions and meditation, walking around bare feet and sandals, that kind of, you know,
+                        almost sort of a hippie type personality, eating figs all day long. But he also those kind
+                        of people very often that want to, wanted to make money. Wherever you can find a place to make
+                        some money and have a business of your own. Now I, I started, I came back from all the computer
+                        club meetings and I would tell Steve what they were talking about. They might have a disc some
+                        day, floppy disc on these things. And his first reaction was, maybe it could do time sharing and
+                        replace the time sharing company. And he started coming up with ideas right away, how this thing
+                        could be turned into product, how it could be marketed. And he knew that I was a great designer
+                        and so he kind of stayed on top of it. Largely through me, he attended some meetings also. Well,
+                        I designed the Apple I computer, didn't have a name yet, just to show it off at the club, pass
+                        out schematics. I would go over to people's houses and help them build these things. And Steve
+                        saw the interest. He saw that there were a lot of people that were interested in getting
+                        schematics, building their own, somehow. But he also he came to me and said, well, it
+                        takes a long time to wire it together, to solder wires onto all the chips and interconnect them.
+                        It takes a long time. People, there are people that don't want to spend that much time. If we
+                        make a PC board then all they have to do is plug in the chips, solder them one time quickly and
+                        everything is done and they save a ton of work and everything, you know, has a better chance of
+                        working, etc.. And so his idea was, we start a company to sell boards. It costs us 20 bucks to
+                        make a board. We sell it for $40. And we kind of visioned, visioned selling 50 somehow, we'd get
+                        our money back. I didn't think we'd sell 50 at our club cause I'm thinking, how many people are
+                        really into the 6502 and going to buy a board for 40 bucks, and I didn't think it was going to
+                        be 50 at our club. But that's, that's, I saw a narrow part of the world. Steve always saw a much
+                        grander part of the world and he had bigger ideas and he was, he, he was the one who would be
+                        driving to move on some idea that might have potential either to be successful in a business
+                        sense or to be successful in somehow bringing this technology to people. I don't think he was
+                        motivated the same way most of us were by the sense of now we're, we're freeing computers up. I
+                        think his, his motivation was always more, in a business sense, it was good if it was business,
+                        good if it made a profit. He, he was just in., interested. He was young. He had a lot of time
+                        and a lot of energy. You need someone like that to make a product successful, to get on the
+                        phone, to talk people into it, to show them what it has. Your own excitement will sometimes
+                        carry over to a person in a store whose decided to buy a couple computers because he just opened
+                        a new computer store. It will carry over. He'll see, if you're so excited about it, it must be
+                        good, proud of product, you know, and that really helped, helped everything. You need a person
+                        who wants to hustle and wants, whose motivation is to have a successful company. It took...
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q44" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para94" smil:begin="00:54:30.910" smil:end="00:54:33.719">THAT WASN'T YOUR INTEREST IN IT, KIND OF TWO DIFFERENT ROLES.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para95" smil:begin="00:54:33.719" smil:end="00:58:29.213"> You know, well, it was real easy to start making Apple I computers because we
+                        made them in the garage. I was moonlighting. I had a full time job. I had money to live on. I
+                        had an income. Steve lived with his parents. He didn't need an income. We didn't make money with
+                        the Apple I's. We only built maybe 150 of them. The Apple II was our first big computer and
+                        we had to form a real company. That's where the decision came to me by the, the fellow who was
+                        going to join us as a third partner and put up all the money and guide the business in the sense
+                        of, he knew what kinds of people to hire, how to organize the business, what should be paid
+                        attention to, how to speak to money people to raise more money. Mike Markkula had a business
+                        experience but he told me that I had to quit Hewlett-Packard. It has to be a full-time Apple --
+                        I, I said, I see Hewlett-Packard, in my mind, I was a young, shy, scared engineer and I've got a
+                        good lifetime job at Hewlett-Packard, security. And you know, I can be an engineer forever
+                        there. And he said, no, you got to, you got to leave. I said, well, but I've designed two
+                        computers. I've written the basic language. I've written all these demo programs. I've designed
+                        cassette interfaces and this and that and I, I've done all this in one year just moonlighting.
+                        Why don't I keep doing that? No, Steve, you got to quit. And I made the decision at first, not
+                        to quit and it wasn't till a friend of mine who had dome some computers with me, the one
+                        person ever in my high school that understood computers also, he worked at Hewlett-Packard and
+                        he told me, Steve you could be an engineer, start a company, you can go into management and get
+                        rich. I couldn't be a manager ever in my life. You know I saw corporate politics and things like
+                        that, that was not my life. All I was, was a designer. I wanted to design neat computers, write
+                        neat programs. But he said, Steve you could be an engineer and start this company and just be an
+                        engineer your whole life and get rich. And then I realized, he was the first person, that I
+                        realized was another person out there that accepts it. You can start a company even though you
+                        don't want to be a businessman. You don't want to run a company. You can have other people do
+                        that. You can simply start a company and if I like and I can still design, I can still do what I
+                        love doing, designing good products, writing good programs. The thing is, the company is just a
+                        way to help turn it into money and get good stuff into other people's hands. So, I changed my
+                        mind.  I felt that the response to the Apple I in reduction at the Homebrew Club was
+                        good. People, I held the board up. I fielded some questions that people asked. I could say, it's
+                        got this much memory. It's got these kind of chips and it's all on one board and it's easy, it's
+                        simple, it's already, it's already assembled. You can buy it for a good price. I had good things
+                        technically, I knew that the product competitively was excellent and that's all I needed to give
+                        me enough motivation to be able to speak in front of people, you know. It was felt like showing
+                        off. I felt the response was good. We only sold maybe 150 cause Steve, you know, had to get on
+                        the phone and call a couple computer stores. There weren't very many computer stores in the
+                        country. One time, our second sale, he made our first sale to the Byte Club of Palo Alto. And
+                        instead of buying $40 PC boards, they wanted to buy $500 completely assembled computer boards.
+                        So, all of a sudden, we were in business for real. We had, Steve made, hustled, made all the
+                        calls and got us 30 days credit. It only took us ten days to build the computers and get paid
+                        for them. So he, so he did that and I went down our second sale. I went to a store in Southern
+                        California, cause I was on vacation, showed them the Apple I, what it was, isn't that,
+                        demonstrated it. Got some orders out of that. But it was pretty much, you know, one person at a
+                        time, you know, getting small accounts. So we didn't sell very many in the period of a year. And
+                        by then, we had the Apple II. We even saw the Apple II coming and part of the Apple II
+                        introduction was, we said, you can turn in your Apple I for a real good refund or a discount on
+                        the Apple II. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q45" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para98" smil:begin="00:58:29.213" smil:end="00:58:30.192">GOOD IDEA.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para99" smil:begin="00:58:30.192" smil:end="00:58:37.474"> It was a feeling. We did that out of just wanting to do something good for the
+                        people who had trusted our company and gone and bought Apple Is. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q46" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para100" smil:begin="00:58:37.474" smil:end="00:58:42.026"> WHERE WAS IT THAT YOU SOLD YOUR CALCULATOR AND STEVE SOLD AND WHAT....?
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para101" smil:begin="00:58:42.026" smil:end="00:59:12.906"> When we decided to form a partnership, the first we had to do, we formed a
+                        little partnership. He had 45 percent. I had 45 percent. Ron Wayne had 10 percent because we
+                        trusted Ron to, to solve any disputes. But, once Steve started getting credit on lot of parts
+                        and we had tens of thousands of dollars of credit. Steve had no money and I had no money. What
+                        if something goes wrong? They were going to get it from Ron Wayne. So, he told his 10 percent of
+                        Apple back to us for $800. But in, we formed a partnership and, go back on the question again.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q47" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para102" smil:begin="00:59:12.906" smil:end="00:59:20.442"> WHERE WAS IT THAT YOU SOLD YOUR CALCULATOR AND HE SOLD HIS, AT WHAT POINT WAS
+                        THAT? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para103" smil:begin="00:59:20.442" smil:end="01:00:25.662"> Okay, right at this point, to, to do this partnership we were going to make
+                        those PC boards that cost 40 bucks each. Well, the trouble is, you have to pay somebody to lay
+                        out, put tape on a board for a couple of man weeks of work. You have to pay somebody several
+                        hundred dollars just to tape up the boards. Then you have to go down to a company that's going
+                        to make the boards for you and tell them, make me 50 or make me a 100 and you have to pay them
+                        so much money per board. So we needed money. And I had, I had a Hewlett-Packard 65
+                        calculator, which I sold for $500. The thing is, working at Hewlett-Packard I knew that next
+                        month we were coming out with the HP-67 and my employee price was going to be $370. So, in other
+                        words, I didn't take a risk. I knew I was going to be able to get a better calculator for less
+                        in one month anyway. Steve sold his van. I think he needed some other living money anyway.
+                        It was just, you know, part of ongoing. We really didn't really put that much money in, didn't
+                        take a big financial risk. But that helped us, that gave us the money to pay a guy in Scott's 
+                        Valley that laid out the PC board for us. We had no money in the bank account. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q48" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para104" smil:begin="01:00:25.662" smil:end="01:00:26.885">SO YOU WERE STRUGGLING?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para105" smil:begin="01:00:26.885" smil:end="01:00:41.074"> I wouldn't say struggling but my apartments made me pay cash because my
+                        rent checks had bounced a couple time. You know just right down to the bottom always. If I had
+                        spare money it may be went to a couple new record albums. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q49" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para106" smil:begin="01:00:41.074" smil:end="01:00:43.473">WHAT WAS THE ATLANTIC CITY FAIR LIKE?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para107" smil:begin="01:00:43.473" smil:end="01:01:48.236"> PC '76 in Atlantic City was one of the most memorable times of my life,
+                        a big event to me. I had never been out of California except for a year of school in Colorado.
+                        And all of a sudden because of Apple and this Apple I thing that really wasn't earning us money,
+                        just a little. It managed to pay for our plane tickets out to Atlantic City, far on the East
+                        Coast. I mean I'd never been to, you know, very many States in my life. And here I was going to
+                        a new one. So it was exciting to just to be traveling, to be a part of something happening. This
+                        was the revolution. We got there and found that there were, you know, 30 or 40 different
+                        companies that were just like Steve and I, a couple of people in blue jeans, a couple of kids
+                        that had designed something, shown it off, looking for sales, you know, trying to start this
+                        industry, no business backgrounds at all. Saw a lot of the products going on then. We felt
+                        very, very good about the Apple I because it stood up with features for price. It stood up very
+                        well. It was an easy computer to show off. You didn't feel embarrassed that you were showing
+                        something, somebody else had the equivalent of. So, you know. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q50" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para108" smil:begin="01:01:48.236" smil:end="01:01:49.044">WHAT WAS YOUR BOOTH LIKE?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para109" smil:begin="01:01:49.044" smil:end="01:02:48.603"> The booth was just a little, tiny table and a little, tiny square, one
+                        little, little table and Apple I and a little brochure we'd done, a little ad we'd done for it.
+                        Not too much. We got another friend to come in from New York and help demonstrate it. Steve
+                        and the other friend really demonstrated it because I sat in the hotel room the whole time. I
+                        was typing away on a, on an Apple II computer. And I was, I was working out in maybe the some of the routines that were going to go into the Apple II, maybe some of my routines for
+                        drawing lines or adding a couple commands to the basic language. I think while we were there at
+                        the show, oh, even on the Apple I, I added commands to the basic language to handle strings, a
+                        word like Steven or a word like banana has a spelling. And you have to be able to handle those
+                        kind of words in a computer language. We didn't have it quite yet in the basic I'd written. So I
+                        added it, got it all working and we, we put it out and demonstrated it, right there at the show.
+                        I mean it was like everything you do, it just, it's, that's what was being demoed. I mean it
+                        wasn't the normal way that a business operates.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q51" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                
+                <u who="#a">
+                    <seg xml:id="para111" smil:begin="01:03:03.037" smil:end="01:03:50.813"> Speak, speaking of PC '76 though, it was interesting even on the plane flight
+                        going out there, there were people, some other loca people from a few of the other companies,
+                        like Lee himself and a couple of the people from Proc, Chrememco, was another company that
+                        came out of our club. We were all on the same plane and I think that they kind of always
+                        wondered, you know ha, the two Steve's, what do they think they're doing? What have they
+                        got? You know, inside I, I never, I could have never seen somebody thinking that. They probably
+                        did think that sort of thing but I knew that our computer was ahead of theirs in what it could
+                        do for how much. Steve was the businessman type that could sell it, had the hustle, you know, he
+                        could hustle it and make people hear and understand and had the kind of excitement you also
+                        need. You can have a better product, you can have a better product and still not succeed in
+                        sales. I sort of didn't know that then but I sure know it now.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q52" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para112" smil:begin="01:03:50.813" smil:end="01:04:17.574"> I WAS ACTUALLY GOING TO ASK YOU ABOUT THAT FLAG BECAUSE I'VE HEARD FROM THAT,
+                        IN FACT LEE'S QUOTE WAS THAT HE WAS AFRAID YOU WERE GOING TO TAKE THEM OFF. HE THOUGHT YOU WERE
+                        GOING DOWN A ROAD, JOBS TALKING TO SOMETHING THAT WASN'T GOING TO WORK. DID YOU GET ANY OF THAT
+                        SENSE THAT THEY WERE LOOKING DOWN ON YOUR GUYS? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para113" smil:begin="01:04:17.574" smil:end="01:06:17.901"> I didn't but I was too young. See, I had never been around any business. I
+                        could never have thought that someone would have that sense. The second thing is, the way my
+                        life is organized, it wouldn't have mattered to me. I thought we were going up. This was
+                        the big time in our life. It's interesting to hear that others might have been talking about us
+                        like heading for a big fall. I, a lot of people probably could see, even looking back, I
+                        can see, it was, you know, visible, and a lot of people have always told me that, that, sort of
+                        like Steve was using me a bit. I designed the whole computer and, and and Steve was just,
+                        you know, kind of hustling nothing, selling sugar water or something. But I knew the computer
+                        was the best. It was the one I would have wanted to buy. And, you know, and I was just a
+                        technical person. I could only judge it objectively, you know. And, and you could look at the
+                        results. I mean even the processor technology Sol computer, strangely enough, Lee might have
+                        felt that then. But the Apple I was the first computer that came out that said, a computer for,
+                        this low cost computer for people should be metaphor of a typewriter, kind of. It's got a
+                        TV screen, your home TV and you type on a keyboard. That's how it comes. Up until then the
+                        computers were square boxes with a bunch of toggle switches and LED lights and that was the idea
+                        of a computer because somehow you can attach it to an expensive teletype that clunks away. And I
+                        said, no, just the keyboard and a color TV and that's what it should be. Well, the, sss., so it
+                        looked like a terminal. It looked like a video terminal. That was going to be, that was the
+                        standard for a computer. It's interesting because after the Apple I the next computer, I think,
+                        was designed by Lee. It was the Processor Technology Sol Computer and it followed the same
+                        packaging sell, the same metaphor. It had a keyboard and a video display. And then the third one
+                        was the Apple II. So we were having an impact, even if they thought
+                        we were going to go down for whatever reasons, maybe because we didn't know the business world,
+                        right, maybe we didn't know what kind of computer you had to build to sell it. But sometimes that helped us.</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q53" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para114" smil:begin="01:06:17.901" smil:end="01:06:25.584">HOW WAS THE APPLE II DIFFERENT FROM THE KIT COMPUTERS?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para115" smil:begin="01:06:25.584" smil:end="01:07:18.362"> The Apple II was completely built, in a sense it was the first computer with
+                        a plastic case, you could just take it out of a box, plug it in a wall and open a manual, you
+                        have to attach it to your TV set, takes, you know, a few minutes, still does to this day. And
+                        you can start typing away and doing something. All the other computers, you had to solder
+                        together, bolt them and bolt parts in place, run wires in here. So it was, the idea was, every
+                        computer should be completely built because it doesn't cost that much to build it. And there are
+                        a lot of people out there that don't want to build computers. The hobbyists and the technical
+                        people can buy the kits and build their own. There are a lot of people that would rather not.
+                        When I was in ham radio, I was a ham radio operator in 6th grade, almost every ham radio set was
+                        a kit. You'd buy a low cost but you'd build it yourself. And even nowadays, that's really not
+                        the case for ham radio. Pretty much you buy them completely built and just use different pieces
+                        of equipment. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q54" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para116" smil:begin="01:07:18.362" smil:end="01:07:23.322"> WHY IS IT IMPORTANT THAT IT BE IN A PLASTIC CASE AND YOU CAN PLUG RIGHT IN
+                        AND START. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para117" smil:begin="01:07:23.322" smil:end="01:07:53.059"> The Apple II was only important to be in a plastic case because we wanted to
+                        build a lot of them. We, we investigated you know, wood, metal alternatives, seemed more
+                        likely because it had to have a better appearance, better styling that was more, something you
+                        think belongs in your home. We were going to sell it to thousands of homes, plastic was
+                        sort of the winner for price. Steve found a local company that could do a very cheap plastic
+                        case, cheap jeweling I mean, something we could afford, almost put us out of business. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q55" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para118" smil:begin="01:07:53.059" smil:end="01:07:56.139">YEAH, I HEARD ABOUT THAT, A LITTLE TOO CHEAP.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para119" smil:begin="01:07:56.139" smil:end="01:08:02.435"> A little too cheap but it was a good start. It was the first. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q56" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para120" smil:begin="01:08:02.435" smil:end="01:08:15.906"> WHAT WAS IT LIKE GOING UP TO THE WEST COAST FAIR WHEN THEY CAME BACK AND
+                        THEY WEREN'T EXACTLY POLISHED. WERE YOU PART OF THE DETAIL CREW THAT ENDED UP SANDING AND
+                        REPAINTING THEM? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para121" smil:begin="01:08:15.906" smil:end="01:08:51.786"> Well, when we got our first plastic cases back for the Apple II, just a few
+                        days before the West Coast Computer Fair where we were going to introduce it it was a
+                        pretty sloppy plastic process. It had a lot of problems and we did have to sand them, paint,
+                        touch them up a little bit and it, boy it was, but it was really when we started selling
+                        the computer and delivering it that we had problems getting those plastics made. It was you
+                        know, some little, garage shop type operation that wasn't too reliable and while we were trying
+                        to squeak a few a day out of them, we were getting real plastic, normal plastic tooled
+                        elsewhere. It takes months and months to do that. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q57" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para122" smil:begin="01:08:51.786" smil:end="01:08:55.706">WHAT WAS THE WEST COAST COMPUTER FAIR LIKE?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para123" smil:begin="01:08:55.706" smil:end="01:10:38.676"> West Coast Computer Fair was the best show of its kind in those days.
+                        That was where we introduced the Apple II computer. As soon as we got the, the sheet that said,
+                        you know, here's the West Coast Computer Fair coming. Choose your space for a booth. I said to
+                        Steve, we should apply right now. We should just send the money in, make a phone call and get
+                        this prime space booth. It was like the first one you see when you walk in and we had an
+                        Advent projector, television projectors on the big screens were almost unheard of in that day.
+                        They were new. And we had a local company that had one that would loan it to us for the show.
+                        And we were going to show the Apple II running color, which was unheard of. You see the
+                        Apple II had about ten things none of these other small computers had. So it was going to be the
+                        star of the show. This was the thing we were sure was going to sell thousands of computers a
+                        month. It was so far ahead of anything else. It was just unreal. Just, you know, the world
+                        would have to be introduced to what it was. It's biggest advantage turned out to be, probably
+                        from Steve's thinking that it was pre-built. It was for a less sophisticated type of
+                        person to use.  The we went to the show and there were all these computer companies
+                        that had the other products. There was one that looked good technically, if you read it's ad in
+                        the magazines. And, I forget what it was called. It had a little blurb called - The Cat's Mu. Mu
+                        is the Greek character for micro, microprocessor. But they showed up and they had a bunch, bunch
+                        of junk with tons of boards and tons of chips and it was not manufacturable. So we knew that we
+                        had no competition to worry about for features competitively. I'd sit there and we'd just
+                        explain to people how much it had inside, what this computer could do. We'd run a few
+                        demonstrations. Boy, it had all the crowds, all the interest. And from that show we started
+                        selling the computer right then. It just. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q58" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para124" smil:begin="01:10:38.676" smil:end="01:10:39.956">TURNING POINT THEN?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para125" smil:begin="01:10:39.956" smil:end="01:10:57.148"> It was the, it was our introduction. I wouldn't say it was a turning point.
+                        It met our expectations. Met our expectations which were very high. And we were part of
+                        the real computer world. We were going to sell a lot of these just like we figured we would. And
+                        it wasn't till, maybe a year later, that sales started going downward for a while. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q59" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para126" smil:begin="01:10:57.148" smil:end="01:11:08.780"> CONTRAST THE WEST COAST FAIR WITH THE ATLANTIC CITY FAIR IN TERMS OF YOUR
+                        PRESENTATION, THE HOTEL AND THE TABLE AND THE CARD. WHAT WAS THE DIFFERENCE? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para127" smil:begin="01:11:08.780" smil:end="01:12:26.840"> Okay, by the time the West Coast Computer Fair, we had started the Apple II
+                        as a real corporation. We had, we were about to incorporate. Mike Markkula was kind of running the
+                        business from a business perspective. We had top lawyers for these kind of companies. We had top
+                        marketing people. We had Regis McKenna, PR firm handling PR. That's our appearance, I mean, I
+                        seem to recall we wore suits or at least dressed nicely for the show. We had, you know, a nicely
+                        done booth with drapings and things like that. Everything looked like it was professional even
+                        though we had very few employees, you know, maybe three real ones and three close to signing on.
+                        It looked like we were a real company that could go somewhere, even the logo with its six
+                        color presentation stood out from the others. It gave, gave it a different view. The others
+                        looked pretty much like the sort of thing ham radio operators would go for, you know, just kind
+                        of technological junk and ours was kind of, almost a consumer product, could interest another
+                        class of people, that was real evident. But even the West Coast Computer Fair itself had an
+                        appearance that was just a larger, more, more here, more of a real business than just a hobbyist
+                        get together that the Atlantic City Show had the appearance of.  More legitimate,
+                        more legitimate is probably a good word. I'd like to take a break. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q60" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para128" smil:begin="01:12:26.840" smil:end="01:12:28.200"> YEAH, IT'S GETTING A LITTLE HOT IN HERE.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para129" smil:begin="01:12:57.880" smil:end="01:14:43.914"> Well, as to, as to what difference, you know, Regis McKenna and a
+                        professional PR firm what difference did they make? What difference did Mike Markkula make
+                        with his business image? I'm probably the worst person to ask because I'm the technical sort who
+                        had no knowledge of these sort of things and why they might be important. But they were trying
+                        to set a tone that looked more like a well established company with lots of resources and the
+                        sorts of resources, including people, that were going to go on with future products. You have to
+                        have sort of a, just a certain type of representation. And now, I even know just for other
+                        people in the business world that might deal with you, you have to have a certain look so that
+                        they know you're one of the normal, legitimate businesses and not just a few kids that are going
+                        to vanish, very unpredictable, what are they going to do next? And you know, Mike brought a
+                        lot of that discipline to us and even when it came to operations matters, our soon to be
+                        president, Mike Scott, who had a lot of experience in that field he brought a lot of, the
+                        discipline you need to manufacture the product properly and keep things running that Steve and I
+                        might have just, you know, run from problems, not solved them right away, whatever, taken other,
+                        you know, less appropriate solutions out. Mike Markkula started, started short., started shortly
+                        after the Fair and he had a number of retailers approaching him to sell our computer, where
+                        actually had lawyers draw properly a, a sales agreement. You know, it's kind of like the
+                        industry had never heard of this sort of thing. Companies were just saying, you know, send us a
+                        check and you get, you know, we'll send you the computers, you send us a check and, there were
+                        kind of no agreements. I will do this, I will do that, you'll do the other. So we were kind of
+                        the most legitimate of the, the young companies or at least one of the most legitimate, when,
+                        you know. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q61" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para130" smil:begin="01:14:43.914" smil:end="01:14:50.219"> WERE YOU AWARE OF COMPETITION THAT BEGAN TO COME AROUND. COMMODORE, RADIO
+                        SHACK, DID THAT AFFECT YOU MUCH? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para131" smil:begin="01:14:53.490" smil:end="01:18:29.728"> Okay, well the competition, part of it we, we knew we had a hot product
+                        with the Apple II and we had no money. And before we ran into Mike Markkula and he decided to join
+                        us and loan us a quarter of a million dollars, a lot more of today's dollars before that
+                        happened, which was a very unusual way to finance a company, we didn't have a business plan or
+                        anything, we went out looking for venture capital. We looked at selling our computer to Atari
+                        for a few hundred thousand dollars, you know. Steve thought we could get this kind of money and
+                        I was shocked. I couldn't believe it. We tried to sell it to Commodore and Chuck Pedal came
+                        by our garage one day, pulled out the Apple II, I ran it through its paces. We gave him a demo.
+                        Talked about it. He was interested in it but he went back to Commodore and said, no, we can do a
+                        much cheaper version of a computer. We'll build in a cheap display and we'll use different types
+                        of memories and it doesn't have to have slots to be expandable. It doesn't need color. It
+                        doesn't need paddles. These are all gimmicks. And he, he had a different approach in computers
+                        and it took them a while, Commodore came, came out after the Apple. Radio Shack was third. For
+                        the next couple years, those were the three names in personal computers, meaning, not a kit
+                        computer that you have to build yourself but a computer you can take out of a box and start
+                        using pretty quickly. The competition didn't really bother us because the first computers,
+                        the Radio Shack and the Commodore were so much less than the Apple in terms of features that we
+                        could price ours high, have a very huge profit margin. Everyone wanted an Apple, the only
+                        holdback was, it cost more because we priced it so high. Probably cost us less to build
+                        than either of the others, I'm sure of that. We were afraid of some oncoming competition.
+                        Companies like Hewlett-Packard and I and TI that knew a little bit more about making products
+                        might come in. That was, Steve was particularly anxious and scared that, you know, if you don't
+                        run with a new product every six months you're out of it, you know, because that's the message
+                        you get from marketers of consumer electronic products you whole life is that every six months
+                        there's something new that makes everything else before it, obsolete. We didn't really,
+                        have much competition. In other words, people deciding, retailers deciding they would
+                        rather handle the Commodore line or the Radio Shack line. It was easy to get shelf space in
+                        virtually every computer store in the country and they were all new. They were just opening up
+                        for us.  Now, the competition was resolved. The competition between the Apple and the
+                        Commodore and Radio Shack computers was resolved in, a little over a year's time, because what
+                        happened was the first programs needed very little memory and they ran and played games on
+                        the computers and people liked them, even if they were on a little black and white text computer
+                        or if they were on the nice, colorful Apple. But the programs got more and more sophisticated
+                        and one major thing happened by 1978, the pro., all of a sudden good programs came out like the
+                        first spreadsheet program that could do a whole bunch of calculations up and down several
+                        columns on your TV screen at once. And that was called VisiCalc. But a program like that
+                        needs about 16K of memory. The Apple had the ability for 48K of memory. But the Radio Shack and
+                        the Commodore were both limited in their upper models to 8K only. 8K only wasn't enough for a
+                        good program. So, all of a sudden, we were the only ones that could have this good spreadsheet
+                        program, VisiCalc. And also we invented a floppy disc, around that time, but you need a bunch of
+                        memory in your computer to run a floppy disc. The amount of memory that Radio Shack and the
+                        Commodore had, wasn't enough. They could not easily add a floppy disc. They had to go back to
+                        the drawing boards and that cost them a year and a half, that was Apple I. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q62" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para132" smil:begin="01:18:29.728" smil:end="01:18:39.648"> TELL ME ABOUT THE FLOPPY DISC, THAT WAS YOUR DESIGN. HOW DID THAT PROJECT
+                        START AND WHAT WAS IT LIKE TRYING TO FINISH IT? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para133" smil:begin="01:18:39.648" smil:end="01:22:27.558"> Okay, well, when you, and, you start out with a computer and one of the first
+                        things you do is, well, I'm a hardware designer, among other things. Let's go out and design
+                        some peripherals, some things you can add on to it. For example, a board that will connect it to
+                        a printer so people can print out their results. That was one of the first projects, a board
+                        that will connect it to a modem so it can use phone lines to access larger computers and the
+                        like. There are a few other ideas you can come up with for boards that do different things that
+                        you plug in. Mike Markkula had actually had a personal, a couple of personal projects he'd been
+                        involved with. One was color math for printing color math problems on the screen and that was
+                        because he had a 9 year-old daughter and kind of wanted something that would, you know, fit her
+                        life. But also he had a checkbook program, he had initiated. And he had Randy Wiggington program
+                        it and I helped out a little. And this program let you keep your checkbook. But it had a couple,
+                        couple of problems. One of them was, our computer only handled integers. It didn't handle
+                        numbers like 37.04. So we had to come up with schemes to handle normal dollar and cents amounts.
+                        So he said, we need floating point BASIC. It's a language, a computer language that can handle
+                        numbers with decimal points. The other one he said was, well, it took a long time to run
+                        checkbook. You had to load a cassette tape into a cassette tape player, loaded it, run it into
+                        your Apple II and wait, you'd have to wait a minute while, load it in and it would go - beep,
+                        it's done. Then, you'd have to load in another cassette that had all your check information. And
+                        wait a minute while it read in, - beep, it's done. And now you can run the program. And when
+                        you're all done with the program, you've got to write both of those tapes back out. A long, time
+                        consuming, the biggest part of this simple task of doing, updating a couple checks in your
+                        checkbook was waiting for the cassette tape recorder. So Mike Markkula said, we need a floppy disc
+                        because floppy discs are fast enough. And I had played around with an idea for a real clever
+                        floppy disc controller. I didn't know what they were even. But I just knew, it's like magnetic
+                        tape. You have to write some signals onto a tape, normal type signals that go up and down like
+                        voice. And somehow you have to be able, when it comes back through, you have to be able to read
+                        it and figure out what was there. I, that's all I knew about floppy discs. But Steve got a
+                        couple floppy discs from Shugart and I sat there and with this clever idea for building one with
+                        very few parts and I started working away and partly in the back of my head was, what a
+                        neat excuse to go to Las Vegas, a show in Las Vegas in January 19, 1970, oh, gosh, '77 or '78, 1978.
+                        Well I thought, what a great chance to go to Las Vegas and see the bright lights and the city
+                        that's in movies, if I can show something off. Well, but Mike I can get a floppy disc ready to
+                        demo then. And he said, okay. And boy, it was like, only a couple weeks left. And I worked every
+                        day over Christmas vacation including Christmas, New Years' Day. Randy Wiggington came in,
+                        helped write some software for me. And we got enough going, I got the hardware finished, this
+                        clever little circuit with only five chips did what normally 50 take. And Randy wrote some
+                        programs that, wrote the data onto the disc in the right order and we pulled out our scopes and
+                        we got it working. We went to the show in Las Vegas the floppy disc meant a lot because you
+                        could store several programs on one floppy disc at a reasonable cost. And you could say, - run
+                        Checkbook, run Color map, run Star Wars, run whatever, you know, it was all there, kind of
+                        accessible, a lot of storage, fast. And that really boy that really, that plus the
+                        calculation program, VisiCalc, which was good for small business to keep track of some of their
+                        account information. Those two alone made the Apple the the sure winner in 1978. By the end
+                        of the year we were backlogged hugely. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q63" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para134" smil:begin="01:22:27.558" smil:end="01:22:33.937">WE TALKED TO THEM AND I ASKED, WHY DID YOU WRITE FOR THE APPLE. HE SAID, MEMORY, DISC
+                        DRIVE. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para135" smil:begin="01:22:33.937" smil:end="01:22:48.089"> Yeah, yeah, and, we hadn't totally, we'd, we'd sort of did it for other
+                        reasons but they fit, they fit that product and a few others. quite a few others. So that was
+                        another, almost serendipity. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q64" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para136" smil:begin="01:22:48.089" smil:end="01:22:55.489"> I READ THAT YOU WERE FINISHING IT WHILE YOU WERE IN VEGAS AND YOU WERE GOING OUT TO GAMBLE AND THEN WRITING.
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para137" smil:begin="01:22:55.489" smil:end="01:25:29.902"> Randy Wiggington was just out of high school, real young kid, I mean, all the
+                        five people, I don't think he was out of high school yet. And, it was January '78, we were in
+                        Las Vegas. And I had been to a couple casinos like with my mother- in-law in Reno and I showed
+                        Randy, kind of taught him how to gamble a little, play some craps and, he, he, we'd gamble, stop
+                        in the casinos but we'd walk down to the convention center and I still didn't have the floppy
+                        disc completely working to where you could - run Checkbook and it would run. But I was real
+                        close. And we went down there, all night long, programmed away, programmed, tried this, fixed
+                        that, tried it over and over. We finally got it finished at 6 in the morning. And then Randy
+                        said, - let's make a copy of the disc so we'll have a copy. I said, good idea, you're thinking.
+                        We were so tired that what we did was, we copied a bad disc onto the good one. But, I, I finally
+                        restored it by about 8 in the morning and we actually showed it off. And, yeah, it worked fine
+                        and boy it, it started gaining some interest from that day. And we knew we had a real product.
+                        And then we sort of stopped changing the floppy disc and we started thinking out a strategy for
+                        what type of floppy disc. We I had basically, Shugart, built into the floppy disc, had
+                        about 30 chips. And I just thought, well more efficient. I just bypassed about 20 of them. You
+                        know, I think we wound up only using four of their chips. And so Steve Jobs went to Shugart
+                        and talked them into making us a cheaper version that didn't have as much on it cause they had a
+                        lot of stuff in there that you really didn't need if you, if you implemented the floppy disc the
+                        way we did. And the product was turned out to be very easy to, to take from there into
+                        production. I was so proud of my design, I sat down and did the P., I laid out the PC board
+                        myself, taping little mylar strips. Came in every night. I was in every night till, you know, 2
+                        to 4 in the morning, last technicians have left, taped it up and, oh, I just, it had to be so
+                        pure and have very holes in the board. And then I figured out a way I could make it one less
+                        hole. So I scrapped everything and re-did it for another week. And very, very seldom you
+                        find the engineer, normally an engineer doesn't get the chance to lay out his own
+                        board but give it to somebody else who paid less money and they lay out the PC board. But, one
+                        of the neat things that happens when you cross disciplines and you do the design but you also
+                        lay out the PC board is, you can start the, the PC board layout would be a little bit cleaner if
+                        I changed the design. See, normally the guys laying out a PC board can't dare change the design.
+                        You know it's not in his, his authority, his mandate he's not allowed to do that. So, that
+                        was kind of, kind of interesting and it was neat. And a few people, over the years, noticed how
+                        very, very tiny and tight that board was. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q65" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                
+                <u who="#a">
+                    <seg xml:id="para139" smil:begin="01:25:32.599" smil:end="01:25:46.283"> ... I would start the company he, he didn't say it but it's easy to
+                        figure out that he was going to have 26 percent, Alan, Steve 26, so the two of them together
+                        would control, control all decisions. They didn't quite trust me from that point on in the same
+                        way. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q66" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para140" smil:begin="01:25:46.283" smil:end="01:25:49.008">BUT YOU ALL HAD 26?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para141" smil:begin="01:25:49.008" smil:end="01:25:50.831">Yes, yes, but the two of them....</seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q67" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para142" smil:begin="01:25:50.831" smil:end="01:25:52.775">ANY TWO COULD DO THE JOB.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para143" smil:begin="01:25:52.775" smil:end="01:26:03.207"> Oh, yes, yeah, but the two of them were always working on the business. I was
+                        just like the techni.., technician who might get in the way with my, you know, technical or
+                        whatever, who, unpredictable, more or less predictable reasons. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q68" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para144" smil:begin="01:26:03.207" smil:end="01:26:07.351">HOW IMPORTANT WAS MIKE MARKLE?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para145" smil:begin="01:26:07.351" smil:end="01:27:09.171"> Mike Markkula no question, he's the one who made the company. He doesn't
+                        get the credit because Steve and I are the young kids who came from nowhere, just scrambling
+                        around, building computers, showing them off, becoming successful. It's the story that's easier
+                        to tell and easier to sell. Mike Markkula had a business background. He'd made a million dollars
+                        on a stock option at Intel already. So, you know, he was sort of successful already in his
+                        own right and he's a stable, you know, business type person. But, it's real clear that every
+                        step of the way, he knew how large we could get, he knew what steps we had to take to get there.
+                        He spent a lot of time reading business magazines, financial magazines, you know. He even told
+                        me in the early days his thing was making money and this was how he planned to do it and we, how
+                        large we were going to become. Almost everything he predicted came, came about. You know,
+                        with some of my business experience now, I can look back and see where he was coming from. He
+                        was right on target. But we didn't know this. Steve had no business background neither did I.
+                        You know we just thought if you have a neat product, you can sell it. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q69" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para146" smil:begin="01:27:09.171" smil:end="01:27:28.830"> I READ SOMEWHERE THAT AT THE WEST COAST COMPUTER FAIR HE WAS LOOKING AROUND
+                        FOR COMPETITION. HE SAW PEOPLE IN JEANS AND THAT MEANT THAT YOU GUYS WERE GOING TO MAKE IT
+                        BECAUSE YOU DIDN'T HAVE ANY COMPETITION. DO YOU REMEMBER THAT CONVERSATION OR HOW HE WAS AT THE
+                        WEST COAST FAIR? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para147" smil:begin="01:27:28.830" smil:end="01:27:59.276"> Very, very, very, very vaguely. That, that sounds like Mike Merckle
+                        certainly would have been happy to see that everyone else was in jeans. He did come to me, at
+                        one point though, at the end of the show and he said, - you know, we're going to make it. This
+                        thing's really going to go. But I, I, my impression was that he was coming from the point of
+                        view of, there were so many people in there with that kind of interest, that was why we were
+                        going to make it. Possibly it was that we were business like and the others were hackers and, or
+                        hobbyists, and you know, technical nerds. Maybe that was what he really meant. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q70" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para148" smil:begin="01:27:59.276" smil:end="01:28:09.733"> YOU'VE ALWAYS DESIGNED, APPLE I, APPLE II. WHY DO YOU TAKE PRIDE IN THAT?
+                    </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para149" smil:begin="01:28:12.525" smil:end="01:29:40.105"> I was self taught as a circuit designer. I was, I just looked at manuals of
+                        chips and started teaching myself but I always made it a rule, like a game, to try to get it to
+                        fewer parts is better. And I, I was, I excelled at that. I was very good at all, every design,
+                        everything I ever designed, all sorts of hobby projects, projects I designed for other
+                        companies, moonlighting, things I designed for Hewlett-Packard, the Apple computers, very proud
+                        that my design was much fewer parts than all these other little companies coming out. And I don't know, it just makes you feel that you've done something yourself that's so valuable,
+                        it's motivating you. It gives you a lot of energy. It makes you want to show it to people, talk
+                        about it, go on and design the next thing. You just don't like run out of energy like, mah, it's
+                        just a thing I'm doing, you know, just a job. No, no, no, it's your whole life is, is on
+                        display. You know all my circuits, you know, of, even things besides Apples stuff, though, I
+                        always felt that way about. And it was like an art. I found out later on, when we started Apple,
+                        that there's only about one out of every ten engineers that is really that superb, that just
+                        chases perfection to the nth degree. And those are the few that are like artists. And I was, I
+                        was just one of that type. I just work and work and work for an extra, you know, five hours in
+                        one night to save the tiniest, little bit of code in a program, figure out a way to get past it.
+                        It seemed like you were getting closer to perfection, closer to what God intended. If something
+                        just sort of worked out with almost no parts, it was somehow the way nature meant the world to
+                        turn out. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q71" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para150" smil:begin="01:29:40.105" smil:end="01:29:50.951">HOW IMPORTANT WERE USER GROUPS IN THE GROWTH OF APPLE?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para151" smil:begin="01:29:50.951" smil:end="01:31:24.711"> User groups took on a more formal structure during the years that Apple
+                        was growing. They started out like the Homebrew Club, kind of loose, just a few people,
+                        technical interest they had computers. They, you know, started buying computers. They, they
+                        started growing in size, getting more organized to have separate interest groups and how they
+                        would run their meetings and presentations of affairs going on, you know, presentations of new
+                        products. And I'd say that was very, very important to Apple because Apple was kind of
+                        this new thing that people didn't know what it was yet. Today, it's easy to know what a computer
+                        is, to buy tons of software and programs that tell you what it is and how to use it. Back in
+                        those days you didn't have that kind of communication tool. You got a new product and you want
+                        to talk to people about it, you want to find out how to solve some problems you're having. Go to
+                        a meeting. Ask other people. Or, other people will show you. You can also pick up new
+                        products at the meetings. Also once the games started coming out in 1978 on tape, in 1979
+                        on disc. Boy, that was the place to collect games and copy them even if they were copy
+                        protected, find out ways to crack them and pass them around to the clubs. So the user groups,
+                        user groups really were like a big promotion, largely for the company. They tended to
+                        orient around a computer, an Apple users group. Unlike the Homebrew Computer Club which was just
+                        computers themselves as a technology, the club started being, Commodore Clubs or Apple Clubs,
+                        you know, for one brand of computer. It just worked out better that way. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q72" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para152" smil:begin="01:31:24.711" smil:end="01:31:34.362"> WHEN DID YOU REALIZE THAT APPLE WAS GOING TO BE BIG?  WHEN DID IT FIRST KIND OF HIT YOU? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para153" smil:begin="01:31:34.362" smil:end="01:32:54.865"> Well, when we first started, Mike Markkula said that, well, about once every
+                        ten years some product starts out at zero that never existed before and it grows to a few
+                        billion dollar market in a few years. Just, well maybe only once a decade. And that's the
+                        only time a new start- up company, that didn't exist before, brand new, just new people, can
+                        come out with something good, get a hold of that market and maintain their market position as the
+                        market grows and matures and become a five hundred billion, million dollar company in just a few
+                        years- That is what he predicted for us. In the back of my head I said, well, the more
+                        successful a marketing person you are and Mike Markkula was successful already, the more, the more
+                        successful you are the bigger number you throw out, you know. One guy will say, you can be a ten
+                        million dollar company because, you know, he's acting like he knows what a ten million dollar
+                        company is and he's big. And Mike Markkula was just the best so he was using the biggest number of
+                        all. And I really, you know, didn't have any feeling for what that meant or if it was possible.
+                        And it was really, quite a bit later, 1979, sometime, maybe close to when we were going public,
+                        I was in at Apple and Steve kind of grabbed me. He said, you know, we made more money than our
+                        parents, you know, in their whole lifetime. And maybe he and I were each worth a few million
+                        dollars by then. And it just sort of, right then, I just sort of realized it. I'd never thought
+                        about it till then. It was kind of stunning. And then it just kept going up, things kept
+                        increasing for us. It was... </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q73" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para154" smil:begin="01:32:54.865" smil:end="01:32:57.544">WHAT WAS IT LIKE WHEN IT WENT PUBLIC?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para155" smil:begin="01:32:57.544" smil:end="01:34:14.280"> Hmm., I was starting to lose a bit of interest. The company was becoming a
+                        little more more structured, you know, maybe, maybe 50 to 100 technical people and lab
+                        manager and section managers, you know, I mean, it was kind of, you know, structured and, I, my
+                        need wasn't what it had always been which was, I was the key person to get certain, certain
+                        types of computer peripherals done or write a piece of code or fix this or answer the phone for
+                        somebody. They were jobs that I, I alone could do in the early days. And all of a sudden now, we
+                        had a lot of bright people and you could assign a job to this person, that person. There were 50
+                        jobs going on. I couldn't do them all myself anyway. And I just didn't, this was the company I
+                        had started and it was harder for me to just sort of sit back and do one simple task at a time.
+                        I could do anything I wanted but it felt different. It was a little bit of a depression.
+                        And now we were hot on to the Apple III and the Apple III had very little interest for me. I'm
+                        not business oriented. I didn't need a business computer, which it was. I loved the, the Apple
+                        II, the game machine, plus, I had the most to contribute to the Apple II because I was so
+                        familiar with it, knew how to design new things for it, answer questions for other people in the
+                        company. And we went, but we went public on the strength of the Apple II sales plus
+                        the Apple III as an upcoming product that was going to sell to business. I, you know, I, you
+                        know, who knows. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q74" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para156" smil:begin="01:34:14.280" smil:end="01:34:27.592"> HOW DID YOU FEEL WHEN YOU REALIZED YOU MADE ALL THIS MONEY? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para157" smil:begin="01:34:27.592" smil:end="01:35:28.015"> It did hit me but it, it had hit me slightly before the, you know, going
+                        public and then the stock was really liquid. In other words, what it was worth, you could
+                        sell it even before being public. There were private investors and there was just a procedure
+                        for doing it. We just went public because the timing was sort of right. You know, just
+                        public image of Apple, how much press we'd been getting, we had a new product coming out. It
+                        was the best time to go public and we were going to be forced to go public anyway eventually
+                        just due to the number of shareholders was increasing as employee stock options got fulfilled. I
+                        was Secretary back then and I signed every stock certificate. And I saw how fast people were
+                        giving them away as gifts and people were, employees were getting them. And I knew that the
+                        number of shareholders was going up and up and up and I knew that was going to sort of make it
+                        logical to go public eventually. So, we went public a little sooner than Mike Markkula was
+                        predicting, no, no, no, it will be another couple of years. And as Secretary of the Corporation
+                        I saw all these stock certificates and I thought, I think it's going to be sooner than that. And
+                        it was. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q75" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para158" smil:begin="01:35:28.015" smil:end="01:35:29.429">WELL, THERE WAS THE WOZ PLAN.</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para159" smil:begin="01:35:29.429" smil:end="01:36:26.503"> The Woz Plan, that was really interesting because I had, you know, I had a
+                        private investor that was willing to buy a certain amount of stock from me. And I could get a
+                        couple million dollars and be really, you know, secure for a long time and have a nicer house
+                        and I was ready to do that and I thought, well, if I'm going to sell it to some outside investor
+                        and this company looks like the hot thing going. Why don't I sell it to the inside people who
+                        are helping make the company, you know, and don't really, you know, have stock. So I sold it to
+                        engineers and marketing people at Apple, limited the number of shares they could each buy so
+                        some guy couldn't try to get rich. Yeah, the Woz Plan, sold stock in the company to about 80
+                        people. Just took up a list, you could have two thousand shares each. And it was prices that
+                        was, you know, deliberately, you know, it was low. It was what an investor would have been happy
+                        to give me then. But I, I'd rather do it to insiders and many, many of them, over the years, are
+                        very fulfilling, that they wrote me and said it enabled them to buy a house, was the usual
+                        response. And I always felt good about that. And no one has ever done anything like that. It was
+                        very strange, our, our lawyers were a little scared about letting that one even happen, I think.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q76" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para160" smil:begin="01:36:26.503" smil:end="01:36:36.285"> I HEARD THAT ONE OF THE REASONS TO GO PUBLIC WAS THE NUMBER OF PEOPLE OWNING
+                        SHARES HAD GOTTEN TO THE POINT WHERE THE SEC WAS GOING TO FORCE YOU TO. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para161" smil:begin="01:36:36.285" smil:end="01:37:40.989"> That's, that's sort of how it was explained to me but sometimes it's
+                        explained that they don't necessarily force you but it can, they, they, they can lead you to
+                        file so many reports that you might as well go public anyway.  Also, there was something
+                        besides the Woz Plan which is, they were identified, I think, five people who had been employees
+                        at an earlier date and had not received stock. And their presence, maybe they weren't an
+                        important job in the company but if Bill Fernandez hadn't been there wiring stuff up, joking
+                        with me, chatting with me, I wouldn't have felt good about what I was doing. He was a part of
+                        this little start-up when we were eight people. And there were about five people I
+                        identified in that category that just hadn't been compensated and they were such a key part to
+                        what had happened. And each of them, I think I gave them a large amount of stock, you know,
+                        later on proved important in their lives but they deserved it. You know in my opinion. Mike
+                        Markkula might disagree in business, business ethics sense. No, what they do is not important. It
+                        can just be purchased. You know, it's not some rare element but I don't know, it's, like if I
+                        deserve to be this successful financially then so, so do they. They were a part of it. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q77" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para162" smil:begin="01:37:40.989" smil:end="01:37:58.493">WHAT HAS BEEN THE IMPACT OF PERSONAL COMPUTERS?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para163" smil:begin="01:37:58.493" smil:end="01:39:40.472"> It's, ha, ha, I think it's a tool. There were certain things that we did
+                        before. We kept certain accounts balanced, did certain calculations to see how a business would
+                        go or how our checkbook was going or we kept lists of the records we owned, kept mailing lists
+                        and those things. Did it by pencil and paper. This was just a more efficient tool for a lot less
+                        effort you could get these things done. It helped, it really helped usher in the day of,
+                        computer games or tel, television video games in the home, in your home. It, it just
+                        set a tone that there, there's a new kind of product that can help some people with things
+                        that they can do at home, you know. Or, it's, now it's really a, even a small business tool. It's just less expensive. It allowed us to do a lot more less expensive. For example, when I
+                        designed the Apples, we had one computer in my lab at Hewlett-Packard, one computer, it was a
+                        mini-computer definitely about as powerful as the Apple II when we first introduced
+                        it. And yet it was shared by maybe 80 engineers, what, those who needed it would go and run a
+                        program on it. And, they would take turns, all day long, using that computer. Well, now, you
+                        walk into an engineering lab and almost everybody has a computer on their desk and they just,
+                        and, and the total cost for the entire lab is just as cheap and yet they've got better
+                        computers. It's like the price to performance, it's a rare thing that somehow the price for
+                        the same machine, the price has dropped like a hundred times just in the last 10, 20 years. It's, very few things drop in price, you know, it's really amazing. It all boils down to how
+                        they make chips. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q78" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para164" smil:begin="01:39:40.472" smil:end="01:39:48.784">HOW DID IT CHANGE THE FIELD OF COMPUTING?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para165" smil:begin="01:39:48.784" smil:end="01:41:00.316"> Well, you now, now you had a very, I, I think it, I think it increased the
+                        performance level, what was demanded of a program, to be a very good program. It just
+                        raised, raised the level that a program had to perform at. Maybe because there were so many more
+                        people. If you wrote a program now, it could go to a million people easily if it were very good
+                        and very general. And boy it was worth putting in all sorts of fine finished touches, making
+                        things very understandable, very forgiving. If you make a mistake, it has to be kind of gentle
+                        with you and, you know, not rude and it has to give you ways to escape out and give you options
+                        to try something else, suggest what you might have done. These sort of concepts they were,
+                        they were kind of well known among some people but they weren't, it wasn't, there weren't
+                        resources enough to put them into programs that were just going to be used by computer people in
+                        a computer company who will always be expected to do the right thing. The programs had to become
+                        more personal, you know, have some color attached to them. And this was just a greater
+                        demand on the part of the consumers. The sort of people buying computers were not technical any
+                        more. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q79" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para166" smil:begin="01:41:00.316" smil:end="01:41:13.037"> I READ SOMEWHERE THAT YOU WERE LUCKY BECAUSE YOU WERE IN THE WINDOW WHERE A
+                        PERSON CAN MAKE A DIFFERENCE. </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para167" smil:begin="01:41:13.037" smil:end="01:41:55.800"> Yeah, in computers there was back in the days when you, we'd see
+                        pictures of computers that filled up rooms. Obviously they built huge, huge machinery that
+                        filled up rooms, it took dozens and dozens of people working on a key computer project, for a
+                        company like Univac or IBM and then, all of a sudden, in 1975 and '6 we had this little window
+                        where a significant computer could be designed by one person and it could become a huge
+                        successful computer product. And now here we are again where companies like Apple and other, and
+                        IBM, you know, have to put dozens of man hours in designing the next computer and planning
+                        how to market it. It's like now we've gotten up to, it's a complicated world where one
+                        individual can rarely make a difference any more again. </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q80" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para168" smil:begin="01:41:55.800" smil:end="01:42:04.636"> WHY ARE WE TALKING TO YOU AND NOT TO LEE, STEINER, ALL THOSE OTHER PEOPLE
+                        THAT WERE DESIGNING COMPUTERS AT THAT TIME? </seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para169" smil:begin="01:42:04.636" smil:end="01:42:33.107"> Well, you're talking to me instead of some of the others designing computers
+                        at that time because Apple, as a company, was so successful that it hung on. Apple
+                        sold a lot of computers, kept managing to supply it. My role was, I designed a very, very good
+                        computer with a lot of new features, I thought them out and it turned out, but if it had turned
+                        out a failure, you probably wouldn't be talking to me. If we'd gone under and some other
+                        company's product had been more desirable, Commodore, you'd probably be talking to Chuck Peddle.
+                    </seg>
+                </u>
+            </div>
+            <div type="qa" xml:id="q81" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#q">
+                    <seg xml:id="para170" smil:begin="01:42:33.107" smil:end="01:42:40.202">WHY DO YOU THINK APPLE WAS SUCCESSFUL?</seg>
+                </u>
+                <u who="#a">
+                    <seg xml:id="para171" smil:begin="01:42:40.202" smil:end="01:43:49.896"> I think Apple was successful because it appealed directly to a less
+                        sophisticated user, not a computer technician but somebody who could make use out of the
+                        computer, the sort of person who was smart enough to use a pencil and paper and figure out some
+                        notes, who wanted to make drawings or wanted to play games but a less sophisticated person
+                        technically. We approached them, our advertising said, Apple, the name Apple kind of suggests
+                        something that fits in your home, that anyone can understand. It's not a technical metamorphosis
+                        of, you know, words. We, we appeal to that sort of person. We tried to supply them easy
+                        solutions that were understanding and turned out that, that was a big market that had been
+                        on the scene in prior years. They existed. They bought a lot of our computers and it made us
+                        successful. You know, it might be, some of those steps we could have gone a different direction
+                        and been just as successful but that's the one we went in and we were successful. For example,
+                        for example, we could have stayed a game company forever, you know, and then maybe we'd only be
+                        as successful as Nintendo which is the same as Apple. So, it's, you know, we went in a business
+                        direction and we were successful, but it wasn't the only option. </seg>
+                </u>
+            </div>
+            <div>
+                <incident xml:id="__incident15" xmlns:xml="http://www.w3.org/XML/1998/namespace" smil:begin="01:43:49.896" smil:end="01:43:49.996">
+                    <desc>END OF TRANSCRIPT AND INTERVIEW</desc>
+                </incident>
+            </div>
+
+        </body>
+        <spanGrp type="topic">
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here</span>
+        </spanGrp>
+        
+    </text>
+</TEI>
