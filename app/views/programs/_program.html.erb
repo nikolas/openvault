@@ -4,13 +4,13 @@
 <div class="document <%= render_document_class program %>">  
     <div  class="doc_thumbnail">
       <% unless program["thumbnail_ssm"].nil? %>
-        <%= link_to image_tag(program["thumbnail_ssm"].first), controller: 'programs', action: 'show', id: program.id %>
+        <%= link_to image_tag(program["thumbnail_ssm"].first), controller: 'catalog', action: 'show', id: program.id %>
       <% else %>
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
     </div> 
   <h3 class="index_title">
-    <%= link_to program[:title_tesim].first, controller: 'programs', action: 'show', id: program.id %>
+    <%= link_to program[:title_tesim].first, controller: 'catalog', action: 'show', id: program.id %>
   </h3>  
   <div class="defList_container">
     <% unless program[:summary_tesim].nil? %>

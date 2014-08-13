@@ -1,0 +1,9 @@
+<%#= render_video_player('http://localhost:3000/assets/video_test.mp4', :size => "550x350", :controls => true) %>
+<video id="video-mp4" class="video-js vjs-default-skin vjs-big-play-centered"
+  controls preload="auto" width="550" height="350"
+  data-setup='{}'
+  poster="<%= @ov_asset.videos.first.thumbnail_url %>" >
+  <source src="<%= @ov_asset.videos.first.video_url %>" type='video/mp4' />
+  <source src="<%= @ov_asset.videos.first.video_url %>" type='video/webm' />
+  <source src="<%= @ov_asset.videos.first.video_url %>" type='video/ogg' />
+</video>

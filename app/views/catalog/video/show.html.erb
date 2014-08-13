@@ -13,9 +13,9 @@
       <div class="span9 video_content">
         <div class="sep-line-thin"></div>
         <div class="document_content">
-          <p><%= @video.summary unless @video.title == @video.summary %></p>
-          <%= render partial: 'videos/player' %>
-          <%= render partial: 'videos/images' %>
+          <p><%= @ov_asset.summary unless @ov_asset.title == @ov_asset.summary %></p>
+          <%= render partial: 'catalog/video/player' %>
+          <%= render partial: 'catalog/video/images' %>
           <div class="metadata">
             
             <%= 
