@@ -15,11 +15,11 @@
         <div class="document_content">
           <p><%= display_summary @document unless @document[:title_tesim] == @document[:summary_tesim]%></p>
           
-          <%= render :partial => 'series/program_list' %>
+          <%= render :partial => 'catalog/series/program_list' %>
           <div style="heigh:10px">&nbsp;</div>
-          <%= render :partial => 'series/video_list' %>
+          <%= render :partial => 'catalog/series/video_list' %>
           <div style="heigh:10px">&nbsp;</div>
-          <%= render :partial => 'series/image_list' %>
+          <%= render :partial => 'catalog/series/image_list' %>
 
           <div class="metadata">
             <%#= 
