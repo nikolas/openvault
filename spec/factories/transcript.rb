@@ -10,8 +10,8 @@ FactoryGirl.define do
       end
     end
 
-    after(:build) do |new_series, evaluator|
-      new_series.pbcore.ng_xml = evaluator.pbcore.ng_xml
+    after(:build) do |transcript, evaluator|
+      transcript.pbcore.ng_xml = evaluator.pbcore.ng_xml
     end
 
   end
