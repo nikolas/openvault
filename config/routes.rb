@@ -12,13 +12,20 @@ Openvault::Application.routes.draw do
     get 'remove_item'
   end
 
-  resources :collections, :only => [:index, :show]
-  match 'collection/:slug' => 'collections#show', slug: /[\w-]+/, as: 'collection_slug'
-
   match 'blog' => 'blog#index', :as => 'blog'
 
   root :to => "catalog#home"
 
+  get 'collections/:file', to: redirect("/catalog/%{file}"), constraints: { file: /
+      advocates-advocates |
+      prpe-press-and-the-people |
+      roll-rock-and-roll |
+      sbro-say-brother |
+      tocn-the-ten-o-clock-news |
+      vietnam-the-vietnam-collection |
+      wpna-wpna-war-and-peace-in-the-nuclear-age
+    /x }
+  
   resources :catalog, :only => [:index, :show, :update], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
     member do
       get 'cite'
@@ -57,4 +64,6 @@ Openvault::Application.routes.draw do
   get '/user/:username', to: 'users#show', as: :user
   get '/scholar/:username', to: 'users#scholar', as: :scholar
   get '/scholars', to: 'users#scholars'
+  
+  get '/*path', to: 'override#show', constraints: { :path => /[a-z-\/]+/ }
 end

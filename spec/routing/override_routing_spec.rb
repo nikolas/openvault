@@ -1,18 +1,16 @@
 require "spec_helper"
 
-describe "routing for Static" do
+describe "routing for overrides" do
 
   it 'routes collections' do
-    expect(get: 'collections/advocates-advocates').to route_to controller: 'static', action: 'show', file: 'advocates-advocates'
+    expect(get: 'collections/advocates-advocates').to route_to(
+      controller: 'override', action: 'show', path: 'collections/advocates-advocates')
+    # TODO: Hmm: why doesn't the 'collections' route grab this? Does this not capture redirects?
   end
 
-  it 'blocks weird non-collections' do
-    expect(get: 'collections/.../weird/...').not_to be_routable
+  it 'routes catalog' do
+    expect(get: 'catalog/advocates-advocates').to route_to(
+      controller: 'catalog', action: 'show', id: 'advocates-advocates')
   end
-
-# TODO: Documentation suggests 'redirect_to' should exist, but it doesn't work for me.
-#  it 'redirects series collections' do
-#    expect(get: 'catalog/advocates-advocates').to redirect_to '???'
-#  end
   
 end
