@@ -72,24 +72,24 @@
       <div id="featured-post" class="span7">
         <% feature = Wordpress.get_post(:id => 1582) rescue nil %>
         <% if feature != nil %>
-        <%= image_tag feature.images('thumbnail')['url'], alt: feature.title %>
-        <h3><%= sanitize(feature.title).html_safe %></h3>
-        <p><%= truncate(sanitize(feature.content, tags: %w{a, strong, em, p}) , :length => 800).html_safe %></p>
-        <a href="<%= feature.url %>" class="action_link">Read more</a>
+          <%= image_tag feature.images('thumbnail')['url'], alt: feature.title %>
+          <h3><%= sanitize(feature.title).html_safe %></h3>
+          <p><%= truncate(sanitize(feature.content, tags: %w{a, strong, em, p}) , :length => 800).html_safe %></p>
+          <a href="<%= feature.url %>" class="action_link">Read more</a>
         <% else %>
-        <p>We seem to be having a problem, please check back later.</p>
+          <p>We seem to be having a problem, please check back later.</p>
         <% end %>
       </div>
       <div id="more-posts" class="span5">
         <% posts = Wordpress.get_recent_posts(:count => 3) rescue nil %>
         <% posts.each do |post| %>
           <div class="post row-fluid">
-          	<div class="body span12">
-          		<h3><%= sanitize(post.title).html_safe %></h3>
-          		<p><%= truncate(post.excerpt, :length => 180).html_safe %><a href="<%= post.url %>">Read more</a></p>
-        		</div>
-        	</div>
-      	<% end rescue nil %>
+            <div class="body span12">
+              <h3><%= sanitize(post.title).html_safe %></h3>
+              <p><%= truncate(post.excerpt, :length => 180).html_safe %><a href="<%= post.url %>">Read more</a></p>
+            </div>
+          </div>
+        <% end rescue nil %>
         <% if posts != nil %>
           <a href="/blog" class="action_link" style="display:block;text-align:center;width:100%;">View all</a>
         <% end %>
