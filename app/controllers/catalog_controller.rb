@@ -49,7 +49,6 @@ class CatalogController < ApplicationController
     
     # config.index.show_link = 'title_clip_ssm'
     config.index.show_link = 'title_teim'
-    config.add_index_field 'asset_date_tesim', :label => 'Date Created'
     config.add_index_field 'series_ssm', :label => 'Program'
     config.add_index_field 'media_ssm', :label => 'Media'
     

@@ -83,4 +83,8 @@ module BlacklightHelper
     doc['summary_tesim'].first
   end
 
+  def display_date(doc=@document)
+    return '' if (doc.nil? || doc['date_portrayed_tesim'].try(:first).nil?)
+    doc['date_portrayed_tesim'].first
+  end
 end

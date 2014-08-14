@@ -28,6 +28,6 @@ feature "User views search results" do
     visit "/"
     fill_in 'q', with: @audio.title
     click_button 'search'    
-    expect(page).to have_content("Date:#{@audio.asset_date}")
+    expect(page).to have_content("Date:#{@audio.date_portrayed}")
   end
 end

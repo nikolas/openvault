@@ -23,9 +23,9 @@
         <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= truncate(strip_tags(series[:active_fedora_model_ssi])) %></p></div>
       </div>
     <% end %>
-    <% unless series[:asset_date_tesim].nil? %>
+    <% unless series[:date_portrayed_tesim].nil? %>
       <div class="blacklight-date">
-        <div class="doc_value"><p><span class="doc_label">Date:</span><%= truncate(strip_tags(series[:asset_date_tesim].first)) %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Date:</span><%= truncate(strip_tags(series[:date_portrayed_tesim].first)) %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>
