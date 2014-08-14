@@ -21,7 +21,7 @@ class OpenvaultAsset < ActiveFedora::Base
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "title", self.title, :stored_searchable, :sortable)
     Solrizer.insert_field(solr_document, "summary", self.summary, :stored_searchable)
-    Solrizer.insert_field(solr_document, "asset_date", self.asset_date, :stored_searchable, :dateable)
+    Solrizer.insert_field(solr_document, "date_portrayed", self.date_portrayed, :stored_searchable, :dateable)
     Solrizer.insert_field(solr_document, "thumbnail", self.thumbnail_url, :displayable)
     return solr_document
   end
@@ -42,8 +42,8 @@ class OpenvaultAsset < ActiveFedora::Base
     "no_image.gif"
   end
 
-  def asset_date
-    self.pbcore.asset_date.first
+  def date_portrayed
+    self.pbcore.coverage.date_portrayed.first
   end
 
   # meant to be overridden

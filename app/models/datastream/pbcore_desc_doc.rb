@@ -43,8 +43,6 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
     t.category(:path=>"pbcoreSubject", :attributes=>{:subjectType=>"Category"})
 
-    t.asset_date(:path=>"pbcoreAssetDate", :type => :string)
-
     # Terminology for <pbcoreDescription>
 
     t.summary(:path => 'pbcoreDescription', :attributes => {:descriptionType => "Summary"})
@@ -73,6 +71,12 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
     t.relations(:path => 'pbcoreRelation') {
       t.type(:path => 'pbcoreRelationType')
       t.id(:path => 'pbcoreRelationIdentifier')
+    }
+
+    # Coverage
+    t.coverage(path: 'pbcoreCoverage') {
+      t.date_portrayed(path: 'coverage', :attributes=>{ ref: "DATE_PORTRAYED" })
+      t.type(path: 'coverageType')
     }
 
   end
@@ -112,5 +116,4 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
   def digital
     return self.instantiations.digital.first
   end
-
 end
