@@ -26,5 +26,12 @@ describe PbcoreDescDoc do
         expect(pb.ids_by_source['MARS Program Record ID']).to_not be_nil
       end
     end
+
+    context 'with the :with_date_portrayed trait' do
+      it 'has a pbcoreCoverage coverage with ref=DATE_PORTRAYED' do
+        pb = build(:pbcore_desc_doc, :with_date_portrayed)
+        expect(pb.coverage.date_portrayed).to_not be_nil
+      end
+    end
   end
 end

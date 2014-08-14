@@ -62,7 +62,11 @@ FactoryGirl.define do
         t.titleize
       end
     end
-
-
+    
+    trait :with_date_portrayed do
+      after(:build) do |pbcore, evaluator|
+        pbcore.coverage.date_portrayed = "4/15/1970"
+      end
+    end
   end
 end
