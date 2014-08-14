@@ -297,9 +297,19 @@ class CatalogController < ApplicationController
   end
   
   def show
-    @response, @document = get_solr_response_for_doc_id params[:id]
-    @ov_asset  = ActiveFedora::Base.find(params[:id], cast: true)
-    render action:(@ov_asset.class.to_s.downcase + '/show')
+    override_file_path = "override/#{params[:controller]}/#{params[:id]}.html.erb"
+    
+    @response, @document = get_solr_response_for_doc_id params[:id] rescue nil
+    @ov_asset = ActiveFedora::Base.find(params[:id], cast: true) rescue nil
+    
+    if File.exists?("app/views/#{override_file_path}")
+      flash = {} # Flash message may have been set if search failed... but should that ever happen in production?
+      render file: override_file_path
+    elsif @response && @document && @ov_asset
+      render action: @ov_asset.class.to_s.downcase + '/show'
+    else
+      render text: "The page you were looking for doesn't exist.", status: :not_found # TODO: something fancier?
+    end
 #    respond_to do |format|
 #      format.html #show.html.erb
 #      @document.export_formats.each_key do | format_name |
@@ -308,8 +318,6 @@ class CatalogController < ApplicationController
 #        format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
 #      end
 #    end
-  rescue Blacklight::Exceptions::InvalidSolrID
-    render :text => "The page you were looking for doesn't exist.", :status => :not_found # TODO: something fancier?
   end
   
 #  def cite
