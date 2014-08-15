@@ -28,7 +28,17 @@ feature "User visits catalog#show" do
   
   scenario "program works" do
     program = setup(Program, "artesia/rock_and_roll/program_1.xml")
-    expects(program)
+    expects(program) # no assets
+    
+    video = setup(Video, "artesia/patriots_day/video_1.xml")
+    program.videos << video
+    program.save!
+    expects(program) # 1 asset
+    
+    audio = setup(Audio, "artesia/patriots_day/audio_1.xml")
+    program.audios << audio
+    program.save!
+    expects(program) # multiple assets
   end
   
   scenario "video works" do
