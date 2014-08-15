@@ -48,7 +48,7 @@ class OpenvaultAsset < ActiveFedora::Base
 
   # meant to be overridden
   def relate_asset asset
-    raise "Do not know how to relate #{asset.class}."
+    raise "Do not know how to relate #{self.class} to #{asset.class}."
   end
 
   def media_host
