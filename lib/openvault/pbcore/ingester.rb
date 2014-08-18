@@ -66,30 +66,52 @@ module Openvault::Pbcore
 
     def ingest
       ingest!(continue_on_error: true)
+      ingest_summary
+    end
+
+    def ingest_summary
+      Rails.logger.info "Successfully ingested #{@ingested_records} records."
+      Rails.logger.info "#{@skipped_records} were skipped."
+      Rails.logger.info "#{@updated_records} were updated."
+      Rails.logger.info "#{@replaced_records} were replaced."
+      Rails.logger.info "#{@failed_records} were unable to be ingested."
     end
 
     def ingest!(opts={})
 
       Rails.logger.info("#{ng_pbcore_desc_docs.count} records identified.")
-      with_desc_docs do |doc|
+      @ingested_records = 0
+      @skipped_records = 0
+      @updated_records = 0
+      @replaced_records = 0
+      @failed_records = 0      
+
+      with_desc_docs do |doc_wrapper|
         
         begin
           # If the record exists
-          if doc.model.persisted?
+          if doc_wrapper.model.persisted?
             case @policy
             when :skip_if_exists
-              skip_existing(doc)
+              skip_existing(doc_wrapper)
+              @skipped_records += 1
             when :update_if_exists
-              update_existing(doc)
+              update_existing(doc_wrapper)
+              @updated_records += 1
             when :replace_if_exists
-              replace_existing(doc)
+              replace_existing(doc_wrapper)
+              @replaced_records += 1
             end
           else
             # Record doesn't exist.. just insert it.
-            doc.model.save && (self.pids << doc.model.pid)  
+            doc_wrapper.model.save && (self.pids << doc_wrapper.model.pid) 
+            @ingested_records += 1
           end
+          Rails.logger.info "Successfully ingested #{doc_wrapper.doc.all_ids}."
         rescue Exception => e
           if opts[:continue_on_error]
+            @failed_records += 1
+            Rails.logger.info "Unable to ingest #{doc_wrapper.doc.all_ids}."
             Rails.logger.error(e.message)
             Rails.logger.info(e.message)
           else
