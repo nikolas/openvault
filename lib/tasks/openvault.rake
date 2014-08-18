@@ -7,12 +7,8 @@ namespace :openvault do
     # Command line args:
     # +file+:: path to xml file
 
-    # Open logger for logging output.
-    Rails.logger = Logger.new(STDOUT)
-    Rails.logger.level = 0
-
     policies = Openvault::Pbcore::Ingester::POLICIES
-    raise ArgumentError, "USAGE: rake openvault:ingest file=[filename or glob] if_exists=[#{policies.join '|'}]" unless ENV['file'] 
+    raise ArgumentError, "USAGE: rake openvault:ingest file=[filename or glob] if_exists=[#{policies.join '|'}]" unless ENV['file']
     
     files = Dir[ENV['file']]
     files = Array(ENV['file']) if files.empty?
@@ -20,12 +16,20 @@ namespace :openvault do
     # at the current time, we only ingest xml files
     files.select! {|file| (file =~ /\.xml$/) && !File.directory?(file) }
 
-    Rails.logger.info "Ingesting #{files.count} file(s)"
+    # Set up the ingest logger here so we can log some messages before kicking passing the log to Ingester
+    now = Time.new
+    logger_output = ENV['log_file'] || "./log/openvault_ingest.#{now.strftime('%Y-%m-%d_%H%I%S%Z')}.log"
+    logger = Logger.new(logger_output)
+    logger.level = ENV['log_level'] || 1
+
+    logger.info "Ingesting #{files.count} file(s)"
 
     files.each do |file|
-      Rails.logger.info "Ingesting #{file}"
+      logger.info "Ingesting #{file}"
       xml = File.read(file)
       ingester = Openvault::Pbcore::Ingester.new(xml)
+      # assign the logger to the Ingester effectively combines logs for all files being ingested.
+      ingester.logger = logger
       ingester.policy = ENV['if_exists'].to_sym if ENV['if_exists']
       ingester.ingest
     end

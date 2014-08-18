@@ -17,6 +17,20 @@ module Openvault::Pbcore
       @relation_builder = AssetRelationshipBuilder.new()
 
       @policy = :skip_if_exists
+
+    end
+
+    def logger=(logger)
+      raise(ArgumentError, "First argument must be an instance of Logger, but #{logger.class} was given") unless logger.is_a? Logger
+      @logger = logger
+    end
+
+    def logger
+      unless @logger
+        @logger = Logger.new(STDOUT)
+        @logger.level = 1
+      end
+      @logger
     end
 
     def find_by_pbcore_ids pbcore_ids
