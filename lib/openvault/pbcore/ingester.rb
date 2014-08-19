@@ -17,6 +17,20 @@ module Openvault::Pbcore
       @relation_builder = AssetRelationshipBuilder.new()
 
       @policy = :skip_if_exists
+
+    end
+
+    def logger=(logger)
+      raise(ArgumentError, "First argument must be an instance of Logger, but #{logger.class} was given") unless logger.is_a? Logger
+      @logger = logger
+    end
+
+    def logger
+      unless @logger
+        @logger = Logger.new(STDOUT)
+        @logger.level = 1
+      end
+      @logger
     end
 
     def find_by_pbcore_ids pbcore_ids
@@ -48,18 +62,18 @@ module Openvault::Pbcore
     end
 
     def skip_existing(doc)
-      Rails.logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Skipping due to policy #{policy.inspect}...")
+      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Skipping due to policy #{policy.inspect}...")
     end
 
     def replace_existing(doc)
-      Rails.logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Replacing due to policy #{policy.inspect}...")
+      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Replacing due to policy #{policy.inspect}...")
       doc.model.delete
       doc.model(:reset_from_pbcore => true).save
       pids << doc.model.pid
     end
     
     def update_existing(doc)
-      Rails.logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.doc.all_ids.inspect}. Updating due to policy #{policy.inspect}...")
+      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.doc.all_ids.inspect}. Updating due to policy #{policy.inspect}...")
       doc.model.save
       pids << doc.model.pid
     end
@@ -70,16 +84,16 @@ module Openvault::Pbcore
     end
 
     def ingest_summary
-      Rails.logger.info "Successfully ingested #{@ingested_records} records."
-      Rails.logger.info "#{@skipped_records} were skipped."
-      Rails.logger.info "#{@updated_records} were updated."
-      Rails.logger.info "#{@replaced_records} were replaced."
-      Rails.logger.info "#{@failed_records} were unable to be ingested."
+      logger.info "Successfully ingested #{@ingested_records} records."
+      logger.info "#{@skipped_records} were skipped."
+      logger.info "#{@updated_records} were updated."
+      logger.info "#{@replaced_records} were replaced."
+      logger.info "#{@failed_records} were unable to be ingested."
     end
 
     def ingest!(opts={})
 
-      Rails.logger.info("#{ng_pbcore_desc_docs.count} records identified.")
+      logger.info("#{ng_pbcore_desc_docs.count} records identified.")
       @ingested_records = 0
       @skipped_records = 0
       @updated_records = 0
@@ -107,13 +121,13 @@ module Openvault::Pbcore
             doc_wrapper.model.save && (self.pids << doc_wrapper.model.pid) 
             @ingested_records += 1
           end
-          Rails.logger.info "Successfully ingested #{doc_wrapper.doc.all_ids}."
+          logger.info "Successfully ingested #{doc_wrapper.doc.all_ids}."
         rescue Exception => e
           if opts[:continue_on_error]
             @failed_records += 1
-            Rails.logger.info "Unable to ingest #{doc_wrapper.doc.all_ids}."
-            Rails.logger.error(e.message)
-            Rails.logger.info(e.message)
+            logger.info "Unable to ingest #{doc_wrapper.doc.all_ids}."
+            logger.error(e.message)
+            logger.info(e.message)
           else
             raise e
           end
@@ -136,7 +150,7 @@ module Openvault::Pbcore
           @relation_builder.asset = OpenvaultAsset.find(pid, cast: true)
           @relation_builder.relate
         rescue Exception => e
-          Rails.logger.error("** Error: #{e.message}\n **** Backtrace: #{e.backtrace}")
+          logger.error("** Error: #{e.message}\n **** Backtrace: #{e.backtrace}")
         end
       end
     end
