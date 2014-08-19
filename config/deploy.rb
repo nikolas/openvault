@@ -139,10 +139,10 @@ namespace :link_shared do
 
   desc "Link to shared static content under public directory"
   task :static_content do
-    run "ln -nfs #{shared_path}/public/mpot #{latest_releast}/public/mpot"
-    run "ln -nfs #{shared_path}/public/pdf #{latest_releast}/public/pdf"
-    run "ln -nfs #{shared_path}/public/logos #{latest_releast}/public/logos"
-    run "ln -nfs #{shared_path}/public/sfdb #{latest_releast}/public/sfdb"
+    run "ln -nfs #{shared_path}/public/mpot #{latest_release}/public/mpot"
+    run "ln -nfs #{shared_path}/public/pdf #{latest_release}/public/pdf"
+    run "ln -nfs #{shared_path}/public/logos #{latest_release}/public/logos"
+    run "ln -nfs #{shared_path}/public/sfdb #{latest_release}/public/sfdb"
   end
 
   namespace :initializer do
