@@ -143,6 +143,7 @@ namespace :link_shared do
     run "ln -nfs #{shared_path}/public/pdf #{latest_release}/public/pdf"
     run "ln -nfs #{shared_path}/public/logos #{latest_release}/public/logos"
     run "ln -nfs #{shared_path}/public/sfdb #{latest_release}/public/sfdb"
+    run "ln -nfs #{shared_path}/public/img #{latest_release}/public/img"
   end
 
   namespace :initializer do
