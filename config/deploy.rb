@@ -55,7 +55,9 @@ after 'deploy:update_code', 'link_shared:uploads'
 after 'deploy:upate_code', 'link_shared:blog'
 after 'deploy:update_code', 'link_shared:jetty'
 after 'deploy:update_code', 'link_shared:log'
+after 'deploy:update_code', 'link_shared:static_content'
 after 'deploy:update_code', 'link_shared:initializer:basic_http_auth'
+
 
 
 after 'deploy:update', 'deploy:cleanup'
@@ -133,6 +135,14 @@ namespace :link_shared do
   desc "Link to shared log in latest release"
   task :log do
     run "ln -nfs #{shared_path}/log #{latest_release}/log"
+  end
+
+  desc "Link to shared static content under public directory"
+  task :static_content do
+    run "ln -nfs #{shared_path}/public/mpot #{latest_releast}/public/mpot"
+    run "ln -nfs #{shared_path}/public/pdf #{latest_releast}/public/pdf"
+    run "ln -nfs #{shared_path}/public/logos #{latest_releast}/public/logos"
+    run "ln -nfs #{shared_path}/public/sfdb #{latest_releast}/public/sfdb"
   end
 
   namespace :initializer do
