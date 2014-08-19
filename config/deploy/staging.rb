@@ -1,0 +1,1 @@
+server 'lsopenvault01.wgbh.org', :app, :web, :db, primary: true
