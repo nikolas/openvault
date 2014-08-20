@@ -50,8 +50,6 @@ class Series < OpenvaultAsset
       self.images << asset
     elsif asset.is_a? Transcript
       self.transcripts << asset
-    elsif asset.is_a? OpenvaultAsset
-      nil
     else
       super asset
     end

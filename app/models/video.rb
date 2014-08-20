@@ -59,8 +59,6 @@ class Video < OpenvaultAsset
       self.transcripts << asset
     elsif asset.is_a? Series
       self.series = asset
-    elsif asset.is_a? OpenvaultAsset
-      nil
     else
       super asset
     end
