@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Stock footage</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">2475cd1c3e6c90d3622745f2ee4b521419d4e906</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">169783.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">Cambodia and Laos</pbcoreTitle>
+  <pbcoreTitle titleType="Episode">109</pbcoreTitle>
+  <pbcoreTitle titleType="Element2">An Ordinary Day over Laos</pbcoreTitle>
+  <pbcoreTitle titleType="Series">Vietnam: A Television History</pbcoreTitle>
+  <pbcoreSubject subjectType="Subject Heading">Vietnam War, 1961-1975</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Helicopters</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Helicopter pilots </pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Military art and science</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">United States--History, Military--20th century</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Vietnam War, 1961-1975--Campaigns--Laos</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary" startTime="01:41:31;24" endTime="01:45:54;25">American chopper pilots face enemy gunfire nearly every day over Laos. American pilots are both audience for and participants in the war over Laos. All around are the sights and sounds of war. For miles, the pilots can see men trying to kill each other. In the distance, a cloud of smoke rises from where a bomb has been dropped. Below the pilots is a section of the Ho Chi Minh Trail. On an ordinary day, an American pilot will probably be shot at. Interview with pilot (Tom Hatcher) of chopper carrying newsmen. He says the firing was done by small AK-47s and there is no indication whether he was hit. The chopper was not hit, but another carrying newsmen as well was hit but not seriously. On an ordinary day, about 200 Vietnamese from both sides die, three or four Americans die in choppers or ground action, at least two are shot down. Air view of Laotian jungle. Close up of pilot in cockpit. Air view of South Vietnamese tanks heading into Laos. Close up of chopper gunner, pan down to close up of M60 machine gun. Air view of Ho Chi Minh trail. More air view of jungle including white, billowing smoke from bomb drop. Air view of unnamed river separating Laos and South Vietnam. Close up of whirling blades of chopper. Close up of row of bullets leading into an M60. Interview with co-pilot Don Shaw. He says after he is fired upon he drops a smoke bomb on the area to lead big guns to it and then gets out of the area. Soldiers and newsmen examining damage of press chopper that was hit. Close up of bullet hole in chopper side. This item consists of raw, unpackaged, news materials relating to the US military involvement in Laos.</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Record Reference ID</pbcoreRelationType>
+    <pbcoreRelationIdentifier>CBS 265319</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Laos</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">03/13/1971</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreContributor>
+    <contributor>Hatcher, Tom</contributor>
+    <contributorRole>Interviewee2</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>CBS News</publisher>
+    <publisherRole>Distributor</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_CREDIT="CBS News" RIGHTS_HOLDER="CBS News"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">2475cd1c3e6c90d3622745f2ee4b521419d4e906</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 270 imported 2010-02-10 14:13:23.0">CBS265319.mov</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 486</instantiationDimensions>
+    <instantiationPhysical>Betacam</instantiationPhysical>
+    <instantiationDigital>video/quicktime</instantiationDigital>
+    <instantiationStandard>NTSC</instantiationStandard>
+    <instantiationLocation/>
+    <instantiationMediaType>Moving Image</instantiationMediaType>
+    <instantiationTimeStart>01:41:31;24</instantiationTimeStart>
+    <instantiationDuration>00:04:23;02</instantiationDuration>
+    <instantiationColors>Color</instantiationColors>
+    <instantiationLanguage>eng</instantiationLanguage>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 6</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 7</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Video</essenceTrackType>
+      <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>2vuy Apple FCP Uncompressed 8-bit 4:2:2</essenceTrackEncoding>
+      <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+      <essenceTrackBitDepth>24</essenceTrackBitDepth>
+      <essenceTrackFrameSize annotation="width x height">720 x 486</essenceTrackFrameSize>
+      <essenceTrackAspectRatio annotation="width:height">1.48:1</essenceTrackAspectRatio>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 8</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 2</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 3</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 4</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 5</essenceTrackIdentifier>
+      <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>263.063 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+  </pbcoreInstantiation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Source">/Volumes/bigDisks/20090811_capture_ONLY/Capture Scratch/Untitled Project 1/CBS265319.mov</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 7) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 8) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 6) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : 2vuy Apple FCP Uncompressed 8-bit 4:2:2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 486 / 24 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Source">Betacam supplied directly by, and returned to, CBS News Archives.</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 3) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 4) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) duration : 263.063 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) compression format : in24 24-bit Integer </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) bits/channels : 16 / 1 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 2) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>
