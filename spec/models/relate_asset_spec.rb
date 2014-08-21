@@ -13,35 +13,31 @@ describe 'relate_asset' do
     ]
   end
   
-  # All valid relationships are symmetrical.
-  def no_error(a,b)
-    expect {a.relate_asset b}.not_to raise_error
-    expect {b.relate_asset a}.not_to raise_error
-  end
-  def yes_error(a,b)
-    expect {a.relate_asset b}.to raise_error
-    expect {b.relate_asset a}.to raise_error
-  end
-  
-  def no_errors(parent,children)
-    children.each do |child|
-      no_error parent, child
-    end
-  end
-  def yes_errors(parent,children)
-    children.each do |child|
-      yes_error parent, child
+  def has_error(expect_error, a, b)
+    # All valid relationships are symmetrical.
+    if expect_error
+      expect {a.relate_asset b}.to raise_error
+      expect {b.relate_asset a}.to raise_error
+    else 
+      expect {a.relate_asset b}.not_to raise_error
+      expect {b.relate_asset a}.not_to raise_error
     end
   end
   
-  def relates (parent, good_children)
-    bad_children = @all - good_children
-    no_errors parent, good_children
-    yes_errors parent, bad_children
+  def has_errors(expect_error, object, relations)
+    relations.each do |relation|
+      has_error expect_error, object, relation
+    end
+  end
+  
+  def relates_to(object, good_relations)
+    bad_relations = @all - good_relations
+    has_errors false, object, good_relations
+    has_errors true,  object, bad_relations
   end
   
   it Series do
-    relates @series, [
+    relates_to @series, [
       @program, 
       @image, # a logo?
       @audio, @video # perhaps promo materials for the series as a whole.
@@ -49,7 +45,7 @@ describe 'relate_asset' do
   end
   
   it Program do
-    relates @program, [
+    relates_to @program, [
       @series, # parent
       @video, @audio, @image
       # but not transcript, which would always belong to a video or audio?
@@ -57,25 +53,25 @@ describe 'relate_asset' do
   end
   
   it Video do
-    relates @video, [
+    relates_to @video, [
       @series, @program, #parents
       @image, @transcript]
   end
   
   it Audio do
-    relates @audio, [
+    relates_to @audio, [
       @series, @program, #parents 
       @transcript]
   end
   
   it Image do
-    relates @image, [
+    relates_to @image, [
       @series, @program, @video #parents
     ]
   end
   
   it Transcript do
-    relates @transcript, [
+    relates_to @transcript, [
       @video, @audio #parents
      ]
   end
