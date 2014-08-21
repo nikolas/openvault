@@ -48,11 +48,12 @@ class Program < OpenvaultAsset
   #     - copyright info
 
   def relate_asset asset
-    if asset.is_a? Series
+    case asset
+    when Series
       self.series = asset
-    elsif asset.is_a? Video
+    when Video
       self.videos << asset
-    elsif asset.is_a? Audio
+    when Audio
       self.audios << asset
     else
       super asset

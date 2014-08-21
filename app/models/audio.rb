@@ -39,9 +39,10 @@ class Audio < OpenvaultAsset
 
 
   def relate_asset asset
-    if asset.is_a? Image
+    case asset
+    when Image
       self.images += [Image]
-    elsif asset.is_a? Program
+    when Program
       self.program = asset
     else
       super asset

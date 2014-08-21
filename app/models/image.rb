@@ -8,9 +8,10 @@ class Image < OpenvaultAsset
 
 
   def relate_asset asset
-    if asset.is_a? Video
+    case asset
+    when Video
       self.video = asset
-    elsif asset.is_a? Audio
+    when Audio
       self.audio = asset
     else
       super asset

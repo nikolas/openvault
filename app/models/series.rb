@@ -40,15 +40,16 @@ class Series < OpenvaultAsset
   end
 
   def relate_asset asset
-    if asset.is_a? Program
+    case asset
+    when Program
       self.programs << asset
-    elsif asset.is_a? Video
+    when Video
       self.videos << asset
-    elsif asset.is_a? Audio
+    when Audio
       self.audios << asset
-    elsif asset.is_a? Image
+    when Image
       self.images << asset
-    elsif asset.is_a? Transcript
+    when Transcript
       self.transcripts << asset
     else
       super asset
