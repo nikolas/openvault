@@ -7,7 +7,26 @@ describe Openvault::Pbcore::Ingester do
 
   before(:all) { Fixtures.cwd("#{fixture_path}/pbcore") }
 
-  describe '.ingest' do
+  describe '#logger' do
+    it 'returns an instance of Logger' do
+      ingester = Openvault::Pbcore::Ingester.new
+      expect(ingester.logger).to be_a Logger
+    end
+  end
+
+  describe '#logger=' do
+    it 'raises an error if you attempt to pass something other than Logger' do
+      ingester = Openvault::Pbcore::Ingester.new
+      expect{ ingester.logger = true }.to raise_error ArgumentError
+    end
+
+    it 'sets @logger to an instance of Logger' do
+      ingester = Openvault::Pbcore::Ingester.new
+      expect{ ingester.logger = Logger.new(STDOUT) }.to_not raise_error
+    end
+  end
+
+  describe '#ingest' do
 
 
     context 'with a subset of related assets that have been transformed from Artesia xml' do

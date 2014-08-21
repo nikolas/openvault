@@ -29,33 +29,5 @@
       </ul>
     </div>
   <% end %>
-  <%# instantiations = nil %>
-  <% unless pbcore.instantiations.blank? %>
-    <div class="instantiation">
-      <h3 class="toggler">Media</h3>
-      <% pbcore.instantiations.each do |inst| %>
-        <div>
-          <%= inst.inspect %>
-          <%#
-            inst_map = {'formatDuration' => 'Duration', 'formatStandard' => 'Standard', 'formatPhysical' => 'Physical format', 'formatGenerations' => 'Type'}
-           %> 
-
-          <%# inst[:to_xml].xpath('pbcore:pbcoreFormatID[pbcore:formatIdentifierSource="wgbh.org/mars/barcode/"]/pbcore:formatIdentifier', 'pbcore' => 'http://www.pbcore.org/PBCore/PBCoreNamespace.html').map { |e| e.content }.to_a.uniq.each do |e| %>
-            <div>
-              <!-- <strong>Barcode</strong> -->
-              <%#= e %>
-            </div>
-          <%# end %>
-
-          <%# inst_map.each do |key, label| %>
-            <%# inst[key].to_a.uniq.each do |e| %>
-              <div><strong><%#= label %></strong> <%#= e %></div> 
-            <%# end %>
-          <%# end %>
-        </div>
-      <% end %> 
-    </div>
-  <% end %>
-
 </div>
   

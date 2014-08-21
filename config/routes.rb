@@ -65,5 +65,5 @@ Openvault::Application.routes.draw do
   get '/scholar/:username', to: 'users#scholar', as: :scholar
   get '/scholars', to: 'users#scholars'
   
-  get '/*path', to: 'override#show', constraints: { :path => /[a-z-\/]+/ }
+  get '/*path', to: 'override#show', constraints: { :path => /[a-z\/-]+/ }
 end
