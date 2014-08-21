@@ -4,7 +4,6 @@ class Series < OpenvaultAsset
   has_many :videos, :property => :series_video
   has_many :audios, :property => :series_audio
   has_many :images, :property => :series_image
-  has_many :transcripts, :property => :series_transcript
  
   
   # metadata for Series
@@ -49,8 +48,6 @@ class Series < OpenvaultAsset
       self.audios << asset
     when Image
       self.images << asset
-    when Transcript
-      self.transcripts << asset
     else
       super asset
     end

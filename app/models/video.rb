@@ -52,14 +52,14 @@ class Video < OpenvaultAsset
 
   def relate_asset asset
     case asset
-    when Image
-      self.images << asset
-    when Program
-      self.program = asset
-    when Transcript
-      self.transcripts << asset
     when Series
       self.series = asset
+    when Program
+      self.program = asset
+    when Image
+      self.images << asset
+    when Transcript
+      self.transcripts << asset
     else
       super asset
     end

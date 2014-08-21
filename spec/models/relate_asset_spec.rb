@@ -16,8 +16,8 @@ describe 'relate_asset' do
   def has_error(expect_error, a, b)
     # All valid relationships are symmetrical.
     if expect_error
-      expect {a.relate_asset b}.to raise_error
-      expect {b.relate_asset a}.to raise_error
+      expect {a.relate_asset b}.to raise_error, "Expected failure, but it worked: #{a.class} forward to #{b.class}"
+      expect {b.relate_asset a}.to raise_error, "Expected failure, but it worked: #{b.class} back to #{a.class}"
     else 
       expect {a.relate_asset b}.not_to raise_error
       expect {b.relate_asset a}.not_to raise_error
@@ -47,7 +47,7 @@ describe 'relate_asset' do
   it Program do
     relates_to @program, [
       @series, # parent
-      @video, @audio, @image
+      @video, @audio #, @image
       # but not transcript, which would always belong to a video or audio?
     ]
   end
@@ -66,7 +66,8 @@ describe 'relate_asset' do
   
   it Image do
     relates_to @image, [
-      @series, @program, @video #parents
+      @series, @video #parents
+      # @program, 
     ]
   end
   

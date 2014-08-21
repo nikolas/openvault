@@ -3,7 +3,7 @@ class Image < OpenvaultAsset
   include SharedMethods
   
   belongs_to :video, :property => :image_video
-  belongs_to :audio, :property => :image_audio
+  #belongs_to :program, :property => :image_audio
   belongs_to :series, :property => :series_image
 
 
@@ -11,8 +11,10 @@ class Image < OpenvaultAsset
     case asset
     when Video
       self.video = asset
-    when Audio
-      self.audio = asset
+    #when Program
+    #  self.program = asset
+    when Series
+      self.series = asset
     else
       super asset
     end
