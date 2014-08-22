@@ -21,7 +21,7 @@
           <% end %>
         </h3>
         <p>
-          <%= truncate(custom_collection.summary, :length => 450).html_safe %>
+          <%= safe_truncate custom_collection.summary, length: 450 %>
         </p>
       </div>
     </div>
