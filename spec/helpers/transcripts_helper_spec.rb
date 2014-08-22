@@ -3,7 +3,7 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 require 'openvault/pbcore'
 include TranscriptsHelper
 
-describe "transforming tei xml to html" do
+describe "transform_to_html" do
   before(:all) do
     Fixtures.cwd("#{fixture_path}/pbcore")
     @video = Video.create

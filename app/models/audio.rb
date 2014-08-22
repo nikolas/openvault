@@ -12,7 +12,7 @@ class Audio < OpenvaultAsset
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "audio_url", self.audio_url, :displayable)
     Solrizer.insert_field(solr_document, "audio_images", self.audio_images, :displayable)
-    Solrizer.insert_field(solr_document, "audio_transcript", self.audio_transcripts, :displayable)
+    Solrizer.insert_field(solr_document, "audio_transcripts", self.audio_transcripts, :displayable)
     return solr_document
   end
 
