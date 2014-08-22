@@ -9,7 +9,7 @@
         </div>
     	</div>
     	<div class="body span8">
-    		<h3><%= link_to post.title.html_safe, post.url %></h3>
+    		<h3><%= link_to post.title, post.url %></h3>
     		<div><%= safe_truncate post.excerpt, length: 120 %></div>
 				<br />
         <div class="author">By <%= post.author_name %></div>

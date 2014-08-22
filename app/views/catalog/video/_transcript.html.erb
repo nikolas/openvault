@@ -3,7 +3,9 @@
     <div id="transcript-box" class="span4 secondary-datastream-container">
       <h2>Transcript</h2>
       <div class="datastream-actions">
-        <%= link_to "<i class='icon-print'></i>".html_safe, "/programs/#{@document[:slug]}/print", :class => "print action", :target => "_blank" %>
+        <%= link_to "/programs/#{@document[:slug]}/print", :class => "print action", :target => "_blank" do %>
+          <i class='icon-print'></i>
+        <% end %>
         <form action="#" method="GET" class="q_field datastream-action-search">
           <%= text_field_tag :q, nil, :class => "q", :placeholder => "Search Transcript" %>
           <%= image_submit_tag("/assets/magnifying-glass.gif", :alt => "Search Transcript", :class => 'submit') %>
