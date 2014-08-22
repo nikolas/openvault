@@ -4,7 +4,7 @@
     <h4>Video assets</h4>
     <div class="asset-list video-list">
       <% @ov_asset.videos.each do |video| %>
-        <%= render partial: 'programs/partials/video_multi', locals: {:video => video} %>
+        <%= render partial: 'catalog/program/partials/video_multi', locals: {:video => video} %>
       <% end %>
     </div>  
   <% end %>
@@ -13,7 +13,7 @@
     <h4>Audio assets</h4>
     <div class="asset-list audio-list">
       <% @ov_asset.audios.each do |audio| %>
-        <%= render partial: 'programs/partials/audio_multi', locals: {:document => audio} %>
+        <%= render partial: 'catalog/program/partials/audio_multi', locals: {:document => audio} %>
       <% end %>
     </div>
   <% end %>

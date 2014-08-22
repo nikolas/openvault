@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Original footage</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">8b6275dd5d1c41416caa93058eacf71be17b7ae3</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">208412.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Element2">Steve Jobs Interview</pbcoreTitle>
+  <pbcoreTitle titleType="Program">Paperback Computer, The</pbcoreTitle>
+  <pbcoreTitle titleType="Series">Machine That Changed the World, The </pbcoreTitle>
+  <pbcoreTitle titleType="Episode">102</pbcoreTitle>
+  <pbcoreSubject subjectType="Personalities">Jobs, Steven, 1955-</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">Apple Computer, Inc.</pbcoreSubject>
+  <pbcoreSubject subjectType="Subject Heading">NeXT Computer, Inc.</pbcoreSubject>
+  <pbcoreDescription descriptionType="Summary" startTime="01:0:00;00" endTime="01:50:07;27">Interview with Apple and NeXT co-founder Steve Jobs.</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="Part I">179281</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="Part II">179283</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tape</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="Part III">F17</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tape</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="Part II">F16</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tape</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="Part I">F15</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+    <pbcoreRelationIdentifier annotation="Part III">179282</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CHILD</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">ac99f3707a11b13f224eba8494a6e52d1147b305</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CHILD</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">433b644ef74d50ffca1374d733a083a10fde432d</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CONTAINS</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">9397311e1ffcd52f9114bb48f8cb6fac6f7b7f66</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PLACEDGR</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">951f08a74950c8d50daa8b28fe906f81ea7be9a3</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">CHILD</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">26d570f10b671613aeaa8959322af70c8e32b36c</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="EVENT_LOCATION">Redwood City, CA</coverage>
+    <coverageType>Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">05/14/1990 </coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+  <pbcoreContributor>
+    <contributor>Hone, Robert</contributor>
+    <contributorRole>Producer2</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Palfreman, John</contributor>
+    <contributorRole>Executive Producer2</contributorRole>
+    <contributorRole>Producer2</contributorRole>
+  </pbcoreContributor>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS RIGHTS_CREDIT="A BBC-TV/WGBH Boston Co_Production" RIGHTS_TYPE="All" RIGHTS_HOLDER="A BBC-TV/WGBH Boston Co_Production"/>
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">8b6275dd5d1c41416caa93058eacf71be17b7ae3</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2011-09-16 09:36:50.0">Steve_Jobs_Interview_Edited.mov</instantiationIdentifier>
+    <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 486</instantiationDimensions>
+    <instantiationPhysical>Betacam</instantiationPhysical>
+    <instantiationDigital>video/quicktime</instantiationDigital>
+    <instantiationStandard>NTSC</instantiationStandard>
+    <instantiationLocation>Archives (department)</instantiationLocation>
+    <instantiationMediaType>Moving Image</instantiationMediaType>
+    <instantiationTimeStart>01:0:00;00</instantiationTimeStart>
+    <instantiationDuration>00:50:07;27</instantiationDuration>
+    <instantiationColors>Color</instantiationColors>
+    <instantiationLanguage>eng</instantiationLanguage>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Video</essenceTrackType>
+      <essenceTrackIdentifier>Video Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>v210 Apple FCP Uncompressed 10-bit 4:2:2</essenceTrackEncoding>
+      <essenceTrackPlaybackSpeed unitsOfMeasure="frames per second">29.97</essenceTrackPlaybackSpeed>
+      <essenceTrackBitDepth>24</essenceTrackBitDepth>
+      <essenceTrackFrameSize annotation="width x height">720 x 486</essenceTrackFrameSize>
+      <essenceTrackAspectRatio annotation="width:height">1.48:1</essenceTrackAspectRatio>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>3007.941 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Audio</essenceTrackType>
+      <essenceTrackIdentifier>Audio Track 1</essenceTrackIdentifier>
+      <essenceTrackEncoding>sowt 16-bit Little Endian</essenceTrackEncoding>
+      <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+      <essenceTrackBitDepth>16</essenceTrackBitDepth>
+      <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+      <essenceTrackDuration>3007.938 seconds</essenceTrackDuration>
+    </instantiationEssenceTrack>
+  </pbcoreInstantiation>
+  <pbcoreAnnotation annotationType="Source">Edited together file from three betacam tapes</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) frames per second : 29.97 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Source">/Volumes/bigDisks/Muraszko Projects/Capture Scratch/Digitizing!/Steve_Jobs_Interview_Edited.mov</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : v210 Apple FCP Uncompressed 10-bit 4:2:2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) samples per second : 48000 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) duration : 3007.941 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) compression format : sowt 16-bit Little Endian </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) duration : 3007.938 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) start time : 0.000 seconds </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 486 / 24 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) compression format : v210 Apple FCP Uncompressed 10-bit 4:2:2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Movie Quality">(Video Track 1) width/height/depth : 720 / 486 / 24 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 1) bits/channels : 16 / 2 </pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">Part I</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">Part II</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">Part III</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">Part II</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">Part I</pbcoreAnnotation>
+  <pbcoreAnnotation annotationType="SOURCE">Part III</pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

@@ -1,12 +1,12 @@
 <% asset_style = @ov_asset.transcripts.present? ? 'asset-content' : '' %>
 
 <div class="<%= asset_style %> row-fluid">
-  <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+  <div class="span7 datastream primary-datastream datastream-video datastream-video-mp4">
     <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-phone"
       width="100%" height="350" controls preload="auto"
       poster="<%= @ov_asset.thumbnail_url %>">
       <source src="<%= @ov_asset.video_url %>" type='video/mp4' />
     </video>
   </div>
-  <%= render partial: 'catalog/video/transcript' %>
+  <%= render partial: 'catalog/transcript' %>
 </div>
