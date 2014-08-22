@@ -7,6 +7,8 @@ FactoryGirl.define do
       # This will be available in in `evaluator.pbcore` in after(:build) hook below.
       pbcore do
         pbcore_desc_doc = PbcoreDescDoc.new
+        pbcore_desc_doc.asset_type = 'blah blah TRANSCRIPT blah blah'
+        pbcore_desc_doc
       end
     end
 

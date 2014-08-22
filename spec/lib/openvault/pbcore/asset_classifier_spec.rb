@@ -7,12 +7,18 @@ describe Openvault::Pbcore::AssetClassifier do
   describe 'factories' do
     
     def classify(object)
-      Openvault::Pbcore::AssetClassifier.classify(object.pbcore)
+      Openvault::Pbcore::AssetClassifier.classify object.pbcore
     end
     
     it Series do
-      expect(classify build :series).to be(Series)
+      expect(classify build :series).to be Series
     end
+    
+    it Transcript do
+      expect(classify build :transcript).to be Transcript
+    end
+    
+    # TODO: others
     
   end
   
