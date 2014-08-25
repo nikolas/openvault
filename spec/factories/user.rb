@@ -32,6 +32,10 @@ FactoryGirl.define do
     admin true
   end
 
+  factory :bioless_user, parent: :user do
+    bio ""
+  end
+
   factory :user_with_custom_collection, parent: :scholar_user do
     after(:create) do |user|
       user.save!
