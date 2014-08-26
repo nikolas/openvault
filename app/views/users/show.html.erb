@@ -33,6 +33,10 @@
         <% else %>
           <h4><%= [@user.primary_title, @user.primary_organization].join('').html_safe %></h5>
         <% end %>
+
+        <% @user.orgs.each do |org| %>
+          <h4><%= org.name unless org.name == @user.primary_organization %>
+        <% end %>
       </div>
     </div>
 
