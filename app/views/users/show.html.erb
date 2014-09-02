@@ -31,7 +31,11 @@
         <% if @user.primary_title.present? && @user.primary_organization.present? %>
           <h4><%= [@user.primary_title, @user.primary_organization].join(' &mdash; ').html_safe %></h4>
         <% else %>
-          <h4><%= [@user.primary_title, @user.primary_organization].join('').html_safe %></h5>
+          <h4><%= [@user.primary_title, @user.primary_organization].join('').html_safe %></h4>
+        <% end %>
+
+        <% @user.orgs.reject { |org| org.name == @user.primary_organization }.each do |org| %>
+          <h4><%= org.name %></h4>
         <% end %>
       </div>
     </div>
@@ -45,31 +49,43 @@
               <li class="active">
                 <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
               </li>
+              <li>
+                <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
+              </li>
+            <% else %>
+              <li class="active">
+                <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
+              </li>
             <% end %>
             <li>
-              <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
-            </li>
-            <li>
-              <a href="#about" class="about-link" data-toggle="tab">About</a>
+              <% if @user.bio.present? %>
+                <a href="#about" class="about-link" data-toggle="tab">About</a>
+              <% end %>
             </li>
           </ul>
           
           <div class="tab-content">
-            <div id="custom-collections" class="tab-pane active fade in">
-              <% if @user.collections %>
-                <%= render partial: 'custom_collection_list' %>
-              <% else %>
-                <%= "#{@user.full_name} does not have any collections yet." %>
-              <% end %>
-            </div>
+            <% if @user.role == "scholar" %>
+              <div id="custom-collections" class="tab-pane active fade in">
+                <% if @user.collections.present? %>
+                  <%= render partial: 'custom_collection_list' %>
+                <% else %>
+                  <%= "#{@user.full_name} does not have any collections yet." %>
+                <% end %>
+              </div>
+            <% end %>
 
-            <div id="digitization-requests" class="tab-pane fade in">
-              <% if @user.sponsorships.present? %>
-                <%= render partial: 'user_items' %>
-              <% else %>
-                <%= "#{@user.full_name} does not have any digitization requests." %>
-              <% end %>
-            </div>
+            <% if @user.role == "scholar" %>
+              <div id="digitization-requests" class="tab-pane fade in">
+            <% else %>
+              <div id="digitization-requests" class="tab-pane active fade in">
+            <% end %>
+                <% if @user.sponsorships.present? %>
+                  <%= render partial: 'user_items' %>
+                <% else %>
+                  <%= "#{@user.full_name} does not have any digitization requests." %>
+                <% end %>
+              </div>
 
             <div id="about" class="tab-pane fade in">
                 <p><%= simple_format(@user.bio) %></p>

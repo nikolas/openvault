@@ -84,7 +84,7 @@ module Openvault::Pbcore
     end
 
     def ingest_summary
-      logger.info "Successfully ingested #{@ingested_records} records."
+      logger.info "#{@inserted_records} were inserted."
       logger.info "#{@skipped_records} were skipped."
       logger.info "#{@updated_records} were updated."
       logger.info "#{@replaced_records} were replaced."
@@ -94,7 +94,7 @@ module Openvault::Pbcore
     def ingest!(opts={})
 
       logger.info("#{ng_pbcore_desc_docs.count} records identified.")
-      @ingested_records = 0
+      @inserted_records = 0
       @skipped_records = 0
       @updated_records = 0
       @replaced_records = 0
@@ -119,7 +119,7 @@ module Openvault::Pbcore
           else
             # Record doesn't exist.. just insert it.
             doc_wrapper.model.save && (self.pids << doc_wrapper.model.pid) 
-            @ingested_records += 1
+            @inserted_records += 1
           end
           logger.info "Successfully ingested #{doc_wrapper.doc.all_ids}."
         rescue Exception => e
