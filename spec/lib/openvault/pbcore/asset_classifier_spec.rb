@@ -10,7 +10,7 @@ describe Openvault::Pbcore::AssetClassifier do
       Openvault::Pbcore::AssetClassifier.classify object.pbcore
     end
     
-    [Series, Program, Transcript].each do |klass|
+    [Series, Program, Video, Audio, Image, Transcript].each do |klass|
       it klass do
         symbol = klass.name.underscore.to_sym
         expect(classify build symbol).to be klass
