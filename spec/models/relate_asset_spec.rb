@@ -30,14 +30,15 @@ describe 'relate_asset' do
     end
   end
   
-  def relates_to(object, good_relations)
+  def relates_to(object, parents, children)
+    good_relations = parents + children
     bad_relations = @all - good_relations
     has_errors false, object, good_relations
     has_errors true,  object, bad_relations
   end
   
   it Series do
-    relates_to @series, [
+    relates_to @series, [], [
       @program, 
       @image, # a logo?
       @audio, @video # perhaps promo materials for the series as a whole.
@@ -45,36 +46,29 @@ describe 'relate_asset' do
   end
   
   it Program do
-    relates_to @program, [
-      @series, # parent
+    relates_to @program, [@series], [
       @video, @audio, @image,
       @transcript # Direct relationship would be a little unusual.
     ]
   end
   
   it Video do
-    relates_to @video, [
-      @series, @program, #parents
-      @image, @transcript]
+    relates_to @video, [@series, @program], [@image, @transcript]
   end
   
   it Audio do
-    relates_to @audio, [
-      @series, @program, #parents 
-      @transcript]
+    relates_to @audio, [@series, @program], [@transcript]
   end
   
   it Image do
-    relates_to @image, [
-      @series, @program, @video #parents
-    ]
+    relates_to @image, [@series, @program, @video], []
   end
   
   it Transcript do
     relates_to @transcript, [
       @program, # Direct relationship would be a little unusual. 
-      @video, @audio #parents
-     ]
+      @video, @audio
+     ], []
   end
   
 end
