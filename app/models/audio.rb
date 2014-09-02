@@ -2,7 +2,8 @@ class Audio < OpenvaultAsset
   include SharedMethods
 
   COVERAGE = ['complete', 'clip', 'segment']
-  
+
+  has_many :transcripts, :property => :transcript_audio  
   has_many :images, :property => :image_audio
   has_many :transcripts, :property => :transcript_audio
   belongs_to :program, :property => :audio_program
@@ -11,7 +12,7 @@ class Audio < OpenvaultAsset
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "audio_url", self.audio_url, :displayable)
-    #Solrizer.insert_field(solr_document, "audio_images", self.audio_images, :displayable)
+    Solrizer.insert_field(solr_document, "audio_transcripts", self.audio_transcripts, :displayable)
     return solr_document
   end
 
@@ -22,7 +23,11 @@ class Audio < OpenvaultAsset
   def title
     titles_by_type['Item3'] || titles_by_type['Segment3'] || titles_by_type['Element3'] || titles_by_type['Clip'] || self.pbcore.asset_type.first
   end
-  
+ 
+  def audio_transcripts
+    self.transcripts.map{ |t| t.pid }
+  end
+ 
   def thumbnail_url
     # specific image lookup
     self.images.first.image_url unless self.images.empty?
