@@ -47,8 +47,8 @@ describe 'relate_asset' do
   it Program do
     relates_to @program, [
       @series, # parent
-      @video, @audio #, @image
-      # but not transcript, which would always belong to a video or audio?
+      @video, @audio, @image,
+      @transcript # Direct relationship would be a little unusual.
     ]
   end
   
@@ -66,13 +66,13 @@ describe 'relate_asset' do
   
   it Image do
     relates_to @image, [
-      @series, @video #parents
-      # @program, 
+      @series, @program, @video #parents
     ]
   end
   
   it Transcript do
     relates_to @transcript, [
+      @program, # Direct relationship would be a little unusual. 
       @video, @audio #parents
      ]
   end
