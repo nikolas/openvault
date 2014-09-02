@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Transcript - Interview4</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">9397311e1ffcd52f9114bb48f8cb6fac6f7b7f66</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">209697.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Program">Paperback Computer, The</pbcoreTitle>
+  <pbcoreTitle titleType="Episode">102</pbcoreTitle>
+  <pbcoreTitle titleType="Series">Machine That Changed the World, The</pbcoreTitle>
+  <pbcoreDescription descriptionType="Summary4">Steve Jobs Interview transcript.</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">BELONGTO</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">8b6275dd5d1c41416caa93058eacf71be17b7ae3</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">9397311e1ffcd52f9114bb48f8cb6fac6f7b7f66</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 21 imported 2011-10-07 11:25:24.0">Steve_Jobs_Edited_transcript.xml</instantiationIdentifier>
+    <instantiationLocation>Archives (department)</instantiationLocation>
+    <instantiationMediaType>Text</instantiationMediaType>
+    <instantiationLanguage>eng</instantiationLanguage>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="12"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>
+
