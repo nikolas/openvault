@@ -1,6 +1,5 @@
 FactoryGirl.define do
   
-  # A factory for instances of Series model.
   factory :transcript do
 
     ignore do
@@ -11,6 +10,8 @@ FactoryGirl.define do
         pbcore_desc_doc
       end
     end
+    
+    # TODO: bad copy-and-paste: https://github.com/afred/openvault/issues/670
 
     after(:build) do |transcript, evaluator|
       transcript.pbcore.ng_xml = evaluator.pbcore.ng_xml

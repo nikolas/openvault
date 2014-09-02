@@ -14,6 +14,8 @@ FactoryGirl.define do
       end
     end
 
+    # TODO: bad copy-and-paste: https://github.com/afred/openvault/issues/670
+    
     after(:build) do |new_series, evaluator|
       new_series.pbcore.ng_xml = evaluator.pbcore.ng_xml
     end
