@@ -1,6 +1,8 @@
 require 'spec_helper'
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
+Capybara.asset_host = 'http://localhost:3000'
+
 describe 'Digitization Requests Tab for User Profile Page' do
   before(:each) do
     @user = create(:user, :password => 'password', :password_confirmation => 'password')
@@ -78,11 +80,10 @@ describe 'Digitization Requests Tab for User Profile Page' do
   end
 
   it "clicking 'Unfollow' removes artifact from dashboard" do
-    @sponsorship.confirm!
     visit user_root_path
     click_link("Digitization Requests")
     within("tr#sponsorship-#{@sponsorship.id} .actions") do
-      click_on("Unfollow")
+      click_button("Unfollow")
     end
     visit user_root_path
     click_link("Digitization Requests")
