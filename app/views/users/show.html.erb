@@ -33,6 +33,10 @@
         <% else %>
           <h4><%= [@user.primary_title, @user.primary_organization].join('') %></h4>
         <% end %>
+
+        <% @user.orgs.reject { |org| org.name == @user.primary_organization }.each do |org| %>
+          <h4><%= org.name %></h4>
+        <% end %>
       </div>
     </div>
 
