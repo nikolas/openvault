@@ -2,6 +2,7 @@ class Transcript < OpenvaultAsset
 
   belongs_to :video, :property => :transcript_video
   belongs_to :audio, :property => :transcript_audio
+  belongs_to :program, :property => :transcript_program
 
   has_metadata 'tei', :type => TeiDatastream 
   
@@ -17,6 +18,8 @@ class Transcript < OpenvaultAsset
       self.video = asset
     when Audio
       self.audio = asset
+    when Program
+      self.program = asset
     else
       super asset
     end
