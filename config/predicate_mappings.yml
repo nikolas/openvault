@@ -60,6 +60,9 @@
     :audio_program: audioProgram
     :transcript_video: transcriptVideo
     :transcript_audio: transcriptAudio
+    :transcript_program: transcriptProgram
     :image_video: imageVideo
     :image_audio: imageAudio
+    :image_program: imageProgram
+    :program_image: programImage
     

@@ -51,16 +51,15 @@ class Video < OpenvaultAsset
   # - formats
 
   def relate_asset asset
-    if asset.is_a? Image
-      self.images << asset
-    elsif asset.is_a? Program
-      self.program = asset
-    elsif asset.is_a? Transcript
-      self.transcripts << asset
-    elsif asset.is_a? Series
+    case asset
+    when Series
       self.series = asset
-    elsif asset.is_a? OpenvaultAsset
-      nil
+    when Program
+      self.program = asset
+    when Image
+      self.images << asset
+    when Transcript
+      self.transcripts << asset
     else
       super asset
     end
