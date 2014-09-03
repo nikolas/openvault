@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+  <pbcorePublisher>
+    <publisher>some publisher</publisher>
+    <publisherRole>some distributor</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
+    <rightsEmbedded>
+      <WGBH_RIGHTS
+        RIGHTS="some rights"
+        RIGHTS_COVERAGE="some coverage"
+        RIGHTS_CREDIT="some credit"
+        RIGHTS_HOLDER="some holder"
+        RIGHTS_NOTE="some note"
+        RIGHTS_TYPE="some type"
+      />
+    </rightsEmbedded>
+  </pbcoreRightsSummary>
+</pbcoreDescriptionDocument>
