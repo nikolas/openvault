@@ -77,9 +77,9 @@ class OpenvaultAsset < ActiveFedora::Base
     # If licensing requires us to link back
     case rights_holder
     when 'CBS News' 
-      'http://www.cbsnews.com/'
+      'Footage Courtesy of <a href="http://www.cbsnews.com/">CBS News</a>'.html_safe
     when 'ABC News VideoSource'
-      'http://abcnews.go.com/'
+      'Footage Courtesy of <a href="http://abcnews.go.com/">ABC News</a>'.html_safe
     else
       nil
     end
