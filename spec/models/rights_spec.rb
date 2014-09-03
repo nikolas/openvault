@@ -9,7 +9,10 @@ describe 'Rights methods' do
 
   %w(rights coverage credit holder note type).each do |method|
     it method do
+      # low level:
       expect(asset.pbcore.rights.send(method)).to eq ["some #{method}"]
+      # high level:
+      expect(asset.send("rights_#{method}")).to eq "some #{method}"
     end
   end
   

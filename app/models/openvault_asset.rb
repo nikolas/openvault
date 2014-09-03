@@ -54,4 +54,30 @@ class OpenvaultAsset < ActiveFedora::Base
   def media_host
     "http://mlamedia01.wgbh.org/openvault"
   end
+  
+  def rights_rights
+    rights(:rights)
+  end
+  def rights_coverage
+    rights(:coverage)
+  end
+  def rights_credit
+    rights(:credit)
+  end
+  def rights_holder
+    rights(:holder)
+  end
+  def rights_note
+    rights(:note)
+  end
+  def rights_type
+    rights(:type)
+  end
+  
+  private
+  
+  def rights(detail)
+    self.pbcore.rights.send(detail).first
+  end
+  
 end
