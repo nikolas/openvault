@@ -59,6 +59,15 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.type(:path => {:attribute => 'descriptionType'})
     }
 
+    t.rights(:path => 'pbcoreRightsSummary/rightsEmbedded/WGBH_RIGHTS') {
+      t.rights(:path => '@RIGHTS')
+      t.coverage(:path => '@RIGHTS_COVERAGE')
+      t.credit(:path => '@RIGHTS_CREDIT')
+      t.holder(:path => '@RIGHTS_HOLDER')
+      t.note(:path => '@RIGHTS_NOTE')
+      t.type(:path => '@RIGHTS_TYPE')
+    }
+    
     t.instantiations(:path => "pbcoreInstantiation") {
       t.media_type(:path => 'instantiationMediaType')
       t.digital(path: 'instantiationDigital')
