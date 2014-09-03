@@ -73,6 +73,17 @@ class OpenvaultAsset < ActiveFedora::Base
   def rights_type
     rights(:type)
   end
+  def rights_link
+    # If licensing requires us to link back
+    case rights_holder
+    when 'CBS News' 
+      'http://www.cbsnews.com/'
+    when 'ABC News VideoSource'
+      'http://abcnews.go.com/'
+    else
+      nil
+    end
+  end
   
   private
   

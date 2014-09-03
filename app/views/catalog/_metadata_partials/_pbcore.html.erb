@@ -52,7 +52,13 @@
     <% end %>
 
     <% if asset.rights_holder %>
-      <p><strong>Holder</strong> <%= asset.rights_holder %></p>
+      <p><strong>Holder</strong> <%=
+        if asset.rights_link
+          link_to asset.rights_holder, asset.right_link
+        else
+          asset.rights_holder
+        end
+      %></p>
     <% end %>
 
     <% if asset.rights_note %>
