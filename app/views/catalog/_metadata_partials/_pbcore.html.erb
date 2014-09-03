@@ -1,4 +1,7 @@
-<% pbcore = OpenvaultAsset.find(@document.id).pbcore %>
+<% 
+  asset = OpenvaultAsset.find(@document.id)
+  pbcore = asset.pbcore 
+%>
 <div class="basic">
   <div class="source">
     <div>
@@ -30,4 +33,33 @@
     </div>
   <% end %>
 </div>
-  
+
+<% if asset.rights_rights || asset.rights_coverage || asset.rights_credit ||
+      asset.rights_holder || asset.rights_note || asset.rights_type %>
+  <div>
+    <h4>Rights</h4>
+    <% if asset.rights_rights %>
+      <p><strong>Rights</strong> <%= asset.rights_rights %></p>
+    <% end %>
+
+    <% if asset.rights_coverage %>
+      <p><strong>Coverage</strong> <%= asset.rights_coverage %></p>
+    <% end %>
+
+    <% if asset.rights_credit %>
+      <p><strong>Credit</strong> <%= asset.rights_credit %></p>
+    <% end %>
+
+    <% if asset.rights_holder %>
+      <p><strong>Holder</strong> <%= asset.rights_holder %></p>
+    <% end %>
+
+    <% if asset.rights_note %>
+      <p><strong>Note</strong> <%= asset.rights_note %></p>
+    <% end %>
+
+    <% if asset.rights_type %>
+      <p><strong>Type</strong> <%= asset.rights_type %></p>
+    <% end %>  
+  </div>
+<% end %>
