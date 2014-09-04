@@ -30,6 +30,8 @@ Fixtures.load([
   "artesia/joyce_chen/multiple_models.xml",
   "artesia/joyce_chen/image_1.xml",
   
+  "artesia/vietnam/from_cbs.xml",
+  
   'pbcore_rights.xml'
 ]) do |fixture|
 
