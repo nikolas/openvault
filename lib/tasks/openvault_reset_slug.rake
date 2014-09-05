@@ -14,7 +14,7 @@ namespace :openvault do
     solr_id = ENV[id_param]
     slug = ENV[slug_param]
 
-    solr = RSolr.connect url: 'http://localhost:8983/solr'
+    solr = RSolr.connect url: 'http://localhost:8983/solr' # TODO: Should I get this from a configuration?
     def solr.find_by_id(solr_id)
       self.get('select', params: {q: "id:#{solr_id}"})['response']['docs'].first
     end
