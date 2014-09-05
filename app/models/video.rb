@@ -45,6 +45,9 @@ class Video < OpenvaultAsset
     original_file_name.gsub(/\.mov/, ".mp4")
   end
 
+  def login_required?
+    self.rights_holder == 'CBS News'
+  end
   #Video Metadata
   # - Length
   # - People involved
