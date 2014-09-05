@@ -19,17 +19,17 @@
   <div class="defList_container">
     <% unless audio[:summary_tesim].nil? %>
       <div class="blacklight-summary">
-        <div class="doc_value"><p><%= truncate(strip_tags(audio[:summary_tesim].first), :length => 250) %></p></div>
+        <div class="doc_value"><p><%= safe_truncate audio[:summary_tesim].first %></p></div>
       </div>
     <% end %>
     <% unless audio[:active_fedora_model_ssi].nil? %>
       <div class="blacklight-model">
-        <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= truncate(strip_tags(audio[:active_fedora_model_ssi])) %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= safe_truncate audio[:active_fedora_model_ssi] %></p></div>
       </div>
     <% end %>
     <% unless audio[:date_portrayed_tesim].nil? %>
       <div class="blacklight-date">
-        <div class="doc_value"><p><span class="doc_label">Date:</span><%= truncate(strip_tags(audio[:date_portrayed_tesim].first)) %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Date:</span><%= safe_truncate audio[:date_portrayed_tesim].first %></p></div>
       </div>
     <% end %>
     <% index_field_names.each do |solr_fname| -%>

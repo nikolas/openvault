@@ -9,7 +9,7 @@
     	</div>
     	<div class="body span8">
     		<h3><%= link_to scholar.full_name, scholar.url %></h3>
-    		<div><%= truncate(scholar.bio, :length => 120).html_safe unless scholar.bio.blank? %></div>
+    		<div><%= safe_truncate scholar.bio, length: 120 %></div>
 				<br />
         <div class="author"><%= scholar.work_string %></div>
         <div class="date"><%= pluralize(scholar.owned_collections.length, 'custom collection') %></div>
