@@ -4,7 +4,6 @@ class Series < OpenvaultAsset
   has_many :videos, :property => :series_video
   has_many :audios, :property => :series_audio
   has_many :images, :property => :series_image
-  has_many :transcripts, :property => :series_transcript
  
   
   # metadata for Series
@@ -40,18 +39,15 @@ class Series < OpenvaultAsset
   end
 
   def relate_asset asset
-    if asset.is_a? Program
+    case asset
+    when Program
       self.programs << asset
-    elsif asset.is_a? Video
+    when Video
       self.videos << asset
-    elsif asset.is_a? Audio
+    when Audio
       self.audios << asset
-    elsif asset.is_a? Image
+    when Image
       self.images << asset
-    elsif asset.is_a? Transcript
-      self.transcripts << asset
-    elsif asset.is_a? OpenvaultAsset
-      nil
     else
       super asset
     end

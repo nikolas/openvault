@@ -13,7 +13,7 @@ class Video < OpenvaultAsset
     Solrizer.insert_field(solr_document, "program_id", self.program.pid, :displayable) unless self.program.nil?
     Solrizer.insert_field(solr_document, "video_url", self.video_url, :displayable)
     Solrizer.insert_field(solr_document, "video_images", self.video_images, :displayable)
-    Solrizer.insert_field(solr_document, "video_transcript", self.video_transcripts, :displayable)
+    Solrizer.insert_field(solr_document, "video_transcripts", self.video_transcripts, :displayable)
     return solr_document
   end
 
@@ -54,16 +54,15 @@ class Video < OpenvaultAsset
   # - formats
 
   def relate_asset asset
-    if asset.is_a? Image
-      self.images << asset
-    elsif asset.is_a? Program
-      self.program = asset
-    elsif asset.is_a? Transcript
-      self.transcripts << asset
-    elsif asset.is_a? Series
+    case asset
+    when Series
       self.series = asset
-    elsif asset.is_a? OpenvaultAsset
-      nil
+    when Program
+      self.program = asset
+    when Image
+      self.images << asset
+    when Transcript
+      self.transcripts << asset
     else
       super asset
     end

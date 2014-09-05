@@ -1,7 +1,7 @@
 <% asset_style = @ov_asset.transcripts.present? ? 'asset-content' : '' %>
 
 <div class="<%= asset_style %> row-fluid">
-  <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
+  <div class="span7 datastream primary-datastream datastream-video datastream-video-mp4">
     <% if @ov_asset.login_required? && !user_signed_in?%>
       <div>
         <div class="error" style="position: absolute; width: 350px;"><%# TODO: background shade. Move to scss. %>
@@ -18,5 +18,5 @@
       </video>
     <% end %>
   </div>
-  <%= render partial: 'catalog/video/transcript' %>
+  <%= render partial: 'catalog/transcript' %>
 </div>

@@ -10,7 +10,7 @@
   <div id="doc_<%= @document[:id] %>">
     <%= render partial: 'catalog/document_heading' %>
     <div class="row-fluid">
-      <div class="span9 series_content">
+      <div class="span11 series_content">
         <div class="sep-line-thin"></div>
         <div class="document_content">
           <p><%= display_summary @document unless @document[:title_tesim] == @document[:summary_tesim]%></p>

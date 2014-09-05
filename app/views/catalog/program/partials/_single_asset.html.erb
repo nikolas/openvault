@@ -1,8 +1,7 @@
 <% asset_style = @ov_asset.videos.first.transcripts.present? ? 'asset-content' : '' %>
 
 <div class="<%= asset_style %> row-fluid">
-  <div class="span8 datastream primary-datastream datastream-video datastream-video-mp4">
-    <%= render partial: 'programs/partials/video', locals: {:document => @document} %>
+  <div class="span7 datastream primary-datastream datastream-video datastream-video-mp4">
+    <%= render partial: 'catalog/program/partials/video', locals: {:document => @document} %>
   </div>
-  <%= render partial: 'programs/partials/transcript', locals: {:document => @document} %>
 </div>
