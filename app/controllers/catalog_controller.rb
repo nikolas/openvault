@@ -296,11 +296,8 @@ class CatalogController < ApplicationController
   end
   
   def show
+    lookup params[:id]
     override_file_path = "override/#{params[:controller]}/#{params[:id]}.html.erb"
-    
-    @response, @document = get_solr_response_for_doc_id params[:id] rescue nil
-    @ov_asset = ActiveFedora::Base.find(params[:id], cast: true) rescue nil
-    
     if File.exists?("app/views/#{override_file_path}")
       flash = {} # Flash message may have been set if search failed... but should that ever happen in production?
       render file: override_file_path
@@ -324,8 +321,7 @@ class CatalogController < ApplicationController
 #    render :layout => 'blank'
 #  end
   def print
-    @response, @document = get_solr_response_for_doc_id
-    @ov_asset  = ActiveFedora::Base.find(params[:id], cast: true)
+    lookup params[:id]
     render action:(@ov_asset.class.to_s.downcase + '/print')
   end
 #  def embed
@@ -344,4 +340,11 @@ class CatalogController < ApplicationController
 #    end
 #  end
 
+  private
+  
+  def lookup id
+    @response, @document = get_solr_response_for_doc_id id rescue nil
+    pid = @document[:pid] rescue id
+    @ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil
+  end
 end 
