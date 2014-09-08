@@ -26,7 +26,8 @@ module Openvault::Pbcore
           doc.titles_by_type.keys.grep(/^(Element|Item|Segment|Clip)/).none?},
       
       'Transcript' => lambda {|doc|
-        asset_type(doc).match(/transcript/i)},
+        asset_type(doc).match(/transcript/i)} ||
+          asset_type(doc).match(/logs/i)},
       
       'Video' => lambda {|doc|
         media_type(doc).match(/^moving image$/i) || 

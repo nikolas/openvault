@@ -50,7 +50,8 @@
 		</div>
         </xsl:template>
 
-	<xsl:template match="tei:u" mode="teibody">
+	<xsl:template match="tei:u[@who]" mode="teibody">
+            <xsl:if test="string-length($persNames[@xml:id=$who]/tei:persName) > 0">
 		<div>
 			<xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
 			<xsl:variable name="who" select="substring(@who,2)" />
@@ -69,6 +70,7 @@
 			<xsl:apply-templates mode="teibody" />
 			<xsl:text>&#xa;</xsl:text>
 		</div>
+            </xsl:if>
         </xsl:template>
 
         <xsl:template match="tei:seg" mode="teibody">
