@@ -4,16 +4,16 @@ namespace :openvault do
   desc "Reset the slug on a single record"
   task :reset_slug => :environment do |t, args|
     OLD_ID_PARAM = 'old_id'
-    ART_ID_PARAM = 'art_id'
+    OTHER_ID_PARAM = 'other_id'
     SLUG_PARAM = 'new_slug'
     
-    if (!ENV[OLD_ID_PARAM] && !ENV[ART_ID_PARAM]) || !ENV[SLUG_PARAM]
-      raise ArgumentError, "USAGE: rake openvault:reset_slug #{OLD_ID_PARAM}=[id]|#{ART_ID_PARAM}=[art_id] #{SLUG_PARAM}=[slug]"
-    elsif ENV[OLD_ID_PARAM] && ENV[ART_ID_PARAM]
-      raise ArgumentError, "Specify either #{OLD_ID_PARAM} or #{ART_ID_PARAM}, not both."
+    if (!ENV[OLD_ID_PARAM] && !ENV[OTHER_ID_PARAM]) || !ENV[SLUG_PARAM]
+      raise ArgumentError, "USAGE: rake openvault:reset_slug #{OLD_ID_PARAM}=[id]|#{OTHER_ID_PARAM}=[other_id] #{SLUG_PARAM}=[slug]"
+    elsif ENV[OLD_ID_PARAM] && ENV[OTHER_ID_PARAM]
+      raise ArgumentError, "Specify either #{OLD_ID_PARAM} or #{OTHER_ID_PARAM}, not both."
     end
     
-    reset_slug old_id: ENV[OLD_ID_PARAM], art_id: ENV[ART_ID_PARAM], slug: ENV[SLUG_PARAM]    
+    reset_slug old_id: ENV[OLD_ID_PARAM], other_id: ENV[OTHER_ID_PARAM], slug: ENV[SLUG_PARAM]    
   end
   
   desc "Reset slugs on multiple records"
@@ -25,8 +25,8 @@ namespace :openvault do
     File.open(ENV[FILE_PARAM], "r") do |f|
       f.each_line do |line|
         line.chomp!
-        slug, art_id = line.split "\t" # This is arbitrary, but matches the order of the file we have.
-        reset_slug art_id: art_id, slug: slug
+        slug, other_id = line.split "\t" # This is arbitrary, but matches the order of the file we have.
+        reset_slug other_id: other_id, slug: slug
       end
     end
   end
@@ -49,9 +49,9 @@ namespace :openvault do
       raise "Expected exactly one match on #{OLD_ID_PARAM}=#{old_id}, not #{docs.count}." if docs.count != 1
       docs.first
     end
-    def solr.find_by_art_id(art_id)
-      docs = self.query('all_ids_tesim',art_id)
-      raise "Expected exactly one match on #{ART_ID_PARAM}=#{art_id}, not #{docs.count}." if docs.count != 1
+    def solr.find_by_other_id(other_id)
+      docs = self.query('all_ids_tesim',other_id)
+      raise "Expected exactly one match on #{OTHER_ID_PARAM}=#{other_id}, not #{docs.count}." if docs.count != 1
       docs.first
     end
     solr
@@ -59,7 +59,7 @@ namespace :openvault do
 
   def reset_slug(opts)
     old_id = opts[:old_id]
-    art_id = opts[:art_id]
+    other_id = opts[:other_id]
     slug = opts[:slug]
     
     solr = solr_connection
@@ -71,8 +71,8 @@ namespace :openvault do
 
     if old_id
       doc = solr.find_by_id(old_id)
-    elsif art_id
-      doc = solr.find_by_art_id(art_id)
+    elsif other_id
+      doc = solr.find_by_other_id(other_id)
       old_id = doc['id']
     end
     raise "Solr doc with id '#{old_id}' already has a PID (#{doc[PID]})." if doc[PID]
@@ -94,7 +94,7 @@ namespace :openvault do
     ds = asset.create_datastream(ActiveFedora::Datastream, DSID, blob: slug, mimeType: 'text/plain')
     ds.save
 
-    puts "(Successfully changed '#{art_id || old_id}' to '#{slug}'.)"
+    puts "(Successfully changed '#{other_id || old_id}' to '#{slug}'.)"
   end
 
 end
