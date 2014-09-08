@@ -1,5 +1,17 @@
 require 'rsolr'
 
+solr = RSolr.connect url: 'http://localhost:8983/solr' # TODO: Should I get this from a configuration?
+def solr.find_by_id(old_id)
+  docs = self.get('select', params: {q: "id:#{old_id}"})['response']['docs']
+  raise "Expected exactly one match on #{OLD_ID_PARAM}=#{old_id}, not #{docs.count}." if docs.count != 1
+  docs.first
+end
+def solr.find_by_art_id(art_id)
+  docs = self.get('select', params: {q: "all_ids_tesim:#{art_id}"})['response']['docs']
+  raise "Expected exactly one match on #{ART_ID_PARAM}=#{art_id}, not #{docs.count}." if docs.count != 1
+  docs.first
+end
+
 namespace :openvault do
   desc "Reset the slug on a single record"
   task :reset_slug => :environment do |t, args|
@@ -16,18 +28,6 @@ namespace :openvault do
     old_id = ENV[OLD_ID_PARAM] rescue nil
     art_id = ENV[ART_ID_PARAM] rescue nil
     slug = ENV[SLUG_PARAM]
-
-    solr = RSolr.connect url: 'http://localhost:8983/solr' # TODO: Should I get this from a configuration?
-    def solr.find_by_id(old_id)
-      docs = self.get('select', params: {q: "id:#{old_id}"})['response']['docs']
-      raise "Expected exactly one match on #{OLD_ID_PARAM}=#{old_id}, not #{docs.count}." if docs.count != 1
-      docs.first
-    end
-    def solr.find_by_art_id(art_id)
-      docs = self.get('select', params: {q: "all_ids_tesim:#{art_id}"})['response']['docs']
-      raise "Expected exactly one match on #{ART_ID_PARAM}=#{art_id}, not #{docs.count}." if docs.count != 1
-      docs.first
-    end
     
     begin
       solr.find_by_id(slug)
