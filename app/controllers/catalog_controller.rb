@@ -344,7 +344,7 @@ class CatalogController < ApplicationController
   
   def lookup id
     @response, @document = get_solr_response_for_doc_id id rescue nil
-    pid = @document[:pid] rescue id
+    pid = @document[:pid] || id
     @ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil
   end
 end 
