@@ -12,7 +12,7 @@ feature "User visits catalog#show" do
     @video.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/video_3.xml")
     @transcript = Transcript.new
     @transcript.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/transcript_1.xml")
-    @transcript.tei.ng_xml = Fixtures.raw("artesia/patriots_day/transcript_tei_1.xml")
+    @transcript.tei.ng_xml = Fixtures.raw("../tei/Patriots_Day_tei.xml")
     @video.transcripts << @transcript
     @video = OpenvaultAsset.find(@video.pid, cast: true)
   end
