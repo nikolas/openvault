@@ -49,9 +49,6 @@ end
 
 Fixtures.load('mars/programs_1.xml')
 
-# Tei fixture
-Fixtures.load('artesia/patriots_day/transcript_tei_1.xml')
-
 # Empty samples for testing ability to ingest standalone pbcoreDescriptionDocument nodes
 # as well as pbcoreDescriptionDocument nodes nested inside of pbcoreCollection nodes.
 Fixtures.load([
@@ -61,3 +58,11 @@ Fixtures.load([
 ])
 
 Fixtures.load('artesia/rock_and_roll/related_assets_subset.xml')
+
+# Tei fixtures
+Fixtures.cwd('spec/fixtures')
+Fixtures.load(['tei/Patriots_Day_tei.xml',
+  'tei/Joyce_Chen_log_without_speaker.xml',
+  'tei/Joyce_Chen_log_with_speaker.xml'
+])
+

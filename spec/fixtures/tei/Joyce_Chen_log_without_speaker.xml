@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:smil="http://www.w3.org/2001/SMIL20/Language"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <teiHeader>
+        <profileDesc>
+            <langUsage>
+                <language ident="eng">Enter three-letter language code in the quotes (e.g., "eng")
+                </language>
+            </langUsage>
+            <settingDesc>
+                <setting>
+                    <name type="place" ref="">Enter interview location here, add reference is
+                        available </name>
+                </setting>
+            </settingDesc>
+            <particDesc>
+                <listPerson>
+                    <person xml:id="q">
+                        <persName xml:lang="eng"></persName>
+                    </person>
+                    <person xml:id="a">
+                        <persName xml:lang="vie"></persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+            <textClass>
+                <keywords scheme="http://www.merlot.org/merlot/categories.htm">
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                </keywords>
+                <keywords scheme="http://authorities.loc.gov">
+                    <term rdf:resource="" xml:id="">Enter LOC authority here </term>
+                    <term rdf:resource="" xml:id="">Enter LOC authority here </term>
+                    <term rdf:resource="" xml:id="">Enter LOC authority here </term>
+                    <term rdf:resource="" xml:id="">Enter LOC authority here </term>
+                </keywords>
+                <keywords scheme="http://www.geonames.org">
+                    <term rdf:resource="" xml:id="">Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="">Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="">Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="">Enter Geonames authority here </term>
+                </keywords>
+                <keywords scheme="http://viaf.org">
+                    <term rdf:resource="" xml:id="">Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="">Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="">Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="">Enter VIAF name authority here </term>
+                </keywords>
+                <keywords scheme="http://en.wikipedia.org">
+                    <term rdf:resource="" xml:id="">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <u/>
+            </div>
+            <div type="qa" xml:id="q0"/>
+            <div type="qa" xml:id="q1"/>
+            <div type="qa" xml:id="q2"/>
+            <div type="qa" xml:id="q3"/>
+            <div type="qa" xml:id="q4"/>
+            <div type="qa" xml:id="q5"/>
+            <div type="qa" xml:id="q6"/>
+            <div type="qa" xml:id="q7"/>
+            <div type="qa" xml:id="q8"/>
+            <div type="qa" xml:id="q9">
+                <u who="#q"><seg xml:id="para1">The first image is of Chinese wind chimes. A title
+                        indicates "Joyce Chen Cooks" and then "Egg Foo Yung." A subsequent title
+                        gives us Chinese lettering and the translation "How are you?" To the right
+                        of the chimes we see Chen and the camera, without any cutting, moves in on
+                        her at the kitchen counter. Chen welcomes the viewer, explains that the
+                        Chinese words offer the "How are you?" salutation, and declares that her
+                        goal is to "encourage you to do more cooking." Today, she explains, she will
+                        show how to make Egg Foo Yung that is comparable to restaurant-style fare
+                        but that can be done easily at home. First, she will make the sauce. As she
+                        pours the first ingredient, chicken broth, into a pot, we get the very first
+                        cut in the episode -- to a close-up of her hands doing the pouring -- and
+                        the episode will now regularly alternate long shots of Chen explaining the
+                        process and close-ups of her hands doing this or that specific task in
+                        preparation of the recipe.  One ingredient she
+                        singles out in her Egg Foo Yong sauce is ketchup, which she admits is not a
+                        "native Chinese ingredient" but which fits the Western palate and its
+                        penchant for sweetness in savory dishes (she notes that ketchup is
+                        particularly useful in adding color and flavor to sweet-and-sour Chinese
+                        dishes).  After finishing the sauce, Chen repeats
+                        the ingredients out loud. She shows off the sauce in close-up and explains
+                        that it looks very much "like the gravy you are served with your roasted
+                        turkey or roasted beef." Here, then, we witness -- as we often will in
+                        Chen's series -- a desire to make seemingly exotic Chinese cuisine familiar
+                        to U.S. audiences by comparing the foreign element to ostensibly comparable
+                        American fare.  Chen now announces she will make the
+                        Egg Foo Yung itself and the camera follows her as she moves to another part
+                        of her kitchen to do so. The preparation for Egg Foo Yung, as she explains
+                        it, starts with five eggs unbeaten, and she notes that eggs are an easy,
+                        inexpensive, and nutritious ingredient: in this respect, again, her
+                        preparation of a somewhat foreign dish invests in the values common in
+                        postwar American cooking instruction where there was often an emphasis on
+                        health and economy along with the need to impress family and guests through
+                        fare that seemed a bit exotic, yet not too much so.  Chen explains that in China, at the birth of a new child, eggs are dyed red
+                        and sent out as a sort of birth announcement: the quantity of eggs will
+                        indicate the degree of wealth in the family and the evenness or oddness of
+                        the number of eggs indicates whether the newborn is a boy or a girl. The
+                        color red indicates good luck and, in general, eggs are a harbinger of good
+                        things to come, so Egg Foo Yung is a symbolically resonant dish.  One ingredient to be added to the mixture is bean sprouts and
+                        Chen shows off fully grown sprouts as well as seeds, promising in a future
+                        episode to show viewers how to grow their own sprouts. Once again showing
+                        concern for American tastes and for accessibility of ingredients in the U.S.
+                        market, Chen explains that for sprouts one can substitute lettuce chopped in
+                        strips to approximate the shape of sprouts.  She
+                        adds in other ingredients such as salt -- which she spells out letter by
+                        letter -- and MSG and sherry. Notably, these ingredients are in containers
+                        labeled with the generic name (i.e., just "SHERRY" or "MSG") and no brand
+                        names visible. Here, Chen's show continues the practice of Julia Child's The
+                        French Chef, which, as a program on public television, worked to eschew any
+                        sense of product placement or promotion.  Once she
+                        has finished mixing the Egg Foo Yung, Chen announces that she will repeat
+                        the ingredients and holds up a list in Chinese characters. A dissolve takes
+                        us to a closer shot of Chinese figurines (wise men, it would seem), each of
+                        which has a small label with an ingredient on it. The camera pans over these
+                        to sum up all the ingredients that we have just seen combined to make up the
+                        batter.  Chen puts the batter into oil on an
+                        electric griddle pan, and while the mixture cooks, she offers some
+                        background to Chinese cooking history. In particular, the difficulty of
+                        transportation across regions meant that Chinese cooking tended to stay
+                        local and developed thereby into four primary regional schools: Mandarin or
+                        Peking, Shanghai, Cantonese, and Szechuan. Chen promises to offer more
+                        detailed instruction on the various cuisine in upcoming episodes of her
+                        show.  Chen now plates up the cooked dish and
+                        declares how good it smells. "I hope some day you will come here to eat with
+                        us," she offers. She puts the Egg Fu Yung and its sauce on a tray which she
+                        carries across the threshold of the kitchen into a somewhat abstracted
+                        dining space: an octagonal table with modernist chairs surrounded by lattice
+                        work and no visible walls. Rice is already on the table and she dishes out
+                        portions of the Egg Fu Yung. (Unlike in Child's The French Chef, she does no
+                        tasting of her dish and doesn't mime the presence of the viewer as a diner
+                        at her table.) She promises to "See you again" and the words for that appear
+                        in Chinese and English. The camera pans to the wind chimes that we saw at
+                        the very beginning and the credits come on the screen one after the other. A
+                        voiceover tells us that Chen is also the author of the published volume, The
+                        Joyce Chen Cookbook.</seg></u>
+            </div>
+            <div><incident><desc>EXTENDED DESCRIPTION BY DANA POLAN</desc></incident></div>
+            
+        </body>
+        <spanGrp type="topic">
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+        </spanGrp>
+        
+    </text>
+</TEI>
+
