@@ -1,6 +1,21 @@
 require 'rsolr'
 
 namespace :openvault do
+  desc "Set slugs on all unslugged records"
+  task :set_slugs => :environment do |t, args|
+    solr = solr_connection
+    def slugify(string)
+      string.downcase.gsub(/\W+/, ' ').strip.gsub(' ','-')
+    end
+    solr.no_pid.each do |doc|
+      if doc['title_tesim']
+        reset_slug(old_id: doc['id'], slug: slugify(doc['title_tesim'].first))
+      else
+        warn "No title on #{doc['id']}"
+      end
+    end
+  end
+  
   desc "Reset the slug on a single record"
   task :reset_slug => :environment do |t, args|
     OLD_ID_PARAM = 'old_id'
@@ -38,6 +53,11 @@ namespace :openvault do
   
   def solr_connection
     solr = RSolr.connect url: 'http://localhost:8983/solr' # TODO: Should I get this from a configuration?
+    def solr.no_pid()
+      query = "-pid:*"
+      count = self.get('select', params: {q: query, rows: 0})['response']['numFound']
+      return self.get('select', params: {q: query, rows: count})['response']['docs']
+    end
     def solr.query(field, id)
       return self.get('select', params: {q: "#{field}:#{id}"})['response']['docs']
     end
