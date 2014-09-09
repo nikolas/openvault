@@ -12,7 +12,7 @@ ActiveAdmin.register CustomCollection do
     f.semantic_errors *f.object.errors.keys
     f.inputs do
       f.input :name
-      f.input :summary
+      f.input :summary, as: :html_editor
       f.input :owner_type_and_id, as: :select, collection: grouped_options_for_select({"Organizations" => org_owner_options, "Scholars" => scholar_owner_options}, f.object.owner_type_and_id)
       f.input :slug
     end
