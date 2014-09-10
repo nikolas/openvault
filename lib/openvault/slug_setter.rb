@@ -2,9 +2,10 @@ module Openvault
   module SlugSetter
 
     def self.reset_slug(opts)
-      old_id = opts[:old_id]
-      other_id = opts[:other_id]
-      slug = opts[:slug]
+      old_id = opts.delete :old_id
+      other_id = opts.delete :other_id
+      slug = opts.delete :slug
+      raise "Unrecognized options #{opts.keys}" if opts.keys.length>0 
 
       solr = solr_connection
 
@@ -25,7 +26,6 @@ module Openvault
       raise "Fedora object with PID #{old_id} already has datastream #{DSID}" if asset.datastreams.keys.include? DSID
 
       # Set new IDs on objects.
-
       doc[PID] = old_id
       doc['id'] = slug
       doc.delete 'score'
@@ -58,34 +58,44 @@ module Openvault
       string.downcase.gsub(/\W+/, ' ').strip.gsub(' ','-')
     end
     
-    private
-
+    ###
+    # Would be private, if not used for testing.
+    ###
+    
     DSID = 'slug'
     PID = 'pid'  
 
     def self.solr_connection
-      solr = RSolr.connect url: 'http://localhost:8983/solr' # TODO: Should I get this from a configuration?
+      solr = ActiveFedora::SolrService.instance.conn
+      
       def solr.no_pid()
         query = "-pid:*"
         count = self.get('select', params: {q: query, rows: 0})['response']['numFound']
-        return self.get('select', params: {q: query, rows: count})['response']['docs']
+        self.get('select', params: {q: query, rows: count})['response']['docs']
       end
+      
       def solr.query(field, id)
-        return self.get('select', params: {q: "#{field}:#{id}"})['response']['docs']
+        self.get('select', params: {q: "#{field}:#{id}"})['response']['docs']
       end
-      def solr.id_exists?(old_id)
-        return self.query('id',old_id).count > 0
-      end
-      def solr.find_by_id(old_id)
-        docs = self.query('id',old_id)
-        raise "Expected exactly one match on #{OLD_ID_PARAM}=#{old_id}, not #{docs.count}." if docs.count != 1
+      
+      def solr.query_one(field, id)
+        docs = self.query(field, id)
+        raise "Expected exactly one match on #{field} '#{id}', not #{docs.count}." if docs.count != 1
         docs.first
       end
-      def solr.find_by_other_id(other_id)
-        docs = self.query('all_ids_tesim',other_id)
-        raise "Expected exactly one match on #{OTHER_ID_PARAM}=#{other_id}, not #{docs.count}." if docs.count != 1
-        docs.first
+      
+      def solr.id_exists?(id)
+        return self.query('id',id).count > 0
       end
+      
+      def solr.find_by_id(id)
+        query_one('id', id)
+      end
+      
+      def solr.find_by_other_id(id)
+        query_one('all_ids_tesim', id)
+      end
+      
       solr
     end
 
