@@ -19,6 +19,8 @@ describe Openvault::SlugSetter do
   
   describe '#reset_slug' do
     it 'works' do
+      OVSS.solr_connection.delete_by_query("*:*", params: {commit: true}) # Should not be necessary.
+      
       v = Video.create
       v.save # Not in Video.all until saved... but not sure this behavior is right.
       old_id = v.id
@@ -26,9 +28,7 @@ describe Openvault::SlugSetter do
       OVSS.reset_slug(old_id: old_id, slug: slug)
       
       # Now pull it back and make sure it's in both fedora and solr.
-      new_v = ActiveFedora::Base.find(old_id)
-      
-      expect(new_v.datastreams['slug'].content).to eq slug
+      expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
       expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
     end
   end
