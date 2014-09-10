@@ -1,6 +1,6 @@
 #Should this belong to audio or video stream?
 class Image < OpenvaultAsset
-  include SharedMethods
+  include PbcoreAccessors
   
   belongs_to :video, :property => :image_video
   belongs_to :program, :property => :image_program
