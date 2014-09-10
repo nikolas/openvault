@@ -1,18 +1,13 @@
-<% 
-  asset = OpenvaultAsset.find(@document.id)
-  pbcore = asset.pbcore 
-%>
 <div class="basic">
   <div class="source">
     <div>
-      <% unless pbcore.series_title.empty? %>
-        <p><strong>Series</strong> <%= pbcore.series_title.first %></p>
+      <% if @ov_asset.series %>
+        <p><strong>Series</strong>
+          <%= link_to @ov_asset.series.title, @ov_asset.series %></p>
       <% end %>
-      <% unless pbcore.program_title.empty? %>
-        <p><strong>Program</strong> <%= pbcore.program_title.first %></p>
-      <% end %>
-      <% unless pbcore.episode_title.empty? %>
-        <p><strong>Episode</strong> <%= pbcore.episode_title.first %></p>
+      <% if @ov_asset.program %>
+        <p><strong>Program</strong> 
+          <%= link_to @ov_asset.program.title, @ov_asset.program %></p>
       <% end %>
     </div>
   </div>
@@ -22,6 +17,9 @@
 </div>
 <div class="advanced" style="display: none">
   <a href="#" class="more_meta">Hide details</a>
+  <%
+    pbcore = @ov_asset.pbcore 
+  %>
   <% unless pbcore.creator_name.blank? %>
     <div class="creators">
       <h3>Creators</h3>
@@ -34,37 +32,37 @@
   <% end %>
 </div>
 
-<% if asset.rights_rights || asset.rights_coverage || asset.rights_credit ||
-      asset.rights_holder || asset.rights_note || asset.rights_type %>
+<% if @ov_asset.rights_rights || @ov_asset.rights_coverage || @ov_asset.rights_credit ||
+      @ov_asset.rights_holder || @ov_asset.rights_note || @ov_asset.rights_type %>
   <div>
     <h4>Rights</h4>
     
-    <% if asset.rights_rights %>
-      <p><strong>Rights</strong> <%= asset.rights_rights %></p>
+    <% if @ov_asset.rights_rights %>
+      <p><strong>Rights</strong> <%= @ov_asset.rights_rights %></p>
     <% end %>
 
-    <% if asset.rights_coverage %>
-      <p><strong>Coverage</strong> <%= asset.rights_coverage %></p>
+    <% if @ov_asset.rights_coverage %>
+      <p><strong>Coverage</strong> <%= @ov_asset.rights_coverage %></p>
     <% end %>
 
-    <% if asset.rights_credit %>
-      <p><strong>Credit</strong> <%= asset.rights_credit %></p>
+    <% if @ov_asset.rights_credit %>
+      <p><strong>Credit</strong> <%= @ov_asset.rights_credit %></p>
     <% end %>
 
-    <% if asset.rights_holder %>
-      <p><strong>Holder</strong> <%= asset.rights_holder %></p>
+    <% if @ov_asset.rights_holder %>
+      <p><strong>Holder</strong> <%= @ov_asset.rights_holder %></p>
     <% end %>
 
-    <% if asset.rights_note %>
-      <p><strong>Note</strong> <%= asset.rights_note %></p>
+    <% if @ov_asset.rights_note %>
+      <p><strong>Note</strong> <%= @ov_asset.rights_note %></p>
     <% end %>
 
-    <% if asset.rights_type %>
-      <p><strong>Type</strong> <%= asset.rights_type %></p>
+    <% if @ov_asset.rights_type %>
+      <p><strong>Type</strong> <%= @ov_asset.rights_type %></p>
     <% end %>
       
-    <% if asset.rights_link %>
-      <p><%= asset.rights_link %></p>
+    <% if @ov_asset.rights_link %>
+      <p><%= @ov_asset.rights_link %></p>
     <% end %> 
   </div>
 <% end %>
