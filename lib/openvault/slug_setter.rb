@@ -70,21 +70,21 @@ module Openvault
       def solr.no_pid()
         query = "-pid:*"
         count = self.get('select', params: {q: query, rows: 0})['response']['numFound']
-        self.get('select', params: {q: query, rows: count})['response']['docs']
+        get('select', params: {q: query, rows: count})['response']['docs']
       end
       
       def solr.query(field, id)
-        self.get('select', params: {q: "#{field}:#{id}"})['response']['docs']
+        get('select', params: {q: "#{field}:#{RSolr.escape(id)}"})['response']['docs']
       end
       
       def solr.query_one(field, id)
-        docs = self.query(field, id)
+        docs = query(field, id)
         raise "Expected exactly one match on #{field} '#{id}', not #{docs.count}." if docs.count != 1
         docs.first
       end
       
       def solr.id_exists?(id)
-        return self.query('id',id).count > 0
+        return query('id',id).count > 0
       end
       
       def solr.find_by_id(id)

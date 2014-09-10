@@ -22,7 +22,7 @@ describe Openvault::SlugSetter do
       v = Video.create
       v.save # Not in Video.all until saved... but not sure this behavior is right.
       old_id = v.id
-      slug = 'new-slug' # The API from here trusts your input: slugify is higher-level
+      slug = 'New Slug!' # The API from here trusts your input: slugify is higher-level
       OVSS.reset_slug(old_id: old_id, slug: slug)
       
       # Now pull it back and make sure it's in both fedora and solr.
