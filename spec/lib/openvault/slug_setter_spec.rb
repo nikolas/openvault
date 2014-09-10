@@ -20,12 +20,16 @@ describe Openvault::SlugSetter do
   describe '#reset_slug' do
     it 'works' do
       v = Video.create
-      OVSS.reset_slug(old_id: v.id, slug: 'NEW SLUG!')
+      v.save # Not in Video.all until saved... but not sure this behavior is right.
+      old_id = v.id
+      slug = 'NEW SLUG!' # The API from here trusts your input: slugify is higher-level
+      OVSS.reset_slug(old_id: old_id, slug: slug)
       
       # Now pull it back and make sure it's in both fedora and solr.
-#      new_v = Video.all.first
-#      expect(new_v.slug.content).to eq 'new-slug'
-#      expect(OVSS.solr_connection.find_by_id('new-slug')).to eq 'huh?'
+      new_v = ActiveFedora::Base.find(old_id)
+      
+      expect(new_v.datastreams['slug'].content).to eq slug
+      #TODO: expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
     end
   end
 

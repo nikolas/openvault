@@ -34,7 +34,6 @@ module Openvault
       solr.add doc
       solr.commit
 
-      # This datastream isn't used right now, but I think the cross reference is good.
       ds = asset.create_datastream(ActiveFedora::Datastream, DSID, blob: slug, mimeType: 'text/plain')
       ds.save
 
