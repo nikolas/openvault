@@ -1,5 +1,5 @@
 class Video < OpenvaultAsset
-  include SharedMethods
+  include PbcoreAccessors
 
   COVERAGE = ['complete', 'clip', 'segment']
 

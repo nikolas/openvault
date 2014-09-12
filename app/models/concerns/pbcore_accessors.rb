@@ -1,4 +1,4 @@
-module SharedMethods
+module PbcoreAccessors
   extend ActiveSupport::Concern
 
   def original_file_name

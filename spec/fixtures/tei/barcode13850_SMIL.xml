@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:smil="http://www.w3.org/2001/SMIL20/Language" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <teiHeader>
+        <profileDesc>
+            <langUsage>
+                <language ident="eng">Enter three-letter language code in the quotes (e.g., "eng")
+                </language>
+            </langUsage>
+            <settingDesc>
+                <setting>
+                    <name type="place" ref="">Enter interview location here, add reference is
+                        available </name>
+                </setting>
+            </settingDesc>
+            <particDesc>
+                <listPerson>
+                    <person xml:id="q" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="eng">Interviewer, A</persName>
+                    </person>
+                    <person xml:id="a" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="vie">Leiber, Jerry</persName>
+                    </person>
+                    <person xml:id="b" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                        <persName xml:lang="vie">Stoller, Mike</persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+            <textClass>
+                <keywords scheme="http://www.merlot.org/merlot/categories.htm">
+                    <term>Arts -- Music -- Music History</term>
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                    <term>Enter MERLOT subject string here </term>
+                </keywords>
+                <keywords scheme="http://authorities.loc.gov">
+                    <term rdf:resource="http://lccn.loc.gov/n92021942" xml:id="Jerry_Leiber" xmlns:xml="http://www.w3.org/XML/1998/namespace">Leiber, Jerry</term>
+                    <term rdf:resource="http://lccn.loc.gov/n83065768" xml:id="Mike_Stoller" xmlns:xml="http://www.w3.org/XML/1998/namespace">Stoller, Mike</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter LOC authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter LOC authority here </term>
+                </keywords>
+                <keywords scheme="http://www.geonames.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter Geonames authority here </term>
+                </keywords>
+                <keywords scheme="http://viaf.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter VIAF name authority here </term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">Enter VIAF name authority here </term>
+                </keywords>
+                <keywords scheme="http://en.wikipedia.org">
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                    <term rdf:resource="" xml:id="" xmlns:xml="http://www.w3.org/XML/1998/namespace">&amp;lt;!--Enter Wikipedia authority here
+                        --&amp;gt;</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <u/>
+            </div>
+            <div type="qa" xml:id="q0" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q1" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q2" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q3" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q4" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q5" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q6" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q7" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q8" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q9" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q10" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q11" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q12" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q13" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q14" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q15" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q16" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q17" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q18" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q19" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q20" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q21" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q22" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q23" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q24" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q25" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q26" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q27" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q28" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q29" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q30" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q31" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q32" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q33" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q34" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q35" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q36" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q37" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q38" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q39" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q40" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q41" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q42" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q43" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q44" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q45" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q46" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q47" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q48" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q49" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q50" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q51" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q52" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q53" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q54" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q55" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q56" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q57" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q58" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q59" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q60" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q61" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q62" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+            <div type="qa" xml:id="q63" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                <u who="#b">
+                    <seg xml:id="para1" smil:begin="00:00:00.573" smil:end="00:01:03.471"> I moved to LA in 1949 with my parents, I was 16.
+                        And I went to high school for one semester here at Belmont High School,
+                        which was largely Mexican-American. And uh, I joined a band, the Vascos
+                        Brothers Band, and we played different gigs, um, a lot of jazz, but also
+                        some Latino music. And um, then I graduated high school and went to Los
+                        Angeles City College. And I was playing some gigs on occasion, you know, not
+                        too many. I wasn't really that good. I loved jazz, but I wasn't, you know, I
+                        wasn't good enough for my own taste. And um, about that time I decided,
+                        since I loved music, I would get involved and study, and I began to study
+                        privately with a composer orchestrator to study composition. And that's
+                        about the same time that, uh, I met Jerry.</seg>
+                </u><u who="#q"><seg xml:id="para2" smil:begin="00:01:03.471" smil:end="00:01:16.414"> So you're writing these blues lyrics and when you got
+                        together with the idea of writing and not performing, correct?</seg>
+                </u><u who="#a"><seg xml:id="para3" smil:begin="00:01:16.414" smil:end="00:01:57.109"> Oh, there wasn't any question about performing. I,
+                        uh, I never, uh, never dreamed of performing. I was writing essentially
+                        primarily for blues singers, black blues singers. And I wasn't really
+                        interested in anything else. I wasn't interested in pop music, I wasn't
+                        interested in country music, I wasn't interested in any, jazz, even in jazz,
+                        vocal jazz. I enjoyed it. I liked to listen to it, you know, for my own
+                        pleasure. But I was not interested in writing it. I was only interested in
+                        the language and the humor and the, the, uh, the pain, whatever, of the
+                        blues .</seg>
+                </u><u who="#b"><seg xml:id="para4" smil:begin="00:01:57.109" smil:end="00:02:09.389"> We felt that, uh, for us to perform would be
+                        totally inauthentic because we weren't black. However, for some reason we
+                        forgave ourselves that when it came to writing.</seg>
+                </u><u who="#q"><seg xml:id="para5" smil:begin="00:02:09.389" smil:end="00:02:15.908"> So there was never any real question of performing.</seg>
+                </u><u who="#a"><seg xml:id="para6" smil:begin="00:02:15.908" smil:end="00:02:16.653"> No.</seg>
+                </u><u who="#q"><seg xml:id="para7" smil:begin="00:02:16.653" smil:end="00:02:21.163"> Okay.</seg>
+                </u><u who="#a"><seg xml:id="para8" smil:begin="00:02:21.163" smil:end="00:02:46.791"> It was also a tradition. I mean, pretty much.
+                        Except, there were a few exceptions like Johnny Mercer sang, a few people
+                        sang once in a while, but by and large the tradition of songwriting was the
+                        songwriter wrote the songs and he was a behind the scenes kind of character.
+                        Now, George L -- George M. Cohan for instance was a great performer. I know
+                        about this. But mainly, the songwriter was mainly a behind the scenes
+                        guy.</seg>
+                </u><u who="#b"><seg xml:id="para9" smil:begin="00:02:46.791" smil:end="00:03:13.150"> Except, oddly enough, in the blues. Because most of
+                        the blues performers wrote their own material, and uh, or at least many of
+                        them did. And I guess to some extent, our material was accepted because a
+                        lot of these performers who did write were not as good as some of the other
+                        ones. And they wrote the same song pretty much over and over.</seg>
+                </u><u who="#q"><seg xml:id="para10" smil:begin="00:03:13.150" smil:end="00:03:30.998"> When you first started placing these songs, getting
+                        these songs recorded, what kind of experience was that? Did you find it
+                        satisfying or frustrating or what?</seg>
+                </u><u who="#a"><seg xml:id="para11" smil:begin="00:03:30.998" smil:end="00:05:02.762"> Deeply frustrating. Because um, the first, the
+                        first sessions, the first meetings were set up by Lester Sill with Modern
+                        Records, who, at the, who, uh, which was owned by the Harry Brothers. And
+                        the Harry Brothers were completely amusical. I mean they just… they had a
+                        business. They could've been in the junk business, it didn't matter, you
+                        know. And uh, they had this record company. And they were affable guys, they
+                        were easy to get along with, but they really didn't know much about music
+                        and didn't care much about it either. And uh, we had some meetings with
+                        some, uh, artists -- we met with the Robins, you know. And uh, it was, it
+                        was, in the very beginning it was hard to get things straight. You know, it
+                        was hard to get things down. And um, it was hard to get things right. And we
+                        struggled with that for a long time. And in a funny way, we started to, to
+                        produce, really, in self-defense. Because a lot of the songs that we had
+                        written -- well, firstly, the first songs we wrote were lousy anyhow, so it
+                        didn't matter how well they were produced, they just came out badly. Uh,
+                        later on, when we started writing some good songs, they were not produced
+                        adequately or properly, or they were misinterpreted. You know, you'd get a
+                        swing band arrangement on a blues, right? By a Hollywood arranger instead of
+                        the right kind of stuff that you'd get out of someone like Bumps Blackwell
+                        or Maxwell Davis, right? So as we went along we learned the different ways,
+                        the different styles and so forth and we started producing.</seg>
+                </u><u who="#b"><seg xml:id="para12" smil:begin="00:05:02.762" smil:end="00:05:42.976"> Also, the key to what success we had was in
+                        rehearsal. Because we used to rehearse our groups that we worked with, the
+                        Robins, the Coasters and so on, for weeks on end before a session. And the
+                        traditionally, these people came together in the studio and learned a song
+                        on, on the date and, uh, and performed it. And there were some wonderful
+                        bands that could, like Johnny Otis's, that could do head arrangements right,
+                        uh, you know, from the git, and they'd come off sounding very professional.
+                        But there hadn't been any time for real exploration in rehearsal.</seg>
+                </u><u who="#q"><seg xml:id="para13" smil:begin="00:05:42.976" smil:end="00:05:48.584"> Did "Kansas City" or "Hound Dog" come first?</seg>
+                </u><u who="#b"><seg xml:id="para14" smil:begin="00:05:48.584" smil:end="00:05:50.857"> "Kansas City" came first.</seg>
+                </u><u who="#q"><seg xml:id="para15" smil:begin="00:05:50.857" smil:end="00:05:51.856"> Do you want to --</seg>
+                </u><u who="#b"><seg xml:id="para16" smil:begin="00:05:51.856" smil:end="00:05:55.072"> Well, wait a minute, they were about the same time
+                        actually.</seg>
+                </u><u who="#a"><seg xml:id="para17" smil:begin="00:05:55.072" smil:end="00:05:58.257"> The release dates were different, but they were
+                        both cut in '51.</seg>
+                </u><u who="#b"><seg xml:id="para18" smil:begin="00:05:58.257" smil:end="00:06:16.225"> Both cut in '52 actually. And I'm trying to
+                        remember when, "Kansas City" came out the end of '52. Uh, Big Mama's record
+                        was recorded in August of '52 but didn't come out until '53, February or
+                        March.</seg>
+                </u><u who="#q"><seg xml:id="para19" smil:begin="00:06:16.225" smil:end="00:06:44.407"> Let's address each of those. The one thing about "Kansas
+                        City" did you feel at the time that that was sort of a breakthrough in terms
+                        of the craft of songwriting, because I know, when we talked about this
+                        before, the idea that this was a blues with a melody hook, almost like a pop
+                        song, can you say that?</seg>
+                </u><u who="#a"><seg xml:id="para20" smil:begin="00:06:44.407" smil:end="00:07:56.867"> I can say part of it and Mike can say the rest of
+                        it. Originally, uh, I was singing the words to "Kansas City" to a
+                        conventional blues shout pattern, you know? I mean, just [sings] I'm going
+                        to Kansas City, Kansas City here I come. Something like that, right? And I
+                        gave it to Mike and I said, I think this is the way it ought to go. And he
+                        said, yeah, and he started playing it on the piano and he put it to this,
+                        and he put it to that. And then he put it to a shuffle. And I said, well,
+                        and he started to play a little of, you know, I'm going to Kansas City, he
+                        started playing a tune, and I said, no, I don't want that. I want, and I
+                        went back to the straight blues. And he said, yeah, yeah, I know. Because
+                        Mike is very polite you know. And he kept playing around with the idea and I
+                        finally said, you know, I really don't want that melody, I don't want a
+                        melody, I want it to sound like a traditional blues. I don't want it to
+                        sound like some, you know, smartass songwriter is tampering with the melody.
+                        And he said, who's writing the music, you or me? And there was like a
+                        standoff for a minute and I looked at him and he looked at me. And I
+                        thought, hmm, I don't know how to write lead sheets.</seg>
+                </u><u who="#b"><seg xml:id="para21" smil:begin="00:07:56.867" smil:end="00:08:00.714"> And the boy is crazy anyway, you better humor
+                        him.</seg>
+                </u><u who="#a"><seg xml:id="para22" smil:begin="00:08:00.714" smil:end="00:08:09.378"> I said you're writing the music. He said, good,
+                        it's going to go like this. [hums melody] And that's sort of the way it
+                        went.</seg>
+                </u><u who="#b"><seg xml:id="para23" smil:begin="00:08:09.378" smil:end="00:08:21.690"> Only the song came out and the A and R man from
+                        Federal Records, Ralph Bass, said, you know what, I love the song, it's
+                        great, but you know what?</seg>
+                </u><u who="#a"><seg xml:id="para24" smil:begin="00:08:21.690" smil:end="00:08:22.498"> It's not sexy enough.</seg>
+                </u><u who="#b"><seg xml:id="para25" smil:begin="00:08:22.498" smil:end="00:08:40.058"> No, he said, KC is hip. KC is really hip. So when
+                        they released the record, he just changed the title on the label to "KC
+                        Loving." It took seven years before somebody else remembered the song and
+                        recorded it under its obviously title of "Kansas City."</seg>
+                </u><u who="#q"><seg xml:id="para26" smil:begin="00:08:40.058" smil:end="00:09:20.561"> Now "Hound Dog" has the -- Let's, can we get the story
+                        on "Hound Dog" and since this is like sort of being in the show, we're going
+                        to be building up to hearing it, so on and so forth, maybe in this case,
+                        instead of saying well we wrote "Hound Dog", just this once, these guys
+                        suggested holding off on the name of the song you're talking about until the
+                        end.</seg>
+                </u><u who="#a"><seg xml:id="para27" smil:begin="00:09:20.561" smil:end="00:09:46.303"> All right. It went like this. Lester Sill gave us a
+                        call, and said he set up an appointment for us to go down to listen to a
+                        rehearsal one afternoon at Johnny Otis's garage where he rehearsed his band.
+                        And listened to his singers. He had a number of different singers down
+                        there. He had Mel Williams and Little Esther and Big Mama Thornton and a
+                        group, were the Three Tons of Joy down there --</seg>
+                </u><u who="#b"><seg xml:id="para28" smil:begin="00:09:46.303" smil:end="00:09:48.238"> I don't think, yeah, a little later.</seg>
+                </u><u who="#a"><seg xml:id="para29" smil:begin="00:09:48.238" smil:end="00:09:56.215"> A little later, I think, yeah. And we went down and
+                        uh, you know, Lester told Johnny that we were young guys that were comers
+                        and we wrote the blues.</seg>
+                </u><u who="#b"><seg xml:id="para30" smil:begin="00:09:56.215" smil:end="00:09:58.567"> Well, Johnny knew us at that time.</seg>
+                </u><u who="#a"><seg xml:id="para31" smil:begin="00:09:58.567" smil:end="00:09:59.351"> Yeah?</seg>
+                </u><u who="#b"><seg xml:id="para32" smil:begin="00:09:59.351" smil:end="00:10:00.855"> Sure. Because we'd worked with Little
+                        Lester.</seg>
+                </u><u who="#a"><seg xml:id="para33" smil:begin="00:10:00.855" smil:end="00:10:02.439"> Oh, I forgot that.</seg>
+                </u><u who="#b"><seg xml:id="para34" smil:begin="00:10:02.439" smil:end="00:10:03.351"> I know.</seg>
+                </u><u who="#a"><seg xml:id="para35" smil:begin="00:10:03.351" smil:end="00:10:30.492"> Um, so we went down, we went down to listen to his
+                        people, and uh, Big Mama got up and sang a song. And she just knocked us
+                        out. We thought she was great. And um, I turned to Mike, I said, let's get
+                        out of here, this is it, let's go and write it. And we left, and on the way
+                        to Mike's house, I'd got maybe 50 or 60 percent already of a lyric. Because
+                        I was looking --</seg>
+                </u><u who="#a"><seg xml:id="para36" smil:begin="00:10:57.541" smil:end="00:11:08.596"> On the way to Mike's house we ran into Bre'r
+                        Rabbit, and Bre'r Rabbit said where you going, and I said we're going to
+                        Mike's house to write "Hound Dog".</seg>
+                </u><u who="#q"><seg xml:id="para37" smil:begin="00:11:21.301" smil:end="00:11:29.837"> One thing you didn't get with Big Mama was why did she
+                        impress you. You said, she impressed us.</seg>
+                </u><u who="#a"><seg xml:id="para38" smil:begin="00:11:29.837" smil:end="00:11:32.501"> I was trying to cut it short.</seg>
+                </u><u who="#a"><seg xml:id="para39" smil:begin="00:11:37.245" smil:end="00:15:34.900"> Well, I mean, I think, Little Lester sang a number,
+                        and uh, Ray, Ray Williams, they were both really good. Big Mama got up and
+                        she just blew everybody away. She was just such a great blues singer. She
+                        was so nasty. She was, she was really evil. I loved her. I thought she was
+                        great. She had all these razor scars all over her face. Because somebody
+                        down there, was, uh, somebody listening said that she was a lady bear, and I
+                        didn't know what that was. And I found out maybe five or six or seven years
+                        later that, that was a very big female who was a lot of trouble. Um, and she
+                        acted that way, but actually she wasn't that way, it was a big front. Like
+                        most bears, you know. Um, she just sang her ass off, you know, and impressed
+                        us very much. And uh, we looked at each other and decided to take off
+                        immediately, and uh, we jumped in Mike's car and headed for his house. And
+                        I'd say about, maybe half way to his house I'd already gotten about 50
+                        percent of the lyrics to the song. And uh, we landed, and Mike went to the
+                        piano, and I started yelling, you ain't nothing but a hound dog, and it all
+                        came together in about eight or ten minutes. And we got back in the car,
+                        went back to the garage, and we laid the song on Johnny Otis. And uh, he
+                        told us to perform it for Big Mama. Which we did. And I started, I think
+                        maybe I got through about four bars, and she said, give me that, give me
+                        that piece of paper, give me that. And she sort of grabbed the paper out of
+                        my hand. It was not written on a brown paper bag, mind you, it was written
+                        on a piece of spiral notebook paper. And uh, she started to sing it. And um,
+                        actually she started to croon it. And I said, um, it don't go that way. And
+                        all of a sudden there was a hush in this garage. The entire band, I think
+                        there were 11 or 12 guys on the stand, and they're usually jerking around,
+                        you know, high jinks and locker room stuff -- it became quiet as a mouse.
+                        And she said, it don't go like that, it don't go like that. She says, I tell
+                        you how it go, it go like this -- ahhhhhhhhh. White boy, don't you tell me
+                        how to sing the blues. So I looked at Mike, he looked at me. And Johnny Otis
+                        came down and said, hey, wait a minute, wait a minute, cool it, just wait a
+                        minute. He said, Willie Mae, she looked up at him and said, yes sir? She was
+                        very polite when she's doing business. [LAUGHS] She wasn't doing business
+                        with me. Yes sir. He said, now, we got to stop that stuff, you know? We're
+                        here to take care of business, right? She said that's right. Now, give me
+                        that song. And hand it to me. Now, sing the song the way it's supposed to be
+                        for Big Mama, all right? I looked at Mike, Mike was ready to split. He
+                        didn't want to have anything to do with this. He's looking at the back door.
+                        I said, Mike, play the piano. He did one of these, who me? [LAUGHS] Finally
+                        he went over to the piano, and uh, I sang the song, Mike played the song.
+                        And uh, the band went nuts. They loved it. They thought it was funny. These
+                        two white kids are in here singing the blues, they both must be crazy, what
+                        are they doing, you know? And Big Mama finally broke into a smile. I came
+                        down, she made up with me, I made up with her, she took the song, and she
+                        started singing it. Johnny got on the drums during the rehearsal, and it
+                        sounded great. It was just dynamite.</seg>
+                </u><u who="#b"><seg xml:id="para40" smil:begin="00:15:34.900" smil:end="00:15:42.932"> And Pete Lewis on guitar, the late Pete Lewis,
+                        just a genius. It was great.</seg>
+                </u><u who="#q"><seg xml:id="para41" smil:begin="00:15:42.932" smil:end="00:15:45.268"> How'd you sing it?</seg>
+                </u><u who="#a"><seg xml:id="para42" smil:begin="00:15:45.268" smil:end="00:15:51.852"> How'd I sing it? You ain't nothing but a hound dog.
+                        Like that.</seg>
+                </u><u who="#b"><seg xml:id="para43" smil:begin="00:15:51.852" smil:end="00:15:53.612"> That's how he sings.</seg>
+                </u><u who="#a"><seg xml:id="para44" smil:begin="00:15:53.612" smil:end="00:16:08.412"> That's how I usually talk. I'm being especially
+                        quiet today because Mike said don't do that. Don't do that on the camera and
+                        don't do that on the microphone, you're going to scare the people out of the
+                        studio. Can you just like imitate somebody who has manners.</seg>
+                </u><u who="#q"><seg xml:id="para45" smil:begin="00:16:08.412" smil:end="00:16:10.836"> Au contraire.</seg>
+                </u><u who="#b"><seg xml:id="para46" smil:begin="00:16:14.372" smil:end="00:16:19.580"> Au contraire. You been living in New
+                        Orleans.</seg>
+                </u><u who="#q"><seg xml:id="para47" smil:begin="00:16:30.260" smil:end="00:16:46.315"> I think that we're ready to talk about "Riot in Cell
+                        Block #9" and the Robins -- all right, a technological --</seg>
+                </u><u who="#q"><seg xml:id="para48" smil:begin="00:17:07.611" smil:end="00:17:21.204"> Getting to "Riot in Cell Block #9" and obviously this is
+                        a departure that introduces us to this whole idea about the playlet song. So
+                        I wonder if you might give us a little background on this idea of the
+                        playlet. What's the background to what we here, which is a very fully formed
+                        idea, right?</seg>
+                </u><u who="#a"><seg xml:id="para49" smil:begin="00:17:21.204" smil:end="00:17:35.004"> Well, the background is radio. And how I was,
+                        lyrically anyway, how I was sort of influenced by programs like I Love a
+                        Mystery, and The Shadow, and Nick and Nora.</seg>
+                </u><u who="#q"><seg xml:id="para50" smil:begin="00:17:35.004" smil:end="00:17:37.548"> Could you just say "Riot in Cell Block #9".</seg>
+                </u><u who="#b"><seg xml:id="para51" smil:begin="00:17:55.139" smil:end="00:18:53.527"> Well, "Riot in Cell Block #9" was, um, influenced,
+                        uh, primarily in Jerry's work but also in mine, in terms of, uh, the radio
+                        programs that we listened to as kids. And the characters speaking, because
+                        radio, let's face it, was much more interesting than television is because
+                        you could imagine all these things. And so using the kind of, uh, radio
+                        technique, non-visual but dialogue is the way in which these songs evolved.
+                        And this was probably the first one in which, uh, the narration was done in
+                        that style. And also, of course, we enjoyed putting in sound effects, which
+                        were like things from, uh, what was that program?</seg>
+                </u><u who="#a"><seg xml:id="para52" smil:begin="00:18:53.527" smil:end="00:18:54.248"> Gangbusters.</seg>
+                </u><u who="#b"><seg xml:id="para53" smil:begin="00:18:54.248" smil:end="00:19:00.888"> Gangbusters and stuff like that with the sirens
+                        and the machine guns and so on and so forth.</seg>
+                </u><u who="#a"><seg xml:id="para54" smil:begin="00:19:00.888" smil:end="00:19:35.950"> You could sort of sum it up in a way, I think, sort
+                        of, like this. I think it's maybe a little bit more complicated, but I think
+                        this hits it enough. The form musically were the blues. Because Willie
+                        Mabon, you know, Little Walter, those blues breaks, that was the form and
+                        that was the sound. The content was something that we made up and was very
+                        much influenced by early radio, but filtered through a blues idiom in terms
+                        of language, in terms of vocabulary, in terms of dialect.</seg>
+                </u><u who="#q"><seg xml:id="para55" smil:begin="00:19:35.950" smil:end="00:19:55.194"> What kinds of different problems in terms of preparing
+                        these songs to be recorded did working with this kind of material present?
+                        It seems like it would almost be a whole different ballgame almost
+                        rehearsing like for a play.</seg>
+                </u><u who="#a"><seg xml:id="para56" smil:begin="00:19:55.194" smil:end="00:20:03.179"> To some degree maybe, but you know, there were
+                        precursors, there were other groups doing things before we did.</seg>
+                </u><u who="#b"><seg xml:id="para57" smil:begin="00:20:03.179" smil:end="00:20:11.634"> The Clovers used to do things where the bass would
+                        have the end line of the bridge or something like that, and we loved their
+                        work.</seg>
+                </u><u who="#a"><seg xml:id="para58" smil:begin="00:20:11.634" smil:end="00:20:24.908"> And the Dominoes. And Jimmy Rix and the Ravens. We
+                        were influenced by all these groups. And uh, really, and we tried, I guess
+                        we sort of synthesized a lot of these influences with the Coasters.</seg>
+                </u><u who="#q"><seg xml:id="para59" smil:begin="00:20:31.570" smil:end="00:21:00.062"> Now, by this time, you're working with this label,
+                        Spark. One of your, if you could tell us, what led you to get into having
+                        your own record label, and what was unattractive enough about it to make
+                        Atlantic look very attractive.</seg>
+                </u><u who="#b"><seg xml:id="para60" smil:begin="00:21:00.062" smil:end="00:21:55.139"> Well Spark Records was a label that we started
+                        with Lester Sill, who was really our mentor and advisor. And the reason that
+                        we started it was so that we would be unencumbered when it came to the
+                        creative production of the records. We could take it from beginning to end
+                        including the mastering and all the editing and so on and so forth, which is
+                        really what we wanted to do, to protect the notion or the integrity of the
+                        idea of each song. And the reason that ultimately Atlantic seemed so
+                        attractive was two fold. Number one, we loved the Atlantic Records. We
+                        admired many of their artists, the Clovers, Ruth Brown and so on and so
+                        forth, LaVerne Baker.</seg>
+                </u><u who="#a"><seg xml:id="para61" smil:begin="00:21:55.139" smil:end="00:21:55.770"> Joe Turner.</seg>
+                </u><u who="#b"><seg xml:id="para62" smil:begin="00:21:55.770" smil:end="00:21:56.651"> Joe Turner.</seg>
+                </u><u who="#a"><seg xml:id="para63" smil:begin="00:21:56.651" smil:end="00:21:57.314"> Ray Charles.</seg>
+                </u><u who="#b"><seg xml:id="para64" smil:begin="00:21:57.314" smil:end="00:22:30.684"> But also because we were under-financed and we
+                        couldn't, uh, we couldn't as Jerry says often, we couldn't cross the
+                        Rockies. So we'd have a big smash in LA, selling even a hundred thousand
+                        records, singles, and nothing on the other side of the country, zero. So
+                        that seemed to be a good idea, which they suggested to us. They said,
+                        listen, make the records. We'll pay you a royalty, because we know how to
+                        sell them and you don't.</seg>
+                </u>
+            </div>
+        </body>
+        <spanGrp type="topic">
+            <span from="#q0" to="#q2">Arts -- Music -- Music History</span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+            <span from="#q0" to="#q2">Enter FOOBAR LOC Subject Headings here </span>
+        </spanGrp>
+        <spanGrp type="title">
+            <span from="#q0" to="#q1"/>
+            <span from="#q0" to="#q1"/>
+        </spanGrp>
+    </text>
+</TEI>
