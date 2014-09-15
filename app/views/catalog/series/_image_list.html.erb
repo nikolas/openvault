@@ -1,12 +1,10 @@
-<div class="image-list">
-  <h4>Images in this series</h4>
-  <% if @ov_asset.images.empty? %>
-    <p>Currently we do not have any images available for this series.</p>
-  <% else %>
+<% if @ov_asset.images.present? %>
+  <div class="image-list">
+    <h4>Images in this series</h4>
     <ul>
       <% @ov_asset.images.each do |image| %>
         <li><%= link_to image.title, "/image/#{image.id}" %></li>
       <% end %>
     </ul>
-  <% end %>
-</div>
+  </div>
+<% end %>
