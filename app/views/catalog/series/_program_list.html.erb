@@ -1,10 +1,14 @@
 <% if @ov_asset.programs.present? %>
   <div class="programs-list">
     <h4>Programs in this series</h4>  
-    <ul>
-      <% @ov_asset.programs.each do |program| %>
-        <li><%= link_to program.title, catalog_path(program.id) %></li>
-      <% end %>
-    </ul>
+    <% @ov_asset.programs.each do |program| %>
+      <div class="row">
+        <%= link_to program do %>
+          <span class="span1"><%= program.broadcast_date %></span>
+          <span class="span2"><%= ('episode ' + program.episode) if program.episode %></span>
+          <span class="span4"><%= program.title %></span>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 <% end %>

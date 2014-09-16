@@ -155,6 +155,7 @@ Series: "Rock and Roll", Image: "RockRollSeries.jpg" - 34a589fdcb189dec43a5bca69
   <pbcoreDescriptionDocument>
     <pbcoreIdentifier source="UOI_ID">35454c33856948f9b70312078470976ae798ced4</pbcoreIdentifier>
     <pbcoreIdentifier source="IMPORT_ID">226564.0</pbcoreIdentifier>
+    <pbcoreAssetDate dateType="broadcast">1/1/2001<!-- Not in original, but useful for UI work. --></pbcoreAssetDate>
     <pbcoreTitle titleType="Series">Rock and Roll</pbcoreTitle>
     <pbcoreTitle titleType="Program">Make it Funky</pbcoreTitle>
     <pbcoreTitle titleType="Episode">108</pbcoreTitle>

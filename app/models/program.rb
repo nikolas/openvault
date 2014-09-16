@@ -22,6 +22,14 @@ class Program < OpenvaultAsset
   def title
     self.pbcore.program_title.first
   end
+  
+  def episode
+    self.pbcore.episode_title.first
+  end
+  
+  def broadcast_date
+    self.pbcore.broadcast_date.first
+  end
 
   def asset_count
     self.videos.count + self.audios.count
