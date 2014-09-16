@@ -40,7 +40,8 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
     t.asset_type(:path => "pbcoreAssetType")
 
-
+    t.broadcast_date(:path => "pbcoreAssetDate", :attributes =>{:dateType=>"broadcast"})
+    
     t.category(:path=>"pbcoreSubject", :attributes=>{:subjectType=>"Category"})
 
     # Terminology for <pbcoreDescription>
