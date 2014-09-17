@@ -81,7 +81,7 @@ class CatalogController < ApplicationController
 #     # facet bar
     config.add_facet_field solr_name('category', :facetable), :label => "Categories"
     config.add_facet_field solr_name('subject_facet', :facetable), :label => 'Topics'
-    config.add_facet_field solr_name('series', :facetable), :label => 'Series'
+    config.add_facet_field solr_name('series', :facetable), label: 'Series', single: true
     config.add_facet_field solr_name('program_facet', :facetable), :label => 'Program'    
     config.add_facet_field solr_name('people', :facetable), :label => "People"
     # config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year' 
