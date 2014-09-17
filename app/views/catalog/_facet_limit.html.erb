@@ -3,7 +3,7 @@
      #     by plugins that might re-use this inside something else. 
      display_heading = true unless local_assigns.has_key?(:display_heading)
 -%>
-   
+
    <% display_facet = @response.facets.detect {|f| f.name == solr_field} -%>
       <% if display_facet && display_facet.items.length > 0 %>
         <% if display_heading %>
@@ -28,7 +28,7 @@
           <% end %>
           
           <% if(paginator.has_next?)  %>
-            <li class="more_facets_link"><%= link_to('more »', params.merge(:id => solr_field, :action=>"facet"), :class => "more_facets_link") %></li>
+            <li class="more_facets_link"><%= link_to('more »', params.merge(id: solr_field, action: "facet"), :class=>"more_facets_link") %></li>
           <% end %>
           
         </ul>

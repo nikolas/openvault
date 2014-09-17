@@ -1,29 +1,27 @@
 <% title "#{application_name} - Search Results" %>
-<% sidebar_items << render(:partial => 'facets') %>
-
+<% sidebar_items << render(partial: 'facets') %>
 <div id="search_content">
+  <div class="span2" id="sidebar-partial">
+    <%= render partial: 'sidebar' %>
+  </div>
 
-    <%# unless has_search_parameters? %>
-	    <%# if there are no input/search related params, display the "home" partial -%>
-	    <%#= render 'home' %>
-    <%# else %>
-
+  <div class="span10" id="search">
     <% extra_head_content << render_opensearch_response_metadata %>
 
-    <%= render :partial => 'did_you_mean' %>
+    <%= render partial: 'did_you_mean' %>
 
-    <%= render 'constraints', :localized_params=>params %>
+    <%= render 'constraints', localized_params: params %>
 
     <div class="search-results-header row-fluid hidden-phone">
       <div class="span3">
         <%= render 'sort_and_per_page' %>
       </div>
       <div class="span2">
-        <%= render :partial => 'search_form_media_only' %>
+        <%= render partial: 'search_form_media_only' %>
       </div>
       <div class="span3">
         <div class="pageEntriesInfo">
-          <p><%= render_pagination_info @response, :entry_name=>'item' %></p>
+          <p><%= render_pagination_info @response, entry_name: 'item' %></p>
         </div>
       </div>
       <div class="span4">
@@ -36,7 +34,7 @@
       </div>
       <div class="span6">
         <div class="pageEntriesInfo">
-          <p><%= render_pagination_info @response, :entry_name=>'item' %></p>
+          <p><%= render_pagination_info @response, entry_name: 'item' %></p>
           <a href="#" class="mobile-filters">Filters</a>
         </div>
       </div>
@@ -58,9 +56,5 @@
         &nbsp;
       </div>
     </div>
-      
-
-
-    <%# end %>
-
+  </div>
 </div>
