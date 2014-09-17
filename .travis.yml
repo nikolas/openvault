@@ -10,6 +10,3 @@ before_script:
   # Make sure we give jetty enough time to start up.
   - JETTY='http://127.0.0.1:8983'
   - for X in {1..1000}; do sleep 1; curl $JETTY && break; done
-after_failure:
-  # TODO: Find where the log files are located.
-  - find /
