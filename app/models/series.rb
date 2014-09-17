@@ -15,6 +15,7 @@ class Series < OpenvaultAsset
     Solrizer.insert_field(solr_document, "programs", self.all_programs, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "media", self.class, :facetable)
     return solr_document
   end
 
