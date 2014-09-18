@@ -1,11 +1,11 @@
 <div class="basic">
   <div class="source">
     <div>
-      <% if @ov_asset.series %>
+      <% if @ov_asset.respond_to?(:series) && @ov_asset.series %>
         <p><strong>Series</strong>
           <%= link_to @ov_asset.series.title, @ov_asset.series %></p>
       <% end %>
-      <% if @ov_asset.program %>
+      <% if @ov_asset.respond_to?(:program) && @ov_asset.program %>
         <p><strong>Program</strong> 
           <%= link_to @ov_asset.program.title, @ov_asset.program %></p>
       <% end %>

@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'openvault/slug_setter'
 
-describe Openvault::SlugSetter do
+describe Openvault::SlugSetter, not_on_travis: true do
 
   OVSS = Openvault::SlugSetter
   
