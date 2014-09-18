@@ -19,7 +19,6 @@ describe "_pbcore.html.erb" do
   
   it "works with Series" do
     @ov_asset = create(:series)
-    render partial: "catalog/_metadata_partials/pbcore.html.erb"
-    # No parents: nothing to test.
+    expect {render partial: "catalog/_metadata_partials/pbcore.html.erb"}.not_to raise_error
   end
 end
