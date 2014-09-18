@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'openvault/pbcore'
+require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe CatalogController do
 
