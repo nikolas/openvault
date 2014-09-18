@@ -21,4 +21,13 @@ describe "_pbcore.html.erb" do
     @ov_asset = create(:series)
     expect {render partial: "catalog/_metadata_partials/pbcore.html.erb"}.not_to raise_error
   end
+  
+  it "works with nils" do
+    # Not really sure why sometimes the method doesn't exist,
+    # and other times the method exists but returns nil, but we should check both.
+    @ov_asset = create(:video)
+    @ov_asset.program = nil
+    @ov_asset.series = nil
+    expect {render partial: "catalog/_metadata_partials/pbcore.html.erb"}.not_to raise_error
+  end
 end
