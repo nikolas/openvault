@@ -23,6 +23,7 @@ class OpenvaultAsset < ActiveFedora::Base
     Solrizer.insert_field(solr_document, "summary", self.summary, :stored_searchable)
     Solrizer.insert_field(solr_document, "date_portrayed", self.date_portrayed, :stored_searchable, :dateable)
     Solrizer.insert_field(solr_document, "thumbnail", self.thumbnail_url, :displayable)
+    Solrizer.insert_field(solr_document, "media", self.class, :facetable)
     return solr_document
   end
 

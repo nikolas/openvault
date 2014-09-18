@@ -12,7 +12,6 @@ class Program < OpenvaultAsset
     Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "asset_count", self.asset_count, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "media", self.class, :facetable)
     return solr_document
   end
 
