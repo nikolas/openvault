@@ -50,7 +50,7 @@
     <div id="header">
       <div class="container">
         <div class="row-fluid">
-          <%= render :partial => 'layouts/header' %>
+          <%= render partial: 'layouts/header' %>
         </div>
       </div>
 		</div>
@@ -58,13 +58,13 @@
     
     <!-- Main container -->
     <div id="main-container" class="container">
-    <%= render :partial=>'layouts/flash_msg' %>
+    <%= render partial: 'layouts/flash_msg' %>
 				
 			<!-- Body Content -->
 		  <div id="body" class="row-fluid">
         <% if controller.action_name == 'index' && controller.controller_name == 'catalog' %>
         <div id="search_page">
-          <div class="span9" id="content">
+          <div class="span12" id="content">
             <%= yield %>
           </div>
         </div>
@@ -73,11 +73,9 @@
           <div class="span9" id="content">
             <%= yield %>
           </div>
-  				<div class="span3" id="sidebar">
-  					<!-- Sidebar logic to go in here -->
-  					<%= sidebar_items.join('').html_safe %>
-            &nbsp;
-  				</div>
+          <div class="span3">
+            <%= render partial: 'catalog/sidebar' %>
+          </div>
         </div>
         <% else %>
           <div class="span12">
@@ -93,7 +91,7 @@
     
     <!-- Footer -->
     <div id="footer" class="row-fluid">
-      <%= render :partial => 'layouts/footer' %>
+      <%= render partial: 'layouts/footer' %>
     </div>
     <!-- /Footer -->
     <script type="text/javascript">
