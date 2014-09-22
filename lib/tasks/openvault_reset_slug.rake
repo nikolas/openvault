@@ -34,8 +34,8 @@ namespace :openvault do
           line.chomp!
           slug, other_id = line.split "\t" # This is arbitrary, but matches the order of the file we have.
           Openvault::SlugSetter.reset_slug other_id: other_id, slug: slug
-        rescue Exception => e
-          puts e.message
+        rescue => error
+          puts error.message
         end
       end
     end
