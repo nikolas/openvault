@@ -7,15 +7,14 @@
    <% display_facet = @response.facets.detect {|f| f.name == solr_field} -%>
       <% if display_facet && display_facet.items.length > 0 %>
         <% if display_heading %>
-          <h4 class="twiddle twiddle-open">
-            <span class="arrow"><i class="icon-caret-down"></i></span>
+          <h4 class="twiddle">
             <%= facet_field_labels[solr_field] -%>
           </h4>
         <% end %>
         <ul>
           <% paginator =    
               Blacklight::Solr::FacetPaginator.new(display_facet.items,        
-                :limit => facet_limit_for(solr_field))
+                limit: facet_limit_for(solr_field))
           %>
           <% paginator.items.each do |item| -%>
             <li>
