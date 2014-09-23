@@ -19,10 +19,10 @@
       </div>
       <div id="article-content" class="tab-pane fade in" data-article="<%= @custom_collection.article.url %>">
         <% unless @custom_collection.article.nil? %>
-          <p class="hidden-tablet hidden-desktop pdf-download-link"><%= link_to 'View PDF', @custom_collection.article.url, :target => "_blank" %></p>
+          <p class="hidden-tablet hidden-desktop pdf-download-link"><%= link_to 'View PDF', @custom_collection.article.url, target: "_blank" %></p>
           <iframe class="pdf-container hidden-phone" src="<%= @custom_collection.article.url %>">
             <p class="pdf-download-link">
-              Browser does not appear to support iframes. Try <%= link_to 'this link', @custom_collection.article.url, :target => "_blank" %>.
+              Browser does not appear to support iframes. Try <%= link_to 'this link', @custom_collection.article.url, target: "_blank" %>.
             </p>
           </iframe>
           <p class="article_rights"><%= @custom_collection.article_rights.to_s %></p>
@@ -47,7 +47,7 @@
       
       <% if !@custom_collection.custom_collection_images.empty? %>
         <div id="images" class="tab-pane fade in">
-          <%= render :partial => "custom_collection_images_gallery", :locals => {:custom_collection => @custom_collection} %>
+          <%= render partial: "custom_collection_images_gallery", locals: {custom_collection: @custom_collection} %>
         </div>
       <% end %>
 
@@ -61,23 +61,23 @@
       </div>
 
       <div id="collabs" class="tab-pane fade in">
-
-        <% unless @custom_collection.collabs.nil? %>
-          <ul>
-            <% ([@custom_collection.owner] + @custom_collection.collabs_without_owner).each do |collab| %>
-              <li>
-                <%= render partial: "owner_#{collab.class.to_s.downcase}", locals: {collab: collab}  %>
-              </li>
-            <% end %>
-          </ul>
-        <% end %>
+        <div id="credits"> 
+          <% unless @custom_collection.collabs.nil? %>
+            <ul>
+              <% ([@custom_collection.owner] + @custom_collection.collabs_without_owner).each do |collab| %>
+                <li>
+                  <%= render partial: "owner_#{collab.class.to_s.downcase}", locals: {collab: collab}  %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
         
-        <% if @custom_collection.credits %>
-          <p class="collection_credits">
-            Additional Credits: <%= @custom_collection.credits.to_s %>
-          </p>
-        <% end %>
-  
+          <% if @custom_collection.credits.present? %>
+            <p class="collection_credits">
+              Additional Credits: <%= @custom_collection.credits.to_s %>
+            </p>
+          <% end %>
+        </div>
       </div>
     </div>
     
