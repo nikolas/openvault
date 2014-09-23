@@ -304,12 +304,7 @@ class CatalogController < ApplicationController
       flash = {} # Flash message may have been set if search failed... but should that ever happen in production?
       render file: override_file_path
     else
-      (lookup params[:id]).tap do |triple|
-        @response = triple[:response]
-        @document = triple[:document]
-        @ov_asset = triple[:ov_asset]
-      end
-      
+      lookup_and_set_fields
       if @response && @document && @ov_asset
         render action: @ov_asset.class.to_s.downcase + '/show'
       else
@@ -331,7 +326,7 @@ class CatalogController < ApplicationController
 #    render :layout => 'blank'
 #  end
   def print
-    lookup params[:id]
+    lookup_and_set_fields
     render action:(@ov_asset.class.to_s.downcase + '/print')
   end
 #  def embed
@@ -350,4 +345,14 @@ class CatalogController < ApplicationController
 #    end
 #  end
 
+  private
+  
+  def lookup_and_set_fields
+    (lookup params[:id]).tap do |triple|
+      @response = triple[:response]
+      @document = triple[:document]
+      @ov_asset = triple[:ov_asset]
+    end
+  end
+  
 end 
