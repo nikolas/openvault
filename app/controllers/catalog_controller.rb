@@ -8,6 +8,8 @@ class CatalogController < ApplicationController
   include Hydra::Controller::ControllerBehavior
   include Blacklight::Solr::Document::MoreLikeThis
   
+  include LookupBySlug
+  
   # include BlacklightOaiProvider::ControllerExtension
   # include BlacklightOembed::ControllerExtension
   # 
@@ -302,7 +304,12 @@ class CatalogController < ApplicationController
       flash = {} # Flash message may have been set if search failed... but should that ever happen in production?
       render file: override_file_path
     else
-      lookup params[:id]
+      (lookup params[:id]).tap do |triple|
+        @response = triple[:response]
+        @document = triple[:document]
+        @ov_asset = triple[:ov_asset]
+      end
+      
       if @response && @document && @ov_asset
         render action: @ov_asset.class.to_s.downcase + '/show'
       else
@@ -343,11 +350,4 @@ class CatalogController < ApplicationController
 #    end
 #  end
 
-  private
-  
-  def lookup id
-    @response, @document = get_solr_response_for_doc_id id rescue nil
-    pid = @document[:pid] || id rescue id
-    @ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil
-  end
 end 
