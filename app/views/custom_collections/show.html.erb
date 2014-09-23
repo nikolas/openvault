@@ -1,6 +1,6 @@
 <div id="collection_container">
   <h2><%= @custom_collection.name %></h2>
-  <p><strong>Created By: <%= @custom_collection.owner_name %></strong></p>
+  <p><strong>Created By: <%= (@custom_collection.owner.class == Org) ? @custom_collection.owner_name : link_to(@custom_collection.owner_name, @custom_collection.owner.url) %></strong></p>
   <br />
   <div class="tabbable responsive">
     <ul class="nav nav-tabs">

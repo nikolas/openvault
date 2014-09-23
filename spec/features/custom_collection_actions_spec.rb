@@ -30,6 +30,27 @@ feature 'Organizations can own collections' do
   
 end
 
+feature 'Show page shows owner of collection' do
+
+  before :each do
+    Warden.test_reset!
+  end
+
+  scenario 'without link for owners that are organizations' do
+    @org = create(:org)
+    @custom_collection = create(:custom_collection, owner: @org)
+    visit new_custom_collection_path
+    expect(page).not_to have_link("#{@custom_collection.owner_name}")
+  end
+
+  scenario 'with link for owners who are scholars' do
+    @scholar = create(:user, role: 'scholar')
+    @custom_collection = create(:custom_collection, owner: @scholar)
+    visit new_custom_collection_path
+    expect(page).to have_link("#{@custom_collection.owner_name}")
+  end
+end
+
 feature 'User tries to create a custom collection' do
 
   before :each do
