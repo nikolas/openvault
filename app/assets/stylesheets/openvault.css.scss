@@ -57,9 +57,12 @@ a.action_link {
     color: lighten($orange, 20%);
   }
 }
-p, label, span {
+p, label {
   font-size: 13px;
   line-height: 1.3em;
+}
+.tei-metadata {
+  display: none;
 }
 strong {
   font-weight: bold;
