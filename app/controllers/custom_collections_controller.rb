@@ -103,7 +103,10 @@ class CustomCollectionsController < ApplicationController
 
   def add_item
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
-    if @ov_asset = OpenvaultAsset.find(params[:asset_id])
+    if @ov_asset = OpenvaultAsset.find(params[:asset_id]) rescue OpenvaultAsset.find(
+        Blacklight.solr.select(
+          params: {q: "id:#{params[:asset_id]}"}
+        )['response']['docs'].first['pid'])
       @custom_collection.add_collection_item(@ov_asset.pid, params[:kind])
       respond_to do |format|
         format.html { redirect_to "/catalog/#{params[:asset_id]}", notice: 'added to your collection!' }
