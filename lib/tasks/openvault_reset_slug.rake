@@ -30,9 +30,13 @@ namespace :openvault do
     end
     File.open(ENV[FILE_PARAM], "r") do |f|
       f.each_line do |line|
-        line.chomp!
-        slug, other_id = line.split "\t" # This is arbitrary, but matches the order of the file we have.
-        Openvault::SlugSetter.reset_slug other_id: other_id, slug: slug
+        begin
+          line.chomp!
+          slug, other_id = line.split "\t" # This is arbitrary, but matches the order of the file we have.
+          Openvault::SlugSetter.reset_slug other_id: other_id, slug: slug
+        rescue => error
+          puts error.message
+        end
       end
     end
   end
