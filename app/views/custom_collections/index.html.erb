@@ -1,6 +1,6 @@
 <% title "#{application_name} - Collections" %>
 <h2>Scholar Collections</h2>
-<% @custom_collections.map {|collection| collection.owner}.each do |owner| %>
+<% @custom_collections.map {|collection| collection.owner}.uniq.each do |owner| %>
   <div class="user_block row-fluid">
     <div class="span2">
       <%= link_to image_tag(owner.avatar.url(:small)), owner.url rescue '' %>
