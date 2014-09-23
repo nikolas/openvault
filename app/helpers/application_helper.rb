@@ -21,11 +21,9 @@ module ApplicationHelper
     item.kind.downcase
   end
 
+  # TODO: Is it OK to have Fedora lookup in this helper method?
   def render_collection_item(item, options={})
-  	if item.kind == "Video"
-  		render :partial => '/custom_collections/video', :locals => {:item => item}
-  	else
-  		render :partial => '/custom_collections/other', :locals => {:item => item}
-  	end
+    partial_name = (item.kind == "Video") ? 'video' : 'other'
+    render partial: "/custom_collections/#{partial_name}", locals: {item: item, ov_asset: ActiveFedora::Base.find(item.openvault_asset_pid, cast: true)}
   end
 end
