@@ -58,7 +58,8 @@ describe Openvault::Pbcore::AssetClassifier do
           'mars/image_1.xml',
           'artesia/rock_and_roll/image_1.xml',
           'artesia/march_on_washington/image_1.xml',
-          'artesia/joyce_chen/image_1.xml']
+          'artesia/joyce_chen/image_1.xml',
+          'artesia/war_and_peace/image_1.xml']
     end
     
     it 'for Video' do

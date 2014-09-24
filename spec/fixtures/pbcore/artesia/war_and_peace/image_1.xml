@@ -1,0 +1,18 @@
+<pbcoreDescriptionDocument>
+    <pbcoreIdentifier source="UOI_ID" version="1">cdc9ff9d3732213ee9019fe64154ad084a2507c2</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">244767.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">War and Peace in the Nuclear Age</pbcoreTitle>
+    <pbcoreDescription>missing value</pbcoreDescription>
+    <pbcoreInstantiation>
+        <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">cdc9ff9d3732213ee9019fe64154ad084a2507c2</instantiationIdentifier>
+        <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 268 imported 2013-09-04 09:43:43.0">thumbnail_barcode48767_fix.jpg</instantiationIdentifier>
+        <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">720 x 486</instantiationDimensions>
+        <instantiationDigital>image/jpeg</instantiationDigital>
+        <instantiationLocation/>
+    </pbcoreInstantiation>
+    <pbcoreExtension>
+        <extensionEmbedded annotation="Access control information">
+            <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+        </extensionEmbedded>
+    </pbcoreExtension>
+</pbcoreDescriptionDocument>
