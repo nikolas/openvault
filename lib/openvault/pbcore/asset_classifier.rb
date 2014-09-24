@@ -19,7 +19,8 @@ module Openvault::Pbcore
       'Series' => lambda {|doc| 
         !doc.series_title.empty? && 
           doc.program_title.empty? && 
-          doc.instantiations.media_type.empty?},
+          doc.instantiations.media_type.empty? &&
+          doc.instantiations.digital.empty?},
       
       'Program' => lambda {|doc|
         !doc.program_title.empty? &&
