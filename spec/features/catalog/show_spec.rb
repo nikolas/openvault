@@ -15,6 +15,9 @@ feature "User visits catalog#show" do
     @transcript.tei.ng_xml = Fixtures.raw("../tei/Patriots_Day_tei.xml")
     @video.transcripts << @transcript
     @video = OpenvaultAsset.find(@video.pid, cast: true)
+    @audio = Audio.create
+    @audio.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/audio_1.xml")
+    @audio.save!
   end
   
   def setup(type, fixture_path)
@@ -69,6 +72,19 @@ feature "User visits catalog#show" do
     visit "/catalog/#{@video.pid}"
     expect(page).to have_content("TRANSCRIPT")
     expect(page).to have_content("Interviewer:")
+  end
+
+  scenario "page does not display Rights info initially" do
+    visit "/catalog/#{@audio.pid}"
+    expect(page).to have_content("Show details")
+    expect(page).not_to have_content("Rights")
+  end
+
+  scenario "page displays Rights info in 'Show details'" do
+    visit "/catalog/#{@audio.pid}"
+    click_on("Show details")
+    expect(page).to have_content("Hide details")
+    expect(page).to have_content("Rights")
   end
 
   scenario "non-existent returns 404" do
