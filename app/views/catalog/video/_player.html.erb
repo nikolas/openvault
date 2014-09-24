@@ -16,6 +16,9 @@
         poster="<%= @ov_asset.thumbnail_url %>">
         <source src="<%= @ov_asset.video_url %>" type='video/mp4' />
       </video>
+      <script>
+        videojs.options.techOrder = ['flash', 'html5'];
+      </script>
     <% end %>
   </div>
   <%= render partial: 'catalog/transcript' %>
