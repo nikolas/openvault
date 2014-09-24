@@ -65,7 +65,8 @@ describe Openvault::Pbcore::AssetClassifier do
     it 'for Video' do
       expect_class Video, [
           'mars/video_1.xml',
-          'artesia/rock_and_roll/video_1.xml']
+          'artesia/rock_and_roll/video_1.xml',
+          'artesia/vietnam/video_1.xml']
     end 
     
     it 'for Audio' do

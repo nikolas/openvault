@@ -1,0 +1,59 @@
+<pbcoreDescriptionDocument>
+    <pbcoreAssetType>Original footage</pbcoreAssetType>
+    <pbcoreIdentifier source="UOI_ID" version="1">31a054d14ce5db6b40db0b05c2ae312782e996c7</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">157122.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series"> Vietnam: A Television History</pbcoreTitle>
+    <pbcoreTitle titleType="Element2">Interview with W. Averell (William Averell) Harriman, 1979 [Part 2 of 4]</pbcoreTitle>
+    <pbcoreSubject subjectType="Subject Heading">Cold War</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Diplomacy</pbcoreSubject>
+    <pbcoreSubject subjectType="Subject Heading">Communism</pbcoreSubject>
+    <pbcoreDescription annotation="[Part 2 of 4]" descriptionType="Description" startTime="20:57:24:08" endTime="21:44:30:25">Averrell Harriman was a long-serving U.S. ambassador who acted as the chief U.S. negotiator of the Paris Peace Accord. Harriman discusses the seeds of U.S. policy toward Indochina following World War Two, with Roosevelt and Stalin being in agreement that it would be best if the French did not return there. He expresses his displeasure that France was using Marshall Fund money to support its military in Vietnam. He describes U.S. presidents&#x92; different stances toward Vietnam and his experience at the Paris Peace Accord negotiations. He goes into great detail accounting for the various reasons for the U.S. being in Vietnam, including the two countries&#x92; postures toward the Soviet Union and China. He offers his impressions of Diem and other Vietnamese leaders.</pbcoreDescription>
+    <pbcoreRelation>
+        <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+        <pbcoreRelationIdentifier>301234</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreCoverage>
+        <coverage ref="DATE_PORTRAYED">01/29/1979</coverage>
+        <coverageType>Temporal</coverageType>
+    </pbcoreCoverage>
+    <pbcoreContributor>
+        <contributor>Harriman, W. Averell (William Averell)</contributor>
+        <contributorRole>Interviewee2</contributorRole>
+    </pbcoreContributor>
+    <pbcorePublisher>
+        <publisher>WGBH Educational Foundation</publisher>
+        <publisherRole>Publisher</publisherRole>
+    </pbcorePublisher>
+    <pbcoreRightsSummary>
+        <rightsEmbedded>
+            <WGBH_RIGHTS RIGHTS_NOTE="1) No materials may be re-used without references to appearance releases and WGBH/UMass Boston contract. 2) It is the responsibility of a production to investigate and re-clear all rights before re-use in any project." RIGHTS_CREDIT="WGBH Educational Foundation" RIGHTS_HOLDER="WGBH Educational Foundation"/>
+        </rightsEmbedded>
+    </pbcoreRightsSummary>
+    <pbcoreInstantiation>
+        <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">31a054d14ce5db6b40db0b05c2ae312782e996c7</instantiationIdentifier>
+        <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 21 imported 2009-10-27 07:14:17.0">barcode301234-1.mov</instantiationIdentifier>
+        <instantiationPhysical>Digital betacam</instantiationPhysical>
+        <instantiationDigital>video/quicktime</instantiationDigital>
+        <instantiationStandard>NTSC</instantiationStandard>
+        <instantiationLocation>Archives (department)</instantiationLocation>
+        <instantiationTimeStart>20:57:24:08</instantiationTimeStart>
+        <instantiationDuration>00:48:27;11</instantiationDuration>
+        <instantiationColors>Color</instantiationColors>
+        <instantiationLanguage>eng</instantiationLanguage>
+        <instantiationEssenceTrack>
+            <essenceTrackType>Audio</essenceTrackType>
+            <essenceTrackIdentifier>Audio Track 5</essenceTrackIdentifier>
+            <essenceTrackEncoding>in24 24-bit Integer</essenceTrackEncoding>
+            <essenceTrackSamplingRate unitsOfMeasure="samples per second">48000</essenceTrackSamplingRate>
+            <essenceTrackBitDepth>16</essenceTrackBitDepth>
+            <essenceTrackTimeStart>0.000 seconds</essenceTrackTimeStart>
+            <essenceTrackDuration>2907.341 seconds</essenceTrackDuration>
+        </instantiationEssenceTrack>
+    </pbcoreInstantiation>
+    <pbcoreAnnotation annotationType="Audio Quality2">(Audio Track 5) samples per second : 48000 </pbcoreAnnotation>
+    <pbcoreExtension>
+        <extensionEmbedded annotation="Access control information">
+            <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+        </extensionEmbedded>
+    </pbcoreExtension>
+</pbcoreDescriptionDocument>

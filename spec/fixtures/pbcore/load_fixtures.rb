@@ -33,6 +33,7 @@ Fixtures.load([
   "artesia/joyce_chen/image_1.xml",
   
   "artesia/vietnam/from_cbs.xml",
+  "artesia/vietnam/video_1.xml",
   
   "artesia/war_and_peace/image_1.xml",
   
