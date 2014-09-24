@@ -34,6 +34,8 @@ Fixtures.load([
   
   "artesia/vietnam/from_cbs.xml",
   
+  "artesia/war_and_peace/image_1.xml",
+  
   'pbcore_rights.xml'
 ]) do |fixture|
 
