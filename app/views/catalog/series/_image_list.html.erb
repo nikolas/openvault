@@ -2,7 +2,7 @@
   <div class="image-list">
     <h4>Images in this series</h4>
     <ul>
-      <% @ov_asset.images.each do |image| %>
+      <% @ov_asset.images.sort_by{|obj| obj.title}.each do |image| %>
         <li><%= link_to image.title, "/image/#{image.id}" %></li>
       <% end %>
     </ul>

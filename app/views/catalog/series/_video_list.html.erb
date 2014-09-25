@@ -2,7 +2,7 @@
   <div class="video-list">
     <h4>Videos in this series</h4>
     <ul>
-      <% @ov_asset.videos.each do |video| %>
+      <% @ov_asset.videos.sort_by{|obj| obj.title}.each do |video| %>
         <li><%= link_to video.title, "/video/#{video.id}" %></li>
       <% end %>
     </ul>
