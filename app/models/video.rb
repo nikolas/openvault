@@ -26,8 +26,13 @@ class Video < OpenvaultAsset
     titles_by_type['Element2'] || titles_by_type['Element3'] || titles_by_type['Item2'] || titles_by_type['Clip'] || self.pbcore.asset_type.first
   end
 
-  def video_url
-    "#{media_host}/video/#{mp4_file_name}" if mp4_file_name
+  # Returns the video URL
+  #   opts[:format] - a string to use to override the file extension in the URL, e.g. "mp4"
+  def video_url(opts={})
+    if original_file_name
+      file = opts[:format].nil? ? original_file_name : original_file_name.sub(/\.[^.]+$/, ".#{opts[:format].to_s}")
+      "#{media_host}/video/#{file}"
+    end
   end
 
   def video_transcripts
@@ -40,10 +45,6 @@ class Video < OpenvaultAsset
 
   def thumbnail_url
     self.images.first.image_url unless self.images.empty?
-  end
-
-  def mp4_file_name
-    original_file_name.gsub(/\.mov/, ".mp4")
   end
 
   def login_required?

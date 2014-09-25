@@ -6,7 +6,8 @@
           <video id="video-mp4" class="video-mp4 video-js vjs-default-skin vjs-big-play-centered hidden-phone"
             width="300px" height="300" controls preload="auto"
             poster="<%= ov_asset.thumbnail_url %>">
-            <source src="<%= ov_asset.video_url %>" type='video/mp4' />
+            <source src="<%= ov_asset.video_url(format: :mp4) %>" type='video/mp4' />
+            <source src="<%= ov_asset.video_url(format: :webm) %>" type='video/webm' />
           </video>
         </div>
       </div>
