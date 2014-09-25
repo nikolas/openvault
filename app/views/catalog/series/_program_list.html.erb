@@ -1,7 +1,7 @@
 <% if @ov_asset.programs.present? %>
   <div class="programs-list">
     <h4>Programs in this series</h4>  
-    <% @ov_asset.programs.sort_by {|program| program.episode.to_i.to_s.rjust(10,'0') + program.title.to_s}.each do |program| %>
+    <% @ov_asset.programs.sort_by{|program| program.episode.to_i.to_s.rjust(10,'0') + program.title.to_s}.each do |program| %>
       <div class="row">
         <%= link_to program do %>
           <span class="span1"><%= program.broadcast_date %></span>
