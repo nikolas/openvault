@@ -13,11 +13,12 @@
     <div class="span8 date">
       <%= display_date @document %>
     </div>
-    <div class="tools span3">
+    <div class="tools">
       <% unless @document['active_fedora_model_ssi'] == "Series" %>
-        <div style="float:right"><%= artifact_digitization_link(@document, @digitization_artifact) %></div>
-        <div style="float:right"><%= artifact_transcription_link(@document, @transcription_artifact) %></div>
-        <div class='clearfix'></div>
+        <div style="float:right">
+          <%= artifact_digitization_link(@document, @digitization_artifact) %>
+          <%= artifact_transcription_link(@document, @transcription_artifact) %>
+        </div>
       <% end %>
       <%= render partial: 'catalog/show_tools' %>
     </div>
