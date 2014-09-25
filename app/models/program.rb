@@ -9,7 +9,9 @@ class Program < OpenvaultAsset
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "videos", self.all_videos, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "video_count", self.videos.count, :displayable)
     Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "audio_count", self.audios.count, :displayable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "asset_count", self.asset_count, :displayable, :searchable)
     return solr_document
