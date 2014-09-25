@@ -23,14 +23,14 @@
         <div class="doc_value"><p><span class="doc_label">Media Type:</span><%= safe_truncate program[:active_fedora_model_ssi] %></p></div>
       </div>
     <% end %>
-    <% unless program[:video_count_ssm].nil? || program[:video_count_ssm] == 0 %>
+    <% unless program[:video_count_ssm].nil? || program[:video_count_ssm].first == "0" %>
       <div class="blacklight-video-count">
-        <div class="doc_value"><p><span class="doc_label">Videos in this program:</span><%= program[:video_count_ssm].first %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Videos:</span><%= program[:video_count_ssm].first %></p></div>
       </div>
     <% end %>
-    <% unless program[:audio_count_ssm].nil? || program[:audio_count_ssm] == 0 %>
+    <% unless program[:audio_count_ssm].nil? || program["audio_count_ssm"].first == "0" %>
       <div class="blacklight-audio-count">
-        <div class="doc_value"><p><span class="doc_label">Audio in this program:</span><%= program[:audio_count_ssm].first %></p></div>
+        <div class="doc_value"><p><span class="doc_label">Audio:</span><%= program[:audio_count_ssm].first %></p></div>
       </div>
     <% end %>
     <% unless program[:date_portrayed_tesim].nil? %>
