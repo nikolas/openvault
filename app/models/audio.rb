@@ -36,7 +36,7 @@ class Audio < OpenvaultAsset
   def audio_url
     #This needs to change based on the decisions made about the streaming server
     #"http://media.wgbh.org/streaming/audios/#{self.id}.mp3"
-    "#{media_host}/audio/#{original_file_name}" if original_file_name
+    "#{media_host}/audio/#{original_file_name.sub(/\.[^.]+$/,'.mp3')}" if original_file_name
   end
 
   def relate_asset asset
