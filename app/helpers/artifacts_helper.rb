@@ -61,16 +61,16 @@ module ArtifactsHelper
   end
 
   def track_artifact_link(document)
-   track = link_to "Track this item", digitizations_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-primary" 
+   track = link_to "Track this item", digitizations_path(:id => document.id), method: "POST", :class => "btn btn-mini" 
    "Currently in the digitization process... #{track}".html_safe
   end
 
   def request_transcription_link(document)
-    link_to "Request transcript of this item", transcriptions_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-default"
+    link_to "Request Transcript", transcriptions_path(:id => document.id), method: "POST", :class => "btn btn-mini"
   end 
 
 
   def request_digitization_link(document)
-    link_to "Request digitization of this item", digitizations_path(:id => document.id), method: "POST", :class => "btn btn-mini btn-primary"
+    link_to "Request Digitization", digitizations_path(:id => document.id), method: "POST", :class => "btn btn-mini"
   end
 end
