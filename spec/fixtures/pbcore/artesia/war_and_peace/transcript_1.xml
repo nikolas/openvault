@@ -1,0 +1,19 @@
+<pbcoreDescriptionDocument>
+  <pbcoreAssetType>Documentation</pbcoreAssetType>
+  <pbcoreIdentifier source="UOI_ID" version="1">50935eb8be67179f1abeb1ace8e0c56966654c4d</pbcoreIdentifier>
+  <pbcoreIdentifier source="IMPORT_ID" version="1">237166.0</pbcoreIdentifier>
+  <pbcoreTitle titleType="Series">War and Peace in the Nuclear Age</pbcoreTitle>
+  <pbcoreTitle titleType="Program">Zero Hour</pbcoreTitle>
+  <pbcoreDescription descriptionType="Summary4">SMIL XML transcript file from Hans Apel interview</pbcoreDescription>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">50935eb8be67179f1abeb1ace8e0c56966654c4d</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 157 imported 2013-05-29 15:52:08.0">transcript_Hans_Apel_Interview_Merged_SMIL.xml</instantiationIdentifier>
+    <instantiationLocation/>
+    <instantiationMediaType>Text</instantiationMediaType>
+  </pbcoreInstantiation>
+  <pbcoreExtension>
+    <extensionEmbedded annotation="Access control information">
+      <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+    </extensionEmbedded>
+  </pbcoreExtension>
+</pbcoreDescriptionDocument>

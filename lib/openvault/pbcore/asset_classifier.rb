@@ -28,6 +28,7 @@ module Openvault::Pbcore
       
       'Transcript' => lambda {|doc|
         asset_type(doc).match(/transcript/i) ||
+          asset_type(doc).match(/documentation/i) ||
           asset_type(doc).match(/logs/i)},
       
       'Video' => lambda {|doc|
