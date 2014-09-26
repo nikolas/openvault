@@ -76,7 +76,9 @@ describe Openvault::Pbcore::AssetClassifier do
     
     it 'for Transcript' do
       expect_class Transcript, [
-        'artesia/rock_and_roll/transcript_1.xml']
+        'artesia/rock_and_roll/transcript_1.xml',
+        'artesia/rock_and_roll/transcript_2.xml',
+        'artesia/war_and_peace/transcript_1.xml']
     end
     
     describe 'exception' do

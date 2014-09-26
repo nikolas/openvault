@@ -15,6 +15,7 @@ Fixtures.load([
   "artesia/rock_and_roll/video_2.xml",
   "artesia/rock_and_roll/video_3.xml",
   "artesia/rock_and_roll/transcript_1.xml",
+  "artesia/rock_and_roll/transcript_2.xml",
   "artesia/rock_and_roll/image_1.xml",
 
   "artesia/march_on_washington/audio_1.xml",
@@ -36,6 +37,7 @@ Fixtures.load([
   "artesia/vietnam/video_1.xml",
   
   "artesia/war_and_peace/image_1.xml",
+  "artesia/war_and_peace/transcript_1.xml",
   
   'pbcore_rights.xml'
 ]) do |fixture|
