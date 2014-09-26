@@ -1,6 +1,6 @@
 class DigitizationsController < ApplicationController
 	def create
-		artifact = Artifact.find_or_create_by_pid_and_type(params[:id], 'digitization')
+		artifact = Artifact.find_or_create_by_pid_and_type(params[:pid], 'digitization')
 		if artifact.request_digitization(current_user)
 			flash[:notice] = 'request successfully made'
 		else
@@ -10,7 +10,7 @@ class DigitizationsController < ApplicationController
 	end
 
 	def destroy
-		artifact = current_user.artifacts.find(params[:id])
+		artifact = current_user.artifacts.find(params[:pid])
 		if artifact.withdraw_request(current_user)
 			flash[:notice] = 'request withdrawn'
 		else
