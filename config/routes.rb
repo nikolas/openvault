@@ -12,8 +12,6 @@ Openvault::Application.routes.draw do
     get 'remove_item'
   end
 
-  match 'blog' => 'blog#index', :as => 'blog'
-
   root :to => "catalog#home"
 
   get 'collections/:file', to: redirect("/catalog/%{file}"), constraints: { file: /
