@@ -10,7 +10,7 @@ class DigitizationsController < ApplicationController
 	end
 
 	def destroy
-		artifact = current_user.artifacts.find(params[:pid])
+		artifact = current_user.artifacts.find(params[:id])
 		if artifact.withdraw_request(current_user)
 			flash[:notice] = 'request withdrawn'
 		else
