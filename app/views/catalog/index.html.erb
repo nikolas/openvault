@@ -13,9 +13,6 @@
     <%= render 'constraints', localized_params: params %>
 
     <div class="search-results-header row-fluid hidden-phone">
-      <div class="span2">
-        <%= render partial: 'search_form_media_only' %>
-      </div>
       <div class="span3">
         <div class="pageEntriesInfo">
           <p><%= render_pagination_info @response, entry_name: 'item' %></p>
