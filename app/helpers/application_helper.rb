@@ -27,8 +27,8 @@ module ApplicationHelper
     begin
       ov_asset = ActiveFedora::Base.find(item.openvault_asset_pid, cast: true)
       render partial: "/custom_collections/#{partial_name}", locals: {item: item, ov_asset: ov_asset}
-    rescue
-      Rails.logger.error "Failed render of '#{partial_name}' for PID '#{item.openvault_asset_pid}'"
+    rescue => error
+      Rails.logger.error("Failed render of '#{partial_name}' for PID '#{item.openvault_asset_pid}':\n" + error.backtrace.join("\n"))
     end
   end
 end
