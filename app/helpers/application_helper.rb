@@ -24,6 +24,11 @@ module ApplicationHelper
   # TODO: Is it OK to have Fedora lookup in this helper method?
   def render_collection_item(item, options={})
     partial_name = (item.kind == "Video") ? 'video' : 'other'
-    render partial: "/custom_collections/#{partial_name}", locals: {item: item, ov_asset: ActiveFedora::Base.find(item.openvault_asset_pid, cast: true)}
+    begin
+      ov_asset = ActiveFedora::Base.find(item.openvault_asset_pid, cast: true)
+      render partial: "/custom_collections/#{partial_name}", locals: {item: item, ov_asset: ov_asset}
+    rescue
+      Rails.logger.error "Failed render of '#{partial_name}' for PID '#{item.openvault_asset_pid}'"
+    end
   end
 end
