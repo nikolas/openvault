@@ -31,7 +31,6 @@ Openvault::Application.routes.draw do
       get 'image'
       get 'embed'
     end
-    resources :comments, :constraints => { :id => /[0-9]+/ }
     resource :tags
   end
 
