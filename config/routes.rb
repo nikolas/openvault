@@ -63,5 +63,7 @@ Openvault::Application.routes.draw do
   get '/scholar/:username', to: 'users#scholar', as: :scholar
   get '/scholars', to: 'users#scholars'
   
+  get '/blog/*path', to: redirect('http://blog.openvault.wgbh.org/%{path}')
+  
   get '/*path', to: 'override#show', constraints: { :path => /[a-z\/-]+/ }
 end
