@@ -31,6 +31,21 @@
     </div>
   <% end %>
   
+  <% 
+    contributions_by_role = @ov_asset.contributions_by_role
+    unless contributions_by_role.empty?
+  %>
+    <div>
+      <h4>Contributors</h4>
+      <% @ov_asset.contributions_by_role.each do |role,contributors| %>
+        <p>
+          <strong><%= role %></strong>
+          <%= contributors.join(', ') %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>  
+  
   <% if @ov_asset.media_dimensions || @ov_asset.media_physical || @ov_asset.media_standard || 
         @ov_asset.media_duration || @ov_asset.media_type || @ov_asset.media_barcode %>
     <div>
