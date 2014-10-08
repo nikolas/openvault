@@ -68,8 +68,21 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.note(path: '@RIGHTS_NOTE')
       t.type(path: '@RIGHTS_TYPE')
     }
+        
+    t.barcode(path: 'pbcoreRelation[pbcoreRelationType[@source="SOURCE"]="Tracking Number"]/pbcoreRelationIdentifier')
+    # <pbcoreRelation>
+    #   <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+    #   <pbcoreRelationIdentifier>50013</pbcoreRelationIdentifier>
+    # </pbcoreRelation>
     
-    t.instantiations(path: "pbcoreInstantiation") {
+    t.instantiation(path: 'pbcoreInstantiation') {
+      t.dimensions(path: 'instantiationDimensions')
+      t.physical(path: 'instantiationPhysical')
+      t.standard(path: 'instantiationStandard')
+      t.duration(path: 'instantiationDuration')
+    }
+    
+    t.instantiations(path: "pbcoreInstantiation") { # TODO: The plural doesn't seem right. Combine with above?
       t.media_type(path: 'instantiationMediaType')
       t.digital(path: 'instantiationDigital')
       t.id(path: 'instantiationIdentifier') {

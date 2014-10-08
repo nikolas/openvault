@@ -86,7 +86,30 @@ class OpenvaultAsset < ActiveFedora::Base
     end
   end
   
+  def media_type
+    self.pbcore.asset_type.first
+  end
+  def media_barcode
+    self.pbcore.barcode.first
+  end
+  def media_duration
+    media(:duration)
+  end
+  def media_standard
+    media(:standard)
+  end
+  def media_physical
+    media(:physical)
+  end
+  def media_dimensions
+    media(:dimensions)
+  end
+  
   private
+  
+  def media(detail)
+    self.pbcore.instantiation.send(detail).first
+  end
   
   def rights(detail)
     self.pbcore.rights.send(detail).first
