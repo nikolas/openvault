@@ -19,6 +19,14 @@ class CustomCollectionItem < ActiveRecord::Base
   scope :by_kind, order('kind DESC')
   
   def ov_asset
+    @ov_asset ||= fetch_ov_asset
+  end
+
+  def fetch_ov_asset
+    fetch_ov_asset! rescue nil
+  end
+
+  def fetch_ov_asset!
     OpenvaultAsset::find openvault_asset_pid, cast: true
   end
 
