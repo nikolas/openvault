@@ -86,6 +86,10 @@ class OpenvaultAsset < ActiveFedora::Base
     end
   end
   
+  def contributions_by_role
+    self.pbcore.contributions_by_role
+  end
+  
   def media_type
     self.pbcore.asset_type.first
   end

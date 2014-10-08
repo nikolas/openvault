@@ -68,6 +68,12 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.note(path: '@RIGHTS_NOTE')
       t.type(path: '@RIGHTS_TYPE')
     }
+    
+    t.contributors(path: 'pbcoreContributor') {
+      t.name(path: 'contributor')
+      t.affiliation(path: 'contributor/@affiliation')
+      t.role(path: 'contributorRole')
+    }
         
     t.barcode(path: 'pbcoreRelation[pbcoreRelationType[@source="SOURCE"]="Tracking Number"]/pbcoreRelationIdentifier')
     # <pbcoreRelation>
@@ -134,6 +140,21 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       relations[type] += self.relations(i).id
     end
     relations
+  end
+  
+  def contributions_by_role
+    contributions = {}
+    for i in 0..(self.contributors.count-1)
+      contributor = self.contributors(i)
+      name = contributor.name.first
+      affiliation = contributor.affiliation.first
+      compound = affiliation ? "#{name} [#{affiliation}]" : name
+      contributor.role.map{|r| r.gsub(/\d+$/,'')}.each do |r| 
+        contributions[r] ||= []
+        contributions[r] << compound
+      end
+    end
+    contributions
   end
 
   def digital

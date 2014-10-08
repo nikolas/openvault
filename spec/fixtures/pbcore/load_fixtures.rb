@@ -40,7 +40,8 @@ Fixtures.load([
   "artesia/war_and_peace/transcript_1.xml",
   
   'pbcore_rights.xml',
-  'pbcore_media.xml'
+  'pbcore_media.xml',
+  'pbcore_contributors.xml'
 ]) do |fixture|
 
   # For each of the files loaded, use Nokogiri to grab the first <pbcoreDescriptionDocument> node (should only be one)
