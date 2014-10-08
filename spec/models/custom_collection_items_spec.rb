@@ -70,5 +70,48 @@ describe CustomCollectionItem do
     item = create(:custom_collection_item, openvault_asset_pid: ov.pid)
     item.openvault_asset_pid.should eq(ov.pid)
   end
+
+  context 'when fetching corresponding object from Fedora using #openvault_asset_pid' do
+    
+    let(:custom_collection_item) { CustomCollectionItem.new }
+
+    describe '#fetch_ov_asset!' do
+      it 'looks up corresponding Fedora object using #openvault_asset_id, and returns it if it exists' do
+        custom_collection_item.openvault_asset_pid = OpenvaultAsset.create(pid: 'foo:123').pid
+        expect(custom_collection_item.fetch_ov_asset!).to be_a OpenvaultAsset
+      end
+
+      it 'raises ActiveFedora::ObjectNotFoundError if lookup fails' do
+        custom_collection_item.openvault_asset_pid = 'bogus:pid'
+        expect{custom_collection_item.fetch_ov_asset!}.to raise_error ActiveFedora::ObjectNotFoundError
+      end
+
+    end
+
+    describe '#fetch_ov_asset' do
+      it 'returns nil instead of raising an error, when #openvault_asset_pid does not exist as a Fedora object pid' do
+        custom_collection_item.openvault_asset_pid = 'bogus:pid'
+        expect(custom_collection_item.fetch_ov_asset).to be nil
+      end
+    end
+
+    describe '#ov_asset' do
+      it 'lazy loads the corresponding Fedora object by calling #fetch_ov_asset once, and caching the result.' do
+        ov_asset = OpenvaultAsset.new pid: 'foo:123'
+        custom_collection_item.openvault_asset_pid = ov_asset.pid
+
+        # stub this expensive thing
+        allow(custom_collection_item).to receive(:fetch_ov_asset!) { ov_asset }
+
+        # expect to only call the expensive thing once
+        expect(custom_collection_item).to receive(:fetch_ov_asset!).once
+
+        # because #ov_asset caches the result on the @ov_asset instance var.
+        2.times { custom_collection_item.ov_asset }
+      end
+    end
+
+  end
+  
   
 end

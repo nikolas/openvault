@@ -33,17 +33,19 @@
       </div>
 
       <div id="media" class="tab-pane fade in">
-        <% @custom_collection.custom_collection_items.by_kind.each do |item| %> 
-          <div id="search_page">
-            <div id="content">
-              <div id="documents">
-                <div class="document">
-                  <%= render_collection_item(item) %>
-                  <div class="clearfix"></div>
+        <% @custom_collection.custom_collection_items.by_kind.each do |item| %>
+          <% if item.ov_asset %>
+            <div id="search_page">
+              <div id="content">
+                <div id="documents">
+                  <div class="document">
+                    <%= render_collection_item(item) %>
+                    <div class="clearfix"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
       
