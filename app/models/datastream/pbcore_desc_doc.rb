@@ -81,6 +81,11 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
     #   <pbcoreRelationIdentifier>50013</pbcoreRelationIdentifier>
     # </pbcoreRelation>
     
+    
+    t.subjectsNotNested(path: 'pbcoreSubject[not(subjectAuthorityUsed)]')
+    t.subjectsNested(path: 'pbcoreSubject/subject')
+    # Tried xPath union to combine these, but it didn't work.
+    
     t.instantiation(path: 'pbcoreInstantiation') {
       t.dimensions(path: 'instantiationDimensions')
       t.physical(path: 'instantiationPhysical')

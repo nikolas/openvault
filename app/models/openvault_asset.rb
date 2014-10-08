@@ -90,6 +90,10 @@ class OpenvaultAsset < ActiveFedora::Base
     self.pbcore.contributions_by_role
   end
   
+  def subjects
+    self.pbcore.subjectsNotNested + self.pbcore.subjectsNested
+  end
+  
   def media_type
     self.pbcore.asset_type.first
   end
