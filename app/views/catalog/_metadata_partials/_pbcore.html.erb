@@ -111,4 +111,12 @@
       <% end %> 
     </div>
   <% end %>
+  
+  <% if !@ov_asset.subjects.empty? %>
+    <div>
+      <h4>Subjects</h4>
+      <p><%= @ov_asset.subjects.join('; ') %></p>
+    </div>
+  <% end %>
+  
 </div>
