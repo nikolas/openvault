@@ -30,7 +30,38 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <% if @ov_asset.media_dimensions || @ov_asset.media_physical || @ov_asset.media_standard || 
+        @ov_asset.media_duration || @ov_asset.media_type || @ov_asset.media_barcode %>
+    <div>
+      <h4>Media</h4>
+      
+      <% if @ov_asset.media_dimensions %>
+        <p><strong>Dimensions</strong> <%= @ov_asset.media_dimensions %></p>
+      <% end %>
+        
+      <% if @ov_asset.media_physical %>
+        <p><strong>Physical</strong> <%= @ov_asset.media_physical %></p>
+      <% end %>
+        
+      <% if @ov_asset.media_standard %>
+        <p><strong>Standard</strong> <%= @ov_asset.media_standard %></p>
+      <% end %>
+        
+      <% if @ov_asset.media_duration %>
+        <p><strong>Duration</strong> <%= @ov_asset.media_duration %></p>
+      <% end %>
+        
+      <% if @ov_asset.media_type %>
+        <p><strong>Type</strong> <%= @ov_asset.media_type %></p>
+      <% end %>
+        
+      <% if @ov_asset.media_barcode %>
+        <p><strong>Barcode</strong> <%= @ov_asset.media_barcode %></p>
+      <% end %>
+    </div>
+  <% end %>
+  
   <% if @ov_asset.rights_rights || @ov_asset.rights_coverage || @ov_asset.rights_credit ||
         @ov_asset.rights_holder || @ov_asset.rights_note || @ov_asset.rights_type %>
     <div>
