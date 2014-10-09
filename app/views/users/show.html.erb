@@ -29,7 +29,9 @@
         <% end %>
 
         <% if @user.primary_title.present? && @user.primary_organization.present? %>
-          <h4><%= [@user.primary_title, @user.primary_organization].join(' &mdash; ') %></h4>
+          <h4><%= @user.primary_title %>
+              <%= ' &mdash; '.html_safe %>
+              <%= @user.primary_organization %></h4>
         <% else %>
           <h4><%= [@user.primary_title, @user.primary_organization].join('') %></h4>
         <% end %>
