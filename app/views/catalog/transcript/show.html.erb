@@ -3,6 +3,8 @@
 <%= render partial: 'catalog/document_heading' %> 
 
 <p><%= @ov_asset.summary unless @ov_asset.title == @ov_asset.summary %></p>
-TODO
+<div class="datastream secondary-datastream datastream-transcript datastream-transcript-tei-xml">
+  <%= transform_to_html(@ov_asset.tei.to_xml).to_s.html_safe %>
+</div>
 <%= render partial: "catalog/_metadata_partials/pbcore", :locals => { :document => @document } %>
 <%= render partial: 'catalog/facebook_comments' %>
