@@ -10,14 +10,14 @@ feature "standard user show page" do
   scenario "with title and org displays both" do
     affiliation = FactoryGirl.create(:affiliation, primary: true, user: user)
     visit user_path user
-    expect(page).to have_content("#{user.primary_title} — #{user.primary_organization}")
+    expect(page).to have_content("#{user.primary_title} \u2014 #{user.primary_organization}")
   end
 
   scenario "with multiple orgs" do
     affiliation1 = FactoryGirl.create(:affiliation, primary: true, user: user)
     2.times { FactoryGirl.create(:affiliation, user: user, title: nil) }
     visit user_path user
-    expect(page).to have_content("#{user.primary_title} — #{user.primary_organization}")
+    expect(page).to have_content("#{user.primary_title} \u2014 #{user.primary_organization}")
     expect(page).to have_content("#{user.orgs.second.name}")
     expect(page).to have_content("#{user.orgs.third.name}")
   end
