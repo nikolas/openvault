@@ -1,0 +1,10 @@
+<% title "#{application_name} - #{display_title @document}" %>
+
+<%= render partial: 'catalog/document_heading' %> 
+
+<p><%= @ov_asset.summary unless @ov_asset.title == @ov_asset.summary %></p>
+<div class="datastream secondary-datastream datastream-transcript datastream-transcript-tei-xml">
+  <%= render_transcript(@ov_asset.tei) %>
+</div>
+<%= render partial: "catalog/_metadata_partials/pbcore", :locals => { :document => @document } %>
+<%= render partial: 'catalog/facebook_comments' %>
