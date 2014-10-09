@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+    <pbcoreAssetType>some type</pbcoreAssetType>
+    <pbcoreRelation>
+        <pbcoreRelationType source="SOURCE">Tracking Number</pbcoreRelationType>
+        <pbcoreRelationIdentifier>some barcode</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreInstantiation>
+        <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">497a8005700a5942b4ad86fb2d351dd0805422b2</instantiationIdentifier>
+        <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 1501 imported 2013-07-09 07:04:42.0">barcode50013.mov</instantiationIdentifier>
+        <instantiationDimensions unitsOfMeasure="pixels" annotation="horizontal x vertical">some dimensions</instantiationDimensions>
+        <instantiationPhysical>some physical</instantiationPhysical>
+        <instantiationDigital>video/quicktime</instantiationDigital>
+        <instantiationStandard>some standard</instantiationStandard>
+        <instantiationLocation>Archives (department)</instantiationLocation>
+        <instantiationMediaType>Moving Image</instantiationMediaType>
+        <instantiationTimeStart>00:00:39:07</instantiationTimeStart>
+        <instantiationDuration>some duration</instantiationDuration>
+        <instantiationColors>Color</instantiationColors>
+        <instantiationLanguage>eng</instantiationLanguage>
+    </pbcoreInstantiation>
+</pbcoreDescriptionDocument>

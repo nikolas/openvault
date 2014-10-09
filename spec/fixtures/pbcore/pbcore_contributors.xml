@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbcoreDescriptionDocument>
+    <pbcoreContributor>
+        <contributor affiliation="Some Institution">Doe, John</contributor>
+        <contributorRole>Helper123</contributorRole>
+        <contributorRole>Big Wig</contributorRole>
+    </pbcoreContributor>
+    <pbcoreContributor>
+        <contributor>Smith, Jane</contributor>
+        <contributorRole>Helper123</contributorRole>
+        <contributorRole>Small Wig</contributorRole>
+    </pbcoreContributor>
+    <pbcoreContributor>
+        <contributor affiliation="Mt. Vernon">Washington, George</contributor>
+        <contributorRole>President</contributorRole>
+    </pbcoreContributor>
+</pbcoreDescriptionDocument>
