@@ -1,2 +1,6 @@
 User-Agent: *
 Disallow: /catalog?
+Disallow: /catalog/openvault:
+Disallow: /catalog/changeme:
+Disallow: /catalog/org.wgbh.mla:
+
