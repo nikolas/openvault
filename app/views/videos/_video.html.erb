@@ -10,11 +10,8 @@
       <% end %>
     </div> 
   <h3 class="index_title">
-    <% if video[:title_tesim] %>
-      <%= link_to video[:title_tesim].first, controller: 'catalog', action: 'show', id: video.id %>
-    <% else %>
-      <%= "Untitled Video" %>
-    <% end %>
+    <%= link_to((video[:title_tesim] ? video[:title_tesim].first : 'Untitled Video'), 
+                controller: 'catalog', action: 'show', id: video.id) %>
   </h3>  
   <div class="defList_container">
     <% unless video[:summary_tesim].nil? %>
