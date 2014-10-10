@@ -71,6 +71,19 @@ describe CustomCollectionItem do
     item.openvault_asset_pid.should eq(ov.pid)
   end
 
+
+  describe "#title" do
+
+    let(:custom_collection_item) { CustomCollectionItem.new }
+
+    it 'returns the title that comes from the related Solr document' do
+      test_title = 'foo'
+      # stub the behavior of CustomCollectionItem#solr_doc
+      allow(custom_collection_item).to receive(:solr_doc) { {'title_tesim' => test_title} }
+      expect(custom_collection_item.title).to eq test_title
+    end
+  end
+
   context 'when fetching corresponding object from Fedora using #openvault_asset_pid' do
     
     let(:custom_collection_item) { CustomCollectionItem.new }

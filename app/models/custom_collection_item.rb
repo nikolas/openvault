@@ -18,6 +18,15 @@ class CustomCollectionItem < ActiveRecord::Base
   scope :series, where(:kind => 'Series')
   scope :by_kind, order('kind DESC')
   
+
+  def title
+    solr_doc['title_tesim'] if solr_doc
+  end
+
+  def catalog_path
+    "/catalog/#{solr_doc['slug'] || solr_doc['id']}" if solr_doc
+  end
+
   def ov_asset
     @ov_asset ||= fetch_ov_asset
   end
