@@ -10,12 +10,6 @@ describe "visiting homepage", :type => :feature do
     create(:custom_collection, :owner => user, :name => 'The Collection of Collections', :summary => 'asdfasdfasdf')
   end
   
-  it "shows 3 blog posts" do
-    visit '/'
-    page.should have_css("div#blog .post", :count => 3)
-    page.should have_css("div#blog #featured-post", :count => 1)
-  end
-  
   it "shows the carousel item" do
     FactoryGirl.create(:carousel_item, :title => 'The Collection of Collections', :body => 'asdfasdfasdf', enabled: true).save!
     visit '/'
