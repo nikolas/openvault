@@ -78,7 +78,7 @@
           <%= image_tag(feature.images('thumbnail')['url'], alt: feature.title) unless feature.images('thumbnail').empty? %>
           <h3><%= sanitize(feature.title) %></h3>
           <p><%= safe_truncate feature.content, length: 800 %></p>
-          <a href="<%= feature.url %>" class="action_link">Read more</a>
+          <a href="<%= feature.url %>" class="action_link" target="_blank">Read more</a>
         <% end %>
       </div>
       <div id="more-posts" class="span5">
@@ -86,7 +86,7 @@
           <div class="post row-fluid">
             <div class="body span12">
               <h3><%= sanitize(post.title) %></h3>
-              <p><%= safe_truncate post.excerpt, length: 180 %><a href="<%= post.url %>">Read more</a></p>
+              <p><%= safe_truncate post.excerpt, length: 180 %><a href="<%= post.url %>" target="_blank">Read more</a></p>
             </div>
           </div>
         <% end rescue nil %>
