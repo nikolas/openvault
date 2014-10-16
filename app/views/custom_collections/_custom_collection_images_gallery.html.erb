@@ -3,7 +3,7 @@
     <div id="imageslider" class="flexslider">
       <ul class="slides">
         <% custom_collection.custom_collection_images.each do |img| %>
-          <li><%= image_tag img.image_url(:carousel), alt: img.rights, title: img.rights %></li>
+          <li><%= image_tag img.image_url(:large), alt: img.rights, title: img.rights %></li>
         <% end %>
       </ul>
     </div>
