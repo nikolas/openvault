@@ -17,16 +17,6 @@ class ActiveFedoraProxy
     @config ||= OpenStruct.new
   end
 
-  def solr_id
-    if config.get_solr_id_using.respond_to? :to_sym
-      target_object.send(config.get_solr_id_using.to_sym)
-    elsif config.get_solr_id_using.respond_to? :call
-      config.get_solr_id_using.call(self)
-    else
-      raise MissingConfig, "No method for getting the solr id has been specified. To specify, use #{self.class}#config.get_solr_id_using = {GETTER}, where {GETTER} is a callable thing (e.g. a Proc), or is a symbol representing a method on the target object."
-    end
-  end
-
   def fedora_pid
     if config.get_fedora_pid_using.respond_to? :to_sym
       target_object.send(config.get_fedora_pid_using.to_sym)
@@ -37,12 +27,42 @@ class ActiveFedoraProxy
     end
   end
 
+  def fedora_object
+    @fedora_object ||= fetch_fedora_object
+  end
+
+  def fetch_fedora_object
+    begin
+      fetch_fedora_object!
+    rescue ActiveFedora::ObjectNotFoundError => e
+      nil
+    end
+  end
+
+  def fetch_fedora_object!
+    config.active_fedora.find fedora_pid
+  end
+
+  def solr_id
+    if config.get_solr_id_using.respond_to? :to_sym
+      target_object.send(config.get_solr_id_using.to_sym)
+    elsif config.get_solr_id_using.respond_to? :call
+      config.get_solr_id_using.call(self)
+    else
+      raise MissingConfig, "No method for getting the solr id has been specified. To specify, use #{self.class}#config.get_solr_id_using = {GETTER}, where {GETTER} is a callable thing (e.g. a Proc), or is a symbol representing a method on the target object."
+    end
+  end
+
   def solr_doc
     @solr_doc ||= fetch_solr_doc
   end
 
   def fetch_solr_doc
-    fetch_solr_doc! rescue nil
+    begin
+      fetch_solr_doc!
+    rescue SolrDocNotFound => e
+      nil
+    end
   end
 
   def fetch_solr_doc!
