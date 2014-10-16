@@ -1,4 +1,5 @@
 User-Agent: *
+Disallow: /catalog.html
 Disallow: /catalog?
 Disallow: /catalog/openvault:
 Disallow: /catalog/changeme:
