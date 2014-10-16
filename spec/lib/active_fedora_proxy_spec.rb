@@ -2,7 +2,13 @@ require 'spec_helper'
 
 require 'active_fedora_proxy'
 
+require './spec/support/shared_contexts/fake_solr.rb'
+
+
 describe ActiveFedoraProxy do
+
+  include_context 'fake_solr'
+  include_context 'fake_active_fedora'
   
   # Our target object is a test double object with a #solr_id method.
   let(:target_obj) { double solr_id: '111', fedora_pid: 'abc:123'}
@@ -15,33 +21,11 @@ describe ActiveFedoraProxy do
     af_proxy
   end
 
-  let(:fake_solr_response) do
-    {
-      'response' => {
-        'docs' => [
-          {'id' => target_obj.solr_id}
-        ]
-      }
-    }
-  end
-
-  let(:fake_solr_response_no_results) { {'response' => {'numFound' => 0, 'docs' => []}} }
-
-  # Fake Solr service, with a stubbed method for :query that returns our fake_solr_response.
-  # To have :fake_solr return fake_solr_response_no_results, you can re-stub the :query method like so...
-  #  allow(fake_solr).to receive(:query).and_return(fake_solr_response_no_results)
-  let(:fake_solr) { class_double(ActiveFedora::SolrService, query: fake_solr_response) }
-
-
-  let(:fake_active_fedora) { class_double(ActiveFedora::Base, find: fake_active_fedora_obj) }
-
-  let(:fake_active_fedora_obj) { instance_double(ActiveFedora::Base, pid: 'abd:123') }
-
 
   context 'providing access to a Solr document' do
     describe '#solr_id' do
 
-      context 'by default', :focus => true do
+      context 'by default' do
         it 'calls #solr_id on the target object' do
           # The :solr_id message is received twice, no matter how many times af_proxy.solr_id is called, which confuses Drew.
           # In this case, it is sufficient that `target_obj` receive :solr_id "at least once", but i would like to know why it is
@@ -131,7 +115,7 @@ describe ActiveFedoraProxy do
   end
 
 
-  context 'providing access to a Fedora object', :focus => true do
+  context 'providing access to a Fedora object' do
     describe '#fedora_pid' do
 
       context 'by default' do
