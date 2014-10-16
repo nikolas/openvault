@@ -247,7 +247,9 @@ class CatalogController < ApplicationController
     end
     @tweets = client.user_timeline('wgbharchives', :count => 5) rescue nil
     @resp, @items = get_last_n_solr_docs
-
+    
+    @posts = Wordpress.get_recent_posts(count: 4) rescue []
+    @feature = @posts.shift
 
     @scroller_items = []
     # Pull this out?
