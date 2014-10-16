@@ -306,10 +306,10 @@ class CatalogController < ApplicationController
       flash = {} # Flash message may have been set if search failed... but should that ever happen in production?
       render file: override_file_path
     else
-      lookup_and_set_fields
-      if @response && @document && @ov_asset
+      begin
+        lookup_and_set_fields
         render action: @ov_asset.class.to_s.downcase + '/show'
-      else
+      rescue Blacklight::Exceptions::InvalidSolrID
         render text: "The page you were looking for doesn't exist.", status: :not_found # TODO: something fancier?
       end
     end
