@@ -126,8 +126,7 @@ module Openvault::Pbcore
           if opts[:continue_on_error]
             @failed_records += 1
             logger.info "Unable to ingest #{doc_wrapper.doc.all_ids}."
-            logger.error(e.message)
-            logger.info(e.message)
+            logger.error(e.inspect)
           else
             raise e
           end
