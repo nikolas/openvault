@@ -55,8 +55,7 @@ describe CustomCollection do
     build(:custom_collection, name: nil).should_not be_valid
   end
 
-  # TODO: Fix this once we can add a summary in testing
-  pending "is invalid without a summary"  do
+  it "is invalid without a summary"  do
     build(:custom_collection, summary: nil).should_not be_valid
   end
 
