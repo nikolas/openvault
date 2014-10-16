@@ -27,6 +27,13 @@ describe CatalogController do
       get :home
       expect(assigns(:tweets)).to_not be nil
     end
+    
+    it "gets blog posts" do
+      get :home
+      expect(assigns(:feature)).to_not be nil
+      expect(assigns(:posts)).to_not be nil
+      expect(assigns(:posts).length).to eq 3
+    end
   end
 
   describe "GET Series stuff" do
