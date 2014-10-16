@@ -310,7 +310,7 @@ class CatalogController < ApplicationController
         lookup_and_set_fields
         render action: @ov_asset.class.to_s.downcase + '/show'
       rescue Blacklight::Exceptions::InvalidSolrID
-        render text: "The page you were looking for doesn't exist.", status: :not_found # TODO: something fancier?
+        render 'catalog/no_record_found', status: :not_found
       end
     end
 #    respond_to do |format|
