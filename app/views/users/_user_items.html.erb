@@ -11,7 +11,7 @@
       <th>User Status</th>
       <th>Actions</th>
     </tr>
-    <% @user.sponsorships.each do |sponsorship| %>
+    <% @user.sponsorships.select{|s| s.artifact}.each do |sponsorship| %>
       <tr id="sponsorship-<%= sponsorship.id %>">
         <td><%= collection_item_link(sponsorship.artifact.ov_asset) %></td>
         <td class='state'><%= sponsorship.artifact.state %></td>
