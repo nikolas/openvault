@@ -12,7 +12,7 @@
     <div class="pull-right" >
       <span id="browse-label">Browse:</span>
       <%= link_to 'Series', browse_series_path, class: 'btn' %>
-      <%# TODO: get date data. (Also see below.) link_to 'Programs', browse_programs_path, class: 'btn' %>
+      <%= link_to 'Programs', browse_programs_path, class: 'btn' %>
     </div>
   </div>
 
@@ -58,7 +58,7 @@
     <a href="<%= root_url %>"><img src="/assets/ov_logo_220.png" class="logo" /></a>
     
     <%= link_to 'series', browse_series_path, class: 'series-icon' %>
-    <%# TODO: get date data. (Also see above.) link_to 'programs', browse_programs_path, class: 'programs-icon' %>
+    <%= link_to 'programs', browse_programs_path, class: 'programs-icon' %>
     <a href="#" class="search-icon"><i class="icon-search icon-white"></i></a>
     <div class="search-dropdown">
       <%= render :partial => 'catalog/partials/search_form_mobile' %>
