@@ -51,19 +51,17 @@
               <li class="active">
                 <a href="#custom-collections" class="custom-collections-link" data-toggle="tab">Collections</a>
               </li>
+            <% end %>
+            <% if current_user && current_user == @user %>
               <li>
                 <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
               </li>
-            <% else %>
-              <li class="active">
-                <a href="#digitization-requests" class="digitization-dash-link" data-toggle="tab">Digitization Requests</a>
+            <% end %>            
+            <% if @user.bio.present? %>
+              <li>
+                <a href="#about" class="about-link" data-toggle="tab">About</a>
               </li>
             <% end %>
-            <li>
-              <% if @user.bio.present? %>
-                <a href="#about" class="about-link" data-toggle="tab">About</a>
-              <% end %>
-            </li>
           </ul>
           
           <div class="tab-content">
