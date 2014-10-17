@@ -2,8 +2,7 @@ class CustomCollection < ActiveRecord::Base
   attr_accessible :article, :name, :summary, :owner, :owner_id, :owner_type, :owner_type_and_id, :slug, :credits, :article_rights, :custom_collection_images_attributes, :custom_collection_images, :custom_collection_related_links, :custom_collection_related_links_attributes, :collabs_attributes, :collab_ids
 
   validates_presence_of :name, :on => :create, :message => "can't be blank"
-  # TODO: Make this necessary again and figure out how to get tests passing
-  # validates_presence_of :summary, :on => :create, :message => "can't be blank"
+  validates_presence_of :summary, :on => :create, :message => "can't be blank"
   validate :validate_owner
 
   # :owner can be one of multiple models, including User and Org

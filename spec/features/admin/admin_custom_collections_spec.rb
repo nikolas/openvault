@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'features/admin/spec_helper'
 
+Capybara.asset_host = 'http://localhost:3000'
+
 feature 'CRUD for Custom Collections:' do
 
   context 'As an Admin' do
