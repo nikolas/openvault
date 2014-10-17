@@ -6,7 +6,7 @@ class OverrideController < ApplicationController
     if File.exists?("app/views/#{override_file_path}")
       render file: override_file_path
     else
-      render text: "The page you were looking for doesn't exist.", status: :not_found # TODO: something fancier?
+      render 'catalog/no_record_found', status: :not_found, formats: :html
     end
   end
 

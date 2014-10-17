@@ -27,4 +27,12 @@ describe "visiting override page", type: :feature do
     expect(page).to have_css('h2', text: 'Collections')
   end
   
+  it "non-existent returns 404" do
+    visit "/some/crazy/url.xml"
+    expect(page.status_code).to eq(404)
+    expect(page).to have_content("Sorry: We can not find that record.")
+    # Content-Type was being determined by extension: not what we want.
+    expect(page.response_headers['Content-Type']).to eq("text/html; charset=utf-8")
+  end
+  
 end
