@@ -32,12 +32,23 @@ describe Video do
     end
   end
 
+  let(:video) { Video.new }
+
   describe '#thumbnail_url' do
-    it 'returns the same url as the associated image' do
-      video.pbcore.ng_xml = Fixtures.use('artesia/patriots_day/video_1.xml').ng_xml
-      image.pbcore.ng_xml = Fixtures.use('artesia/patriots_day/image_2.xml').ng_xml
-      video.images << image
-      expect(video.images.first.image_url).to eq video.thumbnail_url
+    context 'has image directly related to it' do
+      it "returns url of first image" do
+        allow(video).to receive(:images) do
+          [double(image_url: "video_image.gif")]
+        end
+        expect(video.thumbnail_url).to eq "video_image.gif"
+      end
+    end
+
+    context "has no associated images" do
+      it "returns nil" do
+        allow(video).to receive(:images) { [] }
+        expect(video.thumbnail_url).to eq nil
+      end
     end
   end
 end

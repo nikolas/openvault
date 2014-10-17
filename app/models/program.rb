@@ -17,8 +17,21 @@ class Program < OpenvaultAsset
     return solr_document
   end
 
+
+
   def thumbnail_url
     # specific image lookup
+    img = self.images.first.image_url unless self.images.empty?
+    img ||= thumbnail_url_fallback
+    return img
+  end
+
+
+  def thumbnail_url_fallback
+    img = videos.first.thumbnail_url unless videos.empty?
+    img ||= audios.first.thumbnail_url unless audios.empty?
+    img ||= series.thumbnail_url unless series.nil?
+    return img
   end
 
   def title

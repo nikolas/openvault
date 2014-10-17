@@ -20,8 +20,17 @@ class Series < OpenvaultAsset
 
   def thumbnail_url
     # specific image lookup
+    img = self.images.first.image_url unless self.images.empty?
+    img ||= thumbnail_url_fallback
+    return img
   end
   
+  def thumbnail_url_fallback
+    img = programs.first.thumbnail_url unless programs.empty?
+    img ||= videos.first.thumbnail_url unless videos.empty?
+    return img
+  end
+
   def title
     self.pbcore.series_title.first
   end

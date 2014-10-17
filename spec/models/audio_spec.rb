@@ -27,5 +27,24 @@ describe Audio do
       expect(audio.audio_url).to eq('http://mlamedia01.wgbh.org/openvault/audio/Al_Hulsen_audio.mp3')
     end
   end
-  
+
+  let(:audio) { Audio.new }
+    
+  describe "#thumbnail_url" do
+    context "has image directly related to it" do
+      it "returns url of first image" do
+        allow(audio).to receive(:images) do
+          [double(image_url: "audio_image.gif")]
+        end
+        expect(audio.thumbnail_url).to eq "audio_image.gif"
+      end
+    end
+
+    context "has no associated images" do
+      it "returns nil" do
+        allow(audio).to receive(:images) { [] }
+        expect(audio.thumbnail_url).to eq nil
+      end
+    end
+  end
 end

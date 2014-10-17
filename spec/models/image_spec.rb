@@ -26,5 +26,13 @@ describe Image do
       image.original_file_name.should == "barcode10847_thumbnail.jpg"
     end
   end
-  
+
+  let(:image) { Image.new }
+ 
+  describe "#thumbnail_url" do
+    it "returns url of this image" do
+      allow(image).to receive(:image_url) { "image.gif" }
+      expect(image.thumbnail_url).to eq "image.gif"
+    end
+  end  
 end
