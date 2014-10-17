@@ -45,3 +45,6 @@ app/assets/images/*.mp4
 
 # Ignore NetBeans project data
 /nbproject
+
+# Ignore generated documentation
+/doc
