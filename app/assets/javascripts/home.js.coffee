@@ -27,7 +27,7 @@ $ ->
     $('#signin-dropdown').hide()
     
   $("form#new_session").bind "ajax:error", (event, request, settings) ->
-    $('form#new_session .error').text(request.responseText)
+    $('form#new_session .error').text(request.status == 500 ? 'Error' : request.responseText)
 
   $("form#new_session").bind "ajax:success", (evt, data, status, xhr) ->
     location.reload()
