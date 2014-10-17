@@ -19,7 +19,7 @@ namespace :openvault do
     # Set up the ingest logger here so we can log some messages before kicking passing the log to Ingester
     now = Time.new
     logger_output = ENV['log_file'] || "./log/openvault_ingest.#{now.strftime('%Y-%m-%d_%H%M%S%Z')}.log"
-    logger = Logger.new(logger_output)
+    logger = Logger.new(logger_output=='STDOUT' ? STDOUT : logger_output)
     logger.level = ENV['log_level'] || 1
 
     logger.info "Ingesting #{files.count} file(s)"
