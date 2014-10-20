@@ -66,8 +66,7 @@ Openvault::Application.routes.draw do
   
   # ad-hoc redirects, based on web-master tools.
   get '/series/:name', to: 'redirect#redirect_series_name'
-  get '/series/:name/*path', to: 'redirect#redirect_series_name'
-  get '/:name/:mla_number', to: 'redirect#redirect_series_mla', constraints: { mla_number: /MLA\d+/ }
+  get '/:name/:mla_number(/*path)', to: 'redirect#redirect_series_mla', constraints: { mla_number: /MLA\d+/ }
   get '/wapina/:barcode/index', to: 'redirect#redirect_wapina_barcode'
   
   get '/*path', to: 'override#show', constraints: { :path => /[a-z\/-]+/ }

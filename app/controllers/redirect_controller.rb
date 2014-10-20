@@ -20,7 +20,21 @@ class RedirectController < ApplicationController
   end
     
   def redirect_series_mla
-    
+    # mla_number is available, so we could be more precise, with some work.
+    target = 
+      case params[:name]
+      when 'ntw'
+        '/collections/ntw-the-new-television-workshop'
+      when 'saybrother'
+        '/catalog/sbro-say-brother'
+      when 'ton'
+        '/catalog/tocn-the-ten-o-clock-news'
+      end
+    if target
+      redirect_to target
+    else
+      render_404
+    end
   end
   
   def redirect_wapina_barcode
