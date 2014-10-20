@@ -32,5 +32,16 @@ describe RedirectController, type: :request do
     end
   end
   
+  describe '#redirect_wapina_barcode' do
+    it 'redirects expected' do
+      get '/wapina/barcode49748nitze2_2/index.html'
+      expect(response).to redirect_to('/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age')
+    end
+    it 'redirects unexpected' do
+      get '/wapina/the/spanish/inquisition'
+      expect(response).to redirect_to('/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age')
+    end
+  end
+  
 end
   

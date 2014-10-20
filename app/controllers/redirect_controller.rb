@@ -1,16 +1,21 @@
 class RedirectController < ApplicationController
   
+  SAY = '/catalog/sbro-say-brother'
+  TEN = '/catalog/tocn-the-ten-o-clock-news'
+  NTW = '/collections/ntw-the-new-television-workshop'
+  NUKES = '/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age'
+  
   def redirect_series_name
     target = 
       case params[:name]
       when 'Say+Brother'
-        '/catalog/sbro-say-brother'
+        SAY
       when "Ten+O'Clock+News"
-        '/catalog/tocn-the-ten-o-clock-news'
+        TEN
       when 'New+Television+Workshop'
-        '/collections/ntw-the-new-television-workshop'
+        NTW
       when 'War+and+Peace+in+the+Nuclear+Age'
-        '/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age'
+        NUKES
       end
     if target
       redirect_to target
@@ -24,11 +29,11 @@ class RedirectController < ApplicationController
     target = 
       case params[:name]
       when 'ntw'
-        '/collections/ntw-the-new-television-workshop'
+        NTW
       when 'saybrother'
-        '/catalog/sbro-say-brother'
+        SAY
       when 'ton'
-        '/catalog/tocn-the-ten-o-clock-news'
+        TEN
       end
     if target
       redirect_to target
@@ -38,7 +43,8 @@ class RedirectController < ApplicationController
   end
   
   def redirect_wapina_barcode
-    
+    # barcode is available, so we could be more precise, with some work.
+    redirect_to NUKES
   end
   
   private
