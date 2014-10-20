@@ -4,6 +4,21 @@ require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe Artifact do
 
+	describe 'factory' do
+		it 'builds a valid instance by default (no arguments required)' do
+			expect(build(:artifact)).to be_valid
+		end
+
+		it 'has a sub-factory for digitizations' do
+			d = build(:digitization)
+			# it is an Artifact instance
+			expect(d).to be_a Artifact
+			# with :type == 'digitization'
+			expect(d.type).to eq 'digitization'
+		end
+	end
+
+
 	before do
 		@user = create(:user)
 		@user2 = create(:user)
@@ -85,6 +100,16 @@ describe Artifact do
 			@user.artifacts.should == []
 		end
 
-	end	
+	end
+
+
+	describe '#destroy' do
+		it 'also destroys all assocaited sponsorships' do
+			artifact = create(:artifact, sponsorships: create_list(:sponsorship, 2))
+			expect(Sponsorship.where(artifact_id: artifact.id).count).to eq 2
+			artifact.destroy
+			expect(Sponsorship.where(artifact_id: artifact.id).count).to eq 0
+		end
+	end
 
 end

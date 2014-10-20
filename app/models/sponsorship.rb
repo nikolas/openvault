@@ -4,6 +4,9 @@ class Sponsorship < ActiveRecord::Base
 
   attr_accessible :confirmed
 
+  validates_presence_of :user_id
+  validates_presence_of :artifact_id
+
   def status
     confirmed? ? 'Confirmed/Sponsor' : 'Requested'
   end

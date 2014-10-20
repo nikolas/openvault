@@ -3,7 +3,7 @@ class Artifact < ActiveRecord::Base
   self.inheritance_column = :_type_disabled
 
   has_many :artifact_logs
-  has_many :sponsorships
+  has_many :sponsorships, dependent: :delete_all
   has_many :users, :through => :sponsorships
 
   has_many :sponsors, :through => :sponsorships, 
