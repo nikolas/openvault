@@ -1,4 +1,7 @@
-ActiveAdmin.register ArtifactLog do     
+ActiveAdmin.register ArtifactLog do
+
+  actions :index, :show
+
   menu :priority => 2
   index do                            
     column :user
