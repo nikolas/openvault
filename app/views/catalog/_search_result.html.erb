@@ -1,4 +1,8 @@
-<div class="document">  
+<div class="document"> 
+  <h3 class="index_title">
+    <%= link_to((document[:title_tesim] ? document[:title_tesim].first : 'Untitled'), 
+                controller: 'catalog', action: 'show', id: document.id) %>
+  </h3> 
     <div  class="doc_thumbnail">
       <% unless document["thumbnail_ssm"].nil? %>
         <%= link_to image_tag(document["thumbnail_ssm"].first), controller: 'catalog', action: 'show', id: document.id %>
@@ -6,10 +10,7 @@
         <%= image_tag("no_image.gif", alt: "No Image Available") %>
       <% end %>
     </div> 
-  <h3 class="index_title">
-    <%= link_to((document[:title_tesim] ? document[:title_tesim].first : 'Untitled'), 
-                controller: 'catalog', action: 'show', id: document.id) %>
-  </h3>  
+   
   <div class="defList_container">
     <% unless document[:summary_tesim].nil? %>
       <div class="blacklight-summary">
