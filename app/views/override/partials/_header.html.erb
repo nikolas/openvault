@@ -11,9 +11,10 @@
   </ul>
 </div>
 
-<img src="http://blog.openvault.wgbh.org/wp-content/uploads/<%= wp_img %> " 
-     class="pull-left" 
-     alt="<%= title %>">
+<div class="pull-left" style="overflow: hidden; height: 350px;">
+  <%# CSS auto-crops tall images %>
+  <img src="http://blog.openvault.wgbh.org/wp-content/uploads/<%= wp_img %>" alt="<%= title %>"/>
+</div>
 
 <div class="clearfix">
   <%= yield %>
