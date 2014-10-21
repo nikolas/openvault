@@ -1,0 +1,18 @@
+
+<div class="tabbable responsive">
+  <ul class="nav nav-tabs">
+    <% tabs.each_with_index do |tab,i| %>
+      <li class="<%= 'active' if i == 0 %>">
+        <a href="#<%= tab[:title].gsub(/\W/,'-') %>" data-toggle="tab"><%= tab[:title] %></a>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tab-content">
+    <% tabs.each_with_index do |tab,i| %>
+      <div id="<%= tab[:title].gsub(/\W/,'-') %>" class="tab-pane <%= 'active' if i == 0 %> fade in">
+        <%= tab[:content] %>
+      </div>
+    <% end %>
+  </div>
+</div>

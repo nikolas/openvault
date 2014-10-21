@@ -4,6 +4,14 @@
     <p>The 1963 March on Washington for Jobs and Freedom featured an estimated 250,000 peaceful demonstrators walking from the Washington Monument to the Lincoln Memorial to hear a political call to arms for economic equality and civil rights for African Americans. Credited with being the final impetus to the passing of the 1964 Civil Rights Act, the event famously ended with Martin Luther King Jr.’s historic “I have a dream” speech.</p>
   <% end %>
   
+  <% content_for :interviews do %> TODO: Interviews <% end %>
+  <% content_for :stock do %> TODO: Stock footage <% end %>
+  <%= render partial: 'global_partials/tabs', locals: { tabs: [
+    { title: 'Interviews', content: content_for(:interviews) },
+    { title: 'Stock footage', content: content_for(:stock) }
+  ] } %>
+  
+  
     <div>
     <h3>Search within this collection</h3>
     <ul>

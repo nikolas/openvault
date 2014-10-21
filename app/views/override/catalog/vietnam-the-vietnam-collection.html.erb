@@ -4,24 +4,23 @@
     <p><em>Vietnam: A Television History</em> was a landmark documentary series produced by WGBH. This collection contains most of the materials gathered and created for the 1983 series, as well as additional Vietnam-related materials from the WGBH archive. Vietnam: A Television History was one of the last WGBH series produced entirely on film. Starting in 2008, materials were reconstructed, transferred, and digitized for preservation and access.</p>
   <% end %>
 
-  <div>
-    <h3>Search within this collection</h3>
-    <ul>
-      <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:vietnam">All materials</a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:vietnam&amp;f%5Btopic_cv%5D%5B%5D=Vietnam+War%2C+1961-1975--Personal+narratives">Interview video, audio, and transcripts</a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:vietnam&amp;f%5Bdc_type_s%5D%5B%5D=Stock+footage">News video and archival footage </a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:vietnam&amp;f%5Bmedia_s%5D%5B%5D=Image">Photographs</a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f%5Bri_collection_ancestors_s%5D%5B%5D=info%3Afedora%2Forg.wgbh.mla%3Avietnam&amp;f%5Buois_item_category_s%5D%5B%5D=Vietnam%20original%20b-roll%20footage">Original video footage</a></li>
-      <li><script type="text/javascript">
+  <% content_for :interviews do %> TODO: Interviews <% end %>
+  <% content_for :archival do %> TODO: Archival footage <% end %>
+  <% content_for :photographs do %> TODO: Photographs <% end %>
+  <% content_for :original do %> <script type="text/javascript">
         function browseSFDB() {
           window.open("/sfdb/about/intro.html", "dbviewer", "status=0,menubar=0,toolbar=0,width=575")
         }
         </script><br>
-        <a onclick="browseSFDB()" href="#">Production Research Footage Database</a></li>
-    </ul>
-
-  </div>
-  <hr>
+        <a onclick="browseSFDB()" href="#">Production Research Footage Database</a> <% end %>
+  <%= render partial: 'global_partials/tabs', locals: { tabs: [
+    { title: 'Interviews', content: content_for(:interviews) },
+    { title: 'Archival footage', content: content_for(:archival) },
+    { title: 'Photographs', content: content_for(:photographs)},
+    { title: 'Original footage', content: content_for(:original) }
+  ] } %>  
+    
+    
   <div>
     <h3>Related links</h3>
     <ul>

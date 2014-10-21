@@ -4,16 +4,15 @@
     <p><em>Say Brother</em>&nbsp;is WGBH’s longest-running public affairs television program by, for and about African Americans, now known as&nbsp;<em>Basic Black</em>. In April 2000, the WGBH Media Library and Archives in Boston was awarded a National Endowment for the Humanities Archives and Special Collections Preservation and Access grant to arrange, describe, and reformat master&nbsp;<em>Say Brother</em>&nbsp;programs dating from 1968 to 1982 to keep the collection accessible. WGBH welcomes you to explore this invaluable programming, whether performance, political commentary, or conversations with distinct voices from the African American community.</p>
   <% end %>
 
-  <div>
-    <h3>Search within this collection</h3>
-    <ul>
-      <li><a href="http://openvault.wgbh.org/catalog?f%5Bri_collection_ancestors_s%5D%5B%5D=info:fedora/org.wgbh.mla:sbro">All materials</a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f%5Bri_collection_ancestors_s%5D%5B%5D=info:fedora/org.wgbh.mla:sbro&amp;f%5Btopic_cv%5D%5B%5D=Music--Performance">All musical performances</a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f%5Bri_collection_ancestors_s%5D%5B%5D=info:fedora/org.wgbh.mla:sbro&amp;f%5Btopic_cv%5D%5B%5D=African%20Americans--Civil%20rights">Civil rights materials</a></li>
-    </ul>
-
-  </div>
-  <hr>
+  <% content_for :performaces do %> TODO: list performances <% end %>
+  <% content_for :civil_rights do %> TODO: list civil right <% end %>
+  <% content_for :everything do %> TODO: list of everything <% end %>
+  <%= render partial: 'global_partials/tabs', locals: { tabs: [
+    { title: 'Performances', content: content_for(:performaces) },
+    { title: 'Civil Rights', content: content_for(:civil_rights) },
+    { title: 'Everything', content: content_for(:everything) }
+  ] } %>
+    
   <div>
     <h3>Related links</h3>
     <ul>
