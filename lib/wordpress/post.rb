@@ -47,7 +47,7 @@ module Wordpress
 
     def images type
       @images ||= self.attachments.reject{ |x| x["images"].nil? }.first.try(:[], 'images')
-      @images[type]
+      @images ? @images[type] : []
     end
 
     def excerpt
