@@ -4,14 +4,12 @@
       controller: 'catalog', action: 'show', id: document.id) %>
   </h3>
   
-  <div  class="doc_thumbnail">
-    <% unless document["thumbnail_ssm"].nil? %>
+  <% unless document["thumbnail_ssm"].nil? %>
+    <div  class="doc_thumbnail">
       <%= link_to image_tag(document["thumbnail_ssm"].first), controller: 'catalog', action: 'show', id: document.id %>
-    <% else %>
-      <%= image_tag("no_image.gif", alt: "No Image Available") %>
-    <% end %>
-  </div> 
-
+    </div> 
+  <% end %>
+  
   <div class="defList_container">
     <% unless document[:summary_tesim].nil? %>
       <div class="blacklight-summary">
