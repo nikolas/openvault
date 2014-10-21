@@ -28,7 +28,7 @@ describe "visiting override page", type: :feature do
   end
   
   it "non-existent returns 404" do
-    visit "/some/crazy/url.xml"
+    visit "/some/crazy/url/\u2603.xml"
     expect(page.status_code).to eq(404)
     expect(page).to have_content("Sorry: We can not find that record.")
     # Content-Type was being determined by extension: not what we want.
