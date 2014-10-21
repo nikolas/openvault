@@ -1,14 +1,10 @@
 <div>
-  <%= render partial: 'override/partials/header', 
-             locals: { title: 'March on Washington', wp_img: '2011/05/mow_i.jpeg' } %>
-  
-  <div>
+  <%= render layout: 'override/partials/header', 
+             locals: { title: 'March on Washington', wp_img: '2011/05/mow_i.jpeg' } do %>
     <p>The 1963 March on Washington for Jobs and Freedom featured an estimated 250,000 peaceful demonstrators walking from the Washington Monument to the Lincoln Memorial to hear a political call to arms for economic equality and civil rights for African Americans. Credited with being the final impetus to the passing of the 1964 Civil Rights Act, the event famously ended with Martin Luther King Jr.’s historic “I have a dream” speech.</p>
-
-  </div>
-
-  <hr>
-  <div>
+  <% end %>
+  
+    <div>
     <h3>Search within this collection</h3>
     <ul>
       <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:march">All materials</a></li>

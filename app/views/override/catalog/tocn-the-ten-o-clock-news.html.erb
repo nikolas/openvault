@@ -1,13 +1,9 @@
 <div>
-  <%= render partial: 'override/partials/header', 
-             locals: { title: "The Ten O'Clock News", wp_img: '2011/05/ten_i.gif' } %>
-  
-  <div>
+  <%= render layout: 'override/partials/header', 
+             locals: { title: "The Ten O'Clock News", wp_img: '2011/05/ten_i.gif' } do %>
     <p><em>The Ten O’Clock News</em>&nbsp;was a nightly news program produced and broadcast by WGBH. A local program aimed at the Boston audience,<em>The Ten O’Clock News</em>&nbsp;debuted on January 15, 1976. WGBH Media Library and Archives has preserved and described 523 tapes from<em>The Ten O’Clock News</em>, and its precursors,&nbsp;<em>The Reporters</em>&nbsp;and&nbsp;<em>Evening Compass</em>. Dating from 1974 to 1991, this collection focuses on news stories relating to Boston’s African American community. This project was funded by the&nbsp;<a target="_blank" href="http://www.imls.gov/index.shtm">Institute of Museum and Library Services.</a></p>
+  <% end %>
 
-  </div>
-
-  <hr>
   <div>
     <p><strong>Search within this collection</strong></p>
     <ul>
