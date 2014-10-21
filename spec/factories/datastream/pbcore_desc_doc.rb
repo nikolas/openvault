@@ -68,5 +68,41 @@ FactoryGirl.define do
         pbcore.coverage.date_portrayed = "4/15/1970"
       end
     end
+
+
+    ignore do
+      # See the after(:build) section below that checks for evaluator.relations on how to build a PbcoreDescDoc with some relations.
+      relations 0
+    end
+
+    after(:build) do |pbcore, evaluator|
+      
+      # Adding pbcore relations:
+      #   The following will build PbcoreDescDoc with 2 relations, random data:
+      #
+      #     build(:pbcore_desc_doc, relations: 2)
+      # 
+      #   The following will build a PbcoreDescDoc with 2 relations, each having the specified :type and :id values for the pbcoreRelationType and pbcoreRelationId nodes, respectively.
+      # 
+      #     build(:pbcore_desc_doc, relations: [{id: '123', type: 'some type'}, {id: '456', type: 'another type'}])
+      # 
+      if !!evaluator.relations
+        relations = []
+        if evaluator.relations.respond_to? :to_i
+          evaluator.relations.to_i.times do
+            relations << {}
+          end
+        else
+          relations = evaluator.relations
+        end
+
+        for i in 0..relations.count do
+          index = i-1
+          pbcore.relations(index).id = relations[index][:id] || Artesia::ID.generate
+          pbcore.relations(index).type = relations[index][:type] || 'SAMPLE PBCORE RELATION TYPE'
+        end
+      end
+
+    end
   end
 end
