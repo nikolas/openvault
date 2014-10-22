@@ -87,6 +87,7 @@ FactoryGirl.define do
       #     build(:pbcore_desc_doc, relations: [{id: '123', type: 'some type'}, {id: '456', type: 'another type'}])
       # 
       if !!evaluator.relations
+
         relations = []
         if evaluator.relations.respond_to? :to_i
           evaluator.relations.to_i.times do
@@ -96,10 +97,9 @@ FactoryGirl.define do
           relations = evaluator.relations
         end
 
-        for i in 0..relations.count do
-          index = i-1
-          pbcore.relations(index).id = relations[index][:id] || Artesia::ID.generate
-          pbcore.relations(index).type = relations[index][:type] || 'SAMPLE PBCORE RELATION TYPE'
+        for i in 0...(relations.count) do
+          pbcore.relations(i).id = relations[i][:id] || Artesia::ID.generate
+          pbcore.relations(i).type = relations[i][:type] || 'SAMPLE PBCORE RELATION TYPE'
         end
       end
 
