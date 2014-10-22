@@ -1,5 +1,8 @@
 Openvault::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
+  
+  get 'catalog/tocn-the-ten-o-clock-news', to: redirect('http://bostonlocaltv.org/wgbh')
+  
   ActiveAdmin.routes(self)
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)

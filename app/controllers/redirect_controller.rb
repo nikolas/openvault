@@ -1,7 +1,7 @@
 class RedirectController < ApplicationController
   
   SAY = '/catalog/sbro-say-brother'
-  TEN = '/catalog/tocn-the-ten-o-clock-news'
+  TEN = 'http://bostonlocaltv.org/wgbh'
   NTW = '/collections/ntw-the-new-television-workshop'
   NUKES = '/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age'
   
