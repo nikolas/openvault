@@ -65,6 +65,21 @@ Openvault::Application.routes.draw do
   get '/scholar/:username', to: 'users#scholar', as: :scholar
   get '/scholars', to: 'users#scholars'
   
+  # Old blog URLs:
+  get "/blog/about/", to: redirect("/about")
+  get "/blog/about/media-production-organizational-tools/", to: redirect("/media-production-organizational-tools")
+  get "/blog/media-production-organizational-tools/", to: redirect("/media-production-organizational-tools")
+  get "/blog/category/march-on-washington/", to: redirect("/collections/march-march-on-washington")
+  get "/blog/march-on-washington/", to: redirect("/collections/march-march-on-washington")
+  get "/blog/contact-us/", to: redirect("/contact-us")
+  get "/blog/credits-:name/", to: redirect("/credits/credits-%{name}")
+  get "/blog/credits/", to: redirect("/credits/credits")
+  get "/blog/help/", to: redirect("/help")
+  get "/blog/privacy-policy/", to: redirect("/privacy-policy")
+  get "/blog/series-list/", to: redirect("/series")
+  get "/blog/terms-and-conditions/", to: redirect("/terms-and-conditions")
+  get "/blog/visiting-the-archives/", to: redirect("/visiting-the-archives")
+  # everything else:
   get '/blog/*path', to: redirect('http://blog.openvault.wgbh.org/%{path}')
   
   # ad-hoc redirects, based on web-master tools.
