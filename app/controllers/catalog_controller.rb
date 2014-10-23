@@ -246,7 +246,6 @@ class CatalogController < ApplicationController
       config.access_token_secret = 'cRzE9PCkAoUzl0swVnXQVZ9k9iVJhSqVRWhMXofbM'
     end
     @tweets = client.user_timeline('wgbharchives', :count => 5) rescue nil
-    @resp, @items = get_last_n_solr_docs
     
     @posts = Wordpress.get_recent_posts(count: 4) rescue []
     @feature = @posts.shift
@@ -288,13 +287,6 @@ class CatalogController < ApplicationController
   
   def get_the_search_results(user_params = params || {}, extra_controller_params = {})
     extra_controller_params = {:fq => 'has_model_ssim:("info:fedora/afmodel:Series","info:fedora/afmodel:Program","info:fedora/afmodel:Video","info:fedora/afmodel:Audio")' }
-    solr_response = query_solr(user_params, extra_controller_params)
-    document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
-    [solr_response, document_list]
-  end
-  
-  def get_last_n_solr_docs(n=13, user_params = params || {}, extra_controller_params = {})
-    extra_controller_params = {:rows => n, :fq => 'has_model_ssim:("info:fedora/afmodel:Video")' }
     solr_response = query_solr(user_params, extra_controller_params)
     document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
     [solr_response, document_list]
