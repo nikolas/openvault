@@ -229,8 +229,8 @@ class CatalogController < ApplicationController
         render 'no_results_found' and return if @document_list.empty?
         save_current_search_params 
       }
-      format.rss  { render :layout => false }
-      format.atom { render :layout => false }
+      #format.rss  { render :layout => false }
+      #format.atom { render :layout => false }
       format.json { render :json => @document_list }
     end
   end
