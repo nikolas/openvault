@@ -309,8 +309,8 @@ class CatalogController < ApplicationController
       begin
         lookup_and_set_fields
         render action: @ov_asset.class.to_s.downcase + '/show'
-      rescue Blacklight::Exceptions::InvalidSolrID
-        render 'catalog/no_record_found', status: :not_found
+      rescue Blacklight::Exceptions::InvalidSolrID, ActionView::MissingTemplate
+        render_404
       end
     end
 #    respond_to do |format|
