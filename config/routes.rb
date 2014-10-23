@@ -1,7 +1,22 @@
 Openvault::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   
+  
+  # ad-hoc redirects
+
+  # Collection moved:
   get 'catalog/tocn-the-ten-o-clock-news', to: redirect('http://bostonlocaltv.org/wgbh')
+  
+  # WebmasterTools identified these inbound links:
+  get 'faq.html', to: redirect('/help')
+  get 'about_mla.html', to: redirect('/about')
+  get '7b7ae3-steve-jobs-interview.html', to: redirect('/catalog/7b7ae3-steve-jobs-interview')
+  get 'access_policy.html', to: redirect('/visiting-the-archives')
+  get 'advanced_search', to: redirect('/catalog') # TODO
+  # get 'user_util_links', to: redirect(????)
+  get 'contact_us.html', to: redirect('/contact-us')
+  get 'terms_and_conditions.html', to: redirect('/terms-and-conditions')
+  get 'privacy_policy.html', to: redirect('/privacy-policy')
   
   ActiveAdmin.routes(self)
   Blacklight.add_routes(self)
