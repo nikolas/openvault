@@ -1,6 +1,29 @@
 require 'spec_helper'
 
 describe RedirectController, type: :request do
+  
+  describe "Ten O'Clock News" do
+    def expect_wgbh_redirect
+      expect(response).to redirect_to('http://bostonlocaltv.org/wgbh')
+    end
+    it 'redirects series' do
+      get "/series/Ten+O'Clock+News/"
+      expect_wgbh_redirect
+    end
+    it 'redirects mla' do
+      get '/ton/MLA012345'
+      expect_wgbh_redirect
+    end
+    it 'redirects catalog' do
+      get '/catalog/tocn-the-ten-o-clock-news'
+      expect_wgbh_redirect
+    end
+    pending 'redirects collections' do
+      # end result is right, but it's a double redirect, and not sure if that's what we want.
+      get '/collections/tocn-the-ten-o-clock-news'
+      expect_wgbh_redirect
+    end
+  end
 
   describe '#redirect_series_name' do
     it 'redirects plain url' do
@@ -8,8 +31,8 @@ describe RedirectController, type: :request do
       expect(response).to redirect_to('/catalog/sbro-say-brother')
     end
     it 'redirects slash url' do
-      get "/series/Ten+O'Clock+News/"
-      expect(response).to redirect_to('/catalog/tocn-the-ten-o-clock-news')
+      get "/series/Say+Brother/"
+      expect(response).to redirect_to('/catalog/sbro-say-brother')
     end
     it '404s, if nothing else' do
       get '/series/not+a+real+series'
