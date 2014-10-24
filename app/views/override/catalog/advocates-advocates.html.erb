@@ -1,25 +1,16 @@
 <div>
-  <%= render partial: 'override/partials/header', locals: { title: 'The Advocates' } %>
-
-  <abbr title="advocates-advocates"></abbr>
-
-  <a href="/catalog?f%5Bri_collection_ancestors_s%5D%5B%5D=info%3Afedora%2Forg.wgbh.mla%3Aadvocates"><img src="http://blog.openvault.wgbh.org/wp-content/uploads/2012/10/TheAdvocates.jpg"  alt="Theadvocates"></a>
-  <div>
+  <%= render layout: 'override/partials/header', 
+             locals: { title: 'The Advocates', wp_img: '2014/10/Exhibit_Advocates.jpg' }  do %>
     <p>A series of debates with a moderator facilitating the discussion of national and international issues &ndash; using advocates who would introduce witnesses to support their point of view. Debates recorded at Boston’s Faneuil Hall. Moderators included: Michael Dukakis; Marilyn Berger; Michael Harrington, Robert Maynard. (Premiered October, 1969; conceived by Prof. Roger Fisher.)</p>
-    <p>&nbsp;</p>
-
-  </div>
-
-  <hr>
-  <div>
-    <h3>Search within this collection</h3>
-    <ul>
-      <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:advocates" title="All materials from &quot;The Advocates&quot;">All materials</a></li>
-      <li><a href="http://openvault.wgbh.org/catalog?f[ri_collection_ancestors_s][]=info:fedora/org.wgbh.mla:advocates&amp;f[media_s][]=Video" title="All video from &quot;The Advocates&quot;">All video</a></li>
-    </ul>
-
-  </div>
-  <hr>
+  <% end %>
+    
+  <% content_for :video do %> TODO: list all video <% end %>
+  <% content_for :non_video do %> TODO: list all non-video <% end %>
+  <%#= render partial: 'global_partials/tabs', locals: { tabs: [
+    { title: 'Video', content: content_for(:video) },
+    { title: 'Non-Video', content: content_for(:non_video) }
+  ] } %>
+    
   <div>
     <h3>Related links</h3>
     <ul>
