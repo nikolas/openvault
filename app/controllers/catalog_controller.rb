@@ -303,7 +303,15 @@ class CatalogController < ApplicationController
     else
       begin
         lookup_and_set_fields
-        render action: @ov_asset.class.to_s.downcase + '/show'
+        respond_to do |format|
+          format.html do
+            render action: @ov_asset.class.to_s.downcase + '/show'
+          end
+          format.xml do
+            # TODO: The DC is empty.
+            render text: @document.export_as_oai_dc_xml
+          end
+        end
       rescue Blacklight::Exceptions::InvalidSolrID, ActionView::MissingTemplate
         render_404
       end
