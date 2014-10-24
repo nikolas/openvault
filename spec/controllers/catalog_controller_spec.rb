@@ -112,13 +112,20 @@ describe CatalogController do
       @id = a.pid
     end
 
+    describe "GET show xml" do
+      it "returns a valid solr document" do
+        get :show, {format: 'xml', id: @id}
+        expect(assigns(:document)).to_not be nil
+      end
+    end
+    
     describe "GET show" do
       it "returns a valid solr document" do
         get :show, {id: @id}
         expect(assigns(:document)).to_not be nil
       end
     end
-
+    
     describe "GET print" do
       it "returns a valid solr document" do
         get :print, {id: @id}
