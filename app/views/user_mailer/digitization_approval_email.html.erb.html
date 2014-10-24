@@ -6,7 +6,7 @@
   <body>
     <h3>Great news - your recent request for digitization was approved!</h3>
     <p>
-      The digitization process on your requested item <%= link_to @artifact.title, "http://openvault.wgbh.org/catalog/#{@artifact.pid}" %> has already begun.
+      The digitization process on your requested item <%= link_to @artifact.title, "http://openvault.wgbh.org#{catalog_path(@artifact)}" %> has already begun.
       We'll email you as soon as it's ready.<br/>
     </p>
     <p>

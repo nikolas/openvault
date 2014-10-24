@@ -5,7 +5,7 @@
   </head>
   <body>
     <p>
-      You recently withdrew your request for digitization on <%= link_to @artifact.title, "http://openvault.wgbh.org/catalog/#{@artifact.pid}" %>. No further action is required on your part. <br/>
+      You recently withdrew your request for digitization on <%= link_to @artifact.title, "http://openvault.wgbh.org#{catalog_path(@artifact)}" %>. No further action is required on your part. <br/>
     </p>
     <p>
       To check the status of any remaining requests, <%= link_to "visit your dashboard anytime", user_root_path %>.
