@@ -14,13 +14,7 @@
         <div class="sep-line-thin"></div>
         <div class="document_content">
           <p><%= display_summary @document unless @document[:title_tesim] == @document[:summary_tesim]%></p>
-          <% if !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i > 1 %>
-            <%= render :partial => 'catalog/program/partials/multiple_assets', :locals => { :document => @document } %>
-          <% elsif !@document[:asset_count_ssm].nil? && @document[:asset_count_ssm].first.to_i == 1 %>
-            <%= render :partial => 'catalog/program/partials/single_asset', :locals => { :document => @document } %>
-          <% else %>
-            <p class="grayed-out">This program has no digital media yet</p>
-          <% end  %>
+          <%= render :partial => 'catalog/program/partials/multiple_assets', :locals => { :document => @document } %>
           <br />
           <div class="metadata">
             <%= 
