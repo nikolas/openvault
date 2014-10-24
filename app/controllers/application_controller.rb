@@ -47,4 +47,8 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def render_404(erb='catalog/no_record_found', status=:not_found, formats=:html)
+    render erb, status: status, formats: formats
+  end
+  
 end

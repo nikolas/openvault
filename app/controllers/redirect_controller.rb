@@ -47,10 +47,4 @@ class RedirectController < ApplicationController
     redirect_to NUKES
   end
   
-  private
-  
-  def render_404
-    render 'catalog/no_record_found', status: :not_found, formats: :html
-  end
-  
 end

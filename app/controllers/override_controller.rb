@@ -8,7 +8,7 @@ class OverrideController < ApplicationController
         return
       end
     end
-    render 'catalog/no_record_found', status: :not_found, formats: :html
+    render_404
   end
 
 end 

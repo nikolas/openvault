@@ -87,10 +87,38 @@ feature "User visits catalog#show" do
     expect(page).to have_content("Rights")
   end
 
-  scenario "non-existent returns 404" do
-    visit "/catalog/nope:12345"
-    expect(page.status_code).to eq(404)
-    expect(page).to have_content("Sorry: We can not find that record.")
-  end
+  describe '40*s' do
+    
+    scenario "catalog.atom and catalog.rss 406" do
+      visit "/catalog.rss"
+      expect(page.status_code).to eq(406)
+      visit "/catalog.atom"
+      expect(page.status_code).to eq(406)
+    end
+    
+    
+    scenario "non-existent returns 404" do
+      visit "/catalog/nope:12345"
+      expect_404
+    end
 
+    scenario "unimplemented extension returns 404" do
+      ['xml', 'json', 'dc_xml', 'atom', 'rss'].each do |extension|
+        visit "/catalog/#{@audio.pid}.#{extension}"
+        expect_404
+      end
+    end
+
+    pending "random extension returns 404" do
+      # bug filed: https://github.com/afred/openvault/issues/965
+      visit "/catalog/#{@audio.pid}.random"
+      expect_404
+    end
+
+    def expect_404
+      expect(page.status_code).to eq(404)
+      expect(page).to have_content("Sorry: We can not find that record.")
+    end
+  end
+  
 end
