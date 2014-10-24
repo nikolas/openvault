@@ -13,7 +13,6 @@ class Program < OpenvaultAsset
     Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audio_count", self.audios.count, :displayable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
-    Solrizer.insert_field(solr_document, "asset_count", self.asset_count, :displayable, :searchable)
     return solr_document
   end
 
@@ -31,10 +30,6 @@ class Program < OpenvaultAsset
   
   def broadcast_date
     self.pbcore.broadcast_date.first
-  end
-
-  def asset_count
-    self.videos.count + self.audios.count
   end
 
   def all_videos
