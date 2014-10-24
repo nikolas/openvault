@@ -3,7 +3,7 @@
     <h4>Video</h4>
     <ul class="asset-list video-list">
       <% @ov_asset.videos.each do |video| %>
-        <li><%= link_to video.title, video %></li>
+        <li><%= link_to video.title, catalog_path(video) %></li>
       <% end %>
     </ul>  
   <% end %>
@@ -11,7 +11,7 @@
     <h4>Audio</h4>
     <ul class="asset-list audio-list">
       <% @ov_asset.audios.each do |audio| %>
-        <li><%= link_to audio.title, audio %></li>
+        <li><%= link_to audio.title, catalog_path(audio) %></li>
       <% end %>
     </ul>
   <% end %>
