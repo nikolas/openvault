@@ -287,7 +287,10 @@ class CatalogController < ApplicationController
   end
   
   def get_the_search_results(user_params = params || {}, extra_controller_params = {})
-    extra_controller_params = {:fq => 'has_model_ssim:("info:fedora/afmodel:Series","info:fedora/afmodel:Program","info:fedora/afmodel:Video","info:fedora/afmodel:Audio")' }
+    if params['media_only']
+      media_list = ['Audio','Video'].map{|type| "\"info:fedora/afmodel:#{type}\""}.join(',')
+      extra_controller_params = { fq: "has_model_ssim:(#{media_list})" }
+    end
     solr_response = query_solr(user_params, extra_controller_params)
     document_list = solr_response.docs.collect {|doc| SolrDocument.new(doc, solr_response)} 
     [solr_response, document_list]
