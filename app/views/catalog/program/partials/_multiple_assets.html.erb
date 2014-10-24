@@ -1,20 +1,19 @@
-<h3>Assets part of this program</h3>
 <div id="program-asset-list">
-  <% unless @ov_asset.videos.count == 0 %>
-    <h4>Video assets</h4>
-    <div class="asset-list video-list">
+  <% unless @ov_asset.videos.empty? %>
+    <h4>Video</h4>
+    <ul class="asset-list video-list">
       <% @ov_asset.videos.each do |video| %>
-        <%= render partial: 'catalog/program/partials/video_multi', locals: {:video => video} %>
+        <li><%= link_to video.title, video %></li>
       <% end %>
-    </div>  
+    </ul>  
   <% end %>
-  <% unless @ov_asset.audios.count == 0 %>
-    <hr />
-    <h4>Audio assets</h4>
-    <div class="asset-list audio-list">
+  <% unless @ov_asset.audios.empty? %>
+    <h4>Audio</h4>
+    <ul class="asset-list audio-list">
       <% @ov_asset.audios.each do |audio| %>
-        <%= render partial: 'catalog/program/partials/audio_multi', locals: {:document => audio} %>
+        <li><%= link_to audio.title, audio %></li>
       <% end %>
-    </div>
+    </ul>
   <% end %>
+  <%# TODO: Transcripts? Images? %>
 </div>
