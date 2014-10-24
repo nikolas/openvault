@@ -7,7 +7,7 @@
   <% content_for :video do %> TODO: list all video <% end %>
   <% content_for :non_video do %> TODO: list all non-video <% end %>
   <% content_for :interviews do %> <a href="/lists/rock-and-roll-interview-list">List of interviews</a> <% end %>
-  <%= render partial: 'global_partials/tabs', locals: { tabs: [
+  <%#= render partial: 'global_partials/tabs', locals: { tabs: [
     { title: 'Video', content: content_for(:video) },
     { title: 'Non-Video', content: content_for(:non_video) },
     { title: 'Interviews', content: content_for(:interviews) }

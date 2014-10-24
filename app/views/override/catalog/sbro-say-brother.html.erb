@@ -7,7 +7,7 @@
   <% content_for :performaces do %> TODO: list performances <% end %>
   <% content_for :civil_rights do %> TODO: list civil right <% end %>
   <% content_for :everything do %> TODO: list of everything <% end %>
-  <%= render partial: 'global_partials/tabs', locals: { tabs: [
+  <%#= render partial: 'global_partials/tabs', locals: { tabs: [
     { title: 'Performances', content: content_for(:performaces) },
     { title: 'Civil Rights', content: content_for(:civil_rights) },
     { title: 'Everything', content: content_for(:everything) }
