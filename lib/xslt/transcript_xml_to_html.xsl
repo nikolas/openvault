@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0"
   xmlns:smil="http://www.w3.org/2001/SMIL20/Language">
-  <xsl:output indent="yes" encoding="utf-8" method="xml" omit-xml-declaration="yes"/>
+  <xsl:output method="html" encoding="utf-8" indent="yes" version="4.0"/>
   <xsl:variable name="persNames" select="//tei:person" />
   <xsl:key name="teiRef" match="//tei:term" use="@xml:id" />
 
