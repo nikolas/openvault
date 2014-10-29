@@ -22,7 +22,7 @@ describe "render_transcript" do
       @transcript = Transcript.new
       @transcript.tei.ng_xml = '<TEI xmlns="http://www.tei-c.org/ns/1.0" />'
       transformation = render_transcript(@transcript.tei)
-      expect(transformation).to eq("<div xmlns=\"http://www.w3.org/1999/xhtml\" class=\"transcript\"></div>\n")
+      expect(transformation).to eq("<div class=\"transcript\"></div>\n")
     end
   end
 

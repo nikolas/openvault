@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+  xmlns:tei="http://www.tei-c.org/ns/1.0"
   xmlns:smil="http://www.w3.org/2001/SMIL20/Language"
   exclude-result-prefixes="tei smil">
   <xsl:output method="html" encoding="utf-8" indent="yes" />
@@ -8,7 +9,7 @@
   <xsl:key name="teiRef" match="//tei:term" use="@xml:id" />
 
   <xsl:template match="/">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="transcript">
+    <div class="transcript">
       <xsl:apply-templates match="tei:body"/>
     </div>
   </xsl:template>
