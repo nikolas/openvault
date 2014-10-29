@@ -86,6 +86,12 @@ feature "User visits catalog#show" do
     expect(page).to have_content("Hide details")
     expect(page).to have_content("Rights")
   end
+  
+  scenario "transcript print" do
+    visit "/catalog/#{@transcript.pid}/print"
+    expect(page.source =~ %r{^<html>\s*<head>\s*<title>[^<]+</title>\s*</head>\s*<body>\s*<div class="transcript">}).to \
+      eq(0), "Expected <html><head><title>...</title></head><body><div class='transcript'>... in #{page.source[0..150]}"
+  end
 
   describe '40*s' do
     

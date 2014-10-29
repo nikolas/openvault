@@ -3,7 +3,7 @@
     <div id="transcript-box" class="span5 secondary-datastream-container">
       <h2>Transcript</h2>
       <div class="datastream-actions">
-        <%= link_to "/programs/#{@document[:slug]}/print", :class => "print action", :target => "_blank" do %>
+        <%= link_to "/catalog/#{transcript.slug rescue transcript.id}/print", :class => "print action", :target => "_blank" do %>
           <i class='icon-print'></i>
         <% end %>
         <form action="#" method="GET" class="q_field datastream-action-search">

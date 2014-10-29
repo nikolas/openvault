@@ -324,7 +324,7 @@ class CatalogController < ApplicationController
 #  end
   def print
     lookup_and_set_fields
-    render action:(@ov_asset.class.to_s.downcase + '/print')
+    render action:(@ov_asset.class.to_s.downcase + '/print'), layout: false
   end
 #  def embed
 #    @response, @document = get_solr_response_for_doc_id
