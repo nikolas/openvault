@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0"
-  xmlns:smil="http://www.w3.org/2001/SMIL20/Language">
-  <xsl:output method="html" encoding="utf-8" indent="yes" version="4.0"/>
+  xmlns:smil="http://www.w3.org/2001/SMIL20/Language"
+  exclude-result-prefixes="tei smil">
+  <xsl:output method="html" encoding="utf-8" indent="yes" />
   <xsl:variable name="persNames" select="//tei:person" />
   <xsl:key name="teiRef" match="//tei:term" use="@xml:id" />
 
