@@ -75,11 +75,11 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
     let(:image) { Image.new }
     let(:transcript) { Transcript.new }
 
-    let(:builder) { Openvault::Pbcore::AssetRelationshipBuilder.new(subject) }
+    let(:builder) { Openvault::Pbcore::AssetRelationshipBuilder.new(asset_subject) }
     
     context 'when #asset is a Series' do
 
-      subject { series }
+      let(:asset_subject) { series }
 
       it 'relates a Program' do
         builder.relate program
@@ -105,7 +105,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     context 'when #asset is a Program' do
 
-      subject { program }
+      let(:asset_subject) { program }
 
       it 'relates a Series' do
         builder.relate series
@@ -136,7 +136,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     context 'when #asset is a Video' do
 
-      subject { video }
+      let(:asset_subject) { video }
 
       it 'relates a Series' do
         builder.relate series
@@ -162,7 +162,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     context 'when #asset is an Audio' do
 
-      subject { audio }
+      let(:asset_subject) { audio }
 
       it 'relates a Series' do
         builder.relate series
@@ -188,7 +188,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     context 'when #asset is an Image' do
 
-      subject { image }
+      let(:asset_subject) { image }
 
       it 'relates a Series' do
         builder.relate series
@@ -209,7 +209,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     context 'when #asset is an Transcript' do
 
-      subject { transcript }
+      let(:asset_subject) { transcript }
 
       it 'relates a Audio' do
         builder.relate audio

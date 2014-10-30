@@ -32,102 +32,111 @@ module Openvault::Pbcore
     end
 
 
-    def relate(target_asset)
+    def relate(relate_to)
 
       case asset
 
       when Series
-        case target_asset
+        case relate_to
         when Program
-          asset.programs << target_asset
+          asset.programs << relate_to
         when Video
-          asset.videos << target_asset
+          asset.videos << relate_to
         when Audio
-          asset.audios << target_asset
+          asset.audios << relate_to
         when Image
-          asset.images << target_asset
+          asset.images << relate_to
         else
-          raise UnhandledRelationType
+          raise UnhandledRelationType.new(asset, relate_to)
         end
 
 
       when Program
-        case target_asset
+        case relate_to
         when Series
-          asset.series = target_asset
+          asset.series = relate_to
         when Video
-          asset.videos << target_asset
+          asset.videos << relate_to
         when Audio
-          asset.audios << target_asset
+          asset.audios << relate_to
         when Image
-          asset.images << target_asset
+          asset.images << relate_to
         when Transcript
-          asset.transcripts << target_asset
+          asset.transcripts << relate_to
         else
-          raise UnhandledRelationType
+          raise UnhandledRelationType.new(asset, relate_to)
         end
 
       when Video
-        case target_asset
+        case relate_to
         when Series
-          asset.series = target_asset
+          asset.series = relate_to
         when Program
-          asset.program = target_asset
+          asset.program = relate_to
         when Image
-          asset.images << target_asset
+          asset.images << relate_to
         when Transcript
-          asset.transcripts << target_asset
+          asset.transcripts << relate_to
         else
-          raise UnhandledRelationType
+          raise UnhandledRelationType.new(asset, relate_to)
         end
 
       when Image
-        case target_asset
+        case relate_to
         when Video
-          asset.video = target_asset
+          asset.video = relate_to
         when Program
-          asset.program = target_asset
+          asset.program = relate_to
         when Series
-          asset.series = target_asset
+          asset.series = relate_to
         else
-          raise UnhandledRelationType
+          raise UnhandledRelationType.new(asset, relate_to)
         end
 
 
       when Audio
-        case target_asset
+        case relate_to
         when Series
-          asset.series = target_asset
+          asset.series = relate_to
         when Program
-          asset.program = target_asset
+          asset.program = relate_to
         when Transcript
-          asset.transcripts << target_asset
+          asset.transcripts << relate_to
         when Image
-          asset.images << target_asset
+          asset.images << relate_to
         else
-          raise UnhandledRelationType
+          raise UnhandledRelationType.new(asset, relate_to)
         end
 
 
       when Transcript
-        case target_asset
+        case relate_to
         when Video
-          asset.video = target_asset
+          asset.video = relate_to
         when Audio
-          asset.audio = target_asset
+          asset.audio = relate_to
         when Program
-          asset.program = target_asset
+          asset.program = relate_to
         else
-          raise UnhandledRelationType
+          raise UnhandledRelationType.new(asset, relate_to)
         end
 
       else
-        raise UnhandledRelationType
+        raise UnhandledRelationType.new(asset, relate_to)
       end
 
     end
 
-    class UnhandledRelationType < StandardError; end
+    class UnhandledRelationType < StandardError
+      def initialize(subject=nil, relate_to=nil)
+        @subject = subject
+        @relate_to = relate_to
+      end
+
+      def message
+        "Do not know how to relate #{@relate_to.class} to #{@subject.class}"
+      end
+    end
 
   end
 end
