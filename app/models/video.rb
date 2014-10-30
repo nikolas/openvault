@@ -50,23 +50,5 @@ class Video < OpenvaultAsset
   def login_required?
     self.rights_holder == 'CBS News'
   end
-  #Video Metadata
-  # - Length
-  # - People involved
-  # - formats
-
-  def relate_asset asset
-    case asset
-    when Series
-      self.series = asset
-    when Program
-      self.program = asset
-    when Image
-      self.images << asset
-    when Transcript
-      self.transcripts << asset
-    else
-      super asset
-    end
-  end
+  
 end

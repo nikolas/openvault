@@ -37,20 +37,5 @@ class Series < OpenvaultAsset
   def all_images
     self.images.map{|s| s.pid }
   end
-
-  def relate_asset asset
-    case asset
-    when Program
-      self.programs << asset
-    when Video
-      self.videos << asset
-    when Audio
-      self.audios << asset
-    when Image
-      self.images << asset
-    else
-      super asset
-    end
-  end
   
 end

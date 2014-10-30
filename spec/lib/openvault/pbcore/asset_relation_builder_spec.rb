@@ -49,21 +49,194 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
     @video.delete
   end
 
-  let(:relationship_builder) { Openvault::Pbcore::AssetRelationshipBuilder.new(@program) }
+  let(:builder) { Openvault::Pbcore::AssetRelationshipBuilder.new(@program) }
 
   describe '#assets_related_through_pbcore' do
     it 'checks pbcore metadata for associations with other assets, and returns Fedora objects for those assets' do
-      expect(relationship_builder.assets_related_through_pbcore).to eq [@video]
+      expect(builder.assets_related_through_pbcore).to eq [@video]
     end
   end
 
   describe '#establish_relationships_in_fedora' do
     it 'establishes relationshps between fedora objects that have been identified from pbcore metadata.' do
-      relationship_builder.establish_relationships_in_fedora
+      builder.establish_relationships_in_fedora
       expect(@program.videos).to eq [@video]
       # TODO: @video.program doesn't work here b/c @video does not get reloaded, and not sure how to do it.
       expect(@program.videos.first.program).to eq @program
     end
+  end
+
+  describe '#relate' do
+
+    let(:series) { Series.new }
+    let(:program) { Program.new }
+    let(:video) { Video.new }
+    let(:audio) { Audio.new }
+    let(:image) { Image.new }
+    let(:transcript) { Transcript.new }
+
+    let(:builder) { Openvault::Pbcore::AssetRelationshipBuilder.new(subject) }
+    
+    context 'when #asset is a Series' do
+
+      subject { series }
+
+      it 'relates a Program' do
+        builder.relate program
+        expect(builder.asset.programs).to eq [program]
+      end
+
+      it 'relates a Video' do
+        builder.relate video
+        expect(builder.asset.videos).to eq [video]
+      end
+
+      it 'relates an Audio' do
+        builder.relate audio
+        expect(builder.asset.audios).to eq [audio]
+      end
+
+      it 'relates an Image' do
+        builder.relate image
+        expect(builder.asset.images).to eq [image]
+      end
+
+    end
+
+    context 'when #asset is a Program' do
+
+      subject { program }
+
+      it 'relates a Series' do
+        builder.relate series
+        expect(builder.asset.series).to eq series
+      end
+
+      it 'relates a Video' do
+        builder.relate video
+        expect(builder.asset.videos).to eq [video]
+      end
+
+      it 'relates an Audio' do
+        builder.relate audio
+        expect(builder.asset.audios).to eq [audio]
+      end
+
+      it 'relates an Image' do
+        builder.relate image
+        expect(builder.asset.images).to eq [image]
+      end
+
+      it 'relates an Transcript' do
+        builder.relate transcript
+        expect(builder.asset.transcripts).to eq [transcript]
+      end
+
+    end
+
+    context 'when #asset is a Video' do
+
+      subject { video }
+
+      it 'relates a Series' do
+        builder.relate series
+        expect(builder.asset.series).to eq series
+      end
+
+      it 'relates a Program' do
+        builder.relate program
+        expect(builder.asset.program).to eq program
+      end
+
+      it 'relates an Image' do
+        builder.relate image
+        expect(builder.asset.images).to eq [image]
+      end
+
+      it 'relates an Transcript' do
+        builder.relate transcript
+        expect(builder.asset.transcripts).to eq [transcript]
+      end
+
+    end
+
+    context 'when #asset is an Audio' do
+
+      subject { audio }
+
+      it 'relates a Series' do
+        builder.relate series
+        expect(builder.asset.series).to eq series
+      end
+
+      it 'relates a Program' do
+        builder.relate program
+        expect(builder.asset.program).to eq program
+      end
+
+      it 'relates an Image' do
+        builder.relate image
+        expect(builder.asset.images).to eq [image]
+      end
+
+      it 'relates an Transcript' do
+        builder.relate transcript
+        expect(builder.asset.transcripts).to eq [transcript]
+      end
+
+    end
+
+    context 'when #asset is an Image' do
+
+      subject { image }
+
+      it 'relates a Series' do
+        builder.relate series
+        expect(builder.asset.series).to eq series
+      end
+
+      it 'relates a Program' do
+        builder.relate program
+        expect(builder.asset.program).to eq program
+      end
+
+      it 'relates a Video' do
+        builder.relate video
+        expect(builder.asset.video).to eq video
+      end
+
+    end
+
+    context 'when #asset is an Transcript' do
+
+      subject { transcript }
+
+      it 'relates a Audio' do
+        builder.relate audio
+        expect(builder.asset.audio).to eq audio
+      end
+
+      it 'relates a Program' do
+        builder.relate program
+        expect(builder.asset.program).to eq program
+      end
+
+      it 'relates a Video' do
+        builder.relate video
+        expect(builder.asset.video).to eq video
+      end
+
+    end
+
+    it 'raises an UnhandledRelationType exception when the the the AssetRelationshipBuilder does not know how to establish the relationship.' do
+      builder = Openvault::Pbcore::AssetRelationshipBuilder.new(series)
+      expect{ builder.relate transcript }.to raise_error Openvault::Pbcore::AssetRelationshipBuilder::UnhandledRelationType
+    end
+
+
+
+
+
   end
 
 end

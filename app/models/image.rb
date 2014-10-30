@@ -5,20 +5,6 @@ class Image < OpenvaultAsset
   belongs_to :video, :property => :image_video
   belongs_to :program, :property => :image_program
   belongs_to :series, :property => :series_image # TODO: doesn't seem right.
-
-
-  def relate_asset asset
-    case asset
-    when Video
-      self.video = asset
-    when Program
-      self.program = asset
-    when Series
-      self.series = asset
-    else
-      super asset
-    end
-  end
   
   def to_solr(solr_document={}, options={})
     super(solr_document, options)

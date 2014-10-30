@@ -5,7 +5,6 @@ class Audio < OpenvaultAsset
 
   has_many :transcripts, :property => :transcript_audio  
   has_many :images, :property => :image_audio
-  has_many :transcripts, :property => :transcript_audio
   belongs_to :program, :property => :audio_program
   belongs_to :series, :property => :series_audio
   
@@ -37,19 +36,6 @@ class Audio < OpenvaultAsset
     #This needs to change based on the decisions made about the streaming server
     #"http://media.wgbh.org/streaming/audios/#{self.id}.mp3"
     "#{media_host}/audio/#{original_file_name.sub(/\.[^.]+$/,'.mp3')}" if original_file_name
-  end
-
-  def relate_asset asset
-    case asset
-    when Series
-      self.series = asset
-    when Program
-      self.program = asset
-    when Transcript
-      self.transcripts << asset
-    else
-      super asset
-    end
   end
 
 end
