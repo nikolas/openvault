@@ -92,20 +92,16 @@ class OverrideController < ApplicationController
   end
   
   def self.first_rest_list(names_blob)
-    name_slugs = Hash[
-      names_blob.split("\n").map do |name|
-        name.strip!
-        q=name.split(/,\s+/).map{|part|"text:#{part}"}.join(' ')
-        slugs=get_solr_ids(q).grep /interview/
-        slugs.sort_by{|id|id.split('-').last}
-        [name,slugs]
-      end
-    ]
-    name_slugs.map do |name,slugs|
+    names_blob.split("\n").map do |name|
+      name.strip!
+      # TODO: maybe just search the title?
+      q = name.split(/,\s+/).map{|part|"text:#{part}"}.join(' ')
+      slugs = (block_given? ? yield(q) : get_solr_ids(q)).grep /interview/
+      slugs.sort_by!{|id|id.split('-').last}
       first = slugs[0]
       rest = slugs[1..slugs.length] || []
       {name: name, first: first, rest: rest}
-    end.select{|hash| hash[:first]}
+    end.select{|name_slugs| name_slugs[:first]}
   end
   
   def self.get_solr_ids(q)
