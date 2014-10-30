@@ -10,5 +10,9 @@ class OverrideController < ApplicationController
     end
     render_404
   end
+  
+  def show_rock_and_roll
+    render file: 'override/catalog/roll-rock-and-roll.html.erb'
+  end
 
 end 
