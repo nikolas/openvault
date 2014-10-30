@@ -2,6 +2,7 @@ Openvault::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   
   get 'catalog/tocn-the-ten-o-clock-news', to: redirect('http://bostonlocaltv.org/wgbh')
+  get 'catalog/roll-rock-and-roll', to: 'override#show_rock_and_roll'
   
   ActiveAdmin.routes(self)
   Blacklight.add_routes(self)
@@ -26,8 +27,6 @@ Openvault::Application.routes.draw do
       vietnam-the-vietnam-collection |
       wpna-wpna-war-and-peace-in-the-nuclear-age
     /x }
-  
-  get 'catalog/roll-rock-and-roll', to: 'override#show_rock_and_roll'
   
   resources :catalog, :only => [:index, :show, :update], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
     member do
