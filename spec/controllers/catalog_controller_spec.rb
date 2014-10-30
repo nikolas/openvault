@@ -7,7 +7,7 @@ describe CatalogController do
   describe "GET index" do
     it "returns search results" do
       get :index
-      expect(assigns(:document_list)).to_not be nil
+      expect_not_nil(:document_list)
     end
 
   end
@@ -15,23 +15,23 @@ describe CatalogController do
   describe "GET home" do
     it "get has the scroller items" do
       get :home
-      expect(assigns(:scroller_items)).to_not be nil
+      expect_not_nil(:scroller_items)
     end
 
     it "gets the collections" do
       get :home
-      expect(assigns(:custom_collections)).to_not be nil
+      expect_not_nil(:custom_collections)
     end
 
     it "gets the tweets" do
       get :home
-      expect(assigns(:tweets)).to_not be nil
+      expect_not_nil(:tweets)
     end
     
     it "gets blog posts" do
       get :home
-      expect(assigns(:feature)).to_not be nil
-      expect(assigns(:posts)).to_not be nil
+      expect_not_nil(:feature)
+      expect_not_nil(:posts)
       expect(assigns(:posts).length).to eq 3
     end
   end
@@ -51,7 +51,7 @@ describe CatalogController do
 
       it "assigns a solr document to @document" do
         get :show, {id: @series.id}
-        assigns(:document).should_not be nil
+        expect_not_nil(:document)
       end
 
       it "assigns a Series record to @ov_asset" do
@@ -64,7 +64,7 @@ describe CatalogController do
     describe "GET print" do
       it "returns a valid solr document" do
         get :print, {id: @series.id}
-        assigns(:document).should_not be nil
+        expect_not_nil(:document)
       end
     end
     
@@ -86,14 +86,14 @@ describe CatalogController do
     describe "GET show" do
       it "returns a valid solr document" do
         get :show, {id: @id}
-        assigns(:document).should_not be nil
+        expect_not_nil(:document)
       end
     end
 
     describe "GET print" do
       it "returns a valid solr document" do
         get :print, {id: @id}
-        assigns(:document).should_not be nil
+        expect_not_nil(:document)
       end
     end
 
@@ -112,20 +112,31 @@ describe CatalogController do
       @id = a.pid
     end
 
+    describe "GET show xml" do
+      it "returns a valid solr document" do
+        get :show, {format: 'xml', id: @id}
+        expect_not_nil(:document)
+      end
+    end
+    
     describe "GET show" do
       it "returns a valid solr document" do
         get :show, {id: @id}
-        expect(assigns(:document)).to_not be nil
+        expect_not_nil(:document)
       end
     end
-
+    
     describe "GET print" do
       it "returns a valid solr document" do
         get :print, {id: @id}
-        expect(assigns(:document)).to_not be nil
+        expect_not_nil(:document)
       end
     end
 
+  end
+  
+  def expect_not_nil(obj)
+    expect(assigns(obj)).to_not be nil
   end
 
 end

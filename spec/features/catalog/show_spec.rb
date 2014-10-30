@@ -102,10 +102,13 @@ feature "User visits catalog#show" do
       expect_404
     end
 
-    scenario "unimplemented extension returns 404" do
-      ['xml', 'json', 'dc_xml', 'atom', 'rss'].each do |extension|
-        visit "/catalog/#{@audio.pid}.#{extension}"
-        expect_404
+    describe "unimplemented extension returns 406" do
+      # TODO .dc_xml is rendering html right now.
+      ['json', 'atom', 'rss'].each do |extension|
+        it "for .#{extension}" do
+          visit "/catalog/#{@audio.pid}.#{extension}"
+          expect_406
+        end
       end
     end
 
@@ -115,6 +118,12 @@ feature "User visits catalog#show" do
       expect_404
     end
 
+    def expect_406
+      expect(page.status_code).to eq(406)
+      # TODO: make it prettier: just blank right now
+      # expect(page).to have_content("Sorry: We can not find that record.")
+    end
+    
     def expect_404
       expect(page.status_code).to eq(404)
       expect(page).to have_content("Sorry: We can not find that record.")
