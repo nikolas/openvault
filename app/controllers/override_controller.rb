@@ -12,6 +12,8 @@ class OverrideController < ApplicationController
   end
   
   def show_rock_and_roll
+    # TODO: When we think everything has been ingested correctly, do one last search
+    # and replace this with a static data structure, like for WPNA.
     @interviews = OverrideController.first_rest_list(<<-eof
       Allen, Hoss
       Arnold, Larkin
