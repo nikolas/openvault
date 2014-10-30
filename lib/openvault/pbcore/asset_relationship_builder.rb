@@ -14,19 +14,22 @@ module Openvault::Pbcore
     # NOTE: This method assumes:
     #   * Two records are related when a value within one record's <pbcoreIdentifier> node is present in another's <pbcoreRelationIdentifier> node
     #   * There is only one <pbcoreRelationIdentifier> per <pbcoreRelation>
-    def relate
-      if !pbcore.relations_by_type.empty?
-        pbcore.relations_by_type.each do |relation_type, pbcore_ids|        # For each relation type, there is a list of values from <pbcoreRelationIdentifier> nodes, that we will call pbcore_ids
-          pbcore_ids.each do |pbcore_id|
-            related_assets = ActiveFedora::Base.find({:all_ids_tesim => pbcore_id})
-
-            related_assets.each do |related_asset|
-              asset.relate_asset related_asset
-              asset.save!
-            end
-          end
-        end
+    def establish_relationships_in_fedora
+      assets_related_through_pbcore.each do |related_asset|
+        asset.relate_asset related_asset
+        asset.save!
       end
     end
+
+    def assets_related_through_pbcore
+      related = []
+      pbcore.relations_by_type.each do |relation_type, pbcore_ids|
+        pbcore_ids.each do |pbcore_id|
+          related += ActiveFedora::Base.find({:all_ids_tesim => pbcore_id})
+        end
+      end
+      related
+    end
+
   end
 end
