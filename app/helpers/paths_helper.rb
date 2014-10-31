@@ -8,6 +8,7 @@ module PathsHelper
   def catalog_path(object)
     "/catalog/#{slug_or_pid object}"
   end
+  private
   def slug_or_pid(object)
     case object
     when String
