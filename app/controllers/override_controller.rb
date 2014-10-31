@@ -1,7 +1,5 @@
 class OverrideController < ApplicationController  
   
-  include LookupBySlug
-  
   def show
     if params[:path] =~ /^[a-z0-9\/-]+$/i # paranoid about weird paths.
       override_file_path = "override/#{params[:path]}.html.erb"
@@ -92,7 +90,6 @@ class OverrideController < ApplicationController
       Young, Earl
     eof
     )
-    lookup_media('roll-rock-and-roll')
     render file: 'override/catalog/roll-rock-and-roll.html.erb'
   end
   
@@ -361,7 +358,6 @@ class OverrideController < ApplicationController
         {name: "York, Herbert F. (Herbert Frank)", first: "wpna-fc7f73-interview-with-herbert-york-1986", rest: ["wpna-f3068a-interview-with-herbert-york-1988"]},
         {name: "Zhurkin, Vitaliy Vladimirovich", first: "wpna-e93072-interview-with-vitaliy-vladimirovich-zhurkin-1986", rest: ["wpna-63cfaa-interview-with-vitaliy-vladimirovich-zhurkin-1987"]}  
       ]
-    lookup_media('wpna-wpna-war-and-peace-in-the-nuclear-age')
     render file: 'override/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age.html.erb'
   end
   
@@ -381,19 +377,6 @@ class OverrideController < ApplicationController
   
   def self.get_solr_ids(q)
     Blacklight.solr.select(params: {q: q})['response']['docs'].map{|d|d['id']}
-  end
-  
-  def lookup_media(slug)
-    series = lookup(slug)[:ov_asset] rescue nil
-    if series
-      @programs = series.programs
-      @videos = series.videos + @programs.map{|p| p.videos}.flatten
-      @audios = series.audios + @programs.map{|p| p.audios}.flatten
-      @media = @videos + @audios
-      @images = series.images + @programs.map{|p| p.images}.flatten
-    else
-      @programs = @videos = @audios = @media = @images = []
-    end
   end
 
 end 
