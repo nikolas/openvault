@@ -5,9 +5,8 @@
   <% end %>
 
   <%= render partial: 'global_partials/tabs', locals: { tabs: [
-    #{ title: 'Video', content: content_for(:video) },
-    #{ title: 'Non-Video', content: content_for(:non_video) },
-    { title: 'Interviews', content: render(partial: 'override/partials/interview_table') }
+    { title: 'Interviews', content: render(partial: 'override/partials/interview_table') },
+    tab_opts('Programs', @programs)
   ] } %> 
     
   <div>
