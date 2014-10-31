@@ -376,6 +376,7 @@ class OverrideController < ApplicationController
   end
   
   def self.get_solr_ids(q)
+    # TODO: tabs UI is now being cached, so hitting this on every request is wasteful.
     Blacklight.solr.select(params: {q: q})['response']['docs'].map{|d|d['id']}
   end
 

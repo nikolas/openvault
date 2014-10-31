@@ -4,12 +4,12 @@
     <p>A series of debates with a moderator facilitating the discussion of national and international issues &ndash; using advocates who would introduce witnesses to support their point of view. Debates recorded at Boston’s Faneuil Hall. Moderators included: Michael Dukakis; Marilyn Berger; Michael Harrington, Robert Maynard. (Premiered October, 1969; conceived by Prof. Roger Fisher.)</p>
   <% end %>
     
-  <% content_for :video do %> TODO: list all video <% end %>
-  <% content_for :non_video do %> TODO: list all non-video <% end %>
-  <%#= render partial: 'global_partials/tabs', locals: { tabs: [
-    { title: 'Video', content: content_for(:video) },
-    { title: 'Non-Video', content: content_for(:non_video) }
-  ] } %>
+  <% cache('advocates-advocates-tabs') do %>
+    <%= render partial: 'global_partials/tabs', locals: { 
+      tabs: 
+        tabs_for('advocates-advocates', [:videos, :programs])
+    } %> 
+  <% end %>
     
   <div>
     <h3>Related links</h3>
