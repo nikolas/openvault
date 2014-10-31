@@ -4,12 +4,13 @@
     <p>War and Peace in the Nuclear Age, first broadcast in 1989, is a thirteen-part PBS series on the origins and evolution of nuclear competition between the United States and the former Soviet Union. The series examined the rivalry for power and how it shaped the diplomacy, negotiation, ethical debates, and doctrine of deterrence that ran through the forty-year history of the nuclear age. This collection contains the full interviews and selected stock footage from the series. &nbsp;If you would like to view the full War and Peace in the Nuclear Age episodes you may schedule an appointment at WGBH in Boston by contacting the WGBH Media Library and Archives.</p>
   <% end %>
 
-  <%= render partial: 'global_partials/tabs', locals: { 
-    tabs: 
-      [{ title: 'Interviews', content: render(partial: 'override/partials/interview_table') }] +
-      tabs_for('wpna-wpna-war-and-peace-in-the-nuclear-age', [:programs])
-      #tabs_for('changeme:1', [:programs])
-  } %> 
+  <% cache('wpna-wpna-war-and-peace-in-the-nuclear-age-tabs') do %>
+    <%= render partial: 'global_partials/tabs', locals: { 
+      tabs: 
+        [{ title: 'Interviews', content: render(partial: 'override/partials/interview_table') }] +
+        tabs_for('wpna-wpna-war-and-peace-in-the-nuclear-age', [:videos, :programs])
+    } %> 
+  <% end %>
     
   <div>
     <h3>Related links</h3>

@@ -43,7 +43,7 @@ module Openvault
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
-    config.cache_store = :memory_store, { expires_in: 60*60*24, race_condition_ttl: 60 }
+    config.cache_store = :memory_store, { expires_in: 60*60*24*7, race_condition_ttl: 60 }
     
     # Rack Cache
     # config.middleware.use Rack::Cache,

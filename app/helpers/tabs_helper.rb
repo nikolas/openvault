@@ -13,22 +13,21 @@ module TabsHelper
   
   def lookup_media(slug)
     series = lookup(slug)[:ov_asset]
-    if series
-      programs = series.programs
-      videos = series.videos + programs.map{|p| p.videos}.flatten
-      audios = series.audios + programs.map{|p| p.audios}.flatten
-      media = videos + audios
-      images = series.images + programs.map{|p| p.images}.flatten
-      {
-        programs: programs,
-        videos: videos,
-        audios: audios,
-        media: media,
-        images: images
-      }
-    else
-      {}
-    end
+    programs = series.programs
+    videos = series.videos + programs.map{|p| p.videos}.flatten
+    audios = series.audios + programs.map{|p| p.audios}.flatten
+    media = videos + audios
+    images = series.images + programs.map{|p| p.images}.flatten
+    {
+      programs: programs,
+      videos: videos,
+      audios: audios,
+      media: media,
+      images: images
+    }
+  rescue Blacklight::Exceptions::InvalidSolrID
+    logger.error("Failed to find '#{slug}': tabs on that series page will be empty.")
+    {}
   end
   
   # TODO: started as copy-and-paste from lookup_by_slug.
@@ -36,7 +35,7 @@ module TabsHelper
   # that module as-is caused lots of problems at Rails start up.
   def lookup id
     item = Blacklight.solr.select(params: {q: "id:#{id}"})
-    raise 'could not find solr document' unless item['response']['docs'].first
+    raise Blacklight::Exceptions::InvalidSolrID unless item['response']['docs'].first
     document = item['response']['docs'].first
     pid = document[:pid] || document['pid'] || id rescue id
     ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil 
