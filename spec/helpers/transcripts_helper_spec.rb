@@ -17,6 +17,13 @@ describe "render_transcript" do
       expect(transformation).not_to include ("smil:begin")
       expect(transformation).to include("data-timecodebegin")
     end
+    
+    it "produces valid html even on empty transcripts" do
+      @transcript = Transcript.new
+      @transcript.tei.ng_xml = '<TEI xmlns="http://www.tei-c.org/ns/1.0" />'
+      transformation = render_transcript(@transcript.tei)
+      expect(transformation).to eq("<div class=\"transcript\"></div>\n")
+    end
   end
 
   describe "for logs" do
