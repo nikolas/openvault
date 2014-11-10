@@ -1,7 +1,6 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
 
-
 ###############################################################################
 # MULTISTAGE CONFIG - Set configuration for multi-stage deployment.
 ###############################################################################
@@ -9,6 +8,12 @@ require 'rvm/capistrano'
 set :stages, %w(staging)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
+
+###############################################################################
+# LOAD OTHER RECIPES
+###############################################################################
+load 'config/deploy/recipes/google_analytics'
+load 'config/deploy/recipes/basic_http_auth'
 
 
 ###############################################################################
@@ -56,7 +61,6 @@ after 'deploy:upate_code', 'link_shared:blog'
 after 'deploy:update_code', 'link_shared:jetty'
 after 'deploy:update_code', 'link_shared:log'
 after 'deploy:update_code', 'link_shared:static_content'
-after 'deploy:update_code', 'link_shared:initializer:basic_http_auth'
 
 
 
@@ -78,30 +82,6 @@ namespace :deploy do
   desc 'Show deployed revision'
   task :revision, :roles => :app do
     run "cat #{current_path}/REVISION"
-  end
-
-  desc 'Set basic http authentication'
-  task :set_http_basic_auth, roles: :app do
-    puts "Setting up basic http authentication..."
-    set(:username, Capistrano::CLI.ui.ask("Enter a username: "))
-    set(:http_password, Capistrano::CLI.password_prompt("Enter a password: "))
-
-    username_constraint = /^[A-Za-z0-9 _\-!@$%^&*+=\(\)\[\]:;"<>,\.\?\/#]{1,20}$/
-    password_constraint = /^[A-Za-z0-9 _\-!@$%^&*+=\(\)\[\]:;"<>,\.\?\/#]{6,20}$/
-
-    raise "Username must match this regex: #{username_constraint.inspect}" unless username =~ username_constraint
-    raise "Password must match this regex: #{password_constraint.inspect}" unless password =~ password_constraint
-
-    file_contents = <<-EOS
-# Environment varaibles to be use for basic HTTP authentication.
-ENV['HTTP_BASIC_AUTH_USER'] = '#{username}'
-ENV['HTTP_BASIC_AUTH_PASSWORD'] = '#{http_password}'
-EOS
-
-    put file_contents, "#{shared_path}/config/initializers/basic_http_auth.rb"
-    # run "ln -nfs #{shared_path}/config/initializers/basic_http_auth.rb #{current_release}/config/initializers/basic_http_auth.rb"
-    link_shared.initializer.basic_http_auth
-    restart
   end
 end
 
@@ -144,12 +124,5 @@ namespace :link_shared do
     run "ln -nfs #{shared_path}/public/logos #{latest_release}/public/logos"
     run "ln -nfs #{shared_path}/public/sfdb #{latest_release}/public/sfdb"
     run "ln -nfs #{shared_path}/public/img #{latest_release}/public/img"
-  end
-
-  namespace :initializer do
-    desc "Link to shared initializer for basic http auth"
-    task :basic_http_auth do
-      run "test -f #{shared_path}/config/initializers/basic_http_auth.rb && ln -nfs #{shared_path}/config/initializers/basic_http_auth.rb #{latest_release}/config/initializers/basic_http_auth.rb"
-    end
   end
 end
