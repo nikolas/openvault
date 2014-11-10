@@ -1,6 +1,24 @@
 require 'spec_helper'
 require 'openvault'
 
+describe "OverrideController.first_rest_list" do
+  it 'works' do
+    output = OverrideController.first_rest_list(<<-eof
+      Washington, George
+      Adams, John
+    eof
+    ) {|query| ['interview-2','interview-3','random','interview-1'].map{|item| query.gsub(/\W/,'-')+'-'+item}}
+    expect(output).to eq([
+        {:name=>"Washington, George", 
+          :first=>"text-Washington-text-George-interview-1", 
+          :rest=>["text-Washington-text-George-interview-2", "text-Washington-text-George-interview-3"]}, 
+        {:name=>"Adams, John", 
+          :first=>"text-Adams-text-John-interview-1", 
+          :rest=>["text-Adams-text-John-interview-2", "text-Adams-text-John-interview-3"]}
+      ])
+  end
+end
+
 describe "visiting override page", type: :feature do
   
   it "series-collections are good" do

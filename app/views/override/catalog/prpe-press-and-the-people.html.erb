@@ -4,10 +4,12 @@
     <p>Groundbreaking in concept, Press and the People was one of the first series to explore how newspaper and television reporters covered key events in the 1950s, and how that shaped public opinion and knowledge on issues such as the nuclear weapons, the Berlin Crisis and secrecy in the government. Hosted by Louis Lyons, the first television newscaster at WGBH, Press and the People brought together esteemed journalists such as Edward R. Murrow, Eric Sevareid and Martin Agronsky to discuss their role in the creation and dissemination of current events.</p>
   <% end %>
 
-  <% content_for :content do %> TODO: list all content <% end %>
-  <%#= render partial: 'global_partials/tabs', locals: { tabs: [
-    { title: 'Content', content: content_for(:content) }
-  ] } %>
+  <% cache('prpe-press-and-the-people-tabs') do %>
+    <%= render partial: 'global_partials/tabs', locals: { 
+      tabs: 
+        tabs_for('prpe-press-and-the-people', [:videos, :programs])
+    } %> 
+  <% end %>
     
   <div>
     <h3>Related links</h3>

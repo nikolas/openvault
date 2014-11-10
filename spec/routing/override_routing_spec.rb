@@ -13,4 +13,9 @@ describe "routing for overrides" do
       controller: 'catalog', action: 'show', id: 'advocates-advocates')
   end
   
+  it 'routes roll_rock_and_roll' do
+    expect(get: 'catalog/roll-rock-and-roll').to route_to(
+      controller: 'override', action: 'show_rock_and_roll')
+  end
+  
 end
