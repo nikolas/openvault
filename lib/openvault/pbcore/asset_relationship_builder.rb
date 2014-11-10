@@ -2,7 +2,7 @@ module Openvault::Pbcore
   class AssetRelationshipBuilder
     attr_accessor :asset
 
-    def initialize(asset=nil)
+    def initialize(asset)
       @asset = asset
     end
 

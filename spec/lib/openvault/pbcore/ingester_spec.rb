@@ -32,7 +32,7 @@ describe Openvault::Pbcore::Ingester do
     context 'with a subset of related assets that have been transformed from Artesia xml' do
       before :all do
         # First ingest a bunch of related assets
-        Openvault::Pbcore::Ingester.new(Fixtures.raw('artesia/rock_and_roll/related_assets_subset.xml')).ingest
+        Openvault::Pbcore::Ingester.new(Fixtures.raw('artesia/rock_and_roll/related_assets_subset.xml')).ingest!
 
         # Now look up the assets just ingested and use them for testing the relationships.
         @series = Series.find({:all_ids_tesim => "34a589fdcb189dec43a5bca693bbc607d544ffa1"}).first

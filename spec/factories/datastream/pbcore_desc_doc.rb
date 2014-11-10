@@ -112,17 +112,12 @@ FactoryGirl.define do
           # fist element is the id, second element is the source
           id, source = id_and_source[0], id_and_source[1]
 
-          byebug
-
           # Add the ID.
           pbcore.all_ids += Array(id)
           
           # Add the source
           last_id_index = pbcore.all_ids.count - 1
           pbcore.all_ids(last_id_index).source += Array(source)
-
-
-          byebug
         end
       end
       

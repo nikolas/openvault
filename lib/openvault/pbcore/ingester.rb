@@ -3,7 +3,6 @@ require 'openvault/pbcore/description_document_wrapper'
 
 module Openvault::Pbcore
   class Ingester
-    attr_accessor :xml, :pids, :policy
 
     POLICIES = [
       :skip_if_exists,
@@ -11,11 +10,11 @@ module Openvault::Pbcore
       :update_if_exists
     ]
 
+    attr_reader :xml, :pids, :policy
+
     def initialize(xml=nil)
       @xml = xml
       @pids = []
-      @relation_builder = AssetRelationshipBuilder.new()
-
       @policy = :skip_if_exists
 
     end
@@ -33,62 +32,14 @@ module Openvault::Pbcore
       @logger
     end
 
-    def find_by_pbcore_ids pbcore_ids
-      pbcore_ids = Array.wrap(pbcore_ids)
-      ActiveFedora::Base.find({"all_ids_tesim" => pbcore_ids, cast: true})
-    end
-
-    def ng_xml
-      @namespaced_xml ||= Openvault::XML(xml)
-      @ng_xml ||= @namespaced_xml.remove_namespaces!
-    end
-
-    def ng_pbcore_desc_docs
-      @ng_pbcore_desc_docs ||= ng_xml.xpath('//pbcoreDescriptionDocument')
-    end
-
-    def with_desc_docs &block
-      ng_pbcore_desc_docs.each do |ng_pbcore_desc_doc|
-        doc = PbcoreDescDoc.new.tap do |doc|
-                doc.ng_xml = ng_pbcore_desc_doc
-              end
-        yield DescriptionDocumentWrapper.new(doc)
-      end
-    end
-
     def policy=(policy)
       raise "#{policy.inspect} is not a valid policy. Use one of these: #{POLICIES.map {|p| p.inspect }.join(', ')}." unless POLICIES.include? policy
       @policy = policy
     end
 
-    def skip_existing(doc)
-      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Skipping due to policy #{policy.inspect}...")
-    end
-
-    def replace_existing(doc)
-      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Replacing due to policy #{policy.inspect}...")
-      doc.model.delete
-      doc.model(:reset_from_pbcore => true).save
-      pids << doc.model.pid
-    end
-    
-    def update_existing(doc)
-      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.doc.all_ids.inspect}. Updating due to policy #{policy.inspect}...")
-      doc.model.save
-      pids << doc.model.pid
-    end
-
     def ingest
       ingest!(continue_on_error: true)
       ingest_summary
-    end
-
-    def ingest_summary
-      logger.info "#{@inserted_records} were inserted."
-      logger.info "#{@skipped_records} were skipped."
-      logger.info "#{@updated_records} were updated."
-      logger.info "#{@replaced_records} were replaced."
-      logger.info "#{@failed_records} were unable to be ingested."
     end
 
     def ingest!(opts={})
@@ -121,8 +72,12 @@ module Openvault::Pbcore
             doc_wrapper.model.save && (self.pids << doc_wrapper.model.pid) 
             @inserted_records += 1
           end
+
+          # Relate the newly ingested asset to anything already in Fedora that it might be related to.
+          AssetRelationshipBuilder.new(doc_wrapper.model).establish_relationships_in_fedora
+
           logger.info "Successfully ingested #{doc_wrapper.doc.all_ids}."
-        rescue Exception => e
+        rescue StandardError => e
           if opts[:continue_on_error]
             @failed_records += 1
             logger.info "Unable to ingest #{doc_wrapper.doc.all_ids}."
@@ -132,26 +87,54 @@ module Openvault::Pbcore
           end
         end
       end
-
-      relate_pids
     end
 
-    def relate_pids!
-      pids.each do |pid|
-        @relation_builder.asset = OpenvaultAsset.find(pid, cast: true)
-        @relation_builder.relate
+
+    protected
+
+
+    def ng_xml
+      @namespaced_xml ||= Openvault::XML(xml)
+      @ng_xml ||= @namespaced_xml.remove_namespaces!
+    end
+
+    def ng_pbcore_desc_docs
+      @ng_pbcore_desc_docs ||= ng_xml.xpath('//pbcoreDescriptionDocument')
+    end
+
+    def with_desc_docs &block
+      ng_pbcore_desc_docs.each do |ng_pbcore_desc_doc|
+        doc = PbcoreDescDoc.new.tap do |doc|
+                doc.ng_xml = ng_pbcore_desc_doc
+              end
+        yield DescriptionDocumentWrapper.new(doc)
       end
     end
 
-    def relate_pids
-      pids.each do |pid|
-        begin
-          @relation_builder.asset = OpenvaultAsset.find(pid, cast: true)
-          @relation_builder.relate
-        rescue Exception => e
-          logger.error("** Error: #{e.message}\n **** Backtrace: #{e.backtrace}")
-        end
-      end
+    def ingest_summary
+      logger.info "#{@inserted_records} were inserted."
+      logger.info "#{@skipped_records} were skipped."
+      logger.info "#{@updated_records} were updated."
+      logger.info "#{@replaced_records} were replaced."
+      logger.info "#{@failed_records} were unable to be ingested."
     end
+
+    def skip_existing(doc)
+      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Skipping due to policy #{policy.inspect}...")
+    end
+
+    def replace_existing(doc)
+      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.model.pbcore.all_ids.inspect}. Replacing due to policy #{policy.inspect}...")
+      doc.model.delete
+      doc.model(:reset_from_pbcore => true).save
+      pids << doc.model.pid
+    end
+    
+    def update_existing(doc)
+      logger.info("#{doc.model.class}(pid=#{doc.model.pid}) found containing #{doc.doc.all_ids.inspect}. Updating due to policy #{policy.inspect}...")
+      doc.model.save
+      pids << doc.model.pid
+    end
+
   end
 end
