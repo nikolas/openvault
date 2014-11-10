@@ -13,18 +13,5 @@ class Transcript < OpenvaultAsset
   #   # Solrizer.insert_field(solr_document, "transcript_path", self.transcript_path, :displayable)
   #   return solr_document
   # end
-
-  def relate_asset asset
-    case asset
-    when Video
-      self.video = asset
-    when Audio
-      self.audio = asset
-    when Program
-      self.program = asset
-    else
-      super asset
-    end
-  end
   
 end

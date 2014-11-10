@@ -71,11 +71,55 @@ FactoryGirl.define do
 
 
     ignore do
+
+      ids nil
+
+      ids_with_sources nil
+
       # See the after(:build) section below that checks for evaluator.relations on how to build a PbcoreDescDoc with some relations.
-      relations 0
+      relations nil
     end
 
     after(:build) do |pbcore, evaluator|
+
+      if !!evaluator.ids
+        Array(evaluator.ids).each do |id|
+          raise ArgumentError ":ids options must be a string, or an array of strings. #{id.type} was given." unless id.respond_to? :to_s
+          pbcore.all_ids += Array(id.to_s)
+        end
+      end
+
+      # :ids_with_sources option takes one of the following forms:
+      #
+      #   A single array, with ID and attributes
+      #   ['123', 'value for source']
+      # 
+      #   Multiple arrays, each with an ID and attributes
+      #   [['123', 'value for source'], ['456', 'value for source']]
+      # 
+      #   NOTE: Mysterious errors may occur if the params aren't of one of these formats.
+      if !!evaluator.ids_with_sources
+
+        @ids_with_sources = evaluator.ids_with_sources
+        @ids_with_sources = [@ids_with_sources] unless @ids_with_sources.first.respond_to?(:each)
+
+        # Ensure it's an array when iterating...
+        @ids_with_sources.each do |id_and_source|
+
+          # Ensure each element is also an array
+          id_and_source = Array(id_and_source)
+
+          # fist element is the id, second element is the source
+          id, source = id_and_source[0], id_and_source[1]
+
+          # Add the ID.
+          pbcore.all_ids += Array(id)
+          
+          # Add the source
+          last_id_index = pbcore.all_ids.count - 1
+          pbcore.all_ids(last_id_index).source += Array(source)
+        end
+      end
       
       # Adding pbcore relations:
       #   The following will build PbcoreDescDoc with 2 relations, random data:

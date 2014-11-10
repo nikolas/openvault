@@ -44,29 +44,5 @@ class Program < OpenvaultAsset
   def all_transcripts
     self.transcripts.map{|v| v.pid}
   end
-
-  # metadata for Program
-  #     - episodic info
-  #     - segment info (e.g. "part 1 of 3")
-  #     - dates (e.g. when it aired)
-  #     - producer info
-  #     - people involved (e.g. interviewees, talent, etc)
-  #     - copyright info
-
-  def relate_asset asset
-    case asset
-    when Series
-      self.series = asset
-    when Video
-      self.videos << asset
-    when Audio
-      self.audios << asset
-    when Image
-      self.images << asset
-    when Transcript
-      self.transcripts << asset
-    else
-      super asset
-    end
-  end
+  
 end

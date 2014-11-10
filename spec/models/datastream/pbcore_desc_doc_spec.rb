@@ -34,6 +34,29 @@ describe PbcoreDescDoc do
       end
     end
 
+    context 'when using the :ids_with_sources option' do
+      context 'as a single array of the form ["123", "foo"]' do
+        it 'builds a PbcoreDescDoc with a pbcoreIdentifier node, having a value of "123", and attribute source="foo"' do
+          pb = build(:pbcore_desc_doc, ids_with_sources: ['123', 'foo'])
+          expect(pb.all_ids.count).to eq 1
+          expect(pb.all_ids(0)).to eq ['123']
+          expect(pb.all_ids(0).source).to eq ['foo']
+        end
+      end
+
+      context 'as an array of arrays, each having the form ["123", "foo"]' do
+        it 'builds a PbcoreDescDoc with multiple pbcoreIdnetifier nodes, each taking their values from the first elements, and the values of their "source" attributes from the 2nd elements.' do
+          pb = build(:pbcore_desc_doc, ids_with_sources: [['123', 'foo'], ['456', 'bar']])
+          expect(pb.all_ids.count).to eq 2
+          expect(pb.all_ids(0)).to eq ['123']
+          expect(pb.all_ids(0).source).to eq ['foo']
+          expect(pb.all_ids(1)).to eq ['456']
+          expect(pb.all_ids(1).source).to eq ['bar']
+        end
+      end
+
+    end
+
     context 'using the `relations:` option' do
       context 'with a numeric value, eg `relations: 2`' do
         it 'builds a PbcoreDescDoc with 2 <pbcoreRelation> nodes, each of which contain a pbcoreRelationType and pbcoreRelationId conataining arbitrary data.' do

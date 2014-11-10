@@ -47,11 +47,6 @@ class OpenvaultAsset < ActiveFedora::Base
     self.pbcore.coverage.date_portrayed.first
   end
 
-  # meant to be overridden
-  def relate_asset asset
-    raise "Do not know how to relate #{self.class} to #{asset.class}."
-  end
-
   def media_host
     "http://mlamedia01.wgbh.org/openvault"
   end
