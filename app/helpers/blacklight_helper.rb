@@ -42,10 +42,6 @@ module BlacklightHelper
     xslt.transform(xml).to_s.html_safe
   end
   
-  def render_tei_transcript source, options = {}
-    render_xml_with_xslt(source, "public/xslt/tei2timedtranscript.xsl")
-  end
-  
   def render_video_player sources, options = {}
     options.symbolize_keys!
   
