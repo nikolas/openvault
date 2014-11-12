@@ -311,6 +311,9 @@ class CatalogController < ApplicationController
             # TODO: The DC is empty.
             render text: @document.export_as_oai_dc_xml
           end
+          format.pbcore do
+            render text: @ov_asset.pbcore.ng_xml
+          end
         end
       rescue Blacklight::Exceptions::InvalidSolrID, ActionView::MissingTemplate
         render_404
