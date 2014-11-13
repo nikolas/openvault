@@ -14,24 +14,14 @@
         <div class="sep-line-thin"></div>
         <div class="document_content">
           <p><%= display_summary @document unless @document[:title_tesim] == @document[:summary_tesim]%></p>
-          
-          <% cache("series-lists-#{@ov_asset.id}") do %>
-            <%= render :partial => 'catalog/series/program_list' %>
-            <div style="heigh:10px">&nbsp;</div>
-            <%= render :partial => 'catalog/series/video_list' %>
-            <div style="heigh:10px">&nbsp;</div>
-            <%= render :partial => 'catalog/series/image_list' %>
+            
+          <% cache("series-tabs-#{@ov_asset.id}") do %>
+            <%= render partial: 'global_partials/tabs', locals: { 
+              tabs: 
+                tabs_for(@ov_asset.id, [:media, :programs])
+            } %> 
           <% end %>
             
-          <div class="metadata">
-            <%#= 
-              begin
-                render :partial => "catalog/_metadata_partials/pbcore", :locals => { :document => @document }
-              rescue ActionView::MissingTemplate
-
-              end
-            %>
-          </div>
           <div id="comments">
             <%= render partial: 'catalog/facebook_comments' %>
           </div>
