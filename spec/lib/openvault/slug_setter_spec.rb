@@ -30,6 +30,15 @@ describe Openvault::SlugSetter, not_on_travis: true do
       # Now pull it back and make sure it's in both fedora and solr.
       expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
       expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
+      
+      ## Reset successfully
+      
+      old_slug = slug
+      slug += '!!!'
+      OVSS.reset_slug(old_slug: old_slug, slug: slug)
+      
+      expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
+      expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
     end
   end
   

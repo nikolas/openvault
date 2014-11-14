@@ -2,35 +2,41 @@ module Openvault
   module SlugSetter
 
     def self.reset_slug(opts)
+      slug = opts.delete :slug
+      raise "Only one id to lookup should be specified, not #{opts.keys}" if opts.keys.length>1
+      
       old_id = opts.delete :old_id
       other_id = opts.delete :other_id
-      slug = opts.delete :slug
+      old_slug = opts.delete :old_slug
       raise "Unrecognized options #{opts.keys}" if opts.keys.length>0 
-
+      
       solr = solr_connection
 
-      raise "Slug '#{slug}' is already in use: A solr record with that ID already exists." if solr.id_exists? slug
+      raise "Slug '#{slug}' is already in use: A solr record with that ID already exists." if solr.id_exists?(slug) and !old_slug
 
       # Find objects and make sure IDs are not already set.
       # TODO: allow overrides?
 
-      if old_id
+      if old_slug
+        doc = solr.find_by_id(old_slug)
+        old_id = doc[PID]
+      elsif old_id
         doc = solr.find_by_id(old_id)
       elsif other_id
         doc = solr.find_by_other_id(other_id)
         old_id = doc['id']
       end
-      raise "Solr doc with id '#{old_id}' already has a PID (#{doc[PID]})." if doc[PID]
+      raise "Solr doc with id '#{old_id}' already has a PID (#{doc[PID]})." if doc[PID] and !old_slug
 
       asset = ActiveFedora::Base.find(old_id, cast: true)
-      raise "Fedora object with PID #{old_id} already has datastream #{DSID}" if asset.datastreams.keys.include? DSID
+      raise "Fedora object with PID #{old_id} already has datastream #{DSID}" if asset.datastreams.keys.include?(DSID) and !old_slug
 
       # Set new IDs on objects.
       doc[PID] = old_id
       doc['id'] = slug
       doc.delete 'score'
 
-      solr.delete_by_id(old_id)
+      solr.delete_by_id(old_slug || old_id)
       solr.add doc
       solr.commit
 
