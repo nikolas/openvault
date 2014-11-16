@@ -4,6 +4,6 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p><%= @user.to_s %> has withdrawn their digitization request on <%= link_to @artifact.title, "http://openvault.wgbh.org/catalog/#{@artifact.pid}" %> </p>
+    <p><%= @user.to_s %> has withdrawn their digitization request on <%= link_to @artifact.title, "http://openvault.wgbh.org#{catalog_path(@artifact.pid)}" %> </p>
   </body>
 </html>
