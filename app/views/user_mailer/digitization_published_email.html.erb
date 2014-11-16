@@ -6,7 +6,7 @@
   <body>
     <h3>The item you requested is available.</h3>
     <p>
-       We are happy to inform you the item you recently requested, <%= link_to @artifact.title, "http://openvault.wgbh.org/#{catalog_path(@artifact)}" %>, has been digitized and is available. <br/>
+       We are happy to inform you the item you recently requested, <%= link_to @artifact.title, "http://openvault.wgbh.org#{catalog_path(@artifact.pid)}" %>, has been digitized and is available. <br/>
     </p>
     <p>
       To check the status of your other requests, <%= link_to "visit your dashboard anytime", user_root_path %>.
