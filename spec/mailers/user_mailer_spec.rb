@@ -41,4 +41,43 @@ describe UserMailer do
     @artifact.withdraw_request(@user)
     ActionMailer::Base.deliveries.last.to.should == [@user.email]
   end
+
+  let(:user) { create :user }
+  let(:artifact) { instance_double(Artifact, pid: 'test:123', title: 'test artifact') }
+
+  describe '#digitization_approval_email', focus: true do
+    let(:mail) { UserMailer.digitization_approval_email(user, artifact) }
+
+    it 'has an appropriate subject' do
+      expect(mail.subject).to eq "Your digitization request has been approved"
+    end
+
+    it 'contains a link to the artifact\'s asset' do
+      expect(mail.body.encoded).to have_link(artifact.title, href: "http://openvault.wgbh.org#{catalog_path(artifact.pid)}")
+    end
+  end
+
+  describe '#digitization_blocked_email', focus: true do
+    let(:mail) { UserMailer.digitization_blocked_email(user, artifact) }
+
+    it 'has an appropriate subject' do
+      expect(mail.subject).to eq "Unable to digitize your requested item"
+    end
+
+    it 'contains a link to the artifact\'s asset' do
+      expect(mail.body.encoded).to have_link(artifact.title, href: "http://openvault.wgbh.org#{catalog_path(artifact.pid)}")
+    end
+  end
+
+  describe '#digitization_published_email', focus: true do
+    let(:mail) { UserMailer.digitization_published_email(user, artifact) }
+
+    it 'has an appropriate subject' do
+      expect(mail.subject).to eq "The item you requested has been published"
+    end
+
+    it 'contains a link to the artifact\'s asset' do
+      expect(mail.body.encoded).to have_link(artifact.title, href: "http://openvault.wgbh.org#{catalog_path(artifact.pid)}")
+    end
+  end
 end
