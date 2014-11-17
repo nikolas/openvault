@@ -49,13 +49,12 @@ module Openvault
     def self.set_missing_slugs
       solr = solr_connection
       solr.no_pid.each do |doc|
-        if doc['title_tesim']
-          # TODO: should it be a combo of series and program title?
-          # TODO: should it have a fallback if the name is already in use?
-          reset_slug(old_id: doc['id'], slug: slugify(doc['title_tesim'].first))
-        else
-          warn "No title on #{doc['id']}"
-        end
+        id = doc['id']
+        ng_xml = ActiveFedora::Base.find(id, cast: true).pbcore.ng_xml
+        title_blob = ng_xml.xpath('//pbcoreTitle/text()').map{|x| x.to_s}.join('|')
+        id_blob = ng_xml.xpath('//pbcoreIdentifier/text()').map{|x| x.to_s}.join('|')
+        slug = slugify(title_blob + '-' + Digest::MD5.hexdigest(id_blob)[0..9])
+        reset_slug(old_id: id, slug: slug)
       end
     end
     
