@@ -20,7 +20,9 @@ end
 namespace :link_shared do
   namespace :initializer do
     task :google_analytics do
-      run "test -f #{shared_path}/config/initializers/google_analytics.rb && ln -nfs #{shared_path}/config/initializers/google_analytics.rb #{latest_release}/config/initializers/google_analytics.rb"
+      shared = "#{shared_path}/config/initializers/google_analytics.rb"
+      symlink = "#{latest_release}/config/initializers/google_analytics.rb"
+      run "test -f #{shared} && ln -nfs #{shared} #{symlink} || echo 'skipping symlink'"
     end
   end
 end

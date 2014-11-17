@@ -40,7 +40,9 @@ namespace :link_shared do
   namespace :initializer do
     desc "Link to shared initializer for basic http auth"
     task :basic_http_auth do
-      run "test -f #{shared_path}/config/initializers/basic_http_auth.rb && ln -nfs #{shared_path}/config/initializers/basic_http_auth.rb #{latest_release}/config/initializers/basic_http_auth.rb"
+      shared = "#{shared_path}/config/initializers/basic_http_auth.rb"
+      symlink = "#{latest_release}/config/initializers/basic_http_auth.rb"
+      run "test -f #{shared} && ln -nfs #{shared} #{symlink} || echo 'skipping symlink'"
     end
   end
 end
