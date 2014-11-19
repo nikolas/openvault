@@ -6,6 +6,14 @@ describe PbcoreDescDoc do
       expect(build(:pbcore_desc_doc)).to be_a PbcoreDescDoc
     end
 
+    context 'when using the :all_ids option' do
+      it 'builds a PbcoreDescDoc with pbcoreIdentifier nodes having those values' do
+        pb = build(:pbcore_desc_doc, all_ids: ['123', '456'])
+        expect(pb.all_ids(0)).to eq ['123']
+        expect(pb.all_ids(1)).to eq ['456']
+      end
+    end
+
     context 'when :with_artesia_id trait is used' do
       it 'has a sample UOI_ID' do
         pb = build(:pbcore_desc_doc, :with_artesia_id)
