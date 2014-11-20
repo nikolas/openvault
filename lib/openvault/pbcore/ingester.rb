@@ -78,13 +78,9 @@ module Openvault::Pbcore
           else
             # Record doesn't exist.. just insert it.
             updated_ov_asset.save && (self.pids << updated_ov_asset.pid)
+            relate_to_other_assets(updated_ov_asset)
             @inserted_records += 1
           end
-
-          # Relate the newly ingested asset to anything already in Fedora that it might be related to, unless we skipped them altogether.
-          AssetRelationshipBuilder.new(updated_ov_asset).establish_relationships_in_fedora unless @policy == :skip_if_exists
-
-          # logger.info "Successfully ingested #{ov_asset.class}, PID: #{ov_asset.pid}, pbcoreIdentifiers: #{ov_asset.pbcore.all_ids}"
         rescue => e
           if opts[:continue_on_error]
             if e.is_a? AssetRelationshipBuilder::UnhandledRelationType
@@ -143,6 +139,7 @@ module Openvault::Pbcore
       if existing_ov_asset.pid != updated_ov_asset.pid
         existing_ov_asset.delete
       end
+      relate_to_other_assets(updated_ov_asset)
       pids << updated_ov_asset.pid
     end
     
@@ -152,8 +149,26 @@ module Openvault::Pbcore
       end
 
       logger.info("#{existing_ov_asset.class}(pid=#{existing_ov_asset.pid}) found containing #{existing_ov_asset.pbcore.all_ids.inspect}. Updating due to policy #{policy.inspect}...")
+
       return false unless updated_ov_asset.save
+      relate_to_other_assets(updated_ov_asset)
       pids << updated_ov_asset.pid
+    end
+
+
+    def relate_to_other_assets(ov_asset)
+      rel_builder = AssetRelationshipBuilder.new(ov_asset)
+      rel_builder.assets_related_through_pbcore.each do |related_asset|
+        # Attempt to relate the asset, logging any Unhandled RelationType exceptions.
+        # At this point, we never want to halt ingest if unable to establish a relationship.
+        begin
+          rel_builder.relate related_asset
+          ov_asset.save!
+          logger.info("Relating #{ov_asset.class}(pid=#{ov_asset.pid || ' nil '}) to #{related_asset.class}(pid=#{related_asset.pid || ' nil '})")
+        rescue AssetRelationshipBuilder::UnhandledRelationType => e
+          logger.info(e.message)
+        end
+      end
     end
   end
 end
