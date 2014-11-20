@@ -54,6 +54,8 @@ RSpec.configure do |config|
   config.include SearchSteps
   config.include CustomCollectionSteps
 
+  config.include PathsHelper
+
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
