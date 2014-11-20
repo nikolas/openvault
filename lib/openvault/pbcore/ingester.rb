@@ -81,11 +81,11 @@ module Openvault::Pbcore
             @inserted_records += 1
           end
 
-          # Relate the newly ingested asset to anything already in Fedora that it might be related to, unless we skippe them altogether.
+          # Relate the newly ingested asset to anything already in Fedora that it might be related to, unless we skipped them altogether.
           AssetRelationshipBuilder.new(updated_ov_asset).establish_relationships_in_fedora unless @policy == :skip_if_exists
 
           # logger.info "Successfully ingested #{ov_asset.class}, PID: #{ov_asset.pid}, pbcoreIdentifiers: #{ov_asset.pbcore.all_ids}"
-        rescue StandardError => e
+        rescue => e
           if opts[:continue_on_error]
             if e.is_a? AssetRelationshipBuilder::UnhandledRelationType
               @unsupported_assoc += 1
@@ -94,18 +94,6 @@ module Openvault::Pbcore
               @failed_records += 1
               logger.info "Unable to ingest #{updated_ov_asset.pbcore.all_ids}"
             end
-            logger.error(e.inspect)
-          else
-            raise e
-          end
-        end
-
-        begin
-
-        rescue StandardError => e
-          if opts[:continue_on_error]
-            @failed_associations += 1
-            logger.info "Unable to establish relationship between Fedora objects"
             logger.error(e.inspect)
           else
             raise e
