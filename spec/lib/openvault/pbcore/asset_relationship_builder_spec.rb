@@ -26,7 +26,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     @program_pbcore =  create(
       :pbcore_desc_doc,
-      ids: '111',
+      all_ids: '111',
       relations: [
         {id: '222'}
       ]
@@ -34,7 +34,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
 
     @video_pbcore = create(
       :pbcore_desc_doc,
-      ids: '222',
+      all_ids: '222',
       relations: [
         {id: '111'}
       ]

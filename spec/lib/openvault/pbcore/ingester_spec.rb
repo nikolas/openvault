@@ -32,7 +32,9 @@ describe Openvault::Pbcore::Ingester do
     context 'with a subset of related assets that have been transformed from Artesia xml' do
       before :all do
         # First ingest a bunch of related assets
-        Openvault::Pbcore::Ingester.new(Fixtures.raw('artesia/rock_and_roll/related_assets_subset.xml')).ingest!
+        ingester = Openvault::Pbcore::Ingester.new(Fixtures.raw('artesia/rock_and_roll/related_assets_subset.xml'))
+        ingester.policy = :replace_if_exists
+        ingester.ingest!
 
         # Now look up the assets just ingested and use them for testing the relationships.
         @series = Series.find({:all_ids_tesim => "34a589fdcb189dec43a5bca693bbc607d544ffa1"}).first
@@ -170,14 +172,8 @@ describe Openvault::Pbcore::Ingester do
 
     end
 
+
     context 'when Fedora object exists with pbcore datasream that matches all pbcoreIdentifiers' do
-
-      # let(:pbcore_desc_doc) { build(:pbcore_desc_doc, :with_artesia_id, :with_series_title) }
-      # let(:ingester) {  }
-      # let(:saved_pid) do
-
-      # end
-
 
       before do
         @pbcore_desc_doc = build(:pbcore_desc_doc, :with_artesia_id, :with_series_title)
@@ -209,23 +205,54 @@ describe Openvault::Pbcore::Ingester do
         end
       end
 
-      context 'and when policy == :replace_if_exists' do
-        it 'replaces the record with a new one.' do
-          @ingester.policy = :replace_if_exists
-          @ingester.ingest!
+      context 'and when policy == :replace_if_exists,' do
 
-          expect(@ingester.pids).to_not be_empty
+        context 'and when the new pbcore xml does not result in a reclassification of the object' do
 
-          # Expect the ingested record's pid to not match the previous pid.
-          expect(@ingester.pids.first).to_not eq @saved_pid
+          # NOTE: this is the same as 'when policy == :update_if_exsts'
+          it 'updates the existing record.' do
 
-          # Expect the orig object with @saved_pid to have been deleted by the ingester.
-          expect{ OpenvaultAsset.find(@saved_pid, cast: true) }.to raise_error ActiveFedora::ObjectNotFoundError
+            @ingester.policy = :update_if_exists
+            @ingester.ingest!
+
+            expect(@ingester.pids).to_not be_empty
+
+            # Expect the ingested pid to be the same as the previously saved pid.
+            expect(@ingester.pids.first).to eq @saved_pid
+            
+            # And expect the previously saved pid to still be there.
+            expect{OpenvaultAsset.find(@saved_pid, cast: true)}.to_not raise_error
+          end
         end
+
+
+        context 'and when the new pbcore xml results in a reclassification of the object' do
+          it 'replaces the record with a new one.' do
+
+            # Notice that we change it to have a program title instead of a series title. This should be sufficient to trigrer
+            # a reclassification of what the asset should be, and thus require the thing to be replaced.
+            pbcore_with_same_id_but_different_type = build(:pbcore_desc_doc, :with_program_title, all_ids: @pbcore_desc_doc.all_ids)
+
+            @ingester = Openvault::Pbcore::Ingester.new(pbcore_with_same_id_but_different_type.to_xml)
+
+            @ingester.policy = :replace_if_exists
+            @ingester.ingest!
+
+            expect(@ingester.pids.count).to eq 1
+
+            # Expect the ingested record's pid to not match the previous pid.
+            expect(@ingester.pids.first).to_not eq @saved_pid
+
+            # Expect the orig object with @saved_pid to have been deleted by the ingester.
+            expect{ OpenvaultAsset.find(@saved_pid, cast: true) }.to raise_error ActiveFedora::ObjectNotFoundError
+          end
+        end
+  
       end
 
       context 'and when policy == :update_if_exists' do
 
+        # NOTE: this is the same as 'when policy == :replace_if_exsts, and when the new pbcore xml does not result in a reclassification of the object'
         it 'updates the existing record.' do
 
           @ingester.policy = :update_if_exists

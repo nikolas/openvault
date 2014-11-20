@@ -77,7 +77,7 @@ describe CatalogController do
         ab.delete
       end
       Fixtures.cwd("#{fixture_path}/pbcore")
-      a = Openvault::Pbcore::DescriptionDocumentWrapper.new(Fixtures.use("artesia/rock_and_roll/program_1.xml")).new_model
+      a = Openvault::Pbcore::OpenvaultAssetUpdater.new(Fixtures.use("artesia/rock_and_roll/program_1.xml")).updated_openvault_asset
       a.save!
       Openvault::Pbcore::AssetRelationshipBuilder.new(a).establish_relationships_in_fedora
       @id = a.pid
@@ -103,7 +103,7 @@ describe CatalogController do
 
     before :all do
       Fixtures.cwd("#{fixture_path}/pbcore")
-      a = Openvault::Pbcore::DescriptionDocumentWrapper.new(Fixtures.use("artesia/rock_and_roll/video_1.xml")).new_model
+      a = Openvault::Pbcore::OpenvaultAssetUpdater.new(Fixtures.use("artesia/rock_and_roll/video_1.xml")).updated_openvault_asset
       ActiveFedora::Base.all.each do |ab|
         ab.delete
       end

@@ -71,9 +71,7 @@ FactoryGirl.define do
 
 
     ignore do
-
-      ids nil
-
+      
       ids_with_sources nil
 
       # See the after(:build) section below that checks for evaluator.relations on how to build a PbcoreDescDoc with some relations.
@@ -81,13 +79,6 @@ FactoryGirl.define do
     end
 
     after(:build) do |pbcore, evaluator|
-
-      if !!evaluator.ids
-        Array(evaluator.ids).each do |id|
-          raise ArgumentError ":ids options must be a string, or an array of strings. #{id.type} was given." unless id.respond_to? :to_s
-          pbcore.all_ids += Array(id.to_s)
-        end
-      end
 
       # :ids_with_sources option takes one of the following forms:
       #
