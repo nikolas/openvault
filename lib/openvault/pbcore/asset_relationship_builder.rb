@@ -134,7 +134,7 @@ module Openvault::Pbcore
       end
 
       def message
-        "Do not know how to relate #{@relate_to.class} to #{@subject.class}"
+        "Cannot relate #{@subject.class}(pid=#{@subject.try(:pid) || ' nil '}) to #{@relate_to.class}(pid=#{@relate_to.try(:pid) || ' nil '})"
       end
     end
 

@@ -29,6 +29,7 @@ describe Openvault::Pbcore::Ingester do
   describe '#ingest' do
 
 
+    # TODO: I have grown to hate this test. Its failure tells you nothing.
     context 'with a subset of related assets that have been transformed from Artesia xml' do
       before :all do
         # First ingest a bunch of related assets
