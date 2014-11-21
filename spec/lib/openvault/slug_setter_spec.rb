@@ -1,7 +1,11 @@
 require 'spec_helper'
 require 'openvault/slug_setter'
 
+require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
+
 describe Openvault::SlugSetter, not_on_travis: true do
+  
+  before(:each) { Fixtures.cwd("#{fixture_path}/pbcore") }
 
   OVSS = Openvault::SlugSetter
   
@@ -42,17 +46,19 @@ describe Openvault::SlugSetter, not_on_travis: true do
     end
   end
   
-  pending '#set_missing_slugs' do
+  describe '#set_missing_slugs' do
     it 'works' do
       OVSS.solr_connection.delete_by_query("*:*", params: {commit: true}) 
       # TODO: Should not be necessary. https://github.com/projecthydra/active_fedora/issues/470
       
       v = Video.create
+      v.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
+      v.save!
       old_id = v.id
       # TODO: set title.
       OVSS.set_missing_slugs
       
-      slug = '' # TODO: when title is set this will be filled.
+      slug = 'rock-and-roll-respect-104-interview-with-rufus-thomas-part-2-of-4-0d7aa98cee'
       
       # Now pull it back and make sure it's in both fedora and solr.
       expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
