@@ -362,9 +362,14 @@ class CatalogController < ApplicationController
   private
   
   def lookup_and_set_fields
-    @response, @document = get_solr_response_for_doc_id_or_slug params[:id]
-    pid = document[:pid] || document['pid'] || params[:id] rescue params[:id]
-    @ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil
+    id_or_slug = params[:id]
+    @response, @document = get_solr_response_for_doc_id_or_slug id_or_slug
+
+    # TODO: figure out if keys will always be symbols or strings, or if it 
+    # behaves like a HashWithIndifferentAccess.
+    pid = @document[:pid] || @document['pid'] || @document[:id] || @document['id'] if @document
+
+    @ov_asset = ActiveFedora::Base.find(pid, cast: true)
     nil # don't use this method for it's return value. It's purpose is to set attributes for view params.
   end
   
