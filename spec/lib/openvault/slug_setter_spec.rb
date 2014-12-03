@@ -27,13 +27,11 @@ describe Openvault::SlugSetter, not_on_travis: true do
       # TODO: Should not be necessary. https://github.com/projecthydra/active_fedora/issues/470
       
       v = Video.create
-      old_id = v.id
       slug = 'New Slug!' # The API from here trusts your input: slugify is higher-level
-      OVSS.reset_slug(old_id: old_id, slug: slug)
+      OVSS.reset_slug(id: v.id, slug: slug)
       
       # Now pull it back and make sure it's in both fedora and solr.
-      expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
-      expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
+      expect(OVSS.solr_connection.find_by_id(v.id)['slug']).to eq slug
       
       ## Reset successfully
       
@@ -41,8 +39,7 @@ describe Openvault::SlugSetter, not_on_travis: true do
       slug += '!!!'
       OVSS.reset_slug(old_slug: old_slug, slug: slug)
       
-      expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
-      expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
+      expect(OVSS.solr_connection.find_by_id(v.id)['slug']).to eq slug
     end
   end
   
@@ -54,15 +51,13 @@ describe Openvault::SlugSetter, not_on_travis: true do
       v = Video.create
       v.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/video_1.xml').ng_xml
       v.save!
-      old_id = v.id
       # TODO: set title.
       OVSS.set_missing_slugs
       
       slug = 'rock-and-roll-respect-104-interview-with-rufus-thomas-part-2-of-4-0d7aa98cee'
       
       # Now pull it back and make sure it's in both fedora and solr.
-      expect(ActiveFedora::Base.find(old_id).datastreams['slug'].content).to eq slug
-      expect(OVSS.solr_connection.find_by_id(slug)['pid']).to eq old_id
+      expect(OVSS.solr_connection.find_by_id(v.id)['slug']).to eq slug
     end
   end
 

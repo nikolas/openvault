@@ -9,7 +9,7 @@ namespace :openvault do
   
   desc "Reset the slug on a single record"
   task :reset_slug => :environment do |t, args|
-    OLD_ID_PARAM = 'old_id'
+    OLD_ID_PARAM = 'id'
     OTHER_ID_PARAM = 'other_id'
     SLUG_PARAM = 'new_slug'
     
