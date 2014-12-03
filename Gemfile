@@ -81,7 +81,7 @@ gem 'carrierwave'
 gem 'activeadmin', "~> 0.6.0"
 gem "mini_magick"
 gem 'simple_form'
-gem 'country_select'
+gem 'country_select', '~> 1.3.1'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
 gem 'active_admin_editor'

@@ -50,11 +50,6 @@ describe "visiting override page", type: :feature do
     expect_404
   end
   
-  it "weird returns 404" do
-    visit '/!@#$%^&*()_'+"\u2603"
-    expect_404
-  end
-  
   def expect_404
     expect(page.status_code).to eq(404)
     expect(page).to have_content("Sorry: We can not find that record.")

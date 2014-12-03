@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
+require 'openvault/solr_helper'
 
 class CatalogController < ApplicationController  
   before_filter :find_artifact, :only => :show
@@ -7,9 +8,9 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   include Blacklight::Solr::Document::MoreLikeThis
-  
-  include LookupBySlug
-  
+
+  include Openvault::SolrHelper
+
   # include BlacklightOaiProvider::ControllerExtension
   # include BlacklightOembed::ControllerExtension
   # 
@@ -361,11 +362,10 @@ class CatalogController < ApplicationController
   private
   
   def lookup_and_set_fields
-    (lookup params[:id]).tap do |triple|
-      @response = triple[:response]
-      @document = triple[:document]
-      @ov_asset = triple[:ov_asset]
-    end
+    @response, @document = get_solr_response_for_doc_id_or_slug params[:id]
+    pid = document[:pid] || document['pid'] || params[:id] rescue params[:id]
+    @ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil
+    nil # don't use this method for it's return value. It's purpose is to set attributes for view params.
   end
   
 end 

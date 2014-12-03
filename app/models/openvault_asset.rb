@@ -9,6 +9,7 @@ class OpenvaultAsset < ActiveFedora::Base
 
   def solr_doc
     item = Blacklight.solr.select(params: {q: "id:#{id}"})
+    # TODO: This error is special case. Should not be in the base class.
     raise 'CustomCollectionItem could not find corresponding solr document' unless item['response']['docs'].first
     item['response']['docs'].first
   end
