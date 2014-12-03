@@ -1,6 +1,8 @@
+require 'openvault/solr_helper'
+
 class CustomCollectionsController < ApplicationController
-  
-  include LookupBySlug
+
+  include Openvault::SolrHelper
   
   load_and_authorize_resource
 
@@ -106,7 +108,9 @@ class CustomCollectionsController < ApplicationController
 
   def add_item
     @custom_collection = CustomCollection.find(params[:custom_collection_id])
-    @ov_asset = lookup(params[:asset_id])[:ov_asset]
+    # Ensure the asset actually exists by looking it up in Fedora
+    response, document = get_solr_response_for_doc_id_or_slug params[:asset_id]
+    @ov_asset = ActiveFedora::Base.find document['id']
     if @ov_asset
       @custom_collection.add_collection_item(@ov_asset.pid, params[:kind])
       respond_to do |format|

@@ -81,93 +81,93 @@ describe Openvault::Pbcore::Ingester do
       # This thing has a lot of assertions, but essentially, it's just checking
       # the whole family of related assets to make sure they got related properly.
       it 'relates Series to Programs correctly' do
-        @series.programs.should include @program_1
-        @series.programs.should include @program_2
+        expect(@series.programs.to_a).to include(@program_1)
+        expect(@series.programs.to_a).to include(@program_2)
       end
 
       it 'relates Programs to Series correctly' do
-        @program_1.series.should == @series
-        @program_1.series.should == @series
+        expect(@program_1.series).to eq @series
+        expect(@program_1.series).to eq @series
       end
 
-      it 'relates Programs to Videos correctly', broken: true do
-        @program_1.videos.should include @video_1
-        @program_1.videos.should include @video_2
-        @program_1.videos.should include @video_3
-        @program_1.videos.should include @video_4
+      it 'relates Programs to Videos correctly' do
+        expect(@program_1.videos.to_a).to include @video_1
+        expect(@program_1.videos.to_a).to include @video_2
+        expect(@program_1.videos.to_a).to include @video_3
+        expect(@program_1.videos.to_a).to include @video_4
 
-        @program_2.videos.should include @video_5
-        @program_2.videos.should include @video_6
-        @program_2.videos.should include @video_7
-        @program_2.videos.should include @video_8
-        @program_2.videos.should include @video_9
-        @program_2.videos.should include @video_10
+        expect(@program_2.videos.to_a).to include @video_5
+        expect(@program_2.videos.to_a).to include @video_6
+        expect(@program_2.videos.to_a).to include @video_7
+        expect(@program_2.videos.to_a).to include @video_8
+        expect(@program_2.videos.to_a).to include @video_9
+        expect(@program_2.videos.to_a).to include @video_10
       end
 
-      it 'relates Videos to Programs correctly', broken: true do
-        @video_1.program.should == @program_1
-        @video_2.program.should == @program_1
-        @video_3.program.should == @program_1
-        @video_4.program.should == @program_1
+      it 'relates Videos to Programs correctly' do
+        expect(@video_1.program).to eq @program_1
+        expect(@video_2.program).to eq @program_1
+        expect(@video_3.program).to eq @program_1
+        expect(@video_4.program).to eq @program_1
 
-        @video_5.program.should == @program_2
-        @video_6.program.should == @program_2
-        @video_7.program.should == @program_2
-        @video_8.program.should == @program_2
-        @video_9.program.should == @program_2
+        expect(@video_5.program).to eq @program_2
+        expect(@video_6.program).to eq @program_2
+        expect(@video_7.program).to eq @program_2
+        expect(@video_8.program).to eq @program_2
+        expect(@video_9.program).to eq @program_2
         @video_10.program.should == @program_2
       end
 
 
       it 'relates Videos to Images correctly' do
-        @video_1.images.should == [@image_1]
-        @video_2.images.should == [@image_2]
-        @video_3.images.should == [@image_3]
-        @video_4.images.should == [@image_4]
-        @video_5.images.should == [@image_5]
-        @video_6.images.should == [@image_6]
-        @video_7.images.should == [@image_7]
-        @video_8.images.should == [@image_8]
-        @video_9.images.should == [@image_9]
+        expect(@video_1.images).to eq [@image_1]
+        expect(@video_2.images).to eq [@image_2]
+        expect(@video_3.images).to eq [@image_3]
+        expect(@video_4.images).to eq [@image_4]
+        expect(@video_5.images).to eq [@image_5]
+        expect(@video_6.images).to eq [@image_6]
+        expect(@video_7.images).to eq [@image_7]
+        expect(@video_8.images).to eq [@image_8]
+        expect(@video_9.images).to eq [@image_9]
         @video_10.images.should == [@image_10]
       end
 
       it 'relates Images to Videos correctly' do
-        @image_1.video.should == @video_1
-        @image_2.video.should == @video_2
-        @image_3.video.should == @video_3
-        @image_4.video.should == @video_4
-        @image_5.video.should == @video_5
-        @image_6.video.should == @video_6
-        @image_7.video.should == @video_7
-        @image_8.video.should == @video_8
-        @image_9.video.should == @video_9
+        expect(@image_1.video).to eq @video_1
+        expect(@image_2.video).to eq @video_2
+        expect(@image_3.video).to eq @video_3
+        expect(@image_4.video).to eq @video_4
+        expect(@image_5.video).to eq @video_5
+        expect(@image_6.video).to eq @video_6
+        expect(@image_7.video).to eq @video_7
+        expect(@image_8.video).to eq @video_8
+        expect(@image_9.video).to eq @video_9
         @image_10.video.should == @video_10
       end
 
       it 'relates Videos to Transcripts correctly', broken: true do
-        @video_1.transcripts.should == [@transcript_1]
-        @video_2.transcripts.should == [@transcript_2]
-        @video_3.transcripts.should == [@transcript_3]
-        @video_4.transcripts.should == [@transcript_4]
-        @video_5.transcripts.should == [@transcript_5]
-        @video_6.transcripts.should == [@transcript_6]
-        @video_7.transcripts.should == [@transcript_7]
-        @video_8.transcripts.should == [@transcript_8]
-        @video_9.transcripts.should == [@transcript_9]
+        expect(@video_1.transcripts).to eq [@transcript_1]
+        expect(@video_2.transcripts).to eq [@transcript_2]
+        expect(@video_3.transcripts).to eq [@transcript_3]
+        expect(@video_4.transcripts).to eq [@transcript_4]
+        expect(@video_5.transcripts).to eq [@transcript_5]
+        expect(@video_6.transcripts).to eq [@transcript_6]
+        expect(@video_7.transcripts).to eq [@transcript_7]
+        expect(@video_8.transcripts).to eq [@transcript_8]
+        expect(@video_9.transcripts).to eq [@transcript_9]
         @video_10.transcripts.should == [@transcript_10]
       end
 
       it 'relates Transcripts to Videos correctly', broken: true do
-        @transcript_1.video.should == @video_1
-        @transcript_2.video.should == @video_2
-        @transcript_3.video.should == @video_3
-        @transcript_4.video.should == @video_4
-        @transcript_5.video.should == @video_5
-        @transcript_6.video.should == @video_6
-        @transcript_7.video.should == @video_7
-        @transcript_8.video.should == @video_8
-        @transcript_9.video.should == @video_9
+        expect(@transcript_1.video).to eq @video_1
+        expect(@transcript_2.video).to eq @video_2
+        expect(@transcript_3.video).to eq @video_3
+        expect(@transcript_4.video).to eq @video_4
+        expect(@transcript_5.video).to eq @video_5
+        expect(@transcript_6.video).to eq @video_6
+        expect(@transcript_7.video).to eq @video_7
+        expect(@transcript_8.video).to eq @video_8
+        expect(@transcript_9.video).to eq @video_9
         @transcript_10.video.should == @video_10
       end
 
