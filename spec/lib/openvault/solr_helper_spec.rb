@@ -22,7 +22,6 @@ describe 'Openvault::SolrHelper (mixed into a dummy controller)', type: :control
     @sample_hash = {'id' => '123', 'slug' => 'sample-slug'}
     Blacklight.solr.add @sample_hash
     Blacklight.solr.commit
-    sleep 3
   end
 
 
