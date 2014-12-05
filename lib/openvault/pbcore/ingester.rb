@@ -53,12 +53,12 @@ module Openvault::Pbcore
 
       pbcore_desc_docs.each do |pbcore_desc_doc|
 
-        updater = OpenvaultAssetUpdater.new(pbcore_desc_doc)
-        existing_ov_asset = updater.existing_openvault_asset
-        updated_ov_asset = updater.updated_openvault_asset
-
-        
         begin
+
+          updater = OpenvaultAssetUpdater.new(pbcore_desc_doc)
+          existing_ov_asset = updater.existing_openvault_asset
+          updated_ov_asset = updater.updated_openvault_asset
+
           # If the record exists
           if !existing_ov_asset.nil?
             case @policy
@@ -88,7 +88,7 @@ module Openvault::Pbcore
               logger.info "Unable to establish relationships in Fedora for #{updated_ov_asset.pbcore.all_ids}"
             else
               @failed_records += 1
-              logger.info "Unable to ingest #{updated_ov_asset.pbcore.all_ids}"
+              logger.info "Unable to ingest #{pbcore_desc_doc.all_ids}" 
             end
             logger.error(e.inspect)
           else
