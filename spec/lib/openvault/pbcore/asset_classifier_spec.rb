@@ -84,7 +84,7 @@ describe Openvault::Pbcore::AssetClassifier do
     describe 'exception' do
       it 'is raised if multiple models apply' do
         expect {classify('artesia/joyce_chen/multiple_models.xml')}.to \
-          raise_error("Multiple matching AF-models: [Video, Image]")
+          raise_error Openvault::Pbcore::AssetClassifier::MultipleMatchingActiveFedoraModels
       end
       # TODO: test no classifications
     end
