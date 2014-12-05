@@ -89,7 +89,7 @@ module Openvault
       end
       
       def solr.find_by_other_id(id)
-        query_one('all_ids_tesim', id)
+        query_one('all_ids_ssim', id)
       end
       
       solr

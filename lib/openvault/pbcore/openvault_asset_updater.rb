@@ -36,7 +36,7 @@ module Openvault::Pbcore
     end
 
     def fetch_existing_openvault_asset
-      ov_assets = ActiveFedora::Base.find({"all_ids_tesim" => pbcore_desc_doc.all_ids})
+      ov_assets = ActiveFedora::Base.find({"all_ids_ssim" => pbcore_desc_doc.all_ids})
       raise MultipleOpenvaultAssetsFound, "#{ov_assets.count} records were found containing the pbcoreIdentifiers: #{pbcore_desc_doc.all_ids}" if ov_assets.count > 1
       ov_assets.first
     end

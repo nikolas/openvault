@@ -25,7 +25,7 @@ module Openvault::Pbcore
       related = []
       pbcore.relations_by_type.each do |relation_type, pbcore_ids|
         pbcore_ids.each do |pbcore_id|
-          related += ActiveFedora::Base.find({:all_ids_tesim => pbcore_id})
+          related += ActiveFedora::Base.find({:all_ids_ssim => pbcore_id})
         end
       end
       related
