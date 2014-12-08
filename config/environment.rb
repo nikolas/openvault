@@ -15,6 +15,10 @@ class OpenvaultOaiModel
     # TODO
     Time.now
   end
+  def sets
+    # TODO: perhaps different sets for different asset types?
+    []
+  end
 end
 
 class OpenvaultOaiProvider < OAI::Provider::Base
