@@ -7,10 +7,10 @@ module Openvault::Pbcore
         matches << Kernel.const_get(model) if test.call(doc)
       end
       matches -= [Program] unless matches == [Program]
-      raise 'No matching AF-model' if matches.count == 0
-      raise "Multiple matching AF-models: #{matches}" if matches.count > 1
+      raise NoMatchingActiveFedoraModel, "No matching AF-model for pbcore with ids=#{doc.all_ids.inspect}" if matches.count == 0
+      raise MultipleMatchingActiveFedoraModels, "Multiple matching AF-models: #{matches} for pbcore with ids=#{doc.all_ids.inspect}" if matches.count > 1
       return matches.first
-    end 
+    end
     
     private
     
@@ -57,6 +57,10 @@ module Openvault::Pbcore
     def self.digital(doc)
       doc.instantiations.digital.first || ''
     end
+
+
+    class MultipleMatchingActiveFedoraModels < StandardError; end
+    class NoMatchingActiveFedoraModel < StandardError; end
 
   end
 end
