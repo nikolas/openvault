@@ -3,7 +3,7 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
   set_terminology do |t|
     t.root(path: "pbcoreDescriptionDocument")
 
-    t.all_ids(path: "pbcoreIdentifier", index_as: [:stored_searchable]) {
+    t.all_ids(path: "pbcoreIdentifier", index_as: [:symbol]) {
       t.source(path: {attribute: 'source'})
     }
 
