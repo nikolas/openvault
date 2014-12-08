@@ -19,6 +19,20 @@ class OpenvaultOaiModel
     # TODO: perhaps different sets for different asset types?
     []
   end
+  def find(id, options)
+    found = Object.new.tap{|o|
+      def o.id
+        'id-TODO'
+      end
+      def o.timestamp_method
+        # TODO
+        Time.now
+      end
+    }
+  end
+  def timestamp_field
+    'timestamp_method'
+  end
 end
 
 class OpenvaultOaiProvider < OAI::Provider::Base
@@ -36,6 +50,9 @@ class OpenvaultOaiProvider < OAI::Provider::Base
     end
     def f.namespace
       'http://www.pbcore.org/PBCore/PBCoreNamespace.html'
+    end
+    def f.encode(model, object)
+      '<xml-TODO/>'
     end
   }
   register_format format

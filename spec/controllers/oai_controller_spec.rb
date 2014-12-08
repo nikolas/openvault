@@ -20,4 +20,10 @@ describe OaiController do
     expect(response.body).to match /<ListSets><\/ListSets>/
   end
   
+  it 'verb=GetRecord' do
+    get :index, verb: 'GetRecord', identifier: '123', metadataPrefix: 'pbcore'
+    expect(response.body).to match /<request [^>]*verb="GetRecord"[^>]*>/
+    expect(response.body).to match /<GetRecord>/
+  end
+  
 end
