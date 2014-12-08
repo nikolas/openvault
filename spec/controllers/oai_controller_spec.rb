@@ -8,4 +8,10 @@ describe OaiController do
     expect(response.body).to match /<request verb="Identify">/
   end
 
+  it 'verb=ListMetadataFormats' do
+    get :index, verb: 'ListMetadataFormats'
+    expect(response.body).to match /<request verb="ListMetadataFormats">/
+    expect(response.body).to match /<metadataPrefix>pbcore<\/metadataPrefix>/
+  end
+  
 end
