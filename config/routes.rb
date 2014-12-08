@@ -27,6 +27,8 @@ Openvault::Application.routes.draw do
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
   #mount Sufia::Engine => '/sufia'
+  
+  get 'oai' => 'oai#index'
 
   get 'custom_collections/new/:asset_id/:kind' => 'custom_collections#new'
 
