@@ -1,24 +1,20 @@
 require 'spec_helper'
 #require 'openvault/pbcore'
 
+def oai_verb_works(verb)
+  it "verb=#{verb}" do
+    get :index, verb: verb
+    expect(response.body).to match /<request [^>]*verb="#{verb}"[^>]*>/
+    expect(response.body).to match /<#{verb}>/
+    yield if block_given?
+  end
+end
+
 describe OaiController do
-
-  it 'verb=Identify' do
-    get :index, verb: 'Identify'
-    expect(response.body).to match /<request verb="Identify">/
-  end
-
-  it 'verb=ListMetadataFormats' do
-    get :index, verb: 'ListMetadataFormats'
-    expect(response.body).to match /<request verb="ListMetadataFormats">/
-    expect(response.body).to match /<metadataPrefix>pbcore<\/metadataPrefix>/
-  end
   
-  it 'verb=ListSets' do
-    get :index, verb: 'ListSets'
-    expect(response.body).to match /<request verb="ListSets">/
-    expect(response.body).to match /<ListSets><\/ListSets>/
-  end
+  oai_verb_works('Identify')
+  oai_verb_works('ListMetadataFormats')
+  oai_verb_works('ListSets')
   
   it 'verb=GetRecord' do
     get :index, verb: 'GetRecord', identifier: '123', metadataPrefix: 'pbcore'
@@ -26,4 +22,10 @@ describe OaiController do
     expect(response.body).to match /<GetRecord>/
   end
   
+#  it 'verb=ListRecords' do
+#    get :index, verb: 'ListRecords'
+#    expect(response.body).to match /<request verb="ListRecords">/
+#    expect(response.body).to match /<ListSets><\/ListSets>/
+#  end
+
 end
