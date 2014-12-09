@@ -1,3 +1,5 @@
+# TODO: Changes do not take effect without restarting Rails.
+
 class OaiModel
   def earliest
     # Used by 'Identify'

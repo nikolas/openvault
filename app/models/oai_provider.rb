@@ -1,3 +1,8 @@
+require_relative 'oai_model'
+
+# TODO: Rails autoloading doesn't work, and changes here do not take effect
+# without restarting the server. Argh.
+
 class OaiProvider < OAI::Provider::Base
   #repository_name 'Openvault' # Used as a name space for source_model
   repository_url 'http://openvault.wgbh.org/oai'
