@@ -6,7 +6,7 @@ def oai_verb_works(verb)
     get :index, verb: verb
     expect(response.body).to match /<request [^>]*verb="#{verb}"[^>]*>/
     expect(response.body).to match /<#{verb}>/
-    yield if block_given?
+    # TODO: yield if block_given?
   end
 end
 
@@ -22,10 +22,10 @@ describe OaiController do
     expect(response.body).to match /<GetRecord>/
   end
   
-#  it 'verb=ListRecords' do
-#    get :index, verb: 'ListRecords'
-#    expect(response.body).to match /<request verb="ListRecords">/
-#    expect(response.body).to match /<ListSets><\/ListSets>/
-#  end
+  it 'verb=ListRecords' do
+    get :index, verb: 'ListRecords', metadataPrefix: 'pbcore'
+    expect(response.body).to match /<request [^>]*verb="ListRecords"[^>]*>/
+    expect(response.body).to match /<ListRecords>/
+  end
 
 end

@@ -20,7 +20,14 @@ class OpenvaultOaiModel
     []
   end
   def find(id, options)
-    found = Object.new.tap{|o|
+    if id == :all
+      [OpenvaultOaiModel.mock_object]
+    else  
+      OpenvaultOaiModel.mock_object
+    end
+  end
+  def self.mock_object
+    Object.new.tap{|o|
       def o.id
         'id-TODO'
       end
