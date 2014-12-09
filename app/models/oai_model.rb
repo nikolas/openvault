@@ -1,15 +1,20 @@
 # TODO: Changes do not take effect without restarting Rails.
 
 class OaiModel
+  
+  # Tried including Openvault::SolrHelper
+  # but it has its own find method, and ours collides with it.
+  
+  def self.earliest_or_latest(order)
+    r = Blacklight.solr.select(params: {q: '*:*', sort: "timestamp #{order}", rows: '1', fl: 'timestamp'})
+    r['response']['docs'][0]['timestamp']
+  end
+  
   def earliest
-    # Used by 'Identify'
-    # TODO
-    '2001-01-01'
+    OaiModel.earliest_or_latest('asc')
   end
   def latest
-    # Used by 'ListMetadataFormats'
-    # TODO
-    Time.now
+    OaiModel.earliest_or_latest('desc')
   end
   def sets
     # TODO: perhaps different sets for different asset types?
@@ -18,7 +23,7 @@ class OaiModel
   def find(id, options)
     if id == :all
       [OaiModel.mock_object]
-    else  
+    else
       OaiModel.mock_object
     end
   end
