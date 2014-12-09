@@ -1,6 +1,6 @@
 require 'spec_helper'
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
-#require 'openvault/pbcore'
+require 'openvault/pbcore'
 
 require 'date'
 
