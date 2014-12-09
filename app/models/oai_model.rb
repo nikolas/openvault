@@ -5,8 +5,14 @@ class OaiModel
   # Tried including Openvault::SolrHelper
   # but it has its own find method, and ours collides with it.
   
+  def self.fq
+    ['Video', 'Audio', 'Image'].map{|type| 'has_model_ssim:"info:fedora/afmodel:'+type+'"'}.join(' OR ')
+  end
+  
   def self.earliest_or_latest(order)
-    r = Blacklight.solr.select(params: {q: '*:*', sort: "timestamp #{order}", rows: '1', fl: 'timestamp'})
+    r = Blacklight.solr.select(params: {
+        q: '*:*', sort: "timestamp #{order}", rows: '1', fl: 'timestamp', fq: OaiModel.fq
+    })
     r['response']['docs'][0]['timestamp']
   end
   
