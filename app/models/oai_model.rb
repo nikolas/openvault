@@ -1,5 +1,14 @@
 # TODO: Changes do not take effect without restarting Rails.
 
+class OaiDocument
+  attr_reader :id, :timestamp, :xml
+  def initialize(solr_hash)
+    @id = solr_hash['id']
+    @timestamp = Time.new(solr_hash['timestamp'])
+    @xml = ActiveFedora::Base.find(solr_hash['id'], cast: true).datastreams['pbcore'].to_xml
+  end
+end
+
 class OaiModel
   
   # Tried including Openvault::SolrHelper
@@ -28,9 +37,12 @@ class OaiModel
   end
   def find(id, options)
     if id == :all
-      [OaiModel.mock_object]
+      response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq })['response']
+      response['docs'].map { |doc| OaiDocument.new(doc) }
     else
-      OaiModel.mock_object
+      return OaiModel.mock_object
+      # TODO:
+      response = Blacklight.solr.select(params: {q: "id:#{id}", fq: OaiModel.fq})['response']
     end
   end
   def self.mock_object
@@ -38,13 +50,13 @@ class OaiModel
       def o.id
         'id-TODO'
       end
-      def o.timestamp_method
+      def o.timestamp
         # TODO
         Time.now
       end
     }
   end
   def timestamp_field
-    'timestamp_method'
+    'timestamp'
   end
 end
