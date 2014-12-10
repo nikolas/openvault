@@ -295,6 +295,7 @@ GEM
       ensure_valid_encoding
       scrub_rb (>= 1.0.1, < 2)
       unf
+    maxminddb (0.1.5)
     mediashelf-loggable (0.4.10)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -544,6 +545,7 @@ DEPENDENCIES
   jettywrapper
   jquery-rails (= 2.3.0)
   launchy
+  maxminddb
   mini_magick
   mysql2 (~> 0.3.11)
   nested_form
