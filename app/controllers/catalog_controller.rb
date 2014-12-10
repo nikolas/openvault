@@ -308,6 +308,9 @@ class CatalogController < ApplicationController
           format.html do
             render action: @ov_asset.class.to_s.downcase + '/show'
           end
+          format.image do
+            redirect_to @ov_asset.thumbnail_url
+          end
           format.xml do
             # TODO: The DC is empty.
             render text: @document.export_as_oai_dc_xml
