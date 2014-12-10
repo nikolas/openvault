@@ -1,3 +1,12 @@
+class OaiToken
+  def initialize(start)
+    @start = start
+  end
+  def to_xml
+    "<resumptionToken>#{@start}</resumptionToken>"
+  end
+end
+
 class OaiModel
   
   def earliest
@@ -12,8 +21,17 @@ class OaiModel
   end
   def find(id, options)
     if id == :all
-      response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq })['response']
-      response['docs'].map { |doc| OaiDocument.new(doc) }
+      start = 0 # TODO
+      response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq, start: start})['response']
+      oai_response = response['docs'].map { |doc| OaiDocument.new(doc) }
+      
+      next_start = response['start'] + response['docs'].count
+      if next_start < response['numFound'] # TODO: check for off-by-one
+        oai_response.define_singleton_method(:token) do
+          OaiToken.new(next_start)
+        end
+      end
+      oai_response
     else
       response = Blacklight.solr.select(params: {q: "slug:#{id}", fq: OaiModel.fq})['response']
       response = Blacklight.solr.select(params: {q: "id:#{id}", fq: OaiModel.fq})['response'] if response['docs'].empty?

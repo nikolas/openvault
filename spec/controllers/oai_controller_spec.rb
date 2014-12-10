@@ -61,6 +61,8 @@ describe OaiController do
     test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
     
     test.expect(xml.scan('<identifier>').count).to test.eq(10)
+    
+    test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
   end
   
   oai_verb_works('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
@@ -69,6 +71,8 @@ describe OaiController do
     test.expect(xml).to test.match 'Civil rights march'
   
     test.expect(xml.scan('<identifier>').count).to test.eq(10)
+    
+    test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
   end
 
 end
