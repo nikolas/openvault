@@ -1,12 +1,3 @@
-class OaiToken
-  def initialize(start)
-    @start = start
-  end
-  def to_xml
-    "<resumptionToken>#{@start}</resumptionToken>"
-  end
-end
-
 class OaiModel
   
   def earliest
@@ -21,7 +12,7 @@ class OaiModel
   end
   def find(id, options)
     if id == :all
-      start = 0 # TODO
+      start = options[:resumption_token] || 0
       response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq, start: start})['response']
       oai_response = response['docs'].map { |doc| OaiDocument.new(doc) }
       

@@ -6,9 +6,9 @@ require 'openvault/slug_setter'
 require 'date'
 
 def oai_verb_works(verb, *opts)
-  it "verb=#{verb}" do
-    args = Hash[*opts]
-    args[:verb] = verb
+  args = Hash[*opts]
+  args[:verb] = verb
+  it "verb=#{verb} #{args.reject{|arg| arg == :verb}}" do
     get :index, args
     expect(response.body).to match /<request [^>]*verb="#{verb}"[^>]*>/
     expect(response.body).to match /<#{verb}>/
@@ -73,6 +73,12 @@ describe OaiController do
     test.expect(xml.scan('<identifier>').count).to test.eq(10)
     
     test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
+  end
+  
+  oai_verb_works('ListIdentifiers', resumptionToken: '10') do |test, xml|
+    test.expect(xml.scan('<identifier>').count).to test.eq(1)
+    
+    test.expect(xml).not_to test.match '<resumptionToken>'
   end
 
 end
