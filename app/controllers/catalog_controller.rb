@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 require 'openvault/solr_helper'
+require 'openvault/geoip_helper'
 
 class CatalogController < ApplicationController  
   before_filter :find_artifact, :only => :show
@@ -306,6 +307,7 @@ class CatalogController < ApplicationController
         lookup_and_set_fields
         respond_to do |format|
           format.html do
+            @country_code = Openvault::GeoipHelper.get_country_code_for_ip(request.remote_ip)
             render action: @ov_asset.class.to_s.downcase + '/show'
           end
           format.xml do
