@@ -1,14 +1,3 @@
-# TODO: Changes do not take effect without restarting Rails.
-
-class OaiDocument
-  attr_reader :id, :timestamp, :xml
-  def initialize(solr_hash)
-    @id = solr_hash['id']
-    @timestamp = Time.new(solr_hash['timestamp'])
-    @xml = ActiveFedora::Base.find(solr_hash['id'], cast: true).datastreams['pbcore'].to_xml
-  end
-end
-
 class OaiModel
   
   # Tried including Openvault::SolrHelper
