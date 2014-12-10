@@ -54,6 +54,9 @@ class OaiModel
         # TODO
         Time.now
       end
+      def o.xml
+        '<TODO/>'
+      end
     }
   end
   def timestamp_field

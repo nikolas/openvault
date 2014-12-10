@@ -20,7 +20,8 @@ class OaiProvider < OAI::Provider::Base
       'http://www.pbcore.org/PBCore/PBCoreNamespace.html'
     end
     def f.encode(model, object)
-      '<xml-TODO/>'
+      # TODO: look at model
+      object.xml
     end
   }
   register_format format
