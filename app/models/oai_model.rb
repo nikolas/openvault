@@ -1,19 +1,5 @@
 class OaiModel
   
-  # Tried including Openvault::SolrHelper
-  # but it has its own find method, and ours collides with it.
-  
-  def self.fq
-    ['Video', 'Audio', 'Image'].map{|type| 'has_model_ssim:"info:fedora/afmodel:'+type+'"'}.join(' OR ')
-  end
-  
-  def self.earliest_or_latest(order)
-    r = Blacklight.solr.select(params: {
-        q: '*:*', sort: "timestamp #{order}", rows: '1', fl: 'timestamp', fq: OaiModel.fq
-    })
-    r['response']['docs'][0]['timestamp']
-  end
-  
   def earliest
     OaiModel.earliest_or_latest('asc')
   end
@@ -29,26 +15,25 @@ class OaiModel
       response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq })['response']
       response['docs'].map { |doc| OaiDocument.new(doc) }
     else
-      return OaiModel.mock_object
-      # TODO:
-      response = Blacklight.solr.select(params: {q: "id:#{id}", fq: OaiModel.fq})['response']
+      response = Blacklight.solr.select(params: {q: "slug:#{id}", fq: OaiModel.fq})['response']
+      response = Blacklight.solr.select(params: {q: "id:#{id}", fq: OaiModel.fq})['response'] if response['docs'].empty?
+      OaiDocument.new(response['docs'][0])
     end
-  end
-  def self.mock_object
-    Object.new.tap{|o|
-      def o.id
-        'id-TODO'
-      end
-      def o.timestamp
-        # TODO
-        Time.now
-      end
-      def o.xml
-        '<TODO/>'
-      end
-    }
   end
   def timestamp_field
     'timestamp'
   end
+  
+  private
+  
+  def self.fq
+    ['Video', 'Audio', 'Image'].map{|type| 'has_model_ssim:"info:fedora/afmodel:'+type+'"'}.join(' OR ')
+  end
+  def self.earliest_or_latest(order)
+    r = Blacklight.solr.select(params: {
+        q: '*:*', sort: "timestamp #{order}", rows: '1', fl: 'timestamp', fq: OaiModel.fq
+    })
+    r['response']['docs'][0]['timestamp']
+  end
+  
 end

@@ -1,6 +1,7 @@
 require 'spec_helper'
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 require 'openvault/pbcore'
+require 'openvault/slug_setter'
 
 require 'date'
 
@@ -31,6 +32,8 @@ describe OaiController do
     image = Image.new
     image.pbcore.ng_xml = Fixtures.raw("artesia/march_on_washington/image_1.xml")
     image.save!
+    
+    Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
   end
   
   oai_verb_works('Identify') { |test, xml|
@@ -38,7 +41,7 @@ describe OaiController do
   }
   oai_verb_works('ListMetadataFormats')
   oai_verb_works('ListSets')
-  oai_verb_works('GetRecord', identifier: '123', metadataPrefix: 'pbcore')
+  oai_verb_works('GetRecord', identifier: 'SLUG', metadataPrefix: 'pbcore')
   oai_verb_works('ListIdentifiers', metadataPrefix: 'pbcore')
   oai_verb_works('ListRecords', metadataPrefix: 'pbcore') { |test, xml|
     test.expect(xml).to test.match /<record><header><identifier>/
