@@ -6,7 +6,7 @@ require_relative 'oai_model'
 class OaiProvider < OAI::Provider::Base
   #repository_name 'Openvault' # Used as a name space for source_model
   repository_url 'http://openvault.wgbh.org/oai'
-  record_prefix 'oai:TODO'
+  record_prefix 'http://openvault.wgbh.org/catalog'
   admin_email 'openvault@wgbh.org'
   source_model OaiModel.new
   format = Object.new.tap {|f|
@@ -20,7 +20,7 @@ class OaiProvider < OAI::Provider::Base
       'http://www.pbcore.org/PBCore/PBCoreNamespace.html'
     end
     def f.encode(model, object)
-      # TODO: look at model
+      # TODO: Look at model, and support DC.
       object.xml
     end
   }

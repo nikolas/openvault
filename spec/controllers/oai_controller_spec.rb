@@ -36,15 +36,35 @@ describe OaiController do
     Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
   end
   
-  oai_verb_works('Identify') { |test, xml|
-    test.expect(xml).to test.match /<earliestDatestamp>#{Date.today}/ # just ingested.
-  }
-  oai_verb_works('ListMetadataFormats')
-  oai_verb_works('ListSets')
-  oai_verb_works('GetRecord', identifier: 'SLUG', metadataPrefix: 'pbcore')
-  oai_verb_works('ListIdentifiers', metadataPrefix: 'pbcore')
-  oai_verb_works('ListRecords', metadataPrefix: 'pbcore') { |test, xml|
-    test.expect(xml).to test.match /<record><header><identifier>/
-  }
+  oai_verb_works('Identify') do |test, xml|
+    test.expect(xml).to test.match "<earliestDatestamp>#{Date.today}" # just ingested.
+  end
+  
+  oai_verb_works('ListMetadataFormats') do |test, xml|
+    test.expect(xml).to test.match '<metadataPrefix>oai_dc</metadataPrefix>'
+    test.expect(xml).to test.match '<metadataPrefix>pbcore</metadataPrefix>'
+  end
+  
+  oai_verb_works('ListSets') do |test, xml|
+    test.expect(xml).to test.match '<ListSets></ListSets>'
+  end
+  
+  oai_verb_works('GetRecord', identifier: 'SLUG', metadataPrefix: 'pbcore') do |test, xml|
+    test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+    test.expect(xml).to test.match 'Civil rights march'
+  end
+  
+  oai_verb_works('ListIdentifiers', metadataPrefix: 'pbcore') do |test, xml|
+    test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+    
+    test.expect(xml.scan('<identifier>').count).to test.eq(2)
+  end
+  
+  oai_verb_works('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
+    test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+    test.expect(xml).to test.match 'Civil rights march'
+  
+    test.expect(xml.scan('<identifier>').count).to test.eq(2)
+  end
 
 end
