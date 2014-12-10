@@ -21,19 +21,21 @@ describe OaiController do
   before(:all) do 
     Fixtures.cwd("#{fixture_path}/pbcore")
     
-    audio = Audio.new
-    audio.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/audio_3.xml")
-    audio.save!
-    
-    series = Series.new
-    series.pbcore.ng_xml = Fixtures.raw("artesia/rock_and_roll/program_1.xml")
-    series.save!
-    
     image = Image.new
     image.pbcore.ng_xml = Fixtures.raw("artesia/march_on_washington/image_1.xml")
     image.save!
     
     Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
+    
+    10.times do
+      audio = Audio.new
+      audio.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/audio_3.xml")
+      audio.save!
+    end
+    
+    series = Series.new
+    series.pbcore.ng_xml = Fixtures.raw("artesia/rock_and_roll/program_1.xml")
+    series.save!
   end
   
   oai_verb_works('Identify') do |test, xml|
@@ -55,16 +57,18 @@ describe OaiController do
   end
   
   oai_verb_works('ListIdentifiers', metadataPrefix: 'pbcore') do |test, xml|
+    # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
     test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
     
-    test.expect(xml.scan('<identifier>').count).to test.eq(2)
+    test.expect(xml.scan('<identifier>').count).to test.eq(10)
   end
   
   oai_verb_works('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
+    # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
     test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
     test.expect(xml).to test.match 'Civil rights march'
   
-    test.expect(xml.scan('<identifier>').count).to test.eq(2)
+    test.expect(xml.scan('<identifier>').count).to test.eq(10)
   end
 
 end
