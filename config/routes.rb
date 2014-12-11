@@ -49,7 +49,6 @@ Openvault::Application.routes.draw do
   
   resources :catalog, :only => [:index, :show, :update], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
     member do
-      get 'cite'
       get 'print'
       get 'image'
       get 'embed'
