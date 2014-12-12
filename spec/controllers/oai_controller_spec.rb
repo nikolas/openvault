@@ -65,6 +65,12 @@ describe OaiController do
     test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
   end
   
+  oai_verb_works('ListIdentifiers', resumptionToken: '10') do |test, xml|
+    test.expect(xml.scan('<identifier>').count).to test.eq(1)
+    
+    test.expect(xml).not_to test.match '<resumptionToken>'
+  end
+  
   oai_verb_works('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
     # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
     test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
@@ -75,10 +81,10 @@ describe OaiController do
     test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
   end
   
-  oai_verb_works('ListIdentifiers', resumptionToken: '10') do |test, xml|
+  oai_verb_works('ListRecords', resumptionToken: '10') do |test, xml|
     test.expect(xml.scan('<identifier>').count).to test.eq(1)
     
     test.expect(xml).not_to test.match '<resumptionToken>'
   end
-
+  
 end
