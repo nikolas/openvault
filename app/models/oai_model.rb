@@ -12,12 +12,13 @@ class OaiModel
   end
   def find(id, options)
     if id == :all
+      options[:metadata_prefix] = 'pbcore' # It was complaining that this was missing with resumptionToken.
       start = options[:resumption_token] || 0
       response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq, start: start})['response']
       oai_response = response['docs'].map { |doc| OaiDocument.new(doc) }
       
       next_start = response['start'] + response['docs'].count
-      if next_start < response['numFound'] # TODO: check for off-by-one
+      if next_start < response['numFound']
         oai_response.define_singleton_method(:token) do
           OaiToken.new(next_start)
         end
