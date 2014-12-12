@@ -5,17 +5,6 @@ require 'openvault/slug_setter'
 
 require 'date'
 
-def oai_verb_works(verb, *opts)
-  args = Hash[*opts]
-  args[:verb] = verb
-  it "verb=#{verb} #{args.reject{|arg| arg == :verb}}" do
-    get :index, args
-    expect(response.body).to match /<request [^>]*verb="#{verb}"[^>]*>/
-    expect(response.body).to match /<#{verb}>/
-    yield(self, response.body) if block_given?
-  end
-end
-
 describe OaiController do
   
   before(:all) do 
@@ -38,53 +27,66 @@ describe OaiController do
     series.save!
   end
   
-  oai_verb_works('Identify') do |test, xml|
-    test.expect(xml).to test.match "<earliestDatestamp>#{Date.today}" # just ingested.
+  def expect_oai(verb, *opts)
+    args = Hash[*opts]
+    args[:verb] = verb
+    get :index, args
+    expect(response.body).to match /<request [^>]*verb="#{verb}"[^>]*>/
+    expect(response.body).to match /<#{verb}>/
+    yield(self, response.body) if block_given?
   end
   
-  oai_verb_works('ListMetadataFormats') do |test, xml|
-    test.expect(xml).to test.match '<metadataPrefix>oai_dc</metadataPrefix>'
-    test.expect(xml).to test.match '<metadataPrefix>pbcore</metadataPrefix>'
+  it 'Identify' do
+    expect_oai('Identify') do |test, xml|
+      test.expect(xml).to test.match "<earliestDatestamp>#{Date.today}" # just ingested.
+    end
   end
   
-  oai_verb_works('ListSets') do |test, xml|
-    test.expect(xml).to test.match '<ListSets></ListSets>'
+  it 'ListMetadataFormats' do
+    expect_oai('ListMetadataFormats') do |test, xml|
+      test.expect(xml).to test.match '<metadataPrefix>oai_dc</metadataPrefix>'
+      test.expect(xml).to test.match '<metadataPrefix>pbcore</metadataPrefix>'
+    end
   end
   
-  oai_verb_works('GetRecord', identifier: 'SLUG', metadataPrefix: 'pbcore') do |test, xml|
-    test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
-    test.expect(xml).to test.match 'Civil rights march'
+  it 'ListSets' do
+    expect_oai('ListSets') do |test, xml|
+      test.expect(xml).to test.match '<ListSets></ListSets>'
+    end
   end
   
-  oai_verb_works('ListIdentifiers', metadataPrefix: 'pbcore') do |test, xml|
-    # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
-    test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
-    
-    test.expect(xml.scan('<identifier>').count).to test.eq(10)
-    
-    test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
+  it 'GetRecord' do
+    expect_oai('GetRecord', identifier: 'SLUG', metadataPrefix: 'pbcore') do |test, xml|
+      test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+      test.expect(xml).to test.match 'Civil rights march'
+    end
   end
   
-  oai_verb_works('ListIdentifiers', resumptionToken: '10') do |test, xml|
-    test.expect(xml.scan('<identifier>').count).to test.eq(1)
-    
-    test.expect(xml).not_to test.match '<resumptionToken>'
+  it 'ListIdentifiers' do
+    expect_oai('ListIdentifiers', metadataPrefix: 'pbcore') do |test, xml|
+      # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
+      test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+      test.expect(xml.scan('<identifier>').count).to test.eq(10)
+      test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
+    end
+    expect_oai('ListIdentifiers', resumptionToken: '10') do |test, xml|
+      test.expect(xml.scan('<identifier>').count).to test.eq(1)
+      test.expect(xml).not_to test.match '<resumptionToken>'
+    end
   end
   
-  oai_verb_works('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
-    # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
-    test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
-    test.expect(xml).to test.match 'Civil rights march'
-  
-    test.expect(xml.scan('<identifier>').count).to test.eq(10)
-    
-    test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
-  end
-  
-  oai_verb_works('ListRecords', resumptionToken: '10') do |test, xml|
-    test.expect(xml.scan('<identifier>').count).to test.eq(1)
-    
-    test.expect(xml).not_to test.match '<resumptionToken>'
+  it 'ListRecords' do
+    expect_oai('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
+      # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
+      test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+      test.expect(xml).to test.match 'Civil rights march'
+      test.expect(xml.scan('<identifier>').count).to test.eq(10)
+      test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
+    end
+    expect_oai('ListRecords', resumptionToken: '10') do |test, xml|
+      test.expect(xml.scan('<identifier>').count).to test.eq(1)
+      test.expect(xml).not_to test.match '<resumptionToken>'
+    end
   end
   
 end
