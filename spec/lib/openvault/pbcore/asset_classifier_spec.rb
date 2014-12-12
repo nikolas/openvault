@@ -50,8 +50,7 @@ describe Openvault::Pbcore::AssetClassifier do
     it 'for Program' do
       expect_class Program, [
           'mars/program_1.xml',
-          'artesia/rock_and_roll/program_1.xml',
-          'artesia/ntw/program_segment.xml']
+          'artesia/rock_and_roll/program_1.xml']
     end
     
     it 'for Image' do
@@ -67,7 +66,8 @@ describe Openvault::Pbcore::AssetClassifier do
       expect_class Video, [
           'mars/video_1.xml',
           'artesia/rock_and_roll/video_1.xml',
-          'artesia/vietnam/video_1.xml']
+          'artesia/vietnam/video_1.xml',
+          'artesia/ntw/program_segment.xml']
     end 
     
     it 'for Audio' do
