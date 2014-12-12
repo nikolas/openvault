@@ -321,8 +321,7 @@ class CatalogController < ApplicationController
             render text: @ov_asset.pbcore.ng_xml
           end
         end
-      rescue Blacklight::Exceptions::InvalidSolrID, ActionView::MissingTemplate => e
-        logger.debug "#{e.message}\nparams: #{params}\n#{e.backtrace[0..10].join("\n")}"
+      rescue Blacklight::Exceptions::InvalidSolrID
         render_404
       end
     end
