@@ -35,7 +35,7 @@ describe Openvault::Pbcore::AssetClassifier do
       fixture_paths.each do |path|
         begin
           expect(classify(path)).to be(klass),
-            "Expected #{path} to be classified as #{klass}"
+            "Expected #{path} to be classified as #{klass}, instead it is #{classify(path)}"
         rescue RuntimeError => e
           fail "Expected #{path} to be classified as #{klass}, instead of throwing '#{e}'"
         end
@@ -50,7 +50,8 @@ describe Openvault::Pbcore::AssetClassifier do
     it 'for Program' do
       expect_class Program, [
           'mars/program_1.xml',
-          'artesia/rock_and_roll/program_1.xml']
+          'artesia/rock_and_roll/program_1.xml',
+          'artesia/ntw/program_segment.xml']
     end
     
     it 'for Image' do
