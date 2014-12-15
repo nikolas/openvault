@@ -1,3 +1,5 @@
+require 'uri'
+
 Openvault::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   
@@ -101,7 +103,10 @@ Openvault::Application.routes.draw do
   get "/blog/terms-and-conditions/", to: redirect("/terms-and-conditions")
   get "/blog/visiting-the-archives/", to: redirect("/visiting-the-archives")
   # everything else:
-  get '/blog/*path', to: redirect('http://blog.openvault.wgbh.org/%{path}')
+  get '/blog/*path', to: redirect { |params, request| 
+    # With normal % templating, the path was being URL escaped.
+    "http://blog.openvault.wgbh.org/#{params[:path]}" 
+  }
   
   # ad-hoc redirects, based on web-master tools.
   get '/series/:name', to: 'redirect#redirect_series_name'
