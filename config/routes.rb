@@ -1,5 +1,3 @@
-require 'uri'
-
 Openvault::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   
