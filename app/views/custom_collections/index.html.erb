@@ -1,6 +1,6 @@
 <% title "#{application_name} - Collections" %>
 <h2>Scholar Collections</h2>
-<% @custom_collections.each do |collection| %>
+<% @custom_collections.sort_by{|collection| collection.name}.each do |collection| %>
   <div class="row-fluid">
     <div class="span10">
       <br/>
