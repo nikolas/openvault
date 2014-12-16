@@ -1,10 +1,14 @@
 module CustomCollectionItemHelper
 
   def collection_item_link(item, options={})
-    id = item.solr_doc['id']
-    title = "#{item.solr_doc['title_tesim'].first} - #{item.kind}"
-    path = catalog_path(id)
-    link_to title, path, options
+    if item
+      id = item.solr_doc['id']
+      title = "#{item.solr_doc['title_tesim'].first} - #{item.kind}"
+      path = catalog_path(id)
+      link_to title, path, options
+    else
+      # It OUGHT to be there, but that's false so often that we want to be graceful.
+    end
   end
 
   def collection_item_path(item)
