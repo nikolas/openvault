@@ -109,6 +109,20 @@ class OpenvaultAsset < ActiveFedora::Base
     media(:dimensions)
   end
   
+  def cite(format, slug=nil)
+    wgbh = 'WGBH Media Library & Archives'
+    url = "http://openvault.wgbh.org/catalog/#{slug || id}"
+    today = Time.now.strftime("%B %e, %Y")
+    case format
+    when :chicago
+      %Q["#{title}," #{date_portrayed && date_portrayed + ', '}#{wgbh}, accessed #{today}, #{url}.]
+    when :mla
+      %Q["#{title}." #{date_portrayed && date_portrayed + '. '}#{wgbh}. Web. #{today}. <#{url}>.]
+    when :apa
+      %Q[#{title}. Boston, MA: #{wgbh}. Retrieved from #{url}]
+    end
+  end
+  
   private
   
   def media(detail)

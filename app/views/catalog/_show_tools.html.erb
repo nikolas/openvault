@@ -33,9 +33,9 @@
     
 <div class="btn btn-mini" id="cite-button">cite</div>
 <div style="display:none;" id="cite-info">
-  <p>Chicago: lorem ipsum</p>
-  <p>MLA: lorem ipsum</p>
-  <p>APA: lorem ipsum</p>
+  <p>Chicago: <%= @ov_asset.cite(:chicago) %></p>
+  <p>MLA: <%= @ov_asset.cite(:mla) %></p>
+  <p>APA: <%= @ov_asset.cite(:apa) %></p>
 </div>
 <script>
   $('#cite-button').click(function() {
