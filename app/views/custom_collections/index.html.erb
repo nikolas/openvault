@@ -1,17 +1,13 @@
 <% title "#{application_name} - Collections" %>
 <h2>Scholar Collections</h2>
-<% @custom_collections.map {|collection| collection.owner}.uniq.each do |owner| %>
-  <div class="user_block row-fluid">
-    <div class="span2">
-      <%= link_to image_tag(owner.avatar.url(:small)), owner.url rescue '' %>
-    </div>
+<% @custom_collections.sort_by{|collection| collection.name}.each do |collection| %>
+  <div class="row-fluid">
     <div class="span10">
-      <h4><%= link_to owner.full_name, owner.url rescue owner.name %></h4>
-      <p><%= owner.work_string rescue ''%></p>
-      <p><%= safe_truncate owner.bio rescue ''%></p>
-      <% owner.owned_collections.each do |collection| %>
-        <p><%= link_to collection.name, collection %></p>
-      <% end %>
+      <br/>
+      <h4><%= link_to collection.name, collection %></h4>
+      <p><%= collection.summary %></p>
+      <p><%= link_to collection.owner.full_name, collection.owner.url rescue collection.owner.name %></p>
     </div>
   </div>
 <% end %>
+
