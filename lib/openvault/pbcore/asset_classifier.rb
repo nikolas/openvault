@@ -7,12 +7,24 @@ module Openvault::Pbcore
         matches << Kernel.const_get(model) if test.call(doc)
       end
       matches -= [Program] unless matches == [Program]
-      raise NoMatchingActiveFedoraModel, "No matching AF-model for pbcore with ids=#{doc.all_ids.inspect}" if matches.count == 0
-      raise MultipleMatchingActiveFedoraModels, "Multiple matching AF-models: #{matches} for pbcore with ids=#{doc.all_ids.inspect}" if matches.count > 1
+      raise NoMatchingActiveFedoraModel, 
+        "No matching AF-model for pbcore with ids=#{doc.all_ids.inspect}\n#{self.info(doc)}" if matches.count == 0
+      raise MultipleMatchingActiveFedoraModels, 
+        "Multiple matching AF-models: #{matches} for pbcore with ids=#{doc.all_ids.inspect}\n#{self.info(doc)}" if matches.count > 1
       return matches.first
     end
     
     private
+    
+    def self.info(doc)
+      <<EOF 
+asset_type: #{self.asset_type(doc)}
+media_type: #{self.media_type(doc)}
+digital: #{self.digital(doc)} 
+titles_by_type: #{doc.titles_by_type.keys}
+EOF
+    end
+    
     
     MODELS = {
       # Bare classes could be used at runtime, but they choked 'rake dev:ci:prepare'
@@ -34,7 +46,8 @@ module Openvault::Pbcore
       'Video' => lambda {|doc|
         media_type(doc).match(/^moving image$/i) || 
           asset_type(doc).match(/^preservation master$/i) ||
-          digital(doc).match(/^video/)},
+          digital(doc).match(/^video/) ||
+          doc.titles_by_type.keys.include?('Clip')},
       
       'Audio' => lambda {|doc|
         media_type(doc).match(/^audio$/i)},
