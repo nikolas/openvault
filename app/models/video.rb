@@ -23,7 +23,12 @@ class Video < OpenvaultAsset
   end
 
   def title
-    titles_by_type['Element2'] || titles_by_type['Element3'] || titles_by_type['Item2'] || titles_by_type['Clip'] || self.pbcore.asset_type.first
+    titles_by_type['Element2'] || 
+      titles_by_type['Element3'] || 
+      titles_by_type['Item2'] || 
+      titles_by_type['Clip'] ||
+      titles_by_type['Program'] ||
+      self.pbcore.asset_type.first
   end
 
   # Returns the video URL
