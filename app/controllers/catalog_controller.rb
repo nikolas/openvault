@@ -375,10 +375,10 @@ class CatalogController < ApplicationController
 
     # TODO: figure out if keys will always be symbols or strings, or if it 
     # behaves like a HashWithIndifferentAccess.
-    pid = @document[:pid] || @document['pid'] || @document[:id] || @document['id'] if @document
+    pid = @document[:id] || @document['id']
 
     @ov_asset = ActiveFedora::Base.find(pid, cast: true)
-    nil # don't use this method for it's return value. It's purpose is to set attributes for view params.
+    nil # don't use this method for it's return value. Its purpose is to set attributes for view params.
   end
   
 end 

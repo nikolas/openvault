@@ -61,16 +61,16 @@ module ArtifactsHelper
   end
 
   def track_artifact_link(document)
-   track = link_to "Track this item", digitizations_path(pid: document['pid'] || document.id), method: "POST", class: "btn" 
+   track = link_to "Track this item", digitizations_path(pid: document['id']), method: "POST", class: "btn" 
    "Currently in the digitization process... #{track}".html_safe
   end
 
   def request_transcription_link(document)
-    link_to "Request Transcript", transcriptions_path(pid: document['pid'] || document.id), method: "POST", class: "btn"
+    link_to "Request Transcript", transcriptions_path(pid: document['id']), method: "POST", class: "btn"
   end 
 
 
   def request_digitization_link(document)
-    link_to "Request Digitization", digitizations_path(pid: document['pid'] || document.id), method: "POST", class: "btn"
+    link_to "Request Digitization", digitizations_path(pid: document['id']), method: "POST", class: "btn"
   end
 end

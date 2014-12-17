@@ -37,8 +37,7 @@ module TabsHelper
     item = Blacklight.solr.select(params: {q: "id:#{id}"})
     raise Blacklight::Exceptions::InvalidSolrID unless item['response']['docs'].first
     document = item['response']['docs'].first
-    pid = document[:pid] || document['pid'] || id rescue id
-    ov_asset = ActiveFedora::Base.find(pid, cast: true) rescue nil 
+    ov_asset = ActiveFedora::Base.find(id, cast: true) rescue nil 
     {   
       response: response,
       document: document,
