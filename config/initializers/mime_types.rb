@@ -8,7 +8,7 @@ Mime::Type.register "application/marcxml+xml", :marcxml,
 Mime::Type.register "text/xml", :pbcore
 Mime::Type.register nil, :image
 Mime::Type.register "text/plain", :solr
-
+Mime::Type.register 'text/html', :dc_xml # TODO: just a 404 right now.
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
