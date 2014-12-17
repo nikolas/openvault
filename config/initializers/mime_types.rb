@@ -7,6 +7,7 @@ Mime::Type.register "application/marcxml+xml", :marcxml,
        "application/marc+xml"]
 Mime::Type.register "text/xml", :pbcore
 Mime::Type.register nil, :image
+Mime::Type.register "text/plain", :solr
 
 
 # Add new mime types for use in respond_to blocks:
