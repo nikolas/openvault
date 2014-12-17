@@ -5,8 +5,15 @@
     <div class="span10">
       <br/>
       <h4><%= link_to collection.name, collection %></h4>
-      <p><%= collection.summary %></p>
-      <p><%= link_to collection.owner.full_name, collection.owner.url rescue collection.owner.name %></p>
+      <p>by <%= link_to collection.owner.full_name, collection.owner.url rescue collection.owner.name %></p>
+      <p>
+        <% if collection.summary && collection.summary.length > 300 %>
+          <%= collection.summary[0..300] + '... ' %>
+          <%= link_to "read more", collection %>
+        <% else %>
+          <%= collection.summary %>
+        <% end %>
+      </p>
     </div>
   </div>
 <% end %>
