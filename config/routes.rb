@@ -49,7 +49,7 @@ Openvault::Application.routes.draw do
       wpna-wpna-war-and-peace-in-the-nuclear-age
     /x }
   
-  resources :catalog, :only => [:index, :show, :update], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
+  resources :catalog, :only => [:index, :show], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
     member do
       get 'print'
       get 'image'
