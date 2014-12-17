@@ -320,6 +320,9 @@ class CatalogController < ApplicationController
           format.pbcore do
             render text: @ov_asset.pbcore.ng_xml
           end
+          format.solr do
+            render text: @document.to_yaml
+          end
         end
       rescue Blacklight::Exceptions::InvalidSolrID
         render_404
