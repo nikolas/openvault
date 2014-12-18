@@ -7,24 +7,36 @@ require 'date'
 
 describe OaiController do
   
+  def load_save(asset, path)
+    asset.pbcore.ng_xml = Fixtures.raw(path)
+    asset.save!
+  end
+  
   before(:all) do 
     Fixtures.cwd("#{fixture_path}/pbcore")
+        
+    # We'll expect to find this image
+    Image.new.tap { |image|
+      load_save(image, 'artesia/march_on_washington/image_1.xml')
+      Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
+    }
+    # ... but not this one
+    image_to_relate = Image.new.tap { |image|
+      load_save(image, 'artesia/rock_and_roll/image_1.xml')
+      Openvault::SlugSetter.reset_slug(id: image.id, slug: 'RELATED')
+    }
     
-    image = Image.new
-    image.pbcore.ng_xml = Fixtures.raw("artesia/march_on_washington/image_1.xml")
-    image.save!
-    
-    Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
-    
+    # Program won't be returned either.
+    program = Program.new.tap { |program| load_save(program, "artesia/rock_and_roll/program_1.xml") }
+    Openvault::Pbcore::AssetRelationshipBuilder.new(image_to_relate).relate(program)
+
+    # Filler so we can test resumptionTokens
     10.times do
-      audio = Audio.new
-      audio.pbcore.ng_xml = Fixtures.raw("artesia/patriots_day/audio_3.xml")
-      audio.save!
+      Audio.new.tap { |audio| load_save(audio, "artesia/patriots_day/audio_3.xml") }
     end
     
-    series = Series.new
-    series.pbcore.ng_xml = Fixtures.raw("artesia/rock_and_roll/program_1.xml")
-    series.save!
+    # NOTE: test is fragile because it depends on a particular order of ingest,
+    # and assumes results are returned in that same order.
   end
   
   def expect_oai(verb, *opts)
@@ -66,6 +78,7 @@ describe OaiController do
     expect_oai('ListIdentifiers', metadataPrefix: 'pbcore') do |test, xml|
       # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
       test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+      test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
       test.expect(xml.scan('<identifier>').count).to test.eq(10)
       test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
     end
@@ -79,6 +92,7 @@ describe OaiController do
     expect_oai('ListRecords', metadataPrefix: 'pbcore') do |test, xml|
       # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
       test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
+      test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
       test.expect(xml).to test.match 'Civil rights march'
       test.expect(xml.scan('<identifier>').count).to test.eq(10)
       test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'

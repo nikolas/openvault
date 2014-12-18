@@ -37,7 +37,8 @@ class OaiModel
   private
   
   def self.fq
-    ['Video', 'Audio', 'Image'].map{|type| 'has_model_ssim:"info:fedora/afmodel:'+type+'"'}.join(' OR ')
+    ors = ['Video', 'Audio', 'Image'].map{|type| 'has_model_ssim:"info:fedora/afmodel:'+type+'"'}.join(' OR ')
+    "NOT(has_related_video_bsi:true) AND (#{ors})"
   end
   def self.earliest_or_latest(order)
     r = Blacklight.solr.select(params: {
