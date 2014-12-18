@@ -19,15 +19,15 @@ describe '#cite' do
   }
   
   it ':chicago works' do
-    expect(video.cite(:chicago)).to eq("\"Radio program (Master),\" 04/29/2011, WGBH Media Library & Archives, accessed #{today}, http://openvault.wgbh.org/catalog/FAKE_ID.")
+    expect(video.cite(:chicago)).to eq("\"Revisiting the March on Washington,\" 04/29/2011, WGBH Media Library & Archives, accessed #{today}, http://openvault.wgbh.org/catalog/FAKE_ID.")
   end
   
   it ':mla works' do
-    expect(video.cite(:mla)).to eq("\"Radio program (Master).\" 04/29/2011. WGBH Media Library & Archives. Web. #{today}. <http://openvault.wgbh.org/catalog/FAKE_ID>.")
+    expect(video.cite(:mla)).to eq("\"Revisiting the March on Washington.\" 04/29/2011. WGBH Media Library & Archives. Web. #{today}. <http://openvault.wgbh.org/catalog/FAKE_ID>.")
   end
   
   it ':apa works' do
-    expect(video.cite(:apa)).to eq("Radio program (Master). Boston, MA: WGBH Media Library & Archives. Retrieved from http://openvault.wgbh.org/catalog/FAKE_ID")
+    expect(video.cite(:apa)).to eq("Revisiting the March on Washington. Boston, MA: WGBH Media Library & Archives. Retrieved from http://openvault.wgbh.org/catalog/FAKE_ID")
   end
   
 end
