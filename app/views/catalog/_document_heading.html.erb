@@ -17,7 +17,7 @@
       <% unless @document['active_fedora_model_ssi'] == "Series" %>
         <div style="float:right">
           <%= artifact_digitization_link(@document, @digitization_artifact) %>
-          <%= artifact_transcription_link(@document, @transcription_artifact) %>
+          <%= artifact_transcription_link(@document, @transcription_artifact, @ov_asset) %>
         </div>
       <% end %>
       <%= render partial: 'catalog/show_tools' %>

@@ -1,7 +1,10 @@
 module ArtifactsHelper
-  def artifact_transcription_link(document, artifact)
+  def artifact_transcription_link(document, artifact, ov_asset)
+    begin
+      return nil unless ov_asset.transcripts.empty?
+    rescue NoMethodError
+    end
     return nil if published_artifact?(artifact)
-    return nil if artifact && artifact.ov_asset.transcripts.size >= 1
     return nil if artifact && !%w(audio video series).include?(artifact.ov_asset.kind)
     return authenticated_transcription_link(document, artifact) if current_user
     unauthenticated_digitization_link
