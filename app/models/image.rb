@@ -10,7 +10,7 @@ class Image < OpenvaultAsset
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "image_url", self.image_url, :displayable)
     Solrizer.insert_field(solr_document, "has_related_video", [self.has_related_video?])
-    # (It won't except a bare false.)
+    # (It won't accept a bare false.)
     
     return solr_document
   end
