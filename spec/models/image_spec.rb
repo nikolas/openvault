@@ -27,4 +27,11 @@ describe Image do
     end
   end
   
+  describe '#to_solr' do
+    it 'looks for related videos' do
+      image.pbcore.ng_xml = Fixtures.use('artesia/rock_and_roll/image_1.xml').ng_xml
+      expect(image.to_solr['has_related_video_bsi']).to eq(false)
+    end
+  end
+  
 end
