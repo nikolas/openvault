@@ -14,7 +14,7 @@
       <%= display_date @document %>
     </div>
     <div class="tools">
-      <% unless @document['active_fedora_model_ssi'] == "Series" %>
+      <% unless ['Series','Image'].include?(@document['active_fedora_model_ssi']) %>
         <div style="float:right">
           <%= artifact_digitization_link(@document, @digitization_artifact) %>
           <%= artifact_transcription_link(@document, @transcription_artifact) %>
