@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'openvault/pbcore'
+require 'openvault/slug_setter'
 # require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 # RSpec::Matchers.define :be_associated_with do |*expected|
@@ -76,6 +77,25 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
     let(:transcript) { Transcript.new }
 
     let(:builder) { Openvault::Pbcore::AssetRelationshipBuilder.new(asset_subject) }
+    
+    context 'interaction with slugs' do
+      let(:asset_subject) { image }
+      def expect_one_slugged
+        expect(
+          ActiveFedora::SolrService.instance.conn.get('select', params: {q: "slug:SLUG"})['response']['docs'].count
+        ).to eq 1
+      end
+      
+      it "doesn't delete slugs" do
+        image.save!
+        Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
+        expect_one_slugged
+        builder.relate video
+        expect_one_slugged
+        image.save!
+        expect_one_slugged # TODO: This one fails.
+      end
+    end
     
     context 'when #asset is a Series' do
 
@@ -232,10 +252,6 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
       builder = Openvault::Pbcore::AssetRelationshipBuilder.new(series)
       expect{ builder.relate transcript }.to raise_error Openvault::Pbcore::AssetRelationshipBuilder::UnhandledRelationType
     end
-
-
-
-
 
   end
 
