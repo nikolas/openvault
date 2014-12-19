@@ -2,17 +2,20 @@
 
 # Openvault
 
-## Overview
-
 [Openvault](http://openvault.wgbh.org) is Rails/Hydra application which makes available to the public
 most of the metadata for WGBH media assets, and a small selection of our media.
 
-### Related projects
+## Related projects
 
 **Boston TV News Digital Library**: 
 ([site](http://bostonlocaltv.org) [github](https://github.com/WGBH/bostonlocaltv))
 Footage from WGBH's *Ten O'Clock News* is here, along with footage from other area broadcasters.
 (It's probably more difficult than it ought to be for people on Openvault to discover the News site.)
+
+**Stock Sales**:
+([site](http://www.wgbhstocksales.org/) [github](https://github.com/WGBH/stock_sales))
+If folks want to purchase footage, they should be directed to Stock Sales.
+More connections between the two site might promote more sales.
 
 **PBCore**: ([docs](http://pbcore.org/)) An XML standard for public broadcasting metadata.
 This is what we store in Fedora. You shouldn't need to worry about the details: access is 
@@ -74,7 +77,15 @@ The most important tweak in ours is `#lookup_and_set_fields` which allows items 
 
 ### `models/`
 
-*TODO*
+The most important are the subclasses of `OpenvaultAsset`:
+- A `Series` has multiple ...
+- `Program`s which in turn have
+- `Video`,
+- `Audio`,
+- `Image`, and
+- `Transcript`
+
+Instances are linked in Fedora, and these links are exposed in the UI.
 
 ### `views/`
 
