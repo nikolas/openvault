@@ -1,6 +1,4 @@
 class Audio < OpenvaultAsset
-  COVERAGE = ['complete', 'clip', 'segment']
-
   has_many :transcripts, :property => :transcript_audio  
   has_many :images, :property => :image_audio
   belongs_to :program, :property => :audio_program
