@@ -20,23 +20,29 @@ describe OaiController do
       load_save(image, 'artesia/march_on_washington/image_1.xml')
       Openvault::SlugSetter.reset_slug(id: image.id, slug: 'SLUG')
     }
-    # ... but not this one
+
+    # ... but not this one, after we relate it to a video.
     image_to_relate = Image.new.tap { |image|
       load_save(image, 'artesia/rock_and_roll/image_1.xml')
       Openvault::SlugSetter.reset_slug(id: image.id, slug: 'RELATED')
     }
     
-    # Program won't be returned either.
-    program = Program.new.tap { |program| load_save(program, "artesia/rock_and_roll/program_1.xml") }
-    Openvault::Pbcore::AssetRelationshipBuilder.new(image_to_relate).relate(program)
-
+    # The video itself will be returned.
+    video = Video.new.tap { |video| load_save(video, "artesia/rock_and_roll/video_1.xml")}
+    Openvault::Pbcore::AssetRelationshipBuilder.new(image_to_relate).relate(video)
+    image_to_relate.save! # So that has_related_video is set properly
+    
+    # TODO: For reasons I don't understand, the slug is lost after being related,
+    # so we re-establish it here. issue #1096
+    Openvault::SlugSetter.reset_slug(id: image_to_relate.id, slug: 'RELATED')
+    
+    # Program won't be returned.
+    Program.new.tap { |program| load_save(program, "artesia/rock_and_roll/program_1.xml") }
+    
     # Filler so we can test resumptionTokens
-    10.times do
+    9.times do
       Audio.new.tap { |audio| load_save(audio, "artesia/patriots_day/audio_3.xml") }
     end
-    
-    # NOTE: test is fragile because it depends on a particular order of ingest,
-    # and assumes results are returned in that same order.
   end
   
   def expect_oai(verb, *opts)
@@ -83,7 +89,8 @@ describe OaiController do
       test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
     end
     expect_oai('ListIdentifiers', resumptionToken: '10') do |test, xml|
-      test.expect(xml.scan('<identifier>').count).to test.eq(1)
+      test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
+      test.expect(xml.scan('<identifier>').count).to test.eq(1) # TODO: FAILING
       test.expect(xml).not_to test.match '<resumptionToken>'
     end
   end
@@ -98,7 +105,8 @@ describe OaiController do
       test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
     end
     expect_oai('ListRecords', resumptionToken: '10') do |test, xml|
-      test.expect(xml.scan('<identifier>').count).to test.eq(1)
+      test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
+      test.expect(xml.scan('<identifier>').count).to test.eq(1) # TODO: FAILING
       test.expect(xml).not_to test.match '<resumptionToken>'
     end
   end
