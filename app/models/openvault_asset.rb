@@ -33,6 +33,10 @@ class OpenvaultAsset < ActiveFedora::Base
   def title
     self.pbcore.all_titles.first
   end
+  
+  def original_file_name
+    self.pbcore.original_file_name.first
+  end
 
   def summary
     # '.last' in this case because the summary supplied by the scholar follows the original description.

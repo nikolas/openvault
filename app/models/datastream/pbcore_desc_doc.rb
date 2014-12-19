@@ -7,6 +7,8 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.source(path: {attribute: 'source'})
     }
 
+    t.original_file_name(path: 'pbcoreInstantiation/instantiationIdentifier[@source="Original file name"]')
+    
     # Terminology for <pbcoreTitle>
 
     t.series_title(path: "pbcoreTitle", attributes: { titleType: "Series"})
