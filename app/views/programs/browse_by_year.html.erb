@@ -5,8 +5,8 @@
     <tr>
       <% (decade..(decade+9)).each do |year| %>
         <td>
-          <%= link_to year, "http://openvault.wgbh.org/catalog?range[dc_date_year_i][begin]=#{year}
-&range[dc_date_year_i][end]=#{year+1}" if year.between? 1951, Time.now().year %>
+          <%= link_to year, "http://openvault.wgbh.org/catalog?range[broadcast_date_dtsim][begin]=#{year}
+&range[broadcast_date_dtsim][end]=#{year+1}" if year.between? 1951, Time.now().year %>
         </td>
       <% end %>
     </tr>

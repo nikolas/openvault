@@ -13,6 +13,7 @@ class Program < OpenvaultAsset
     Solrizer.insert_field(solr_document, "audios", self.all_audios, :displayable, :searchable)
     Solrizer.insert_field(solr_document, "audio_count", self.audios.count, :displayable)
     Solrizer.insert_field(solr_document, "images", self.all_images, :displayable, :searchable)
+    Solrizer.insert_field(solr_document, "broadcast_date", self.broadcast_date, :stored_searchable, :dateable)
     return solr_document
   end
 
