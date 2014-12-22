@@ -111,5 +111,8 @@ Openvault::Application.routes.draw do
   get '/:name/:mla_number(/*path)', to: 'redirect#redirect_series_mla', constraints: { mla_number: /MLA\d+/ }
   get '/wapina/:barcode(/*path)', to: 'redirect#redirect_wapina_barcode'
   
-  get '/*path', to: 'override#show', constraints: { :path => /[a-z\/-]+/ }
+  get '/*path', to: 'override#show', constraints: lambda { |req| 
+    path = req.params['path']
+    path.match(/^[a-z\/-]+$/) && !path.match(/^rails/) 
+  }
 end
