@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'openvault/pbcore'
+require 'openvault/slug_setter'
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe CatalogController do
@@ -110,18 +111,35 @@ describe CatalogController do
       a.save!
       Openvault::Pbcore::AssetRelationshipBuilder.new(a).establish_relationships_in_fedora
       @id = a.pid
+      @slug = 'SLUG'
+      
+      Openvault::SlugSetter.reset_slug(id: @id, slug: @slug)
+    end
+    
+    describe "slug redirection" do
+      subject { get :show, {id: @id} }
+      it 'works' do
+        expect(subject).to redirect_to("http://www.openvault.wgbh.org/catalog/#{@slug}")
+      end
     end
 
-    describe "GET show xml" do
+    describe "GET show (slug)" do
       it "returns a valid solr document" do
-        get :show, {format: 'xml', id: @id}
+        get :show, {id: @slug}
         expect_not_nil(:document)
       end
     end
     
-    describe "GET show" do
+    describe "GET show (pid)" do
       it "returns a valid solr document" do
         get :show, {id: @id}
+        expect_not_nil(:document)
+      end
+    end
+    
+    describe "GET show xml" do
+      it "returns a valid solr document" do
+        get :show, {format: 'xml', id: @id}
         expect_not_nil(:document)
       end
     end

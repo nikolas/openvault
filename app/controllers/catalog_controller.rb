@@ -305,23 +305,27 @@ class CatalogController < ApplicationController
     else
       begin
         lookup_and_set_fields
-        respond_to do |format|
-          format.html do
-            @country_code = Openvault::GeoipHelper.get_country_code_for_ip(request.remote_ip)
-            render action: @ov_asset.class.to_s.downcase + '/show'
-          end
-          format.image do
-            redirect_to @ov_asset.thumbnail_url
-          end
-          format.xml do
-            # TODO: The DC is empty.
-            render text: @document.export_as_oai_dc_xml
-          end
-          format.pbcore do
-            render text: @ov_asset.pbcore.ng_xml
-          end
-          format.solr do
-            render text: @document.to_yaml
+        if @document['slug'] && (@document['slug'] != params[:id])
+          redirect_to "http://www.openvault.wgbh.org/catalog/#{@document['slug']}"
+        else
+          respond_to do |format|
+            format.html do
+              @country_code = Openvault::GeoipHelper.get_country_code_for_ip(request.remote_ip)
+              render action: @ov_asset.class.to_s.downcase + '/show'
+            end
+            format.image do
+              redirect_to @ov_asset.thumbnail_url
+            end
+            format.xml do
+              # TODO: The DC is empty.
+              render text: @document.export_as_oai_dc_xml
+            end
+            format.pbcore do
+              render text: @ov_asset.pbcore.ng_xml
+            end
+            format.solr do
+              render text: @document.to_yaml
+            end
           end
         end
       rescue Blacklight::Exceptions::InvalidSolrID
