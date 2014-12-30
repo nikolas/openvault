@@ -8,7 +8,6 @@
   
   <fields>
     <field name="id"  type="string" stored="true" indexed="true"  multiValued="false" required="true"/>
-    <field name="pid" type="string" stored="true" indexed="true"  multiValued="false" required="false"/>
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
     
     <field name="lat" type="tdouble" stored="true" indexed="true" multiValued="false"/>
