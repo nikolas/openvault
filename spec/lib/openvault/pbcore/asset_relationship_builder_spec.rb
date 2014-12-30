@@ -201,9 +201,7 @@ describe Openvault::Pbcore::AssetRelationshipBuilder do
       end
 
       it 'relates a Video' do
-        expect(image.has_related_video?).to eq false
         builder.relate video
-        expect(image.has_related_video?).to eq true
         expect(builder.asset.video).to eq video
       end
 

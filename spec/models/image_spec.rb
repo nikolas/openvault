@@ -33,5 +33,17 @@ describe Image do
       expect(image.to_solr['has_related_video_bsi']).to eq(false)
     end
   end
+
+  describe '#has_related_video?' do
+    it 'returns true when the Image has a related Video' do
+      allow(image).to receive(:video) { Video.new }
+      expect(image.has_related_video?).to eq true
+    end
+
+    it 'returns false when the Image does not have a related Video' do
+      allow(image).to receive(:video) { nil }
+      expect(image.has_related_video?).to eq false
+    end
+  end
   
 end
