@@ -9,6 +9,9 @@ class Image < OpenvaultAsset
   def to_solr(solr_document={}, options={})
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "image_url", self.image_url, :displayable)
+    Solrizer.insert_field(solr_document, "has_related_video", [self.has_related_video?])
+    # (It won't accept a bare false.)
+    
     return solr_document
   end
 
@@ -18,6 +21,10 @@ class Image < OpenvaultAsset
   
   def image_url
     "#{media_host}/images/#{original_file_name}" if original_file_name
+  end
+  
+  def has_related_video?
+    !!video
   end
 
   def title
