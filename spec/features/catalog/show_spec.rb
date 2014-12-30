@@ -108,20 +108,18 @@ feature "User visits catalog#show" do
       expect_404
     end
 
+    it "dc_xml returns 404 for the moment" do
+      visit "/catalog/#{@audio.pid}.dc_xml"
+      expect_404
+    end
+    
     describe "unimplemented extension returns 406" do
-      # TODO .dc_xml is rendering html right now.
-      ['json', 'atom', 'rss'].each do |extension|
+      ['json', 'atom', 'rss', 'random_gibberish'].each do |extension|
         it "for .#{extension}" do
           visit "/catalog/#{@audio.pid}.#{extension}"
           expect_406
         end
       end
-    end
-
-    pending "random extension returns 404" do
-      # bug filed: https://github.com/afred/openvault/issues/965
-      visit "/catalog/#{@audio.pid}.random"
-      expect_404
     end
 
     def expect_406
