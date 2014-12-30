@@ -82,6 +82,23 @@ describe CatalogController do
       Openvault::Pbcore::AssetRelationshipBuilder.new(a).establish_relationships_in_fedora
       @id = a.pid
     end
+    
+    describe "GET date range" do
+      it "works same year" do
+        get :index, {'range[broadcast_date_dtsim][begin]' => '2010', 'range[broadcast_date_dtsim][end]' => '2011'}
+        expect(assigns(:document_list).count).to eq(1)
+      end
+      
+      xit "excludes before" do
+        get :index, {'range[broadcast_date_dtsim][begin]' => '2009', 'range[broadcast_date_dtsim][end]' => '2010'}
+        expect(assigns(:document_list).count).to eq(0)
+      end
+      
+      xit "excludes after" do
+        get :index, {'range[broadcast_date_dtsim][begin]' => '2011', 'range[broadcast_date_dtsim][end]' => '2012'}
+        expect(assigns(:document_list).count).to eq(0)
+      end
+    end
 
     describe "GET show" do
       it "returns a valid solr document" do
