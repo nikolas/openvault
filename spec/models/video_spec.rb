@@ -27,8 +27,8 @@ describe Video do
   end
 
   describe '#original_file_name' do
-    it 'returns an empty string when the Video has no pbcore xml' do
-      expect(video.original_file_name).to eq ''
+    it 'returns nil when the Video has no pbcore xml' do
+      expect(video.original_file_name).to eq nil
     end
   end
 

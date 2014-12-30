@@ -1,8 +1,4 @@
 class Video < OpenvaultAsset
-  include PbcoreAccessors
-
-  COVERAGE = ['complete', 'clip', 'segment']
-
   has_many :transcripts, :property => :transcript_video
   has_many :images, :property => :image_video
   belongs_to :program, :property => :video_program

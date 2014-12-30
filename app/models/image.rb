@@ -1,7 +1,5 @@
 #Should this belong to audio or video stream?
 class Image < OpenvaultAsset
-  include PbcoreAccessors
-  
   belongs_to :video, :property => :image_video
   belongs_to :program, :property => :image_program
   belongs_to :series, :property => :series_image # TODO: doesn't seem right.
