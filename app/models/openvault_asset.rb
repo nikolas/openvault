@@ -126,6 +126,10 @@ class OpenvaultAsset < ActiveFedora::Base
       %Q[#{title}. Boston, MA: #{wgbh}. Retrieved from #{url}]
     end
   end
+
+  def publisher_names_and_roles
+    self.pbcore.publisher_names_and_roles
+  end
   
   private
   
