@@ -115,6 +115,12 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.type(path: 'coverageType')
     }
 
+    # Publisher
+    t.publishers(path: 'pbcorePublisher') {
+      t.name(path: 'publisher')
+      t.role(path: 'publisherRole')
+    }
+
   end
 
   def self.xml_template
@@ -166,5 +172,19 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
 
   def digital
     return self.instantiations.digital.first
+  end
+
+  # publisher_names_and_roles
+  # Returns an array of hashes. Each hash has two keys: 'name' and 'role', which correspond to each <publisher> and <publisherRole> pair.
+  def publisher_names_and_roles
+    publishers = []
+    for i in 0..(self.publishers.count-1)
+      publisher = {
+        name: self.publishers(i).name.first,
+        role: self.publishers(i).role.first
+      }
+      publishers << publisher
+    end
+    publishers
   end
 end

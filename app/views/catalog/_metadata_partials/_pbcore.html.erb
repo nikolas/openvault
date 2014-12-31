@@ -82,6 +82,12 @@
     <div>
       <h4>Rights</h4>
     
+      <% if !@ov_asset.publisher_names_and_roles.empty? %>
+        <% @ov_asset.publisher_names_and_roles.each do |publisher_name_and_role| %>
+          <p><strong><%= publisher_name_and_role[:role] %></strong> <%= publisher_name_and_role[:name] %></p>
+        <% end %>
+      <% end %>
+
       <% if @ov_asset.rights_rights %>
         <p><strong>Rights</strong> <%= @ov_asset.rights_rights %></p>
       <% end %>
