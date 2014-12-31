@@ -1,0 +1,13 @@
+// Styles for overrides. To see how it works, see OverrideController class in
+// app/controllers/override_controller.rb, and the files under
+// app/views/override/. That's not a comprehensive how-to, but it's all we have
+// for now, so it's the best place to start.
+
+
+.override {
+  .header {
+    img {
+      margin-right: 10px;
+    }
+  }
+}
