@@ -306,7 +306,7 @@ class CatalogController < ApplicationController
       begin
         lookup_and_set_fields
         if @document['slug'] && (@document['slug'] != params[:id])
-          redirect_to "http://www.openvault.wgbh.org/catalog/#{@document['slug']}"
+          redirect_to "/catalog/#{@document['slug']}"
         else
           respond_to do |format|
             format.html do

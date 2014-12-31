@@ -136,7 +136,7 @@ describe CatalogController do
     describe "slug redirection" do
       subject { get :show, {id: @id} }
       it 'works' do
-        expect(subject).to redirect_to("http://www.openvault.wgbh.org/catalog/#{@slug}")
+        expect(subject).to redirect_to("/catalog/#{@slug}")
       end
     end
 
