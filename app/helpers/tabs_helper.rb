@@ -4,15 +4,15 @@ module TabsHelper
     { title: title, content: render(partial: 'override/partials/asset_table', locals: { assets: assets } ) }
   end
   
-  def tabs_for(slug,tab_names)
-    media = lookup_media(slug)
+  def tabs_for(id_or_slug, tab_names)
+    media = lookup_media(id_or_slug)
     tab_names.map{|tab_name| tab_opts(tab_name.to_s.capitalize, media[tab_name] || [])}
   end
   
   private 
   
-  def lookup_media(slug)
-    series = lookup(slug)[:ov_asset]
+  def lookup_media(id_or_slug)
+    series = lookup(id_or_slug)[:ov_asset]
     programs = series.programs
     videos = series.videos + programs.map{|p| p.videos}.flatten
     audios = series.audios + programs.map{|p| p.audios}.flatten
@@ -26,18 +26,26 @@ module TabsHelper
       images: images
     }
   rescue Blacklight::Exceptions::InvalidSolrID
-    logger.error("Failed to find '#{slug}': tabs on that series page will be empty.")
+    logger.error("Failed to find '#{id_or_slug}': tabs on that series page will be empty.")
     {}
   end
   
   # TODO: started as copy-and-paste from lookup_by_slug.
   # Need to figure out a better way of doing this: Requiring
   # that module as-is caused lots of problems at Rails start up.
-  def lookup id
-    item = Blacklight.solr.select(params: {q: "id:#{id}"})
+  def lookup id_or_slug
+    
+    # first try searching the 'id' field
+    item = Blacklight.solr.select(params: {q: "id:#{id_or_slug}"})
+    
+    # search by 'slug' field if searching by 'id' field returned no results.
+    item = Blacklight.solr.select(params: {q: "slug:#{id_or_slug}"}) if (item['response']['numFound'] == 0)
+
+    # raise an exception if nothing was found.
     raise Blacklight::Exceptions::InvalidSolrID unless item['response']['docs'].first
+
     document = item['response']['docs'].first
-    ov_asset = ActiveFedora::Base.find(id, cast: true) rescue nil 
+    ov_asset = ActiveFedora::Base.find(document['id'], cast: true) rescue nil 
     {   
       response: response,
       document: document,
