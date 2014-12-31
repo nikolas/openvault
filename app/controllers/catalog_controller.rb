@@ -326,9 +326,9 @@ class CatalogController < ApplicationController
             format.solr do
               render text: @document.to_yaml
             end
-          end
-          format.dc_xml do
-            render_404
+            format.dc_xml do
+              render_404
+            end
           end
         end
       rescue Blacklight::Exceptions::InvalidSolrID
