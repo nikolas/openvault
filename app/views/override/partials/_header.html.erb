@@ -1,20 +1,14 @@
-<% title "#{application_name} - #{title}" %>
-<div class="document_heading">
-  <h1><%= title %></h1>
-</div>
+<div class="header">
+  <% title "#{application_name} - #{title}" %>
+  <div class="document_heading">
+    <h1><%= title %></h1>
+  </div>
 
-<div class="tools">
-  <ul class="tools">
-    <li class="share">
-      <%= render partial: 'global_partials/share' %>
-    </li>
-  </ul>
-</div>
+  <div class="pull-left">
+    <img src="http://blog.openvault.wgbh.org/wp-content/uploads/<%= wp_img %>" alt="<%= title %>"/>
+  </div>
 
-<div class="pull-left">
-  <img src="http://blog.openvault.wgbh.org/wp-content/uploads/<%= wp_img %>" alt="<%= title %>"/>
-</div>
-
-<div class="clearfix">
-  <%= yield %>
+  <div class="clearfix">
+    <%= yield %>
+  </div>
 </div>
