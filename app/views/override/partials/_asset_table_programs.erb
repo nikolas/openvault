@@ -1,0 +1,11 @@
+<table width='100%' class="asset-table"><tr>
+  <% assets.in_groups(2,false) do |group| %>
+    <td><ul>
+      <% group.each do |asset|  %>
+        <li>
+          <a href="<%= catalog_path(asset) %>"><%= asset.episode %>: <%= asset.title %></a>
+        </li>
+      <% end %>
+    </ul></td>
+  <% end %>
+</tr></table>
