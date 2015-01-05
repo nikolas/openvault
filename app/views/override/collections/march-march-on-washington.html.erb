@@ -1,10 +1,27 @@
-<div class='override'>
+<div>
   <%= render layout: 'override/partials/header', 
              locals: { title: 'March on Washington', wp_img: '2014/10/Exhibit_MoW.jpg' } do %>
     <p>The 1963 March on Washington for Jobs and Freedom featured an estimated 250,000 peaceful demonstrators walking from the Washington Monument to the Lincoln Memorial to hear a political call to arms for economic equality and civil rights for African Americans. Credited with being the final impetus to the passing of the 1964 Civil Rights Act, the event famously ended with Martin Luther King Jr.’s historic “I have a dream” speech.</p>
   <% end %>
   
-  <%# TODO: Is there a program to look under? %>
+  <% content_for :coverage do %>
+    TODO: coverage
+  <% end %>
+    
+  <% content_for :revisiting do %>
+    TODO: revisiting
+  <% end %>
+    
+  <% content_for :photographs do %>
+    TODO: photographs
+  <% end %>
+    
+  <%= render partial: 'global_partials/tabs', locals: { 
+      tabs: [
+        { title: "ERN's Coverage", content: content_for(:coverage) },
+        { title: "Revisiting the March on Washington", content: content_for(:revisiting) },
+        { title: "Photographs", content: content_for(:photographs) }]
+    } %>
   
   <hr>
   <div>
