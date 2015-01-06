@@ -12,7 +12,7 @@ module TabsHelper
     {
       title: title,
       content: (tab_name == :programs) ?
-        render(partial: 'override/partials/asset_table_programs', locals: { assets: assets.sort_by {|p| p.episode} } )
+        render(partial: 'override/partials/asset_table_programs', locals: { assets: assets.sort_by {|p| p.episode.to_i} } )
         : render(partial: 'override/partials/asset_table', locals: { assets: assets } )
     }
   end
