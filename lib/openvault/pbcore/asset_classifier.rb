@@ -29,7 +29,7 @@ EOF
     MODELS = {
       # Bare classes could be used at runtime, but they choked 'rake dev:ci:prepare'
       'Series' => lambda {|doc| 
-        (doc.titles_by_type.keys == ['Series']) &&
+        ([['Series'],['Collection','Series']].include? doc.titles_by_type.keys.sort) &&
           doc.instantiation.media_type.empty? &&
           doc.instantiation.digital.empty?},
       
