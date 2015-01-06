@@ -43,6 +43,7 @@ Fixtures.load([
   
   'pbcore_rights.xml',
   'pbcore_media.xml',
+  'pbcore_rogue_video.xml',
   'pbcore_contributors.xml',
   'pbcore_subject.xml'
 ]) do |fixture|
