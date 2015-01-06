@@ -31,8 +31,8 @@ EOF
       'Series' => lambda {|doc| 
         !doc.series_title.empty? && 
           doc.program_title.empty? && 
-          doc.instantiations.media_type.empty? &&
-          doc.instantiations.digital.empty?},
+          doc.instantiation.media_type.empty? &&
+          doc.instantiation.digital.empty?},
       
       'Program' => lambda {|doc|
         !doc.program_title.empty? &&
@@ -64,11 +64,11 @@ EOF
     end
     
     def self.media_type(doc)
-      doc.instantiations(0).media_type.first || ''
+      doc.instantiation(0).media_type.first || ''
     end
     
     def self.digital(doc)
-      doc.instantiations.digital.first || ''
+      doc.instantiation.digital.first || ''
     end
 
 

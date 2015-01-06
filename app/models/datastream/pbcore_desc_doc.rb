@@ -71,16 +71,13 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
       t.physical(path: 'instantiationPhysical')
       t.standard(path: 'instantiationStandard')
       t.duration(path: 'instantiationDuration')
-    }
-    
-    t.instantiations(path: "pbcoreInstantiation") { # TODO: The plural doesn't seem right. Combine with above?
       t.media_type(path: 'instantiationMediaType')
       t.digital(path: 'instantiationDigital')
       t.id(path: 'instantiationIdentifier') {
         t.source(path: {attribute: 'source'})
       }
     }
-
+    
     # Relations
     t.relations(path: 'pbcoreRelation') {
       t.type(path: 'pbcoreRelationType')
@@ -149,7 +146,7 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
   end
 
   def digital
-    return self.instantiations.digital.first
+    return self.instantiation.digital.first
   end
 
   # publisher_names_and_roles
