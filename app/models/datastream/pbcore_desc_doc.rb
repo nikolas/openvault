@@ -109,6 +109,14 @@ class PbcoreDescDoc < ActiveFedora::OmDatastream
     end
     titles
   end
+  
+  def descriptions_by_type
+    descriptions = {}
+    for i in 0..(self.all_descriptions.count - 1)
+        descriptions[self.all_descriptions(i).type.first] = self.all_descriptions[i]
+    end
+    descriptions
+  end
 
   def ids_by_source
     ids = {}
