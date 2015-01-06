@@ -1,0 +1,10 @@
+<pbcoreDescriptionDocument>
+    <pbcoreIdentifier source="openvault" annotation="Solr ID">ntw-mla000211-high-hot-moons</pbcoreIdentifier>
+    <pbcoreIdentifier source="openvault" annotation="Fedora PID">org.wgbh.mla:MLA000211</pbcoreIdentifier>
+    <pbcoreTitle titleType="Clip">High Hot Moons</pbcoreTitle>
+    <pbcoreTitle titleType="Series">Frames of Reference</pbcoreTitle>
+    <pbcoreSubject source="LC">Charleston (Dance)</pbcoreSubject>
+    <pbcoreSubject source="LC">Dance</pbcoreSubject>
+    <pbcoreDescription descriptionType="Clip">In "High Hot Moons" ...</pbcoreDescription>
+    <pbcoreDescription descriptionType="Series">The New Television Workshop originated at WGBH, ...</pbcoreDescription>
+</pbcoreDescriptionDocument>
