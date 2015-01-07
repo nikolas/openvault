@@ -1,15 +1,21 @@
 module TabsHelper
   
-  def tab_opts(title,assets)
-    { title: title, content: render(partial: 'override/partials/asset_table', locals: { assets: assets } ) }
-  end
-  
   def tabs_for(id_or_slug, tab_names)
     media = lookup_media(id_or_slug)
-    tab_names.map{|tab_name| tab_opts(tab_name.to_s.capitalize, media[tab_name] || [])}
+    tab_names.map{|tab_name| tab_opts(tab_name, media[tab_name] || [])}
   end
   
   private 
+  
+  def tab_opts(tab_name, assets)
+    title = tab_name.to_s.capitalize
+    {
+      title: title,
+      content: (tab_name == :programs) ?
+        render(partial: 'override/partials/asset_table_programs', locals: { assets: assets.sort_by {|p| p.episode.to_i} } )
+        : render(partial: 'override/partials/asset_table', locals: { assets: assets } )
+    }
+  end
   
   def lookup_media(id_or_slug)
     series = lookup(id_or_slug)[:ov_asset]
