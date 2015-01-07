@@ -3,7 +3,9 @@
     <td><ul>
       <% group.each do |asset|  %>
         <li>
-          <a href="<%= catalog_path(asset) %>"><%= asset.episode %>: <%= asset.title %></a>
+          <a href="<%= catalog_path(asset) %>"><%= 
+            "#{asset.episode}: " if asset.episode && asset.episode != 0  
+          %><%= asset.title %></a>
         </li>
       <% end %>
     </ul></td>
