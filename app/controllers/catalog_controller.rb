@@ -51,17 +51,16 @@ class CatalogController < ApplicationController
       :qf => 'text'
     }
     
-    # config.index.show_link = 'title_clip_ssm'
-    config.index.show_link = 'title_teim'
-    config.add_index_field 'series_ssm', :label => 'Program'
-    config.add_index_field 'media_ssm', :label => 'Media'
-    
-# 
-#     # solr field configuration for document/show views
-    config.show.html_title = 'title_clip_ssm'
-    config.show.heading = 'title_clip_ssm'
-    config.show.display_type = 'has_model_ssim'
-    config.add_show_field 'subject_name_ssm', :label => 'Topics:'
+#    # config.index.show_link = 'title_clip_ssm'
+#    config.index.show_link = 'title_teim'
+#    config.add_index_field 'series_ssm', :label => 'Program'
+#    config.add_index_field 'media_ssm', :label => 'Media'
+#    
+#    # solr field configuration for document/show views
+#    config.show.html_title = 'title_clip_ssm'
+#    config.show.heading = 'title_clip_ssm'
+#    config.show.display_type = 'has_model_ssim'
+#    config.add_show_field 'subject_name_ssm', :label => 'Topics:'
 
 # 
 #     # solr fields that will be treated as facets by the blacklight application
@@ -191,15 +190,15 @@ class CatalogController < ApplicationController
 #         :pf => '$subject_pf'
 #       }
 #     end
-      config.more_like_this = {
-        :qt => 'mlt',
-        :'mlt.fl' => "title_tesim, summary_tesim",
-        :'mlt.mintf' => 1,
-        :'mlt.mindf' => 1,
-        :'mlt.match.include' => false,
-        :'mlt.count' => 3,
-        :'mlt.maxqt' => 50
-      }
+#      config.more_like_this = {
+#        :qt => 'mlt',
+#        :'mlt.fl' => "title_tesim, summary_tesim",
+#        :'mlt.mintf' => 1,
+#        :'mlt.mindf' => 1,
+#        :'mlt.match.include' => false,
+#        :'mlt.count' => 3,
+#        :'mlt.maxqt' => 50
+#      }
 # 
 #     # "sort results by" select (pulldown)
 #     # label in pulldown is followed by the name of the SOLR field to sort by and
