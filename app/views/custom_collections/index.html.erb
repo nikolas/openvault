@@ -1,6 +1,20 @@
 <% title "#{application_name} - Collections" %>
 <h2>Scholar Collections</h2>
-<% @custom_collections.sort_by{|collection| collection.name}.each do |collection| %>
+<div class="row-fluid">
+  <div class="span10">
+    <br/>
+    <%# She has a whole lot of articles, and we don't want hers to dominate this page. %>
+    <h4><%= link_to 'From The WGBH Vault Articles', '/scholar/elizabeth-deane' %></h4>
+    <p>by <%= link_to 'Elizabeth Deane', '/scholar/elizabeth-deane' %></p>
+    <p>
+      This collection of articles highlights content from the WGBH Media Library and Archives 
+      that are of historical or cultural significance. They were composed by longtime WGBH 
+      producer and writer, Elizabeth Deane.
+    </p>
+  </div>
+</div>
+
+<% @custom_collections.sort_by{|c| c.name}.reject{|c| c.owner.full_name == 'Elizabeth Deane'}.each do |collection| %>
   <div class="row-fluid">
     <div class="span10">
       <br/>
