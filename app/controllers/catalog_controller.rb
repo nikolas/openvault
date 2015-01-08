@@ -48,7 +48,8 @@ class CatalogController < ApplicationController
       :qt => 'search',
       :rows => 10,
       :defType => 'edismax',
-      :qf => 'text'
+      :qf => 'text',
+      :fq => 'NOT media_sim:Transcript'
     }
     
     # config.index.show_link = 'title_clip_ssm'
