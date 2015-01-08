@@ -5,7 +5,7 @@
   <% end %>
     
   <% content_for :coverage do %>
-    <%# fq: 'media_sim:"Audio"', q: 'summary_tesim:"March on Washington" title_tesim:"Part"' %>
+    <%# fq: 'has_model_ssim:"info:fedora/afmodel:Audio"', q: 'summary_tesim:"March on Washington" title_tesim:"Part"' %>
     <a href='/catalog/openvault:51022'>Part 1 of 17</a><br/>
     <a href='/catalog/openvault:50902'>Part 2 of 17</a><br/>
     <a href='/catalog/openvault:49163'>Part 3 of 17</a><br/>
@@ -26,7 +26,7 @@
   <% end %>
     
   <% content_for :revisiting do %>
-    <%# fq: 'media_sim:"Audio"', q: 'text:"March" title_tesim:"Interview"' %>
+    <%# fq: 'has_model_ssim:"info:fedora/afmodel:Audio"', q: 'text:"March" title_tesim:"Interview"' %>
     <a href='/catalog/openvault:53520'>Interview with Al Hulsen</a><br/>
     <a href='/catalog/openvault:52085'>Interview with Caroline Isber</a><br/>
     <a href='/catalog/openvault:44862'>Interview with Don Quayle</a><br/>
@@ -37,7 +37,7 @@
   <% end %>
     
   <% content_for :photographs do %>
-    <%# fq: 'media_sim:"Image"', q: 'text:"March on Washington"' %>
+    <%# fq: 'has_model_ssim:"info:fedora/afmodel:Image"', q: 'text:"March on Washington"' %>
     <a href='/catalog/openvault:59293'>Civil Rights March on Washington, D.C. [A group of young women at the march], 08/28/1963</a><br/>
     <a href='/catalog/openvault:57531'>Civil Rights March on Washington, D.C. [A male marcher relaxing.], 08/28/1963</a><br/>
     <a href='/catalog/openvault:58603'>Civil Rights March on Washington, D.C. [A. Philip Randolph, organizer of the demonstration, veteran labor leader who helped to found the Brotherhood of Sleeping Car Porters, American Federation of Labor (AFL)...], 08/28/1963</a><br/>
@@ -62,7 +62,7 @@
     but I'm not sure really where we're going with this.
 
     puts Blacklight.solr.select(params: {
-      fq: 'media_sim:"Audio"', q: 'summary_tesim:"March on Washington" title_tesim:"Part"', 
+      fq: 'has_model_ssim:"info:fedora/afmodel:Audio"', q: 'summary_tesim:"March on Washington" title_tesim:"Part"', 
       rows: 100
     })['response']['docs'].map{|doc| 
       {id: doc['slug'] || doc['id'], title: doc['title_tesim'][0]}

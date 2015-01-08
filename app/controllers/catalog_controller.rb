@@ -49,7 +49,7 @@ class CatalogController < ApplicationController
       :rows => 10,
       :defType => 'edismax',
       :qf => 'text',
-      :fq => 'NOT media_sim:Transcript'
+      :fq => 'NOT has_model_ssim:"info:fedora/afmodel:Transcript"'
     }
     
     # config.index.show_link = 'title_clip_ssm'
