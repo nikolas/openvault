@@ -14,7 +14,7 @@
         </script><br>
         <a onclick="browseSFDB()" href="#">Production Research Footage Database</a> <% end %>
   <%= render partial: 'global_partials/tabs', locals: { tabs: [
-    { title: 'Interviews', content: content_for(:interviews) },
+    { title: 'Interviews', content: render(partial: 'override/partials/interview_table') },
     { title: 'Archival footage', content: content_for(:archival) },
     { title: 'Photographs', content: content_for(:photographs)},
     { title: 'Original footage', content: content_for(:original) }
