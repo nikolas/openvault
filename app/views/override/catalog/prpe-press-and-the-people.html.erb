@@ -7,7 +7,7 @@
   <% cache('prpe-press-and-the-people-tabs') do %>
     <%= render partial: 'global_partials/tabs', locals: { 
       tabs: 
-        tabs_for('prpe-press-and-the-people', [:videos, :programs])
+        [{title: "Full Program Video", content: render(partial: 'override/catalog/press_and_people/videos')}]
     } %> 
   <% end %>
     
