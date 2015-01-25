@@ -3,9 +3,10 @@ require 'rvm/capistrano'
 
 ###############################################################################
 # MULTISTAGE CONFIG - Set configuration for multi-stage deployment.
+#  See config/deploy/[stage].rb for stage-specific settings. 
 ###############################################################################
 
-set :stages, %w(staging)
+set :stages, %w(production staging)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
@@ -22,10 +23,10 @@ load 'config/deploy/recipes/basic_http_auth'
 ###############################################################################
 
 # General info
+server 'lsopenvault01.wgbh.org', :app, :web, :db, primary: true
 set :application, "openvault"
 set :user, "openvault"
 set :group, "wgbhtech"
-set :deploy_to, "/wgbh/http/#{application}"
 set :use_sudo, false
 set :rails_env, "production"
 set :keep_releases, 5
@@ -34,7 +35,6 @@ set :keep_releases, 5
 set :scm, :git
 set :repository,  "https://github.com/afred/openvault.git"
 set :scm_username , "afred"
-set :branch, fetch(:branch, "development")
 set :deploy_via, :remote_cache
 
 # RVM
@@ -49,7 +49,7 @@ set :ssh_options, { :forward_agent => true }
 ###############################################################################
 # HOOKS - Set up all the hooks to say what happens and when
 ###############################################################################
-before "deploy:setup", "upload_shared:database_yml"
+# before "deploy:setup", "upload_shared:database_yml"
 
 before 'deploy:assets:precompile', 'deploy:migrate'
 before 'deploy:migrate', 'link_shared:database_yml'

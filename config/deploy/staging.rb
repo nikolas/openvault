@@ -1,1 +1,5 @@
-server 'lsopenvault01.wgbh.org', :app, :web, :db, primary: true
+# General info
+set :deploy_to, "/wgbh/http/openvault-staging"
+
+# Github
+set :branch, fetch(:branch, "development")
