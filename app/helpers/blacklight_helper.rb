@@ -83,4 +83,8 @@ module BlacklightHelper
     return '' if (doc.nil? || doc['date_portrayed_tesim'].try(:first).nil?)
     doc['date_portrayed_tesim'].first
   end
+
+  def format_fedora_model_name(model_name)
+    model_name.sub('info:fedora/afmodel:', '')
+  end
 end
