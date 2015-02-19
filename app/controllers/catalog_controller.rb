@@ -84,7 +84,7 @@ class CatalogController < ApplicationController
 #     # :show may be set to false if you don't want the facet to be drawn in the 
 #     # facet bar
     config.add_facet_field 'series_sim', label: 'Series', single: true
-    config.add_facet_field 'has_model_ssim', label: 'Media', single: true
+    config.add_facet_field 'has_model_ssim', label: 'Media', single: true, helper_method: :format_fedora_model_name
     # config.add_facet_field solr_name('category', :facetable), :label => "Categories"
     # config.add_facet_field solr_name('subject_facet', :facetable), :label => 'Topics'
     # config.add_facet_field solr_name('program_facet', :facetable), :label => 'Program'    

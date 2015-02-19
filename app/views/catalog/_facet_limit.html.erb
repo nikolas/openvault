@@ -18,7 +18,6 @@
           %>
           <% paginator.items.each do |item| -%>
             <li>
-              <% item.value = item.value.gsub('info:fedora/afmodel:','') %>
               <% if facet_in_params?( solr_field, item.value ) %>              
                   <%= render_selected_facet_value(solr_field, item) %>              
                 <% else %>              
