@@ -151,13 +151,20 @@ class Artifact < ActiveRecord::Base
   end
 
   def ov_asset
-    return unless pid
-    OpenvaultAsset::find pid, cast: true
+    @ov_asset ||= begin
+      OpenvaultAsset::find(pid, cast: true)
+    rescue ActiveFedora::ObjectNotFoundError => e
+      # Do not raise ActiveFedora::ObjectNotFoundError, instead, set @ov_asset to nil.
+      nil
+    end
   end
  
   def title
-    return unless ov_asset
-    @title ||= ov_asset.title
+    @title ||= begin
+      ov_asset.title
+    rescue NoMethodError => e
+      "#{pid} (deleted)"
+    end
   end
   
   def digitizing?

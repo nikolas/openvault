@@ -87,4 +87,22 @@ describe Artifact do
 
 	end	
 
+
+	context 'when #pid returns a value that is not found in Fedora' do
+
+		let(:artifact_with_bad_pid) { Artifact.create!(pid: 'pid-that-does-not-exist') }
+
+		describe '#ov_asset' do
+			it 'returns nil without raising an error' do
+				expect(artifact_with_bad_pid.ov_asset).to eq nil
+			end
+		end
+
+		describe '#title' do
+			it 'returns the PID as a string followed by "(deleted)"' do
+				expect(artifact_with_bad_pid.title).to eq "#{artifact_with_bad_pid.pid} (deleted)"
+			end
+		end
+	end
+
 end
