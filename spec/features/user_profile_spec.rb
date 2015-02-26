@@ -80,10 +80,9 @@ feature 'User edits their profile' do
     end
 
     scenario "changing password fails if current password is incorrect" do
-      new_password = user.password.reverse
-      fill_in 'user_current_password', with: new_password
-      fill_in 'user_password', with: new_password
-      fill_in 'user_password_confirmation', with: new_password
+      fill_in 'user_current_password', with: "blergifoobijoo"
+      fill_in 'user_password', with: "asdfasdfasdf"
+      fill_in 'user_password_confirmation', with: "asdfasdfasdf"
       click_button 'Save Profile'
       expect(page).not_to have_content('You updated your account successfully.')
       expect(page).to have_content('Current password is invalid')
