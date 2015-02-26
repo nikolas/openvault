@@ -36,6 +36,7 @@ set :scm, :git
 set :repository,  "https://github.com/afred/openvault.git"
 set :scm_username , "afred"
 set :deploy_via, :remote_cache
+set :branch, fetch(:branch, "master")
 
 # RVM
 set :rvm_ruby_string, "2.0"
