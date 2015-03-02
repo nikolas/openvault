@@ -6,7 +6,7 @@ Openvault::Application.routes.draw do
 
   # Collection moved:
   get 'catalog/tocn-the-ten-o-clock-news', to: redirect('http://bostonlocaltv.org/wgbh')
-  get 'catalog/roll-rock-and-roll', to: 'override#show_rock_and_roll'
+  get 'catalog/44ffa1-rock-and-roll', to: 'override#show_rock_and_roll'
   get 'catalog/wpna-wpna-war-and-peace-in-the-nuclear-age', to: 'override#show_wpna'
   get 'catalog/vietnam-the-vietnam-collection', to: 'override#show_vietnam'
   

@@ -8,7 +8,7 @@ describe "routing for overrides" do
   end
   
   it 'routes roll_rock_and_roll' do
-    expect(get: 'catalog/roll-rock-and-roll').to route_to(
+    expect(get: 'catalog/44ffa1-rock-and-roll').to route_to(
       controller: 'override', action: 'show_rock_and_roll')
   end
   
