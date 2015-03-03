@@ -12,9 +12,9 @@ class ExhibitsController < ApplicationController
   
   def wpna
     @interviews = ExhibitsData::WPNA.interviews
-    @original_footage_assets = ExhibitsData::WPNA.original_footage_assets
-    @program_assets = ExhibitsData::WPNA.program_assets
-    @stock_footage_assets = ExhibitsData::WPNA.stock_footage_assets
+    @original_footage_links = ExhibitsData::WPNA.original_footage_links
+    @program_links = ExhibitsData::WPNA.program_links
+    @stock_footage_links = ExhibitsData::WPNA.stock_footage_links
   end
 
   def vietnam

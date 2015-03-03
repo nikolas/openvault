@@ -1,0 +1,14 @@
+<%
+# set default valuse
+num_cols ||= 3
+%>
+
+<table width='100%' class="asset-table"><tr>
+  <% links.in_groups(num_cols,false) do |group| %>
+    <td><ul>
+      <% group.each do |link|  %>
+        <li><%= link_to(link[:name], link[:url]) %></li>
+      <% end %>
+    </ul></td>
+  <% end %>
+</tr></table>
