@@ -1,14 +1,40 @@
 Openvault::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
-  
-  
-  # ad-hoc redirects
 
-  # Collection moved:
+  # Routing for exhibits (a.k.a. collections -- but we don't call them that anymore)
+
+  get 'collections', to: 'exhibits#index'
+
   get 'catalog/tocn-the-ten-o-clock-news', to: redirect('http://bostonlocaltv.org/wgbh')
-  get 'catalog/44ffa1-rock-and-roll', to: 'override#show_rock_and_roll'
-  get 'catalog/wpna-wpna-war-and-peace-in-the-nuclear-age', to: 'override#show_wpna'
-  get 'catalog/vietnam-the-vietnam-collection', to: 'override#show_vietnam'
+
+  get 'catalog/44ffa1-rock-and-roll', to: 'exhibits#rock_and_roll'
+  get 'catalog/roll-rock-and-roll', to: 'exhibits#rock_and_roll'
+  get 'collections/roll-rock-and-roll', to: 'exhibits#rock_and_roll'
+
+  get 'catalog/wpna-wpna-war-and-peace-in-the-nuclear-age', to: 'exhibits#wpna'
+  get 'collections/wpna-wpna-war-and-peace-in-the-nuclear-age', to: 'exhibits#wpna'
+  get 'collections/war-and-peace-in-the-nuclear-age', to: 'exhibits#wpna'
+
+  get 'catalog/vietnam-the-vietnam-collection', to: 'exhibits#vietnam'
+  get 'collections/vietnam-the-vietnam-collection', to: 'exhibits#vietnam'
+
+  get 'catalog/prpe-press-and-the-people', to: 'exhibits#press_and_people'
+  get 'collections/prpe-press-and-the-people', to: 'exhibits#press_and_people'
+
+  get 'catalog/march-march-on-washington', to: 'exhibits#march_on_washington'
+  get 'collections/march-march-on-washington', to: 'exhibits#march_on_washington'
+
+  get 'catalog/sbro-say-brother', to: 'exhibits#say_brother'
+  get 'collections/sbro-say-brother', to: 'exhibits#say_brother'
+
+  get 'catalog/vault-from-the-vault', to: 'exhibits#from_the_vault'
+  get 'collections/vault-from-the-vault', to: 'exhibits#from_the_vault'
+
+  get 'collections/advocates-advocates', to: 'exhibits#advocates'
+  get 'catalog/advocates-advocates', to: 'exhibits#advocates'
+
+
+  
   
   get ':lists_or_blog/rock-and-roll-interview-list', to: redirect('/catalog/roll-rock-and-roll')
   get ':lists_or_blog/wpna-interview-list', to: redirect('/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age')
@@ -39,16 +65,6 @@ Openvault::Application.routes.draw do
   end
 
   root :to => "catalog#home"
-
-  get 'collections/:file', to: redirect("/catalog/%{file}"), constraints: { file: /
-      advocates-advocates |
-      prpe-press-and-the-people |
-      roll-rock-and-roll |
-      sbro-say-brother |
-      tocn-the-ten-o-clock-news |
-      vietnam-the-vietnam-collection |
-      wpna-wpna-war-and-peace-in-the-nuclear-age
-    /x }
   
   resources :catalog, :only => [:index, :show], :constraints => { :id => /([A-Za-z0-9]|:|-|\.)*([A-Za-z0-9]|:|-){7}/ } do
     member do
