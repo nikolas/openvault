@@ -6,9 +6,12 @@
 
   <% cache('wpna-wpna-war-and-peace-in-the-nuclear-age-tabs') do %>
     <%= render partial: 'global_partials/tabs', locals: { 
-      tabs: 
-        [{ title: 'Interviews', content: render(partial: 'override/partials/interview_table') }] +
-        tabs_for('wpna-wpna-war-and-peace-in-the-nuclear-age', [:videos, :programs])
+      tabs: [
+        { title: 'Interviews', content: render(partial: 'exhibits/interview_table', locals: {interviews: @interviews}) },
+        { title: 'Original Footage', content: render(partial: 'exhibits/asset_table', locals: {assets: @original_footage_assets}) },
+        { title: 'Programs', content: render(partial: 'exhibits/asset_table_programs', locals: {assets: @program_assets}) },
+        { title: 'Stock Footage', content: render(partial: 'exhibits/asset_table', locals: {assets: @stock_footage_assets}) }
+      ]
     } %> 
   <% end %>
     
