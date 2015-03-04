@@ -1,44 +1,14 @@
 <div class='override'>
-  <%= render layout: 'override/partials/header', 
+  <%= render layout: 'exhibits/header', 
              locals: { title: 'From The Vault', wp_img: '2014/10/Exhibit_From_Vault.jpg' } do %>
     <p>The steel shelves of the WGBH vault hold six decades of radio and television programs, an exuberant collection of finished shows and outtakes, successes and missteps, all stored at a constant, cool 62 degrees. “From the Vault,” launched in 2011, is an ongoing collaboration with WGBH Radio (89.7), and WGBH.org, bringing treasures from the archive to new audiences, when rights permit.</p>
     <p>While most of the Open Vault collections are designed for scholarly research, “From the Vault” is meant for a wider viewership. Selections to date give a sense of the range of the WGBH collection, from a rare, unedited 1990 interview with Steve Jobs, to interviews with Martin Luther King, Malcolm X and James Baldwin for a 1963 program called “The Negro and the American Promise,” a 1967 film featuring Dr. Timothy Leary making the case for LSD, and clips from the first ZOOM series in the early 1970s.</p>
     <p>Check back with us from time to time to see what new gems we’ve brought off the shelves and back out into the world.</p>
   <% end %>
   
-  <% content_for :tab do %>
-    <a href="/catalog/8a9bfd-james-baldwin-interview">James Baldwin Interview</a><br/>
-    <a href="/catalog/3dab67-malcolm-x-interview">Malcolm X Interview</a><br/>
-    <a href="/catalog/b2e398-martin-luther-king-jr-interview">Martin Luther King Jr. Interview</a><br/>
-    
-    <a href="/catalog/6ad0b8-remembering-james-brown-at-the-boston-garden-1968">Remembering James Brown at the Boston Garden, 1968</a><br/>
-    <a href="/catalog/5bfe0e-james-brown-speaks-to-the-crowd-at-the-boston-garden">James Brown Speaks to the Crowd at the Boston Garden </a><br/>
-    <a href="/catalog/bec92a-james-brown-and-mayor-kevin-white-address-the-crowd-at-the-boston-garden">James Brown and Mayor Kevin White Address the Crowd at the Boston Garden</a><br/>
-
-    <a href="/catalog/ee17c2-send-in-your-zoom-ideas">Send In Your Zoom Ideas</a><br/>
-    <a href="/catalog/80c533-here-s-how-you-do-it">Here&#x27;s How You Do It</a><br/>
-
-    <a href="/catalog/7df2a7-lsd-lettvin-vs-leary">LSD: Lettvin vs. Leary</a><br/>
-
-    <a href="/catalog/openvault:57084">Steve Jobs Interview</a><br/>
-
-    <a href="/catalog/3462e4-odetta-gordon-performs-give-me-your-hand">Odetta Gordon performs &quot;Give Me Your Hand&quot;</a><br/>
-
-    <a href="/catalog/4cc30a-memories-of-fenway-park">Memories of Fenway Park: Jean Shepherd</a><br/>
-
-    <a href="/catalog/dsco-line-dancing-and-disco-fashion">Dancing Disco: Episode 1: Disco Fashion</a><br/>
-    <a href="/catalog/000105-let-s-dance">Dancing Disco: Let's Dance!</a><br/>
-
-    <a href="/catalog/a13f45-bob-seay-introduces-the-clip-of-dr-alfred-worcester">First Patriots Day Intro</a><br/>
-    <a href="/catalog/8ec2bf-first-patriots-day-the-an-eyewitness-account-by-dr-alfred-worcester">First Patriots Day</a><br/>
-
-    <a href="/catalog/d45fbe-john-updike">At Home: John Updike</a><br/>
-    <a href="/catalog/a4b116-bill-lee">At Home: Bill Lee, Red Sox Pitcher</a><br/>
-  <% end %>
-  
 <%= render partial: 'global_partials/tabs', locals: { 
       tabs: 
-        [{ title: 'From the Vault', content: content_for(:tab) }]
+        [{ title: 'From the Vault', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @video_links}) }]
     } %>
     
   <hr>

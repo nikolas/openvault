@@ -30,5 +30,9 @@ class ExhibitsController < ApplicationController
 
   def press_and_people
   end
+
+  def from_the_vault
+    @video_links = ExhibitsData::FromTheVault.video_links
+  end
   
 end 

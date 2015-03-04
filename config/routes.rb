@@ -29,6 +29,8 @@ Openvault::Application.routes.draw do
 
   get 'catalog/vault-from-the-vault', to: 'exhibits#from_the_vault'
   get 'collections/vault-from-the-vault', to: 'exhibits#from_the_vault'
+  get 'catalog/from-the-vault', to: 'exhibits#from_the_vault'
+  get 'collections/from-the-vault', to: 'exhibits#from_the_vault'
 
   get 'collections/advocates-advocates', to: 'exhibits#advocates'
   get 'catalog/advocates-advocates', to: 'exhibits#advocates'
