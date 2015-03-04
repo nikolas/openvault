@@ -1,83 +1,14 @@
 <div class='override'>
-  <%= render layout: 'override/partials/header', 
+  <%= render layout: 'exhibits/header', 
              locals: { title: 'March on Washington', wp_img: '2014/10/Exhibit_MoW.jpg' } do %>
     <p>The 1963 March on Washington for Jobs and Freedom featured an estimated 250,000 peaceful demonstrators walking from the Washington Monument to the Lincoln Memorial to hear a political call to arms for economic equality and civil rights for African Americans. Credited with being the final impetus to the passing of the 1964 Civil Rights Act, the event famously ended with Martin Luther King Jr.’s historic “I have a dream” speech.</p>
   <% end %>
     
-  <% content_for :coverage do %>
-    <%# fq: 'has_model_ssim:"info:fedora/afmodel:Audio"', q: 'summary_tesim:"March on Washington" title_tesim:"Part"' %>
-    <a href='/catalog/openvault:51022'>Part 1 of 17</a><br/>
-    <a href='/catalog/openvault:50902'>Part 2 of 17</a><br/>
-    <a href='/catalog/openvault:49163'>Part 3 of 17</a><br/>
-    <a href='/catalog/openvault:52125'>Part 4 of 17</a><br/>
-    <a href='/catalog/openvault:52790'>Part 5 of 17</a><br/>
-    <a href='/catalog/openvault:51938'>Part 6 of 17</a><br/>
-    <a href='/catalog/openvault:53139'>Part 7 of 17</a><br/>
-    <a href='/catalog/openvault:53303'>Part 8 of 17</a><br/>
-    <a href='/catalog/openvault:53228'>Part 9 of 17</a><br/>
-    <a href='/catalog/openvault:50618'>Part 10 of 17</a><br/>
-    <a href='/catalog/openvault:53180'>Part 11 of 17</a><br/>
-    <a href='/catalog/openvault:50054'>Part 12 of 17</a><br/>
-    <a href='/catalog/openvault:49552'>Part 13 of 17</a><br/>
-    <a href='/catalog/openvault:52721'>Part 14 of 17</a><br/>
-    <a href='/catalog/openvault:48372'>Part 15 of 17</a><br/>
-    <a href='/catalog/openvault:50753'>Part 16 of 17</a><br/>
-    <a href='/catalog/openvault:52607'>Part 17 of 17</a><br/>
-  <% end %>
-    
-  <% content_for :revisiting do %>
-    <%# fq: 'has_model_ssim:"info:fedora/afmodel:Audio"', q: 'text:"March" title_tesim:"Interview"' %>
-    <a href='/catalog/openvault:53520'>Interview with Al Hulsen</a><br/>
-    <a href='/catalog/openvault:52085'>Interview with Caroline Isber</a><br/>
-    <a href='/catalog/openvault:44862'>Interview with Don Quayle</a><br/>
-    <a href='/catalog/openvault:54187'>Interview with George Geesey</a><br/>
-    <a href='/catalog/openvault:47198'>Interview with Rick Lee</a><br/>
-    <a href='/catalog/openvault:52394'>Interview with Roger Penn</a><br/>
-    <a href='/catalog/openvault:53547'>Interview with Susan Stamberg</a><br/>
-  <% end %>
-    
-  <% content_for :photographs do %>
-    <%# fq: 'has_model_ssim:"info:fedora/afmodel:Image"', q: 'text:"March on Washington"' %>
-    <a href='/catalog/openvault:59293'>Civil Rights March on Washington, D.C. [A group of young women at the march], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:57531'>Civil Rights March on Washington, D.C. [A male marcher relaxing.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:58603'>Civil Rights March on Washington, D.C. [A. Philip Randolph, organizer of the demonstration, veteran labor leader who helped to found the Brotherhood of Sleeping Car Porters, American Federation of Labor (AFL)...], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:59194'>Civil Rights March on Washington, D.C. [Author James Baldwin with actors Marlon Brando and Charlton Heston.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:55607'>Civil Rights March on Washington, D.C. [Close-up view of a crowd at the march.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:58982'>Civil Rights March on Washington, D.C. [Crowd of marchs at the Lincoln Memorial.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:56487'>Civil Rights March on Washington, D.C. [Leaders marching from the Washington Monument to the Lincoln Memorial], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:58747'>Civil Rights March on Washington, D.C. [Leaders of the march leading marchers down the street.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:55988'>Civil Rights March on Washington, D.C. [Leaders of the march], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:57212'>Civil Rights March on Washington, D.C. [Marchers at the Lincoln Memorial.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:58801'>Civil Rights March on Washington, D.C. [Marchers at the Reflecting Pool], 08/28/1963 </a><br/>
-    <a href='/catalog/openvault:58437'>Civil Rights March on Washington, D.C. [Marchers.], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:59129'>Civil Rights March on Washington, D.C. [Sammy Davis, Jr., actor and performer, with Roy Wilkins, Excecutive Secretary of the Natoinal Association for the Advacement of Color People], 08/28/1963</a><br/>
-    <a href='/catalog/openvault:56576'>Civil rights march on Washington, D.C.</a><br/>
-    <a href='/catalog/openvault:55817'>In front of 170 W 130 St., March on Washington, l to r Bayard Rustin, Deputy Director, Cleveland Robinson, Chairman of Administrative Committee</a><br/>
-    <a href='/catalog/openvault:55592'>Photograph of a Young Woman at the Civil Rights March on Washington, D.C. with a Banner, 08/28/1963</a><br/>
-    <a href='/catalog/openvault:59169'>Photograph of the Civil Rights March on Washington, 08/28/1963</a><br/>
-  <% end %>
-    
-  <%#
-    The hard-coded HTML below could be generated on the fly,
-    but I'm not sure really where we're going with this.
-
-    puts Blacklight.solr.select(params: {
-      fq: 'has_model_ssim:"info:fedora/afmodel:Audio"', q: 'summary_tesim:"March on Washington" title_tesim:"Part"', 
-      rows: 100
-    })['response']['docs'].map{|doc| 
-      {id: doc['slug'] || doc['id'], title: doc['title_tesim'][0]}
-    }.sort_by{|h| 
-      h[:title]
-    }.map{|h|
-      "<a href='/catalog/#{h[:id]}'>#{h[:title]}</a><br/>"
-    }.join("\n")
-  %>  
-    
   <%= render partial: 'global_partials/tabs', locals: { 
       tabs: [
-        { title: "ERN's Coverage", content: content_for(:coverage) },
-        { title: "Revisiting the March on Washington", content: content_for(:revisiting) },
-        { title: "Photographs", content: content_for(:photographs) }]
+        { title: "ERN's Coverage", content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @ern_coverage_links}) },
+        { title: "Revisiting the March on Washington", content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @revisiting_mow_links}) },
+        { title: "Photographs", content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @photograph_links}) }]
     } %>
   
   <hr>
