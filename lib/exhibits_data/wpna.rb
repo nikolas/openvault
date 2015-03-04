@@ -312,19 +312,19 @@ module ExhibitsData
 
     def self.program_links
       [
-        {name: "At the Brink", url: "/catalog/openvault:2988"},
-        {name: "Bigger Bang for the Buck, A", url: "/catalog/openvault:3205"},
-        {name: "Carter's New World", url: "/catalog/openvault:808"},
-        {name: "Dawn", url: "/catalog/openvault:589"},
-        {name: "Education of Robert McNamara, The", url: "/catalog/openvault:1265"},
-        {name: "Europe Goes Nuclear", url: "/catalog/openvault:2026"},
-        {name: "Have and Have-nots", url: "/catalog/openvault:3017"},
-        {name: "Missile Experimental", url: "/catalog/openvault:451"},
-        {name: "One Step Forward", url: "/catalog/openvault:2159"},
-        {name: "Reagan's Shield", url: "/catalog/openvault:2685"},
-        {name: "Visions of War and Peace", url: "/catalog/wpna-000113-visions-of-war-and-peace"},
-        {name: "Weapon of Choice, The", url: "/catalog/openvault:3285"},
-        {name: "Zero Hour", url: "/catalog/openvault:1707"},
+        {name: "101: Dawn", url: "/catalog/openvault:589"},
+        {name: "102: Weapon of Choice, The", url: "/catalog/openvault:3285"},
+        {name: "103: Bigger Bang for the Buck, A", url: "/catalog/openvault:3205"},
+        {name: "104: Europe Goes Nuclear", url: "/catalog/openvault:2026"},
+        {name: "105: At the Brink", url: "/catalog/openvault:2988"},
+        {name: "106: Education of Robert McNamara, The", url: "/catalog/openvault:1265"},
+        {name: "107: One Step Forward", url: "/catalog/openvault:2159"},
+        {name: "108: Have and Have-nots", url: "/catalog/openvault:3017"},
+        {name: "109: Carter's New World", url: "/catalog/openvault:808"},
+        {name: "110: Zero Hour", url: "/catalog/openvault:1707"},
+        {name: "111: Missile Experimental", url: "/catalog/openvault:451"},
+        {name: "112: Reagan's Shield", url: "/catalog/openvault:2685"},
+        {name: "113: Visions of War and Peace", url: "/catalog/wpna-000113-visions-of-war-and-peace"}
       ]
     end
 
