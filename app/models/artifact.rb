@@ -55,6 +55,7 @@ class Artifact < ActiveRecord::Base
       user = transition.args.first
       artifact.potential_sponsors << user
       Rails.logger.info('REQUESTED')
+      UserMailer.digitization_requested_email(user, artifact).deliver
       AdminMailer.request_notification_email(user, artifact).deliver
     end
 
@@ -157,6 +158,15 @@ class Artifact < ActiveRecord::Base
       # Do not raise ActiveFedora::ObjectNotFoundError, instead, set @ov_asset to nil.
       nil
     end
+  end
+
+  # Returns the first found solr result found for @pid, or if nothing found, an empty hash
+  def solr_doc
+    @solr_doc ||= Blacklight.solr.select(params: {q: "id:#{pid}"})['response']['docs'].first
+  end
+
+  def asset_path
+    "/catalog/#{solr_doc['slug'] || solr_doc['id']}"
   end
  
   def title
