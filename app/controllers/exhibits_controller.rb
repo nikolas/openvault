@@ -26,6 +26,9 @@ class ExhibitsController < ApplicationController
   end
 
   def march_on_washington
+    @ern_coverage_links = ExhibitsData::MarchOnWashington.ern_coverage_links
+    @revisiting_mow_links = ExhibitsData::MarchOnWashington.revisiting_mow_links
+    @photograph_links = ExhibitsData::MarchOnWashington.photograph_links
   end
 
   def press_and_people

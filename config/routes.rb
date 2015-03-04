@@ -23,6 +23,8 @@ Openvault::Application.routes.draw do
 
   get 'catalog/march-march-on-washington', to: 'exhibits#march_on_washington'
   get 'collections/march-march-on-washington', to: 'exhibits#march_on_washington'
+  get 'catalog/march-on-washington', to: 'exhibits#march_on_washington'
+  get 'collections/march-on-washington', to: 'exhibits#march_on_washington'
 
   get 'catalog/sbro-say-brother', to: 'exhibits#say_brother'
   get 'collections/sbro-say-brother', to: 'exhibits#say_brother'
