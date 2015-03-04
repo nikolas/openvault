@@ -5,6 +5,10 @@ class ExhibitsController < ApplicationController
 
   def index
   end
+
+  def advocates
+    @full_program_links = ExhibitsData::Advocates.full_program_links
+  end
   
   def rock_and_roll
     @interviews = ExhibitsData::RockAndRoll.interviews
