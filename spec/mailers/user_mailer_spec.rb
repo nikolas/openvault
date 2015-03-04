@@ -2,6 +2,20 @@ require "spec_helper"
 require "#{RSpec.configuration.fixture_path}/pbcore/load_fixtures"
 
 describe UserMailer do
+
+  # TODO: Tests between here and </TODO> are actually testing behavior of Artifact model,
+  #  specifically Artifact#save. The tests are testing the side effect of mail being sent.
+  #  A more appropriate way to test this is is move them to spec/models/artifact, and test
+  #  that the appropriate method on the mailers got called. For instance, if you want to ensure
+  #  that Usermailer.request_withdrawn_email(user, artifact).deliver get's called as a result
+  #  of some behavior of Artifact, then testing might look like this...
+  #   
+  #    allow(UserMailer).to receive(:request_withdrawn_email).with(@user, @artifact).and_return(double)
+  #    expect(UserMailer.request_withdrawn).to receive(:deliver)
+  #
+  #   ... or something like that. Not sure on the rspec-mocks syntax. But that's the general idea.
+  #   In any event, what we're really testing here is Artifact behavior, and checking the nearest side effects.
+
 	before do
 	  @user = create(:user)
     @user2 = create(:user)
@@ -43,9 +57,22 @@ describe UserMailer do
   end
 
   let(:user) { create :user }
-  let(:artifact) { instance_double(Artifact, pid: 'test:123', title: 'test artifact') }
+  let(:artifact) { instance_double(Artifact, pid: 'test:123', title: 'test artifact', asset_path: '/catalog/some-slug') }
 
-  describe '#digitization_approval_email', focus: true do
+
+  describe '#digitization_requested_email' do
+    let(:mail) { UserMailer.digitization_requested_email(user, artifact) }
+
+    it 'has an appropriate subject' do
+      expect(mail.subject).to eq "WGBH Digitization Request Received"
+    end
+
+    it 'contains a link to the artifact\'s asset' do
+      expect(mail.body.encoded).to have_link(artifact.title, href: "http://openvault.wgbh.org#{artifact.asset_path}")
+    end
+  end
+
+  describe '#digitization_approval_email' do
     let(:mail) { UserMailer.digitization_approval_email(user, artifact) }
 
     it 'has an appropriate subject' do
@@ -57,7 +84,7 @@ describe UserMailer do
     end
   end
 
-  describe '#digitization_blocked_email', focus: true do
+  describe '#digitization_blocked_email' do
     let(:mail) { UserMailer.digitization_blocked_email(user, artifact) }
 
     it 'has an appropriate subject' do

@@ -1,6 +1,11 @@
 class UserMailer < ActionMailer::Base
   default from: "openvault@wgbh.org"
 
+  def digitization_requested_email(user, artifact)
+    @user, @artifact = user, artifact
+    mail(to: @user.email, subject: "WGBH Digitization Request Received")
+  end
+
   def digitization_approval_email(user, artifact)
   	@user, @artifact = user, artifact
   	mail(to: @user.email, subject: 'Your digitization request has been approved')
