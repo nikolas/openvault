@@ -12,6 +12,7 @@ class ExhibitsController < ApplicationController
   
   def rock_and_roll
     @interviews = ExhibitsData::RockAndRoll.interviews
+    @program_links = ExhibitsData::RockAndRoll.program_links
   end
   
   def wpna
