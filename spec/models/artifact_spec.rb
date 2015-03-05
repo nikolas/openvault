@@ -105,4 +105,16 @@ describe Artifact do
 		end
 	end
 
+
+  describe '#request (a state_machine event)' do
+    let(:artifact) { Artifact.create(:pid => '123') }
+    let(:user) { create(:user) }
+
+    it 'sends an email to the user and to admin' do
+      artifact.request(user)
+      email_recipients = ActionMailer::Base.deliveries.map(&:to).flatten
+      expect(email_recipients).to contain_exactly('openvault@wgbh.org', user.email)
+    end
+  end
+
 end

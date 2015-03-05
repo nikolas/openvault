@@ -162,11 +162,11 @@ class Artifact < ActiveRecord::Base
 
   # Returns the first found solr result found for @pid, or if nothing found, an empty hash
   def solr_doc
-    @solr_doc ||= Blacklight.solr.select(params: {q: "id:#{pid}"})['response']['docs'].first
+    @solr_doc ||= Blacklight.solr.select(params: {q: "id:#{pid}"})['response']['docs'].first || {}
   end
 
   def asset_path
-    "/catalog/#{solr_doc['slug'] || solr_doc['id']}"
+    "/catalog/#{solr_doc['slug'] || pid}"
   end
  
   def title
