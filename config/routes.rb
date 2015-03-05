@@ -20,6 +20,8 @@ Openvault::Application.routes.draw do
 
   get 'catalog/prpe-press-and-the-people', to: 'exhibits#press_and_people'
   get 'collections/prpe-press-and-the-people', to: 'exhibits#press_and_people'
+  get 'catalog/press-and-people', to: 'exhibits#press_and_people'
+  get 'collections/press-and-people', to: 'exhibits#press_and_people'
 
   get 'catalog/march-march-on-washington', to: 'exhibits#march_on_washington'
   get 'collections/march-march-on-washington', to: 'exhibits#march_on_washington'

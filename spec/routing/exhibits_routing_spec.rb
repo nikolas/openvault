@@ -13,6 +13,8 @@ describe "routing for exhibits" do
     'collections/vietnam-the-vietnam-collection'  => {controller: 'exhibits', action: 'vietnam'},
     'catalog/prpe-press-and-the-people'  => {controller: 'exhibits', action: 'press_and_people'},
     'collections/prpe-press-and-the-people'  => {controller: 'exhibits', action: 'press_and_people'},
+    'catalog/press-and-people'  => {controller: 'exhibits', action: 'press_and_people'},
+    'collections/press-and-people'  => {controller: 'exhibits', action: 'press_and_people'},
     'catalog/march-march-on-washington'  => {controller: 'exhibits', action: 'march_on_washington'},
     'collections/march-march-on-washington'  => {controller: 'exhibits', action: 'march_on_washington'},
     'catalog/sbro-say-brother'  => {controller: 'exhibits', action: 'say_brother'},
