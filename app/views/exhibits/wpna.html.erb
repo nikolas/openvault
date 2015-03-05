@@ -7,7 +7,7 @@
   <% cache('wpna-wpna-war-and-peace-in-the-nuclear-age-tabs') do %>
     <%= render partial: 'global_partials/tabs', locals: { 
       tabs: [
-        { title: 'Interviews', content: render(partial: 'exhibits/interview_table', locals: {interviews: @interviews}) },
+        { title: 'Interviews', content: render(partial: 'global_partials/interview_table', locals: {interviews: @interviews}) },
         { title: 'Original Footage', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @original_footage_links}) },
         { title: 'Programs', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @program_links}) },
         { title: 'Stock Footage', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @stock_footage_links}) }
