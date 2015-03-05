@@ -10,6 +10,7 @@ Openvault::Application.routes.draw do
   get 'catalog/44ffa1-rock-and-roll', to: 'exhibits#rock_and_roll'
   get 'catalog/roll-rock-and-roll', to: 'exhibits#rock_and_roll'
   get 'collections/roll-rock-and-roll', to: 'exhibits#rock_and_roll'
+  get 'catalog/rock-and-roll', to: 'exhibits#rock_and_roll'
 
   get 'catalog/wpna-wpna-war-and-peace-in-the-nuclear-age', to: 'exhibits#wpna'
   get 'collections/wpna-wpna-war-and-peace-in-the-nuclear-age', to: 'exhibits#wpna'

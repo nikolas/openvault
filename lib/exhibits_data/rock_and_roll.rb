@@ -66,5 +66,21 @@ module ExhibitsData
         {name: "Tom Moulton", first: "53ab72-interview-with-tom-moulton-part-1-of-2", rest: ["1c96b6-interview-with-tom-moulton-part-2-of-2"]}
       ]
     end
+
+
+    def self.program_links
+      [
+        {name: "101: Renegades", url: "/catalog/0e7f51-renegades"},
+        {name: "102: In the Groove", url: "/catalog/d1a8c5-in-the-groove"},
+        {name: "103: Shakespeares in the Alley", url: "/catalog/7a02e3-shakespeares-in-the-alley"},
+        {name: "104: Respect", url: "/catalog/fd1a0a-respect"},
+        {name: "105: Crossroads", url: "/catalog/openvault:13382"},
+        {name: "106: Blues in Technicolor", url: "/catalog/openvault:6551"},
+        {name: "107: Wild Side, The", url: "/catalog/openvault:6918"},
+        {name: "108: Make it Funky", url: "/catalog/98ced4-make-it-funky"},
+        {name: "109: Punk", url: "/catalog/openvault:21188"},
+        {name: "110: Perfect Beat, The", url: "/catalog/2c5744-perfect-beat-the"}
+      ]
+    end
   end
 end
