@@ -75,6 +75,10 @@ RSpec.configure do |config|
     ActiveFedora::TestCleaner.clean
     DatabaseCleaner.clean
   end
+
+  config.before(:each) do
+    ActionMailer::Base.deliveries.clear
+  end
   
 end
 
