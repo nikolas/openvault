@@ -4,21 +4,20 @@
     <p><em>Vietnam: A Television History</em> was a landmark documentary series produced by WGBH. This collection contains most of the materials gathered and created for the 1983 series, as well as additional Vietnam-related materials from the WGBH archive. Vietnam: A Television History was one of the last WGBH series produced entirely on film. Starting in 2008, materials were reconstructed, transferred, and digitized for preservation and access.</p>
   <% end %>
   
-  <% content_for :original do %>
+  <% content_for :sfdb_popup do %>
     <script type="text/javascript">
       function browseSFDB() {
         window.open("/sfdb/about/intro.html", "dbviewer", "status=0,menubar=0,toolbar=0,width=575")
       }
     </script>
-    <br />
-    <a onclick="browseSFDB()" href="#">Production Research Footage Database</a>
+    <a onclick="browseSFDB()" href="#">Production Research Footage Database</a><br /><br />
   <% end %>
 
   <%= render partial: 'global_partials/tabs', locals: { tabs: [
     { title: 'Interviews', content: render(partial: 'global_partials/interview_table', locals: {interviews: @interviews}) },
     { title: 'Archival footage', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @archival_footage_links})},
     { title: 'Photographs', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @photograph_links})},
-    { title: 'Original footage', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @original_footage_links}) }
+    { title: 'Original footage', content: content_for(:sfdb_popup) + render(partial: 'global_partials/multicolumn_links_list', locals: {links: @original_footage_links})}
   ] } %>  
     
   <div>
