@@ -24,6 +24,9 @@ class ExhibitsController < ApplicationController
 
   def vietnam
     @interviews = ExhibitsData::Vietnam.interviews
+    @original_footage_links = ExhibitsData::Vietnam.original_footage_links
+    @archival_footage_links = ExhibitsData::Vietnam.archival_footage_links
+    @photograph_links = ExhibitsData::Vietnam.photograph_links
   end
 
   def march_on_washington

@@ -18,6 +18,8 @@ Openvault::Application.routes.draw do
 
   get 'catalog/vietnam-the-vietnam-collection', to: 'exhibits#vietnam'
   get 'collections/vietnam-the-vietnam-collection', to: 'exhibits#vietnam'
+  get 'catalog/vietnam', to: 'exhibits#vietnam'
+  get 'collections/vietnam', to: 'exhibits#vietnam'
 
   get 'catalog/prpe-press-and-the-people', to: 'exhibits#press_and_people'
   get 'collections/prpe-press-and-the-people', to: 'exhibits#press_and_people'

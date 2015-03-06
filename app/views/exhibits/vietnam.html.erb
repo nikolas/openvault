@@ -16,9 +16,9 @@
 
   <%= render partial: 'global_partials/tabs', locals: { tabs: [
     { title: 'Interviews', content: render(partial: 'global_partials/interview_table', locals: {interviews: @interviews}) },
-    { title: 'Archival footage', content: "TODO: Archival footage" },
-    { title: 'Photographs', content: "TODO: Photographs"},
-    { title: 'Original footage', content: content_for(:original) }
+    { title: 'Archival footage', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @archival_footage_links})},
+    { title: 'Photographs', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @photograph_links})},
+    { title: 'Original footage', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @origin}) }
   ] } %>  
     
   <div>

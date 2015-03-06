@@ -11,6 +11,8 @@ describe "routing for exhibits" do
     'collections/wpna-wpna-war-and-peace-in-the-nuclear-age'  => {controller: 'exhibits', action: 'wpna'},
     'catalog/vietnam-the-vietnam-collection'  => {controller: 'exhibits', action: 'vietnam'},
     'collections/vietnam-the-vietnam-collection'  => {controller: 'exhibits', action: 'vietnam'},
+    'catalog/vietnam'  => {controller: 'exhibits', action: 'vietnam'},
+    'collections/vietnam'  => {controller: 'exhibits', action: 'vietnam'},
     'catalog/prpe-press-and-the-people'  => {controller: 'exhibits', action: 'press_and_people'},
     'collections/prpe-press-and-the-people'  => {controller: 'exhibits', action: 'press_and_people'},
     'catalog/press-and-people'  => {controller: 'exhibits', action: 'press_and_people'},
