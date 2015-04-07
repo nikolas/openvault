@@ -1,52 +1,9 @@
 Fixtures.cwd File.expand_path('../', __FILE__)
 
 # Load PBCore xml fixtures
-Fixtures.load([
-  "mars/series_1.xml",
-  "mars/program_1.xml",
-  "mars/image_1.xml",
-  "mars/image_2.xml",
-  "mars/video_1.xml",
-  "mars/audio_1.xml",
-
-  "artesia/rock_and_roll/series_1.xml",
-  "artesia/rock_and_roll/program_1.xml",
-  "artesia/rock_and_roll/video_1.xml",
-  "artesia/rock_and_roll/video_2.xml",
-  "artesia/rock_and_roll/video_3.xml",
-  "artesia/rock_and_roll/transcript_1.xml",
-  "artesia/rock_and_roll/transcript_2.xml",
-  "artesia/rock_and_roll/image_1.xml",
-
-  "artesia/march_on_washington/audio_1.xml",
-  "artesia/march_on_washington/image_1.xml",
-  
-  "artesia/ntw/program_segment.xml",
-
-  "artesia/patriots_day/audio_3.xml",
-  "artesia/patriots_day/video_1.xml",
-  "artesia/patriots_day/video_2.xml",
-  "artesia/patriots_day/video_3.xml",
-  "artesia/patriots_day/image_2.xml",
-  "artesia/patriots_day/audio_1.xml",
-  "artesia/patriots_day/audio_2.xml",
-  "artesia/patriots_day/transcript_1.xml",
-
-  "artesia/joyce_chen/multiple_models.xml",
-  "artesia/joyce_chen/image_1.xml",
-  
-  "artesia/vietnam/from_cbs.xml",
-  "artesia/vietnam/video_1.xml",
-  
-  "artesia/war_and_peace/image_1.xml",
-  "artesia/war_and_peace/transcript_1.xml",
-  
-  'pbcore_rights.xml',
-  'pbcore_media.xml',
-  'pbcore_rogue_video.xml',
-  'pbcore_contributors.xml',
-  'pbcore_subject.xml'
-]) do |fixture|
+Fixtures.load(
+  Dir['spec/fixtures/pbcore/**/*.xml'].map{|path| path.sub!('spec/fixtures/pbcore/', '')}
+) do |fixture|
 
   # For each of the files loaded, use Nokogiri to grab the first <pbcoreDescriptionDocument> node (should only be one)
   # and assign it to the ng_xml object of the PbcoreDescDoc instance.
