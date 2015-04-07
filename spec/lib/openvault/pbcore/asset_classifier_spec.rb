@@ -36,7 +36,7 @@ describe Openvault::Pbcore::AssetClassifier do
         begin
           expect(classify(path)).to be(klass),
             "Expected #{path} to be classified as #{klass}, instead it is #{classify(path)}"
-        rescue RuntimeError => e
+        rescue => e
           fail "Expected #{path} to be classified as #{klass}, instead of throwing '#{e}'"
         end
       end
@@ -80,7 +80,8 @@ describe Openvault::Pbcore::AssetClassifier do
       expect_class Transcript, [
         'artesia/rock_and_roll/transcript_1.xml',
         'artesia/rock_and_roll/transcript_2.xml',
-        'artesia/war_and_peace/transcript_1.xml']
+        'artesia/war_and_peace/transcript_1.xml',
+        'artesia/machine_that_changed_the_world/transcript.xml']
     end
     
     describe 'exception' do

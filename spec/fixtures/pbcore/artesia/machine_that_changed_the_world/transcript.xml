@@ -1,0 +1,21 @@
+<pbcoreDescriptionDocument>
+    <pbcoreAssetType>Transcript - Interview4</pbcoreAssetType>
+    <pbcoreIdentifier source="UOI_ID" version="1">2d33a722c6443f533917a4769f76c3532628bf98</pbcoreIdentifier>
+    <pbcoreIdentifier source="IMPORT_ID" version="1">255738.0</pbcoreIdentifier>
+    <pbcoreTitle titleType="Series">Machine That Changed the World, The</pbcoreTitle>
+    <pbcoreDescription descriptionType="Summary4">SMIL XML transcript file from Alan Kay interview. </pbcoreDescription>
+    <pbcoreRelation>
+        <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">BELONGTO</pbcoreRelationType>
+        <pbcoreRelationIdentifier source="UOI_ID" annotation="Another item is the destination of this relationship">66911435e22e6b41505f73f5cdc7b5c45b5ec39a</pbcoreRelationIdentifier>
+    </pbcoreRelation>
+    <pbcoreInstantiation>
+        <instantiationIdentifier source="ArtesiaDAM UOI_ID" version="1">2d33a722c6443f533917a4769f76c3532628bf98</instantiationIdentifier>
+        <instantiationIdentifier source="Original file name" version="1" annotation="ArtesiaDAM user ID: 2062 imported 2014-02-04 14:11:11.0">Alan_Kay_SMIL.xml</instantiationIdentifier>
+        <instantiationLocation/>
+    </pbcoreInstantiation>
+    <pbcoreExtension>
+        <extensionEmbedded annotation="Access control information">
+            <SECURITY_POLICY_UOIS SEC_POLICY_ID="804"/>
+        </extensionEmbedded>
+    </pbcoreExtension>
+</pbcoreDescriptionDocument>
