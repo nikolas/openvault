@@ -41,7 +41,18 @@ our "Program" or "Series" records.
 
 ### Deploy
 
-`cap -S branch=development staging deploy`
+Merge latest changes into master.
+```
+cap --verbose staging deploy
+```
+
+(You will need to supply a password.)
+When complete, check http://openvault-staging.wgbh.org/; if it looks good:
+```
+cap --verbose production deploy
+```
+
+Check http://openvault.wgbh.org/ to confirm that the deployment worked.
 
 ### Ingest
 
