@@ -56,9 +56,16 @@ Check http://openvault.wgbh.org/ to confirm that the deployment worked.
 
 ### Ingest
 
-`rake openvault:ingest ...`
+For managing the source metadata, we have a git repo at http://atlas.wgbh.org/stash with all the pbcore xml,
+and we have a checkout of this repo on the production server. To reingest:
+```
+$ ssh openvault@lsopenvault01.wgbh.org
+$ cd /wgbh/http/openvault/current
+$ RAILS_ENV=production bundle exec rake openvault:ingest \
+   file=/wgbh/http/openvault/openvault_ingest_data/pbcore_xml_from_artesia/all_assets/FOR-EXAMPLE.xml
+```
 
-You'll need to specify a PBCore file to ingest, and set a mode to control handling of conflicts.
+You can also set a mode to determine how conflicts are handled.
 
 ### Debug
 
