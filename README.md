@@ -53,10 +53,10 @@ $ bundle exec cap --verbose staging deploy
 (You will need to supply a password.)
 When complete, check http://openvault-staging.wgbh.org/; if it looks good:
 ```
-$ cap --verbose production deploy
+$ bundle exec cap --verbose production deploy
 ```
 
-Check http://openvault.wgbh.org/ to confirm that the deployment worked.
+(Password, again.) Check http://openvault.wgbh.org/ to confirm that the deployment worked.
 
 ### Ingest
 
