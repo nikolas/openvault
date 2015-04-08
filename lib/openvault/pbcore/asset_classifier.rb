@@ -31,7 +31,8 @@ EOF
       'Series' => lambda {|doc| 
         ([['Series'],['Collection','Series']].include? doc.titles_by_type.keys.sort) &&
           doc.instantiation.media_type.empty? &&
-          doc.instantiation.digital.empty?},
+          doc.instantiation.digital.empty? &&
+          !asset_type(doc).match(/transcript/i)},
       
       'Program' => lambda {|doc|
         !doc.program_title.empty? &&
