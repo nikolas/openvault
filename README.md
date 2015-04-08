@@ -62,6 +62,9 @@ $ bundle exec cap --verbose production deploy
 
 #### Metadata
 
+**Note**: Ruby warnings go to STDOUT, but to tell whether it completed successfully,
+you need to look in the `logs` directory.
+
 For managing the source metadata, we have a git repo at http://atlas.wgbh.org/stash with all the pbcore xml,
 and we have a checkout of this repo on the production server. To reingest:
 ```
