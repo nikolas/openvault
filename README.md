@@ -41,15 +41,19 @@ our "Program" or "Series" records.
 
 ### Deploy
 
-Merge latest changes into master.
+Merge latest changes into master and redeploy
 ```
-cap --verbose staging deploy
+$ git checkout master
+$ git pull
+$ bundle exec cap --verbose staging deploy
+  # There are incompatibilities between major versions of capistrano:
+  # 'bundle exec' makes sure you're using the one specified in Gemfile.
 ```
 
 (You will need to supply a password.)
 When complete, check http://openvault-staging.wgbh.org/; if it looks good:
 ```
-cap --verbose production deploy
+$ cap --verbose production deploy
 ```
 
 Check http://openvault.wgbh.org/ to confirm that the deployment worked.
