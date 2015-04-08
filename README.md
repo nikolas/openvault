@@ -60,6 +60,8 @@ $ bundle exec cap --verbose production deploy
 
 ### Ingest
 
+#### Metadata
+
 For managing the source metadata, we have a git repo at http://atlas.wgbh.org/stash with all the pbcore xml,
 and we have a checkout of this repo on the production server. To reingest:
 ```
@@ -70,6 +72,24 @@ $ RAILS_ENV=production bundle exec rake openvault:ingest \
 ```
 
 You can also set a mode to determine how conflicts are handled.
+
+#### Transcripts
+
+If a transcript is missing, there are two steps to fix it:
+- Load metadata to create Transcript object
+- Load the actual text of the transcript
+
+The first step is the same as any metadata load. The second is messier because we haven't made a rake task yet.
+```
+$ RAILS_ENV=production bundle exec rails c
+> video = Video.find(slug: 'put-the-url-slug-here').first
+> require 'openvault'
+> require 'openvault/transcript_ingester'
+> Openvault::TranscriptIngester.ingest_tei_xml_specified_by_pbcore!(
+    video.transcripts.first, 
+    '/wgbh/http/openvault/openvault_ingest_data/transcripts_tei_xml/all_transcripts/')
+    # Second argument is directory where the file can be found.
+```
 
 ### Debug
 
