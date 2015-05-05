@@ -68,7 +68,9 @@ describe Openvault::Pbcore::AssetClassifier do
           'artesia/rock_and_roll/video_1.xml',
           'artesia/vietnam/video_1.xml',
           'artesia/ntw/program_segment.xml',
-          'pbcore_rogue_video.xml']
+          'pbcore_rogue_video.xml',
+          'pbcore_video_clip_1.xml'
+        ]
     end 
     
     it 'for Audio' do
