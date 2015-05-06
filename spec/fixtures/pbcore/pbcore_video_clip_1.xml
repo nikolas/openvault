@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<pbcoreDescriptionDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.0.xsd">
+  <pbcoreAssetType>Clip</pbcoreAssetType>
+  <pbcoreIdentifier source="uuidgen" version="1">CFB9D608-623C-4337-AB43-91FB4D3612AA</pbcoreIdentifier>
+  <pbcoreTitle titleType="Series">Say Brother</pbcoreTitle>
+  <pbcoreTitle titleType="Program">Winter Special</pbcoreTitle>
+  <pbcoreTitle titleType="Episode">249</pbcoreTitle>
+  <pbcoreTitle titleType="Item2">Ronald Ingram Gospel chorus</pbcoreTitle>
+  <pbcoreSubject subjectType="Keyword">African American musicians</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">African American singers</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">Music--Performance</pbcoreSubject>
+  <pbcoreSubject subjectType="Personalities">Clemens, Kenya</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">National Center of Afro-American Artists. Dance Company</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">Ronald Ingram Gospel Chorus</pbcoreSubject>
+  <pbcoreSubject subjectType="Keyword">National Center of Afro-American Artists </pbcoreSubject>
+  <pbcoreDescription descriptionType="Description">In this clip, The Ronald Ingram Gospel chorus performs "Sweet Low, Sweet Chariot" in the Say Brother studio. Overall the program features a variety of musical and dance performances in celebration of the holiday season. Host John Slade introduces a short film explaining Kwanzaa, a short film by Say Brother filmmaker Henry Johnson called Give A Damn (about caring for the community), three performances by the Dance Company of the National Center of Afro-American Artists (the ballet "Chavez," the spiritual dance solo "I Told Jesus," and the tap performance "Rondo for Diz"), a performance by the Ronald Ingram Gospel Chorus (which performs five songs), and a performance by solo vocalist Kenya Clemens. Program also contains a short interview with Barbara Barrow, who coordinated the performances for the program. All performances conducted in studio. Produced by John Slade. Directed by Russell Tillman.</pbcoreDescription>
+  <pbcoreRelation>
+    <pbcoreRelationType source="LINK_TYPE" annotation="Current item is the source of this relationship">PLACEDGR</pbcoreRelationType>
+    <pbcoreRelationIdentifier source="IMAGE_uuidgen" annotation="Another item is the destination of this relationship">BAAE8D0A-D75E-41C3-8417-97B2BB1D8DC4</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage ref="DATE_PORTRAYED">12/28/1972</coverage>
+    <coverageType>Temporal</coverageType>
+  </pbcoreCoverage>
+ <pbcoreCreator>
+    <creator>Slade, John</creator>
+    <creatorRole>Producer</creatorRole>
+  </pbcoreCreator>
+  <pbcoreCreator>
+    <creator>Davis, Silas</creator>
+    <creatorRole>Associate Producer</creatorRole>
+  </pbcoreCreator>
+  <pbcoreCreator>
+    <creator>Tillman, Russell</creator>
+    <creatorRole>Director</creatorRole>
+  </pbcoreCreator>
+  <pbcoreContributor>
+    <contributor>Slade, John</contributor>
+    <contributorRole>Host</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Barrow-Murray, Barbara</contributor>
+    <contributorRole>Concept</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Barrow-Murray, Barbara</contributor>
+    <contributorRole>Assistant Director</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Bordett, Bruce</contributor>
+    <contributorRole>Studio Technician</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Charette, Bill</contributor>
+    <contributorRole>Studio Technician</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Coleman, Vernon</contributor>
+    <contributorRole>Audio</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Hunte, Donna</contributor>
+    <contributorRole>Assistant To The Producer</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Johnson, Henry</contributor>
+    <contributorRole>Filmmaker</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Lane, Frank</contributor>
+    <contributorRole>Camera</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>MacDonald, Greg</contributor>
+    <contributorRole>Studio Technician</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Mahard, Francis</contributor>
+    <contributorRole>Scenic Design</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>McCoy, Marvin</contributor>
+    <contributorRole>Studio Technician</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Plausse, John</contributor>
+    <contributorRole>Lighting Director</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Poppke, Erik</contributor>
+    <contributorRole>Stage Manager</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Rogers, Steve</contributor>
+    <contributorRole>Video</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Simons, Fred</contributor>
+    <contributorRole>Videotape Engineer</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Smith, Kathy</contributor>
+    <contributorRole>Switcher</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Smith, Lee</contributor>
+    <contributorRole>Studio Technician</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Stein, Bennett</contributor>
+    <contributorRole>Graphic Designer</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Walden, Carolyn</contributor>
+    <contributorRole>Production Assistant</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Wareham, Skip</contributor>
+    <contributorRole>Camera</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Wilson, Billy</contributor>
+    <contributorRole>Technical Consultant</contributorRole>
+  </pbcoreContributor>
+  <pbcoreContributor>
+    <contributor>Wilson, Bob</contributor>
+    <contributorRole>Camera</contributorRole>
+  </pbcoreContributor>
+   <pbcorePublisher>
+    <publisher>WGBH Educational Foundation</publisher>
+    <publisherRole>Publisher</publisherRole>
+  </pbcorePublisher>
+  <pbcoreInstantiation>
+    <instantiationIdentifier source="uuidgen" version="1">CFB9D608-623C-4337-AB43-91FB4D3612AA</instantiationIdentifier>
+    <instantiationIdentifier source="Original file name" version="1" annotation="From_Open_Vault_Server">sb_0249.mp4</instantiationIdentifier>
+    <instantiationLocation/>
+    <instantiationEssenceTrack/>
+  </pbcoreInstantiation>
+  </pbcoreDescriptionDocument>

@@ -45,7 +45,7 @@ EOF
       
       'Video' => lambda {|doc|
         media_type(doc).match(/^moving image$/i) || 
-          asset_type(doc).match(/^preservation master$/i) ||
+          asset_type(doc).match(/^(preservation master|clip)$/i) ||
           digital(doc).match(/^video/) ||
           doc.titles_by_type.keys.include?('Clip')},
       
