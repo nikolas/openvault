@@ -6,8 +6,11 @@
 
   <% cache('sbro-say-brother-tabs') do %>
     <%= render partial: 'global_partials/tabs', locals: { 
-      tabs: 
-        tabs_for('sbro-say-brother', [:videos, :programs])
+      tabs: [
+        { title: 'Complete Collection', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @complete_collection_links}) },
+        { title: 'Civil Rights', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @civil_rights_collection_links}) },
+        { title: 'Music Performances', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @music_performances_links}) }
+      ]
     } %> 
   <% end %>
     

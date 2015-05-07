@@ -42,5 +42,11 @@ class ExhibitsController < ApplicationController
   def from_the_vault
     @video_links = ExhibitsData::FromTheVault.video_links
   end
+
+  def say_brother
+    @complete_collection_links = ExhibitsData::SayBrother.complete_collection_links
+    @civil_rights_collection_links = ExhibitsData::SayBrother.civil_rights_collection_links
+    @music_performances_links = ExhibitsData::SayBrother.music_performances_links
+  end
   
 end 
