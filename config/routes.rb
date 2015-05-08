@@ -33,6 +33,8 @@ Openvault::Application.routes.draw do
 
   get 'catalog/sbro-say-brother', to: 'exhibits#say_brother'
   get 'collections/sbro-say-brother', to: 'exhibits#say_brother'
+  get 'collections/say-brother', to: 'exhibits#say_brother'
+  get 'catalog/say-brother', to: 'exhibits#say_brother'
 
   get 'catalog/vault-from-the-vault', to: 'exhibits#from_the_vault'
   get 'collections/vault-from-the-vault', to: 'exhibits#from_the_vault'
