@@ -6,9 +6,11 @@
 
   <% cache('ntw-the-new-television-workshop-tabs') do %>
     <%= render partial: 'global_partials/tabs', locals: { 
-      tabs: 
-        tabs_for('ntw-the-new-television-workshop', [:videos, :programs])
-        # TODO: we actually want tabs for multiple series, which will need to be distinguished.
+      tabs: [
+        { title: 'Complete Collection', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @complete_collection_links}) },
+        { title: 'Artist\'s Showcase', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @artists_showcase_links}) },
+        { title: 'Frames of Reference', content: render(partial: 'global_partials/multicolumn_links_list', locals: {links: @frames_of_reference_links}) }
+      ]
     } %> 
   <% end %>
     

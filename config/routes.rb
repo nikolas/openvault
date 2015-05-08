@@ -44,6 +44,9 @@ Openvault::Application.routes.draw do
   get 'collections/advocates-advocates', to: 'exhibits#advocates'
   get 'catalog/advocates-advocates', to: 'exhibits#advocates'
   get 'catalog/advocates', to: 'exhibits#advocates'
+
+  # TODO: was there a legacy URL to the ntw collection that we need to include here?
+  get 'collections/new-television-workshop', to: 'exhibits#new_television_workshop'
   
   get ':lists_or_blog/rock-and-roll-interview-list', to: redirect('/catalog/roll-rock-and-roll')
   get ':lists_or_blog/wpna-interview-list', to: redirect('/catalog/wpna-wpna-war-and-peace-in-the-nuclear-age')

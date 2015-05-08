@@ -48,5 +48,11 @@ class ExhibitsController < ApplicationController
     @civil_rights_collection_links = ExhibitsData::SayBrother.civil_rights_collection_links
     @music_performances_links = ExhibitsData::SayBrother.music_performances_links
   end
+
+  def new_television_workshop
+    @complete_collection_links = ExhibitsData::NewTelevisionWorkshop.complete_collection_links
+    @artists_showcase_links = ExhibitsData::NewTelevisionWorkshop.artists_showcase_links
+    @frames_of_reference_links = ExhibitsData::NewTelevisionWorkshop.frames_of_reference_links
+  end
   
 end 
