@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140806154752) do
+ActiveRecord::Schema.define(:version => 20150526214137) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -90,22 +90,6 @@ ActiveRecord::Schema.define(:version => 20140806154752) do
     t.text     "lower_content"
   end
 
-  create_table "comments", :force => true do |t|
-    t.string   "title",            :limit => 50, :default => ""
-    t.text     "comment"
-    t.string   "commentable_id"
-    t.string   "commentable_type"
-    t.text     "metadata"
-    t.boolean  "public"
-    t.integer  "user_id"
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
-  end
-
-  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
-  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
-
   create_table "custom_collection_collabs", :force => true do |t|
     t.integer  "user_id"
     t.integer  "custom_collection_id"
@@ -181,13 +165,6 @@ ActiveRecord::Schema.define(:version => 20140806154752) do
 
   add_index "local_authority_entries", ["local_authority_id", "label"], :name => "entries_by_term_and_label"
   add_index "local_authority_entries", ["local_authority_id", "uri"], :name => "entries_by_term_and_uri"
-
-  create_table "mosaic_items", :force => true do |t|
-    t.string   "slug"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "link_title"
-  end
 
   create_table "orgs", :force => true do |t|
     t.string   "name"
