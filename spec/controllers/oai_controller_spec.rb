@@ -92,7 +92,7 @@ describe OaiController do
     end
     expect_oai('ListIdentifiers', resumptionToken: ROWS) do |test, xml|
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
-      test.expect(xml.scan('<identifier>').count).to test.eq(1) # TODO: FAILING
+      test.expect(xml.scan('<identifier>').count).to test.eq(2)
       test.expect(xml).not_to test.match '<resumptionToken>'
     end
   end
@@ -104,7 +104,7 @@ describe OaiController do
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
       test.expect(xml).to test.match 'Civil rights march'
       test.expect(xml.scan('<identifier>').count).to test.eq(ROWS)
-      test.expect(xml).to test.match '<resumptionToken>#{ROWS}</resumptionToken>'
+      test.expect(xml).to test.match "<resumptionToken>#{ROWS}</resumptionToken>"
     end
     expect_oai('ListRecords', resumptionToken: ROWS) do |test, xml|
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
