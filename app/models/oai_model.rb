@@ -1,5 +1,7 @@
 class OaiModel
   
+  ROWS = 100
+  
   def earliest
     OaiModel.earliest_or_latest('asc')
   end
@@ -14,7 +16,7 @@ class OaiModel
     if id == :all
       options[:metadata_prefix] = 'pbcore' # It was complaining that this was missing with resumptionToken.
       start = options[:resumption_token] || 0
-      response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq, start: start})['response']
+      response = Blacklight.solr.select(params: { q: '*:*', fq: OaiModel.fq, start: start, rows: ROWS})['response']
       oai_response = response['docs'].map { |doc| OaiDocument.new(doc) }
       
       next_start = response['start'] + response['docs'].count
