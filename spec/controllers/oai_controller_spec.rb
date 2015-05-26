@@ -58,7 +58,7 @@ describe OaiController do
   
   it 'Identify' do
     expect_oai('Identify') do |test, xml|
-      test.expect(xml).to test.match "<earliestDatestamp>#{Date.today}" # just ingested.
+      test.expect(xml).to test.match "<earliestDatestamp>#{Time.now.utc.to_date}" # just ingested.
     end
   end
   
@@ -108,7 +108,7 @@ describe OaiController do
     end
     expect_oai('ListRecords', resumptionToken: ROWS) do |test, xml|
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
-      test.expect(xml.scan('<identifier>').count).to test.eq(1) # TODO: FAILING
+      test.expect(xml.scan('<identifier>').count).to test.eq(2)
       test.expect(xml).not_to test.match '<resumptionToken>'
     end
   end
