@@ -7,6 +7,8 @@ require 'date'
 
 describe OaiController do
   
+  ROWS = 100
+  
   def load_save(asset, path)
     asset.pbcore.ng_xml = Fixtures.raw(path)
     asset.save!
@@ -40,7 +42,7 @@ describe OaiController do
     Program.new.tap { |program| load_save(program, "artesia/rock_and_roll/program_1.xml") }
     
     # Filler so we can test resumptionTokens
-    9.times do
+    ROWS.times do
       Audio.new.tap { |audio| load_save(audio, "artesia/patriots_day/audio_3.xml") }
     end
   end
@@ -85,10 +87,10 @@ describe OaiController do
       # Assumes order of response equals order of ingest, otherwise might not be in first chunk.
       test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
-      test.expect(xml.scan('<identifier>').count).to test.eq(10)
-      test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
+      test.expect(xml.scan('<identifier>').count).to test.eq(ROWS)
+      test.expect(xml).to test.match "<resumptionToken>#{ROWS}</resumptionToken>"
     end
-    expect_oai('ListIdentifiers', resumptionToken: '10') do |test, xml|
+    expect_oai('ListIdentifiers', resumptionToken: ROWS) do |test, xml|
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
       test.expect(xml.scan('<identifier>').count).to test.eq(1) # TODO: FAILING
       test.expect(xml).not_to test.match '<resumptionToken>'
@@ -101,10 +103,10 @@ describe OaiController do
       test.expect(xml).to test.match '<identifier>http://openvault.wgbh.org/catalog/SLUG</identifier>'
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
       test.expect(xml).to test.match 'Civil rights march'
-      test.expect(xml.scan('<identifier>').count).to test.eq(10)
-      test.expect(xml).to test.match '<resumptionToken>10</resumptionToken>'
+      test.expect(xml.scan('<identifier>').count).to test.eq(ROWS)
+      test.expect(xml).to test.match '<resumptionToken>#{ROWS}</resumptionToken>'
     end
-    expect_oai('ListRecords', resumptionToken: '10') do |test, xml|
+    expect_oai('ListRecords', resumptionToken: ROWS) do |test, xml|
       test.expect(xml).not_to test.match '<identifier>http://openvault.wgbh.org/catalog/RELATED</identifier>'
       test.expect(xml.scan('<identifier>').count).to test.eq(1) # TODO: FAILING
       test.expect(xml).not_to test.match '<resumptionToken>'
