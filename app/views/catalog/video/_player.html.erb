@@ -4,7 +4,7 @@
   <div class="span7 datastream primary-datastream datastream-video datastream-video-mp4">
     <% if @ov_asset.login_required? && !user_signed_in?%>
       <div>
-        <div class="error" style="position: absolute; width: 350px;"><%# TODO: background shade. Move to scss. %>
+        <div class="error" style="width: 350px;"><%# TODO: background shade. Move to scss. %>
           <h2>Registration Required</h2>
           <p>An Open Vault account is required to watch this record. Sign-up is quick and free. Please <a href="/users/sign_in">login</a> or <a href="/users/sign_up">register here</a>. </p>
         </div>
@@ -18,7 +18,7 @@
         'Robert_Lucky_Interview_Merged', 'Alan_Kay_Interview_Merged'
       ].include?(@ov_asset.original_file_name.gsub(/\.[^.]+$/, '')) %>
       <div>
-        <div class="error" style="position: absolute; width: 350px;">
+        <div class="error" style="width: 350px;">
           <h2>This video is blocked in your region.</h2>
         </div>
       </div>
