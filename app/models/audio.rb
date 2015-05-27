@@ -8,6 +8,8 @@ class Audio < OpenvaultAsset
     super(solr_document, options)
     Solrizer.insert_field(solr_document, "audio_url", self.audio_url, :displayable)
     Solrizer.insert_field(solr_document, "audio_transcripts", self.audio_transcripts, :displayable)
+    Solrizer.insert_field(solr_document, "series", self.series.title, :facetable) if self.series
+    Solrizer.insert_field(solr_document, "series", self.program.series.title, :facetable) if self.program.series
     return solr_document
   end
 
