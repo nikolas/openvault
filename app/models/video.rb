@@ -11,6 +11,7 @@ class Video < OpenvaultAsset
     Solrizer.insert_field(solr_document, "video_images", self.video_images, :displayable)
     Solrizer.insert_field(solr_document, "video_transcripts", self.video_transcripts, :displayable)
     Solrizer.insert_field(solr_document, "series", self.series.title, :facetable) if self.series
+    Solrizer.insert_field(solr_document, "series", self.program.series.title, :facetable) if self.program.try(:series)
     return solr_document
   end
 
