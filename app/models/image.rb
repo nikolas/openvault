@@ -18,7 +18,7 @@ class Image < OpenvaultAsset
   end
   
   def image_url
-    "#{media_host}/images/#{original_file_name}" if original_file_name
+    "https://s3.amazonaws.com/openvault.wgbh.org/images/#{original_file_name}" if original_file_name
   end
   
   def has_related_video?
