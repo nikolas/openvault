@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/afred/openvault.png)](https://travis-ci.org/afred/openvault)
+[![Build Status](https://travis-ci.org/WGBH/openvault.png)](https://travis-ci.org/WGBH/openvault)
 
 # Openvault
 
